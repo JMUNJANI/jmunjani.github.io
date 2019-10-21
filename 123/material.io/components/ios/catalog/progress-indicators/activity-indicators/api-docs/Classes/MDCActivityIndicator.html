@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MDCActivityIndicator Class Reference</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/develop/css/jazzy.css">
+    <link rel="stylesheet" type="text/css" href="/develop/css/jazzy-highlight.css">
+
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+    <script src="/develop/js/jazzy.js" defer></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90255304-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async defer src="//www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/MDCActivityIndicator" class="dashAnchor"></a>
+
+    <a title="MDCActivityIndicator Class Reference"></a>
+
+    <header class="header">
+      <div class="header-col">
+        <a class="header-link" href="../../">
+          <div class="header-col__logo"></div>
+          ActivityIndicator Docs
+        </a>
+          <span class="header__coverage">(87% documented)</span>
+    
+      </div>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../../">ActivityIndicator Reference</a>
+      <svg class="caret" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewbox="0 0 24 24">
+        <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/>
+      </svg>
+      MDCActivityIndicator Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MDCActivityIndicator.html">MDCActivityIndicator</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MDCActivityIndicatorTransition.html">MDCActivityIndicatorTransition</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enumerations.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MDCActivityIndicatorMode.html">MDCActivityIndicatorMode</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCActivityIndicatorDelegate.html">MDCActivityIndicatorDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Type Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:MDCActivityIndicator.h@T@MDCActivityIndicatorAnimation">MDCActivityIndicatorAnimation</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>MDCActivityIndicator</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MDCActivityIndicator</span> <span class="p">:</span> <span class="nc">UIView</span></code></pre>
+
+                </div>
+              </div>
+            <p>A Material Design activity indicator.</p>
+
+<p>The activity indicator is a circular spinner that shows progress of an operation. By default the
+activity indicator assumes indeterminate progress of an unspecified length of time. In contrast to
+a standard UIActivityIndicator, MDCActivityIndicator supports showing determinate progress and uses
+custom Material Design animation for indeterminate progress.</p>
+
+<p>See <a href="https://material.io/go/design-progress-indicators">https://material.io/go/design-progress-indicators</a></p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(py)delegate"></a>
+                    <a name="//apple_ref/objc/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(py)delegate">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The callback delegate. See @c MDCActivityIndicatorDelegate.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/MDCActivityIndicatorDelegate.html">MDCActivityIndicatorDelegate</a></span><span class="o">&gt;</span>
+    <span class="n">delegate</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(py)animating"></a>
+                    <a name="//apple_ref/objc/Property/animating" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(py)animating">animating</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not the activity indicator is currently animating.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">getter</span><span class="o">=</span><span class="n">isAnimating</span><span class="p">,</span> <span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">animating</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(py)radius"></a>
+                    <a name="//apple_ref/objc/Property/radius" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(py)radius">radius</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Spinner radius width. Defaults to 12dp (24x24dp circle), constrained to range [5dp, 72dp]. The
+spinner is centered in the view&#x2019;s bounds. If the bounds are smaller than the diameter of the
+spinner, the spinner may be clipped when clipToBounds is true.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">CGFloat</span> <span class="n">radius</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(py)strokeWidth"></a>
+                    <a name="//apple_ref/objc/Property/strokeWidth" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(py)strokeWidth">strokeWidth</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Spinner stroke width. Defaults to 2dp.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">CGFloat</span> <span class="n">strokeWidth</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(py)trackEnabled"></a>
+                    <a name="//apple_ref/objc/Property/trackEnabled" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(py)trackEnabled">trackEnabled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Show a faint ink track along the path of the indicator. Should be enabled when the activity
+indicator wraps around another circular element, such as an avatar or a FAB. Defaults to NO.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">trackEnabled</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(py)indicatorMode"></a>
+                    <a name="//apple_ref/objc/Property/indicatorMode" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(py)indicatorMode">indicatorMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The mode of the activity indicator. Default is MDCActivityIndicatorModeIndeterminate. If
+currently animating, it will animate the transition between the current mode to the new mode.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n"><a href="../Enums/MDCActivityIndicatorMode.html">MDCActivityIndicatorMode</a></span> <span class="n">indicatorMode</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(im)setIndicatorMode:animated:"></a>
+                    <a name="//apple_ref/objc/Method/-setIndicatorMode:animated:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(im)setIndicatorMode:animated:">-setIndicatorMode:animated:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the mode of the activity indicator. If currently animating, it will animate the transition
+between the current mode to the new mode. Default is MDCActivityIndicatorModeIndeterminate with no
+animation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setIndicatorMode</span><span class="p">:(</span><span class="n"><a href="../Enums/MDCActivityIndicatorMode.html">MDCActivityIndicatorMode</a></span><span class="p">)</span><span class="nv">mode</span> <span class="nf">animated</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(py)progress"></a>
+                    <a name="//apple_ref/objc/Property/progress" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(py)progress">progress</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Progress is the extent to which the activity indicator circle is drawn to completion when
+indicatorMode is MDCActivityIndicatorModeDeterminate. Progress is drawn clockwise to complete a
+circle. Valid range is between [0-1]. Default is zero. 0.5 progress is half the circle. The
+transitions between progress levels are animated.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="kt">float</span> <span class="n">progress</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(im)setProgress:animated:"></a>
+                    <a name="//apple_ref/objc/Method/-setProgress:animated:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(im)setProgress:animated:">-setProgress:animated:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the determinate progress of the activity indicator when indicatorMode is
+MDCActivityIndicatorModeDeterminate.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setProgress</span><span class="p">:(</span><span class="kt">float</span><span class="p">)</span><span class="nv">progress</span> <span class="nf">animated</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(py)cycleColors"></a>
+                    <a name="//apple_ref/objc/Property/cycleColors" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(py)cycleColors">cycleColors</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The array of colors that are cycled through when animating the spinner. Populated with a set of
+default colors.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    If an empty array is provided to this property&#x2019;s setter, then the provided array will be
+discarded and an array consisting of the default color values will be assigned instead.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">UIColor</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">cycleColors</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(im)startAnimating"></a>
+                    <a name="//apple_ref/objc/Method/-startAnimating" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(im)startAnimating">-startAnimating</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Starts the animated activity indicator. Does nothing if the spinner is already animating.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">startAnimating</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(im)startAnimatingWithTransition:cycleStartIndex:"></a>
+                    <a name="//apple_ref/objc/Method/-startAnimatingWithTransition:cycleStartIndex:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(im)startAnimatingWithTransition:cycleStartIndex:">-startAnimatingWithTransition:cycleStartIndex:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Starts the animated activity indicator after performing the provided transition. The animation
+cycle will begin on the cycleStartIndex provided. The startTransition will be applied with the
+starting and ending positions of the indicator stroke at the moment when the animation will begin
+taking into account the provided cycleStartIndex in the range [0,1]. The indicatorMode must be
+MDCActivityIndicatorModeIndeterminate before calling.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">startAnimatingWithTransition</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MDCActivityIndicatorTransition.html">MDCActivityIndicatorTransition</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">startTransition</span>
+                     <span class="nf">cycleStartIndex</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">cycleStartIndex</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(im)stopAnimating"></a>
+                    <a name="//apple_ref/objc/Method/-stopAnimating" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(im)stopAnimating">-stopAnimating</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stops the animated activity indicator with a short opacity and stroke width animation. Does nothing
+if the spinner is not animating.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">stopAnimating</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(im)stopAnimatingWithTransition:"></a>
+                    <a name="//apple_ref/objc/Method/-stopAnimatingWithTransition:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(im)stopAnimatingWithTransition:">-stopAnimatingWithTransition:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stops the animated activity indicator and then performs the provided transition. The provided
+stopTransition will be called with the starting and ending positions of the indicator stroke at the
+moment when the animation will begin in the range [0,1]. The indicatorMode must be
+MDCActivityIndicatorModeIndeterminate before calling.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">stopAnimatingWithTransition</span><span class="p">:</span>
+    <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MDCActivityIndicatorTransition.html">MDCActivityIndicatorTransition</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">stopTransition</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCActivityIndicator(py)traitCollectionDidChangeBlock"></a>
+                    <a name="//apple_ref/objc/Property/traitCollectionDidChangeBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCActivityIndicator(py)traitCollectionDidChangeBlock">traitCollectionDidChangeBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A block that is invoked when the @c MDCActivityIndicator receives a call to @c
+traitCollectionDidChange:. The block is called after the call to the superclass.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">MDCActivityIndicator</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span> <span class="n">UITraitCollection</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span>
+        <span class="n">traitCollectionDidChangeBlock</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+
+    <section class="footer">
+      <p>&#xA9; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-09-25)</p>
+    </section>
+  </body>
+
+</html>

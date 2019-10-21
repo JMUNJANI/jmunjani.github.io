@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="en" class="preload">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Sliders - Material Design</title>
+
+
+    <meta itemprop="name"        property="og:title"       name="twitter:title"       content="Sliders" />
+    <meta itemprop="description" property="og:description" name="twitter:description" content="Sliders allow users select from a range of values." />
+    <meta itemprop="image"       property="og:image"       name="twitter:image"       content="components/static/spec/images/share.png" />
+    <meta itemprop="url"         property="og:url"         name="twitter:url"         content="https://material.io/components/sliders/index.html" />
+    <meta property="og:site_name" content="Material Design" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">    <link rel="shortcut icon" href="/favicon.ico">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHRPF8');</script>    <style>
+.animatable {
+        opacity: 0;
+        position: relative;
+        top: 16px;         transition: opacity 235ms cubic-bezier(.4,0,.2,1),
+                    top 500ms cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1568406561463/static/m2/css/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+    <link rel="preload" href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1568406561463/static/m2/js/main.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js" as="script">
+
+
+  </head>
+
+  <body class="header-show page--article left-rail"
+        data-comp="Global "
+        data-slug-id="sliders"
+        data-spec-alias="mio-components"
+ >
+    <a class="screenreader-only" href="#main_content">Skip to main content</a>
+
+  <header class="header js-header" data-comp="Header">
+      <button class="header__hamburger header__button" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+        <i class="material-icons notranslate header__hamburger-icon" title="Toggle Navigation">menu</i>
+      </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+    <nav class="header__nav" role="navigation">
+      <ul class="header__nav-list header__nav-list--selected">
+            <li class="header__nav-item  js-header-item">
+    <a href="/design"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/design"}
+'>
+      Design
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  header__nav-item--active js-header-item" aria-current="true">
+    <a href="/components"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/components"}
+'>
+      Components
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/develop"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/develop"}
+'>
+      Develop
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/resources"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/resources"}
+'>
+      Resources
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+      </ul>
+    </nav>
+
+    <form id="search-form" class="search-form js-search" data-comp="SearchForm" data-props-searchform='{"basePath": "/", "ajax": false, "showOnLoad": false}'>
+      <button class="search-form__back js-search-back js-analytics-click" type="button" aria-label="Exit search results"
+              data-analytics='  {
+    "event": "trackEvent",
+    "category": "search back",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+        <i class="material-icons notranslate">arrow_back</i>
+      </button>
+
+      <input id="search-query" class="search-form__input js-search-input" name="q" type="text" title="query" placeholder="Search" autocomplete="off" aria-label="Type your search and press enter.">
+    </form>
+
+    <button class="header__search header__button js-toggle-search js-analytics-click"
+            data-analytics='  {
+    "event": "trackEvent",
+    "category": "search",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+      <div class="icons-container mdc-ripple-surface" data-mdc-ripple-is-unbounded>
+        <i class="material-icons notranslate header__spyglass" aria-label="Search Material Design">search</i>
+        <i class="material-icons notranslate header__search-close" aria-label="Close search">close</i>
+      </div>
+    </button>
+  </header>
+
+
+<nav aria-label="Breadcrumbs" class="breadcrumbs" data-comp="Breadcrumbs" aria-hidden="true">
+    <button class="breadcrumbs__hamburger" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+      <i class="material-icons notranslate" title="Toggle Navigation">menu</i>
+    </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+  <ol class="container container--large breadcrumbs__list">
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click "
+           href="../components"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../components"}
+'>Components</a>
+      </li>
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link"
+           href="../sliders/sliders.html"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../sliders/sliders.html"}
+'>Sliders</a>
+      </li>
+      <li class="breadcrumbs__crumb disabled breadcrumbs__chapter">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link js-breadcrumb-hash"
+           href="#usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>Usage</a>
+      </li>
+  </ol>
+</nav>
+
+
+<nav class="side-nav" data-comp="SideNav" role="navigation">
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+
+
+            <span class="side-nav__section-title">Components</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-bottom"}
+'>
+            App bars: bottom
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-top"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-top"}
+'>
+            App bars: top
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../backdrop"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../backdrop"}
+'>
+            Backdrop
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../banners"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../banners"}
+'>
+            Banners
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../bottom-navigation"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../bottom-navigation"}
+'>
+            Bottom navigation
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons"}
+'>
+            Buttons
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons-floating-action-button"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons-floating-action-button"}
+'>
+            Buttons: floating action button
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../cards"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../cards"}
+'>
+            Cards
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../chips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../chips"}
+'>
+            Chips
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../data-tables"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../data-tables"}
+'>
+            Data tables
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dialogs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dialogs"}
+'>
+            Dialogs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dividers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dividers"}
+'>
+            Dividers
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../image-lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../image-lists"}
+'>
+            Image lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../lists"}
+'>
+            Lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../menus"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../menus"}
+'>
+            Menus
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../navigation-drawer"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation-drawer"}
+'>
+            Navigation drawer
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../pickers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../pickers"}
+'>
+            Pickers
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../progress-indicators"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../progress-indicators"}
+'>
+            Progress indicators
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../selection-controls"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../selection-controls"}
+'>
+            Selection controls
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sheets-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-bottom"}
+'>
+            Sheets: bottom
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sheets-side"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-side"}
+'>
+            Sheets: side
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface active js-analytics-click"
+             href="../sliders"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sliders"}
+'>
+            Sliders
+          </a>
+
+              <div class="side-nav__articles">
+    <i class="side-nav__progress-bar">
+      <i class="side-nav__scrub js-submenu-scrub"></i>
+    </i>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-usage js-analytics-click" href="#usage" data-section-id="usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>
+          <span class="js-anchor-text">Usage</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-anatomy js-analytics-click" href="#anatomy" data-section-id="anatomy"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#anatomy"}
+'>
+          <span class="js-anchor-text">Anatomy</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-continuous-slider js-analytics-click" href="#continuous-slider" data-section-id="continuous-slider"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#continuous-slider"}
+'>
+          <span class="js-anchor-text">Continuous slider</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-discrete-slider js-analytics-click" href="#discrete-slider" data-section-id="discrete-slider"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#discrete-slider"}
+'>
+          <span class="js-anchor-text">Discrete slider</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-theming js-analytics-click" href="#theming" data-section-id="theming"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#theming"}
+'>
+          <span class="js-anchor-text">Theming</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-specs js-analytics-click" href="#specs" data-section-id="specs"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#specs"}
+'>
+          <span class="js-anchor-text">Specs</span>
+        </a>
+      </div>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../snackbars"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../snackbars"}
+'>
+            Snackbars
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tabs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tabs"}
+'>
+            Tabs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../text-fields"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../text-fields"}
+'>
+            Text fields
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tooltips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tooltips"}
+'>
+            Tooltips
+          </a>
+
+      </li>
+
+  </ul>
+</nav>
+
+
+    <main id="main_content" class="main" role="main" aria-labelledby="Main Content">
+<article class="article" data-comp="Waypoints">
+  <div class="article__intro container container--large js-waypoints-trigger-initial">
+    <div class="article__intro-text">
+      <h1 class="article__title animatable js-anim-trigger">
+
+        Sliders
+            <div class="article-controls">
+              
+            </div>
+      </h1>
+
+
+        <div class="article__intro-text animatable js-anim-trigger">
+            <div>
+<div aria-hidden="true" class="keywords hidden">sliders</div>
+<h2>Sliders allow users to make selections from a range of values.</h2><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="intro-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F15Ee-1DgC9nBBj6hmL-QZ0uj_3_a_kXwO%2Fsliders-intro.png" src="">
+</img></div>
+</div>
+<figcaption id="intro-figure-caption-0"><hr class="spacer" role="presentation"/></figcaption>
+</figure><h3>Developer documentation</h3><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Platform</p></td><td colspan="1" rowspan="1"><p>Status</p></td></tr><tr><td colspan="1" rowspan="1"><p>Android</p></td><td colspan="1" rowspan="1"><p>Planned</p></td></tr><tr><td colspan="1" rowspan="1"><p>iOS</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/ios/components/sliders/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>Web</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/web/components/input-controls/sliders/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>Flutter</p></td><td colspan="1" rowspan="1"><p><a href="https://api.flutter.dev/flutter/material/Slider-class.html" rel="noopener" target="_blank">Available</a></p></td></tr></tbody></table></div></section></div></div>
+        </div>
+    </div>
+
+      <nav class="article__nav animatable js-anim-trigger">
+        <span class="eyebrow">Contents</span>
+        <ul>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#usage" data-section-id="usage"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#usage"}
+'>Usage</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#anatomy" data-section-id="anatomy"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#anatomy"}
+'>Anatomy</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#continuous-slider" data-section-id="continuous-slider"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#continuous-slider"}
+'>Continuous slider</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#discrete-slider" data-section-id="discrete-slider"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#discrete-slider"}
+'>Discrete slider</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#theming" data-section-id="theming"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#theming"}
+'>Theming</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#specs" data-section-id="specs"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#specs"}
+'>Specs</a>
+            </li>
+        </ul>
+      </nav>
+  </div>
+
+  <hr />
+
+  <div class="article__body animatable js-breadcrumb-toggle js-anim-trigger">
+      <section id="usage" class="container container--large js-waypoints-trigger article__section" data-section-title="Usage" aria-label="Usage">
+          <h2 class="article__chapter-title">
+            Usage
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sliders</div>
+<div class="col-list rich-media"><section class="module-module col-2"><div class="module"><p>Sliders reflect a range of values along a bar, from which users may select a single value. They are ideal for adjusting settings such as volume, brightness, or applying image filters. </p><p>Sliders can have icons on both ends of the bar that reflect a range of values. </p><h2>Immediate effects</h2><p>Changes made with sliders are immediate, allowing a user to make slider adjustments until finding their preference. They shouldn’t be paired with settings that have even minor delays in providing user feedback.</p><h2>Current state</h2><p>Sliders reflect the current state of the settings they control. </p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1rSV50Pn4GaYGGkKn4PTtEhQ8jhM_mtxH%2Fsliders-usage-howtouse.png" src="">
+</img></div>
+</div>
+</figure></div></section></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Values Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Values</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Editable numeric values allow users to set the exact value of a slider. Upon pressing the thumb or the value indicator field, the value indicator...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module col-2 h2-spacing"><div class="module"><h2>Editable numeric values</h2><p>Editable numeric values allow users to set the exact value of a slider. </p><p>Upon pressing the thumb or the value indicator field, the value indicator input becomes editable for text entry. The thumb position immediately is updated to match any change in value.</p><h2>Order of values</h2><p>For languages that are displayed from left-to-right, such as English, the smallest value for the range appears on the left and the largest value appears on the right. </p><p>For right-to-left languages, like Arabic, this placement would be switched (with the largest value on the left, and the smallest on the right). </p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F16mUmfH9m9xkWuDXs28Q7v1ssfP_du9kK%2Fsliders-continuousslider-editablenumeric.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-0"><p>A slider with an editable numeric value</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Principles Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Principles</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Sliders should be adjustable, immediate, and efficient.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module-module col-3"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="751px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1mXaxutBExiAwWvwWP0kLLnvcimBoWO5g%2Fsliders-illos-01.png" src="">
+</img></div>
+</div>
+</figure><h2>Adjustable </h2><p>Sliders should only be used for choosing selections from a range of values.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="751px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1RzHfBzjckQ924ZGasF1An83xPQMAODgI%2Fsliders-illos-02.png" src="">
+</img></div>
+</div>
+</figure><h2>Immediate</h2><p>When interacting with a slider, changes should be represented immediately. </p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="751px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1AlEhYCfvYc0DO23hQYK0RlryoewUM6kC%2Fsliders-illos-03.png" src="">
+</img></div>
+</div>
+</figure><h2>Accessible </h2><p>Sliders should provide the full range of choices available for the user to select from. </p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Types Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Types</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Continuous sliders allow users to select a value along a subjective range. Discrete sliders can be adjusted to a specific value by referencing its value...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module col-2 h2-spacing"><div class="module"><h2>Continuous sliders</h2><p>Continuous sliders allow users to select a value along a subjective range. </p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1Xrpx4Q59-vu0WplsTpaoYwxyfB99Rgj9%2Fsliders-usage-whentouse-continuous.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-1">
+<p>Continuous slider</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2 h2-spacing"><div class="module"><h2>Discrete sliders</h2><p>Discrete sliders can be adjusted to a specific value by referencing its value indicator. </p><p>Possible selections may be organized through the use of tick marks, which a slider thumb will snap to (or to which an input will round up or down). </p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1xMAR10aCA6Y1k2Rb_BFKSPW43irH55F-%2Fsliders-usage-whentouse-discrete.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-2">
+<p>Discrete slider</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="anatomy" class="container container--large js-waypoints-trigger article__section" data-section-title="Anatomy" aria-label="Anatomy">
+          <h2 class="article__chapter-title">
+            Anatomy
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sliders</div>
+<aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/usability/bidirectionality.html#mirroring-elements"}
+' href="https://material.io/design/usability/bidirectionality.html#mirroring-elements" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F15A5PR0jd59E97wr1afHf6wlPCxMhdBjl%2Fusability-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F15A5PR0jd59E97wr1afHf6wlPCxMhdBjl%2Fusability-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Mirroring elements</h2>
+<p class="object-card__body">UIs for languages that are read from right-to-left (RTL), such as Arabic and Hebrew, should be mirrored to ensure content is easy to understand.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module-module col-2 h3-spacing"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1R7E69M9c12aTaQcXnpT8FveOtq3a_GOf%2Fsliders-layout-elements.png" src="">
+</img></div>
+</div>
+</figure></div><div class="module"><h3>A slider can contain the following elements:</h3><h3>1. Track</h3><p>The track shows the range available for user selection. For left-to-right (LTR) languages, the smallest value appears on the far left, and the largest value on the far right. For right-to-left (RTL) languages this orientation is reversed, with the smallest value on the far right and the largest value on the far left.</p><h3>2. Thumb</h3><p>The thumb slides along the track, displaying the selected value through its position.</p><h3>3. Value label (optional)</h3><p>A value label displays the currently selected, specific numerical value.</p><h3>4. Tick mark (optional)</h3><p>Tick marks represent predetermined values to which the user can move the slider.</p></div></section></div></div>
+        </div>
+      </section>
+<hr />      <section id="continuous-slider" class="container container--large js-waypoints-trigger article__section" data-section-title="Continuous slider" aria-label="Continuous slider">
+          <h2 class="article__chapter-title">
+            Continuous slider
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sliders</div>
+<p>Use continuous sliders allow users to make meaningful selections that don’t require a specific value.</p><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Behavior Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Behavior</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This continuous slider is controlled by clicking the thumb and dragging it. This continuous slider is controlled by clicking the track. This continuous slider is...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F12Y2vfKQag8lXsqcOftkisF8DhpDzjEMc%2F06-sliders-focus-cursor-drag-v02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+</figure><h2>Click and drag</h2><p>This continuous slider is controlled by clicking the thumb and dragging it.</p></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1GE9eYyWwXctMJKwZYXAPNtKGEIR4VyUU%2F08-sliders-cursor-jump.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+</figure><h2>Click jump</h2><p>This continuous slider is controlled by clicking the track.</p></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1RoXQ5wVrmt5FRRLtqGCP99BPHKRjVCL2%2F04-sliders-focus-cursor-tab.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+</figure><h2>Click and arrow</h2><p>This continuous slider is controlled by clicking the thumb, then using arrow keys to move it.</p></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1albYYTt8omHw7lmsssbTzKOwFmGRnXw3%2F01-sliders-tab-arrow-focus.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+</figure><h2>Tab and arrow</h2><p>This continuous slider is controlled by using the tab key to select the thumb of the desired slider, then using arrow keys to move it.</p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse States Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">States</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Continuous sliders have normal, focused, click, and disabled states. Slider states</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Continuous sliders have normal, focused, click, and disabled states.<br>
+<figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 81.5789473684%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="continuous-slider-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="81.5789473684%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F15TSjP7vUkx3t8dP0CiA6lxg_gFQQ07zr%2Fsliders-continuousslider-states2.png" src="">
+</img></div>
+</div>
+<figcaption id="continuous-slider-figure-caption-0">
+<p>Slider states</p></figcaption>
+</figure></br></p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="discrete-slider" class="container container--large js-waypoints-trigger article__section" data-section-title="Discrete slider" aria-label="Discrete slider">
+          <h2 class="article__chapter-title">
+            Discrete slider
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sliders</div>
+<p>Discrete sliders display a numeric value label upon pressing the thumb, which allows a user to input an exact value. </p><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Behavior Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Behavior</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This discrete slider is controlled by clicking the thumb and dragging it. This discrete slider is controlled by clicking the track. This discrete slider is...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1zB4si613d1Do69sPModYqFT9GkrxdYSP%2F07-sliders-focus-discreet-cursor-drag-v03.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+</figure><h2>Click and drag</h2><p>This discrete slider is controlled by clicking the thumb and dragging it.</p></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1Ux-vIX5IVjjvNpSvpTyTJ0YMY7_wk_ep%2F09-sliders-discreet-cursor-jump.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+</figure><h2>Click jump</h2><p>This discrete slider is controlled by clicking the track.</p></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1mDmJ-yHky_d7h8MFt5KIky-r0-YigPar%2F05-sliders-focus-discreet-cursor-tab-v03.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+</figure><h2>Click and arrow</h2><p>This discrete slider is controlled by clicking the thumb, then using arrow keys to move it.</p></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1E9lgEuZYc50pthOQ8GOZD5sOlD_XhmQN%2F03-sliders-arrow-focus-discreet.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+</figure><h2>Tab and arrow</h2><p>This discrete slider is controlled by using the tab key to select the thumb of the desired slider, then arrow keys to move it.</p></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1TdcwVIlDr59VrYkUzO2izxZ7BcZuHmBi%2Fsliders-tick-marks-v02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+</figure><h2>Tick marks (Optional)</h2><p>Discrete sliders can use evenly spaced tick marks along the slider track, and the thumb will snap to them. Each tick mark should change the setting in increments that are discernible to the user. </p></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F12CeqlOc7Jq30i39Ifjopf4dnCdqMi7np%2Fsliders-value-entry-v01.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+</figure><h2>Value entry field (Optional)</h2><p>Value entry fields become editable after selecting the thumb or entry field. After a text entry is made, the slider position automatically updates to reflect the new value.</p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse States Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">States</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Discrete sliders have normal, focused, click, and disabled states. Discrete slider states</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Discrete sliders have normal, focused, click, and disabled states.<br>
+<figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 81.5789473684%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="discrete-slider-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="81.5789473684%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1MFWceSStOgPmqholFlYP9AE1PMEUUrqZ%2Fsliders-discreteslider-states2.png" src="">
+</img></div>
+</div>
+<figcaption id="discrete-slider-figure-caption-0">
+<p>Discrete slider states</p></figcaption>
+</figure></br></p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="theming" class="container container--large js-waypoints-trigger article__section" data-section-title="Theming" aria-label="Theming">
+          <h2 class="article__chapter-title">
+            Theming
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sliders</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Crane Material Theme Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Crane Material Theme</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This travel app’s sliders have been customized using Material Theming. One area of customization includes color. Crane is a travel app that uses Material Design...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>This travel app’s sliders have been customized using Material Theming. One area of customization includes color.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="theming-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F19taN2gM0P-Iglvzq-i1853dQ-igWSaxB%2Fsliders-crane-ahero.png" src="">
+</img></div>
+</div>
+<figcaption id="theming-figure-caption-0">
+<p>Crane’s customized sliders</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/material-studies/crane.html"}
+' href="https://material.io/design/material-studies/crane.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1uNZNKHX648MofdDQCBIeeR5S6M5sVAyl%2Fcrane-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1uNZNKHX648MofdDQCBIeeR5S6M5sVAyl%2Fcrane-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Crane</h2>
+<p class="object-card__body">Crane is a travel app that uses Material Design components and Material Theming to create a personalized on-brand experience.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/the-color-system.html"}
+' href="https://material.io/design/color/the-color-system.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1mocxvX-LqM6aquHcGDgS3sieBPEQcu4p%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1mocxvX-LqM6aquHcGDgS3sieBPEQcu4p%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">The color system</h2>
+<p class="object-card__body">The Material Design color system can help you create a color theme that reflects your brand or style.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/applying-color-to-ui.html"}
+' href="https://material.io/design/color/applying-color-to-ui.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1mocxvX-LqM6aquHcGDgS3sieBPEQcu4p%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1mocxvX-LqM6aquHcGDgS3sieBPEQcu4p%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Applying color to UI</h2>
+<p class="object-card__body">In a UI, color has a variety of roles: from containing meaning, to expressing a look and feel.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Color</h2><p>Crane’s sliders use custom color on three elements: the active track, inactive track, and thumb.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1jg6qYOrf0NDtIBIFxFgf9UpzPrSfmvWI%2Fsliders-crane-color.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Active track, thumb</p></td><td colspan="1" rowspan="1"><p>Secondary </p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#E30425</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Inactive track</p></td><td colspan="1" rowspan="1"><p>Secondary </p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#E30425</p><p>38%</p></td></tr></tbody></table></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="specs" class="container container--large js-waypoints-trigger article__section" data-section-title="Specs" aria-label="Specs">
+          <h2 class="article__chapter-title">
+            Specs
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sliders</div>
+<div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Continuous sliders</h2><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1t6Mz1MRfbVR3d6nj8axB1hdgR7tkr95P%2Fsliders-spec-continuous.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:127px;width:2px;left:289px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            2
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            2
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-bottom js-measurement-dimensions" style="left:388px;width:12px;top:158px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            12
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            12
+      </span>
+</li>
+<li class="dimension measurement--outside measurement--equal measurement--dimensions js-measurement-dimensions" style="top:122px; left:388px; width:12px; height:12px">
+<span class="">
+</span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:12px; height:12px; left:388px; top:122px"></span>
+<span class="annotation__vector" style="left:395px; top:124px; width:170px; transform:rotate(-90.674037deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:395px; top:124px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:313px; top:-88px;" style="left:313px; top:-88px;">
+<span class="annotation__swatch" style="background-color:#6022ee"></span>
+<p class="annotation__value annotation__value--first">#6022ee</p><p class="annotation__value annotation__value--second">R96 G34 B238</p> </div>
+</li>
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:144px; height:2px; left:308px; top:127px"></span>
+<span class="annotation__vector" style="left:441px; top:126px; width:238px; transform:rotate(87.353759deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:441px; top:126px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:372px; top:322px;" style="left:372px; top:322px;">
+<span class="annotation__swatch" style="background-color:#6022ee3d"></span>
+<p class="annotation__value annotation__value--first">#6022ee3d</p><p class="annotation__value annotation__value--second">R96 G34 B238 A0.24</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:144px; height:2px; left:308px; top:127px"></span>
+<span class="annotation__vector" style="left:450px; top:129px; width:411px; transform:rotate(3.064003deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:450px; top:129px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:781px; top:109px;" style="left:781px; top:109px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">2dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 256px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1t6Mz1MRfbVR3d6nj8axB1hdgR7tkr95P%2Fsliders-spec-continuous.png" src="" style="width: 760px; height: 256px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Discrete sliders</h2><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1a-nzcctzW1hJkfo1dGtxEbo0EzideqLP%2Fsliders-spec-discrete.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-bottom js-measurement-dimensions" style="left:388px;width:12px;top:152px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            12
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            12
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:127px;width:2px;left:295px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            2
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            2
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-bottom js-measurement-dimensions" style="left:422px;width:2px;top:146px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            2
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            2
+      </span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:82px; height:2px; left:308px; top:127px"></span>
+<span class="annotation__vector" style="left:385px; top:126px; width:194px; transform:rotate(-90.000000deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:385px; top:126px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:305px; top:-110px;" style="left:305px; top:-110px;">
+<span class="annotation__swatch" style="background-color:#6200ee"></span>
+<p class="annotation__value annotation__value--first">#6200ee</p><p class="annotation__value annotation__value--second">R98 G0 B238</p> </div>
+</li>
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:144px; height:2px; left:308px; top:127px"></span>
+<span class="annotation__vector" style="left:440px; top:126px; width:220px; transform:rotate(84.004613deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:440px; top:126px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:383px; top:303px;" style="left:383px; top:303px;">
+<span class="annotation__swatch" style="background-color:#6200ee3d"></span>
+<p class="annotation__value annotation__value--first">#6200ee3d</p><p class="annotation__value annotation__value--second">R98 G0 B238 A0.24</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:144px; height:2px; left:308px; top:127px"></span>
+<span class="annotation__vector" style="left:453px; top:128px; width:408px; transform:rotate(3.086489deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:453px; top:128px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:781px; top:108px;" style="left:781px; top:108px;">
+<span class="annotation__note-type">Shape</span>
+<p class="annotation__note-title">All corners</p>
+<p class="annotation__value annotation__value--first">Rounded: 2dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+<li class="annotation annotation--notes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:144px; height:2px; left:308px; top:127px"></span>
+<span class="annotation__vector" style="left:421px; top:126px; width:232px; transform:rotate(89.506083deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:421px; top:126px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:343px; top:316px;" style="left:343px; top:316px;">
+<span class="annotation__note-type">General</span>
+<p class="annotation__note-title">Knotch</p>
+<p class="annotation__value annotation__value--second">2 x 2 dp</p> </div>
+</li>
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 256px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1a-nzcctzW1hJkfo1dGtxEbo0EzideqLP%2Fsliders-spec-discrete.png" src="" style="width: 760px; height: 256px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div></div>
+        </div>
+      </section>
+
+  </div>
+
+  <div class="container container--large">
+
+  <h2>Up next
+      <div class="article-controls">
+        
+      </div>
+  </h2>
+
+<div class="suggested-articles"><div>
+<a aria-label="Snackbars" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../snackbars/snackbars.html"}
+' href="../snackbars/snackbars.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1KJmHmik_XJ7w0CTWoQwWv3QwndFQXXfl%2Fsnackbar-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Snackbars</h4>
+</a>
+<a aria-label="Selection controls" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../selection-controls/selection-controls.html"}
+' href="../selection-controls/selection-controls.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1GB_QnR0LbKOieDcXzLJy3cBx-i1eKVBQ/selection-controls-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Selection controls</h4>
+</a><br>
+
+<a aria-label="Buttons" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../buttons/buttons.html"}
+' href="../buttons/buttons.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1GrPZeVGkdzqdoZRQkve1SvZUlmUl4omR/button-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Buttons</h4>
+</a></div></div>  </div>
+</article>
+    </main>
+
+
+
+<footer class="footer">
+  <div class="container container--jumbo">
+    <div class="footer-block footer-block--about">
+      <a class="footer-block__logo js-analytics-click" href="/"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "/"}
+'>
+        <img class="footer-block__material-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1568406561463/static/m2/images/material_logo.svg" alt="Material Design"/>
+      </a>
+      <div class="footer-block__content">
+        <p class="footer-block__description">Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
+        <ul class="footer-block__social-nav">
+          <li class="footer-block__social-nav-item">  <a href="https://www.github.com/material-components" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on GitHub"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.github.com/material-components"}
+'>GitHub</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.twitter.com/materialdesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on Twitter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.twitter.com/materialdesign"}
+'>Twitter</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/googledesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.youtube.com/googledesign"}
+'>YouTube</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://services.google.com/fb/forms/materialdesignnewsletter/" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Read our Newsletter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://services.google.com/fb/forms/materialdesignnewsletter/"}
+'>Newsletter</a>
+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-block footer-block--legal">
+      <a class="footer-block__logo js-analytics-click" href="https://www.google.com"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.google.com"}
+'>
+        <img class="footer-block__google-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1568406561463/static/m2/images/google_logo.svg" alt="Google"/>
+      </a>
+      <div class="footer-block__content">
+        <ul class="footer-block__legal-nav">
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Privacy Policy"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/privacy"}
+'>Privacy Policy</a>
+</li>
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Terms of Service"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/terms"}
+'>Terms of Service</a>
+</li></ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="ui-mask js-ui-mask"></div>
+<div
+    class="lightbox js-lightbox"
+    data-comp="Lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-labelledby="sr-lightbox-title">
+  <h2 class="screenreader-only sr-lightbox-title" tabindex="0">
+    Explore how Shrine, a retail app, uses Material Design.
+  </h2>
+
+    <header class="lightbox__header">
+      <div class="lightbox__header-title">
+        <span
+            class="lightbox__button js-lightbox-close"
+            data-comp="Tooltip"
+            data-props-tooltip='{"tip": "Close", "direction": "bottom"}'>
+          <i
+              class="material-icons notranslate material-icons--padded mdc-ripple-surface"
+              data-mdc-ripple-is-unbounded tabindex="0">
+            close
+          </i>
+        </span>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+
+      <div class="lightbox__actions">
+        <button type="button" name="button" class="lightbox-redlines-toggle js-redline-sidebar-toggle" data-comp="Tooltip" data-props-tooltip='{"tip": "View Specs", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>flip</i>
+        </button>
+
+        <button type="button" name="button" class="lightbox__button js-share" data-comp="Tooltip" data-props-tooltip='{"tip": "Share", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>share</i>
+        </button>
+
+      </div>
+    </header>
+
+    <div class="lightbox__template js-zoom-wrapper">
+      <div class="lightbox__content js-lightbox-content">
+<img class="ui-loader" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1568406561463/static/m2/images/loader.svg" alt="loader" aria-hidden="true" />      </div>
+<div class="redline-sidebar js-lightbox-sidebar-container" data-comp="RedlineSidebar">
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Image only", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-image js-redline-sidebar-item" value="image" >
+        <i class="material-icons notranslate">&#xE3F4;</i>
+        <span class="redline-sidebar__label-text">Image only</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Measurements", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-measurements js-redline-sidebar-item" value="measurements" >
+        <i class="material-icons notranslate">format_shapes</i>
+        <span class="redline-sidebar__label-text">Measurements</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Text", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-text js-redline-sidebar-item" value="text" >
+        <i class="material-icons notranslate">format_size</i>
+        <span class="redline-sidebar__label-text">Text</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Color", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-colors js-redline-sidebar-item" value="colors" >
+        <i class="material-icons notranslate">palette</i>
+        <span class="redline-sidebar__label-text">Color</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Shape and Elevation", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-shapes js-redline-sidebar-item" value="shapes" >
+        <i class="material-icons notranslate">rounded_corner</i>
+        <span class="redline-sidebar__label-text">Shape and Elevation</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Components", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-components js-redline-sidebar-item" value="components" >
+        <i class="material-icons notranslate">category</i>
+        <span class="redline-sidebar__label-text">Components</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Notes", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-notes js-redline-sidebar-item" value="notes" >
+        <i class="material-icons notranslate">notes</i>
+        <span class="redline-sidebar__label-text">Notes</span>
+      </button>
+    </div>
+<div class="redline-sidebar__toggles js-redline-layer-toggles">
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--dimensions">
+        <input type="checkbox" id="dimensions" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="dimensions">Dimensions</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--padding">
+        <input type="checkbox" id="padding" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="padding">Padding</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--typography">
+        <input type="checkbox" id="typography" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="typography">Text baseline</label>
+  </div>
+</div><nav class="carousel__nav">
+  <button
+      class="carousel__button carousel__button--prev mdc-ripple-surface js-carousel-prev"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Previous", "direction": "right"}'>
+    <i class="material-icons notranslate">chevron_left</i>
+  </button>
+
+  <button
+      class="carousel__button carousel__button--next mdc-ripple-surface js-carousel-next"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Next", "direction": "left"}'>
+    <i class="material-icons notranslate">chevron_right</i>
+  </button>
+</nav><div class="zoom-buttons" data-comp="Zoom">
+  <div class="zoom-buttons__wrapper">
+
+    <button class="mdc-button-zoom js-zoom-out" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom out", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">remove</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-reset" data-comp="Tooltip" data-props-tooltip='{"tip": "Reset", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">search</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-in" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom in", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">add</i>
+    </button>
+
+    <div class="zoom-buttons__extras">
+      <button class="mdc-button-zoom js-colorpicker-toggle" data-comp="Tooltip Colorpicker" data-props-tooltip='{"tip": "Color picker", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">colorize</i>
+      </button>
+      <button class="mdc-button-zoom js-ruler-toggle" data-comp="Tooltip Ruler" data-props-tooltip='{"tip": "Ruler", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">straighten</i>
+      </button>
+    </div>
+
+  </div>
+</div>    </div>
+
+
+<aside class="mdc-dialog" role="alertdialog" aria-labelledby="mdc-dialog-label" aria-describedby="mdc-dialog-description" data-comp="Share">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-label" class="mdc-dialog__header__title">Share</h2>
+      <button type="button" class="mdc-dialog-share-close js-dialog-close">
+        <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>close</i>
+      </button>
+    </header>
+    <section id="mdc-dialog-description" class="mdc-dialog__body">
+      <input type="text" readonly class="mdc-dialog-share-url js-share-url" />
+      <button type="button" class="mdc-button mdc-ripple-surface mdc-dialog-copy js-dialog-copy">Copy</button>
+    </section>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside></div><div class="mdc-snackbar snackbar-wrapper" data-comp="Snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+  <div class="mdc-snackbar__text"></div>
+  <div class="mdc-snackbar__action-wrapper">
+    <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
+  </div>
+</div>
+    <script src="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js"></script>
+    <script src="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js"></script>
+    <script src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1568406561463/static/m2/js/main.min.js"></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  </body>
+</html>

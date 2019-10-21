@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="en" class="preload">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Selection controls - Material Design</title>
+
+
+    <meta itemprop="name"        property="og:title"       name="twitter:title"       content="Selection controls" />
+    <meta itemprop="description" property="og:description" name="twitter:description" content="Selection controls allow the user to select options." />
+    <meta itemprop="image"       property="og:image"       name="twitter:image"       content="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1GB_QnR0LbKOieDcXzLJy3cBx-i1eKVBQ%2Fselection-controls-thumbnail-2x1.png" />
+    <meta itemprop="url"         property="og:url"         name="twitter:url"         content="https://material.io/components/selection-controls/index.html" />
+    <meta property="og:site_name" content="Material Design" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">    <link rel="shortcut icon" href="/favicon.ico">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHRPF8');</script>    <style>
+.animatable {
+        opacity: 0;
+        position: relative;
+        top: 16px;         transition: opacity 235ms cubic-bezier(.4,0,.2,1),
+                    top 500ms cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/css/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+    <link rel="preload" href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/js/main.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js" as="script">
+
+
+  </head>
+
+  <body class="header-show page--article left-rail"
+        data-comp="Global "
+        data-slug-id="selectionControls"
+        data-spec-alias="mio-components"
+ >
+    <a class="screenreader-only" href="#main_content">Skip to main content</a>
+
+  <header class="header js-header" data-comp="Header">
+      <button class="header__hamburger header__button" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+        <i class="material-icons notranslate header__hamburger-icon" title="Toggle Navigation">menu</i>
+      </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+    <nav class="header__nav" role="navigation">
+      <ul class="header__nav-list header__nav-list--selected">
+            <li class="header__nav-item  js-header-item">
+    <a href="/design"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/design"}
+'>
+      Design
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  header__nav-item--active js-header-item" aria-current="true">
+    <a href="/components"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/components"}
+'>
+      Components
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/develop"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/develop"}
+'>
+      Develop
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/resources"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/resources"}
+'>
+      Resources
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+      </ul>
+    </nav>
+
+    <form id="search-form" class="search-form js-search" data-comp="SearchForm" data-props-searchform='{"basePath": "/", "ajax": false, "showOnLoad": false}'>
+      <button class="search-form__back js-search-back js-analytics-click" type="button" aria-label="Exit search results"
+              data-analytics='  {
+    "event": "trackEvent",
+    "category": "search back",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+        <i class="material-icons notranslate">arrow_back</i>
+      </button>
+
+      <input id="search-query" class="search-form__input js-search-input" name="q" type="text" title="query" placeholder="Search" autocomplete="off" aria-label="Type your search and press enter.">
+    </form>
+
+    <button class="header__search header__button js-toggle-search js-analytics-click"
+            data-analytics='  {
+    "event": "trackEvent",
+    "category": "search",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+      <div class="icons-container mdc-ripple-surface" data-mdc-ripple-is-unbounded>
+        <i class="material-icons notranslate header__spyglass" aria-label="Search Material Design">search</i>
+        <i class="material-icons notranslate header__search-close" aria-label="Close search">close</i>
+      </div>
+    </button>
+  </header>
+
+
+<nav aria-label="Breadcrumbs" class="breadcrumbs" data-comp="Breadcrumbs" aria-hidden="true">
+    <button class="breadcrumbs__hamburger" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+      <i class="material-icons notranslate" title="Toggle Navigation">menu</i>
+    </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+  <ol class="container container--large breadcrumbs__list">
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click "
+           href="../components"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../components"}
+'>Components</a>
+      </li>
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link"
+           href="../selection-controls/selection-controls.html"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../selection-controls/selection-controls.html"}
+'>Selection controls</a>
+      </li>
+      <li class="breadcrumbs__crumb disabled breadcrumbs__chapter">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link js-breadcrumb-hash"
+           href="#usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>Usage</a>
+      </li>
+  </ol>
+</nav>
+
+
+<nav class="side-nav" data-comp="SideNav" role="navigation">
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+
+
+            <span class="side-nav__section-title">Components</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-bottom"}
+'>
+            App bars: bottom
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-top"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-top"}
+'>
+            App bars: top
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../backdrop"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../backdrop"}
+'>
+            Backdrop
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../banners"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../banners"}
+'>
+            Banners
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../bottom-navigation"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../bottom-navigation"}
+'>
+            Bottom navigation
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons"}
+'>
+            Buttons
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons-floating-action-button"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons-floating-action-button"}
+'>
+            Buttons: floating action button
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../cards"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../cards"}
+'>
+            Cards
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../chips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../chips"}
+'>
+            Chips
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../data-tables"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../data-tables"}
+'>
+            Data tables
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dialogs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dialogs"}
+'>
+            Dialogs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dividers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dividers"}
+'>
+            Dividers
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../image-lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../image-lists"}
+'>
+            Image lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../lists"}
+'>
+            Lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../menus"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../menus"}
+'>
+            Menus
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../navigation-drawer"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation-drawer"}
+'>
+            Navigation drawer
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../pickers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../pickers"}
+'>
+            Pickers
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../progress-indicators"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../progress-indicators"}
+'>
+            Progress indicators
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface active js-analytics-click"
+             href="../selection-controls"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../selection-controls"}
+'>
+            Selection controls
+          </a>
+
+              <div class="side-nav__articles">
+    <i class="side-nav__progress-bar">
+      <i class="side-nav__scrub js-submenu-scrub"></i>
+    </i>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-usage js-analytics-click" href="#usage" data-section-id="usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>
+          <span class="js-anchor-text">Usage</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-checkboxes js-analytics-click" href="#checkboxes" data-section-id="checkboxes"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#checkboxes"}
+'>
+          <span class="js-anchor-text">Checkboxes</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-radio-buttons js-analytics-click" href="#radio-buttons" data-section-id="radio-buttons"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#radio-buttons"}
+'>
+          <span class="js-anchor-text">Radio buttons</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-switches js-analytics-click" href="#switches" data-section-id="switches"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#switches"}
+'>
+          <span class="js-anchor-text">Switches</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-theming js-analytics-click" href="#theming" data-section-id="theming"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#theming"}
+'>
+          <span class="js-anchor-text">Theming</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-specs js-analytics-click" href="#specs" data-section-id="specs"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#specs"}
+'>
+          <span class="js-anchor-text">Specs</span>
+        </a>
+      </div>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sheets-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-bottom"}
+'>
+            Sheets: bottom
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sheets-side"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-side"}
+'>
+            Sheets: side
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sliders"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sliders"}
+'>
+            Sliders
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../snackbars"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../snackbars"}
+'>
+            Snackbars
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tabs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tabs"}
+'>
+            Tabs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../text-fields"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../text-fields"}
+'>
+            Text fields
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tooltips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tooltips"}
+'>
+            Tooltips
+          </a>
+
+      </li>
+
+  </ul>
+</nav>
+
+
+    <main id="main_content" class="main" role="main" aria-labelledby="Main Content">
+<article class="article" data-comp="Waypoints">
+  <div class="article__intro container container--large js-waypoints-trigger-initial">
+    <div class="article__intro-text">
+      <h1 class="article__title animatable js-anim-trigger">
+
+        Selection controls
+
+            <div class="article-controls">
+              
+            </div>
+      </h1>
+
+
+        <div class="article__intro-text animatable js-anim-trigger">
+        <div>
+<div aria-hidden="true" class="keywords hidden">selection controls</div>
+<h2>Selection controls allow the user to select options.</h2><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="selection-controls-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1nrS8g8O8bFXlY1lheymPm7BbCGLdwW43%2Fselectioncontrols-usage-howtouse.png" src="">
+</img></div>
+</div>
+<figcaption id="selection-controls-figure-caption-0"><hr class="spacer" role="presentation"/></figcaption>
+</figure><h3>Developer documentation</h3><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Component</p></td><td colspan="1" rowspan="1"><p>Platform</p></td><td colspan="1" rowspan="1"><p>Status</p></td></tr><tr><td colspan="1" rowspan="4"><p>Checkboxes</p></td><td colspan="1" rowspan="1"><p>Android</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/android/components/checkbox/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>iOS</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines" rel="noopener" target="_blank">Platform exception</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>Web</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/web/components/input-controls/checkboxes/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>Flutter</p></td><td colspan="1" rowspan="1"><p><a href="https://api.flutter.dev/flutter/material/Checkbox-class.html" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="4"><p>Radio buttons</p></td><td colspan="1" rowspan="1"><p>Android</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/android/components/radiobutton/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>iOS</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines" rel="noopener" target="_blank">Platform exception</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>Web</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/web/components/input-controls/radio-buttons/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>Flutter</p></td><td colspan="1" rowspan="1"><p><a href="https://api.flutter.dev/flutter/material/Radio-class.html" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="4"><p>Switches</p></td><td colspan="1" rowspan="1"><p>Android</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/android/components/switch/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>iOS</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines" rel="noopener" target="_blank">Platform exception</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>Web</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/web/components/input-controls/switches/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>Flutter</p></td><td colspan="1" rowspan="1"><p><a href="https://api.flutter.dev/flutter/material/Switch-class.html" rel="noopener" target="_blank">Available</a></p></td></tr></tbody></table></div></section></div></div>
+        </div>
+    </div>
+
+      <nav class="article__nav animatable js-anim-trigger">
+        <span class="eyebrow">Contents</span>
+        <ul>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#usage" data-section-id="usage"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#usage"}
+'>Usage</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#checkboxes" data-section-id="checkboxes"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#checkboxes"}
+'>Checkboxes</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#radio-buttons" data-section-id="radio-buttons"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#radio-buttons"}
+'>Radio buttons</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#switches" data-section-id="switches"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#switches"}
+'>Switches</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#theming" data-section-id="theming"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#theming"}
+'>Theming</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#specs" data-section-id="specs"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#specs"}
+'>Specs</a>
+            </li>
+        </ul>
+      </nav>
+  </div>
+
+  <hr />
+
+  <div class="article__body animatable js-breadcrumb-toggle js-anim-trigger">
+      <section id="usage" class="container container--large js-waypoints-trigger article__section" data-section-title="Usage" aria-label="Usage">
+          <h2 class="article__chapter-title">
+            Usage
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">selection controls</div>
+<p>Selection controls allow users to complete tasks that involve making choices such as selecting options, or switching settings on or off. Selection controls are found on screens that ask users to make decisions or declare preferences such as settings or dialogs.</p><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Principles Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Principles</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Selection controls should be familiar, scannable, and efficient.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module-module col-3"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="772px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 99.8704663212%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="99.8704663212%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1UAHliMCXlf4RJs0QtajQPg5XvB7xFtFL%2Fselection-controls-illos-01.png" src="">
+</img></div>
+</div>
+</figure><h2>Familiar</h2><p>Selection controls have been in user interfaces for a long time and should be used as expected. </p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="772px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 99.8704663212%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="99.8704663212%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1X3Y1R9tzugqgxlq4N_FFFmMUULGkqMDD%2Fselection-controls-illos-03.png" src="">
+</img></div>
+</div>
+</figure><h2>Scannable</h2><p>It should be visible at a glance if a selection control has been selected, and selected items should be more visually prominent than unselected items.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="772px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 99.8704663212%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="99.8704663212%" data-src="../assets/1oFmEEB73kKZbu3S8DjzV1uV4l3WWndBM/selection-controls-illos-02.png" src="">
+</img></div>
+</div>
+</figure><h2>Efficient</h2><p>Selection controls make it easy to compare available options. </p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Types Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Types</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Selection controls are radio buttons, checkboxes, and switches.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module-module col-3"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1RT_6S5nQA9TLA_xUZMwMBQVA3zNfBuh_/when-to-use-radiobuttons.png" src="">
+</img></div>
+</div>
+</figure><h2>Radio buttons</h2></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1nl-0NiKgfyT1d57Zzbni4-y6Mf-V4JXY%2Fwhen-to-use-checkboxes.png" src="">
+</img></div>
+</div>
+</figure><h2>Checkboxes</h2></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1Ifgmc-gBCb2jTo382kyzlbr48Eq3hfen/when-to-use-switches.png" src="">
+</img></div>
+</div>
+</figure><h2>Switches</h2></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse When to use radio buttons Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">When to use radio buttons</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Selection controls should be used</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Use radio buttons to:</p><ul class="lst-kix_rw9slbok1pfj-0 start"><li>Select a single option from a list</li><li>Expose all available options</li></ul><p>If available options can be collapsed, consider using a dropdown menu instead, as it uses less space.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1Rh9QY9M8sva_mgS0JC3NkoV-GXbgesVA%2Fselectioncontrols-usage-whentouse-radio.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-0">
+<p>Radio buttons</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../menus/menus.html#menus"}
+' href="../menus/menus.html#menus" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="../assets/1Hd8IgHigFkdRRM9dDXXE23AxbIR4Qi3j/menus-thumbnail-1x1-circle.png" style="background-image: url('../assets/1Hd8IgHigFkdRRM9dDXXE23AxbIR4Qi3j/menus-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Menus</h2>
+<p class="object-card__body">Menus display a list of choices on temporary surfaces.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Radio buttons should be used instead of checkboxes if only one item can be selected from a list.</p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1JcTLh6AbNajdGp_iBkN-QvTCBlm3ppI3/selectioncontrols-usage-whentouse-dont-checkboxes.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-1">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t use checkboxes when only one item can be selected from a list. Use radio buttons instead.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1-AFEBqeYlYHKlSU-rc6J76mZOZEq_Sp3%2Fselectioncontrols-usage-whentouse-do-radio.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-2">
+<p class="s-tag-caption do">Do.</p><p>Use radio buttons when only one item can be selected from a list.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse When to use switches Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">When to use switches</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Use switches to: Swtiches should be used instead of radio buttons if only one item can be selected from a list.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Use switches to:</p><ul class="lst-kix_l4bt078m1s5m-0 start"><li>Toggle a single option on or off, on mobile and tablet </li><li>Immediately activate or deactivate something</li></ul><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1nniahP0zoyMiZlKYLUfbktaTChM1CRJn%2Fselectioncontrols-usage-whentouse-switches.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-3">
+<p>Switches</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Swtiches should be used instead of radio buttons if only one item can be selected from a list.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F18qZ7mzBwOnqZXpRSYimW6aMQZiqG4dzu%2Fselectioncontrols-usage-whentouse-dont-radio.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-4">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t use radio buttons to toggle an option on or off.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1ZaDjo1e3SI8Wbzz4k5QHJj0cQH1FuCKP%2Fselectioncontrols-usage-whentouse-do-switches.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-5">
+<p class="s-tag-caption do">Do.</p><p>Use switches to turn an option on or off, especially on mobile.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse When to use checkboxes Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">When to use checkboxes</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Use checkboxes to:</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Use checkboxes to:</p><ul class="lst-kix_qc2l4wibqtnp-0 start"><li>Select one or multiple items from a list</li><li>Present a list containing sub-selections</li><li>Turn an option on or off in desktop environment</li></ul><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1zn-VtNelawmXvBepVlv2hRmB6Egf6Roc/selectioncontrols-checkboxes-usage-parentchild-1c.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-6">
+<p>Checkboxes</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>When to use checkboxes instead of toggles</h2><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F16m5-Wk_C4pb6jO2ExiCpQTCMdGhxdPel%2Fselectioncontrols-usage-whentouse-dont-switches.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-7">
+<p class="s-tag-caption dont">Don’t.</p><p>If a list consists of multiple options, avoid using switches. Use checkboxes instead because they take up less space.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-8" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/16aHMSV5UVzxn_q94taFH9PpY4edwZQML/selectioncontrols-usage-whentouse-do-checkboxes.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-8">
+<p class="s-tag-caption do">Do.</p><p>Checkboxes are for making selections from a list. They let users select more than one item and allow for easy selection or deselection of all items with a parent checkbox.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="checkboxes" class="container container--large js-waypoints-trigger article__section" data-section-title="Checkboxes" aria-label="Checkboxes">
+          <h2 class="article__chapter-title">
+            Checkboxes
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">selection controls</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Usage Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Usage</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Checkboxes allow the user to select one or more items from a set. Checkboxes can be used to turn an option on or off. Checkboxes...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><p>Checkboxes allow the user to select one or more items from a set. Checkboxes can be used to turn an option on or off. </p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="checkboxes-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1jlw6aM3z1_iuXkXH6AiVT18lIh7OxcM8%2Fselectioncontrols-checkboxes-usage.png" src="">
+</img></div>
+</div>
+<figcaption id="checkboxes-figure-caption-0">
+<p>Selected and unselected checkboxes</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="figure-figure col-2"><div class="figure"><figure aria-hidden="true" class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder hide-controls bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": true}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1H0YtDEsMSV0Qpj5cb6UAlOAu1WQVyRqp%2Fslidercontrols-checkbox-v03.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p>Using checkboxes to select multiple items in a list</p></figcaption></div><div class="figure"><figure aria-hidden="true" class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder hide-controls bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": true}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/1HzsBZX4UXLwEUtCZY3rAeIab6K-euKI5/slidercontrols-checkbox-darkmode-v02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p>Using a checkbox to turn an option on or off</p></figcaption></div></section></div><div class="col-list rich-media"><section class="figure col-1 h2-spacing"><div class="figure"><h2>Parent and child checkboxes</h2><p>Checkboxes can have a parent-child relationship with other checkboxes. </p><ul class="lst-kix_jzjeakvmwijt-0 start"><li>When the parent checkbox is checked, all child checkboxes are checked</li><li>If a parent checkbox is unchecked, all child checkboxes are unchecked</li><li>If some, but not all, child checkboxes are checked, the parent checkbox becomes an indeterminate checkbox</li></ul><hr class="spacer" role="presentation"/><figure aria-hidden="true" class="inline-media inline-media--video" data-maxwidth="760px">
+<div class="video-player media-placeholder hide-controls bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": true}' style="padding-top: 50.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1hEITxP1I5Tw8pjtU4ALuto7EzjFoZJwl%2Fslidercontrols-parent-child-v03.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p>Checked, unchecked, and indeterminate parent checkboxes  </p></figcaption></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse States Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">States</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Checkboxes can be selected, unselected, or indeterminate. Checkboxes have enabled, hover, focused and pressed states.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Checkboxes can be selected, unselected, or indeterminate. Checkboxes have enabled, hover, focused and pressed states. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="checkboxes-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F17As8VY7jLKOS4nD1pyN9459fqh8lerKu%2Fselectioncontrols-checkboxes-states.png" src="">
+</img></div>
+</div>
+<figcaption id="checkboxes-figure-caption-1">
+<p>Checkbox states</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="radio-buttons" class="container container--large js-waypoints-trigger article__section" data-section-title="Radio buttons" aria-label="Radio buttons">
+          <h2 class="article__chapter-title">
+            Radio buttons
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">selection controls</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Usage Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Usage</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Radio buttons allow the user to select one option from a set. Use radio buttons when the user needs to see all available options. If...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>Radio buttons allow the user to select one option from a set. Use radio buttons when the user needs to see all available options. If available options can be collapsed, consider using a dropdown menu because it uses less space.  </p><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../menus/menus.html#dropdown-menu"}
+' href="../menus/menus.html#dropdown-menu" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="../assets/1Hd8IgHigFkdRRM9dDXXE23AxbIR4Qi3j/menus-thumbnail-1x1-circle.png" style="background-image: url('../assets/1Hd8IgHigFkdRRM9dDXXE23AxbIR4Qi3j/menus-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Dropdown menu</h2>
+<p class="object-card__body">Menus display a list of choices on temporary surfaces.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module-figure col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="radio-buttons-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1reyxqt9YMJKo4lkyirw8vz53CfCaOOS5/selectioncontrols-radio-usage.png" src="">
+</img></div>
+</div>
+<figcaption id="radio-buttons-figure-caption-0">
+<p>Selected and unselected radio buttons</p></figcaption>
+</figure></div><div class="figure"><figure aria-hidden="true" class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder hide-controls bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": true}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/1LWKcUZCMTmMKWuqQueSaxGm3mpxFmoRS/slidercontrols-radial-v01.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p>Using radio buttons to select a single item</p></figcaption></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse States Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">States</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Radio buttons can be selected or unselected. Radio buttons have enabled, hover, focused and pressed states.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Radio buttons can be selected or unselected. Radio buttons have enabled, hover, focused and pressed states. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="radio-buttons-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OEoHADVmjs-_J-MeyiJLlWnXpvCS1Rdd%2Fselectioncontrols-radio-states.png" src="">
+</img></div>
+</div>
+<figcaption id="radio-buttons-figure-caption-1">
+<p>Radio button states</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="switches" class="container container--large js-waypoints-trigger article__section" data-section-title="Switches" aria-label="Switches">
+          <h2 class="article__chapter-title">
+            Switches
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">selection controls</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Usage Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Usage</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Switches toggle the state of a single setting on or off. They are the preferred way to adjust settings on mobile. A switch is successfully...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><p>Switches toggle the state of a single setting on or off. They are the preferred way to adjust settings on mobile. </p><h2>State</h2><p>A switch is successfully toggled when the user slides a switch thumb to the other side of the track, and the state of the switch changes. </p><h2>Text label</h2><p>The option that the switch controls, as well as the state it’s in, should be made clear from the corresponding inline label. </p><p>Avoid creating a switch that includes the text “on” and “off” within the graphic itself. The switch alone should be sufficient.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="switches-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F18m9TuDx2ykggqxGIvNkPWIYllY-iqjBh%2Fselectioncontrols-switches-usage.png" src="">
+</img></div>
+</div>
+<figcaption id="switches-figure-caption-0">
+<p>1. Thumb<br>
+2. Track </br></p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><figure aria-hidden="true" class="inline-media inline-media--video" data-maxwidth="760px">
+<div class="video-player media-placeholder hide-controls bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": true}' style="padding-top: 33.6842105263%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1KShL7b5IGsKi6BtlGbdvn4kM6G1alUeO%2Fslidercontrols-switches-darkmode-v02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p>Using a switch to turn an option on and off</p></figcaption></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Behavior Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Behavior</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>When a user toggles a switch, its corresponding action takes effect immediately. If a switch cannot be turned on, the switch will automatically turn back...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><p>When a user toggles a switch, its corresponding action takes effect immediately. If a switch cannot be turned on, the switch will automatically turn back off.</p><figure aria-hidden="true" class="inline-media inline-media--video" data-maxwidth="760px">
+<div class="video-player media-placeholder hide-controls bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": true}' style="padding-top: 36.8421052632%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1w3KOMo81gakKP7JC6yNogxCt-CadYQvx%2Fslidercontrols-1a-v02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p>A switch unable to be toggled on</p></figcaption></div></section></div><div class="col-list rich-media"><section class="figure col-1 h2-spacing"><div class="figure"><h2>Display processing status</h2><p>Because a switch shows the actual status of something, sometimes there is a delay in its change of state. In such cases, a processing status animation can be used.</p><p>A processing status is an animation on the thumb of the switch. For example, it can be used when a switch that controls a hardware feature experiences a delay before its final status can be confirmed. </p><figure aria-hidden="true" class="inline-media inline-media--video" data-maxwidth="760px">
+<div class="video-player media-placeholder hide-controls bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": true}' style="padding-top: 36.8421052632%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F13vdLWUJ-zpgHVaYc2Mwddd5oY9ElA-Uq%2Fslidercontrols-1b-v02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p>A processing status animation</p></figcaption></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse States Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">States</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Switches can be on or off. Switches have enabled, hover, focused, and pressed states. Display the outer radial reaction only on form factors that use...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Switches can be on or off. Switches have enabled, hover, focused, and pressed states. </p><p>Display the outer radial reaction only on form factors that use touch, where interaction may obstruct the element completely. </p><p>For desktop, the radial reaction isn’t needed.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="switches-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1MiD-2erXPyZKDpOOdaWTsqzkHGOt9Z7R/selectioncontrols-switches-states.png" src="">
+</img></div>
+</div>
+<figcaption id="switches-figure-caption-1">
+<p>Switch states</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="theming" class="container container--large js-waypoints-trigger article__section" data-section-title="Theming" aria-label="Theming">
+          <h2 class="article__chapter-title">
+            Theming
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">selection controls</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Crane Material Theme Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Crane Material Theme</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This travel app’s selection controls have been customized using Material Theming to use custom color. Crane is a travel app that uses Material Design components...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>This travel app’s selection controls have been customized using Material Theming to use custom color.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="theming-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1aWDfRzdFBQrqdFeFN0yLJA8GgrAPgVIo%2Fselectioncontrols-crane-ahero.png" src="">
+</img></div>
+</div>
+<figcaption id="theming-figure-caption-0">
+<p>Crane’s customized selection controls</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/material-studies/crane.html"}
+' href="https://material.io/design/material-studies/crane.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1QF7Y8DwDrDCM_wg4vGdlBguvObkAC18V%2Fcrane-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1QF7Y8DwDrDCM_wg4vGdlBguvObkAC18V%2Fcrane-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Crane</h2>
+<p class="object-card__body">Crane is a travel app that uses Material Design components and Material Theming to create a personalized on-brand experience.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/the-color-system.html"}
+' href="https://material.io/design/color/the-color-system.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F127HSNoEs1mRhZ0Spo5EHnrFw0QJmqlHq%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F127HSNoEs1mRhZ0Spo5EHnrFw0QJmqlHq%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">The Color System</h2>
+<p class="object-card__body">The Material Design color system can help you create a color theme that reflects your brand or style.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/applying-color-to-ui.html"}
+' href="https://material.io/design/color/applying-color-to-ui.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F127HSNoEs1mRhZ0Spo5EHnrFw0QJmqlHq%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F127HSNoEs1mRhZ0Spo5EHnrFw0QJmqlHq%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Applying color to UI</h2>
+<p class="object-card__body">In a UI, color has a variety of roles: from containing meaning, to expressing a look and feel.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Color</h2><p>Crane’s selection controls use a custom color.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1-oDsNBQ-4Bl7HmCzltyxoeUr4mmpKu2S%2Fselectioncontrols-crane-color.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Selection controls</p></td><td colspan="1" rowspan="1"><p>Secondary </p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#E30425</p><p>100%</p></td></tr></tbody></table></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="specs" class="container container--large js-waypoints-trigger article__section" data-section-title="Specs" aria-label="Specs">
+          <h2 class="article__chapter-title">
+            Specs
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">selection controls</div>
+<div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Checkboxes</h2><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "../assets/1seffKf9Q3x_zfhAuO8NTGHY86aQj1C5f/selectioncontrols-spec-checkboxes.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:116px;width:24px;left:290px;">
+<span aria-hidden="true" class="measurement__value">
+            24
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            24
+      </span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:16px; height:16px; left:310px; top:120px"></span>
+<span class="annotation__vector" style="left:317px; top:120px; width:162px; transform:rotate(-90.353673deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:317px; top:120px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:236px; top:-84px;" style="left:236px; top:-84px;">
+<span class="annotation__swatch" style="background-color:#0000008a"></span>
+<p class="annotation__value annotation__value--first">#0000008a</p><p class="annotation__value annotation__value--second">R0 G0 B0 A0.54</p> </div>
+</li>
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:16px; height:16px; left:434px; top:119px"></span>
+<span class="annotation__vector" style="left:443px; top:121px; width:172px; transform:rotate(-68.938646deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:443px; top:121px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:425px; top:-82px;" style="left:425px; top:-82px;">
+<span class="annotation__swatch" style="background-color:#6200eeff"></span>
+<p class="annotation__value annotation__value--first">#6200eeff</p><p class="annotation__value annotation__value--second">R98 G0 B238 A1.00</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:24px; height:24px; left:430px; top:116px"></span>
+<span class="annotation__vector" style="left:453px; top:123px; width:306px; transform:rotate(-76.009157deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:453px; top:123px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:447px; top:-216px;" style="left:447px; top:-216px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">0dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+<li class="annotation annotation--notes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:16px; height:16px; left:310px; top:120px"></span>
+<span class="annotation__vector" style="left:322px; top:130px; width:216px; transform:rotate(93.444203deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:322px; top:130px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:229px; top:304px;" style="left:229px; top:304px;">
+<span class="annotation__note-type">General</span>
+<p class="annotation__note-title">Stroke weight</p>
+<p class="annotation__value annotation__value--second">2dp</p> </div>
+</li>
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 256px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="../assets/1seffKf9Q3x_zfhAuO8NTGHY86aQj1C5f/selectioncontrols-spec-checkboxes.png" src="" style="width: 760px; height: 256px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Radio buttons</h2><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "../assets/1NsvAakg42RV_h0_mz4CKTuSwwprxiYFW/selectioncontrols-spec-radiobuttons.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:118px;width:20px;left:306px;">
+<span aria-hidden="true" class="measurement__value">
+            20
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            20
+      </span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:20px; height:20px; left:308px; top:118px"></span>
+<span class="annotation__vector" style="left:317px; top:130px; width:195px; transform:rotate(-89.706178deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:317px; top:130px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:238px; top:-107px;" style="left:238px; top:-107px;">
+<span class="annotation__swatch" style="background-color:#6200eeff"></span>
+<p class="annotation__value annotation__value--first">#6200eeff</p><p class="annotation__value annotation__value--second">R98 G0 B238 A1.00</p> </div>
+</li>
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:20px; height:20px; left:432px; top:118px"></span>
+<span class="annotation__vector" style="left:444px; top:127px; width:198px; transform:rotate(-74.213208deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:444px; top:127px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:418px; top:-106px;" style="left:418px; top:-106px;">
+<span class="annotation__swatch" style="background-color:#00000089"></span>
+<p class="annotation__value annotation__value--first">#00000089</p><p class="annotation__value annotation__value--second">R0 G0 B0 A0.54</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:20px; height:20px; left:308px; top:118px"></span>
+<span class="annotation__vector" style="left:313px; top:123px; width:289px; transform:rotate(-97.934364deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:313px; top:123px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:193px; top:-206px;" style="left:193px; top:-206px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">0dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+<li class="annotation annotation--notes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:24px; height:24px; left:430px; top:116px"></span>
+<span class="annotation__vector" style="left:445px; top:139px; width:194px; transform:rotate(79.957976deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:445px; top:139px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:399px; top:289px;" style="left:399px; top:289px;">
+<span class="annotation__note-type">General</span>
+<p class="annotation__note-title">Stroke weight</p>
+<p class="annotation__value annotation__value--second">2dp</p> </div>
+</li>
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 256px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="../assets/1NsvAakg42RV_h0_mz4CKTuSwwprxiYFW/selectioncontrols-spec-radiobuttons.png" src="" style="width: 760px; height: 256px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Switches</h2><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1mptGCFjmK-9Vb3yNJe6xGB3_U4f32xe2%2Fselectioncontrols-spec-switches.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:118px;width:20px;left:287px;">
+<span aria-hidden="true" class="measurement__value">
+            20
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            20
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-top js-measurement-dimensions" style="left:291px;width:36px;top:88px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            36
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            36
+      </span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style=""></span>
+<span class="annotation__vector" style=""></span>
+<span class="annotation__anchor js-annotation-anchor" style=""></span>
+<div class="annotation__card js-annotation-card" data-coords="" style="">
+<span class="annotation__swatch" style="background-color:"></span>
+</div>
+</li>
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:19px; height:20px; left:290px; top:118px"></span>
+<span class="annotation__vector" style="left:298px; top:119px; width:254px; transform:rotate(-127.815733deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:298px; top:119px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:62px; top:-124px;" style="left:62px; top:-124px;">
+<span class="annotation__swatch" style="background-color:#ffffff"></span>
+<p class="annotation__value annotation__value--first">#ffffff</p><p class="annotation__value annotation__value--second">R255 G255 B255</p> </div>
+</li>
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:40px; height:24px; left:430px; top:116px"></span>
+<span class="annotation__vector" style="left:461px; top:130px; width:228px; transform:rotate(58.260859deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:461px; top:130px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:501px; top:282px;" style="left:501px; top:282px;">
+<span class="annotation__swatch" style="background-color:#6200eeff"></span>
+<p class="annotation__value annotation__value--first">#6200eeff</p><p class="annotation__value annotation__value--second">R98 G0 B238 A1.00</p> </div>
+</li>
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:40px; height:24px; left:430px; top:116px"></span>
+<span class="annotation__vector" style="left:438px; top:128px; width:201px; transform:rotate(103.760785deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:438px; top:128px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:310px; top:282px;" style="left:310px; top:282px;">
+<span class="annotation__swatch" style="background-color:#6200ee89"></span>
+<p class="annotation__value annotation__value--first">#6200ee89</p><p class="annotation__value annotation__value--second">R98 G0 B238 A0.54</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:40px; height:24px; left:430px; top:116px"></span>
+<span class="annotation__vector" style="left:464px; top:138px; width:441px; transform:rotate(2.207588deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:464px; top:138px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:825px; top:113px;" style="left:825px; top:113px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">0dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 256px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1mptGCFjmK-9Vb3yNJe6xGB3_U4f32xe2%2Fselectioncontrols-spec-switches.png" src="" style="width: 760px; height: 256px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div></div>
+        </div>
+      </section>
+
+  </div>
+
+  <div class="container container--large">
+
+  <h2>Up next
+      <div class="article-controls">
+        
+      </div>
+  </h2>
+
+<div class="suggested-articles"><div>
+<a aria-label="Sheets: bottom" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../sheets-bottom/sheets-bottom.html"}
+' href="../sheets-bottom/sheets-bottom.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566408167639%2Fassets%2F1Jemv3-5kV0noAOEBnE0WXIHJkW8rm_DF%2Fsheets-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Sheets: bottom</h4>
+</a>
+<a aria-label="Buttons" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../buttons/buttons.html"}
+' href="../buttons/buttons.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1GrPZeVGkdzqdoZRQkve1SvZUlmUl4omR/button-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Buttons</h4>
+</a><br>
+
+<a aria-label="Menus" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../menus/menus.html"}
+' href="../menus/menus.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1RYN4UBE83dKYhf0pxrqnRSdMdoIqg5AW/menus-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Menus</h4>
+</a></div></div>  </div>
+</article>
+    </main>
+
+
+
+<footer class="footer">
+  <div class="container container--jumbo">
+    <div class="footer-block footer-block--about">
+      <a class="footer-block__logo js-analytics-click" href="/"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "/"}
+'>
+        <img class="footer-block__material-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/material_logo.svg" alt="Material Design"/>
+      </a>
+      <div class="footer-block__content">
+        <p class="footer-block__description">Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
+        <ul class="footer-block__social-nav">
+          <li class="footer-block__social-nav-item">  <a href="https://www.github.com/material-components" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on GitHub"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.github.com/material-components"}
+'>GitHub</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.twitter.com/materialdesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on Twitter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.twitter.com/materialdesign"}
+'>Twitter</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/googledesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.youtube.com/googledesign"}
+'>YouTube</a>
+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-block footer-block--legal">
+      <a class="footer-block__logo js-analytics-click" href="https://www.google.com"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.google.com"}
+'>
+        <img class="footer-block__google-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/google_logo.svg" alt="Google"/>
+      </a>
+      <div class="footer-block__content">
+        <ul class="footer-block__legal-nav">
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Privacy Policy"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/privacy"}
+'>Privacy Policy</a>
+</li>
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Terms of Service"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/terms"}
+'>Terms of Service</a>
+</li></ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="ui-mask js-ui-mask"></div>
+<div
+    class="lightbox js-lightbox"
+    data-comp="Lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-labelledby="sr-lightbox-title">
+  <h2 class="screenreader-only sr-lightbox-title" tabindex="0">
+    Explore how Shrine, a retail app, uses Material Design.
+  </h2>
+
+    <header class="lightbox__header">
+      <div class="lightbox__header-title">
+        <span
+            class="lightbox__button js-lightbox-close"
+            data-comp="Tooltip"
+            data-props-tooltip='{"tip": "Close", "direction": "bottom"}'>
+          <i
+              class="material-icons notranslate material-icons--padded mdc-ripple-surface"
+              data-mdc-ripple-is-unbounded tabindex="0">
+            close
+          </i>
+        </span>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+
+      <div class="lightbox__actions">
+        <button type="button" name="button" class="lightbox-redlines-toggle js-redline-sidebar-toggle" data-comp="Tooltip" data-props-tooltip='{"tip": "View Specs", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>flip</i>
+        </button>
+
+        <button type="button" name="button" class="lightbox__button js-share" data-comp="Tooltip" data-props-tooltip='{"tip": "Share", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>share</i>
+        </button>
+
+      </div>
+    </header>
+
+    <div class="lightbox__template js-zoom-wrapper">
+      <div class="lightbox__content js-lightbox-content">
+<img class="ui-loader" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/loader.svg" alt="loader" aria-hidden="true" />      </div>
+<div class="redline-sidebar js-lightbox-sidebar-container" data-comp="RedlineSidebar">
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Image only", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-image js-redline-sidebar-item" value="image" >
+        <i class="material-icons notranslate">&#xE3F4;</i>
+        <span class="redline-sidebar__label-text">Image only</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Measurements", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-measurements js-redline-sidebar-item" value="measurements" >
+        <i class="material-icons notranslate">format_shapes</i>
+        <span class="redline-sidebar__label-text">Measurements</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Text", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-text js-redline-sidebar-item" value="text" >
+        <i class="material-icons notranslate">format_size</i>
+        <span class="redline-sidebar__label-text">Text</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Color", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-colors js-redline-sidebar-item" value="colors" >
+        <i class="material-icons notranslate">palette</i>
+        <span class="redline-sidebar__label-text">Color</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Shape and Elevation", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-shapes js-redline-sidebar-item" value="shapes" >
+        <i class="material-icons notranslate">rounded_corner</i>
+        <span class="redline-sidebar__label-text">Shape and Elevation</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Components", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-components js-redline-sidebar-item" value="components" >
+        <i class="material-icons notranslate">category</i>
+        <span class="redline-sidebar__label-text">Components</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Notes", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-notes js-redline-sidebar-item" value="notes" >
+        <i class="material-icons notranslate">notes</i>
+        <span class="redline-sidebar__label-text">Notes</span>
+      </button>
+    </div>
+<div class="redline-sidebar__toggles js-redline-layer-toggles">
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--dimensions">
+        <input type="checkbox" id="dimensions" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="dimensions">Dimensions</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--padding">
+        <input type="checkbox" id="padding" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="padding">Padding</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--typography">
+        <input type="checkbox" id="typography" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="typography">Text baseline</label>
+  </div>
+</div><nav class="carousel__nav">
+  <button
+      class="carousel__button carousel__button--prev mdc-ripple-surface js-carousel-prev"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Previous", "direction": "right"}'>
+    <i class="material-icons notranslate">chevron_left</i>
+  </button>
+
+  <button
+      class="carousel__button carousel__button--next mdc-ripple-surface js-carousel-next"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Next", "direction": "left"}'>
+    <i class="material-icons notranslate">chevron_right</i>
+  </button>
+</nav><div class="zoom-buttons" data-comp="Zoom">
+  <div class="zoom-buttons__wrapper">
+
+    <button class="mdc-button-zoom js-zoom-out" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom out", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">remove</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-reset" data-comp="Tooltip" data-props-tooltip='{"tip": "Reset", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">search</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-in" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom in", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">add</i>
+    </button>
+
+    <div class="zoom-buttons__extras">
+      <button class="mdc-button-zoom js-colorpicker-toggle" data-comp="Tooltip Colorpicker" data-props-tooltip='{"tip": "Color picker", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">colorize</i>
+      </button>
+      <button class="mdc-button-zoom js-ruler-toggle" data-comp="Tooltip Ruler" data-props-tooltip='{"tip": "Ruler", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">straighten</i>
+      </button>
+    </div>
+
+  </div>
+</div>    </div>
+
+
+<aside class="mdc-dialog" role="alertdialog" aria-labelledby="mdc-dialog-label" aria-describedby="mdc-dialog-description" data-comp="Share">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-label" class="mdc-dialog__header__title">Share</h2>
+      <button type="button" class="mdc-dialog-share-close js-dialog-close">
+        <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>close</i>
+      </button>
+    </header>
+    <section id="mdc-dialog-description" class="mdc-dialog__body">
+      <input type="text" readonly class="mdc-dialog-share-url js-share-url" />
+      <button type="button" class="mdc-button mdc-ripple-surface mdc-dialog-copy js-dialog-copy">Copy</button>
+    </section>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside></div><div class="mdc-snackbar snackbar-wrapper" data-comp="Snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+  <div class="mdc-snackbar__text"></div>
+  <div class="mdc-snackbar__action-wrapper">
+    <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
+  </div>
+</div>
+    <script src="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js"></script>
+    <script src="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js"></script>
+    <script src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/js/main.min.js"></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  </body>
+</html>

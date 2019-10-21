@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos;; img-src https://material.io flutter.github.io https://www.google-analytics.com https://stats.g.doubleclick.net img.shields.io &apos;self&apos;; script-src https://www.google.com https://www.gstatic.com https://adservice.google.com https://www.googletagmanager.com https://www.google-analytics.com &apos;unsafe-inline&apos; &apos;self&apos;; style-src https://fonts.googleapis.com/css &apos;unsafe-inline&apos; &apos;self&apos;; font-src https://fonts.gstatic.com/s/ &apos;self&apos;; child-src &apos;none&apos;;">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Build environment - Material Components for iOS</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-NHRPF8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta itemprop="name" content="Build environment - Material Components for iOS">
+    <meta itemprop="image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta name="description" content="Material Components for iOS is a set of user interface components that help iOS app developers build apps with material design.
+">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Build environment - Material Components for iOS">
+    <meta property="og:site_name" content="Material Components for iOS">
+    <meta property="og:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta property="article:section" content="Build environment">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@materialdesign">
+    <meta name="twitter:title" content="Material Components">
+    <meta name="twitter:description" content="Create beautiful apps with modular and customizable UI components">
+    <meta name="twitter:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <link rel="icon" sizes="192x192" href="/develop/images/app-icons/material-logo-app-icon-192x192.png">
+    <link rel="shortcut icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/develop/images/app-icons/material-logo-app-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/develop/images/app-icons/material-logo-app-icon-180x180.png">
+    <meta name="msapplication-TileImage" content="https://material.io/static/images/hub/favicons/hub-ms-icon-144x144.png">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/develop/css/codemirror.css">
+    <link rel="stylesheet" href="/develop/css/neo.css">
+    <link rel="stylesheet" href="/develop/css/app.css">
+    <script async defer src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body class="page page--landing page--docs page--platform-ios">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <aside class="page__temporary-drawer mdc-drawer mdc-drawer--temporary page_drawer--temporary">
+      <nav class="temporary-drawer__drawer mdc-drawer__drawer mdc-drawer__content">
+        <header class="temporary-drawer__header mdc-drawer__header">
+          <div class="temporary-drawer__header-content mdc-drawer__header-content">
+            <div class="temporary-drawer__header-icon develop-toolbar__leading-icon"></div>
+            Material Design
+          </div>
+        </header>
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label toolbar-platform-chooser__label--no-capital">ios</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <a class="drawer-link drawer-link--no-list" href="/components/ios/catalog/action-sheet/">Components</a>
+          <h3 class="drawer-heading">Documentation</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/build-env/">
+                Build environment
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/contributing/">
+                Contributing
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/faq/">
+                Frequently Asked Questions
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/supporting-shapes/">
+                Shapes
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </nav>
+    </aside>
+    <header class="develop-toolbar mdc-toolbar mdc-toolbar--fixed
+    
+    
+      mdc-toolbar--platform
+    ">
+      <div class="search-form" id="top-level-search-bar">
+        <form class="search-form__form" id="top-level-search-form">
+          <input type="text" class="search-form__input" id="top-level-search-input" autocomplete="off">
+        </form>
+        <div class="search-form__label" id="top-level-search-label">Search</div>
+        <button class="search-form__button search-form__button--close" id="top-level-search-close" aria-label="Close search">
+          <div class="search-form__close-icon" id="close-button-icon" data-mdc-ripple-is-unbounded=""></div>
+        </button>
+      </div>
+      <div class="develop-toolbar__row mdc-toolbar__row">
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="menu-button" id="menu-open">
+            <div class="menu-button__icon menu-button__icon--initial-load" id="menu-icon"></div>
+          </button>
+          <a class="develop-toolbar__title-link" href="/">
+            <div class="develop-toolbar__leading-icon"></div>
+            <h1 class="develop-toolbar__title mdc-toolbar__title">
+              Material Design
+            </h1>
+          </a>
+        </section>
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+          <nav id="navigation-tabs" class="develop-tab-bar">
+            <a href="/design" class="develop-tab">
+              Design
+            </a>
+            <a href="/components" class="develop-tab">
+              Components
+            </a>
+            <a href="/develop" class="develop-tab develop-tab--active">
+              Develop
+              <span class="develop-tab__nav-indicator"></span>
+            </a>
+            <a href="/resources" class="develop-tab">
+              Resources
+            </a>
+          </nav>
+          <section class="develop-toolbar__section develop-toolbar__section--search mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+            <button class="search-form__button search-form__button--open" id="top-level-search-open" aria-label="Search">
+              <div class="search-form__search-icon" id="spyglass-icon"></div>
+            </button>
+          </section>
+        </section>
+      </div>
+    </header>
+    <div class="page__content page__flex-element">
+      <div class="page__drawer mdc-permanent-drawer">
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label toolbar-platform-chooser__label--no-capital">ios</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <a class="drawer-link drawer-link--no-list" href="/components/ios/catalog/action-sheet/">Components</a>
+          <h3 class="drawer-heading">Documentation</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/build-env/">
+                Build environment
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/contributing/">
+                Contributing
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/faq/">
+                Frequently Asked Questions
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/supporting-shapes/">
+                Shapes
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <section class="page__main-section">
+        <article class="page__article article">
+          <h1 id="build-environment">Build environment</h1>
+          <p>Material Components for iOS builds with the standard open-source iOS toolchain:
+            <a href="https://developer.apple.com/xcode/downloads/">Xcode</a> and
+            <a href="https://cocoapods.org/about">CocoaPods</a>. However, there are certain settings
+            that you can use to maximize compatibility with our source.</p>
+          <hr>
+          <h2 id="xcode-warning-settings">Xcode warning settings</h2>
+          <p>Deprecation warnings are an important part of how we communicate upcoming
+            changes to the library; they are enabled by default in typical Xcode and
+            CocoaPods projects.</p>
+          <p>If your project doesn&#x2019;t already specify these warnings, include the following
+            flags in your build:</p>
+          <pre><code>-Wdeprecated
+-Wdeprecated-declarations
+</code></pre>
+          <p>If you treat warnings as errors (<code>-Werror</code> or &#x201C;Treat warnings as errors&#x201D; in
+            Xcode), then you should exclude deprecation warnings from being treated as
+            errors to allow the normal deprecation process to work:</p>
+          <pre><code>-Wno-error=deprecated
+-Wno-error=deprecated-declarations
+</code></pre>
+          <h2 id="supported-versions">Supported versions</h2>
+          <h3 id="xcode">Xcode</h3>
+          <p>The core team tests against <strong>Xcode 10.0 and Swift 3.2</strong>. 
+            Swift 4 support is added whenever possible and will be the standard when Xcode 8 support is dropped.</p>
+          <h3 id="ios">iOS</h3>
+          <p>Our components currently support <strong>iOS 9.0 and up</strong>.</p>
+          <h3 id="cocoapods">CocoaPods</h3>
+          <p>We are using CocoaPods 1.6.1.</p>
+          <h3 id="ruby">Ruby</h3>
+          <p>The core team uses <strong>Ruby 2.0.0</strong>. Newer versions of ruby have subtle modifications that affect our
+            <code>Podfile.lock</code> output.</p>
+        </article>
+        <footer class="footer">
+          <section class="footer__content">
+            <div class="footer__row">
+              <a class="footer__logo-link">
+                <div class="footer__logo"></div>
+              </a>
+              <div class="footer__copy">
+                <p class="footer__description">Material design is an adaptable system&#x2014;backed by open-source code&#x2014;guiding you in the principles and best practices of contemporary UI. Material helps teams streamline the designer-developer collaboration, reduce complexity, and enable fidelity through reusable components, patterns, and code libraries. All while adapting easily to your brand, platform, and users&#x2019; needs.</p>
+                <nav class="footer__navigation">
+                  <ul class="footer__navigation-list">
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.github.com/material-components" target="_blank" class="footer-block__social-nav-link">
+                        Github
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.twitter.com/materialdesign" target="_blank" class="footer-block__social-nav-link">
+                        Twitter
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.youtube.com/googledesign" target="_blank" class="footer-block__social-nav-link">
+                        YouTube
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="footer__row footer-legal">
+              <a class="footer-legal__logo-container" href="https://google.com">
+                <img src="/develop/images/google-logo-gray.svg" alt="Google">
+              </a>
+              <ul class="footer-legal__nav-list">
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/privacy" target="_blank" class="footer-legal__nav-list-link">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/terms" target="_blank" class="footer-legal__nav-list-link">
+                    Terms and Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </footer>
+      </section>
+    </div>
+    <template id="language-radio-template">
+      <div class="mdc-form-field">
+        <div class="mdc-radio">
+          <input class="mdc-radio__native-control" type="radio" id="" name="" value="">
+          <div class="mdc-radio__background">
+            <div class="mdc-radio__outer-circle"></div>
+            <div class="mdc-radio__inner-circle"></div>
+          </div>
+        </div>
+        <label class="language-name" for=""></label>
+      </div>
+    </template>
+    <button class="feedback-button" aria-label="Send Feedback" tabindex="0">
+    </button>
+    <script src="/develop/js/index.js" async></script>
+    <script src="https://www.gstatic.com/feedback/api.js" async></script>
+  </body>
+</html>

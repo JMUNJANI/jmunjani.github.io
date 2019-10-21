@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MDCFlexibleHeaderView Class Reference</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/develop/css/jazzy.css">
+    <link rel="stylesheet" type="text/css" href="/develop/css/jazzy-highlight.css">
+
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+    <script src="/develop/js/jazzy.js" defer></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90255304-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async defer src="//www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/MDCFlexibleHeaderView" class="dashAnchor"></a>
+
+    <a title="MDCFlexibleHeaderView Class Reference"></a>
+
+    <header class="header">
+      <div class="header-col">
+        <a class="header-link" href="../../">
+          <div class="header-col__logo"></div>
+          FlexibleHeader Docs
+        </a>
+          <span class="header__coverage">(84% documented)</span>
+    
+      </div>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../../">FlexibleHeader Reference</a>
+      <svg class="caret" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewbox="0 0 24 24">
+        <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/>
+      </svg>
+      MDCFlexibleHeaderView Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/UIColor_28MaterialElevation_29.html">UIColor(MaterialElevation)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/UIView_28MaterialElevationResponding_29.html">UIView(MaterialElevationResponding)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MDCFlexibleHeaderContainerViewController.html">MDCFlexibleHeaderContainerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MDCFlexibleHeaderView.html">MDCFlexibleHeaderView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MDCFlexibleHeaderViewController.html">MDCFlexibleHeaderViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationAppBar">MDCShadowElevationAppBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationBottomAppBar">MDCShadowElevationBottomAppBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationBottomNavigationBar">MDCShadowElevationBottomNavigationBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationCardPickedUp">MDCShadowElevationCardPickedUp</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationCardResting">MDCShadowElevationCardResting</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationDialog">MDCShadowElevationDialog</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationFABPressed">MDCShadowElevationFABPressed</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationFABResting">MDCShadowElevationFABResting</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationMenu">MDCShadowElevationMenu</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationModalBottomSheet">MDCShadowElevationModalBottomSheet</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationNavDrawer">MDCShadowElevationNavDrawer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationNone">MDCShadowElevationNone</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationPicker">MDCShadowElevationPicker</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationQuickEntry">MDCShadowElevationQuickEntry</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationQuickEntryResting">MDCShadowElevationQuickEntryResting</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationRaisedButtonPressed">MDCShadowElevationRaisedButtonPressed</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationRaisedButtonResting">MDCShadowElevationRaisedButtonResting</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationRefresh">MDCShadowElevationRefresh</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationRightDrawer">MDCShadowElevationRightDrawer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationSearchBarResting">MDCShadowElevationSearchBarResting</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationSearchBarScrolled">MDCShadowElevationSearchBarScrolled</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationSnackbar">MDCShadowElevationSnackbar</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationSubMenu">MDCShadowElevationSubMenu</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationSwitch">MDCShadowElevationSwitch</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enumerations.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MDCFlexibleHeaderContentImportance.html">MDCFlexibleHeaderContentImportance</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MDCFlexibleHeaderScrollPhase.html">MDCFlexibleHeaderScrollPhase</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MDCFlexibleHeaderShiftBehavior.html">MDCFlexibleHeaderShiftBehavior</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCElevatable.html">MDCElevatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCElevationOverriding.html">MDCElevationOverriding</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCFlexibleHeaderSafeAreaDelegate.html">MDCFlexibleHeaderSafeAreaDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCFlexibleHeaderViewDelegate.html">MDCFlexibleHeaderViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCFlexibleHeaderViewLayoutDelegate.html">MDCFlexibleHeaderViewLayoutDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Type Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:MDCFlexibleHeaderView.h@T@MDCFlexibleHeaderChangeContentInsetsBlock">MDCFlexibleHeaderChangeContentInsetsBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:MDCFlexibleHeaderView.h@T@MDCFlexibleHeaderShadowIntensityChangeBlock">MDCFlexibleHeaderShadowIntensityChangeBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:MDCShadowElevations.h@T@MDCShadowElevation">MDCShadowElevation</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>MDCFlexibleHeaderView</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MDCFlexibleHeaderView</span>
+    <span class="p">:</span> <span class="nc">UIView</span> <span class="o">&lt;</span><span class="n"><a href="../Protocols/MDCElevatable.html">MDCElevatable</a></span><span class="p">,</span> <span class="n"><a href="../Protocols/MDCElevationOverriding.html">MDCElevationOverriding</a></span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>MDCFlexibleHeaderView tracks the content offset of a scroll view and adjusts its size and
+position according to a configurable set of behaviors.</p>
+<h3 id="uiscrollviewdelegate-forwarding" class="heading">UIScrollViewDelegate forwarding</h3>
+
+<p>This view relies on you informing it of certain UIScrollViewDelegate events as they happen. These
+events are listed in the UIScrollViewDelegate events section.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Custom%20shadow"></a>
+                <a name="//apple_ref/objc/Section/Custom shadow" class="dashAnchor"></a>
+                <a href="#/Custom%20shadow">
+                  <h3 class="section-name">Custom shadow</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)shadowLayer"></a>
+                    <a name="//apple_ref/objc/Property/shadowLayer" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)shadowLayer">shadowLayer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Custom shadow shown under flexible header content.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">__kindof</span> <span class="n">CALayer</span> <span class="o">*</span><span class="n">shadowLayer</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)shadowColor"></a>
+                    <a name="//apple_ref/objc/Property/shadowColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)shadowColor">shadowColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The shadow color of the @c shadowLayer. Defaults to black.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">UIColor</span> <span class="o">*</span><span class="n">shadowColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)setShadowLayer:intensityDidChangeBlock:"></a>
+                    <a name="//apple_ref/objc/Method/-setShadowLayer:intensityDidChangeBlock:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)setShadowLayer:intensityDidChangeBlock:">-setShadowLayer:intensityDidChangeBlock:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets a custom shadow layer and a block that should be executed when shadow intensity changes.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setShadowLayer</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">__kindof</span> <span class="n">CALayer</span> <span class="o">*</span><span class="p">)</span><span class="nv">shadowLayer</span>
+    <span class="nf">intensityDidChangeBlock</span><span class="p">:</span>
+        <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Type Definitions.html#/c:MDCFlexibleHeaderView.h@T@MDCFlexibleHeaderShadowIntensityChangeBlock">MDCFlexibleHeaderShadowIntensityChangeBlock</a></span><span class="p">)</span><span class="nv">block</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UIScrollViewDelegate%20events"></a>
+                <a name="//apple_ref/objc/Section/UIScrollViewDelegate events" class="dashAnchor"></a>
+                <a href="#/UIScrollViewDelegate%20events">
+                  <h3 class="section-name">UIScrollViewDelegate events</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)trackingScrollViewDidScroll"></a>
+                    <a name="//apple_ref/objc/Method/-trackingScrollViewDidScroll" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)trackingScrollViewDidScroll">-trackingScrollViewDidScroll</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Informs the receiver that the tracking scroll view&#x2019;s contentOffset has changed.</p>
+
+<p>Must be called from the trackingScrollView delegate&#x2019;s UIScrollViewDelegate::scrollViewDidScroll:
+implementor.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Do not invoke this method if self.observesTrackingScrollViewScrollEvents is YES.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">trackingScrollViewDidScroll</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)trackingScrollViewDidChangeAdjustedContentInset:"></a>
+                    <a name="//apple_ref/objc/Method/-trackingScrollViewDidChangeAdjustedContentInset:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)trackingScrollViewDidChangeAdjustedContentInset:">-trackingScrollViewDidChangeAdjustedContentInset:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Informs the receiver that the tracking scroll view&#x2019;s adjustedContentInset has changed.</p>
+
+<p>Must be called from the trackingScrollView delegate&#x2019;s
+UIScrollViewDelegate::scrollViewDidChangeAdjustedContentInset: implementor.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Do not invoke this method if self.observesTrackingScrollViewScrollEvents is YES.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">trackingScrollViewDidChangeAdjustedContentInset</span><span class="p">:</span>
+    <span class="p">(</span><span class="n">nullable</span> <span class="n">UIScrollView</span> <span class="o">*</span><span class="p">)</span><span class="nv">trackingScrollView</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Changing%20the%20tracking%20scroll%20view"></a>
+                <a name="//apple_ref/objc/Section/Changing the tracking scroll view" class="dashAnchor"></a>
+                <a href="#/Changing%20the%20tracking%20scroll%20view">
+                  <h3 class="section-name">Changing the tracking scroll view</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)trackingScrollWillChangeToScrollView:"></a>
+                    <a name="//apple_ref/objc/Method/-trackingScrollWillChangeToScrollView:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)trackingScrollWillChangeToScrollView:">-trackingScrollWillChangeToScrollView:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Informs the receiver that the tracking scroll view might be about to change to a new tracking
+scroll view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">trackingScrollWillChangeToScrollView</span><span class="p">:</span>
+    <span class="p">(</span><span class="n">nullable</span> <span class="n">UIScrollView</span> <span class="o">*</span><span class="p">)</span><span class="nv">scrollView</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UIKit%20Hooks"></a>
+                <a name="//apple_ref/objc/Section/UIKit Hooks" class="dashAnchor"></a>
+                <a href="#/UIKit%20Hooks">
+                  <h3 class="section-name">UIKit Hooks</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)prefersStatusBarHidden"></a>
+                    <a name="//apple_ref/objc/Property/prefersStatusBarHidden" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)prefersStatusBarHidden">prefersStatusBarHidden</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a Boolean value indicating whether the status bar should be visible.</p>
+
+<p>Must be called by the owning UIViewController&#x2019;s -prefersStatusBarHidden.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">prefersStatusBarHidden</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)interfaceOrientationWillChange"></a>
+                    <a name="//apple_ref/objc/Method/-interfaceOrientationWillChange" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)interfaceOrientationWillChange">-interfaceOrientationWillChange</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Informs the receiver that the interface orientation is about to change.</p>
+
+<p>Must be called from UIViewController::willRotateToInterfaceOrientation:duration:.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">interfaceOrientationWillChange</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)interfaceOrientationIsChanging"></a>
+                    <a name="//apple_ref/objc/Method/-interfaceOrientationIsChanging" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)interfaceOrientationIsChanging">-interfaceOrientationIsChanging</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Informs the receiver that the interface orientation is in the process of changing.</p>
+
+<p>Must be called from UIViewController::willAnimateRotationToInterfaceOrientation:duration:.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">interfaceOrientationIsChanging</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)interfaceOrientationDidChange"></a>
+                    <a name="//apple_ref/objc/Method/-interfaceOrientationDidChange" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)interfaceOrientationDidChange">-interfaceOrientationDidChange</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Informs the receiver that the interface orientation has changed.</p>
+
+<p>Must be called from UIViewController::didRotateFromInterfaceOrientation:.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">interfaceOrientationDidChange</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)viewWillTransitionToSize:withTransitionCoordinator:"></a>
+                    <a name="//apple_ref/objc/Method/-viewWillTransitionToSize:withTransitionCoordinator:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)viewWillTransitionToSize:withTransitionCoordinator:">-viewWillTransitionToSize:withTransitionCoordinator:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Informs the receiver that the owning view controller&#x2019;s size will change.</p>
+
+<p>Must be called from UIViewController::viewWillTransitionToSize:withTransitionCoordinator: on apps
+targeting iOS 8 and onward.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewWillTransitionToSize</span><span class="p">:(</span><span class="n">CGSize</span><span class="p">)</span><span class="nv">size</span>
+       <span class="nf">withTransitionCoordinator</span><span class="p">:</span>
+           <span class="p">(</span><span class="n">nonnull</span> <span class="n">id</span><span class="o">&lt;</span><span class="n">UIViewControllerTransitionCoordinator</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">coordinator</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Changing%20Content%20Insets"></a>
+                <a name="//apple_ref/objc/Section/Changing Content Insets" class="dashAnchor"></a>
+                <a href="#/Changing%20Content%20Insets">
+                  <h3 class="section-name">Changing Content Insets</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)changeContentInsets:"></a>
+                    <a name="//apple_ref/objc/Method/-changeContentInsets:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)changeContentInsets:">-changeContentInsets:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Must be called by a client that wishes to update the content insets of the tracking scroll view.</p>
+
+<p>Not using this method can lead to undefined behavior due to the flexible header view assuming
+that a certain amount of additional content insets have been provided to the tracking scroll
+view.</p>
+
+<p>The provided block will be executed after the flexible header has removed its modifications to
+the tracking scroll view. Upon completion of the block, the flexible header will re-inject these
+modifications into the new content insets and ensure that the content offset doesn&#x2019;t change due
+to the new content insets.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">changeContentInsets</span><span class="p">:</span>
+    <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Type Definitions.html#/c:MDCFlexibleHeaderView.h@T@MDCFlexibleHeaderChangeContentInsetsBlock">MDCFlexibleHeaderChangeContentInsetsBlock</a></span><span class="p">)</span><span class="nv">block</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Forwarding%20Touch%20Events"></a>
+                <a name="//apple_ref/objc/Section/Forwarding Touch Events" class="dashAnchor"></a>
+                <a href="#/Forwarding%20Touch%20Events">
+                  <h3 class="section-name">Forwarding Touch Events</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)forwardTouchEventsForView:"></a>
+                    <a name="//apple_ref/objc/Method/-forwardTouchEventsForView:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)forwardTouchEventsForView:">-forwardTouchEventsForView:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Forwards any tap events made to the provided view on to the tracking scroll view.</p>
+
+<p>Views will only forward their taps if they are a subview of this header view and are interactive.</p>
+
+<p>Touch forwarding does not apply to subviews of the provided view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">forwardTouchEventsForView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nv">view</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)stopForwardingTouchEventsForView:"></a>
+                    <a name="//apple_ref/objc/Method/-stopForwardingTouchEventsForView:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)stopForwardingTouchEventsForView:">-stopForwardingTouchEventsForView:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stops forwarding tap events on the given view to the tracking scroll view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">stopForwardingTouchEventsForView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nv">view</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Scroll%20Phase"></a>
+                <a name="//apple_ref/objc/Section/Scroll Phase" class="dashAnchor"></a>
+                <a href="#/Scroll%20Phase">
+                  <h3 class="section-name">Scroll Phase</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)scrollPhase"></a>
+                    <a name="//apple_ref/objc/Property/scrollPhase" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)scrollPhase">scrollPhase</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the current scroll phase of the flexible header.</p>
+
+<p>There are three mutually-exclusive scroll phases: shifting, collapsing, and over-extending.
+Whichever phase the header view is in governs what scrollPhaseValue and scrollPhasePercentage
+represent.</p>
+
+<p>This and the related scrollPhase properties are only valid immediately after a call to
+-trackingScrollViewDidScroll.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n"><a href="../Enums/MDCFlexibleHeaderScrollPhase.html">MDCFlexibleHeaderScrollPhase</a></span> <span class="n">scrollPhase</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)scrollPhaseValue"></a>
+                    <a name="//apple_ref/objc/Property/scrollPhaseValue" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)scrollPhaseValue">scrollPhaseValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A value in screen points denoting the absolute position within the current scroll phase.</p>
+
+<p>The range for each phase follows:</p>
+
+<ul>
+<li>Shifting:       [0, minimumHeight)</li>
+<li>Collapsing:     [minimumHeight, maximumHeight)</li>
+<li>Over-extending: [maximumHeight, +inf)</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">CGFloat</span> <span class="n">scrollPhaseValue</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)scrollPhasePercentage"></a>
+                    <a name="//apple_ref/objc/Property/scrollPhasePercentage" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)scrollPhasePercentage">scrollPhasePercentage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A normalized value denoting the position within the current scroll phase.</p>
+
+<p>The meaning of the percentage for each phase follows:</p>
+
+<ul>
+<li>Shifting:       0 is unshifted, 1.0 is fully shifted off-screen</li>
+<li>Collapsing:     0 == minimumHeight, 1.0 == maximumHeight</li>
+<li>Over-extending: 1.0 height == maximumHeight, every additional 1.0 is one maximumHeight unit</li>
+</ul>
+
+<p>Note that a single percentage does not necessarily have equal weight between the three phases, so
+you should not use this value for any behavior that is active across any two phases; use
+scrollPhaseValue instead.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">CGFloat</span> <span class="n">scrollPhasePercentage</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Bounding%20Dimensions"></a>
+                <a name="//apple_ref/objc/Section/Bounding Dimensions" class="dashAnchor"></a>
+                <a href="#/Bounding%20Dimensions">
+                  <h3 class="section-name">Bounding Dimensions</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)minimumHeight"></a>
+                    <a name="//apple_ref/objc/Property/minimumHeight" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)minimumHeight">minimumHeight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The minimum height that this header can shrink to.</p>
+
+<p>See minMaxHeightIncludesSafeArea to learn how this number is used when the Safe Area changes.</p>
+
+<p>If you change the value of this property and the maximumHeight of the receiver is below the new
+minimumHeight, maximumHeight will be adjusted to match the new minimum value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">CGFloat</span> <span class="n">minimumHeight</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)maximumHeight"></a>
+                    <a name="//apple_ref/objc/Property/maximumHeight" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)maximumHeight">maximumHeight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The maximum height that this header can expand to.</p>
+
+<p>See minMaxHeightIncludesSafeArea to learn how this number is used when the Safe Area changes.</p>
+
+<p>If you change the value of this property and the minimumHeight of the receiver is above the new
+maximumHeight, minimumHeight will be adjusted to match the new maximumHeight.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">CGFloat</span> <span class="n">maximumHeight</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)minMaxHeightIncludesSafeArea"></a>
+                    <a name="//apple_ref/objc/Property/minMaxHeightIncludesSafeArea" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)minMaxHeightIncludesSafeArea">minMaxHeightIncludesSafeArea</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>When this is enabled, the flexible header will assume that minimumHeight and maximumHeight both
+include the Safe Area top inset. For example, a header whose maximum content height should be 200
+might set 220 (200 + 20) as the maximumHeight. Notice that if this is enabled and you&#x2019;re setting
+minimumHeight and or maximumHeight, the flexible header won&#x2019;t automatically adjust its size to
+account for changes to the Safe Area, as the values provided already include a hardcoded inset.</p>
+
+<p>When this is disabled, the flexible header will assume that the provided minimumHeight and
+maximumHeight do not include the Safe Area top inset. For example, a header whose maximum content
+height should be 200 would set 200 as the maximumHeight, and the flexible header will take care
+of adjusting itself to account for Safe Area changes internally.</p>
+
+<p>Clients are recommended to set this to NO, and set the min and max heights to values that don&#x2019;t
+include the status bar or Safe Area insets.</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    This API will soon be disabled by default and then deprecated. Learn more at
+<a href="https://github.com/material-components/material-components-ios/blob/develop/components/FlexibleHeader/docs/migration-guide-minMaxHeightIncludesSafeArea.md">https://github.com/material-components/material-components-ios/blob/develop/components/FlexibleHeader/docs/migration-guide-minMaxHeightIncludesSafeArea.md</a>
+
+</div>
+
+<p>Default is YES.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">minMaxHeightIncludesSafeArea</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)topSafeAreaGuide"></a>
+                    <a name="//apple_ref/objc/Property/topSafeAreaGuide" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)topSafeAreaGuide">topSafeAreaGuide</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A layout guide that equates to the top safe area inset of the flexible header view.</p>
+
+<p>Use this layout guide to position subviews in the flexible header in relation to the top safe area
+insets.</p>
+
+<p>This object is intended to be used as a constraint item.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">id</span> <span class="n">topSafeAreaGuide</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Behaviors"></a>
+                <a name="//apple_ref/objc/Section/Behaviors" class="dashAnchor"></a>
+                <a href="#/Behaviors">
+                  <h3 class="section-name">Behaviors</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)canOverExtend"></a>
+                    <a name="//apple_ref/objc/Property/canOverExtend" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)canOverExtend">canOverExtend</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not the header view is allowed to expand past its maximum height when the tracking
+scroll view has been dragged past its top edge.</p>
+
+<p>Default: YES</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">canOverExtend</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)visibleShadowOpacity"></a>
+                    <a name="//apple_ref/objc/Property/visibleShadowOpacity" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)visibleShadowOpacity">visibleShadowOpacity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>&lt; The visible shadow opacity. Default: 0.4</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="kt">float</span> <span class="n">visibleShadowOpacity</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)resetShadowAfterTrackingScrollViewIsReset"></a>
+                    <a name="//apple_ref/objc/Property/resetShadowAfterTrackingScrollViewIsReset" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)resetShadowAfterTrackingScrollViewIsReset">resetShadowAfterTrackingScrollViewIsReset</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not shadow opacity (if using the default shadow layer) should be reset to 0 when
+ trackingScrollView is set to nil. If the flexible header view is created without ever setting
+ trackingScrollView, it always has 0 opacity for the default shadow layer regardless of the value
+ of this flag. If trackingScrollView is ever set, then this flag enables resetting the shadow
+ opacity back to 0 when trackingScrollView is set to nil.</p>
+
+<p>Default: NO, but we are planning to change it to YES very soon, so all clients should set this
+ property to YES.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n">BOOL</span> <span class="n">resetShadowAfterTrackingScrollViewIsReset</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Scroll%20View%20Tracking"></a>
+                <a name="//apple_ref/objc/Section/Scroll View Tracking" class="dashAnchor"></a>
+                <a href="#/Scroll%20View%20Tracking">
+                  <h3 class="section-name">Scroll View Tracking</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)trackingScrollView"></a>
+                    <a name="//apple_ref/objc/Property/trackingScrollView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)trackingScrollView">trackingScrollView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The scroll view whose content offset affects the height/offset of the flexible header view.</p>
+
+<p>The receiver will inject the maximum height of the header view into the top component of the
+tracking scroll view&#x2019;s content insets. This ensures that there is enough space in the top insets
+to fit the header. This should be taken into account when working with the tracking scroll view&#x2019;s
+content insets.</p>
+
+<p>Importantly, if you wish to make changes to the tracking scroll view&#x2019;s content insets after it
+has been registered to a flexible header view, you must do so from within a -changeContentInsets:
+invocation on the flexible header view.</p>
+
+<p>The tracking scroll view is weakly held so that we don&#x2019;t unintentionally keep the scroll view
+around any longer than it needs to be. Doing so could get into tricky situations where the view
+controller didn&#x2019;t nil out the scroll view&#x2019;s delegate in dealloc and UIScrollView&#x2019;s non-weak
+delegate points to a dead object.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">UIScrollView</span> <span class="o">*</span><span class="n">trackingScrollView</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)observesTrackingScrollViewScrollEvents"></a>
+                    <a name="//apple_ref/objc/Property/observesTrackingScrollViewScrollEvents" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)observesTrackingScrollViewScrollEvents">observesTrackingScrollViewScrollEvents</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether to automatically observe the trackingScrollView&#x2019;s content offset changes.</p>
+
+<p>When enabled, the header view will observe the contentOffset property of the tracking scroll view
+and react to changes accordingly.</p>
+
+<p>You must not forward any scroll view events to the header view if this property is enabled. Any
+attempts to do so will result in an assertion.</p>
+
+<p>If you attempt to enable this property when shiftBehavior is set to anything other than
+MDCFlexibleHeaderShiftBehaviorDisabled, an assertion will be thrown. If you intend to use any
+shifting behavior you must manually forward the necessary scroll view events.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    If you enable this property and you support iOS 10.3 or below, you are responsible for
+explicitly nilling out the tracking scroll view before it is deallocated. This is not required if
+your minimum OS is iOS 11 or above. Failure to nil out the tracking scroll view may lead to runtime
+crashes due to dangling observers on the tracking scroll view. Most commonly, the tracking scroll
+view can be nil&#x2019;d out in the view controller&#x2019;s dealloc method. An example of the error you might
+see is: <q>An instance of class UITableView was deallocated while key value observers were still
+registered with it.</q>
+
+</div>
+
+<p>Default: NO</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n">BOOL</span> <span class="n">observesTrackingScrollViewScrollEvents</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)inFrontOfInfiniteContent"></a>
+                    <a name="//apple_ref/objc/Property/inFrontOfInfiniteContent" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)inFrontOfInfiniteContent">inFrontOfInfiniteContent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not the header is floating in front of an infinite stream of content.</p>
+
+<p>Enabling this behavior will cause the header to always appear to be floating <q>in front of</q> the
+content in Material space. This behavior should <em>only</em> be enabled for content that has no top
+edge, e.g. an infinite stream of vertical content.</p>
+
+<p>Default: NO</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">getter</span><span class="o">=</span><span class="n">isInFrontOfInfiniteContent</span><span class="p">,</span> <span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n">BOOL</span> <span class="n">inFrontOfInfiniteContent</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)sharedWithManyScrollViews"></a>
+                    <a name="//apple_ref/objc/Property/sharedWithManyScrollViews" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)sharedWithManyScrollViews">sharedWithManyScrollViews</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not the receiver is shared by many scroll views, such as in a tabbed interface with
+many columns of content.</p>
+
+<p>Default: NO</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">sharedWithManyScrollViews</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)disableContentInsetAdjustmentWhenContentInsetAdjustmentBehaviorIsNever"></a>
+                    <a name="//apple_ref/objc/Property/disableContentInsetAdjustmentWhenContentInsetAdjustmentBehaviorIsNever" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)disableContentInsetAdjustmentWhenContentInsetAdjustmentBehaviorIsNever">disableContentInsetAdjustmentWhenContentInsetAdjustmentBehaviorIsNever</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If enabled, the trackingScrollView doesn&#x2019;t adjust the content inset when its
+contentInsetAdjustmentBehavior is set to be UIScrollViewContentInsetAdjustmentNever.</p>
+
+<p>Default: NO</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n">BOOL</span> <span class="n">disableContentInsetAdjustmentWhenContentInsetAdjustmentBehaviorIsNever</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Header%20View%20Delegate"></a>
+                <a name="//apple_ref/objc/Section/Header View Delegate" class="dashAnchor"></a>
+                <a href="#/Header%20View%20Delegate">
+                  <h3 class="section-name">Header View Delegate</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)delegate"></a>
+                    <a name="//apple_ref/objc/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)delegate">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The delegate for this header view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/MDCFlexibleHeaderViewDelegate.html">MDCFlexibleHeaderViewDelegate</a></span><span class="o">&gt;</span>
+    <span class="n">delegate</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)traitCollectionDidChangeBlock"></a>
+                    <a name="//apple_ref/objc/Property/traitCollectionDidChangeBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)traitCollectionDidChangeBlock">traitCollectionDidChangeBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A block that is invoked when the FlexibleHeaderView receives a call to @c
+traitCollectionDidChange:. The block is called after the call to the superclass.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">MDCFlexibleHeaderView</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span> <span class="n">UITraitCollection</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span>
+        <span class="n">traitCollectionDidChangeBlock</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)elevation"></a>
+                    <a name="//apple_ref/objc/Property/elevation" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)elevation">elevation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The elevation of the header.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n"><a href="../Type Definitions.html#/c:MDCShadowElevations.h@T@MDCShadowElevation">MDCShadowElevation</a></span> <span class="n">elevation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)shiftBehavior"></a>
+                    <a name="//apple_ref/objc/Property/shiftBehavior" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)shiftBehavior">shiftBehavior</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The behavior of the header in response to the user interacting with the tracking scroll view.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    If self.observesTrackingScrollViewScrollEvents is YES, then this property can only be
+MDCFlexibleHeaderShiftBehaviorDisabled. Attempts to set shiftBehavior to any other value if
+self.observesTrackingScrollViewScrollEvents is YES will result in an assertion being thrown.
+
+</div>
+
+                        <a href="../Classes/MDCFlexibleHeaderView/shiftBehavior.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n"><a href="../Enums/MDCFlexibleHeaderShiftBehavior.html">MDCFlexibleHeaderShiftBehavior</a></span> <span class="n">shiftBehavior</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)headerContentImportance"></a>
+                    <a name="//apple_ref/objc/Property/headerContentImportance" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)headerContentImportance">headerContentImportance</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If shiftBehavior is enabled, this property affects the manner in which the Header reappears when
+pulling content down in the tracking scroll view.</p>
+
+<p>Ignored if shiftBehavior == MDCFlexibleHeaderShiftBehaviorDisabled.</p>
+
+<p>Default: MDCFlexibleHeaderContentImportanceDefault</p>
+
+                        <a href="../Classes/MDCFlexibleHeaderView/headerContentImportance.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n"><a href="../Enums/MDCFlexibleHeaderContentImportance.html">MDCFlexibleHeaderContentImportance</a></span> <span class="n">headerContentImportance</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)trackingScrollViewIsBeingScrubbed"></a>
+                    <a name="//apple_ref/objc/Property/trackingScrollViewIsBeingScrubbed" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)trackingScrollViewIsBeingScrubbed">trackingScrollViewIsBeingScrubbed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>When enabled, the header view will prioritize shifting off-screen and collapsing over shifting
+on-screen and expanding.</p>
+
+<p>This should only be enabled when the user is scrubbing the tracking scroll view, i.e. they&#x2019;re
+able to jump large distances using a scrubber control.</p>
+
+                        <a href="../Classes/MDCFlexibleHeaderView/trackingScrollViewIsBeingScrubbed.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">trackingScrollViewIsBeingScrubbed</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)contentIsTranslucent"></a>
+                    <a name="//apple_ref/objc/Property/contentIsTranslucent" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)contentIsTranslucent">contentIsTranslucent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether this header view&#x2019;s content is translucent/transparent. Provides a hint to status bar
+rendering, to correctly display contents scrolling under the status bar as it shifts on/off screen.</p>
+
+<p>Default: NO</p>
+
+                        <a href="../Classes/MDCFlexibleHeaderView/contentIsTranslucent.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">contentIsTranslucent</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)statusBarHintCanOverlapHeader"></a>
+                    <a name="//apple_ref/objc/Property/statusBarHintCanOverlapHeader" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)statusBarHintCanOverlapHeader">statusBarHintCanOverlapHeader</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A hint stating whether or not the operating system&#x2019;s status bar frame can ever overlap the header&#x2019;s
+frame.</p>
+
+<p>This property is enabled by default with the expectation that the flexible header will primarily
+be used in full-screen settings on the phone.</p>
+
+<p>Disabling this property informs the flexible header that it should not concern itself with the
+status bar in any manner. shiftBehavior .EnabledWithStatusBar will be treated simply as .Enabled
+in this case.</p>
+
+<p>Default: YES</p>
+
+                        <a href="../Classes/MDCFlexibleHeaderView/statusBarHintCanOverlapHeader.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">statusBarHintCanOverlapHeader</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)hideViewWhenShifted:"></a>
+                    <a name="//apple_ref/objc/Method/-hideViewWhenShifted:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)hideViewWhenShifted:">-hideViewWhenShifted:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hides the view by changing its alpha when the header shifts. Note that this only happens when the
+header shifting behavior is set to MDCFlexibleHeaderShiftBehaviorEnabled.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">hideViewWhenShifted</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nv">view</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)stopHidingViewWhenShifted:"></a>
+                    <a name="//apple_ref/objc/Method/-stopHidingViewWhenShifted:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)stopHidingViewWhenShifted:">-stopHidingViewWhenShifted:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stops hiding the view when the header shifts.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">stopHidingViewWhenShifted</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nv">view</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Shifting%20the%20tracking%20scroll%20view%20on-screen"></a>
+                <a name="//apple_ref/objc/Section/Shifting the tracking scroll view on-screen" class="dashAnchor"></a>
+                <a href="#/Shifting%20the%20tracking%20scroll%20view%20on-screen">
+                  <h3 class="section-name">Shifting the tracking scroll view on-screen</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)shiftHeaderOnScreenAnimated:"></a>
+                    <a name="//apple_ref/objc/Method/-shiftHeaderOnScreenAnimated:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)shiftHeaderOnScreenAnimated:">-shiftHeaderOnScreenAnimated:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asks the receiver to bring the header on-screen if it&#x2019;s currently off-screen.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">shiftHeaderOnScreenAnimated</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)shiftHeaderOffScreenAnimated:"></a>
+                    <a name="//apple_ref/objc/Method/-shiftHeaderOffScreenAnimated:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)shiftHeaderOffScreenAnimated:">-shiftHeaderOffScreenAnimated:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asks the receiver to take the header off-screen if it&#x2019;s currently on-screen.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">shiftHeaderOffScreenAnimated</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UIScrollViewDelegate%20APIs%20required%20for%20shift%20behavior"></a>
+                <a name="//apple_ref/objc/Section/UIScrollViewDelegate APIs required for shift behavior" class="dashAnchor"></a>
+                <a href="#/UIScrollViewDelegate%20APIs%20required%20for%20shift%20behavior">
+                  <h3 class="section-name">UIScrollViewDelegate APIs required for shift behavior</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)trackingScrollViewDidEndDraggingWillDecelerate:"></a>
+                    <a name="//apple_ref/objc/Method/-trackingScrollViewDidEndDraggingWillDecelerate:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)trackingScrollViewDidEndDraggingWillDecelerate:">-trackingScrollViewDidEndDraggingWillDecelerate:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Informs the receiver that the tracking scroll view has finished dragging.</p>
+
+<p>Must be called from the trackingScrollView delegate&#x2019;s
+UIScrollViewDelegate::scrollViewDidEndDragging:willDecelerate: implementor.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Do not invoke this method if self.observesTrackingScrollViewScrollEvents is YES.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">trackingScrollViewDidEndDraggingWillDecelerate</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">willDecelerate</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)trackingScrollViewDidEndDecelerating"></a>
+                    <a name="//apple_ref/objc/Method/-trackingScrollViewDidEndDecelerating" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)trackingScrollViewDidEndDecelerating">-trackingScrollViewDidEndDecelerating</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Informs the receiver that the tracking scroll view has finished decelerating.</p>
+
+<p>Must be called from the trackingScrollView delegate&#x2019;s
+UIScrollViewDelegate::scrollViewDidEndDecelerating: implementor.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Do not invoke this method if self.observesTrackingScrollViewScrollEvents is YES.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">trackingScrollViewDidEndDecelerating</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(im)trackingScrollViewWillEndDraggingWithVelocity:targetContentOffset:"></a>
+                    <a name="//apple_ref/objc/Method/-trackingScrollViewWillEndDraggingWithVelocity:targetContentOffset:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(im)trackingScrollViewWillEndDraggingWithVelocity:targetContentOffset:">-trackingScrollViewWillEndDraggingWithVelocity:targetContentOffset:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Potentially modifies the target content offset in order to ensure that the header view is either
+visible or hidden depending on its current position.</p>
+
+<p>Must be called from the trackingScrollView delegate&#x2019;s
+-scrollViewWillEndDragging:withVelocity:targetContentOffset: implementor.</p>
+
+<p>If your scroll view is vertically paging then this method will do nothing. You should also
+disable hidesStatusBarWhenCollapsed.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>Do not invoke this method if self.observesTrackingScrollViewScrollEvents is YES.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">trackingScrollViewWillEndDraggingWithVelocity</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">velocity</span>
+                                  <span class="nf">targetContentOffset</span><span class="p">:(</span><span class="n">inout</span> <span class="n">nonnull</span> <span class="n">CGPoint</span> <span class="o">*</span><span class="p">)</span>
+                                                          <span class="n">targetContentOffset</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A Boolean value indicating whether the target content offset was modified.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)behavior"></a>
+                    <a name="//apple_ref/objc/Property/behavior" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)behavior">behavior</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-see">
+    <p class="aside-title">See</p>
+    shiftBehavior
+
+</div>
+
+                        <a href="../Classes/MDCFlexibleHeaderView/behavior.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n"><a href="../Enums/MDCFlexibleHeaderShiftBehavior.html">MDCFlexibleHeaderShiftBehavior</a></span> <span class="n">behavior</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Accessing%20the%20header&apos;s%20views"></a>
+                <a name="//apple_ref/objc/Section/Accessing the header&apos;s views" class="dashAnchor"></a>
+                <a href="#/Accessing%20the%20header&apos;s%20views">
+                  <h3 class="section-name">Accessing the header&apos;s views</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCFlexibleHeaderView(py)contentView"></a>
+                    <a name="//apple_ref/objc/Property/contentView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCFlexibleHeaderView(py)contentView">contentView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Deprecated. Please register views directly to the flexible header.</p>
+
+                        <a href="../Classes/MDCFlexibleHeaderView/contentView.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">UIView</span> <span class="o">*</span><span class="n">contentView</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+
+    <section class="footer">
+      <p>&#xA9; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-09-25)</p>
+    </section>
+  </body>
+
+</html>

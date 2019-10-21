@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://material.io flutter.github.io https://www.google-analytics.com https://stats.g.doubleclick.net https://www.gstatic.com img.shields.io 'self' data:; script-src https://*.google.com http://*.google.com https://www.gstatic.com https://adservice.google.com https://www.googletagmanager.com https://www.google-analytics.com survey.g.doubleclick.net 'unsafe-inline' 'self'; style-src https://fonts.googleapis.com/css https://feedback.googleusercontent.com https://www.gstatic.com 'unsafe-inline' 'self'; font-src https://fonts.gstatic.com/s/ 'self'; child-src https://feedback.googleusercontent.com http://www.google.com;">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <title>Dark Theme - Material Components for Android</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-NHRPF8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta itemprop="name" content="Dark Theme - Material Components for Android" />
+    <meta itemprop="image" content="https://material.io/static/images/simple-lp/components-share.png" />
+    <meta name="description" content="Dark Theme" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Dark Theme - Material Components for Android" />
+    <meta property="og:site_name" content="Material Components for Android" />
+    <meta property="og:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta property="article:section" content="Dark Theme" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@materialdesign">
+    <meta name="twitter:title" content="Material Components">
+    <meta name="twitter:description" content="Create beautiful apps with modular and customizable UI components">
+    <meta name="twitter:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <link rel="icon" sizes="192x192" href="/develop/images/app-icons/material-logo-app-icon-192x192.png">
+    <link rel="shortcut icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/develop/images/app-icons/material-logo-app-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/develop/images/app-icons/material-logo-app-icon-180x180.png">
+    <meta name="msapplication-TileImage" content="https://material.io/static/images/hub/favicons/hub-ms-icon-144x144.png">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/develop/css/codemirror.css">
+    <link rel="stylesheet" href="/develop/css/neo.css">
+    <link rel="stylesheet" href="/develop/css/app.css">
+    <script async="" defer="" src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body class="page page--detail page--theming page--platform-android">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <aside class="page__temporary-drawer mdc-drawer mdc-drawer--temporary page_drawer--temporary">
+      <nav class="temporary-drawer__drawer mdc-drawer__drawer mdc-drawer__content">
+        <header class="temporary-drawer__header mdc-drawer__header">
+          <div class="temporary-drawer__header-content mdc-drawer__header-content">
+            <div class="temporary-drawer__header-icon develop-toolbar__leading-icon"></div>
+            Material Design
+          </div>
+        </header>
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label">android</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/android/catalog/dialog/">Components</a>
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/android/docs/building-from-source/">Documentation</a>
+          <h3 class="drawer-heading">Theming</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/theming/color/"
+     >
+                Color Theming
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/theming/dark/"
+     >
+                Dark Theme
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/theming/shape/"
+     >
+                Shape Theming
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/theming/typography/"
+     >
+                Typography Theming
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </nav>
+    </aside>
+    <header class="develop-toolbar mdc-toolbar mdc-toolbar--fixed
+    
+    
+      mdc-toolbar--platform
+    ">
+      <div class="search-form" id="top-level-search-bar">
+        <form class="search-form__form" id="top-level-search-form">
+          <input type="text"
+        class="search-form__input"
+        id="top-level-search-input"
+        autocomplete="off" />
+        </form>
+        <div class="search-form__label" id="top-level-search-label">Search</div>
+        <button
+      class="search-form__button search-form__button--close"
+      id="top-level-search-close"
+      aria-label="Close search">
+          <div class="search-form__close-icon" id="close-button-icon" data-mdc-ripple-is-unbounded></div>
+        </button>
+      </div>
+      <div class="develop-toolbar__row mdc-toolbar__row">
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="menu-button" id="menu-open">
+            <div class="menu-button__icon menu-button__icon--initial-load" id="menu-icon"></div>
+          </button>
+          <a class="develop-toolbar__title-link" href="/">
+            <div class="develop-toolbar__leading-icon"></div>
+            <h1 class="develop-toolbar__title mdc-toolbar__title">
+              Material Design
+            </h1>
+          </a>
+        </section>
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+          <nav id="navigation-tabs" class="develop-tab-bar">
+            <a href="/design"
+      class="develop-tab">
+              Design
+            </a>
+            <a href="/components"
+      class="develop-tab">
+              Components
+            </a>
+            <a href="/develop"
+      class="develop-tab develop-tab--active">
+              Develop
+              <span class="develop-tab__nav-indicator"></span>
+            </a>
+            <a href="/resources"
+     class="develop-tab">
+              Resources
+            </a>
+          </nav>
+          <section class="develop-toolbar__section develop-toolbar__section--search mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+            <button 
+    class="search-form__button search-form__button--open"
+    id="top-level-search-open"
+    aria-label="Search">
+              <div class="search-form__search-icon" id="spyglass-icon"></div>
+            </button>
+          </section>
+        </section>
+      </div>
+    </header>
+    <div class="page__content page__flex-element">
+      <div class="page__drawer mdc-permanent-drawer">
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label">android</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/android/catalog/dialog/">Components</a>
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/android/docs/building-from-source/">Documentation</a>
+          <h3 class="drawer-heading">Theming</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/theming/color/"
+     >
+                Color Theming
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/theming/dark/"
+     >
+                Dark Theme
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/theming/shape/"
+     >
+                Shape Theming
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/theming/typography/"
+     >
+                Typography Theming
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <section class="page__main-section">
+        <article class="page__article article article--icon-dark">
+          <h1 id="dark-theme">Dark Theme</h1>
+          <p>The <a href="https://material.io/design/color/dark-theme.html">Material dark theme system</a> can be used to create a
+            beautiful and functional dark theme for your app, which generally consists of
+            dark background colors and light foreground colors for elements such as text and
+            iconography.</p>
+          <p>Some of the most common benefits of a dark theme include conserving battery
+            power for devices with OLED screens, reducing eye strain, and facilitating use
+            in low-light environments.</p>
+          <p>Starting with <a href="https://developer.android.com/preview/features/darktheme">Android Q</a>, users are now able to switch
+            their device into dark theme via a new system setting, which applies to both the
+            Android system UI and apps running on the device.</p>
+          <h2 id="design--api-documentation">Design &amp; API Documentation</h2>
+          <ul>
+            <li class="icon-list-item icon-list-item--spec"><a href="https://material.io/design/color/dark-theme.html">Material Design guidelines: Dark Theme</a></li>
+            <li class="icon-list-item icon-list-item--spec"><a href="https://developer.android.com/preview/features/darktheme">Android Q Dark Theme Documentation</a></li>
+            <li class="icon-list-item icon-list-item--spec"><a href="https://medium.com/androiddevelopers/appcompat-v23-2-daynight-d10f90c83e94">AppCompat DayNight Documentation</a></li>
+          </ul>
+          <h3 id="setup">Setup</h3>
+          <p>In order to support the dark theme functionality in Android Q, make sure you are
+            depending on the <a href="https://mvnrepository.com/artifact/com.google.android.material/material">latest</a> <code>1.1.0</code> alpha version of the Material
+            Android library, and update your app theme to inherit from
+            <code>Theme.MaterialComponents.DayNight</code> (or one of its descendants). E.g.:</p>
+          <h5 id="resvaluesthemesxml">res/values/themes.xml</h5>
+          <pre><code class="language-xml">&lt;style name="Theme.MyApp" parent="Theme.MaterialComponents.DayNight"&gt;
+    &lt;!-- ... --&gt;
+&lt;/style&gt;
+</code></pre>
+          <p>Alternatively, if you want to define separate <code>Light</code> and <code>Dark</code> themes for your
+            app, you can inherit from <code>Theme.MaterialComponents.Light</code> in the <code>values</code>
+            directory, and <code>Theme.MaterialComponents</code> in the <code>values-night</code> directory. E.g.:</p>
+          <h5 id="resvaluesthemesxml-1">res/values/themes.xml</h5>
+          <pre><code class="language-xml">&lt;style name="Theme.MyApp" parent="Theme.MaterialComponents.Light"&gt;
+    &lt;!-- ... --&gt;
+&lt;/style&gt;
+</code></pre>
+          <h5 id="resvalues-nightthemesxml">res/values-night/themes.xml</h5>
+          <pre><code class="language-xml">&lt;style name="Theme.MyApp" parent="Theme.MaterialComponents"&gt;
+    &lt;!-- ... --&gt;
+&lt;/style&gt;
+</code></pre>
+          <p>The <code>Theme.MaterialComponents</code> theme is a static dark theme, whereas
+            <code>Theme.MaterialComponents.DayNight</code> is a more dynamic theme which will help
+            facilitate easy switching between your app’s <code>Light</code> and <code>Dark</code> theme. If using
+            a <code>DayNight</code> theme, you can define one app theme that references color
+            resources, which can be overridden in the <code>values-night</code> directory if needed.</p>
+          <h3 id="catalog">Catalog</h3>
+          <p>To see how Material components adapt in a dark theme, build and run the
+            <a href="/components/android/docs/catalog-app/">Catalog app</a> and enable dark theme in one of the following
+            ways:</p>
+          <ul>
+            <li>Any API Level: Overflow menu on Catalog home screen</li>
+            <li>Android Q: <code>Settings &gt; Display &gt; Dark Theme</code> (or Dark Theme tile in Notification Tray)</li>
+            <li>Android P: <code>Settings &gt; System &gt; Developer options &gt; Night mode</code></li>
+          </ul>
+          <h3 id="color-palette">Color Palette</h3>
+          <p>At the core of any dark theme is a color palette that uses dark background
+            colors and light foreground colors. The Material <code>Dark</code> themes make use of the
+            <a href="/components/android/theming/color/">Material Color System</a>, in order to provide default dark theme values
+            for neutral palette colors such as <code>colorBackground</code> and <code>colorSurface</code>.</p>
+          <p>The baseline Material <code>Dark</code> theme background and surface colors are dark gray
+            instead of black, which increases visibility for shadows and also reduces eye
+            strain for light text.</p>
+          <p>The Material <code>Dark</code> themes also provide adjusted defaults for the baseline
+            branded palette, including <code>colorPrimary</code> and <code>colorSecondary</code>. See the
+            <a href="https://material.io/design/color/dark-theme.html#ui-application">Material Dark Theme spec</a> for guidance on
+            how you can adjust your brand colors for dark theme.</p>
+          <h4 id="primary-vs-surface-coloring-for-large-surfaces">Primary vs. Surface Coloring for Large Surfaces</h4>
+          <p>According to the
+            <a href="https://material.io/design/color/dark-theme.html#custom-application">Material Dark Theme spec</a>, large
+            surfaces should not use bright background colors because they can emit too much
+            brightness. When applicable, the Material themes will provide this behavior
+            out-of-the-box, e.g., by having the <code>Light</code> theme default to
+            <code>Widget.MaterialComponents.AppBarLayout.Primary</code> and the <code>Dark</code> theme default to
+            <code>Widget.MaterialComponents.AppBarLayout.Surface</code>.</p>
+          <p>However, there may be some cases where you need to apply this primary vs.
+            surface color swap to some custom UI. For convenience, the Material themes
+            provide a <code>colorPrimarySurface</code> attribute, that points to <code>colorPrimary</code> in the
+            <code>Light</code> theme and <code>colorSurface</code> in the <code>Dark</code> theme. There is also a
+            corresponding <code>colorOnPrimarySurface</code> attribute that can be used for foreground
+            elements such as text and iconography on top of a <code>colorPrimarySurface</code>
+            background.</p>
+          <p>Additionally, the Material Android library provides <code>PrimarySurface</code> styles for
+            components that act as large surfaces and commonly use <code>colorPrimary</code> for their
+            background in light theme. These styles will automatically switch between the
+            component’s primary colored style in light theme and surface colored style in
+            dark theme. E.g.:</p>
+          <ul>
+            <li><code>Widget.MaterialComponents.BottomAppBar.PrimarySurface</code></li>
+            <li><code>Widget.MaterialComponents.BottomNavigationView.PrimarySurface</code></li>
+            <li><code>Widget.MaterialComponents.TabLayout.PrimarySurface</code></li>
+            <li><code>Widget.MaterialComponents.Toolbar.PrimarySurface</code></li>
+          </ul>
+          <h3 id="elevation-overlays">Elevation Overlays</h3>
+          <p>In addition to the color palette adjustments mentioned above, communicating the
+            hierarchy of a UI via elevation requires some dark theme specific
+            considerations.</p>
+          <p>Shadows are less effective in an app using a dark theme, because they will have
+            less contrast with the dark background colors and will appear to be less
+            visible. In order to compensate for this, Material surfaces in a dark theme
+            become lighter at higher elevations, when they are closer to the implied light
+            source.</p>
+          <p>This is accomplished via elevation overlays, which are semi-transparent white
+            (<code>colorOnSurface</code>) overlays that are conceptually placed on top of the surface
+            color. The semi-transparent alpha percentage is calculated using an equation
+            based on elevation, which results in higher alpha percentages at higher
+            elevations, and therefore lighter surfaces.</p>
+          <p>Note: we avoid overdraw with the elevation overlays by calculating a composite
+            blend of the surface color with the overlay color and using that as the
+            surface’s background, instead of drawing another layer to the canvas.</p>
+          <h4 id="affected-components">Affected Components</h4>
+          <p>The following is a list of Material components that support elevation overlays
+            in dark theme, because they use <code>colorSurface</code> and can be elevated:</p>
+          <ul>
+            <li><a href="/components/android/catalog/app-bar-layout/">Top App Bar</a></li>
+            <li><a href="/components/android/catalog/bottom-app-bar/">Bottom App Bar</a></li>
+            <li><a href="/components/android/catalog/bottom-navigation-view/">Bottom Navigation</a></li>
+            <li><a href="/components/android/catalog/tab-layout/">Tabs</a></li>
+            <li><a href="/components/android/catalog/material-card-view/">Card</a></li>
+            <li><a href="/components/android/catalog/dialog/">Dialog</a></li>
+            <li><a href="/components/android/catalog/menu/">Menu</a></li>
+            <li><a href="/components/android/catalog/bottom-sheet-behavior/">Bottom Sheet</a></li>
+            <li><a href="/components/android/catalog/navigation-view/">Navigation Drawer</a></li>
+            <li><a href="/components/android/catalog/switch/">Switch</a></li>
+          </ul>
+          <h4 id="theme-attributes">Theme Attributes</h4>
+          <p>In order to facilitate some orchestration around the elevation overlays, we have
+            the following theme attributes:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Attribute Name</th>
+                <th>Description</th>
+                <th>Default Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>elevationOverlayEnabled</code></td>
+                <td>Whether the elevation overlay functionality is enabled.</td>
+                <td><code>false</code> in <code>Light</code> themes, <code>true</code> in <code>Dark</code> themes</td>
+              </tr>
+              <tr>
+                <td><code>elevationOverlayColor</code></td>
+                <td>The color used for the elevation overlays, applied at an alpha based on elevation.</td>
+                <td><code>colorOnSurface</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Note: If inheriting from the <code>Theme.MaterialComponents</code> theme or a descendant,
+            you most likely do not have to set these attributes yourself because the
+            Material themes already set up the above defaults.</p>
+          <h4 id="custom-views--non-material-components">Custom Views &amp; Non-Material Components</h4>
+          <p>If you would like to apply dark theme elevation overlays to your custom views or
+            any non-Material views that are elevated surfaces, then you can use the
+            <code>MaterialShapeDrawable</code> or <code>ElevationOverlayProvider</code> APIs.</p>
+          <h5 id="materialshapedrawable">MaterialShapeDrawable</h5>
+          <p>The key to supporting elevation overlays in a custom view is creating a
+            <code>MaterialShapeDrawable</code> with the overlay support enabled via
+            <code>MaterialShapeDrawable#createWithElevationOverlay</code>, and setting it as the
+            background of your view.</p>
+          <p>Next, override the <code>View#setElevation</code> method and forward the elevation passed
+            in to your <code>MaterialShapeDrawable</code> background’s <code>setElevation</code> method.</p>
+          <p><code>MaterialShapeDrawable</code> is the preferred approach for custom views because it
+            will keep track of the elevation value for you and factor that in to the overlay
+            any time elevation changes, and you don’t have to worry about incorrectly
+            compounding the overlays multiple times.</p>
+          <h5 id="elevationoverlayprovider">ElevationOverlayProvider</h5>
+          <p>If you have a case where the elevation value is more static and you would like
+            to get the corresponding dark theme overlay color (perhaps to color an existing
+            view), then you can use <code>ElevationOverlayProvider</code>.</p>
+          <p>If elevation overlays are enabled at the theme level, the
+            <code>ElevationOverlayProvider#compositeOverlayWithThemeSurfaceColorIfNeeded</code> method
+            will return <code>colorSurface</code> with the overlay color blended in at an alpha level
+            based on the elevation passed in. Otherwise, it will simply return
+            <code>colorSurface</code>, so that you can use the result of this method in both <code>Light</code>
+            and <code>Dark</code> themes without needing any additional orchestration.</p>
+          <p>If you need to blend the overlays with an arbitrary color or an adjusted surface
+            color, or get access to lower level values such as the overlay alpha
+            percentages, take a look at the other <code>ElevationOverlayProvider</code> methods
+            including <code>compositeOverlayIfNeeded</code>, <code>compositeOverlay</code>, and <code>calculateOverlayAlpha</code>.</p>
+          <h5 id="absolute-elevation">Absolute Elevation</h5>
+          <p>When calculating the elevation overlay alpha percentage, Material components
+            factor in the absolute elevation of their parent view. This is because the
+            distance from the light source is the driving factor behind elevation overlays.</p>
+          <p>If you need to factor in absolute elevation in a custom view that supports
+            overlays, then you can use the <code>MaterialShapeUtils#setParentAbsoluteElevation</code>
+            methods when using a <code>MaterialShapeDrawable</code> background. For example:</p>
+          <pre><code class="language-java">@Override
+protected void onAttachedToWindow() {
+  super.onAttachedToWindow();
+
+  MaterialShapeUtils.setParentAbsoluteElevation(this);
+}
+</code></pre>
+          <p>Alternatively, you could use the <code>ElevationOverlayProvider</code> composite methods
+            that take in a <code>View</code> parameter or the <code>getParentAbsoluteElevation</code> method.</p>
+          <p>Note: This means that you should consider accessibility contrast ratios for
+            text and iconography, when deeply nesting elevated Material components and
+            views that support elevation overlays.</p>
+        </article>
+        <footer class="footer">
+          <section class="footer__content">
+            <div class="footer__row">
+              <a class="footer__logo-link">
+                <div class="footer__logo"></div>
+              </a>
+              <div class="footer__copy">
+                <p class="footer__description">Material design is an adaptable system—backed by open-source code—guiding you in the principles and best practices of contemporary UI. Material helps teams streamline the designer-developer collaboration, reduce complexity, and enable fidelity through reusable components, patterns, and code libraries. All while adapting easily to your brand, platform, and users’ needs.</p>
+                <nav class="footer__navigation">
+                  <ul class="footer__navigation-list">
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.github.com/material-components"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Github
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.twitter.com/materialdesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Twitter
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.youtube.com/googledesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        YouTube
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://services.google.com/fb/forms/materialdesignnewsletter/"
+                  target="_blank"
+                  class="footer-block__social-nav-link"
+                  aria-label="Sign up for our newsletter">
+                        Newsletter
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="footer__row footer-legal">
+              <a class="footer-legal__logo-container" href="https://google.com">
+                <img src="/develop/images/google-logo-gray.svg" alt="Google" />
+              </a>
+              <ul class="footer-legal__nav-list">
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/privacy"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/terms"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Terms and Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </footer>
+      </section>
+    </div>
+    <template id="language-radio-template">
+      <div class="mdc-form-field">
+        <div class="mdc-radio">
+          <input class="mdc-radio__native-control"
+             type="radio"
+             id="" name="" value="">
+          <div class="mdc-radio__background">
+            <div class="mdc-radio__outer-circle"></div>
+            <div class="mdc-radio__inner-circle"></div>
+          </div>
+        </div>
+        <label class="language-name" for=""></label>
+      </div>
+    </template>
+    <button
+    class="feedback-button"
+    aria-label="Send Feedback"
+    tabindex="0">
+    </button>
+    <script src="/develop/js/index.js" async></script>
+    <script src="https://www.gstatic.com/feedback/api.js" async></script>
+  </body>
+</html>

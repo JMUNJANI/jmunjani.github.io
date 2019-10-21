@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MDCBottomNavigationBar Class Reference</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/develop/css/jazzy.css">
+    <link rel="stylesheet" type="text/css" href="/develop/css/jazzy-highlight.css">
+
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+    <script src="/develop/js/jazzy.js" defer></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90255304-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async defer src="//www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/MDCBottomNavigationBar" class="dashAnchor"></a>
+
+    <a title="MDCBottomNavigationBar Class Reference"></a>
+
+    <header class="header">
+      <div class="header-col">
+        <a class="header-link" href="../../">
+          <div class="header-col__logo"></div>
+          BottomNavigation Docs
+        </a>
+          <span class="header__coverage">(92% documented)</span>
+    
+      </div>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../../">BottomNavigation Reference</a>
+      <svg class="caret" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewbox="0 0 24 24">
+        <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/>
+      </svg>
+      MDCBottomNavigationBar Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/UIColor_28MaterialElevation_29.html">UIColor(MaterialElevation)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/UIView_28MaterialElevationResponding_29.html">UIView(MaterialElevationResponding)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MDCBottomNavigationBar.html">MDCBottomNavigationBar</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationAppBar">MDCShadowElevationAppBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationBottomAppBar">MDCShadowElevationBottomAppBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationBottomNavigationBar">MDCShadowElevationBottomNavigationBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationCardPickedUp">MDCShadowElevationCardPickedUp</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationCardResting">MDCShadowElevationCardResting</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationDialog">MDCShadowElevationDialog</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationFABPressed">MDCShadowElevationFABPressed</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationFABResting">MDCShadowElevationFABResting</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationMenu">MDCShadowElevationMenu</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationModalBottomSheet">MDCShadowElevationModalBottomSheet</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationNavDrawer">MDCShadowElevationNavDrawer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationNone">MDCShadowElevationNone</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationPicker">MDCShadowElevationPicker</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationQuickEntry">MDCShadowElevationQuickEntry</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationQuickEntryResting">MDCShadowElevationQuickEntryResting</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationRaisedButtonPressed">MDCShadowElevationRaisedButtonPressed</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationRaisedButtonResting">MDCShadowElevationRaisedButtonResting</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationRefresh">MDCShadowElevationRefresh</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationRightDrawer">MDCShadowElevationRightDrawer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationSearchBarResting">MDCShadowElevationSearchBarResting</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationSearchBarScrolled">MDCShadowElevationSearchBarScrolled</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationSnackbar">MDCShadowElevationSnackbar</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationSubMenu">MDCShadowElevationSubMenu</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:MDCShadowElevations.h@MDCShadowElevationSwitch">MDCShadowElevationSwitch</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enumerations.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MDCBottomNavigationBarAlignment.html">MDCBottomNavigationBarAlignment</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MDCBottomNavigationBarTitleVisibility.html">MDCBottomNavigationBarTitleVisibility</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCBottomNavigationBarDelegate.html">MDCBottomNavigationBarDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCElevatable.html">MDCElevatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCElevationOverriding.html">MDCElevationOverriding</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Type Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:MDCShadowElevations.h@T@MDCShadowElevation">MDCShadowElevation</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>MDCBottomNavigationBar</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MDCBottomNavigationBar</span>
+    <span class="p">:</span> <span class="nc">UIView</span> <span class="o">&lt;</span><span class="n"><a href="../Protocols/MDCElevatable.html">MDCElevatable</a></span><span class="p">,</span> <span class="n"><a href="../Protocols/MDCElevationOverriding.html">MDCElevationOverriding</a></span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>A bottom navigation bar.</p>
+
+<p>The bottom navigation bar is docked at the bottom of the screen with tappable items. Only one item
+can be selected at at time. The selected item&#x2019;s title text is displayed. Title text for unselected
+items are hidden.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)delegate"></a>
+                    <a name="//apple_ref/objc/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)delegate">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The bottom navigation bar delegate.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/MDCBottomNavigationBarDelegate.html">MDCBottomNavigationBarDelegate</a></span><span class="o">&gt;</span>
+    <span class="n">delegate</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)titleVisibility"></a>
+                    <a name="//apple_ref/objc/Property/titleVisibility" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)titleVisibility">titleVisibility</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Configures when item titles should be displayed.
+Default is MDCBottomNavigationBarTitleVisibilitySelected.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n"><a href="../Enums/MDCBottomNavigationBarTitleVisibility.html">MDCBottomNavigationBarTitleVisibility</a></span> <span class="n">titleVisibility</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)alignment"></a>
+                    <a name="//apple_ref/objc/Property/alignment" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)alignment">alignment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Configures item space distribution and title orientation in landscape mode.
+Default is MDCBottomNavigationBarDistributionEqual.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n"><a href="../Enums/MDCBottomNavigationBarAlignment.html">MDCBottomNavigationBarAlignment</a></span> <span class="n">alignment</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)items"></a>
+                    <a name="//apple_ref/objc/Property/items" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)items">items</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An array of UITabBarItems that is used to populate bottom navigation bar content. It is strongly
+recommended the array contain at least three items and no more than five items &#x2013; appearance may
+degrade outside of this range.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">UITabBarItem</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">items</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)selectedItem"></a>
+                    <a name="//apple_ref/objc/Property/selectedItem" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)selectedItem">selectedItem</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Selected item in the bottom navigation bar.
+Default is no item selected.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">UITabBarItem</span> <span class="o">*</span><span class="n">selectedItem</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)itemTitleFont"></a>
+                    <a name="//apple_ref/objc/Property/itemTitleFont" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)itemTitleFont">itemTitleFont</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Display font used for item titles.
+Default is system font.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">UIFont</span> <span class="o">*</span><span class="n">itemTitleFont</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)selectedItemTintColor"></a>
+                    <a name="//apple_ref/objc/Property/selectedItemTintColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)selectedItemTintColor">selectedItemTintColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Color of selected item. Applies color to items&#x2019; icons and text. If set also sets
+selectedItemTitleColor. Default color is black.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">UIColor</span> <span class="o">*</span><span class="n">selectedItemTintColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)selectedItemTitleColor"></a>
+                    <a name="//apple_ref/objc/Property/selectedItemTitleColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)selectedItemTitleColor">selectedItemTitleColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Color of the selected item&#x2019;s title text. Default color is black.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span>
+    <span class="n">UIColor</span> <span class="o">*</span><span class="n">selectedItemTitleColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)unselectedItemTintColor"></a>
+                    <a name="//apple_ref/objc/Property/unselectedItemTintColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)unselectedItemTintColor">unselectedItemTintColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Color of unselected items. Applies color to items&#x2019; icons. Text is not displayed in unselected mode.
+Default color is dark gray.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span>
+    <span class="n">UIColor</span> <span class="o">*</span><span class="n">unselectedItemTintColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)barTintColor"></a>
+                    <a name="//apple_ref/objc/Property/barTintColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)barTintColor">barTintColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Color of the background of bottom navigation bar and the bar items.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">UIColor</span> <span class="o">*</span><span class="n">barTintColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)backgroundColor"></a>
+                    <a name="//apple_ref/objc/Property/backgroundColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)backgroundColor">backgroundColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>To color the background of the view use -barTintColor instead.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">UIColor</span> <span class="o">*</span><span class="n">backgroundColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)backgroundBlurEffectStyle"></a>
+                    <a name="//apple_ref/objc/Property/backgroundBlurEffectStyle" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)backgroundBlurEffectStyle">backgroundBlurEffectStyle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The blur effect style to use behind the Bottom Navigation bar.</p>
+
+<p>Has no effect unless @backgroundBlurEnabled is @c YES and @c barTintColor has an @c alpha value
+less than 1.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n">UIBlurEffectStyle</span> <span class="n">backgroundBlurEffectStyle</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)backgroundBlurEnabled"></a>
+                    <a name="//apple_ref/objc/Property/backgroundBlurEnabled" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)backgroundBlurEnabled">backgroundBlurEnabled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If @c YES, the background of the bar is masked by a UIBlurEffectView. Configure the blur effect
+style using the @c backgroundBlurEffectStyle property.</p>
+
+<p>Defaults to @c NO.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">getter</span><span class="o">=</span><span class="n">isBackgroundBlurEnabled</span><span class="p">,</span> <span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n">BOOL</span> <span class="n">backgroundBlurEnabled</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)itemsContentVerticalMargin"></a>
+                    <a name="//apple_ref/objc/Property/itemsContentVerticalMargin" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)itemsContentVerticalMargin">itemsContentVerticalMargin</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The margin between the item&#x2019;s icon and title when alignment is either Justified or Centered.
+Defaults to 0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">CGFloat</span> <span class="n">itemsContentVerticalMargin</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)itemsContentHorizontalMargin"></a>
+                    <a name="//apple_ref/objc/Property/itemsContentHorizontalMargin" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)itemsContentHorizontalMargin">itemsContentHorizontalMargin</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The margin between the item&#x2019;s icon and title when alignment is JustifiedAdjacentTitles. Defaults to
+12.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">CGFloat</span> <span class="n">itemsContentHorizontalMargin</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)barItemsBottomAnchor"></a>
+                    <a name="//apple_ref/objc/Property/barItemsBottomAnchor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)barItemsBottomAnchor">barItemsBottomAnchor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>NSLayoutAnchor for the bottom of the bar items.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    It is recommended that this anchor be constrained to the bottom of the safe area layout guide
+of the superview. This will allow the Bottom Navigation bar to extend to the bottom of the screen
+and provide sufficient height for its content above the safe area.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span>
+    <span class="n">NSLayoutYAxisAnchor</span> <span class="o">*</span><span class="n">barItemsBottomAnchor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)truncatesLongTitles"></a>
+                    <a name="//apple_ref/objc/Property/truncatesLongTitles" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)truncatesLongTitles">truncatesLongTitles</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If @c YES, it will truncate titles that don&#x2019;t fit within the bounds available to the item.</p>
+
+<p>Default is @c YES.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">truncatesLongTitles</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)elevation"></a>
+                    <a name="//apple_ref/objc/Property/elevation" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)elevation">elevation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The elevation of the bottom navigation bar. Defaults to @c MDCShadowElevationBottomNavigationBar .</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n"><a href="../Type Definitions.html#/c:MDCShadowElevations.h@T@MDCShadowElevation">MDCShadowElevation</a></span> <span class="n">elevation</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)shadowColor"></a>
+                    <a name="//apple_ref/objc/Property/shadowColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)shadowColor">shadowColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The color of the shadow of the bottom navigation bar. Defaults to black.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">UIColor</span> <span class="o">*</span><span class="n">shadowColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)titlesNumberOfLines"></a>
+                    <a name="//apple_ref/objc/Property/titlesNumberOfLines" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)titlesNumberOfLines">titlesNumberOfLines</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of lines used for item titles. It is possible that long titles may cause the text to
+extend beyond the safe area of the Bottom Navigation bar. It is recommended that short titles are
+used before this value is changed.</p>
+
+<p>Defaults to 1.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    This property has no effect if the bar items are laid-out with the image and title
+  side-by-side. This may be the case if the bar&#x2019;s @c alignment is
+  @c MDCBottomNavigationBarAlignmentJustifiedAdjacentTitles.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSInteger</span> <span class="n">titlesNumberOfLines</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)enableRippleBehavior"></a>
+                    <a name="//apple_ref/objc/Property/enableRippleBehavior" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)enableRippleBehavior">enableRippleBehavior</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>By setting this property to @c YES, the Ripple component will be used instead of Ink
+to display visual feedback to the user.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    This property will eventually be enabled by default, deprecated, and then deleted as part
+of our migration to Ripple. Learn more at
+<a href="https://github.com/material-components/material-components-ios/tree/develop/components/Ink#migration-guide-ink-to-ripple">https://github.com/material-components/material-components-ios/tree/develop/components/Ink#migration-guide-ink-to-ripple</a>
+
+</div>
+
+<p>Defaults to NO.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">enableRippleBehavior</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)traitCollectionDidChangeBlock"></a>
+                    <a name="//apple_ref/objc/Property/traitCollectionDidChangeBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)traitCollectionDidChangeBlock">traitCollectionDidChangeBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A block that is invoked when the @c MDCBottomNavigationBar receives a call to @c
+traitCollectionDidChange:. The block is called after the call to the superclass.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">MDCBottomNavigationBar</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span> <span class="n">UITraitCollection</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span>
+        <span class="n">traitCollectionDidChangeBlock</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(im)viewForItem:"></a>
+                    <a name="//apple_ref/objc/Method/-viewForItem:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(im)viewForItem:">-viewForItem:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the navigation bar subview associated with the specific item.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nf">viewForItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UITabBarItem</span> <span class="o">*</span><span class="p">)</span><span class="nv">item</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>item</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A UITabBarItem</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Deprecated"></a>
+                <a name="//apple_ref/objc/Section/Deprecated" class="dashAnchor"></a>
+                <a href="#/Deprecated">
+                  <h3 class="section-name">Deprecated</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCBottomNavigationBar(py)sizeThatFitsIncludesSafeArea"></a>
+                    <a name="//apple_ref/objc/Property/sizeThatFitsIncludesSafeArea" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCBottomNavigationBar(py)sizeThatFitsIncludesSafeArea">sizeThatFitsIncludesSafeArea</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Flag to allow clients to gradually correct the size/position of the Bottom Navigation bar relative
+to the safe area on iOS 11+.</p>
+
+<p>NOTE: In an upcoming release, this flag will be removed and the default behavior will be to exclude
+the safe area in size calculations.</p>
+
+<p>Defaults to @c NO.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">sizeThatFitsIncludesSafeArea</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+
+    <section class="footer">
+      <p>&#xA9; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-09-25)</p>
+    </section>
+  </body>
+
+</html>

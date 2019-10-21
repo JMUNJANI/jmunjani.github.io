@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html lang="en" class="preload">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Applying sound to UI - Material Design</title>
+
+
+    <meta itemprop="name"        property="og:title"       name="twitter:title"       content="Applying sound to UI" />
+    <meta itemprop="description" property="og:description" name="twitter:description" content="Build beautiful, usable products faster. Material Design is an adaptable system—backed by open-source code—that helps teams build high quality digital experiences." />
+    <meta itemprop="image"       property="og:image"       name="twitter:image"       content="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F17sAe5y9s04eBPbsDSJFIXCr4mdXn3k3k%2Fsound-applying-thumbnail-2x1.png" />
+    <meta itemprop="url"         property="og:url"         name="twitter:url"         content="https://material.io/design/sound/applying-sound-to-ui.html" />
+    <meta property="og:site_name" content="Material Design" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">    <link rel="shortcut icon" href="/favicon.ico">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHRPF8');</script>    <style>
+.animatable {
+        opacity: 0;
+        position: relative;
+        top: 16px;         transition: opacity 235ms cubic-bezier(.4,0,.2,1),
+                    top 500ms cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link href="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/css/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+    <link rel="preload" href="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/js/main.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js" as="script">
+
+
+  </head>
+
+  <body class="header-show page--article left-rail"
+        data-comp="Global "
+        data-slug-id="applyingSoundToUi"
+        data-spec-alias="mio-design"
+ >
+    <a class="screenreader-only" href="#main_content">Skip to main content</a>
+
+  <header class="header js-header" data-comp="Header">
+      <button class="header__hamburger header__button" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+        <i class="material-icons notranslate header__hamburger-icon" title="Toggle Navigation">menu</i>
+      </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+    <nav class="header__nav" role="navigation">
+      <ul class="header__nav-list header__nav-list--cleared">
+            <li class="header__nav-item  header__nav-item--active js-header-item" aria-current="true">
+    <a href="/design"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/design"}
+'>
+      Design
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/components"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/components"}
+'>
+      Components
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/develop"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/develop"}
+'>
+      Develop
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/resources"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/resources"}
+'>
+      Resources
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+      </ul>
+    </nav>
+
+    <form id="search-form" class="search-form js-search" data-comp="SearchForm" data-props-searchform='{"basePath": "/", "ajax": false, "showOnLoad": false}'>
+      <button class="search-form__back js-search-back js-analytics-click" type="button" aria-label="Exit search results"
+              data-analytics='  {
+    "event": "trackEvent",
+    "category": "search back",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+        <i class="material-icons notranslate">arrow_back</i>
+      </button>
+
+      <input id="search-query" class="search-form__input js-search-input" name="q" type="text" title="query" placeholder="Search" autocomplete="off" aria-label="Type your search and press enter.">
+    </form>
+
+    <button class="header__search header__button js-toggle-search js-analytics-click"
+            data-analytics='  {
+    "event": "trackEvent",
+    "category": "search",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+      <div class="icons-container mdc-ripple-surface" data-mdc-ripple-is-unbounded>
+        <i class="material-icons notranslate header__spyglass" aria-label="Search Material Design">search</i>
+        <i class="material-icons notranslate header__search-close" aria-label="Close search">close</i>
+      </div>
+    </button>
+  </header>
+
+
+<nav aria-label="Breadcrumbs" class="breadcrumbs" data-comp="Breadcrumbs" aria-hidden="true">
+    <button class="breadcrumbs__hamburger" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+      <i class="material-icons notranslate" title="Toggle Navigation">menu</i>
+    </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+  <ol class="container container--large breadcrumbs__list">
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click "
+           href="../sound"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../sound"}
+'>Sound</a>
+      </li>
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link"
+           href="../sound/applying-sound-to-ui.html"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../sound/applying-sound-to-ui.html"}
+'>Applying sound to UI</a>
+      </li>
+      <li class="breadcrumbs__crumb disabled breadcrumbs__chapter">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link js-breadcrumb-hash"
+           href="#sound use cases"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "#sound use cases"}
+'>Sound use cases</a>
+      </li>
+  </ol>
+</nav>
+
+
+<nav class="side-nav" data-comp="SideNav" role="navigation">
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+
+
+            <span class="side-nav__section-title">Material System</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../introduction"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../introduction"}
+'>
+            Introduction
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav1"
+                  aria-expanded="false">
+            Material studies
+          </button>
+            <div class="side-nav__wrapper" id="_nav1">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/about-our-material-studies.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/about-our-material-studies.html"}
+'>
+            About our Material studies
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/basil.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/basil.html"}
+'>
+            Basil
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/crane.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/crane.html"}
+'>
+            Crane
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/fortnightly.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/fortnightly.html"}
+'>
+            Fortnightly
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/owl.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/owl.html"}
+'>
+            Owl
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/rally.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/rally.html"}
+'>
+            Rally
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/reply.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/reply.html"}
+'>
+            Reply
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/shrine.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/shrine.html"}
+'>
+            Shrine
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+      </ul>      <span class="side-nav__section-title">Material Foundation</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../foundation-overview"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../foundation-overview"}
+'>
+            Foundation overview
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav3"
+                  aria-expanded="false">
+            Environment
+          </button>
+            <div class="side-nav__wrapper" id="_nav3">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../environment/surfaces.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../environment/surfaces.html"}
+'>
+            Surfaces
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../environment/elevation.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../environment/elevation.html"}
+'>
+            Elevation
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../environment/light-shadows.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../environment/light-shadows.html"}
+'>
+            Light and shadows
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav4"
+                  aria-expanded="false">
+            Layout
+          </button>
+            <div class="side-nav__wrapper" id="_nav4">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/understanding-layout.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/understanding-layout.html"}
+'>
+            Understanding layout
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/pixel-density.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/pixel-density.html"}
+'>
+            Pixel density
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/responsive-layout-grid.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/responsive-layout-grid.html"}
+'>
+            Responsive layout grid
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/spacing-methods.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/spacing-methods.html"}
+'>
+            Spacing methods
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/component-behavior.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/component-behavior.html"}
+'>
+            Component behavior
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/applying-density.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/applying-density.html"}
+'>
+            Applying density
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav5"
+                  aria-expanded="false">
+            Navigation
+          </button>
+            <div class="side-nav__wrapper" id="_nav5">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../navigation/understanding-navigation.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation/understanding-navigation.html"}
+'>
+            Understanding navigation
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../navigation/navigation-transitions.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation/navigation-transitions.html"}
+'>
+            Navigation transitions
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../navigation/search.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation/search.html"}
+'>
+            Search
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav6"
+                  aria-expanded="false">
+            Color
+          </button>
+            <div class="side-nav__wrapper" id="_nav6">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/the-color-system.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/the-color-system.html"}
+'>
+            The color system
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/applying-color-to-ui.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/applying-color-to-ui.html"}
+'>
+            Applying color to UI
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/color-usage.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/color-usage.html"}
+'>
+            Color usage
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/text-legibility.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/text-legibility.html"}
+'>
+            Text legibility
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/dark-theme.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/dark-theme.html"}
+'>
+            Dark theme
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav7"
+                  aria-expanded="false">
+            Typography
+          </button>
+            <div class="side-nav__wrapper" id="_nav7">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../typography/the-type-system.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../typography/the-type-system.html"}
+'>
+            The type system
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../typography/understanding-typography.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../typography/understanding-typography.html"}
+'>
+            Understanding typography
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../typography/language-support.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../typography/language-support.html"}
+'>
+            Language support
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface active js-submenu-toggle"
+                  aria-controls="_nav8"
+                  aria-expanded="true">
+            Sound
+          </button>
+            <div class="side-nav__wrapper" id="_nav8">
+    <ul class="side-nav__submenu" data-menu-state="open">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/about-sound.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/about-sound.html"}
+'>
+            About sound
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+side-nav__link--active js-header-show"
+              href="../sound/applying-sound-to-ui.html" aria-current="page" data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/applying-sound-to-ui.html"}
+'>
+            Applying sound to UI
+          </a>
+
+              <div class="side-nav__articles">
+    <i class="side-nav__progress-bar">
+      <i class="side-nav__scrub js-submenu-scrub"></i>
+    </i>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-sound-use-cases js-analytics-click" href="#sound-use-cases" data-section-id="sound-use-cases"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#sound-use-cases"}
+'>
+          <span class="js-anchor-text">Sound use cases</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-hero-sounds js-analytics-click" href="#hero-sounds" data-section-id="hero-sounds"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#hero-sounds"}
+'>
+          <span class="js-anchor-text">Hero sounds</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-notifications js-analytics-click" href="#notifications" data-section-id="notifications"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#notifications"}
+'>
+          <span class="js-anchor-text">Notifications</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-system-sounds js-analytics-click" href="#system-sounds" data-section-id="system-sounds"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#system-sounds"}
+'>
+          <span class="js-anchor-text">System sounds</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-ambient-sounds js-analytics-click" href="#ambient-sounds" data-section-id="ambient-sounds"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#ambient-sounds"}
+'>
+          <span class="js-anchor-text">Ambient sounds</span>
+        </a>
+      </div>
+  </div>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/sound-attributes.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/sound-attributes.html"}
+'>
+            Sound attributes
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/sound-choreography.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/sound-choreography.html"}
+'>
+            Sound choreography
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/sound-resources.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/sound-resources.html"}
+'>
+            Sound resources
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav9"
+                  aria-expanded="false">
+            Iconography
+          </button>
+            <div class="side-nav__wrapper" id="_nav9">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../iconography/product-icons.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../iconography/product-icons.html"}
+'>
+            Product icons
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../iconography/system-icons.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../iconography/system-icons.html"}
+'>
+            System icons
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../iconography/animated-icons.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../iconography/animated-icons.html"}
+'>
+            Animated icons
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav10"
+                  aria-expanded="false">
+            Shape
+          </button>
+            <div class="side-nav__wrapper" id="_nav10">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/about-shape.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/about-shape.html"}
+'>
+            About shape
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/shape-hierarchy.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/shape-hierarchy.html"}
+'>
+            Shape and hierarchy
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/shape-as-expression.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/shape-as-expression.html"}
+'>
+            Shape as expression
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/shape-motion.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/shape-motion.html"}
+'>
+            Shape and motion
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/applying-shape-to-ui.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/applying-shape-to-ui.html"}
+'>
+            Applying shape to UI
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav11"
+                  aria-expanded="false">
+            Motion
+          </button>
+            <div class="side-nav__wrapper" id="_nav11">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../motion/understanding-motion.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../motion/understanding-motion.html"}
+'>
+            Understanding motion
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../motion/speed.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../motion/speed.html"}
+'>
+            Speed
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../motion/choreography.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../motion/choreography.html"}
+'>
+            Choreography
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../motion/customization.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../motion/customization.html"}
+'>
+            Customization
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav12"
+                  aria-expanded="false">
+            Interaction
+          </button>
+            <div class="side-nav__wrapper" id="_nav12">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../interaction/gestures.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../interaction/gestures.html"}
+'>
+            Gestures
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../interaction/selection.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../interaction/selection.html"}
+'>
+            Selection
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../interaction/states.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../interaction/states.html"}
+'>
+            States
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+      </ul>      <span class="side-nav__section-title">Material Guidelines</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav13"
+                  aria-expanded="false">
+            Communication
+          </button>
+            <div class="side-nav__wrapper" id="_nav13">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/confirmation-acknowledgement.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/confirmation-acknowledgement.html"}
+'>
+            Confirmation &amp; acknowledgement
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/data-formats.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/data-formats.html"}
+'>
+            Data formats
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/data-visualization.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/data-visualization.html"}
+'>
+            Data visualization
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/empty-states.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/empty-states.html"}
+'>
+            Empty states
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/help-feedback.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/help-feedback.html"}
+'>
+            Help &amp; feedback
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/imagery.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/imagery.html"}
+'>
+            Imagery
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/launch-screen.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/launch-screen.html"}
+'>
+            Launch screen
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/onboarding.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/onboarding.html"}
+'>
+            Onboarding
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/offline-states.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/offline-states.html"}
+'>
+            Offline states
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/writing.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/writing.html"}
+'>
+            Writing
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../guidelines-overview"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../guidelines-overview"}
+'>
+            Guidelines overview
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav15"
+                  aria-expanded="false">
+            Material Theming
+          </button>
+            <div class="side-nav__wrapper" id="_nav15">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-theming/overview.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-theming/overview.html"}
+'>
+            Overview
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-theming/implementing-your-theme.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-theming/implementing-your-theme.html"}
+'>
+            Implementing your theme
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav16"
+                  aria-expanded="false">
+            Usability
+          </button>
+            <div class="side-nav__wrapper" id="_nav16">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../usability/accessibility.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../usability/accessibility.html"}
+'>
+            Accessibility
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../usability/bidirectionality.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../usability/bidirectionality.html"}
+'>
+            Bidirectionality
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav17"
+                  aria-expanded="false">
+            Platform guidance
+          </button>
+            <div class="side-nav__wrapper" id="_nav17">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-bars.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-bars.html"}
+'>
+            Android bars
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-fingerprint.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-fingerprint.html"}
+'>
+            Android fingerprint
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-haptics.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-haptics.html"}
+'>
+            Android haptics
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-icons.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-icons.html"}
+'>
+            Android icons
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-navigating-between-apps.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-navigating-between-apps.html"}
+'>
+            Android navigating between apps
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-notifications.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-notifications.html"}
+'>
+            Android notifications
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-permissions.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-permissions.html"}
+'>
+            Android permissions
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-settings.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-settings.html"}
+'>
+            Android settings
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-slices.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-slices.html"}
+'>
+            Android slices
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-split-screen.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-split-screen.html"}
+'>
+            Android split-screen
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-swipe-to-refresh.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-swipe-to-refresh.html"}
+'>
+            Android swipe to refresh
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-text-selection-toolbar.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-text-selection-toolbar.html"}
+'>
+            Android text selection toolbar
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-widget.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-widget.html"}
+'>
+            Android widget
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/cross-platform-adaptation.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/cross-platform-adaptation.html"}
+'>
+            Cross-platform adaptation
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+  </ul>
+</nav>
+
+
+    <main id="main_content" class="main" role="main" aria-labelledby="Main Content">
+<article class="article" data-comp="Waypoints">
+  <div class="article__intro container container--large js-waypoints-trigger-initial">
+    <div class="article__intro-text">
+      <h1 class="article__title animatable js-anim-trigger">
+
+        Applying sound to UI
+
+            <div class="article-controls">
+              
+            </div>
+      </h1>
+
+
+        <div class="article__intro-text animatable js-anim-trigger">
+        <div>
+<div aria-hidden="true" class="keywords hidden">sound</div>
+<h2>Sound can give expression to interactions and reinforce specific functionality. </h2></div>
+        </div>
+    </div>
+
+      <nav class="article__nav animatable js-anim-trigger">
+        <span class="eyebrow">Contents</span>
+        <ul>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#sound-use-cases" data-section-id="sound-use-cases"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#sound-use-cases"}
+'>Sound use cases</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#hero-sounds" data-section-id="hero-sounds"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#hero-sounds"}
+'>Hero sounds</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#notifications" data-section-id="notifications"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#notifications"}
+'>Notifications</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#system-sounds" data-section-id="system-sounds"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#system-sounds"}
+'>System sounds</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#ambient-sounds" data-section-id="ambient-sounds"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#ambient-sounds"}
+'>Ambient sounds</a>
+            </li>
+        </ul>
+      </nav>
+  </div>
+
+  <hr />
+
+  <div class="article__body animatable js-breadcrumb-toggle js-anim-trigger">
+      <section id="sound-use-cases" class="container container--large js-waypoints-trigger article__section" data-section-title="Sound use cases" aria-label="Sound use cases">
+          <h2 class="article__chapter-title">
+            Sound use cases
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div><p>Sound can provide feedback or add decoration to a user experience when applied to strategic moments.</p><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Sound as feedback Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Sound as feedback</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Sound can be applied to interactions by linking an action, or a state change, to an audio cue. These sounds are called earcons, and they...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>Sound can be applied to interactions by linking an action, or a state change, to an audio cue. These sounds are called <strong>earcons</strong>, and they can<strong> </strong>represent information, actions, or events. Their sound can reinforce both the meaning of an interaction and a product’s aesthetic, emotion, and personality. </p><p>To suit an earcon to a particular context, it can be designed using either inspiration from real-world situations or invented specifically to express an abstract concept. Familiar sounds that are based on experiences in the real world are referred to as <strong>skeuomorphic</strong>.</p><div class="col-list rich-media"><section class="figure-figure col-2 h2-spacing"><div class="figure"><h2>Skeuomorphic sounds</h2><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1qwuoZ3K8x_baX3mHgw3mRJiOVLmAwz-1%2Ffamiliar-sounds.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><p>A lock sound is skeuomorphic – a real-world representation of a sound.</p></div><div class="figure"><h2>Abstract sounds</h2><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F14tVMjqhmOm0YQxhnb8-zIC93GYCNZP9O%2Fabstract-sounds-02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><p>An abstract lock sound emphasizes lighthearted tones to communicate a user successfully completing an action.</p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Sound as decoration Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Sound as decoration</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Sound used for decoration can amplify an expressive or playful moment. It’s usually used to communicate an emotional state. This type of sound should be...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>Sound used for decoration can amplify an expressive or playful moment. It’s usually used to communicate an emotional state. This type of sound should be used judiciously and reserved for moments with high emotional resonance.</p><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1XMTPXwrYZtVyBtLnGUtux4gBtbPDFeBm%2Freply-launch-04.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p class="s-tag-caption do">Do.</p></figcaption><p>Use decorative sound sparingly, limited to moments that reinforce your product’s themes and unique voice.</p></div></section></div><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 63.1578947368%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1KPvF61T2HzaI9rcui-1Baj9sDHD4TF5p%2Fexpressive-caution-03.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p class="s-tag-caption caution">Caution.</p></figcaption><p>Limit the frequency of decorative sound to reduce user fatigue of the sound.</p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse When not to use sound Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">When not to use sound</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Building silence into a UI design is just as important as knowing when to apply sound. In many instances, sound isn’t needed and it can...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>Building silence into a UI design is just as important as knowing when to apply sound. In many instances, sound isn’t needed and it can actually detract from user focus and comfort. Similar to using negative space in visual design, silence creates a space for other elements to receive focus. </p><p>For example, sound isn’t usually suitable for:</p><ul class="lst-kix_h9ql72878f3n-0 start"><li>UIs that require privacy or discretion</li><li>Users who have requested no interruptions</li><li>Actions that are performed frequently</li></ul><p>In any context, sound should elevate the visual experience rather than detract from it.</p><p> </p></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="hero-sounds" class="container container--large js-waypoints-trigger article__section" data-section-title="Hero sounds" aria-label="Hero sounds">
+          <h2 class="article__chapter-title">
+            Hero sounds
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div><p>Hero sounds are representations of a product and brand that highlight an important moment, evoke an emotional state, or express celebration. </p><p>They occur in pivotal interactions, such as those that:</p><ul class="lst-kix_9m6t6jlahmxg-0 start"><li>Celebrate a significant positive action the user has taken</li><li>Welcome users to a new app or experience</li><li>Confirm a key moment of a product’s purpose </li></ul><p>Hero sounds occur infrequently, and because of their prominence, they should be applied in consistent ways.</p><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 50.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1K-yXZbCjKV98TUrq591aPbFNoyWRKBF5%2Fhero-sound-02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><p><strong>Celebration<br>
+</br></strong>Sound expresses a sense of success, accomplishment, or reward. This UI uses a hero sound to celebrate a user finishing all items in their inbox.</p></div></section></div></div>
+        </div>
+      </section>
+<hr />      <section id="notifications" class="container container--large js-waypoints-trigger article__section" data-section-title="Notifications" aria-label="Notifications">
+          <h2 class="article__chapter-title">
+            Notifications
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div><p>Notifications are prominent requests for user attention. Their primary role is to help direct user attention, and they provide an opportunity to give a custom sound identity to emphasized interactions. Because they occur more frequently in a UI than other sounds, they should generally be shorter than hero sounds and crafted in a way that is suitable for being played multiple times.</p><h2>Environmental factors</h2><p>Notifications should be designed to be audible from a variable range of user distances from a product, and in scenarios like loud environments. The sound itself can vary to attract the focus of the ear, using rhythmic, tonal, and frequency variation. </p><p>It’s recommended to provide options that allow users to personalize notifications, with options that range from basic, non-decorative sound to rich, decorative sound.</p><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Notifications and alerts Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Notifications and alerts</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Push notifications Notifications can communicate actionable UI elements using custom sound. Alerts Alerts use brighter timbres and energetic composition to draw attention or convey urgent...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="figure-figure col-2"><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1502gIXfCvZwn3m6DFFpjQnsSsfIihora%2Fsubtle-notify-02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><p><strong>Push notifications<br>
+</br></strong>Notifications can communicate actionable UI elements using custom sound.</p></div><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1jSOGJoYkLWTIciutQgmXCzEeLSMlpHgx%2Falert-03.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><p><strong>Alerts</strong><strong><br>
+</br></strong>Alerts use <a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "../sound/sound-attributes.html#timbre"}
+' href="../sound/sound-attributes.html#timbre">
+  brighter timbres</a> and energetic composition to draw attention or convey urgent information.</p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Ringtones, alarms, and timers Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Ringtones, alarms, and timers</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Ringtones, alarms, and timers are alerts that often have a playful style. They can be customized to suit user preferences and brand personality. Ringtones Ringtones...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>Ringtones, alarms, and timers are alerts that often have a playful style. They can be customized to suit user preferences and brand personality.</p><div class="col-list rich-media"><section class="figure-figure col-2"><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1XWiCqTeaPs1nQPe5irYHcpXfHYLPKm1g%2Fringer-02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><p><strong>Ringtones<br>
+</br></strong>Ringtones can be musical, expressive, and playful. </p></div><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 100.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1GOsYi4cGbTd5-B6waIKB_qbtaAW9CKKN%2F00-alarm-01.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><p><strong>Alarms and timers<br>
+</br></strong>Alarms and timers can accommodate use cases and user preferences, such as gentler or more abrupt sounds.</p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="system-sounds" class="container container--large js-waypoints-trigger article__section" data-section-title="System sounds" aria-label="System sounds">
+          <h2 class="article__chapter-title">
+            System sounds
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sound</div>
+<div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Primary UX sounds Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Primary UX sounds</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Primary UX sounds are generated by an operating system (or device) to provide user feedback. They can add sound to any interaction, such as: They...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>Primary UX sounds are generated by an operating system (or device) to provide user feedback. They can add sound to any interaction, such as: </p><ul class="lst-kix_k96h0apa6v1f-0 start"><li>Menu navigation</li><li>Confirming a user’s direct action</li><li>Data input</li></ul><p>They should be in harmony with a product’s sound aesthetic, while remaining simple and understated.</p><h2>Usage</h2><p>These sounds occur more frequently than other sounds in the UI. Because they are repeated throughout an experience, they should be suitable for being played often (without feeling annoying or redundant). </p><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 73.6842105263%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F157EVWVVB2VNSqgp3-A3Qf03uO0s1a2ky%2Fnavigation-taps-02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><p><strong>Navigation<br>
+</br></strong>Subtle navigation sounds use gentle feedback to improve a UI’s ease of use.</p></div></section></div><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 47.3684210526%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F16uDh_ZvTM91G_5Mxp8JH0ylyMPz3W3Gg%2Fpositive-selection.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><p><strong>Positive selection<br>
+</br></strong>Subtle selection sounds use gentle feedback to improve a UI’s ease of use.</p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Secondary UX sounds Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Secondary UX sounds</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Secondary UX sounds are played less frequently in a UI. They should reflect a product’s personality, but they are primarily used for functional purposes, to...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>Secondary UX sounds are played less frequently in a UI. They  should reflect a product’s personality, but they are primarily used for functional purposes, to inform users of state changes, or to indicate infrequent actions. </p><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 63.1578947368%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1HAPIOmFwq4VSphM5Qrw1CmoAJyUTDGxf%2Frefresh-feed-04.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><p><strong>Feed refresh<br>
+</br></strong>A subtle tone can express when a content feed is refreshed.</p></div></section></div><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 47.3684210526%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1H64tHDZp6HWwXjzO1x4Lmtn2hVx_E2K0%2Funavailable-selection-03.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><p><strong>Unavailable selection</strong></p><p>A tone can inform users when something isn’t available for interaction.</p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="ambient-sounds" class="container container--large js-waypoints-trigger article__section" data-section-title="Ambient sounds" aria-label="Ambient sounds">
+          <h2 class="article__chapter-title">
+            Ambient sounds
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div><p>Ambient sound is a decorative layer of sound that expresses emotion while communicating a product’s personality or brand. </p><p>It can be placed anywhere in an experience that warrants a strong sound element, such as: </p><ul class="lst-kix_dt02w8gn921v-0 start"><li>A start-up flow, to welcome the listener to the experience</li><li>An accompaniment to a home screen, to express an emotional tone and user’s location in a UI </li></ul><p>Ambient sound should provide atmosphere and not detract the user from performing a task. It can also provide cues, by changing the tone of music to indicate a change in state. </p><p>Ambient sounds can be based on music, environmental sounds, or other sounds that create atmosphere. </p><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 56.1842105263%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1jSqRglMRaMHlvlG65TJUm7XeAFXghjPn%2Fambient-sound-04.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls enabled">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><p><strong>Ambient backgrounds<br>
+</br></strong>This ambient sound subtly expresses a product’s themes.</p></div></section></div></div>
+        </div>
+      </section>
+
+  </div>
+
+  <div class="container container--large">
+
+  <h2>Up next
+      <div class="article-controls">
+        
+      </div>
+  </h2>
+
+<div class="suggested-articles"><div>
+<a aria-label="Sound attributes" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../sound/sound-attributes.html"}
+' href="../sound/sound-attributes.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1iDo-CGB51ZsfpmuNbF9CiB0ZwVikAsSU/sound-applying-thumbnail-2x1.png');">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Sound</h3>
+<h4 class="suggested-articles__item-subtitle">Sound attributes</h4>
+</a>
+<a aria-label="Light and Shadows" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../environment/light-shadows.html"}
+' href="../environment/light-shadows.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1uIWIha4ZJ_cQnxbr3NEY-JzQMr91Zo_1/environment-thumbnail-2x1.png');">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Environment</h3>
+<h4 class="suggested-articles__item-subtitle">Light and Shadows</h4>
+</a>
+<a aria-label="Understanding layout" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../layout/understanding-layout.html"}
+' href="../layout/understanding-layout.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1uWkHxg8tifFvm4r6Ve0lDpZNPJuHFb3X/layout-thumbnail-2x1.png');">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Layout</h3>
+<h4 class="suggested-articles__item-subtitle">Understanding layout</h4>
+</a></div></div>  </div>
+</article>
+    </main>
+
+
+
+<footer class="footer">
+  <div class="container container--jumbo">
+    <div class="footer-block footer-block--about">
+      <a class="footer-block__logo js-analytics-click" href="/"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "/"}
+'>
+        <img class="footer-block__material-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/images/material_logo.svg" alt="Material Design"/>
+      </a>
+      <div class="footer-block__content">
+        <p class="footer-block__description">Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
+        <ul class="footer-block__social-nav">
+          <li class="footer-block__social-nav-item">  <a href="https://www.github.com/material-components" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on GitHub"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.github.com/material-components"}
+'>GitHub</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.twitter.com/materialdesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on Twitter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.twitter.com/materialdesign"}
+'>Twitter</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/googledesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.youtube.com/googledesign"}
+'>YouTube</a>
+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-block footer-block--legal">
+      <a class="footer-block__logo js-analytics-click" href="https://www.google.com"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.google.com"}
+'>
+        <img class="footer-block__google-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/images/google_logo.svg" alt="Google"/>
+      </a>
+      <div class="footer-block__content">
+        <ul class="footer-block__legal-nav">
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Privacy Policy"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/privacy"}
+'>Privacy Policy</a>
+</li>
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Terms of Service"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/terms"}
+'>Terms of Service</a>
+</li><li class="footer-block__legal-nav-item"><a href="javascript:void(0)" class="footer-block__legal-nav-link" onclick="try{userfeedback.api.startFeedback({'productId': '1027542', 'bucket': 'material_spec', 'locale': 'en', 'allowNonLoggedInFeedback': true});return false;}catch(e){}">Feedback</a></li></ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="ui-mask js-ui-mask"></div>
+<div
+    class="lightbox js-lightbox"
+    data-comp="Lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-labelledby="sr-lightbox-title">
+  <h2 class="screenreader-only sr-lightbox-title" tabindex="0">
+    Explore how Shrine, a retail app, uses Material Design.
+  </h2>
+
+    <header class="lightbox__header">
+      <div class="lightbox__header-title">
+        <span
+            class="lightbox__button js-lightbox-close"
+            data-comp="Tooltip"
+            data-props-tooltip='{"tip": "Close", "direction": "bottom"}'>
+          <i
+              class="material-icons notranslate material-icons--padded mdc-ripple-surface"
+              data-mdc-ripple-is-unbounded tabindex="0">
+            close
+          </i>
+        </span>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+
+      <div class="lightbox__actions">
+        <button type="button" name="button" class="lightbox-redlines-toggle js-redline-sidebar-toggle" data-comp="Tooltip" data-props-tooltip='{"tip": "View Specs", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>flip</i>
+        </button>
+
+        <button type="button" name="button" class="lightbox__button js-share" data-comp="Tooltip" data-props-tooltip='{"tip": "Share", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>share</i>
+        </button>
+
+      </div>
+    </header>
+
+    <div class="lightbox__template js-zoom-wrapper">
+      <div class="lightbox__content js-lightbox-content">
+<img class="ui-loader" src="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/images/loader.svg" alt="loader" aria-hidden="true" />      </div>
+<div class="redline-sidebar js-lightbox-sidebar-container" data-comp="RedlineSidebar">
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Image only", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-image js-redline-sidebar-item" value="image" >
+        <i class="material-icons notranslate">&#xE3F4;</i>
+        <span class="redline-sidebar__label-text">Image only</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Measurements", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-measurements js-redline-sidebar-item" value="measurements" >
+        <i class="material-icons notranslate">format_shapes</i>
+        <span class="redline-sidebar__label-text">Measurements</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Text", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-text js-redline-sidebar-item" value="text" >
+        <i class="material-icons notranslate">format_size</i>
+        <span class="redline-sidebar__label-text">Text</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Color", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-colors js-redline-sidebar-item" value="colors" >
+        <i class="material-icons notranslate">palette</i>
+        <span class="redline-sidebar__label-text">Color</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Shape and Elevation", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-shapes js-redline-sidebar-item" value="shapes" >
+        <i class="material-icons notranslate">rounded_corner</i>
+        <span class="redline-sidebar__label-text">Shape and Elevation</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Components", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-components js-redline-sidebar-item" value="components" >
+        <i class="material-icons notranslate">category</i>
+        <span class="redline-sidebar__label-text">Components</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Notes", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-notes js-redline-sidebar-item" value="notes" >
+        <i class="material-icons notranslate">notes</i>
+        <span class="redline-sidebar__label-text">Notes</span>
+      </button>
+    </div>
+<div class="redline-sidebar__toggles js-redline-layer-toggles">
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--dimensions">
+        <input type="checkbox" id="dimensions" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="dimensions">Dimensions</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--padding">
+        <input type="checkbox" id="padding" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="padding">Padding</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--typography">
+        <input type="checkbox" id="typography" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="typography">Text baseline</label>
+  </div>
+</div><nav class="carousel__nav">
+  <button
+      class="carousel__button carousel__button--prev mdc-ripple-surface js-carousel-prev"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Previous", "direction": "right"}'>
+    <i class="material-icons notranslate">chevron_left</i>
+  </button>
+
+  <button
+      class="carousel__button carousel__button--next mdc-ripple-surface js-carousel-next"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Next", "direction": "left"}'>
+    <i class="material-icons notranslate">chevron_right</i>
+  </button>
+</nav><div class="zoom-buttons" data-comp="Zoom">
+  <div class="zoom-buttons__wrapper">
+
+    <button class="mdc-button-zoom js-zoom-out" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom out", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">remove</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-reset" data-comp="Tooltip" data-props-tooltip='{"tip": "Reset", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">search</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-in" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom in", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">add</i>
+    </button>
+
+    <div class="zoom-buttons__extras">
+      <button class="mdc-button-zoom js-colorpicker-toggle" data-comp="Tooltip Colorpicker" data-props-tooltip='{"tip": "Color picker", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">colorize</i>
+      </button>
+      <button class="mdc-button-zoom js-ruler-toggle" data-comp="Tooltip Ruler" data-props-tooltip='{"tip": "Ruler", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">straighten</i>
+      </button>
+    </div>
+
+  </div>
+</div>    </div>
+
+
+<aside class="mdc-dialog" role="alertdialog" aria-labelledby="mdc-dialog-label" aria-describedby="mdc-dialog-description" data-comp="Share">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-label" class="mdc-dialog__header__title">Share</h2>
+      <button type="button" class="mdc-dialog-share-close js-dialog-close">
+        <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>close</i>
+      </button>
+    </header>
+    <section id="mdc-dialog-description" class="mdc-dialog__body">
+      <input type="text" readonly class="mdc-dialog-share-url js-share-url" />
+      <button type="button" class="mdc-button mdc-ripple-surface mdc-dialog-copy js-dialog-copy">Copy</button>
+    </section>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside></div><div class="mdc-snackbar snackbar-wrapper" data-comp="Snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+  <div class="mdc-snackbar__text"></div>
+  <div class="mdc-snackbar__action-wrapper">
+    <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
+  </div>
+</div>
+    <script src="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js"></script>
+    <script src="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js"></script>
+    <script src="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/js/main.min.js"></script><script src="https://support.google.com/inapp/api.js"></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  </body>
+</html>

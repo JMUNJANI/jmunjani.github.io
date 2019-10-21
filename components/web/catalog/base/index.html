@@ -1,0 +1,2089 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://material.io flutter.github.io https://www.google-analytics.com https://stats.g.doubleclick.net img.shields.io 'self'; script-src https://www.google.com https://www.gstatic.com https://adservice.google.com https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline' 'self'; style-src https://fonts.googleapis.com/css 'unsafe-inline' 'self'; font-src https://fonts.gstatic.com/s/ 'self'; child-src 'none';">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <title>Base - Material Components for the Web</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-NHRPF8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta itemprop="name" content="Base - Material Components for the Web" />
+    <meta itemprop="image" content="https://material.io/static/images/simple-lp/components-share.png" />
+    <meta name="description" content="Base foundation and component classes." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Base - Material Components for the Web" />
+    <meta property="og:site_name" content="Material Components for the Web" />
+    <meta property="og:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta property="article:section" content="Base" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@materialdesign">
+    <meta name="twitter:title" content="Material Components">
+    <meta name="twitter:description" content="Create beautiful apps with modular and customizable UI components">
+    <meta name="twitter:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <link rel="icon" sizes="192x192" href="/develop/images/app-icons/material-logo-app-icon-192x192.png">
+    <link rel="shortcut icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/develop/images/app-icons/material-logo-app-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/develop/images/app-icons/material-logo-app-icon-180x180.png">
+    <meta name="msapplication-TileImage" content="https://material.io/static/images/hub/favicons/hub-ms-icon-144x144.png">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/develop/css/codemirror.css">
+    <link rel="stylesheet" href="/develop/css/neo.css">
+    <link rel="stylesheet" href="/develop/css/app.css">
+    <script async="" defer="" src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body class="page page--detail page--components page--platform-web">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <aside class="page__temporary-drawer mdc-drawer mdc-drawer--temporary page_drawer--temporary">
+      <nav class="temporary-drawer__drawer mdc-drawer__drawer mdc-drawer__content">
+        <header class="temporary-drawer__header mdc-drawer__header">
+          <div class="temporary-drawer__header-content mdc-drawer__header-content">
+            <div class="temporary-drawer__header-icon develop-toolbar__leading-icon"></div>
+            Material Design
+          </div>
+        </header>
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label">web</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <h3 class="drawer-heading">Components</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/animation/"
+     >
+                Animation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/auto-init/"
+     >
+                Auto Init
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/base/"
+     >
+                Base
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/"
+     >
+                Buttons
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/floating-action-buttons/"
+     >
+                    Floating Action Button
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/icon-buttons/"
+     >
+                    Icon Buttons
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/cards/"
+     >
+                Cards
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/chips/"
+     >
+                Chips
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/data-tables/"
+     >
+                Data Tables
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/dialogs/"
+     >
+                Dialogs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/dom/"
+     >
+                DOM
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/drawers/"
+     >
+                Drawers
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/elevation/"
+     >
+                Elevation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/feature-targeting/"
+     >
+                Feature Targeting
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/grid-lists/"
+     >
+                Grid Lists
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/image-lists/"
+     >
+                Image List
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+        
+      
+        
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/"
+     >
+                Inputs and Controls
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/checkboxes/"
+     >
+                    Checkboxes
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/floating-label/"
+     >
+                    Floating Label
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/form-fields/"
+     >
+                    Form Fields
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/line-ripple/"
+     >
+                    Line Ripple
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/notched-outline/"
+     >
+                    Notched Outline
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/radio-buttons/"
+     >
+                    Radio Buttons
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/"
+     >
+                    Select Menus
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/helper-text/"
+     >
+                        Select Helper Text
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/icon/"
+     >
+                        Select Icon
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/sliders/"
+     >
+                    Sliders
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/switches/"
+     >
+                    Switches
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/"
+     >
+                    Text Field
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/character-counter/"
+     >
+                        Text Field Character Counter
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/helper-text/"
+     >
+                        Text Field Helper Text
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/icon/"
+     >
+                        Text Field Icon
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/layout-grid/"
+     >
+                Layout Grid
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/linear-progress/"
+     >
+                Linear Progress
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/lists/"
+     >
+                Lists
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/menu-surface/"
+     >
+                Menu Surface
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/menus/"
+     >
+                Menus
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/ripples/"
+     >
+                Ripples
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/rtl/"
+     >
+                RTL
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/shape/"
+     >
+                Shape
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/snackbars/"
+     >
+                Snackbars
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/"
+     >
+                Tabs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/tab/"
+     >
+                    Tab
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/tab-bar/"
+     >
+                    Tab Bar
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/indicator/"
+     >
+                    Tab Indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/scroller/"
+     >
+                    Tab Scroller
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/theme/"
+     >
+                Theme
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/top-app-bar/"
+     >
+                Top App Bar
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/typography/"
+     >
+                Typography
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/web/docs/authoring-components/">Documentation</a>
+        </nav>
+      </nav>
+    </aside>
+    <header class="develop-toolbar mdc-toolbar mdc-toolbar--fixed
+    
+    
+      mdc-toolbar--platform
+    ">
+      <div class="search-form" id="top-level-search-bar">
+        <form class="search-form__form" id="top-level-search-form">
+          <input type="text"
+        class="search-form__input"
+        id="top-level-search-input"
+        autocomplete="off" />
+        </form>
+        <div class="search-form__label" id="top-level-search-label">Search</div>
+        <button
+      class="search-form__button search-form__button--close"
+      id="top-level-search-close"
+      aria-label="Close search">
+          <div class="search-form__close-icon" id="close-button-icon" data-mdc-ripple-is-unbounded></div>
+        </button>
+      </div>
+      <div class="develop-toolbar__row mdc-toolbar__row">
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="menu-button" id="menu-open">
+            <div class="menu-button__icon menu-button__icon--initial-load" id="menu-icon"></div>
+          </button>
+          <a class="develop-toolbar__title-link" href="/">
+            <div class="develop-toolbar__leading-icon"></div>
+            <h1 class="develop-toolbar__title mdc-toolbar__title">
+              Material Design
+            </h1>
+          </a>
+        </section>
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+          <nav id="navigation-tabs" class="develop-tab-bar">
+            <a href="/design"
+      class="develop-tab">
+              Design
+            </a>
+            <a href="/components"
+      class="develop-tab">
+              Components
+            </a>
+            <a href="/develop"
+      class="develop-tab develop-tab--active">
+              Develop
+              <span class="develop-tab__nav-indicator"></span>
+            </a>
+            <a href="/resources"
+     class="develop-tab">
+              Resources
+            </a>
+          </nav>
+          <section class="develop-toolbar__section develop-toolbar__section--search mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+            <button 
+    class="search-form__button search-form__button--open"
+    id="top-level-search-open"
+    aria-label="Search">
+              <div class="search-form__search-icon" id="spyglass-icon"></div>
+            </button>
+          </section>
+        </section>
+      </div>
+    </header>
+    <div class="page__content page__flex-element">
+      <div class="page__drawer mdc-permanent-drawer">
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label">web</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <h3 class="drawer-heading">Components</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/animation/"
+     >
+                Animation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/auto-init/"
+     >
+                Auto Init
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/base/"
+     >
+                Base
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/"
+     >
+                Buttons
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/floating-action-buttons/"
+     >
+                    Floating Action Button
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/icon-buttons/"
+     >
+                    Icon Buttons
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/cards/"
+     >
+                Cards
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/chips/"
+     >
+                Chips
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/data-tables/"
+     >
+                Data Tables
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/dialogs/"
+     >
+                Dialogs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/dom/"
+     >
+                DOM
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/drawers/"
+     >
+                Drawers
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/elevation/"
+     >
+                Elevation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/feature-targeting/"
+     >
+                Feature Targeting
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/grid-lists/"
+     >
+                Grid Lists
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/image-lists/"
+     >
+                Image List
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+        
+      
+        
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/"
+     >
+                Inputs and Controls
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/checkboxes/"
+     >
+                    Checkboxes
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/floating-label/"
+     >
+                    Floating Label
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/form-fields/"
+     >
+                    Form Fields
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/line-ripple/"
+     >
+                    Line Ripple
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/notched-outline/"
+     >
+                    Notched Outline
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/radio-buttons/"
+     >
+                    Radio Buttons
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/"
+     >
+                    Select Menus
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/helper-text/"
+     >
+                        Select Helper Text
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/icon/"
+     >
+                        Select Icon
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/sliders/"
+     >
+                    Sliders
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/switches/"
+     >
+                    Switches
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/"
+     >
+                    Text Field
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/character-counter/"
+     >
+                        Text Field Character Counter
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/helper-text/"
+     >
+                        Text Field Helper Text
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/icon/"
+     >
+                        Text Field Icon
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/layout-grid/"
+     >
+                Layout Grid
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/linear-progress/"
+     >
+                Linear Progress
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/lists/"
+     >
+                Lists
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/menu-surface/"
+     >
+                Menu Surface
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/menus/"
+     >
+                Menus
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/ripples/"
+     >
+                Ripples
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/rtl/"
+     >
+                RTL
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/shape/"
+     >
+                Shape
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/snackbars/"
+     >
+                Snackbars
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/"
+     >
+                Tabs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/tab/"
+     >
+                    Tab
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/tab-bar/"
+     >
+                    Tab Bar
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/indicator/"
+     >
+                    Tab Indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/scroller/"
+     >
+                    Tab Scroller
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/theme/"
+     >
+                Theme
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/top-app-bar/"
+     >
+                Top App Bar
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/typography/"
+     >
+                Typography
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/web/docs/authoring-components/">Documentation</a>
+        </nav>
+      </div>
+      <section class="page__main-section">
+        <article class="page__article article ">
+          <h1 id="base">Base</h1>
+          <p>MDC Base contains core foundation and component classes that serve as the base classes for all of MDC Web’s foundation classes and components (respectively).</p>
+          <p>Most of the time, you shouldn’t need to depend on <code>mdc-base</code> directly. It is useful however if you’d like to write custom components that follow MDC Web’s pattern and elegantly integrate with the MDC Web ecosystem.</p>
+          <h2 id="installation">Installation</h2>
+          <p>First install the module:</p>
+          <pre><code>npm install @material/base
+</code></pre>
+          <p>Then include it in your code in one of the following ways:</p>
+          <h4 id="es-module-syntax">ES Module syntax</h4>
+          <pre><code class="language-javascript">import {MDCComponent, MDCFoundation} from '@material/base';
+</code></pre>
+          <h4 id="commonjs">CommonJS</h4>
+          <pre><code class="language-javascript">const MDCComponent = require('mdc-base').MDCComponent;
+const MDCFoundation = require('mdc-base').MDCFoundation;
+</code></pre>
+          <h4 id="amd">AMD</h4>
+          <pre><code class="language-javascript">require(['path/to/mdc-base'], function(mdcBase) {
+  const MDCComponent = mdcBase.MDCComponent;
+  const MDCFoundation = mdcBase.MDCFoundation;
+});
+</code></pre>
+          <h4 id="vanilla">Vanilla</h4>
+          <pre><code class="language-javascript">const MDCComponent = mdc.base.MDCComponent;
+const MDCFoundation = mdc.base.MDCFoundation;
+</code></pre>
+          <h2 id="usage">Usage</h2>
+          <p>mdc-base exposes two classes: <code>MDCComponent</code> (the default export) which all components extend from, and <code>MDCFoundation</code>, which all foundation classes extend from. To learn more about foundation classes vs. components, check out our overview on <a href="https://github.com/material-components/material-components-web/tree/master/docs/code">architecture and best practices</a>.</p>
+          <h3 id="mdcfoundation">MDCFoundation</h3>
+          <p>MDCFoundation provides the basic mechanisms for implementing foundation classes. Subclasses are expected to:</p>
+          <ul>
+            <li>Provide implementations of the proper static getters where necessary.</li>
+            <li>Provide <code>init()</code> and <code>destroy()</code> lifecycle methods</li>
+          </ul>
+          <pre><code class="language-javascript">import {MDCFoundation} from '@material/base/foundation';
+
+export default class MyFoundation extends MDCFoundation {
+  static get cssClasses() {
+    return {
+      ROOT: 'my-component',
+      MESSAGE: 'my-component__message',
+      BUTTON: 'my-component__button',
+      TOGGLED: 'my-component--toggled'
+    };
+  }
+
+  static get defaultAdapter() {
+    return {
+      toggleClass: (/* className: string */) =&gt; {},
+      registerBtnClickHandler: (/* handler: Function */) =&gt; {},
+      deregisterBtnClickHandler: (/* handler: Function */) =&gt; {}
+    };
+  }
+
+  constructor(adapter) {
+    super({...MyFoundation.defaultAdapter, ...adapter});
+    const {TOGGLED} = MyFoundation.cssClasses;
+    this.clickHandler_ = () =&gt; this.adapter_.toggleClass(TOGGLED);
+  }
+
+  init() {
+    this.adapter_.registerBtnClickHandler(this.clickHandler_);
+  }
+
+  destroy() {
+    this.adapter_.deregisterBtnClickHandler(this.clickHandler_);
+  }
+}
+</code></pre>
+          <h4 id="static-getters">Static Getters</h4>
+          <p>The static getters specify constants that can be used within the foundation class, its component, and by 3rd-party code. <em>It’s important to remember to always put constants into these getters</em>. This will ensure your component can interop in as many environments as possible, including those where CSS classes need to be overwritten by the host library (e.g., Closure Stylesheets), or strings need to be modified (for i18n, for example).</p>
+          <p>Note that you do not have to explicitly provide getters for constants if your component has none.</p>
+          <p>The getters which should be provided are specified below:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>getter</th>
+                <th>description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>cssClasses</td>
+                <td>returns an object where each key identifies a css class that some code will rely on.</td>
+              </tr>
+              <tr>
+                <td>strings</td>
+                <td>returns an object where each key identifies a string constant, e.g. <code>ARIA_ROLE</code></td>
+              </tr>
+              <tr>
+                <td>numbers</td>
+                <td>returns an object where each key identifies a numeric constant, e.g. <code>TRANSITION_DELAY_MS</code></td>
+              </tr>
+              <tr>
+                <td>defaultAdapter</td>
+                <td>returns an object specifying the shape of the adapter. Can be used as sensible defaults for an adapter as well as a way to specify your adapter’s “schema”</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 id="lifecycle-methods">Lifecycle Methods</h4>
+          <p>Each foundation class has two lifecycle methods: <code>init()</code> and <code>destroy()</code>, which are described below:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>method</th>
+                <th>time of invocation</th>
+                <th>use case</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>init()</td>
+                <td>called by a host class when a component is ready to be initialized</td>
+                <td>add event listeners, query for info via adapters, etc.</td>
+              </tr>
+              <tr>
+                <td>destroy()</td>
+                <td>called by a host class when a component is no longer in use</td>
+                <td>remove event listeners, reset any transient state, etc.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 id="mdccomponent">MDCComponent</h3>
+          <p>MDCComponent provides the basic mechanisms for implementing component classes.</p>
+          <pre><code class="language-javascript">import MyComponentFoundation from './foundation';
+
+export class MyComponent extends MDCComponent {
+  static attachTo(root) {
+    return new MyComponent(root);
+  }
+
+  getDefaultFoundation() {
+    const btn = this.root.querySelector(`.${MyComponentFoundation.cssClasses.BUTTON}`);
+    return new MyComponentFoundation({
+      toggleClass: className =&gt; {
+        if (this.root.classList.contains(className)) {
+          this.root.classList.remove(className);
+          return;
+        }
+        this.root.classList.add(className);
+      },
+      registerBtnClickHandler: handler =&gt; btn.addEventListener('click', handler),
+      deregisterBtnClickHandler: handler =&gt; btn.removeEventListener('click', handler)
+    });
+  }
+}
+</code></pre>
+          <h4 id="properties">Properties</h4>
+          <p><code>MDCComponent</code> provides the following “private” properties to subclasses:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>property</th>
+                <th>description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>root_</code></td>
+                <td>The root element passed into the constructor as the first argument.</td>
+              </tr>
+              <tr>
+                <td><code>foundation_</code></td>
+                <td>The foundation class for this component. This is either passed in as an optional second argument to the constructor, or assigned the result of calling <code>getDefaultFoundation()</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 id="methods">Methods</h4>
+          <p><code>MDCComponent</code> provides the following methods to subclasses:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>method</th>
+                <th>description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>initialize(...args)</code></td>
+                <td>Called after the root element is attached to the component, but <em>before</em> the foundation is instantiated. Any positional arguments passed to the component constructor after the root element, along with the optional foundation 2nd argument, will be provided to this method. This is a good place to do any setup work normally done within a constructor function.</td>
+              </tr>
+              <tr>
+                <td><code>getDefaultFoundation()</code></td>
+                <td>Returns an instance of a foundation class properly configured for the component. Called when no foundation instance is given within the constructor. Subclasses <strong>must</strong> implement this method.</td>
+              </tr>
+              <tr>
+                <td><code>initialSyncWithDOM()</code></td>
+                <td>Called within the constructor. Subclasses may override this method if they wish to perform initial synchronization of state with the host DOM element. For example, a slider may want to check if its host element contains a pre-set value, and adjust its internal state accordingly. Note that the same caveats apply to this method as to foundation class lifecycle methods. Defaults to a no-op.</td>
+              </tr>
+              <tr>
+                <td><code>destroy()</code></td>
+                <td>Subclasses may override this method if they wish to perform any additional cleanup work when a component is destroyed. For example, a component may want to deregister a window resize listener.</td>
+              </tr>
+              <tr>
+                <td><code>listen(type: string, handler: EventListener)</code></td>
+                <td>Adds an event listener to the component’s root node for the given <code>type</code>. Note that this is simply a proxy to <code>this.root_.addEventListener</code>.</td>
+              </tr>
+              <tr>
+                <td><code>unlisten(type: string, handler: EventListener)</code></td>
+                <td>Removes an event listener from the component’s root node. Note that this is simply a proxy to <code>this.root_.removeEventListener</code>.</td>
+              </tr>
+              <tr>
+                <td><code>emit(type: string, data: Object, shouldBubble: boolean = false)</code></td>
+                <td>Dispatches a custom event of type <code>type</code> with detail <code>data</code> from the component’s root node. It also takes an optional shouldBubble argument to specify if the event should bubble. This is the preferred way of dispatching events within our vanilla components.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 id="static-methods">Static Methods</h4>
+          <p>In addition to methods inherited, subclasses should implement the following two static methods within their code:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>method</th>
+                <th>description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>attachTo(root) =&gt; &lt;ComponentClass&gt;</code></td>
+                <td>Subclasses must implement this as a convenience method to instantiate and return an instance of the class using the root element provided. This will be used within <code>mdc-auto-init</code>, and in the future its presence may be enforced via a custom lint rule.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 id="foundation-lifecycle-handling">Foundation Lifecycle handling</h4>
+          <p><code>MDCComponent</code> calls its foundation’s <code>init()</code> function within its <em>constructor</em>, and its foundation’s <code>destroy()</code> function within its own <em>destroy()</em> function. Therefore it’s important to remember to <em>always call super() when overriding destroy()</em>. Not doing so can lead to leaked resources.</p>
+          <h4 id="initialization-and-constructor-parameters">Initialization and constructor parameters</h4>
+          <p>If you need to pass in additional parameters into a component’s constructor, you can make use of the
+            <code>initialize</code> method, as shown above. An example of this is passing in a child component as a
+            dependency.</p>
+          <pre><code class="language-js">class MyComponent extends MDCComponent {
+  initialize(childComponent = null) {
+    this.child_ = childComponent ?
+      childComponent : new ChildComponent(this.root_.querySelector('.child'));
+  }
+
+  getDefaultFoundation() {
+    return new MyComponentFoundation({
+      doSomethingWithChildComponent: () =&gt; this.child_.doSomething(),
+      // ...
+    });
+  }
+}
+</code></pre>
+          <p>You could call this code like so:</p>
+          <pre><code class="language-js">const childComponent = new ChildComponent(document.querySelector('.some-child'));
+const myComponent = new MyComponent(
+  document.querySelector('.my-component'), /* foundation */ undefined, childComponent
+);
+// use myComponent
+</code></pre>
+          <blockquote>
+            <p>NOTE: You could also pass in an initialized foundation if you wish. The example above simply
+              showcases how you could pass in initialization arguments without instantiating a foundation.</p>
+          </blockquote>
+          <h4 id="best-practice-keep-your-adapters-simple">Best Practice: Keep your adapters simple</h4>
+          <p>If you find your adapters getting too complex, you should consider refactoring the complex parts out into their own implementations.</p>
+          <pre><code class="language-javascript">import MyComponentFoundation from './foundation';
+import {toggleClass} from './util';
+
+class MyComponent {
+  // ...
+  getDefaultFoundation() {
+    return new MyComponentFoundation({
+      toggleClass: className =&gt; util.toggleClass(this.root_, className),
+      // ...
+    });
+  }
+}
+</code></pre>
+          <p>Where <code>./util</code> could look like:</p>
+          <pre><code class="language-javascript">export function toggleClass(element, className) {
+  if (root.classList.contains(className)) {
+    root.classList.remove(className);
+    return;
+  }
+  root.classList.add(className);
+}
+</code></pre>
+          <p>This not only reduces the complexity of your component class, but allows for the functionality of complex adapters to be adequately tested:</p>
+          <pre><code class="language-javascript">test('toggleClass() removes a class when present on an element', t =&gt; {
+  const root = document.createElement('div');
+  root.classList.add('foo');
+
+  util.toggleClass(root, 'foo');
+
+  t.false(root.classList.contains('foo'));
+  t.end();
+});
+</code></pre>
+        </article>
+        <footer class="footer">
+          <section class="footer__content">
+            <div class="footer__row">
+              <a class="footer__logo-link">
+                <div class="footer__logo"></div>
+              </a>
+              <div class="footer__copy">
+                <p class="footer__description">Material design is an adaptable system—backed by open-source code—guiding you in the principles and best practices of contemporary UI. Material helps teams streamline the designer-developer collaboration, reduce complexity, and enable fidelity through reusable components, patterns, and code libraries. All while adapting easily to your brand, platform, and users’ needs.</p>
+                <nav class="footer__navigation">
+                  <ul class="footer__navigation-list">
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.github.com/material-components"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Github
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.twitter.com/materialdesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Twitter
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.youtube.com/googledesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        YouTube
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="footer__row footer-legal">
+              <a class="footer-legal__logo-container" href="https://google.com">
+                <img src="/develop/images/google-logo-gray.svg" alt="Google" />
+              </a>
+              <ul class="footer-legal__nav-list">
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/privacy"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/terms"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Terms and Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </footer>
+      </section>
+    </div>
+    <template id="language-radio-template">
+      <div class="mdc-form-field">
+        <div class="mdc-radio">
+          <input class="mdc-radio__native-control"
+             type="radio"
+             id="" name="" value="">
+          <div class="mdc-radio__background">
+            <div class="mdc-radio__outer-circle"></div>
+            <div class="mdc-radio__inner-circle"></div>
+          </div>
+        </div>
+        <label class="language-name" for=""></label>
+      </div>
+    </template>
+    <button
+    class="feedback-button"
+    aria-label="Send Feedback"
+    tabindex="0">
+    </button>
+    <script src="/develop/js/index.js" async></script>
+    <script src="https://www.gstatic.com/feedback/api.js" async></script>
+  </body>
+</html>

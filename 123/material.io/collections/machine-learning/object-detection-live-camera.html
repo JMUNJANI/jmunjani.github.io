@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en" class="preload">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Object Detection: Live Camera - Material Design</title>
+
+
+    <meta itemprop="name"        property="og:title"       name="twitter:title"       content="Object Detection: Live Camera" />
+    <meta itemprop="description" property="og:description" name="twitter:description" content="A device’s live camera can be used to detect objects in an environment using ML Kit’s Object Detection &amp;amp; Tracking API." />
+    <meta itemprop="image"       property="og:image"       name="twitter:image"       content="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1MKqEdL4hwJgvSd7FWvwfX1KjZ9_9Qg82%2Fml-live-camera-2x1-thumbnail.png" />
+    <meta itemprop="url"         property="og:url"         name="twitter:url"         content="https://material.io/collections/machine-learning/object-detection-live-camera.html" />
+    <meta property="og:site_name" content="Material Design" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">    <link rel="shortcut icon" href="/favicon.ico">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHRPF8');</script>    <style>
+.animatable {
+        opacity: 0;
+        position: relative;
+        top: 16px;         transition: opacity 235ms cubic-bezier(.4,0,.2,1),
+                    top 500ms cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link href="https://storage.googleapis.com/spec-host/mio-staging/mio-collections/1568317702287/static/m2/css/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+    <link rel="preload" href="https://storage.googleapis.com/spec-host/mio-staging/mio-collections/1568317702287/static/m2/js/main.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js" as="script">
+
+
+  </head>
+
+  <body class="header-show page--article left-rail"
+        data-comp="Global "
+        data-slug-id="objectDetectionLiveCamera"
+        data-spec-alias="mio-collections"
+ >
+    <a class="screenreader-only" href="#main_content">Skip to main content</a>
+
+  <header class="header js-header" data-comp="Header">
+      <button class="header__hamburger header__button" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+        <i class="material-icons notranslate header__hamburger-icon" title="Toggle Navigation">menu</i>
+      </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+    <nav class="header__nav" role="navigation">
+      <ul class="header__nav-list header__nav-list--cleared">
+            <li class="header__nav-item  js-header-item">
+    <a href="/design"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/design"}
+'>
+      Design
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/components"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/components"}
+'>
+      Components
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/develop"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/develop"}
+'>
+      Develop
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/resources"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/resources"}
+'>
+      Resources
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+      </ul>
+    </nav>
+
+    <form id="search-form" class="search-form js-search" data-comp="SearchForm" data-props-searchform='{"basePath": "/", "ajax": false, "showOnLoad": false}'>
+      <button class="search-form__back js-search-back js-analytics-click" type="button" aria-label="Exit search results"
+              data-analytics='  {
+    "event": "trackEvent",
+    "category": "search back",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+        <i class="material-icons notranslate">arrow_back</i>
+      </button>
+
+      <input id="search-query" class="search-form__input js-search-input" name="q" type="text" title="query" placeholder="Search" autocomplete="off" aria-label="Type your search and press enter.">
+    </form>
+
+    <button class="header__search header__button js-toggle-search js-analytics-click"
+            data-analytics='  {
+    "event": "trackEvent",
+    "category": "search",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+      <div class="icons-container mdc-ripple-surface" data-mdc-ripple-is-unbounded>
+        <i class="material-icons notranslate header__spyglass" aria-label="Search Material Design">search</i>
+        <i class="material-icons notranslate header__search-close" aria-label="Close search">close</i>
+      </div>
+    </button>
+  </header>
+
+
+<nav aria-label="Breadcrumbs" class="breadcrumbs" data-comp="Breadcrumbs" aria-hidden="true">
+    <button class="breadcrumbs__hamburger" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+      <i class="material-icons notranslate" title="Toggle Navigation">menu</i>
+    </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+  <ol class="container container--large breadcrumbs__list">
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click "
+           href="../machine-learning"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../machine-learning"}
+'>Machine Learning</a>
+      </li>
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link"
+           href="../machine-learning/object-detection-live-camera.html"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../machine-learning/object-detection-live-camera.html"}
+'>Object Detection: Live Camera</a>
+      </li>
+      <li class="breadcrumbs__crumb disabled breadcrumbs__chapter">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link js-breadcrumb-hash"
+           href="#usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>Usage</a>
+      </li>
+  </ol>
+</nav>
+
+
+<nav class="side-nav" data-comp="SideNav" role="navigation">
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+
+
+      <ul class="side-nav__menu">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../getting-started"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../getting-started"}
+'>
+            Getting started
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../developer-tutorials"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../developer-tutorials"}
+'>
+            Developer tutorials
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface active js-submenu-toggle"
+                  aria-controls="_nav2"
+                  aria-expanded="true">
+            Machine Learning
+          </button>
+            <div class="side-nav__wrapper" id="_nav2">
+    <ul class="side-nav__submenu" data-menu-state="open">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../machine-learning/patterns-for-machine-learning-powered-features.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../machine-learning/patterns-for-machine-learning-powered-features.html"}
+'>
+            Patterns for machine learning-powered features
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+side-nav__link--active js-header-show"
+              href="../machine-learning/object-detection-live-camera.html" aria-current="page" data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../machine-learning/object-detection-live-camera.html"}
+'>
+            Object Detection: Live Camera
+          </a>
+
+              <div class="side-nav__articles">
+    <i class="side-nav__progress-bar">
+      <i class="side-nav__scrub js-submenu-scrub"></i>
+    </i>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-usage js-analytics-click" href="#usage" data-section-id="usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>
+          <span class="js-anchor-text">Usage</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-components js-analytics-click" href="#components" data-section-id="components"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#components"}
+'>
+          <span class="js-anchor-text">Components</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-experience js-analytics-click" href="#experience" data-section-id="experience"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#experience"}
+'>
+          <span class="js-anchor-text">Experience</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-theming js-analytics-click" href="#theming" data-section-id="theming"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#theming"}
+'>
+          <span class="js-anchor-text">Theming</span>
+        </a>
+      </div>
+  </div>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../machine-learning/object-detection-static-image.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../machine-learning/object-detection-static-image.html"}
+'>
+            Object Detection: Static Image
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../machine-learning/barcode-scanning.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../machine-learning/barcode-scanning.html"}
+'>
+            Barcode Scanning
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+  </ul>
+</nav>
+
+
+    <main id="main_content" class="main" role="main" aria-labelledby="Main Content">
+<article class="article" data-comp="Waypoints">
+  <div class="article__intro container container--large js-waypoints-trigger-initial">
+    <div class="article__intro-text">
+      <h1 class="article__title animatable js-anim-trigger">
+
+        Object Detection: Live Camera
+            <div class="article-controls">
+              
+            </div>
+      </h1>
+
+
+        <div class="article__intro-text animatable js-anim-trigger">
+            <div>
+<div aria-hidden="true" class="keywords hidden">ML, machine learning, ml kit, object detection, camera</div>
+<figure class="inline-media inline-media--image rich-media" data-maxwidth="3167px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0473634354%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0473634354%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1qw6NuYSgee1QA7BLW0JJbyBX1bZVzmMf%2Fml-live-camera-2x1-large.png" src="">
+</img></div>
+</div>
+</figure><h2>A device’s live camera can be used to detect objects in an environment using machine learning.</h2></div>
+        </div>
+    </div>
+
+      <nav class="article__nav animatable js-anim-trigger">
+        <span class="eyebrow">Contents</span>
+        <ul>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#usage" data-section-id="usage"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#usage"}
+'>Usage</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#components" data-section-id="components"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#components"}
+'>Components</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#experience" data-section-id="experience"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#experience"}
+'>Experience</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#theming" data-section-id="theming"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#theming"}
+'>Theming</a>
+            </li>
+        </ul>
+      </nav>
+  </div>
+
+  <hr />
+
+  <div class="article__body animatable js-breadcrumb-toggle js-anim-trigger">
+      <section id="usage" class="container container--large js-waypoints-trigger article__section" data-section-title="Usage" aria-label="Usage">
+          <h2 class="article__chapter-title">
+            Usage
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">ML, machine learning, ml kit, object detection, camera</div>
+<aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://firebase.google.com/docs/ml-kit/object-detection"}
+' href="https://firebase.google.com/docs/ml-kit/object-detection" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F15w-2XgvWF21A2PXYLFMu6UzvaAffn9Tm%2Ffirebase-link-icon.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F15w-2XgvWF21A2PXYLFMu6UzvaAffn9Tm%2Ffirebase-link-icon.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Object Detection and Tracking</h2>
+<p class="object-card__body">With ML Kit's on-device object detection and tracking API, you can localize and track in real-time the most prominent objects in an image or live camera feed.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://github.com/firebase/mlkit-material-android"}
+' href="https://github.com/firebase/mlkit-material-android" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F19bJSH1_ZlaNdrkxNUorLqmzZVqTPdFTn%2Fgithub-icon.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F19bJSH1_ZlaNdrkxNUorLqmzZVqTPdFTn%2Fgithub-icon.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">ML Kit Material Design Showcase App (Android)</h2>
+<p class="object-card__body">This Android app demonstrates Material Design patterns for ML Kit API features.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://github.com/firebase/mlkit-material-ios"}
+' href="https://github.com/firebase/mlkit-material-ios" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F19bJSH1_ZlaNdrkxNUorLqmzZVqTPdFTn%2Fgithub-icon.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F19bJSH1_ZlaNdrkxNUorLqmzZVqTPdFTn%2Fgithub-icon.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">ML Kit Material Design Showcase App (iOS)</h2>
+<p class="object-card__body">This iOS app demonstrates Material Design patterns for ML Kit API features.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><p>The live feed of a camera can be used to identify objects in the physical world. Using the “streaming” mode of <a href="https://firebase.google.com/docs/ml-kit/object-detection" rel="noopener" target="_blank">ML Kit’s Object Detection &amp; Tracking API</a>, a camera feed can detect objects and use them as input to perform a <strong>visual search </strong>(a search query that uses an image as input) with your app’s own <a href="https://www.tensorflow.org/lite/models/image_classification/overview#what_is_image_classification" rel="noopener" target="_blank">image classification model</a>. </p><p>Searching with a live camera can help users learn more about objects around them, whether it’s an artifact at a museum or an item for purchase.</p><p>These guidelines cover the detection of a single object at a time.</p></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="usage-figure-caption-0" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1KVwD56UMf8R_kDKWdy9idMCfe9SyTJpL%2Fusage-introduction.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="usage-figure-caption-0"><p>Visual search in a live camera can help users identify objects around them, such as a plant species.</p></figcaption>
+</figure></div></section></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Principles Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Principles</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Design for this feature is based on the following principles: Instead of typing a search term, the device camera is used as a “remote control”...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>Design for this feature is based on the following principles:</p><div class="col-list rich-media"><section class="module-module col-2 h3-spacing"><div class="module"><h3>Navigate with a device camera</h3><p>Instead of typing a search term, the device camera is used as a “remote control” to search for visual content. </p><p>To educate users about how to search with their camera, provide onboarding and persistent instructions.</p></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="usage-figure-caption-1" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1gllHSFqkySzLSZb8-gZ0xLUGwYCgUcwK%2Fusage-principles-navigate.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="usage-figure-caption-1"><p>A brief, animated onboarding experience can help users understand how to move and position their device camera to search.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2 h3-spacing"><div class="module"><h3>Keep the camera clear and legible</h3><p>To maximize the camera’s viewable area, align the app’s UI components to the top and bottom edges of the screen, ensuring that text and icons remain legible when placed in front of the camera’s live feed. </p><p>Any non-actionable elements displayed in front of the live camera feed should be translucent to minimize obstructing the camera.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1KyEZR1HAAv0pO7u6EeGw_OlhJJdNITJp%2Fusage-principles-clear.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-2"><p>Most elements are intentionally placed along the top and bottom edges of the screen to maximize viewing the camera’s feed.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2 h3-spacing"><div class="module"><h3>Provide feedback</h3><p>Using a camera as a search tool introduces unique usage requirements. Image quality needs to be adequate, and users need to be aware of how to fix image issues caused by lighting or too much distance from an object. </p><p>Error states should:</p><ul class="lst-kix_p5qc41bbe4fy-0 start"><li>Indicate errors using multiple design cues (such as components and motion) </li><li>Include explanations of how users can improve their search</li></ul></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1L2iaaOet1UbV09uPdktha72ArmTL-zq3%2Fusage-principles-feedback.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-3"><p>Banners provide a prominent way to let users know something went wrong with their search, and space to link to a Help section for more information.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="components" class="container container--large js-waypoints-trigger article__section" data-section-title="Components" aria-label="Components">
+          <h2 class="article__chapter-title">
+            Components
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">ML, machine learning, ml kit, object detection, camera</div>
+<aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://github.com/firebase/mlkit-material-android"}
+' href="https://github.com/firebase/mlkit-material-android" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F19bJSH1_ZlaNdrkxNUorLqmzZVqTPdFTn%2Fgithub-icon.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F19bJSH1_ZlaNdrkxNUorLqmzZVqTPdFTn%2Fgithub-icon.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">ML Kit Material Design Showcase App (Android)</h2>
+<p class="object-card__body">This Android app demonstrates Material Design patterns for ML Kit API features.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://github.com/firebase/mlkit-material-ios"}
+' href="https://github.com/firebase/mlkit-material-ios" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F19bJSH1_ZlaNdrkxNUorLqmzZVqTPdFTn%2Fgithub-icon.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F19bJSH1_ZlaNdrkxNUorLqmzZVqTPdFTn%2Fgithub-icon.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">ML Kit Material Design Showcase App (iOS)</h2>
+<p class="object-card__body">This iOS app demonstrates Material Design patterns for ML Kit API features.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><p>The live camera object detection feature uses both existing Material Design components and new elements specific to camera interaction. For code samples and demos of new elements (such as the reticle), check out the ML Kit Material Design showcase apps’ source code for <a href="https://github.com/firebase/mlkit-material-android" rel="noopener" target="_blank">Android</a> and <a href="https://github.com/firebase/mlkit-material-ios" rel="noopener" target="_blank">iOS</a>.</p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1LyqqffLgiF6rXmJmRDm_I1Mg_vPT6IWr%2Fcomponents-anatomy-1.png" src="">
+</img></div>
+</div>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1LjvvBugD5df4GQidb0W3a-D5G8P22pH6%2Fcomponents-anatomy-2.png" src="">
+</img></div>
+</div>
+</figure></div></section><section class="module-module col-2"><div class="module"><figcaption>
+<p>Key elements across the stages of a live camera visual search experience:</p><p>1. Top app bar<br>
+2. Reticle<br>
+3. Object marker<br>
+4. Tooltip<br>
+5. Detected image<br>
+6. Modal bottom sheet</br></br></br></br></br></p></figcaption></div><div class="module"></div></section></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Top App Bar Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Top App Bar</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The top app bar displays information and actions relating to the current view. Related Link arrow_downward The top app bar provides persistent access to the...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/components/app-bars-top.html"}
+' href="https://material.io/design/components/app-bars-top.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F16vMcnSezIaFO_pTo1qLE92AaTS4oagK1%2Fapp-bar-top-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F16vMcnSezIaFO_pTo1qLE92AaTS4oagK1%2Fapp-bar-top-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">App Bars: Top</h2>
+<p class="object-card__body">The top app bar displays information and actions relating to the current view.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><p>The top app bar provides persistent access to the following actions: </p><ul class="lst-kix_9v1qc0ikyiie-0 start"><li>A button to exit the search experience</li><li>A toggle to improve brightness (using the camera’s flash)</li><li>A Help section for troubleshooting search issues</li></ul></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.3333333333%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="components-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.3333333333%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1Pjbw209GXaEUdCI1jXKkaSfkHm7HI-4C%2Fcomponents-top-app-bar-legibility.png" src="">
+</img></div>
+</div>
+<figcaption id="components-figure-caption-0">
+<p class="s-tag-caption do">Do.</p><p>Use a gradient scrim or solid color for the top app bar’s container to ensure its actions are legible over a camera feed.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Reticle Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Reticle</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The reticle is a visual indicator that provides a target for users to focus on when detecting objects with a camera (its name is inspired...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>The reticle is a visual indicator that provides a target for users to focus on when detecting objects with a camera (its name is inspired by camera viewfinders). It uses a pulsing animation to inform the user when the camera is actively looking for objects. </p><p>When the live camera is pointed at an object, the reticle transforms into a determinate progress indicator to indicate that a visual search has begun.</p><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 50.0%;">
+<video aria-describedby="components-figure-caption-1" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1YnJBk6NGaZwm34__PE5oopU3219o6jTx%2Fcomponents-reticle.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="components-figure-caption-1">
+<p>The reticle should have different designs and animation effects to communicate key app states, such as when the camera is looking for objects or when an error has occurred.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": false}' style="padding-top: 50.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1UJ11ANZvYcvE26SkFj37yrfVvAthv5sg%2Fcomponents-reticle-diagram.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p>States of the reticle:</p><p>1. Sensing uses a pulsing animation to indicate the app is looking for objects<br>
+2. Starting a search happens after a preset delay (set by the developer), expressed with a determinate progress indicator<br>
+3. The need to move closer to an object is expressed through the reticle’s center circle shrinking in size until the minimum detected size is reached<br>
+4. Any detected errors change the reticle’s border from a continuous stroke to dotted stroke</br></br></br></p></figcaption></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Object marker Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Object marker</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>ML Kit’s Object Detection &amp; Tracking API contains an option to detect a “prominent object.” This option detects and tracks the single largest object near...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>ML Kit’s Object Detection &amp; Tracking API contains an option to detect a “prominent object.” This option detects and tracks the single largest object near the center of the camera. Once detected, you should mark the object  with a continuous rectangular border.</p><p>If your app requires a minimum image size for detected objects, the object marker should change to show a partial rectangular border (displaying only the border’s corners). This expresses that an object has been detected but cannot be searched until the user moves closer.</p><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 50.0%;">
+<video aria-describedby="components-figure-caption-2" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F18itOPrvxWuoPfpeuirDcRXLIYIHBQFJp%2Fcomponents-marker-border.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="components-figure-caption-2"><p>A partial border and tooltip message can inform users that an object has been detected and that they must move closer to begin their search.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Tooltip Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Tooltip</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Tooltips display informative text when users hover over, focus on, or tap an element. Related Link arrow_downward Tooltips display informative text to users. They express...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/components/sheets-bottom.html#modal"}
+' href="https://material.io/design/components/sheets-bottom.html#modal" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1ca0Kgr8J5KNFGwXZTJnU-fY7Xmanvl44%2Ftool-tip-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1ca0Kgr8J5KNFGwXZTJnU-fY7Xmanvl44%2Ftool-tip-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Tooltips</h2>
+<p class="object-card__body">Tooltips display informative text when users hover over, focus on, or tap an element.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><p>Tooltips display informative text to users. They express both states (such as with a message that says “Searching…”) and prompt the user to the next step (such as a message that says, “Point your camera at a plant”).</p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 88.8888888889%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="components-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="88.8888888889%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1LJqJkGSL3C3RjoENk39Ia32E4WJbvURj%2Fcomponents-tooltip-do-short.png" src="">
+</img></div>
+</div>
+<figcaption id="components-figure-caption-3">
+<p class="s-tag-caption do">Do.</p><p>Write short tooltips using terms appropriate for your audience.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 88.8888888889%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="components-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="88.8888888889%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1LY58JKmVUmQvihsBn8q6_B8VkQ5qkJOb%2Fcomponents-tooltip-dont-action.png" src="">
+</img></div>
+</div>
+<figcaption id="components-figure-caption-4">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t write tooltips with action verbs, such as “Tap to search,” as tooltips are not actionable.</p></figcaption>
+</figure></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 88.8888888889%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="components-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="88.8888888889%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1LgGwVu7qQiFCz2GdxgRDc4crtoYVK1YV%2Fcomponents-tooltip-dont-error.png" src="">
+</img></div>
+</div>
+<figcaption id="components-figure-caption-5">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t place error messages in a tooltip. Errors should be placed in a banner for increased emphasis and to provide space for displaying actions.</p></figcaption>
+</figure></div><div class="module"></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Detected image Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Detected image</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Upon detecting an object, ML Kit’s Object Detection &amp; Tracking API creates a cropped version of the image, which is used to run a visual...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><p>Upon detecting an object, ML Kit’s Object Detection &amp; Tracking API creates a cropped version of the image, which is used to run a visual search using your <a href="https://www.tensorflow.org/lite/models/image_classification/overview#what_is_image_classification" rel="noopener" target="_blank">image classification model</a>. </p><p>The cropped image is displayed to: </p><ul class="lst-kix_s7oshogir3rq-0 start"><li>Confirm the object detected </li><li>Compare to images of search results</li><li>Explain any errors related to the image (such as if it’s low quality or contains multiple objects)</li></ul></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 116.666666667%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="components-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="116.666666667%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1LtQGD970Onhevhv82WEbSM90uItwbvI3%2Fcomponents-image.png" src="">
+</img></div>
+</div>
+<figcaption id="components-figure-caption-6"><p>Placing a thumbnail of the detected object image near search results can help users identify the best match.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Modal bottom sheet          Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Modal bottom sheet         </h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Bottom sheets are surfaces containing supplementary content that are anchored to the bottom of the screen. Related Link arrow_downward Modal bottom sheets provide access to...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/components/sheets-bottom.html#modal"}
+' href="https://material.io/design/components/sheets-bottom.html#modal" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1lTVXuiEv4u6mYZmCrjGT2v7hce1nFBeG%2Fsheets-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1lTVXuiEv4u6mYZmCrjGT2v7hce1nFBeG%2Fsheets-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Sheets: Bottom</h2>
+<p class="object-card__body">Bottom sheets are surfaces containing supplementary content that are anchored to the bottom of the screen.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><p>Modal bottom sheets provide access to visual search results. Their layout and content depend on your app’s use case, the number of results, and the confidence level of those results.</p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 116.666666667%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="components-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="116.666666667%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1LLEXuci3qklu6Fiw3xzf03swPBLztLV2%2Fcomponents-modal-bottom-sheet-list.png" src="">
+</img></div>
+</div>
+<figcaption id="components-figure-caption-7"><p>In a modal bottom sheet, lists or image grids can display multiple visual search results. The sheet can be opened to the full height of the screen to view additional results.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 116.666666667%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="components-figure-caption-8" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="116.666666667%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1L79NyiZSl9Npcxw-EBAdmLWOPSoPPCr5%2Fcomponents-modal-bottom-sheet-single.png" src="">
+</img></div>
+</div>
+<figcaption id="components-figure-caption-8"><p>A modal bottom sheet can display a single result, adapting its layout to the content.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="experience" class="container container--large js-waypoints-trigger article__section" data-section-title="Experience" aria-label="Experience">
+          <h2 class="article__chapter-title">
+            Experience
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">ML, machine learning, ml kit, object detection, camera</div>
+<p>Live camera visual search happens in three phases:</p><ol class="lst-kix_k9hhh2olw0lg-0 start" start="1"><li><strong>Sense: </strong>Use the camera to look for input</li><li><strong>Recognize:</strong> Detect and identify an object</li><li><strong>Communicate:</strong> If a matching object is found, communicate that to the user</li></ol><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Sense Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Sense</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>AI-powered systems can adapt over time. Prepare users for change—and help them understand how to train the system. Related Link arrow_downward Object detection begins when...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://pair.withgoogle.com/chapter/mental-models/"}
+' href="https://pair.withgoogle.com/chapter/mental-models/" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1wD4-gVQ4wv0etCIynkyBgK3fmcIikQ5T%2Fmental-models-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1wD4-gVQ4wv0etCIynkyBgK3fmcIikQ5T%2Fmental-models-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Mental Models</h2>
+<p class="object-card__body">AI-powered systems can adapt over time. Prepare users for change—and help them understand how to train the system.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><p>Object detection begins when the visual search feature is opened. “Sensing” refers to the camera looking for objects in the live camera feed. During this phase, the app should:</p><ul class="lst-kix_opzuvfql8659-0 start"><li>Describe how the feature works</li><li>Communicate the app’s actions</li><li>Guide how the user controls the camera and suggest adjustments</li></ul><h2>Describe how the feature works</h2><p>Provide users with instructions for using the camera as a “remote control” to search for objects in the environment, describing the experience through onboarding and help content.</p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="experience-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1NIWq98Ouj8zpdE3AkcwQqt37vRsm2-kP%2Fexperience-sense-onboard-do.png" src="">
+</img></div>
+</div>
+<figcaption id="experience-figure-caption-0">
+<p class="s-tag-caption do">Do.</p><p>Explain the interaction with a one-screen onboarding experience. Animation is recommended to demonstrate to a user how to move their device.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="experience-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1N0Neaq2E94zZx8HYTp-SWiJVwjevUv2n%2Fexperience-sense-onboard-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="experience-figure-caption-1">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t require a lengthy onboarding process that describes every possible error state. Wait to provide further information until the user encounters an issue.</p></figcaption>
+</figure></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="experience-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F13jhxep3nqhckwYshDjEf-t0gX6QZyaL2%2Fexperience-sense-help-do.png" src="">
+</img></div>
+</div>
+<figcaption id="experience-figure-caption-2">
+<p class="s-tag-caption do">Do.</p><p>Have a dedicated Help section with information that includes the kinds of objects that can be detected, how to get the best results, and how images are used.</p></figcaption>
+</figure></div><div class="module"></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Communicate the app’s actions</h2></div></section><section class="module-figure col-2"><div class="module"><p>While the camera searches, the reticle pulses to indicate the camera is “looking” and a tooltip prompts the user to point the camera at objects.</p></div><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1uBFw8hLiIGvB3lEEkavNJY7gayMmkxRZ%2Fexperience-sense-communicate.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p class="s-tag-caption do">Do.</p><p>Give the user cues, such as an animated reticle and tooltip, to indicate how this UI differs from using the camera to take a photo.</p></figcaption></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Guide adjustments</h2></div></section><section class="module-module col-2"><div class="module"><p>Sometimes environmental conditions make it difficult to detect an object, such as locations that:</p><ul class="lst-kix_qno7r3u1gw1q-0 start"><li>Are too bright or dark to identify an object against its background</li><li>Have overlapping objects that are difficult to distinguish from one another</li></ul><p>If significant time has passed before an object has been detected, stop the reticle animation and direct the user to help documentation.</p></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="experience-figure-caption-3" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1R8mD9KygL9W9D0aH4KjTvfbQF72gumKP%2Fexperience-sense-errors.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="experience-figure-caption-3"><p>If a detection timeout is triggered, let users know something is wrong: stop the reticle animation and emphasize Help content.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Recognize Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Recognize</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>When an object has been detected by the camera, the app should: To indicate when the camera has found an object, stop the reticle’s animation...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>When an object has been detected by the camera, the app should:</p><ul class="lst-kix_r1kkozeqfviy-0 start"><li>Mark the detected object</li><li>Display a prompt for the user to start a search</li><li>Display search progress</li></ul><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Identify the detected object</h2></div></section><section class="module-module col-2"><div class="module"><p>To indicate when the camera has found an object, stop the reticle’s animation and mark the detected object with a border.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="experience-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1NGACt_hmWESy5bAAqBVlQzS7I-3ZItMp%2Fexperience-recognize-detect.png" src="">
+</img></div>
+</div>
+<figcaption id="experience-figure-caption-4"><p>A rectangular border appears around a detected object to indicate that an object has been recognized.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Prompt to search</h2></div></section><section class="module-module col-2"><div class="module"><p>Instruct the user to keep the detected object in the center of the camera. Before starting the search, add a short time delay, accompanied by a determinate progress indicator in the reticle. This gives the user time to either: </p><ul class="lst-kix_tm6ipmuwr9qv-0 start"><li>Confirm intent to search (users keep the device camera still)</li><li>Cancel the search (users move the camera away from the object)</li></ul><p>You can customize the length of the delay. </p></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="experience-figure-caption-5" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1Zn0ilT2nR3KZkteNevQdjay1aFnPi9hc%2Fexperience-recognize-prompt.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="experience-figure-caption-5"><p>A delay allows users to cancel a search if needed.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Display search progress</h2></div></section><section class="module-module col-2"><div class="module"><p>Once a search begins, object detection stops and the live camera feed pauses. This prevents new searches (and allows the user to shift their device to a more comfortable position). </p><p>Search progress is indicated by an indeterminate progress indicator and tooltip message.</p></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="experience-figure-caption-6" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1KOP8dr3UYJ5AYHwe1Qfu5QHxQFZ758zG%2Fexperience-recognize-progress.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="experience-figure-caption-6">
+<p>Multiple design cues (motion, scrim, and text) are used to indicate the search has begun and users should wait for results to load.</p></figcaption>
+</figure></div></section></div><h2>Make corrections</h2><p>During the recognition stage, two issues can affect search result quality: </p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><p><strong>Small image size:</strong> If a detected object is too far from the camera, it won’t produce a high-quality image (determined by what you’ve set as your minimum image size). </p><p>To indicate that detection isn’t finished, display a partial border around the object (instead of a complete border) and show a tooltip message to prompt the user to move closer. </p></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="experience-figure-caption-7" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1C1eWzF0zMv1HjuCjGtXbiIcQkxWz8A3F%2Fexperience-recognize-errors-size.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="experience-figure-caption-7">
+<p>A partial border and tooltip message can inform users that an object has been detected and that they must move closer to begin their search.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><p><strong>Network connection:</strong> A stable network connection is required if your image classification model is in the cloud. If the internet connection fails, display a banner indicating that they need an internet connection to proceed.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="experience-figure-caption-8" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1MoJR8VZv5L2ovjtAg2sFGPGJz5-B9BBq%2Fexperience-recognize-errors-network.png" src="">
+</img></div>
+</div>
+<figcaption id="experience-figure-caption-8">
+<p>Network issues can be communicated to users with a banner, along with an action to retry the query if the issue has been fixed.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Communicate Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Communicate</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Explaining predictions, recommendations, and other AI output to users is critical for building trust. Related Link arrow_downward Results from a visual search are displayed in...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://pair.withgoogle.com/chapter/explainability-trust/"}
+' href="https://pair.withgoogle.com/chapter/explainability-trust/" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1Dj609H3Mo0acE98S6_X3dQ6Y5bLumyBo%2Fexplainability-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1Dj609H3Mo0acE98S6_X3dQ6Y5bLumyBo%2Fexplainability-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Explainability + Trust</h2>
+<p class="object-card__body">Explaining predictions, recommendations, and other AI output to users is critical for building trust.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><p>Results from a visual search are displayed in a modal bottom sheet. During this phase, the app should:</p><ul class="lst-kix_owdxhnx43hgi-0 start"><li>Display the results</li><li>Display the detected object</li><li>Provide fast navigation</li></ul><p>Your app should set a <a href="https://pair.withgoogle.com/chapter/explainability-trust/#model-confidence-displays" rel="noopener" target="_blank">confidence threshold</a> for displaying visual search results. “Confidence” refers to an ML model’s evaluation of how accurate a prediction is. For visual search, the confidence level of each result indicates how similar the model believes it is to the provided image.</p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="experience-figure-caption-9" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1MJW_FfTQUByefvZdSCFsExAds1orNYj9%2Fexperience-communicate-results-confidence-order.png" src="">
+</img></div>
+</div>
+<figcaption id="experience-figure-caption-9">
+<p class="s-tag-caption do">Do.</p><p>Order visual search results by your model’s confidence to ensure the most likely matching items are seen first.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="experience-figure-caption-10" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1MN8bWQEMB0zjn3tdtHRrZX5sdGWSVToC%2Fexperience-communicate-results-confidence-high.png" src="">
+</img></div>
+</div>
+<figcaption id="experience-figure-caption-10">
+<p class="s-tag-caption do">Do.</p><p>Show only the highest-confidence result when an exact match is warranted by the use case.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Display the detected object</h2></div></section><section class="module-module col-2"><div class="module"><p>To allow comparison between the detected object and search results, display a thumbnail of the detected object above the modal bottom sheet.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="experience-figure-caption-11" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1NDxrHXjoa8xMtKeGOCieX3U0wm7HlIiC%2Fexperience-communicate-detected.png" src="">
+</img></div>
+</div>
+<figcaption id="experience-figure-caption-11">
+<p class="s-tag-caption do">Do.</p><p>Include the detected image of the object to compare to search result images.</p></figcaption>
+</figure></div></section></div><h2>Provide fast navigation</h2><p>After viewing results, users may take different actions: </p><ul class="lst-kix_rtdagid28vrw-0 start"><li>To return to the camera, users can tap on the scrim or the modal bottom sheet’s header. </li><li>To exit the camera, a user can interact with a result, navigate elsewhere in the app, or close the camera and return to the app by tapping the “X” button.</li></ul><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="experience-figure-caption-12" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1qSrQZMtSTKOVelG2wJRhcckl1oBBru2m%2Fexperience-communicate-navigation-return.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="experience-figure-caption-12">
+<p>Tapping on the bottom sheet’s header or scrim returns users to the live camera view to search.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="experience-figure-caption-13" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1Xwv4qDjVEFCW7uOXuEHSWJC-AVu0QDuS%2Fexperience-communicate-navigation-exit.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="experience-figure-caption-13">
+<p>Results can bring users to other screens in the app to complete their task, such as a checkout screen to purchase an item.</p></figcaption>
+</figure></div></section></div><h2>Evaluating search results</h2><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://pair.withgoogle.com/chapter/errors-failing/"}
+' href="https://pair.withgoogle.com/chapter/errors-failing/" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1oKmb26r4k0y0u60490s5eHkcUOkiX_Es%2Ferrors-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1oKmb26r4k0y0u60490s5eHkcUOkiX_Es%2Ferrors-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Errors + Graceful Failure</h2>
+<p class="object-card__body">When AI makes an error or fails, things can get complicated.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><p>In some cases, visual search results may not meet user expectations, such as in the following scenarios:</p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><p><strong>No results found<br>
+</br></strong>A search can return without matches for several reasons, including: </p><ul class="lst-kix_k1hyofm54et3-0 start"><li>An object isn’t a part of, or similar to, the known set of objects</li><li>An object was detected from an unrecognized angle </li><li>An image can be low quality, making key details of the object hard to recognize</li></ul><p>Display a banner to explain if there are no results and guide users to a Help section for information on how to improve their search.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 66.6666666667%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="experience-figure-caption-14" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="66.6666666667%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1PocVyffYWcIh7wu2eCgSqEWlagPtEH-p%2Fexperience-communicate-errors-no-results.png" src="">
+</img></div>
+</div>
+<figcaption id="experience-figure-caption-14">
+<p>A banner provides room for explanation and a link to Help content if no search results are found.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><p><strong>Poor results</strong></p><p>If a search returns results with only low-confidence scores, you can ask the user to search again (with tips on improving their search).</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 66.6666666667%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="experience-figure-caption-15" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="66.6666666667%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1Psw0M4VZ0OZIG8IA0ZkNHghAui2TY7K1%2Fexperience-communicate-errors-low-confidence-do.png" src="">
+</img></div>
+</div>
+<figcaption id="experience-figure-caption-15">
+<p class="s-tag-caption do">Do.</p><p>Link to Help content when all results have low confidence.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="theming" class="container container--large js-waypoints-trigger article__section" data-section-title="Theming" aria-label="Theming">
+          <h2 class="article__chapter-title">
+            Theming
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">ML, machine learning, ml kit, object detection, camera, shrine, theming</div>
+<div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Shrine Material theme Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Shrine Material theme</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Shrine is a lifestyle and fashion brand that demonstrates how Material Design can be used in e-commerce. Related Link arrow_downward Live camera visual search is...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/material-studies/shrine.html"}
+' href="https://material.io/design/material-studies/shrine.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1KxqcaCJD5UT2430ZbZFrfzFS6D-5dg2_%2Fshrine-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1KxqcaCJD5UT2430ZbZFrfzFS6D-5dg2_%2Fshrine-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Shrine</h2>
+<p class="object-card__body">Shrine is a lifestyle and fashion brand that demonstrates how Material Design can be used in e-commerce.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Live camera visual search is used in the Shrine app’s purchase flow. </p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="theming-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1KY3S4w76gho8E-fpiOxtcEexsfHExy6d%2Ftheming-shrine-live-camera-detected.png" src="">
+</img></div>
+</div>
+<figcaption id="theming-figure-caption-0"><p>Angled shapes used in Shrine’s brand are applied to key elements such as the reticle.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="theming-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1BGavc2xhQ6p7xIxJPxo3lad3EdMtDvU4%2Ftheming-shrine-live-camera-results.png" src="">
+</img></div>
+</div>
+<figcaption id="theming-figure-caption-1"><p>Shrine’s color and typography styles are applied to visual search results to be consistent with the rest of the app.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Reticle</h2></div></section><section class="module col-1"><div class="module"><p>Shrine’s reticle uses a diamond shape to reflect Shrine’s shape style (which uses angled cuts). </p></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="theming-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1BUSJevCoDWWMGJLlO9QksO246RhpKn1k%2Ftheming-shrine-live-camera-reticle.png" src="">
+</img></div>
+</div>
+<figcaption id="theming-figure-caption-2"><p>1. Shrine’s geometric logo<br>
+2. A button with 4dp cut corners<br>
+3. A reticle with a diamond shape</br></br></p></figcaption>
+</figure></div></section></div><h2>Tooltip</h2><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/components/sheets-bottom.html#modal"}
+' href="https://material.io/design/components/sheets-bottom.html#modal" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1ca0Kgr8J5KNFGwXZTJnU-fY7Xmanvl44%2Ftool-tip-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1ca0Kgr8J5KNFGwXZTJnU-fY7Xmanvl44%2Ftool-tip-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Tooltips</h2>
+<p class="object-card__body">Tooltips display informative text when users hover over, focus on, or tap an element.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><p>Shrine’s tooltip is emphasized by using custom colors, typography, and placement.</p><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 21.0526315789%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="theming-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="21.0526315789%" data-src="https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1uOOWL6CNC7C843yqiYoW1SF8ENCgf0nl%2Ftheming-shrine-live-camera-tooltip-comparison.png" src="">
+</img></div>
+</div>
+<figcaption id="theming-figure-caption-3"><p>1. Tooltips are typically low-emphasis components whose width is based on their text.<br>
+2. Shrine’s tooltip uses custom colors, typography, and extends its container to the edges of the screen.</br></p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+
+  </div>
+
+  <div class="container container--large">
+
+  <h2>Up next
+      <div class="article-controls">
+        
+      </div>
+  </h2>
+
+<div class="suggested-articles"><div>
+<a aria-label="Object Detection: Static Image" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../machine-learning/object-detection-static-image.html"}
+' href="../machine-learning/object-detection-static-image.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('https://storage.googleapis.com/spec-host-backup/mio-collections%2Fassets%2F1--EGyvA1_hYqjEGm9OsJdnizxTLNR8cv%2Fml-static-image-2x1-thumbnail.png');">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Machine Learning</h3>
+<h4 class="suggested-articles__item-subtitle">Object Detection: Static Image</h4>
+</a>
+<a aria-label="Barcode Scanning" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../machine-learning/barcode-scanning.html"}
+' href="../machine-learning/barcode-scanning.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1PPjIGnwk1OsRRaBT7nqOlhge1iEYZ-oj/ml-barcode-2x1-thumbnail.png');">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Machine Learning</h3>
+<h4 class="suggested-articles__item-subtitle">Barcode Scanning</h4>
+</a>
+<a aria-label="Designing ML-Based Features" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../machine-learning/patterns-for-machine-learning-powered-features.html"}
+' href="../machine-learning/patterns-for-machine-learning-powered-features.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1MhuqrSgj6wC_5xK-267zh46I4WDqOA2r/ml-intro-2x1-thumbnail.png');">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Machine Learning</h3>
+<h4 class="suggested-articles__item-subtitle">Designing ML-Based Features</h4>
+</a></div></div>  </div>
+</article>
+    </main>
+
+
+
+<footer class="footer">
+  <div class="container container--jumbo">
+    <div class="footer-block footer-block--about">
+      <a class="footer-block__logo js-analytics-click" href="/"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "/"}
+'>
+        <img class="footer-block__material-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-collections/1568317702287/static/m2/images/material_logo.svg" alt="Material Design"/>
+      </a>
+      <div class="footer-block__content">
+        <p class="footer-block__description">Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
+        <ul class="footer-block__social-nav">
+          <li class="footer-block__social-nav-item">  <a href="https://www.github.com/material-components" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on GitHub"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.github.com/material-components"}
+'>GitHub</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.twitter.com/materialdesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on Twitter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.twitter.com/materialdesign"}
+'>Twitter</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/googledesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.youtube.com/googledesign"}
+'>YouTube</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://services.google.com/fb/forms/materialdesignnewsletter/" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Read our Newsletter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://services.google.com/fb/forms/materialdesignnewsletter/"}
+'>Newsletter</a>
+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-block footer-block--legal">
+      <a class="footer-block__logo js-analytics-click" href="https://www.google.com"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.google.com"}
+'>
+        <img class="footer-block__google-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-collections/1568317702287/static/m2/images/google_logo.svg" alt="Google"/>
+      </a>
+      <div class="footer-block__content">
+        <ul class="footer-block__legal-nav">
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Privacy Policy"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/privacy"}
+'>Privacy Policy</a>
+</li>
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Terms of Service"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/terms"}
+'>Terms of Service</a>
+</li><li class="footer-block__legal-nav-item"><a href="javascript:void(0)" class="footer-block__legal-nav-link" onclick="try{userfeedback.api.startFeedback({'productId': '1027542', 'bucket': 'material_spec', 'locale': 'en', 'allowNonLoggedInFeedback': true});return false;}catch(e){}">Feedback</a></li></ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="ui-mask js-ui-mask"></div>
+<div
+    class="lightbox js-lightbox"
+    data-comp="Lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-labelledby="sr-lightbox-title">
+  <h2 class="screenreader-only sr-lightbox-title" tabindex="0">
+    Explore how Shrine, a retail app, uses Material Design.
+  </h2>
+
+    <header class="lightbox__header">
+      <div class="lightbox__header-title">
+        <span
+            class="lightbox__button js-lightbox-close"
+            data-comp="Tooltip"
+            data-props-tooltip='{"tip": "Close", "direction": "bottom"}'>
+          <i
+              class="material-icons notranslate material-icons--padded mdc-ripple-surface"
+              data-mdc-ripple-is-unbounded tabindex="0">
+            close
+          </i>
+        </span>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+
+      <div class="lightbox__actions">
+        <button type="button" name="button" class="lightbox-redlines-toggle js-redline-sidebar-toggle" data-comp="Tooltip" data-props-tooltip='{"tip": "View Specs", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>flip</i>
+        </button>
+
+        <button type="button" name="button" class="lightbox__button js-share" data-comp="Tooltip" data-props-tooltip='{"tip": "Share", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>share</i>
+        </button>
+
+      </div>
+    </header>
+
+    <div class="lightbox__template js-zoom-wrapper">
+      <div class="lightbox__content js-lightbox-content">
+<img class="ui-loader" src="https://storage.googleapis.com/spec-host/mio-staging/mio-collections/1568317702287/static/m2/images/loader.svg" alt="loader" aria-hidden="true" />      </div>
+<div class="redline-sidebar js-lightbox-sidebar-container" data-comp="RedlineSidebar">
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Image only", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-image js-redline-sidebar-item" value="image" >
+        <i class="material-icons notranslate">&#xE3F4;</i>
+        <span class="redline-sidebar__label-text">Image only</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Measurements", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-measurements js-redline-sidebar-item" value="measurements" >
+        <i class="material-icons notranslate">format_shapes</i>
+        <span class="redline-sidebar__label-text">Measurements</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Text", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-text js-redline-sidebar-item" value="text" >
+        <i class="material-icons notranslate">format_size</i>
+        <span class="redline-sidebar__label-text">Text</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Color", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-colors js-redline-sidebar-item" value="colors" >
+        <i class="material-icons notranslate">palette</i>
+        <span class="redline-sidebar__label-text">Color</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Shape and Elevation", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-shapes js-redline-sidebar-item" value="shapes" >
+        <i class="material-icons notranslate">rounded_corner</i>
+        <span class="redline-sidebar__label-text">Shape and Elevation</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Components", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-components js-redline-sidebar-item" value="components" >
+        <i class="material-icons notranslate">category</i>
+        <span class="redline-sidebar__label-text">Components</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Notes", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-notes js-redline-sidebar-item" value="notes" >
+        <i class="material-icons notranslate">notes</i>
+        <span class="redline-sidebar__label-text">Notes</span>
+      </button>
+    </div>
+<div class="redline-sidebar__toggles js-redline-layer-toggles">
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--dimensions">
+        <input type="checkbox" id="dimensions" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="dimensions">Dimensions</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--padding">
+        <input type="checkbox" id="padding" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="padding">Padding</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--typography">
+        <input type="checkbox" id="typography" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="typography">Text baseline</label>
+  </div>
+</div><nav class="carousel__nav">
+  <button
+      class="carousel__button carousel__button--prev mdc-ripple-surface js-carousel-prev"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Previous", "direction": "right"}'>
+    <i class="material-icons notranslate">chevron_left</i>
+  </button>
+
+  <button
+      class="carousel__button carousel__button--next mdc-ripple-surface js-carousel-next"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Next", "direction": "left"}'>
+    <i class="material-icons notranslate">chevron_right</i>
+  </button>
+</nav><div class="zoom-buttons" data-comp="Zoom">
+  <div class="zoom-buttons__wrapper">
+
+    <button class="mdc-button-zoom js-zoom-out" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom out", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">remove</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-reset" data-comp="Tooltip" data-props-tooltip='{"tip": "Reset", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">search</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-in" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom in", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">add</i>
+    </button>
+
+    <div class="zoom-buttons__extras">
+      <button class="mdc-button-zoom js-colorpicker-toggle" data-comp="Tooltip Colorpicker" data-props-tooltip='{"tip": "Color picker", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">colorize</i>
+      </button>
+      <button class="mdc-button-zoom js-ruler-toggle" data-comp="Tooltip Ruler" data-props-tooltip='{"tip": "Ruler", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">straighten</i>
+      </button>
+    </div>
+
+  </div>
+</div>    </div>
+
+
+<aside class="mdc-dialog" role="alertdialog" aria-labelledby="mdc-dialog-label" aria-describedby="mdc-dialog-description" data-comp="Share">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-label" class="mdc-dialog__header__title">Share</h2>
+      <button type="button" class="mdc-dialog-share-close js-dialog-close">
+        <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>close</i>
+      </button>
+    </header>
+    <section id="mdc-dialog-description" class="mdc-dialog__body">
+      <input type="text" readonly class="mdc-dialog-share-url js-share-url" />
+      <button type="button" class="mdc-button mdc-ripple-surface mdc-dialog-copy js-dialog-copy">Copy</button>
+    </section>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside></div><div class="mdc-snackbar snackbar-wrapper" data-comp="Snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+  <div class="mdc-snackbar__text"></div>
+  <div class="mdc-snackbar__action-wrapper">
+    <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
+  </div>
+</div>
+    <script src="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js"></script>
+    <script src="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js"></script>
+    <script src="https://storage.googleapis.com/spec-host/mio-staging/mio-collections/1568317702287/static/m2/js/main.min.js"></script><script src="https://support.google.com/inapp/api.js"></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  </body>
+</html>

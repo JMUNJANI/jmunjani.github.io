@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://material.io flutter.github.io https://www.google-analytics.com https://stats.g.doubleclick.net img.shields.io 'self'; script-src https://www.google.com https://www.gstatic.com https://adservice.google.com https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline' 'self'; style-src https://fonts.googleapis.com/css 'unsafe-inline' 'self'; font-src https://fonts.gstatic.com/s/ 'self'; child-src 'none';">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <title>Getting Started - Material Components for Android</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-NHRPF8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta itemprop="name" content="Getting Started - Material Components for Android" />
+    <meta itemprop="image" content="https://material.io/static/images/simple-lp/components-share.png" />
+    <meta name="description" content="Material Components for Android is a set of user interface components that help developers build Android apps with Material Design.
+" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Getting Started - Material Components for Android" />
+    <meta property="og:site_name" content="Material Components for Android" />
+    <meta property="og:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta property="article:section" content="Getting Started" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@materialdesign">
+    <meta name="twitter:title" content="Material Components">
+    <meta name="twitter:description" content="Create beautiful apps with modular and customizable UI components">
+    <meta name="twitter:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <link rel="icon" sizes="192x192" href="/develop/images/app-icons/material-logo-app-icon-192x192.png">
+    <link rel="shortcut icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/develop/images/app-icons/material-logo-app-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/develop/images/app-icons/material-logo-app-icon-180x180.png">
+    <meta name="msapplication-TileImage" content="https://material.io/static/images/hub/favicons/hub-ms-icon-144x144.png">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/develop/css/codemirror.css">
+    <link rel="stylesheet" href="/develop/css/neo.css">
+    <link rel="stylesheet" href="/develop/css/app.css">
+    <script async="" defer="" src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body class="page page--landing page--docs page--platform-android">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <aside class="page__temporary-drawer mdc-drawer mdc-drawer--temporary page_drawer--temporary">
+      <nav class="temporary-drawer__drawer mdc-drawer__drawer mdc-drawer__content">
+        <header class="temporary-drawer__header mdc-drawer__header">
+          <div class="temporary-drawer__header-content mdc-drawer__header-content">
+            <div class="temporary-drawer__header-icon develop-toolbar__leading-icon"></div>
+            Material Design
+          </div>
+        </header>
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label">android</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/android/catalog/dialog/">Components</a>
+          <h3 class="drawer-heading">Documentation</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/docs/building-from-source/"
+     >
+                Building From Source
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/docs/catalog-app/"
+     >
+                Catalog App
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/docs/contributing/"
+     >
+                Contributing
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/docs/getting-started/"
+     >
+                Getting Started
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/docs/theming-guide/"
+     >
+                Theming Guide
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/android/theming/color/">Theming</a>
+        </nav>
+      </nav>
+    </aside>
+    <header class="develop-toolbar mdc-toolbar mdc-toolbar--fixed
+    
+    
+      mdc-toolbar--platform
+    ">
+      <div class="search-form" id="top-level-search-bar">
+        <form class="search-form__form" id="top-level-search-form">
+          <input type="text"
+        class="search-form__input"
+        id="top-level-search-input"
+        autocomplete="off" />
+        </form>
+        <div class="search-form__label" id="top-level-search-label">Search</div>
+        <button
+      class="search-form__button search-form__button--close"
+      id="top-level-search-close"
+      aria-label="Close search">
+          <div class="search-form__close-icon" id="close-button-icon" data-mdc-ripple-is-unbounded></div>
+        </button>
+      </div>
+      <div class="develop-toolbar__row mdc-toolbar__row">
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="menu-button" id="menu-open">
+            <div class="menu-button__icon menu-button__icon--initial-load" id="menu-icon"></div>
+          </button>
+          <a class="develop-toolbar__title-link" href="/">
+            <div class="develop-toolbar__leading-icon"></div>
+            <h1 class="develop-toolbar__title mdc-toolbar__title">
+              Material Design
+            </h1>
+          </a>
+        </section>
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+          <nav id="navigation-tabs" class="develop-tab-bar">
+            <a href="/design"
+      class="develop-tab">
+              Design
+            </a>
+            <a href="/components"
+      class="develop-tab">
+              Components
+            </a>
+            <a href="/develop"
+      class="develop-tab develop-tab--active">
+              Develop
+              <span class="develop-tab__nav-indicator"></span>
+            </a>
+            <a href="/resources"
+     class="develop-tab">
+              Resources
+            </a>
+          </nav>
+          <section class="develop-toolbar__section develop-toolbar__section--search mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+            <button 
+    class="search-form__button search-form__button--open"
+    id="top-level-search-open"
+    aria-label="Search">
+              <div class="search-form__search-icon" id="spyglass-icon"></div>
+            </button>
+          </section>
+        </section>
+      </div>
+    </header>
+    <div class="page__content page__flex-element">
+      <div class="page__drawer mdc-permanent-drawer">
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label">android</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/android/catalog/dialog/">Components</a>
+          <h3 class="drawer-heading">Documentation</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/docs/building-from-source/"
+     >
+                Building From Source
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/docs/catalog-app/"
+     >
+                Catalog App
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/docs/contributing/"
+     >
+                Contributing
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/docs/getting-started/"
+     >
+                Getting Started
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/android/docs/theming-guide/"
+     >
+                Theming Guide
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/android/theming/color/">Theming</a>
+        </nav>
+      </div>
+      <section class="page__main-section">
+        <article class="page__article article">
+          <h1 id="getting-started-with-material-components-for-android">Getting started with Material Components for Android</h1>
+          <h3 id="1-depend-on-our-library">1. Depend on our library</h3>
+          <p>Material Components for Android is available through Google’s Maven Repository.
+            To use it:</p>
+          <ol>
+            <li>Open the <code>build.gradle</code> file for your application.</li>
+            <li>
+              <p>Make sure that the <code>repositories</code> section includes Google’s Maven Repository
+                <code>google()</code>. For example:</p>
+              <pre><code class="language-groovy">  allprojects {
+    repositories {
+      google()
+      jcenter()
+    }
+  }
+</code></pre>
+            </li>
+            <li>
+              <p>Add the library to the <code>dependencies</code> section:</p>
+              <pre><code class="language-groovy">  dependencies {
+    // ...
+    implementation 'com.google.android.material:material:&lt;version&gt;'
+    // ...
+  }
+</code></pre>
+            </li>
+          </ol>
+          <p>Visit <a href="http://maven.google.com">Google’s Maven Repository</a> or
+            <a href="https://mvnrepository.com/artifact/com.google.android.material/material">MVN Repository</a>
+            to find the latest version of the library.</p>
+          <h5 id="new-namespace-and-androidx">New Namespace and AndroidX</h5>
+          <p>If your app currently depends on the original Design Support Library, you can
+            make use of the
+            <a href="https://developer.android.com/jetpack/androidx/migrate"><code>Refactor to AndroidX…</code></a>
+            option provided by Android Studio. Doing so will update your app’s dependencies
+            and code to use the newly packaged <code>androidx</code> and <code>com.google.android.material</code>
+            libraries.</p>
+          <p>If you don’t want to switch over to the new <code>androidx</code> and
+            <code>com.google.android.material</code> packages yet, you can use Material Components via
+            the <code>com.android.support:design:28.0.0</code> dependency.</p>
+          <p>Note: You should not use the <code>com.android.support</code> and
+            <code>com.google.android.material</code> dependencies in your app at the same time.</p>
+          <h3 id="2-compile-your-app-with-android-p">2. Compile your app with Android P</h3>
+          <p>In order to use Material Components for Android, and the latest versions of the
+            Support Libraries, you will have to update your app’s <code>compileSdkVersion</code> to
+            <code>28</code> and download the Android P Preview using the SDK manager. For more
+            information on Android P and its timeline, take a look at the <a href="https://developer.android.com/preview/overview">Program
+              Overview</a> page.</p>
+          <h3 id="3-ensure-you-are-using-appcompatactivity">3. Ensure you are using <code>AppCompatActivity</code></h3>
+          <p>Using <code>AppCompatActivity</code> will ensure that all the components work correctly. If
+            you are unable to extend from <code>AppCompatActivity</code>, update your activities to use
+            <code>AppCompatDelegate</code>. This will enable the <code>AppCompat</code> versions of components to
+            be inflated among other important things.</p>
+          <h3 id="4-change-your-app-theme-to-inherit-from-a-material-components-theme">4. Change your app theme to inherit from a Material Components theme</h3>
+          <p>Doing an app-wide migration by changing your app theme to inherit from a
+            Material Components theme is the recommended approach. However, be sure to
+            test thoroughly afterwards, as components in existing layouts may change
+            their looks and behavior.</p>
+          <p>Note: If you <strong>can’t</strong> change your theme, you can do one of the following:</p>
+          <ul>
+            <li>Inherit from one of our Material Components <strong>Bridge</strong> themes. See the
+              <a href="#bridge-themes"><strong>Bridge Themes</strong></a> section for more details.</li>
+            <li>Continue to inherit from an AppCompat theme and add some new theme
+              attributes to your theme. See the
+              <a href="#app-compat-themes"><strong>App Compat Themes</strong></a> section for more details.</li>
+          </ul>
+          <h4 id="material-components-themes"><strong>Material Components themes</strong></h4>
+          <p>The following is the list of Material Components themes you can use to get the
+            latest component styles and theme-level attributes.</p>
+          <ul>
+            <li><code>Theme.MaterialComponents</code></li>
+            <li><code>Theme.MaterialComponents.NoActionBar</code></li>
+            <li><code>Theme.MaterialComponents.Light</code></li>
+            <li><code>Theme.MaterialComponents.Light.NoActionBar</code></li>
+            <li><code>Theme.MaterialComponents.Light.DarkActionBar</code></li>
+            <li><code>Theme.MaterialComponents.DayNight</code></li>
+            <li><code>Theme.MaterialComponents.DayNight.NoActionBar</code></li>
+            <li><code>Theme.MaterialComponents.DayNight.DarkActionBar</code></li>
+          </ul>
+          <p>Update your app theme to inherit from one of these themes, e.g.:</p>
+          <pre><code class="language-xml">&lt;style name="Theme.MyApp" parent="Theme.MaterialComponents.DayNight"&gt;
+    &lt;!-- ... --&gt;
+&lt;/style&gt;
+</code></pre>
+          <p>For more information on how to set up theme-level attributes for your app, take
+            a look at our <a href="/components/android/docs/theming-guide/">Theming</a> guide, as well as our
+            <a href="/components/android/theming/dark/">Dark Theme</a> guide for why it’s important to inherit from the
+            <code>DayNight</code> theme.</p>
+          <p>Note: Using a Material Components theme enables a custom view inflater which
+            replaces default components with their Material counterparts. Currently, this
+            only replaces <code>&lt;Button&gt;</code> XML components with
+            <a href="/components/android/catalog/material-button/"><code>&lt;MaterialButton&gt;</code></a>.</p>
+          <h4 id="bridge-themes"><strong>Bridge Themes</strong></h4>
+          <p>If you cannot change your theme to inherit from a Material Components theme, you
+            can inherit from a Material Components <strong>Bridge</strong> theme.</p>
+          <pre><code class="language-xml">&lt;style name="Theme.MyApp" parent="Theme.MaterialComponents.Light.Bridge"&gt;
+    &lt;!-- ... --&gt;
+&lt;/style&gt;
+</code></pre>
+          <p>Both <code>Theme.MaterialComponents</code> and <code>Theme.MaterialComponents.Light</code> have
+            <code>.Bridge</code> themes:</p>
+          <ul>
+            <li><code>Theme.MaterialComponents.Bridge</code></li>
+            <li><code>Theme.MaterialComponents.Light.Bridge</code></li>
+            <li><code>Theme.MaterialComponents.NoActionBar.Bridge</code></li>
+            <li><code>Theme.MaterialComponents.Light.NoActionBar.Bridge</code></li>
+            <li><code>Theme.MaterialComponents.Light.DarkActionBar.Bridge</code></li>
+          </ul>
+          <p>Bridge themes inherit from AppCompat themes, but also define the new Material
+            Components theme attributes for you. If you use a bridge theme, you can start
+            using Material Design components without changing your app theme.</p>
+          <h4 id="app-compat-themes"><strong>AppCompat Themes</strong></h4>
+          <p>You can also incrementally test new Material components without changing
+            your app theme. This allows you to keep your existing layouts looking and
+            behaving the same, while introducing new components to your layout one at a
+            time.</p>
+          <p>However, you must add the following new theme attributes to your existing app
+            theme, or you will encounter <code>ThemeEnforcement</code> errors:</p>
+          <pre><code class="language-xml">&lt;style name="Theme.MyApp" parent="Theme.AppCompat"&gt;
+
+  &lt;!-- Original AppCompat attributes. --&gt;
+  &lt;item name="colorPrimary"&gt;@color/my_app_primary_color&lt;/item&gt;
+  &lt;item name="colorSecondary"&gt;@color/my_app_secondary_color&lt;/item&gt;
+  &lt;item name="android:colorBackground"&gt;@color/my_app_background_color&lt;/item&gt;
+  &lt;item name="colorError"&gt;@color/my_app_error_color&lt;/item&gt;
+
+  &lt;!-- New MaterialComponents attributes. --&gt;
+  &lt;item name="colorPrimaryVariant"&gt;@color/my_app_primary_variant_color&lt;/item&gt;
+  &lt;item name="colorSecondaryVariant"&gt;@color/my_app_secondary_variant_color&lt;/item&gt;
+  &lt;item name="colorSurface"&gt;@color/my_app_surface_color&lt;/item&gt;
+  &lt;item name="colorOnPrimary"&gt;@color/my_app_color_on_primary&lt;/item&gt;
+  &lt;item name="colorOnSecondary"&gt;@color/my_app_color_on_secondary&lt;/item&gt;
+  &lt;item name="colorOnBackground"&gt;@color/my_app_color_on_background&lt;/item&gt;
+  &lt;item name="colorOnError"&gt;@color/my_app_color_on_error&lt;/item&gt;
+  &lt;item name="colorOnSurface"&gt;@color/my_app_color_on_surface&lt;/item&gt;
+  &lt;item name="scrimBackground"&gt;@color/mtrl_scrim_color&lt;/item&gt;
+  &lt;item name="textAppearanceHeadline1"&gt;@style/TextAppearance.MaterialComponents.Headline1&lt;/item&gt;
+  &lt;item name="textAppearanceHeadline2"&gt;@style/TextAppearance.MaterialComponents.Headline2&lt;/item&gt;
+  &lt;item name="textAppearanceHeadline3"&gt;@style/TextAppearance.MaterialComponents.Headline3&lt;/item&gt;
+  &lt;item name="textAppearanceHeadline4"&gt;@style/TextAppearance.MaterialComponents.Headline4&lt;/item&gt;
+  &lt;item name="textAppearanceHeadline5"&gt;@style/TextAppearance.MaterialComponents.Headline5&lt;/item&gt;
+  &lt;item name="textAppearanceHeadline6"&gt;@style/TextAppearance.MaterialComponents.Headline6&lt;/item&gt;
+  &lt;item name="textAppearanceSubtitle1"&gt;@style/TextAppearance.MaterialComponents.Subtitle1&lt;/item&gt;
+  &lt;item name="textAppearanceSubtitle2"&gt;@style/TextAppearance.MaterialComponents.Subtitle2&lt;/item&gt;
+  &lt;item name="textAppearanceBody1"&gt;@style/TextAppearance.MaterialComponents.Body1&lt;/item&gt;
+  &lt;item name="textAppearanceBody2"&gt;@style/TextAppearance.MaterialComponents.Body2&lt;/item&gt;
+  &lt;item name="textAppearanceCaption"&gt;@style/TextAppearance.MaterialComponents.Caption&lt;/item&gt;
+  &lt;item name="textAppearanceButton"&gt;@style/TextAppearance.MaterialComponents.Button&lt;/item&gt;
+  &lt;item name="textAppearanceOverline"&gt;@style/TextAppearance.MaterialComponents.Overline&lt;/item&gt;
+
+&lt;/style&gt;
+</code></pre>
+          <h3 id="5-add-a-material-component-to-your-app">5. Add a Material component to your app</h3>
+          <p>Take a look at our <a href="https://www.material.io/components/android">documentation</a>
+            for the full list of available Material components. Each component’s page has
+            specific instructions on how to implement it in your app.</p>
+          <p>Let’s use <a href="/components/android/catalog/text-input-layout/">text fields</a> as an example.</p>
+          <h4 id="implementing-a-text-field-via-xml"><strong>Implementing a text field via XML</strong></h4>
+          <p>The default <a href="https://material.io/go/design-text-fields#filled-text-field">filled
+              text field</a> XML
+            is defined as:</p>
+          <pre><code class="language-xml">&lt;com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/textfield_label"&gt;
+
+  &lt;com.google.android.material.textfield.TextInputEditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/&gt;
+&lt;/com.google.android.material.textfield.TextInputLayout&gt;
+</code></pre>
+          <p>Note: If you are <strong>not</strong> using a theme that inherits from a Material Components
+            theme, you will have to specify the text field style as well, via
+            <code>style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"</code></p>
+          <p>Other text field styles are also provided. For example, if you want an
+            <a href="https://material.io/go/design-text-fields#outlined-text-field">outlined
+              text field</a>
+            in your layout, you can apply the Material Components <code>outlined</code> style to the
+            text field in XML:</p>
+          <pre><code class="language-xml">&lt;com.google.android.material.textfield.TextInputLayout
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/textfield_label"&gt;
+
+  &lt;com.google.android.material.textfield.TextInputEditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/&gt;
+&lt;/com.google.android.material.textfield.TextInputLayout&gt;
+</code></pre>
+          <h2 id="contributors">Contributors</h2>
+          <p>Material Components for Android welcomes contributions from the community. Check
+            out our <a href="/components/android/docs/contributing/">contributing guidelines</a> as well as an overview of
+            the <a href="https://github.com/material-components/material-components-android/tree/master/docs/directorystructure.md">directory structure</a> before getting started.</p>
+          <h2 id="useful-links">Useful Links</h2>
+          <ul>
+            <li><a href="/components/android/docs/theming-guide/">Theming Guide</a></li>
+            <li><a href="/components/android/docs/contributing/">Contributing</a></li>
+            <li><a href="/components/android/docs/building-from-source/">Building From Source</a></li>
+            <li><a href="/components/android/docs/catalog-app/">Catalog App</a></li>
+            <li><a href="https://developer.android.com/reference/com/google/android/material/classes">Class
+                documentation</a></li>
+            <li><a href="https://www.stackoverflow.com/questions/tagged/material-components+android">MDC-Android on Stack
+                Overflow</a></li>
+            <li><a href="https://developer.android.com/training/material/index.html">Android Developer’s
+                Guide</a></li>
+            <li><a href="https://www.material.io">Material.io</a></li>
+            <li><a href="https://material.google.com">Material Design Guidelines</a></li>
+          </ul>
+        </article>
+        <footer class="footer">
+          <section class="footer__content">
+            <div class="footer__row">
+              <a class="footer__logo-link">
+                <div class="footer__logo"></div>
+              </a>
+              <div class="footer__copy">
+                <p class="footer__description">Material design is an adaptable system—backed by open-source code—guiding you in the principles and best practices of contemporary UI. Material helps teams streamline the designer-developer collaboration, reduce complexity, and enable fidelity through reusable components, patterns, and code libraries. All while adapting easily to your brand, platform, and users’ needs.</p>
+                <nav class="footer__navigation">
+                  <ul class="footer__navigation-list">
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.github.com/material-components"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Github
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.twitter.com/materialdesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Twitter
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.youtube.com/googledesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        YouTube
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="footer__row footer-legal">
+              <a class="footer-legal__logo-container" href="https://google.com">
+                <img src="/develop/images/google-logo-gray.svg" alt="Google" />
+              </a>
+              <ul class="footer-legal__nav-list">
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/privacy"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/terms"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Terms and Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </footer>
+      </section>
+    </div>
+    <template id="language-radio-template">
+      <div class="mdc-form-field">
+        <div class="mdc-radio">
+          <input class="mdc-radio__native-control"
+             type="radio"
+             id="" name="" value="">
+          <div class="mdc-radio__background">
+            <div class="mdc-radio__outer-circle"></div>
+            <div class="mdc-radio__inner-circle"></div>
+          </div>
+        </div>
+        <label class="language-name" for=""></label>
+      </div>
+    </template>
+    <button
+    class="feedback-button"
+    aria-label="Send Feedback"
+    tabindex="0">
+    </button>
+    <script src="/develop/js/index.js" async></script>
+    <script src="https://www.gstatic.com/feedback/api.js" async></script>
+  </body>
+</html>

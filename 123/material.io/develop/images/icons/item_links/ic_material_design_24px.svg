@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_material_design_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="ic_material_design_24px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(1.000000, 1.000000)" fill="#6200EE" fill-rule="nonzero" id="Shape">
+            <path d="M22,11 C22,4.93 17.07,0 11,0 C4.93,0 0,4.93 0,11 C0,17.07 4.93,22 11,22 C17.07,22 22,17.07 22,11 Z M4,16.64 C2.75,15.1 2,13.14 2,11 C2,8.87 2.76,6.92 4,5.37 L4,16.64 Z M16.64,4 L5.36,4 C6.9,2.75 8.86,2 11,2 C13.14,2 15.1,2.75 16.64,4 Z M11,13.53 L7.24,6 L14.77,6 L11,13.53 Z M16,8 L16,16 L12,16 L16,8 Z M10,16 L6,16 L6,8 L10,16 Z M16.64,18 C13.3524598,20.6656698 8.64754018,20.6656698 5.36,18 L16.64,18 Z M20,11 C20,13.14 19.25,15.1 18,16.64 L18,5.37 C19.24,6.92 20,8.87 20,11 Z"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,2711 @@
+<!DOCTYPE html>
+<html lang="en" class="preload">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Banners - Material Design</title>
+
+
+    <meta itemprop="name"        property="og:title"       name="twitter:title"       content="Banners" />
+    <meta itemprop="description" property="og:description" name="twitter:description" content="A banner displays a prominent message and related optional actions." />
+    <meta itemprop="image"       property="og:image"       name="twitter:image"       content="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1rsdTGe8EM971GTA3X7WRiUNg5noo30lJ%2Fbanner-thumbnail-2x1.png" />
+    <meta itemprop="url"         property="og:url"         name="twitter:url"         content="https://material.io/components/banners/banners.html" />
+    <meta property="og:site_name" content="Material Design" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">    <link rel="shortcut icon" href="/favicon.ico">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHRPF8');</script>    <style>
+.animatable {
+        opacity: 0;
+        position: relative;
+        top: 16px;         transition: opacity 235ms cubic-bezier(.4,0,.2,1),
+                    top 500ms cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/css/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+    <link rel="preload" href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/js/main.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js" as="script">
+
+
+  </head>
+
+  <body class="header-show page--article left-rail"
+        data-comp="Global "
+        data-slug-id="banners"
+        data-spec-alias="mio-components"
+ >
+    <a class="screenreader-only" href="#main_content">Skip to main content</a>
+
+  <header class="header js-header" data-comp="Header">
+      <button class="header__hamburger header__button" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+        <i class="material-icons notranslate header__hamburger-icon" title="Toggle Navigation">menu</i>
+      </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+    <nav class="header__nav" role="navigation">
+      <ul class="header__nav-list header__nav-list--selected">
+            <li class="header__nav-item  js-header-item">
+    <a href="/design"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/design"}
+'>
+      Design
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  header__nav-item--active js-header-item" aria-current="true">
+    <a href="/components"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/components"}
+'>
+      Components
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/develop"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/develop"}
+'>
+      Develop
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/resources"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/resources"}
+'>
+      Resources
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+      </ul>
+    </nav>
+
+    <form id="search-form" class="search-form js-search" data-comp="SearchForm" data-props-searchform='{"basePath": "/", "ajax": false, "showOnLoad": false}'>
+      <button class="search-form__back js-search-back js-analytics-click" type="button" aria-label="Exit search results"
+              data-analytics='  {
+    "event": "trackEvent",
+    "category": "search back",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+        <i class="material-icons notranslate">arrow_back</i>
+      </button>
+
+      <input id="search-query" class="search-form__input js-search-input" name="q" type="text" title="query" placeholder="Search" autocomplete="off" aria-label="Type your search and press enter.">
+    </form>
+
+    <button class="header__search header__button js-toggle-search js-analytics-click"
+            data-analytics='  {
+    "event": "trackEvent",
+    "category": "search",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+      <div class="icons-container mdc-ripple-surface" data-mdc-ripple-is-unbounded>
+        <i class="material-icons notranslate header__spyglass" aria-label="Search Material Design">search</i>
+        <i class="material-icons notranslate header__search-close" aria-label="Close search">close</i>
+      </div>
+    </button>
+  </header>
+
+
+<nav aria-label="Breadcrumbs" class="breadcrumbs" data-comp="Breadcrumbs" aria-hidden="true">
+    <button class="breadcrumbs__hamburger" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+      <i class="material-icons notranslate" title="Toggle Navigation">menu</i>
+    </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+  <ol class="container container--large breadcrumbs__list">
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click "
+           href="../components"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../components"}
+'>Components</a>
+      </li>
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link"
+           href="../banners/banners.html"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../banners/banners.html"}
+'>Banners</a>
+      </li>
+      <li class="breadcrumbs__crumb disabled breadcrumbs__chapter">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link js-breadcrumb-hash"
+           href="#usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>Usage</a>
+      </li>
+  </ol>
+</nav>
+
+
+<nav class="side-nav" data-comp="SideNav" role="navigation">
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+
+
+            <span class="side-nav__section-title">Components</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-bottom"}
+'>
+            App bars: bottom
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-top"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-top"}
+'>
+            App bars: top
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../backdrop"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../backdrop"}
+'>
+            Backdrop
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface active js-analytics-click"
+             href="../banners"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../banners"}
+'>
+            Banners
+          </a>
+
+              <div class="side-nav__articles">
+    <i class="side-nav__progress-bar">
+      <i class="side-nav__scrub js-submenu-scrub"></i>
+    </i>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-usage js-analytics-click" href="#usage" data-section-id="usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>
+          <span class="js-anchor-text">Usage</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-anatomy js-analytics-click" href="#anatomy" data-section-id="anatomy"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#anatomy"}
+'>
+          <span class="js-anchor-text">Anatomy</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-placement js-analytics-click" href="#placement" data-section-id="placement"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#placement"}
+'>
+          <span class="js-anchor-text">Placement</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-behavior js-analytics-click" href="#behavior" data-section-id="behavior"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#behavior"}
+'>
+          <span class="js-anchor-text">Behavior</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-theming js-analytics-click" href="#theming" data-section-id="theming"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#theming"}
+'>
+          <span class="js-anchor-text">Theming</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-specs js-analytics-click" href="#specs" data-section-id="specs"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#specs"}
+'>
+          <span class="js-anchor-text">Specs</span>
+        </a>
+      </div>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../bottom-navigation"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../bottom-navigation"}
+'>
+            Bottom navigation
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons"}
+'>
+            Buttons
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons-floating-action-button"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons-floating-action-button"}
+'>
+            Buttons: floating action button
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../cards"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../cards"}
+'>
+            Cards
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../chips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../chips"}
+'>
+            Chips
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../data-tables"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../data-tables"}
+'>
+            Data tables
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dialogs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dialogs"}
+'>
+            Dialogs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dividers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dividers"}
+'>
+            Dividers
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../image-lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../image-lists"}
+'>
+            Image lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../lists"}
+'>
+            Lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../menus"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../menus"}
+'>
+            Menus
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../navigation-drawer"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation-drawer"}
+'>
+            Navigation drawer
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../pickers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../pickers"}
+'>
+            Pickers
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../progress-indicators"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../progress-indicators"}
+'>
+            Progress indicators
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../selection-controls"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../selection-controls"}
+'>
+            Selection controls
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sheets-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-bottom"}
+'>
+            Sheets: bottom
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sheets-side"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-side"}
+'>
+            Sheets: side
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sliders"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sliders"}
+'>
+            Sliders
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../snackbars"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../snackbars"}
+'>
+            Snackbars
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tabs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tabs"}
+'>
+            Tabs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../text-fields"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../text-fields"}
+'>
+            Text fields
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tooltips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tooltips"}
+'>
+            Tooltips
+          </a>
+
+      </li>
+
+  </ul>
+</nav>
+
+
+    <main id="main_content" class="main" role="main" aria-labelledby="Main Content">
+<article class="article" data-comp="Waypoints">
+  <div class="article__intro container container--large js-waypoints-trigger-initial">
+    <div class="article__intro-text">
+      <h1 class="article__title animatable js-anim-trigger">
+
+        Banners
+
+            <div class="article-controls">
+              
+            </div>
+      </h1>
+
+
+        <div class="article__intro-text animatable js-anim-trigger">
+        <div>
+<div aria-hidden="true" class="keywords hidden">banner, notification, communication</div>
+<h2>A banner displays a prominent message and related optional actions.</h2><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="banners-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1mjyBaD6BpyEBZk20ARaRBg1PZ1zWd6bN/banners-usage.png" src="">
+</img></div>
+</div>
+<figcaption id="banners-figure-caption-0"><hr class="spacer" role="presentation"/></figcaption>
+</figure><h3>Developer documentation</h3><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Platform</p></td><td colspan="1" rowspan="1"><p>Status</p></td></tr><tr><td colspan="1" rowspan="1"><p>Android</p></td><td colspan="1" rowspan="1"><p>Planned</p></td></tr><tr><td colspan="1" rowspan="1"><p>iOS</p></td><td colspan="1" rowspan="1"><p><a href="https://github.com/material-components/material-components-ios/tree/develop/components/Banner" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>Web</p></td><td colspan="1" rowspan="1"><p>Planned</p></td></tr><tr><td colspan="1" rowspan="1"><p>Flutter</p></td><td colspan="1" rowspan="1"><p>Planned</p></td></tr></tbody></table></div></section></div></div>
+        </div>
+    </div>
+
+      <nav class="article__nav animatable js-anim-trigger">
+        <span class="eyebrow">Contents</span>
+        <ul>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#usage" data-section-id="usage"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#usage"}
+'>Usage</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#anatomy" data-section-id="anatomy"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#anatomy"}
+'>Anatomy</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#placement" data-section-id="placement"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#placement"}
+'>Placement</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#behavior" data-section-id="behavior"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#behavior"}
+'>Behavior</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#theming" data-section-id="theming"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#theming"}
+'>Theming</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#specs" data-section-id="specs"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#specs"}
+'>Specs</a>
+            </li>
+        </ul>
+      </nav>
+  </div>
+
+  <hr />
+
+  <div class="article__body animatable js-breadcrumb-toggle js-anim-trigger">
+      <section id="usage" class="container container--large js-waypoints-trigger article__section" data-section-title="Usage" aria-label="Usage">
+          <h2 class="article__chapter-title">
+            Usage
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">banner, notification, communication</div>
+<p>A banner displays an important, succinct message, and provides actions for users to address (or dismiss the banner). It requires a user action to be dismissed.</p><p>Banners should be displayed at the top of the screen, below a top app bar. They are persistent and nonmodal, allowing the user to either ignore them or interact with them at any time.</p><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../snackbars/snackbars.html#snackbars"}
+' href="../snackbars/snackbars.html#snackbars" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OXubybIxNowFGAjrZ0XKat9MKqB7fPty%2Fsnackbar-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OXubybIxNowFGAjrZ0XKat9MKqB7fPty%2Fsnackbar-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Snackbars</h2>
+<p class="object-card__body">Snackbars provide brief feedback about an operation through a message at the bottom of the screen.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../dialogs/dialogs.html#dialogs"}
+' href="../dialogs/dialogs.html#dialogs" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1-2AYDdSQVged4dML1aZOBp1S3vk-3ybg%2Fdialogs-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1-2AYDdSQVged4dML1aZOBp1S3vk-3ybg%2Fdialogs-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Dialogs</h2>
+<p class="object-card__body">Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks. They remain until dismissed or a required action has been taken.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../backdrop/backdrop.html#backdrop"}
+' href="../backdrop/backdrop.html#backdrop" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1iPYX01ZId-uu7PmHb_R_gnVDFacBvKgz%2Fbackdrop-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1iPYX01ZId-uu7PmHb_R_gnVDFacBvKgz%2Fbackdrop-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Backdrop</h2>
+<p class="object-card__body">Revealable, transformative surface contextual to the state of the application</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p> </p><hr class="spacer" role="presentation"/><div class="col-list"><section class="module col-1"><div class="module"><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p><strong>Component</strong></p></td><td colspan="1" rowspan="1"><p><strong>Priority</strong></p></td><td colspan="1" rowspan="1"><p><strong>User action</strong></p></td></tr><tr><td colspan="1" rowspan="1"><p>Snackbar</p></td><td colspan="1" rowspan="1"><p>Low priority</p></td><td colspan="1" rowspan="1"><p>Optional: Snackbars disappear automatically</p></td></tr><tr><td colspan="1" rowspan="1"><p>Banner</p></td><td colspan="1" rowspan="1"><p>Prominent, medium priority</p></td><td colspan="1" rowspan="1"><p>Optional: Banners remain until dismissed by the user, or if the state that caused the banner is resolved </p></td></tr><tr><td colspan="1" rowspan="1"><p>Dialog</p></td><td colspan="1" rowspan="1"><p>Highest priority</p></td><td colspan="1" rowspan="1"><p>Required: Dialogs block app usage until the user takes a dialog action or exits the dialog (if available)</p></td></tr></tbody></table></div></section></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Principles Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Principles</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Banners are interruptive, but their level of interruption should match the information they contain and the context in which they appear. Banners communicate a succinct...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module-module col-3"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="751px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<img alt="" class=" inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F19s847d1Zf1Ar_CYzTVn8BewydW4ilTJg%2Falerts-illo-1.png" src="">
+</img></div>
+</figure><h2>Appropriately interruptive  </h2><p>Banners are interruptive, but their level of interruption should match the information they contain and the context in which they appear.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="721px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<img alt="" class=" inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F0B54x0KDcs5U-WFpvTWc5ZEtZNXM%2Falerts-illo-2.png" src="">
+</img></div>
+</figure><h2>Clear</h2><p>Banners communicate a succinct message and what will happen if users interact with them.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="721px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<img alt="" class=" inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F0B54x0KDcs5U-R0JhRGVNN3VOS2s%2Falerts-illo-3.png" src="">
+</img></div>
+</figure><h2>Focused</h2><p>Banners contain a single message and specific actions a user can take.</p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="anatomy" class="container container--large js-waypoints-trigger article__section" data-section-title="Anatomy" aria-label="Anatomy">
+          <h2 class="article__chapter-title">
+            Anatomy
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">banner, notification, communication</div>
+<div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1M_50ojwSC5XH6S5T_Rtoeb16AWNGhhPC%2Fbanners-elements.png" src="">
+</img></div>
+</div>
+</figure><h3>1. Supporting illustration (optional)<br>
+2. Container<br>
+3. Text<br>
+4. Buttons</br></br></br></h3></div></section></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Banner container Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Banner container</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>A banner container is rectangular, extending the full width of a layout. The container should be placed in a consistent and prominent location throughout an...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>A banner container is rectangular, extending the full width of a layout. The container should be  placed in a consistent and prominent location throughout an app, sharing the same elevation as screen content.</p><p>Only one banner should be shown at a time.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1N217z_MEHIcU9ZAqwOllDXaV32lk87v_%2Fbanners-container-mobile.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-0">
+<p>A banner appears above content and below a top app bar.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/12DgGjhR5i9VMW76SeMGOLPqGQqd1TR1I/banners-layout-placement-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-1">
+<p class="s-tag-caption dont">Don’t.</p><p>Only one banner should be shown at a time.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Banner message Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Banner message</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The banner message communicates a change or error within an app. Banners should be considered as part of your overall in-app messaging strategy.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><p>The banner message communicates a change or error within an app. </p><p>Banners should be considered as part of your overall in-app messaging strategy.</p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Buttons Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Buttons</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Buttons in banners should directly relate to a banner’s message and clearly represent the banner’s action. Buttons must be labelled with text, not icons, for...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Buttons in banners should directly relate to a banner’s message and clearly represent the banner’s action. Buttons must be labelled with text, not icons, for clarity. Banners can contain up to two <a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "../buttons/#text-button"}
+' href="../buttons/#text-button">
+  text buttons</a>, with the dismissive action placed on the left and the confirming action on the right. </p><p>Place buttons under the banner message, or on the same line if there is enough room to fit both.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1IfUqJUa498m1kuDMtKmFhZN3GYGUQr_8%2Fbanners-buttons-do.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-2">
+<p class="s-tag-caption do">Do.</p><p>Banners may have one or two low-emphasis text buttons.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1a6qdaTli9l6sUgGyTQy9yyZ0oS-hndUG%2Fbanners-buttons-caution-1.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-3">
+<p class="s-tag-caption caution">Caution.</p><p>Avoid using a single button as a way to acknowledge a banner and dismiss it. A button to dismiss a banner should be paired with an action to address its message.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1e15aEw1pclJRvP7aYvcGO3jOwYgO2Mq7%2Fbanners-buttons-do-2.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-4">
+<p class="s-tag-caption caution">Caution.</p><p>Banners are intended to be minimally interruptive. If a button in a banner requires extra emphasis, a contained, full-width button can be used for a single, prominent action (though its prominence may be distracting).</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1L0gmWyW4-11DNNJHeCrie28WU0Fj0rkG%2Fbanners-buttons-caution-2.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-5">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t include links in a banner message. All available actions should be represented as buttons.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1SvpVoRIPtgR_8eEyxAe-_2Pr4vay4GaE/banners-buttons-dont-2.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-6">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t combine buttons with different emphasis levels, which could appear to promote one action over another.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F15DE7Ey0rdApKwUcGlEUtYc7dELoNvYWH%2Fbanners-buttons-dont-3.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-7">
+<p class="s-tag-caption caution">Caution.</p><p>Don’t stack buttons unless there isn’t sufficient room to display them side by side.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-8" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F15NMKuVIR0s0U9fq_9aqMqymRlRth2K1y%2Fbanners-buttons-dont-1.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-8">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t use a close affordance icon as the only method of dismissing a banner. All actions should be shown as text buttons.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Supporting illustration Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Supporting illustration</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Banners can supplement their message using a supporting illustration.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Banners can supplement their message using a supporting illustration.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-9" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1yplLRKqW6EKB6hjVFGt-gJnPpdEJrPFV/banners-imagery.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-9">
+<p class="s-tag-caption do">Do.</p><p>Icons can help communicate a banner’s message.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-10" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1awRwpek-DcWicmlkUGaBlNn9-VVz_oM6%2Fbanners-imagery-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-10">
+<p class="s-tag-caption dont">Don’t.</p><p>An icon used as an illustration can be ambiguous and make a banner too prominent in a layout. Illustrations support the banner message and aren’t the primary method of communication.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="placement" class="container container--large js-waypoints-trigger article__section" data-section-title="Placement" aria-label="Placement">
+          <h2 class="article__chapter-title">
+            Placement
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">banner, notification, communication</div>
+<p>Banners should be placed at the top of a layout or screen. When scrolling, banners typically move with content and scroll off the screen. Only one banner should be shown at a time.</p><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Banners and top bars Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Banners and top bars</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Banners are placed at the top of the screen below the top app bar. They can be fixed, or scroll with content, depending on the...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Banners are placed at the top of the screen below the top app bar. They can be fixed, or scroll with content, depending on the environment:</p><ul class="lst-kix_uvh5jt3w62x2-0 start"><li>On mobile, they scroll off-screen with content, at the same elevation as app content. </li><li>On desktop, they remain fixed at the top of the screen, at the same elevation as the top app bar.</li></ul><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="placement-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1VcUuwm3c2p4maXVG5STC53nX0nETupo2%2Fbanners-layout-placement.png" src="">
+</img></div>
+</div>
+<figcaption id="placement-figure-caption-0">
+<p>Banner and a top bar</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../app-bars-top/app-bars-top.html#top-app-bar"}
+' href="../app-bars-top/app-bars-top.html#top-app-bar" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F11yhFRMcFLbhsf3ISBLZndZm4T3zsG6LP%2Fapp-bar-top-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F11yhFRMcFLbhsf3ISBLZndZm4T3zsG6LP%2Fapp-bar-top-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Top App Bar</h2>
+<p class="object-card__body">The top app bar displays information and actions relating to the current view.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="placement-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1U-yHK93EROesi1zW9OkpnuYMrPcVlzU_/banners-layout-topbar-dont-1.png" src="">
+</img></div>
+</div>
+<figcaption id="placement-figure-caption-1">
+<p class="s-tag-caption dont">Don’t.</p><p>The surface containing a banner should be clearly distinguished from the top app bar surface.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="placement-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1ZZBGcJ9RNhy3FW2IV72PIpJkKEAFEnC5%2Fbanners-layout-topbar-dont-2.png" src="">
+</img></div>
+</div>
+<figcaption id="placement-figure-caption-2">
+<p class="s-tag-caption dont">Don’t.</p><p>Banners shouldn’t appear in front of the top bar.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Banners and persistent search Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Banners and persistent search</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>When a banner appears with a persistent search bar, it’s placed below the search bar.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>When a banner appears with a persistent search bar, it’s placed below the search bar.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="placement-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1Xm3kkxilMx7h4R7Jm1NCoPYWcFmJ5vS4%2Fbanners-layout-placement-persistent-search.png" src="">
+</img></div>
+</div>
+<figcaption id="placement-figure-caption-3">
+<p>A banner appears below a persistent search bar.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Banners and bottom navigation Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Banners and bottom navigation</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>When bottom navigation is present, banners should remain at the top of the screen. Bottom navigation bars allow movement between primary destinations in an app....</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>When bottom navigation is present, banners should remain at the top of the screen. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="placement-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1obmbH-BgId__enrtmcMbSBmeaiAGgfaT%2Fbanners-placement-bottomnav.png" src="">
+</img></div>
+</div>
+<figcaption id="placement-figure-caption-4">
+<p>Banners appear at the top of the screen when bottom navigation is present.</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../bottom-navigation/bottom-navigation.html#bottom-navigation"}
+' href="../bottom-navigation/bottom-navigation.html#bottom-navigation" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1KXOLWH_vw8z0UEmp3QLusKl9IwcU3oHD%2Fbottom-nav-bar-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1KXOLWH_vw8z0UEmp3QLusKl9IwcU3oHD%2Fbottom-nav-bar-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Bottom navigation</h2>
+<p class="object-card__body">Bottom navigation bars allow movement between primary destinations in an app.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Banners in wide layouts Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Banners in wide layouts</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Banners in wide layouts span the entire width of the screen. They appear at the same elevation as the top app bar and remain on...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Banners in wide layouts span the entire width of the screen. They appear at the same elevation as the top app bar and remain on screen while content scrolls.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="desktop" aria-describedby="placement-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-image-zoom="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1dc4XW_5Ztd7xNixB4lFtnodPXi-Fl5yJ%2Fbanners-placement-desktop-lightbox.png" data-src="../assets/170Vf6civyniR4ROILotY0usRMAB0lgSL/banners-placement-desktop.png" src="">
+</img></div>
+</div>
+<figcaption id="placement-figure-caption-5">
+<p>A banner in a wide layout appears at the same elevation as the top app bar.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>When vertical navigation is present, banners can appear above content rather than across the full width of the screen.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="desktop" aria-describedby="placement-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-image-zoom="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1f62WUpcmEdzBzXXGOK2wkcMs6vqjRWMv%2Fbanners-placement-desktop-rails-lightbox.png" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1LUZJspqCpOo90w6Q4hCMYn6hGeTP36Xm%2Fbanners-placement-desktop-rails.png" src="">
+</img></div>
+</div>
+<figcaption id="placement-figure-caption-6">
+<p>A banner on a screen with a navigation drawer appears slightly above just the content (on the y-axis), at the same elevation as that content.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="desktop" aria-describedby="placement-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-image-zoom="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1rbwS06YXa4vuUQOEnkWmUKWOdoNukxlw%2Fbanners-placement-multiple-dont-lightbox.png" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1bDFPC7aJ6LST0FFF8frhhVNN7hTc4TMN%2Fbanners-placement-multiple-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="placement-figure-caption-7">
+<p class="s-tag-caption dont">Don’t.</p><p>Avoid stacking multiple banners.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Banners and pannable content Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Banners and pannable content</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Banners remain on screen when scrolling pannable content.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Banners remain on screen when scrolling pannable content.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="placement-figure-caption-8" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1Rr0JWgGD90OvcO0-uFze7uvC0rY3twxT%2Fbanners-layout-placement-3.png" src="">
+</img></div>
+</div>
+<figcaption id="placement-figure-caption-8">
+<p>Banners remain on screen when scrolling pannable content, such as a map.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="behavior" class="container container--large js-waypoints-trigger article__section" data-section-title="Behavior" aria-label="Behavior">
+          <h2 class="article__chapter-title">
+            Behavior
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">banner, notification, communication</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Appearing  Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Appearing </h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Banners typically appear when a screen loads content. Banners that appear after a screen loads should animate on screen from the top of a layout....</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><p>Banners typically appear when a screen loads content.</p><p>Banners that appear after a screen loads should animate on screen from the top of a layout. If the banner is at the same elevation as content, it pushes content downwards.</p><figure aria-hidden="true" class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder hide-controls bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": true}' style="padding-top: 50.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F147rjhtnYN2jvQX2jQ24ZQESZjkCvU4N8%2Fbanner-container-mobile.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p>Banners at the same elevation as content push content downward as they enter from the top of a layout.</p></figcaption></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Dismissing banners Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Dismissing banners</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Banners must remain on screen until dismissed by the user. Snackbars provide brief feedback about an operation through a message at the bottom of the...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><p>Banners must remain on screen until dismissed by the user.</p><figure aria-hidden="true" class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder hide-controls bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": true}' style="padding-top: 50.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/1HR6Xy-ckVb12FZRpFgSSfcpPpXfYUV3x/banner-change-dismiss.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p>Banners can be dismissed by the user.</p></figcaption></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../snackbars/snackbars.html#snackbars"}
+' href="../snackbars/snackbars.html#snackbars" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OXubybIxNowFGAjrZ0XKat9MKqB7fPty%2Fsnackbar-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OXubybIxNowFGAjrZ0XKat9MKqB7fPty%2Fsnackbar-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Snackbars</h2>
+<p class="object-card__body">Snackbars provide brief feedback about an operation through a message at the bottom of the screen.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p> </p><div class="col-list rich-media"><section class="figure col-1"><div class="figure"><figure aria-hidden="true" class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder hide-controls bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": true}' style="padding-top: 50.0%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1XvOB1QOhF-GjEhB-U6b6kkhJE2ESxk7Q%2Fbanner-change-condition02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p class="s-tag-caption do">Do.</p><p>Banners persist until the user acts on them or dismisses them.</p></figcaption></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="theming" class="container container--large js-waypoints-trigger article__section" data-section-title="Theming" aria-label="Theming">
+          <h2 class="article__chapter-title">
+            Theming
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">banner, notification, communication</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Basil Material theme Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Basil Material theme</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This recipe app’s banner has been customized using Material Theming. Areas of customization include color and typography. Basil is a recipe app that uses Material...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>This recipe app’s banner has been customized using Material Theming. Areas of customization include color and typography.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="theming-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1RVNUTZKtNaGupGMMLPaF_PQiv8Pz03kS%2Fbanner-basil-ahero.png" src="">
+</img></div>
+</div>
+<figcaption id="theming-figure-caption-0">
+<p>Basil’s customized banner</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/material-studies/basil.html"}
+' href="https://material.io/design/material-studies/basil.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1tFYqM2SgsUF9Wgzd7l-zHBRO7i4t1Rch%2Fbasil-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1tFYqM2SgsUF9Wgzd7l-zHBRO7i4t1Rch%2Fbasil-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Basil</h2>
+<p class="object-card__body">Basil is a recipe app that uses Material Design components and Material Theming to create an on-brand experience that is exciting and easy to explore.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/the-color-system.html"}
+' href="https://material.io/design/color/the-color-system.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OLCFL5gXZoZWzb4zc4ZL6rgE-nxGPGmO%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OLCFL5gXZoZWzb4zc4ZL6rgE-nxGPGmO%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">The Color System</h2>
+<p class="object-card__body">The Material Design color system can help you create a color theme that reflects your brand or style.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/applying-color-to-ui.html"}
+' href="https://material.io/design/color/applying-color-to-ui.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OLCFL5gXZoZWzb4zc4ZL6rgE-nxGPGmO%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OLCFL5gXZoZWzb4zc4ZL6rgE-nxGPGmO%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Applying color to UI</h2>
+<p class="object-card__body">In a UI, color has a variety of roles: from containing meaning, to expressing a look and feel.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Color</h2><p>Basil’s banner uses custom color on four elements: the container, message, button, and divider. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F11xvNUh7f1Tg2RboSJSf0tRM-jN1zFNSE%2Fbanner-basil-color.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Container</p></td><td colspan="1" rowspan="1"><p>Surface</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#FFFBE6</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Text</p></td><td colspan="1" rowspan="1"><p>On Surface </p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#29302E</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Button</p></td><td colspan="1" rowspan="1"><p>Primary</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#356859</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Divider</p></td><td colspan="1" rowspan="1"><p>On Surface</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#29302E</p><p>12%</p></td></tr></tbody></table></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/typography/understanding-typography.html"}
+' href="https://material.io/design/typography/understanding-typography.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F12c7U6Y5dh0gVyVthD2G-ryGaSLyBBtlj%2Ftypography-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F12c7U6Y5dh0gVyVthD2G-ryGaSLyBBtlj%2Ftypography-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Understanding typography</h2>
+<p class="object-card__body">Typography is critical in establishing hierarchy and expressing brand presence that supports an effective digital experience.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Typography</h2><p>Basil’s banner uses custom typography for message and button text.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1DsiFL9NhYC72JaDD46-3FFgrOVmcOUCj%2Fbanner-basil-type.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Text</p></td><td colspan="1" rowspan="1"><p>Body 2</p></td><td colspan="1" rowspan="1"><p>Typeface</p><p>Font</p><p>Size</p><p>Case</p></td><td colspan="1" rowspan="1"><p>Montserrat</p><p>Medium</p><p>14</p><p>Sentence case</p></td></tr><tr><td colspan="1" rowspan="1"><p>Button</p></td><td colspan="1" rowspan="1"><p>Button</p></td><td colspan="1" rowspan="1"><p>Typeface</p><p>Font</p><p>Size</p><p>Case</p></td><td colspan="1" rowspan="1"><p>Montserrat</p><p>Bold</p><p>14</p><p>All caps</p></td></tr></tbody></table></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Posivibes Material theme Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Posivibes Material theme</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This social media app’s banner has been customized using Material Theming. Areas of customization include color and typography. The Material Design color system can help...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>This social media app’s banner has been customized using Material Theming. Areas of customization include color and typography.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="theming-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F13tB-7VWgNqP8rdFtjTq_00ce0_rWgd7J%2Fbanner-posivibes-ahero.png" src="">
+</img></div>
+</div>
+<figcaption id="theming-figure-caption-1">
+<p>Posivibe’s customized banner</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/the-color-system.html"}
+' href="https://material.io/design/color/the-color-system.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OLCFL5gXZoZWzb4zc4ZL6rgE-nxGPGmO%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OLCFL5gXZoZWzb4zc4ZL6rgE-nxGPGmO%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">The Color System</h2>
+<p class="object-card__body">The Material Design color system can help you create a color theme that reflects your brand or style.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/applying-color-to-ui.html"}
+' href="https://material.io/design/color/applying-color-to-ui.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OLCFL5gXZoZWzb4zc4ZL6rgE-nxGPGmO%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OLCFL5gXZoZWzb4zc4ZL6rgE-nxGPGmO%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Applying color to UI</h2>
+<p class="object-card__body">In a UI, color has a variety of roles: from containing meaning, to expressing a look and feel.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Color</h2><p>Posivibe’s banner uses custom color on four elements: the container, message, button, and divider. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1V1eO0Hrzw6YtIFhV7yc0F4xkKhhKlCpK%2Fbanner-posivibes-color.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Container</p></td><td colspan="1" rowspan="1"><p>Surface</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#FFFFFF</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Text</p></td><td colspan="1" rowspan="1"><p>On Surface </p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#000000</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Button</p></td><td colspan="1" rowspan="1"><p>On Surface </p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#000000</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Divider</p></td><td colspan="1" rowspan="1"><p>On Surface</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#000000</p><p>12%</p></td></tr></tbody></table></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/typography/understanding-typography.html"}
+' href="https://material.io/design/typography/understanding-typography.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F12c7U6Y5dh0gVyVthD2G-ryGaSLyBBtlj%2Ftypography-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F12c7U6Y5dh0gVyVthD2G-ryGaSLyBBtlj%2Ftypography-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Understanding typography</h2>
+<p class="object-card__body">Typography is critical in establishing hierarchy and expressing brand presence that supports an effective digital experience.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Typography</h2><p>Posivibe’s banner uses custom typography for message and button text.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1Nuu8-cH706VsZXr3LKWlaQhdfJnno989%2Fbanner-posivibes-type.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Text</p></td><td colspan="1" rowspan="1"><p>Body 2</p></td><td colspan="1" rowspan="1"><p>Typeface</p><p>Font</p><p>Size</p><p>Case</p></td><td colspan="1" rowspan="1"><p>Roboto Condensed</p><p>Regular</p><p>14</p><p>Sentence case</p></td></tr><tr><td colspan="1" rowspan="1"><p>Button</p></td><td colspan="1" rowspan="1"><p>Button</p></td><td colspan="1" rowspan="1"><p>Typeface</p><p>Font</p><p>Size</p><p>Case</p></td><td colspan="1" rowspan="1"><p>Roboto Condensed</p><p>Bold</p><p>14</p><p>All caps</p></td></tr></tbody></table></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="specs" class="container container--large js-waypoints-trigger article__section" data-section-title="Specs" aria-label="Specs">
+          <h2 class="article__chapter-title">
+            Specs
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">banner, notification, communication, redlines,schema,markup</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Mobile Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Mobile</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>14dp #000000de Elevation 0dp Text Buttons All measurements are displayed in device-independent pixels (dps) 14dp #000000de Elevation 0dp Text Buttons All measurements are displayed in...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "../assets/1l03vUkMQFKYtpEWxKjhLazRaq1II8lbm/spec-banners-mobile-1action.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:112px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:148px;width:760px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:216px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:552px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:477px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:440px;width:256px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:133px;width:760px;">
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:102px;width:54px;left:178px;">
+<span aria-hidden="true" class="measurement__value">
+            54
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            54
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:200px;width:16px;top:170px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            16
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            16
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:441px;width:36px;top:171px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            36
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            36
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:552px;width:8px;top:171px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:148px;width:8px;left:578px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:102px;width:10px;left:578px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            10
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            10
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-top js-measurement-dimensions" style="left:200px;width:360px;top:84px;">
+<span aria-hidden="true" class="measurement__value">
+            360
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            360
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:133px;width:0px;left:613px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+          C
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+          C
+      </span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:112px; left:477px; width:75px; height:36px">
+<span class="">
+</span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:224px; height:20px; left:216px; top:122px"></span>
+<span class="annotation__vector" style="left:371px; top:136px; width:183px; transform:rotate(-101.309932deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:371px; top:136px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:255px; top:-86px;" style="left:255px; top:-86px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">14dp</p><p class="annotation__value annotation__value--second">#000000de</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:54px; left:200px; top:102px"></span>
+<span class="annotation__vector" style="left:458px; top:133px; width:300px; transform:rotate(-97.077684deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:458px; top:133px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:341px; top:-207px;" style="left:341px; top:-207px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">0dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:75px; height:36px; left:477px; top:112px"></span>
+<span class="annotation__vector" style="left:547px; top:119px; width:307px; transform:rotate(3.541476deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:547px; top:119px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:774px; top:96px;" style="left:774px; top:96px;">
+<a class="annotation__note-link" href="../components/buttons.html#text-button" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Text Buttons</p>
+</div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 256px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="../assets/1l03vUkMQFKYtpEWxKjhLazRaq1II8lbm/spec-banners-mobile-1action.png" src="" style="width: 760px; height: 256px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div><div class="col-list"><section class="module col-1"><div class="module"><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F10yAqRNOlMue2xLqYfx_hCKjsO_MMmx44%2Fspec-banners-mobile-2actions.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:216px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:544px;width:256px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:176px;width:760px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:552px;width:256px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:139px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:108px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:128px;width:760px;">
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:72px;width:112px;left:175px;">
+<span aria-hidden="true" class="measurement__value">
+            112
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            112
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:200px;width:16px;top:199px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            16
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            16
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:544px;width:16px;top:230px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            16
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            16
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:552px;width:8px;top:198px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:469px;width:8px;top:200px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:175px;width:8px;left:580px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-top js-measurement-dimensions" style="left:200px;width:360px;top:53px;">
+<span aria-hidden="true" class="measurement__value">
+            360
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            360
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:72px;width:36px;left:581px;">
+<span aria-hidden="true" class="measurement__value">
+            36
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            36
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:108px;width:20px;left:581px;">
+<span aria-hidden="true" class="measurement__value">
+            20
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            20
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:128px;width:12px;left:582px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            12
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            12
+      </span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:140px; left:394px; width:75px; height:36px">
+<span class="">
+</span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:140px; left:477px; width:75px; height:36px">
+<span class="">
+</span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:328px; height:40px; left:216px; top:93px"></span>
+<span class="annotation__vector" style="left:346px; top:104px; width:140px; transform:rotate(-98.591225deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:346px; top:104px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:245px; top:-77px;" style="left:245px; top:-77px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">14dp</p><p class="annotation__value annotation__value--second">#000000de</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:112px; left:200px; top:72px"></span>
+<span class="annotation__vector" style="left:471px; top:84px; width:256px; transform:rotate(-96.931357deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:471px; top:84px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:360px; top:-213px;" style="left:360px; top:-213px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">0dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:75px; height:36px; left:477px; top:140px"></span>
+<span class="annotation__vector" style="left:517px; top:147px; width:337px; transform:rotate(2.887844deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:517px; top:147px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:774px; top:122px;" style="left:774px; top:122px;">
+<a class="annotation__note-link" href="../components/buttons.html#text-button" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Text Buttons</p>
+</div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 256px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F10yAqRNOlMue2xLqYfx_hCKjsO_MMmx44%2Fspec-banners-mobile-2actions.png" src="" style="width: 760px; height: 256px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div><div class="col-list"><section class="module col-1"><div class="module"><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1xdqQVFRD7aT1MCYCojZQVyvKteTajYUZ%2Fspec-banners-mobile-image.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:216px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:256px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:272px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:544px;width:256px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:184px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:147px;width:760px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:552px;width:256px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:108px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:96px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:128px;width:760px;">
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:72px;width:120px;left:184px;">
+<span aria-hidden="true" class="measurement__value">
+            120
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            120
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:200px;width:16px;top:208px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            16
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            16
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:256px;width:16px;top:207px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            16
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            16
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:544px;width:16px;top:242px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            16
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            16
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:552px;width:8px;top:209px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-top js-measurement-dimensions" style="left:200px;width:360px;top:55px;">
+<span aria-hidden="true" class="measurement__value">
+            360
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            360
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:469px;width:8px;top:209px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:184px;width:8px;left:579px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:72px;width:24px;left:580px;">
+<span aria-hidden="true" class="measurement__value">
+            24
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            24
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:72px;width:36px;left:604px;">
+<span aria-hidden="true" class="measurement__value">
+            36
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            36
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:128px;width:20px;left:580px;">
+<span aria-hidden="true" class="measurement__value">
+            20
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            20
+      </span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:148px; left:394px; width:75px; height:36px">
+<span class="">
+</span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:148px; left:477px; width:75px; height:36px">
+<span class="">
+</span>
+</li>
+<li class="dimension measurement--centered measurement--equal measurement--dimensions js-measurement-dimensions" style="top:96px; left:216px; width:40px; height:40px">
+<span class="dimension__flex-wrapper">
+<span class="measurement__value measurement__value--width">40</span><span class="measurement__value measurement__value--height">40</span> </span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:272px; height:40px; left:272px; top:93px"></span>
+<span class="annotation__vector" style="left:410px; top:109px; width:153px; transform:rotate(-102.771243deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:410px; top:109px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:296px; top:-83px;" style="left:296px; top:-83px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">14dp</p><p class="annotation__value annotation__value--second">#000000de</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:120px; left:200px; top:72px"></span>
+<span class="annotation__vector" style="left:460px; top:84px; width:259px; transform:rotate(-96.193905deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:460px; top:84px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:352px; top:-216px;" style="left:352px; top:-216px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">0dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:75px; height:36px; left:477px; top:148px"></span>
+<span class="annotation__vector" style="left:532px; top:154px; width:339px; transform:rotate(1.858503deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:532px; top:154px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:791px; top:123px;" style="left:791px; top:123px;">
+<a class="annotation__note-link" href="../components/buttons.html#text-button" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Text Buttons</p>
+</div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 256px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1xdqQVFRD7aT1MCYCojZQVyvKteTajYUZ%2Fspec-banners-mobile-image.png" src="" style="width: 760px; height: 256px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Desktop Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Desktop</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>14dp #000000de Elevation 0dp Text Buttons All measurements are displayed in device-independent pixels (dps) 14dp #000000de Elevation 0dp Text Buttons All measurements are displayed in...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1euG4VWpBLcEWrmXZYOKvpAavmfyRNoE_%2Fspec-banners-desktop-1action.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:44px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:732px;width:256px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:146px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:110px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:133px;width:760px;">
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:102px;width:52px;left:0px;">
+<span aria-hidden="true" class="measurement__value">
+            52
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            52
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:20px;width:24px;top:173px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            24
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            24
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:732px;width:8px;top:170px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:102px;width:8px;left:757px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:146px;width:8px;left:755px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-top js-measurement-dimensions" style="left:20px;width:720px;top:86px;">
+<span aria-hidden="true" class="measurement__value">
+            720
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            720
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:133px;width:0px;left:799px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+          C
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+          C
+      </span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:110px; left:657px; width:75px; height:36px">
+<span class="">
+</span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:440px; height:20px; left:44px; top:120px"></span>
+<span class="annotation__vector" style="left:364px; top:128px; width:168px; transform:rotate(-101.976132deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:364px; top:128px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:249px; top:-79px;" style="left:249px; top:-79px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">14dp</p><p class="annotation__value annotation__value--second">#000000de</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:720px; height:52px; left:20px; top:102px"></span>
+<span class="annotation__vector" style="left:587px; top:133px; width:253px; transform:rotate(87.510447deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:587px; top:133px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:518px; top:344px;" style="left:518px; top:344px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">0dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:75px; height:36px; left:657px; top:110px"></span>
+<span class="annotation__vector" style="left:723px; top:115px; width:170px; transform:rotate(-15.343766deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:723px; top:115px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:807px; top:28px;" style="left:807px; top:28px;">
+<a class="annotation__note-link" href="../components/buttons.html#text-button" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Text Buttons</p>
+</div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 256px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1euG4VWpBLcEWrmXZYOKvpAavmfyRNoE_%2Fspec-banners-desktop-1action.png" src="" style="width: 760px; height: 256px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div><div class="col-list"><section class="module col-1"><div class="module"><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1oj4JADoi5vsQc7dIM3hwuMKL9NkqDv7x%2Fspec-banners-desktop-2actions.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:732px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:574px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:484px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:44px;width:256px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:166px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:174px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:112px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:132px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:152px;width:760px;">
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:83px;width:90px;left:0px;">
+<span aria-hidden="true" class="measurement__value">
+            90
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            90
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:732px;width:8px;top:192px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:649px;width:8px;top:192px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:484px;width:90px;top:192px;">
+<span aria-hidden="true" class="measurement__value">
+            90
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            90
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:20px;width:24px;top:195px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            24
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            24
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:166px;width:8px;left:773px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:82px;width:30px;left:801px;">
+<span aria-hidden="true" class="measurement__value">
+            30
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            30
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:112px;width:20px;left:801px;">
+<span aria-hidden="true" class="measurement__value">
+            20
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            20
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:152px;width:22px;left:801px;">
+<span aria-hidden="true" class="measurement__value">
+            22
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            22
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-top js-measurement-dimensions" style="left:20px;width:720px;top:64px;">
+<span aria-hidden="true" class="measurement__value">
+            720
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            720
+      </span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:130px; left:657px; width:75px; height:36px">
+<span class="">
+</span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:130px; left:574px; width:75px; height:36px">
+<span class="">
+</span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:440px; height:60px; left:44px; top:100px"></span>
+<span class="annotation__vector" style="left:297px; top:127px; width:165px; transform:rotate(-102.191336deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:297px; top:127px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:182px; top:-77px;" style="left:182px; top:-77px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">14dp</p><p class="annotation__value annotation__value--second">#000000de</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:720px; height:92px; left:20px; top:82px"></span>
+<span class="annotation__vector" style="left:516px; top:154px; width:222px; transform:rotate(87.936180deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:516px; top:154px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:444px; top:334px;" style="left:444px; top:334px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">0dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:75px; height:36px; left:657px; top:130px"></span>
+<span class="annotation__vector" style="left:700px; top:135px; width:223px; transform:rotate(4.869942deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:700px; top:135px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:843px; top:112px;" style="left:843px; top:112px;">
+<a class="annotation__note-link" href="../components/buttons.html#text-button" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Text Buttons</p>
+</div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 256px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1oj4JADoi5vsQc7dIM3hwuMKL9NkqDv7x%2Fspec-banners-desktop-2actions.png" src="" style="width: 760px; height: 256px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div><div class="col-list"><section class="module col-1"><div class="module"><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1VmcY-qw5tqllGXDfjtdkQ7INscBxG8io%2Fspec-banners-desktop-image.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:36px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:76px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:100px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:574px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:484px;width:256px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:732px;width:256px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:156px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:143px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:123px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:108px;width:760px;">
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:92px;width:72px;left:4px;">
+<span aria-hidden="true" class="measurement__value">
+            72
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            72
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:20px;width:16px;top:180px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            16
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            16
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:76px;width:24px;top:180px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            24
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            24
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:484px;width:90px;top:181px;">
+<span aria-hidden="true" class="measurement__value">
+            90
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            90
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:649px;width:8px;top:181px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:732px;width:8px;top:181px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:156px;width:8px;left:559px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:92px;width:32px;left:792px;">
+<span aria-hidden="true" class="measurement__value">
+            32
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            32
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:123px;width:20px;left:792px;">
+<span aria-hidden="true" class="measurement__value">
+            20
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            20
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:143px;width:20px;left:757px;">
+<span aria-hidden="true" class="measurement__value">
+            20
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            20
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:92px;width:16px;left:757px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            16
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            16
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-top js-measurement-dimensions" style="left:20px;width:720px;top:74px;">
+<span aria-hidden="true" class="measurement__value">
+            720
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            720
+      </span>
+</li>
+<li class="dimension measurement--centered measurement--equal measurement--dimensions js-measurement-dimensions" style="top:108px; left:36px; width:40px; height:40px">
+<span class="dimension__flex-wrapper">
+<span class="measurement__value measurement__value--width">40</span><span class="measurement__value measurement__value--height">40</span> </span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:120px; left:574px; width:75px; height:36px">
+<span class="">
+</span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:120px; left:657px; width:75px; height:36px">
+<span class="">
+</span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:384px; height:40px; left:100px; top:110px"></span>
+<span class="annotation__vector" style="left:285px; top:121px; width:156px; transform:rotate(-102.528808deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:285px; top:121px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:171px; top:-74px;" style="left:171px; top:-74px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">14dp</p><p class="annotation__value annotation__value--second">#000000de</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:720px; height:72px; left:20px; top:92px"></span>
+<span class="annotation__vector" style="left:516px; top:147px; width:235px; transform:rotate(88.050258deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:516px; top:147px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:444px; top:340px;" style="left:444px; top:340px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">0dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:75px; height:36px; left:657px; top:120px"></span>
+<span class="annotation__vector" style="left:721px; top:128px; width:192px; transform:rotate(5.355825deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:721px; top:128px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:833px; top:104px;" style="left:833px; top:104px;">
+<a class="annotation__note-link" href="../components/buttons.html#text-button" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Text Buttons</p>
+</div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 256px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1VmcY-qw5tqllGXDfjtdkQ7INscBxG8io%2Fspec-banners-desktop-image.png" src="" style="width: 760px; height: 256px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div></div></div></div></div>
+        </div>
+      </section>
+
+  </div>
+
+  <div class="container container--large">
+
+  <h2>Up next
+      <div class="article-controls">
+        
+      </div>
+  </h2>
+
+<div class="suggested-articles"><div>
+<a aria-label="Bottom navigation" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../bottom-navigation/bottom-navigation.html"}
+' href="../bottom-navigation/bottom-navigation.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1JhXfLtOglgkyOmNqYMiylZG2YPZHq0hw%2Fbottom-nav-bar-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Bottom navigation</h4>
+</a>
+<a aria-label="Dialogs" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../dialogs/dialogs.html"}
+' href="../dialogs/dialogs.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566408167639%2Fassets%2F1FkZfDmof1Ti_JOwPRzkeLKJtErFgGC5h%2Fdialogs-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Dialogs</h4>
+</a><br>
+
+<a aria-label="Snackbars" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../snackbars/snackbars.html"}
+' href="../snackbars/snackbars.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566408167639%2Fassets%2F1KJmHmik_XJ7w0CTWoQwWv3QwndFQXXfl%2Fsnackbar-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Snackbars</h4>
+</a></div></div>  </div>
+</article>
+    </main>
+
+
+
+<footer class="footer">
+  <div class="container container--jumbo">
+    <div class="footer-block footer-block--about">
+      <a class="footer-block__logo js-analytics-click" href="/"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "/"}
+'>
+        <img class="footer-block__material-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/material_logo.svg" alt="Material Design"/>
+      </a>
+      <div class="footer-block__content">
+        <p class="footer-block__description">Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
+        <ul class="footer-block__social-nav">
+          <li class="footer-block__social-nav-item">  <a href="https://www.github.com/material-components" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on GitHub"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.github.com/material-components"}
+'>GitHub</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.twitter.com/materialdesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on Twitter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.twitter.com/materialdesign"}
+'>Twitter</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/googledesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.youtube.com/googledesign"}
+'>YouTube</a>
+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-block footer-block--legal">
+      <a class="footer-block__logo js-analytics-click" href="https://www.google.com"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.google.com"}
+'>
+        <img class="footer-block__google-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/google_logo.svg" alt="Google"/>
+      </a>
+      <div class="footer-block__content">
+        <ul class="footer-block__legal-nav">
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Privacy Policy"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/privacy"}
+'>Privacy Policy</a>
+</li>
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Terms of Service"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/terms"}
+'>Terms of Service</a>
+</li></ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="ui-mask js-ui-mask"></div>
+<div
+    class="lightbox js-lightbox"
+    data-comp="Lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-labelledby="sr-lightbox-title">
+  <h2 class="screenreader-only sr-lightbox-title" tabindex="0">
+    Explore how Shrine, a retail app, uses Material Design.
+  </h2>
+
+    <header class="lightbox__header">
+      <div class="lightbox__header-title">
+        <span
+            class="lightbox__button js-lightbox-close"
+            data-comp="Tooltip"
+            data-props-tooltip='{"tip": "Close", "direction": "bottom"}'>
+          <i
+              class="material-icons notranslate material-icons--padded mdc-ripple-surface"
+              data-mdc-ripple-is-unbounded tabindex="0">
+            close
+          </i>
+        </span>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+
+      <div class="lightbox__actions">
+        <button type="button" name="button" class="lightbox-redlines-toggle js-redline-sidebar-toggle" data-comp="Tooltip" data-props-tooltip='{"tip": "View Specs", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>flip</i>
+        </button>
+
+        <button type="button" name="button" class="lightbox__button js-share" data-comp="Tooltip" data-props-tooltip='{"tip": "Share", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>share</i>
+        </button>
+
+      </div>
+    </header>
+
+    <div class="lightbox__template js-zoom-wrapper">
+      <div class="lightbox__content js-lightbox-content">
+<img class="ui-loader" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/loader.svg" alt="loader" aria-hidden="true" />      </div>
+<div class="redline-sidebar js-lightbox-sidebar-container" data-comp="RedlineSidebar">
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Image only", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-image js-redline-sidebar-item" value="image" >
+        <i class="material-icons notranslate">&#xE3F4;</i>
+        <span class="redline-sidebar__label-text">Image only</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Measurements", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-measurements js-redline-sidebar-item" value="measurements" >
+        <i class="material-icons notranslate">format_shapes</i>
+        <span class="redline-sidebar__label-text">Measurements</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Text", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-text js-redline-sidebar-item" value="text" >
+        <i class="material-icons notranslate">format_size</i>
+        <span class="redline-sidebar__label-text">Text</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Color", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-colors js-redline-sidebar-item" value="colors" >
+        <i class="material-icons notranslate">palette</i>
+        <span class="redline-sidebar__label-text">Color</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Shape and Elevation", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-shapes js-redline-sidebar-item" value="shapes" >
+        <i class="material-icons notranslate">rounded_corner</i>
+        <span class="redline-sidebar__label-text">Shape and Elevation</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Components", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-components js-redline-sidebar-item" value="components" >
+        <i class="material-icons notranslate">category</i>
+        <span class="redline-sidebar__label-text">Components</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Notes", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-notes js-redline-sidebar-item" value="notes" >
+        <i class="material-icons notranslate">notes</i>
+        <span class="redline-sidebar__label-text">Notes</span>
+      </button>
+    </div>
+<div class="redline-sidebar__toggles js-redline-layer-toggles">
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--dimensions">
+        <input type="checkbox" id="dimensions" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="dimensions">Dimensions</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--padding">
+        <input type="checkbox" id="padding" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="padding">Padding</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--typography">
+        <input type="checkbox" id="typography" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="typography">Text baseline</label>
+  </div>
+</div><nav class="carousel__nav">
+  <button
+      class="carousel__button carousel__button--prev mdc-ripple-surface js-carousel-prev"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Previous", "direction": "right"}'>
+    <i class="material-icons notranslate">chevron_left</i>
+  </button>
+
+  <button
+      class="carousel__button carousel__button--next mdc-ripple-surface js-carousel-next"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Next", "direction": "left"}'>
+    <i class="material-icons notranslate">chevron_right</i>
+  </button>
+</nav><div class="zoom-buttons" data-comp="Zoom">
+  <div class="zoom-buttons__wrapper">
+
+    <button class="mdc-button-zoom js-zoom-out" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom out", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">remove</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-reset" data-comp="Tooltip" data-props-tooltip='{"tip": "Reset", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">search</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-in" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom in", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">add</i>
+    </button>
+
+    <div class="zoom-buttons__extras">
+      <button class="mdc-button-zoom js-colorpicker-toggle" data-comp="Tooltip Colorpicker" data-props-tooltip='{"tip": "Color picker", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">colorize</i>
+      </button>
+      <button class="mdc-button-zoom js-ruler-toggle" data-comp="Tooltip Ruler" data-props-tooltip='{"tip": "Ruler", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">straighten</i>
+      </button>
+    </div>
+
+  </div>
+</div>    </div>
+
+
+<aside class="mdc-dialog" role="alertdialog" aria-labelledby="mdc-dialog-label" aria-describedby="mdc-dialog-description" data-comp="Share">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-label" class="mdc-dialog__header__title">Share</h2>
+      <button type="button" class="mdc-dialog-share-close js-dialog-close">
+        <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>close</i>
+      </button>
+    </header>
+    <section id="mdc-dialog-description" class="mdc-dialog__body">
+      <input type="text" readonly class="mdc-dialog-share-url js-share-url" />
+      <button type="button" class="mdc-button mdc-ripple-surface mdc-dialog-copy js-dialog-copy">Copy</button>
+    </section>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside></div><div class="mdc-snackbar snackbar-wrapper" data-comp="Snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+  <div class="mdc-snackbar__text"></div>
+  <div class="mdc-snackbar__action-wrapper">
+    <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
+  </div>
+</div>
+    <script src="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js"></script>
+    <script src="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js"></script>
+    <script src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/js/main.min.js"></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  </body>
+</html>

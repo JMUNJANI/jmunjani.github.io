@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos;; img-src https://material.io flutter.github.io https://www.google-analytics.com https://stats.g.doubleclick.net https://www.gstatic.com img.shields.io &apos;self&apos; data:; script-src https://*.google.com http://*.google.com https://www.gstatic.com https://adservice.google.com https://www.googletagmanager.com https://www.google-analytics.com survey.g.doubleclick.net &apos;unsafe-inline&apos; &apos;self&apos;; style-src https://fonts.googleapis.com/css https://feedback.googleusercontent.com https://www.gstatic.com &apos;unsafe-inline&apos; &apos;self&apos;; font-src https://fonts.gstatic.com/s/ &apos;self&apos;; child-src https://feedback.googleusercontent.com http://www.google.com;">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Shapes - Material Components for iOS</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-NHRPF8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta itemprop="name" content="Shapes - Material Components for iOS">
+    <meta itemprop="image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta name="description" content="Material Components for iOS is a set of user interface components that help iOS app developers build apps with material design.
+">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Shapes - Material Components for iOS">
+    <meta property="og:site_name" content="Material Components for iOS">
+    <meta property="og:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta property="article:section" content="Shapes">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@materialdesign">
+    <meta name="twitter:title" content="Material Components">
+    <meta name="twitter:description" content="Create beautiful apps with modular and customizable UI components">
+    <meta name="twitter:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <link rel="icon" sizes="192x192" href="/develop/images/app-icons/material-logo-app-icon-192x192.png">
+    <link rel="shortcut icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/develop/images/app-icons/material-logo-app-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/develop/images/app-icons/material-logo-app-icon-180x180.png">
+    <meta name="msapplication-TileImage" content="https://material.io/static/images/hub/favicons/hub-ms-icon-144x144.png">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/develop/css/codemirror.css">
+    <link rel="stylesheet" href="/develop/css/neo.css">
+    <link rel="stylesheet" href="/develop/css/app.css">
+    <script async defer src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body class="page page--landing page--docs page--platform-ios">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <aside class="page__temporary-drawer mdc-drawer mdc-drawer--temporary page_drawer--temporary">
+      <nav class="temporary-drawer__drawer mdc-drawer__drawer mdc-drawer__content">
+        <header class="temporary-drawer__header mdc-drawer__header">
+          <div class="temporary-drawer__header-content mdc-drawer__header-content">
+            <div class="temporary-drawer__header-icon develop-toolbar__leading-icon"></div>
+            Material Design
+          </div>
+        </header>
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label toolbar-platform-chooser__label--no-capital">ios</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <a class="drawer-link drawer-link--no-list" href="/components/ios/catalog/action-sheet/">Components</a>
+          <h3 class="drawer-heading">Documentation</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/build-env/">
+                Build environment
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/contributing/">
+                Contributing
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/faq/">
+                Frequently Asked Questions
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/supporting-shapes/">
+                Shapes
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </nav>
+    </aside>
+    <header class="develop-toolbar mdc-toolbar mdc-toolbar--fixed
+    
+    
+      mdc-toolbar--platform
+    ">
+      <div class="search-form" id="top-level-search-bar">
+        <form class="search-form__form" id="top-level-search-form">
+          <input type="text" class="search-form__input" id="top-level-search-input" autocomplete="off">
+        </form>
+        <div class="search-form__label" id="top-level-search-label">Search</div>
+        <button class="search-form__button search-form__button--close" id="top-level-search-close" aria-label="Close search">
+          <div class="search-form__close-icon" id="close-button-icon" data-mdc-ripple-is-unbounded=""></div>
+        </button>
+      </div>
+      <div class="develop-toolbar__row mdc-toolbar__row">
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="menu-button" id="menu-open">
+            <div class="menu-button__icon menu-button__icon--initial-load" id="menu-icon"></div>
+          </button>
+          <a class="develop-toolbar__title-link" href="/">
+            <div class="develop-toolbar__leading-icon"></div>
+            <h1 class="develop-toolbar__title mdc-toolbar__title">
+              Material Design
+            </h1>
+          </a>
+        </section>
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+          <nav id="navigation-tabs" class="develop-tab-bar">
+            <a href="/design" class="develop-tab">
+              Design
+            </a>
+            <a href="/components" class="develop-tab">
+              Components
+            </a>
+            <a href="/develop" class="develop-tab develop-tab--active">
+              Develop
+              <span class="develop-tab__nav-indicator"></span>
+            </a>
+            <a href="/resources" class="develop-tab">
+              Resources
+            </a>
+          </nav>
+          <section class="develop-toolbar__section develop-toolbar__section--search mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+            <button class="search-form__button search-form__button--open" id="top-level-search-open" aria-label="Search">
+              <div class="search-form__search-icon" id="spyglass-icon"></div>
+            </button>
+          </section>
+        </section>
+      </div>
+    </header>
+    <div class="page__content page__flex-element">
+      <div class="page__drawer mdc-permanent-drawer">
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label toolbar-platform-chooser__label--no-capital">ios</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <a class="drawer-link drawer-link--no-list" href="/components/ios/catalog/action-sheet/">Components</a>
+          <h3 class="drawer-heading">Documentation</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/build-env/">
+                Build environment
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/contributing/">
+                Contributing
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/faq/">
+                Frequently Asked Questions
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link" href="/components/ios/docs/supporting-shapes/">
+                Shapes
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <section class="page__main-section">
+        <article class="page__article article">
+          <h1 id="shapes">Shapes</h1>
+          <p>The Shapes library offers a way to customize the shape of existing components, or expand your own view to have a custom shape.</p>
+          <p>Currently we offer built-in functionality for shapes within our <a href="/components/ios/catalog/buttons/">Buttons</a> and <a href="/components/ios/catalog/cards/">Cards</a> components.</p>
+          <h3 id="shapes-library-preview">Shapes Library Preview</h3>
+          <p>Our shapes library consists of different APIs and classes you can use to build a shape.</p>
+          <p>As you will see throughout the doc, we will be talking plentifully about the <code>shapeGenerator</code> object as part of our view/component. This object holds the generated shape and must conform to the <code>MDCShapeGenerating</code> protocol. <code>MDCShapeGenerating</code> consists of one method that returns the shape&#x2019;s <code>CGPath</code> for the expected size.</p>
+          <pre><code class="language-objc">(CGPath *)pathForSize:(CGSize)size
+</code></pre>
+          <p>For our convenience we have a few classes under the hood that help us generate a shape. At the core we have <code>MDCPathGenerator</code> that has a few helper methods to build your own custom <code>CGPath</code> that will serve as the path for your shape.
+            We also have an <code>MDCShapedShadowLayer</code> class that has to be used as the base layer of your view instead of <code>MDCShadowLayer</code> to allow shapes to work well with shadows, borders, and also background color. This is needed because such attributes must follow the shape&#x2019;s path rather than the normal bounds of the view.</p>
+          <p><code>MDCShapedView</code> is a base <code>UIView</code> that already incorporates <code>MDCShapedShadowLayer</code>, a <code>shapeGenerator</code> object, and elevation support to provide a minimal view that has full shape support. This can be used as a basic building block to build on top of when building new components that need shape support from the get go.</p>
+          <p><code>MDCCornerTreatment</code> and <code>MDCEdgeTreatment</code> are both classes that provide a more modular approach for defining specifically the <code>CGPath</code> for a specific edge or corner.</p>
+          <p>The last (but not least) class is <code>MDCRectangleShapeGenerator</code>. It acts as a <code>shapeGenerator</code> on its own (meaning it implements <code>MDCShapeGenerating</code>), and generates a <code>CGPath</code> but allows good customization as part of its implementation. It allows us to set each of its corners and edges by using its <code>MDCCornerTreatments</code> and <code>MDCEdgeTreatments</code>. With this class we can theoretically build any shape we want.</p>
+          <h3 id="shapes-convenience-generators">Shapes Convenience Generators</h3>
+          <p>We also have at our disposal convenience classes under the ShapeLibrary/ folder that generate specific shapes:</p>
+          <h4 id="corner-and-edge-generators">Corner and Edge generators</h4>
+          <ul>
+            <li><strong>MDCCurvedCornerTreatment</strong> Generates an <code>MDCCornerTreatment</code> that is curved and receives a size to define the size of the curve.</li>
+            <li><strong>MDCCutCornerTreatment</strong> Generates an <code>MDCCornerTreatment</code> that is a cut corner and receives a cut to define by how much to cut.</li>
+            <li><strong>MDCRoundedCornerTreatment</strong> Generates an <code>MDCCornerTreatment</code> that is rounded and receives a radius to define the radius of the rounding.</li>
+            <li><strong>MDCTriangleEdgeTreatment</strong> Generates an <code>MDCEdgeTreatment</code> that consists of a triangle of a settable size and style.</li>
+          </ul>
+          <h4 id="pre-made-shape-generators">Pre-made shape generators</h4>
+          <ul>
+            <li><strong>MDCCurvedRectShapeGenerator</strong> This generates a shape using <code>MDCRectangleShapeGenerator</code> with <code>MDCCurvedCornerTreatment</code> for its corners.</li>
+          </ul>
+          <p><img src="/components/images/content/973259b0f07f430420e9d66d301ab48c.png" alt="MDCCurvedRectShapeGenerator" width="115"></p>
+          <ul>
+            <li><strong>MDCPillShapeGenerator</strong> This generates a shape using <code>MDCRectangleShapeGenerator</code> with <code>MDCRoundedCornerTreatment</code> for its corners.</li>
+          </ul>
+          <p><img src="/components/images/content/aaef86719a9ecd5d6c6f348a91f56c0a.png" alt="MDCPillShapeGenerator" width="115"></p>
+          <ul>
+            <li><strong>MDCSlantedRectShapeGenerator</strong> This generates a shape using <code>MDCRectangleShapeGenerator</code> and adds a slant to its corners using a simple offset to its corners.</li>
+          </ul>
+          <p><img src="/components/images/content/78f6f6af52c3bc543bd51632232b4f23.png" alt="MDCSlantedRectShapeGenerator" width="115"></p>
+          <h3 id="adding-shapes-to-your-components">Adding Shapes to your components</h3>
+          <h4 id="exposing-the-shape-generator">Exposing the shape generator</h4>
+          <p>You will need to expose the shape generator in your component&#x2019;s API to be able to set the shape. You will need to add a property in your .h file that is of the type <code>id&lt;MDCShapeGenerating&gt;</code>. A client can use any of the convenience pre-made shape generators noted above, including the base <code>MDCRectangleShapeGenerator</code>. Alternatively the developer can build his own shape by creating an object that implements <code>MDCShapeGenerating</code> and creating a path with the help of <code>MDCPathGenerator</code>.</p>
+          <pre><code class="language-objc">@property(nullable, nonatomic, strong) id&lt;MDCShapeGenerating&gt; shapeGenerator;
+</code></pre>
+          <h4 id="adding-proper-shadow-border-and-background-color-support">Adding proper shadow, border, and background color support</h4>
+          <p>If your component needs support either for shadow, border width/color customization, or even background color, then your component will need to use <code>MDCShapedShadowLayer</code> as its <code>CALayer</code>. This is a must as a shape is different than the frame/bounds of your view, and hence these properties need to abide by the shape&#x2019;s path.
+            You will need to implement the <code>layerClass</code> in your view as follows:</p>
+          <pre><code class="language-objc">+ (Class)layerClass {
+  return [MDCShapedShadowLayer class];
+}
+</code></pre>
+          <p>You then must also make sure that when setting your layer&#x2019;s properties you must call the corresponding <code>shapedBorderColor</code>, <code>shapedBorderWidth</code>, and <code>shapedBackgroundColor</code> rather than the default <code>CALayer</code> properties.</p>
+          <h4 id="being-conscious-of-setting-layers-properties-such-as-shadowpath-and-cornerradius">Being conscious of setting layer&#x2019;s properties such as shadowPath and cornerRadius</h4>
+          <p>Because shapes work with a different path than the view&#x2019;s default layer, you need to be conscious of places in your code where these layer&#x2019;s properties are set, as that might cause unexpected behaviors or override existing behaviors to support shapes. When setting such properties, it is advised to check if <code>(shapeGenerator != nil)</code> before applying them.</p>
+          <h4 id="supporting-touch-events">Supporting touch events</h4>
+          <p>Shapes change our view&#x2019;s default layer and therefore the layer no longer imitates the bounds. Due to that, we will now have cases where there are places in the bounds where the layer isn&#x2019;t drawn, or places outside the bounds where the layer is drawn. Therefore we will need a way to support proper touch that would correspond to where the shape is and isn&#x2019;t and act accordingly.
+            To achieve this we can override the hitTest method of our UIView so we can check if the hitTest should return the view if the touch is part of our layer&#x2019;s shape or not.</p>
+          <pre><code class="language-objc">- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+  if (self.layer.shapeGenerator) {
+    if (CGPathContainsPoint(self.layer.shapeLayer.path, nil, point, true)) {
+      return self;
+    } else {
+      return nil;
+    }
+  }
+  return [super hitTest:point withEvent:event];
+}
+</code></pre>
+          <h4 id="ink-ripple-support">Ink Ripple Support</h4>
+          <p>If the component uses ink ripples, we will need to add shapes support for it. For ink ripples there are two things we must update, firstly is the <code>maxRippleRadius</code> and secondly is the masking to bounds. The <code>maxRippleRadius</code> must be updated in cases where the shape is either smaller or bigger than the bounds. In these cases we can&#x2019;t rely on the bounds because for smaller shapes the ink will ripple too fast, and for bigger shapes the ripple won&#x2019;t cover the entire shape. The ink layer&#x2019;s <code>maskToBounds</code> needs to also be set to NO so we can allow the ink to spread outside of the bounds when the shape goes outside of the bounds.</p>
+          <pre><code class="language-objc">- (void)updateInkForShape {
+  CGRect boundingBox = CGPathGetBoundingBox(self.layer.shapeLayer.path);
+  self.inkView.maxRippleRadius =
+      (CGFloat)(MDCHypot(CGRectGetHeight(boundingBox), CGRectGetWidth(boundingBox)) / 2 + 10.f);
+  self.inkView.layer.masksToBounds = NO;
+}
+</code></pre>
+          <h4 id="content-margins">Content Margins</h4>
+          <p>Now that our component can come in all different sizes and shapes, you will need to set a margin for the content so that the shape won&#x2019;t truncate the images/text etc. For that using the built-in UIView&#x2019;s <code>layoutMargins</code> is recommended.</p>
+          <h3 id="using-shapes-in-the-already-shape-supported-components-buttons--cards">Using Shapes in the already shape-supported components (Buttons / Cards)</h3>
+          <p>If the component already supports shapes, it then already has an accessible id<mdcshapegenerating> shapeGenerator property.
+              In that case you only need to set the shapeGenerator to a shape of your choice and the component will be contained in that shape. There are available examples here:</mdcshapegenerating></p>
+          <ul>
+            <li><a href="https://github.com/material-components/material-components-ios/tree/stable/components/Buttons/examples/ButtonsShapesExampleViewController.m">Shaped Buttons</a></li>
+            <li><a href="https://github.com/material-components/material-components-ios/tree/stable/components/Cards/examples/ShapedCardViewController.swift">Shaped Cards</a></li>
+          </ul>
+          <h3 id="examples">Examples</h3>
+          <h4 id="diamond-fab">Diamond FAB</h4>
+          <p><img src="/components/images/content/27b7b3dd1a47bb655746696b841300fe.gif" alt="Diamond FAB."></p>
+          <div class="material-code-render">
+            <h5 id="swift">Swift</h5>
+            <pre><code class="language-swift">let floatingButton = MDCFloatingButton()
+floatingButton.setImage(plusImage for:.normal)
+floatingButton.sizeToFit()
+
+let floatingShapeGenerator = MDCRectangleShapeGenerator()
+floatingShapeGenerator.setCorners(MDCCutCornerTreatment(cut: floatingButton.bounds.width / 2))
+floatingButton.shapeGenerator = floatingShapeGenerator
+self.view.addSubview(floatingButton)
+</code></pre>
+            <h5 id="objective-c">Objective-C</h5>
+            <pre><code class="language-objc">self.floatingButton = [[MDCFloatingButton alloc] init];
+[self.floatingButton setImage:plusImage forState:UIControlStateNormal];
+[self.floatingButton sizeToFit];
+
+MDCRectangleShapeGenerator *floatingShapeGenerator = [[MDCRectangleShapeGenerator alloc] init];
+[floatingShapeGenerator setCorners:
+    [[MDCCutCornerTreatment alloc] initWithCut:CGRectGetWidth(self.floatingButton.bounds) / 2.f]];
+self.floatingButton.shapeGenerator = floatingShapeGenerator;
+[self.view addSubview:self.floatingButton];
+</code></pre>
+          </div>
+          <h4 id="cut-corners-contained-button">Cut Corners Contained Button</h4>
+          <p><img src="/components/images/content/233b4ecaa97bca2ce851a03b73a80e56.gif" alt="Cut Corners Button."></p>
+          <div class="material-code-render">
+            <h5 id="swift-1">Swift</h5>
+            <pre><code class="language-swift">let containedButton = MDCButton()
+containedButton.setTitle(&quot;Add To Cart&quot; for:.normal)
+containedButton.setImage(plusImage for:.normal)
+
+let raisedShapeGenerator = MDCRectangleShapeGenerator()
+raisedShapeGenerator.setCorners(MDCCutCornerTreatment(cut: 8))
+containedButton.shapeGenerator = raisedShapeGenerator
+
+containedButton.sizeToFit()
+self.view.addSubview(containedButton)
+</code></pre>
+            <h5 id="objective-c-1">Objective-C</h5>
+            <pre><code class="language-objc">MDCButton *containedButton = [[MDCButton alloc] init];
+[containedButton setTitle:@&quot;Add To Cart&quot; forState:UIControlStateNormal];
+[containedButton setImage:plusImage forState:UIControlStateNormal];
+
+MDCRectangleShapeGenerator *raisedShapeGenerator =
+  [[MDCRectangleShapeGenerator alloc] init];
+[raisedShapeGenerator setCorners:[[MDCCutCornerTreatment alloc] initWithCut:8.f]];
+containedButton.shapeGenerator = raisedShapeGenerator;
+
+[containedButton sizeToFit];
+[self.view addSubview:containedButton];
+</code></pre>
+          </div>
+          <h4 id="top-left-cut-corner-card-cell">Top Left Cut Corner Card Cell</h4>
+          <p><img src="/components/images/content/d19c752210b3c86a99a0660c57470635.gif" alt="Card Cell Cut Corner."></p>
+          <div class="material-code-render">
+            <h5 id="swift-2">Swift</h5>
+            <pre><code class="language-swift">func collectionView(_ collectionView: UICollectionView,
+                    cellForItemAt indexPath: IndexPath) -&gt; UICollectionViewCell {
+  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kReusableIdentifierItem,
+                                                for: indexPath) as! MDCCardCollectionCell
+  let shapeGenerator = MDCRectangleShapeGenerator()
+  shapeGenerator.topLeftCorner = MDCCutCornerTreatment(cut: 20)
+  cell.shapeGenerator = shapeGenerator
+  return cell
+</code></pre>
+            <h5 id="objective-c-2">Objective-C</h5>
+            <pre><code class="language-objc">- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+  MDCCardCollectionCell *cell =
+      [collectionView dequeueReusableCellWithReuseIdentifier:kReusableIdentifierItem
+                                                forIndexPath:indexPath];
+  MDCRectangleShapeGenerator *shapeGenerator =
+      [[MDCRectangleShapeGenerator alloc] init];                             
+  shapeGenerator.topLeftCorner = [[MDCCutCornerTreatment alloc] initWithCut:20];
+  cell.shapeGenerator = shapeGenerator
+  return cell;
+}
+</code></pre>
+          </div>
+          <h4 id="card-with-different-corners">Card with different corners</h4>
+          <p><img src="/components/images/content/f6125a1eb9c171eb78ab8ba652a51968.gif" alt="Card With Different Corners."></p>
+          <div class="material-code-render">
+            <h5 id="swift-3">Swift</h5>
+            <pre><code class="language-swift">let card = MDCCard()
+let shapeGenerator = MDCRectangleShapeGenerator()
+let cutCorner = MDCCutCornerTreatment(cut: 20)
+let roundedCorner = MDCRoundedCornerTreatment(radius: 20)
+let curvedCorner = MDCCurvedCornerTreatment(size: CGSize(width: 20, height: 60))
+shapeGenerator.topLeftCorner = cutCorner
+shapeGenerator.topRightCorner = roundedCorner
+shapeGenerator.bottomLeftCorner = roundedCorner
+shapeGenerator.bottomRightCorner = curvedCorner
+card.shapeGenerator = shapeGenerator
+</code></pre>
+            <h5 id="objective-c-3">Objective-C</h5>
+            <pre><code class="language-objc">MDCCard *card = [[MDCCard alloc] init];
+MDCRectangleShapeGenerator *shapeGenerator =
+    [[MDCRectangleShapeGenerator alloc] init];
+MDCCutCornerTreatment *curCorner = [[MDCCutCornerTreatment alloc] initWithCut:20];
+MDCRoundedCornerTreatment *roundedCorner = 
+    [[MDCRoundedCornerTreatment alloc] initWithRadius:20];
+MDCCurvedCornerTreatment *curvedCorner =
+    [[MDCCurvedCornerTreatment alloc] initWithSize:CGSizeMake(20, 60)];
+shapeGenerator.topLeftCorner = cutCorner;
+shapeGenerator.topRightCorner = roundedCorner;
+shapeGenerator.bottomLeftCorner = roundedCorner;
+shapeGenerator.bottomRightCorner = curvedCorner;
+card.shapeGenerator = shapeGenerator;
+</code></pre>
+          </div>
+        </article>
+        <footer class="footer">
+          <section class="footer__content">
+            <div class="footer__row">
+              <a class="footer__logo-link">
+                <div class="footer__logo"></div>
+              </a>
+              <div class="footer__copy">
+                <p class="footer__description">Material design is an adaptable system&#x2014;backed by open-source code&#x2014;guiding you in the principles and best practices of contemporary UI. Material helps teams streamline the designer-developer collaboration, reduce complexity, and enable fidelity through reusable components, patterns, and code libraries. All while adapting easily to your brand, platform, and users&#x2019; needs.</p>
+                <nav class="footer__navigation">
+                  <ul class="footer__navigation-list">
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.github.com/material-components" target="_blank" class="footer-block__social-nav-link">
+                        Github
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.twitter.com/materialdesign" target="_blank" class="footer-block__social-nav-link">
+                        Twitter
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.youtube.com/googledesign" target="_blank" class="footer-block__social-nav-link">
+                        YouTube
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://services.google.com/fb/forms/materialdesignnewsletter/" target="_blank" class="footer-block__social-nav-link" aria-label="Sign up for our newsletter">
+                        Newsletter
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="footer__row footer-legal">
+              <a class="footer-legal__logo-container" href="https://google.com">
+                <img src="/develop/images/google-logo-gray.svg" alt="Google">
+              </a>
+              <ul class="footer-legal__nav-list">
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/privacy" target="_blank" class="footer-legal__nav-list-link">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/terms" target="_blank" class="footer-legal__nav-list-link">
+                    Terms and Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </footer>
+      </section>
+    </div>
+    <template id="language-radio-template">
+      <div class="mdc-form-field">
+        <div class="mdc-radio">
+          <input class="mdc-radio__native-control" type="radio" id="" name="" value="">
+          <div class="mdc-radio__background">
+            <div class="mdc-radio__outer-circle"></div>
+            <div class="mdc-radio__inner-circle"></div>
+          </div>
+        </div>
+        <label class="language-name" for=""></label>
+      </div>
+    </template>
+    <button class="feedback-button" aria-label="Send Feedback" tabindex="0">
+    </button>
+    <script src="/develop/js/index.js" async></script>
+    <script src="https://www.gstatic.com/feedback/api.js" async></script>
+  </body>
+</html>

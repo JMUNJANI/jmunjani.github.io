@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en" class="preload">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Pickers - Material Design</title>
+
+
+    <meta itemprop="name"        property="og:title"       name="twitter:title"       content="Pickers" />
+    <meta itemprop="description" property="og:description" name="twitter:description" content="Date pickers let users select dates using a dialog." />
+    <meta itemprop="image"       property="og:image"       name="twitter:image"       content="https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1mpqoH15B_Um9_MFNsuOYV_B3OwuswJFO%2Fpickers-thumbnail-2x1.png" />
+    <meta itemprop="url"         property="og:url"         name="twitter:url"         content="https://material.io/components/pickers/pickers.html" />
+    <meta property="og:site_name" content="Material Design" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">    <link rel="shortcut icon" href="/favicon.ico">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHRPF8');</script>    <style>
+.animatable {
+        opacity: 0;
+        position: relative;
+        top: 16px;         transition: opacity 235ms cubic-bezier(.4,0,.2,1),
+                    top 500ms cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/css/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+    <link rel="preload" href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/js/main.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js" as="script">
+
+
+  </head>
+
+  <body class="header-show page--article left-rail"
+        data-comp="Global "
+        data-slug-id="pickers"
+        data-spec-alias="mio-components"
+ >
+    <a class="screenreader-only" href="#main_content">Skip to main content</a>
+
+  <header class="header js-header" data-comp="Header">
+      <button class="header__hamburger header__button" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+        <i class="material-icons notranslate header__hamburger-icon" title="Toggle Navigation">menu</i>
+      </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+    <nav class="header__nav" role="navigation">
+      <ul class="header__nav-list header__nav-list--selected">
+            <li class="header__nav-item  js-header-item">
+    <a href="/design"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/design"}
+'>
+      Design
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  header__nav-item--active js-header-item" aria-current="true">
+    <a href="/components"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/components"}
+'>
+      Components
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/develop"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/develop"}
+'>
+      Develop
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/resources"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/resources"}
+'>
+      Resources
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+      </ul>
+    </nav>
+
+    <form id="search-form" class="search-form js-search" data-comp="SearchForm" data-props-searchform='{"basePath": "/", "ajax": false, "showOnLoad": false}'>
+      <button class="search-form__back js-search-back js-analytics-click" type="button" aria-label="Exit search results"
+              data-analytics='  {
+    "event": "trackEvent",
+    "category": "search back",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+        <i class="material-icons notranslate">arrow_back</i>
+      </button>
+
+      <input id="search-query" class="search-form__input js-search-input" name="q" type="text" title="query" placeholder="Search" autocomplete="off" aria-label="Type your search and press enter.">
+    </form>
+
+    <button class="header__search header__button js-toggle-search js-analytics-click"
+            data-analytics='  {
+    "event": "trackEvent",
+    "category": "search",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+      <div class="icons-container mdc-ripple-surface" data-mdc-ripple-is-unbounded>
+        <i class="material-icons notranslate header__spyglass" aria-label="Search Material Design">search</i>
+        <i class="material-icons notranslate header__search-close" aria-label="Close search">close</i>
+      </div>
+    </button>
+  </header>
+
+
+<nav aria-label="Breadcrumbs" class="breadcrumbs" data-comp="Breadcrumbs" aria-hidden="true">
+    <button class="breadcrumbs__hamburger" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+      <i class="material-icons notranslate" title="Toggle Navigation">menu</i>
+    </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+  <ol class="container container--large breadcrumbs__list">
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click "
+           href="../components"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../components"}
+'>Components</a>
+      </li>
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link"
+           href="../pickers/pickers.html"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../pickers/pickers.html"}
+'>Pickers</a>
+      </li>
+      <li class="breadcrumbs__crumb disabled breadcrumbs__chapter">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link js-breadcrumb-hash"
+           href="#usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>Usage</a>
+      </li>
+  </ol>
+</nav>
+
+
+<nav class="side-nav" data-comp="SideNav" role="navigation">
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+
+
+            <span class="side-nav__section-title">Components</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-bottom"}
+'>
+            App bars: bottom
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-top"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-top"}
+'>
+            App bars: top
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../backdrop"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../backdrop"}
+'>
+            Backdrop
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../banners"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../banners"}
+'>
+            Banners
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../bottom-navigation"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../bottom-navigation"}
+'>
+            Bottom navigation
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons"}
+'>
+            Buttons
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons-floating-action-button"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons-floating-action-button"}
+'>
+            Buttons: floating action button
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../cards"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../cards"}
+'>
+            Cards
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../chips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../chips"}
+'>
+            Chips
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../data-tables"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../data-tables"}
+'>
+            Data tables
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dialogs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dialogs"}
+'>
+            Dialogs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dividers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dividers"}
+'>
+            Dividers
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../image-lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../image-lists"}
+'>
+            Image lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../lists"}
+'>
+            Lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../menus"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../menus"}
+'>
+            Menus
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../navigation-drawer"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation-drawer"}
+'>
+            Navigation drawer
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface active js-analytics-click"
+             href="../pickers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../pickers"}
+'>
+            Pickers
+          </a>
+
+              <div class="side-nav__articles">
+    <i class="side-nav__progress-bar">
+      <i class="side-nav__scrub js-submenu-scrub"></i>
+    </i>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-usage js-analytics-click" href="#usage" data-section-id="usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>
+          <span class="js-anchor-text">Usage</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-anatomy js-analytics-click" href="#anatomy" data-section-id="anatomy"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#anatomy"}
+'>
+          <span class="js-anchor-text">Anatomy</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-mobile-pickers js-analytics-click" href="#mobile-pickers" data-section-id="mobile-pickers"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#mobile-pickers"}
+'>
+          <span class="js-anchor-text">Mobile pickers</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-desktop-pickers js-analytics-click" href="#desktop-pickers" data-section-id="desktop-pickers"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#desktop-pickers"}
+'>
+          <span class="js-anchor-text">Desktop pickers</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-customization js-analytics-click" href="#customization" data-section-id="customization"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#customization"}
+'>
+          <span class="js-anchor-text">Customization</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-specs js-analytics-click" href="#specs" data-section-id="specs"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#specs"}
+'>
+          <span class="js-anchor-text">Specs</span>
+        </a>
+      </div>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../progress-indicators"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../progress-indicators"}
+'>
+            Progress indicators
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../selection-controls"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../selection-controls"}
+'>
+            Selection controls
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sheets-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-bottom"}
+'>
+            Sheets: bottom
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sheets-side"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-side"}
+'>
+            Sheets: side
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sliders"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sliders"}
+'>
+            Sliders
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../snackbars"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../snackbars"}
+'>
+            Snackbars
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tabs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tabs"}
+'>
+            Tabs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../text-fields"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../text-fields"}
+'>
+            Text fields
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tooltips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tooltips"}
+'>
+            Tooltips
+          </a>
+
+      </li>
+
+  </ul>
+</nav>
+
+
+    <main id="main_content" class="main" role="main" aria-labelledby="Main Content">
+<article class="article" data-comp="Waypoints">
+  <div class="article__intro container container--large js-waypoints-trigger-initial">
+    <div class="article__intro-text">
+      <h1 class="article__title animatable js-anim-trigger">
+
+        Pickers
+
+            <div class="article-controls">
+              
+            </div>
+      </h1>
+
+
+        <div class="article__intro-text animatable js-anim-trigger">
+        <div>
+<div aria-hidden="true" class="keywords hidden">pickers: Date</div>
+<h2>Date pickers let users select a date, or a range of dates. </h2><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 82.5%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="pickers-date-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="82.5%" data-src="../assets/1g0a3EZETlsbQeARIJN_DYAiXo1DK8nC9/picker-intro.png" src="">
+</img></div>
+</div>
+<figcaption id="pickers-date-figure-caption-0"><hr class="spacer" role="presentation"/></figcaption>
+</figure><h3>Developer documentation</h3><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Platform</p></td><td colspan="1" rowspan="1"><p>Status</p></td></tr><tr><td colspan="1" rowspan="1"><p>Android</p></td><td colspan="1" rowspan="1"><p><a href="https://github.com/material-components/material-components-android/blob/master/docs/components/Picker.md" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>iOS</p></td><td colspan="1" rowspan="1"><p>Planned</p></td></tr><tr><td colspan="1" rowspan="1"><p>Web</p></td><td colspan="1" rowspan="1"><p>Planned</p></td></tr><tr><td colspan="1" rowspan="1"><p>Flutter</p></td><td colspan="1" rowspan="1"><p>Planned</p></td></tr></tbody></table></div></section></div></div>
+        </div>
+    </div>
+
+      <nav class="article__nav animatable js-anim-trigger">
+        <span class="eyebrow">Contents</span>
+        <ul>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#usage" data-section-id="usage"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#usage"}
+'>Usage</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#anatomy" data-section-id="anatomy"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#anatomy"}
+'>Anatomy</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#mobile-pickers" data-section-id="mobile-pickers"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#mobile-pickers"}
+'>Mobile pickers</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#desktop-pickers" data-section-id="desktop-pickers"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#desktop-pickers"}
+'>Desktop pickers</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#customization" data-section-id="customization"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#customization"}
+'>Customization</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#specs" data-section-id="specs"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#specs"}
+'>Specs</a>
+            </li>
+        </ul>
+      </nav>
+  </div>
+
+  <hr />
+
+  <div class="article__body animatable js-breadcrumb-toggle js-anim-trigger">
+      <section id="usage" class="container container--large js-waypoints-trigger article__section" data-section-title="Usage" aria-label="Usage">
+          <h2 class="article__chapter-title">
+            Usage
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">pickers</div>
+<p>Date pickers let users select a date or range of dates. They should be suitable for the context in which they appear.</p><p>Date pickers can be embedded into:</p><ul class="lst-kix_6ag8dyhz0san-0 start"><li>Dialogs on mobile</li><li>Text field dropdowns on desktop</li></ul><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Principles Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Principles</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Date pickers can display past, present, or future dates – as relevant to the task. Clearly indicate important dates, such as current and selected days....</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module-module col-3"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="772px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 99.8704663212%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="99.8704663212%" data-src="../assets/1RbuzuMGx6ZkudSRQhZacfMaNreSu6JsN/pickers-illos-02.png" src="">
+</img></div>
+</div>
+</figure><h2>Relevant</h2><p>Date pickers can display past, present, or future dates – as relevant to the task.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="772px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1eEjdMTDryCgMQXYbBuIVdpIoy3sBEQCQ/pickers-illos-03.png" src="">
+</img></div>
+</div>
+</figure><h2>Clear</h2><p>Clearly indicate important dates, such as current and selected days. </p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="771px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1mx-Bvs4Ntk5GBjFEUxwza8tQIoiTGn1G/pickers-illos-04.png" src="">
+</img></div>
+</div>
+</figure><h2>Intuitive</h2><p>To ensure picking a day or time is intuitive, use common picker patterns, such as a calendar.</p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="anatomy" class="container container--large js-waypoints-trigger article__section" data-section-title="Anatomy" aria-label="Anatomy">
+          <h2 class="article__chapter-title">
+            Anatomy
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">pickers</div>
+<div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Mobile calendar date picker Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Mobile calendar date picker</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1pr_eakmp-QAODHh_VJTqFO8JcFWJWhaM/picker-elements-calendar.png" src="">
+</img></div>
+</div>
+</figure><ol class="lst-kix_cn2bp246aisy-0 start" start="1"><li>Title</li><li>Selected date</li><li>Switch-to-keyboard input icon</li><li>Year selection menu</li><li>Month pagination</li><li>Current date</li><li>Selected date </li></ol></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Mobile date range picker Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Mobile date range picker</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/13hURY0XomgSTbPkhzifBGMVVQGz8V7--/picker-elements-range.png" src="">
+</img></div>
+</div>
+</figure><ol class="lst-kix_so7vukuqenrv-0 start" start="1"><li>Title </li><li>Selected date range</li><li>Switch to keyboard input icon</li><li>Month and year label</li><li>Current date</li><li>Start date</li><li>Selected range</li><li>End date</li></ol></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Mobile input picker Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Mobile input picker</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1iy-JbcnYcWwoeTu7l3nlR9frsKSJ_qiS/picker-elements-input.png" src="">
+</img></div>
+</div>
+</figure><ol class="lst-kix_9l86g0kgtgxd-0 start" start="1"><li>Title</li><li>Selected date</li><li>Switch-to-calendar view icon </li><li>Text field </li></ol></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Desktop date picker Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Desktop date picker</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F0B54x0KDcs5U-d0dJMFg2OTdGWjg%2Fpicker-elements-desktop.png" src="">
+</img></div>
+</div>
+</figure><ol class="lst-kix_1ugcqjubq0l2-0 start" start="1"><li>Text field  </li><li>Year and month selection </li><li>Month pagination </li><li>Today’s date</li><li>Selected day </li><li>Hover state</li></ol></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="mobile-pickers" class="container container--large js-waypoints-trigger article__section" data-section-title="Mobile pickers" aria-label="Mobile pickers">
+          <h2 class="article__chapter-title">
+            Mobile pickers
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">pickers</div>
+<div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Mobile calendar pickers Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Mobile calendar pickers</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Mobile calendar pickers can be used to select dates in the near future or past, when it’s useful to see them in a calendar month...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><h2>Usage</h2><p>Mobile calendar pickers can be used to select dates in the near future or past, when it’s useful to see them in a calendar month format. They are displayed in a dialog.  </p><p>Common use cases include: </p><ul class="lst-kix_4q23cc1bh8dq-0 start"><li>Making a restaurant reservation</li><li>Scheduling a meeting</li></ul><p>They aren’t ideal for selecting dates in the distant past or future that require more navigation, such as entering a birth date or expiration date.</p><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Mobile calendar pickers allow selection of a single date and year. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 82.5%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="mobile-pickers-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="82.5%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1luixhoFfDSk7DCBpduAhfQ5IP1ojD8DI%2Fpicker-choosing-date-calendar.png" src="">
+</img></div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-0">
+<p>Mobile calendar picker</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="mobile-pickers-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1gNu5TU21eGLqyHK2RXJtUB21VFkp-P4Z/picker-date-mobile-composition.png" src="">
+</img></div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-1"><p><figcaption>
+<p class="s-tag-caption do">Do.</p></figcaption>Maintain 16dp left and right padding from the edge of the screen. The top and bottom of the picker should be vertically centered in the screen.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="mobile-pickers-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/18uXb1sijfKceLoG0VdMJoHmfPclgKd9w/picker-date-mobile-composition-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-2"><p><figcaption>
+<p class="s-tag-caption dont">Don’t.</p></figcaption>Don’t use more than 16dp from the left and right screen edges, as it creates smaller touch targets. </p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 60.5263157895%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="mobile-pickers-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="60.5263157895%" data-src="../assets/1o6wh4a02ut0shZyuctSO3WgrqruS8uFm/picker-dob-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-3"><p><figcaption>
+<p class="s-tag-caption dont">Don’t.</p></figcaption> Don’t use a calendar picker to prompt for dates in the distant past or future, such as a date of birth. In these cases, use a <a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "../pickers/#mobile-input-picker"}
+' href="../pickers/#mobile-input-picker">
+  mobile input picker</a> or a <a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "../text-fields.html"}
+' href="../text-fields.html">
+  text field</a> instead.</p></figcaption>
+</figure></div></section></div><h2>Behavior</h2><p>Mobile calendar pickers navigate across dates in several ways: </p><ul class="lst-kix_y343fz5o6r78-0 start"><li>To navigate across months, swipe horizontally</li><li>To navigate across years, scroll vertically</li><li>To access the year picker, tap the year</li></ul><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="mobile-pickers-figure-caption-4" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1mgW61u324uiQap6ISSOyZo5xCBW9BFMO%2Fhorizontal-swipe.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-4"><p>Horizontal swiping lets the user navigate across months. </p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="mobile-pickers-figure-caption-5" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/1XIALcbRFq7fpoFwbM8rVYm8l6eSQWMYj/select-year-baseline.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-5"><p>Tapping the year menu accesses the year picker. Scrolling vertically navigates across years.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 60.5263157895%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="mobile-pickers-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="60.5263157895%" data-src="../assets/1uzHSXNN_tcUSk-_qQNuDzSZOfS7Tw8G5/picker-date-mobile-horizontal-orientation.png" src="">
+</img></div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-6"><p>Mobile calendar pickers adapt to a device’s orientation.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Mobile date range pickers Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Mobile date range pickers</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Mobile date range pickers allow selection of a range of dates. They cover the entire screen. Common use cases include: Mobile date range pickers navigate...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><h2>Usage</h2><p>Mobile date range pickers allow selection of a range of dates. They cover the entire screen. </p><p>Common use cases include: </p><ul class="lst-kix_m5ck615l3uyw-0 start"><li>Booking a flight</li><li>Reserving a hotel</li></ul><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="mobile-pickers-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1ngkWqYCRDQw3ErFqexDfiyoSYQXemrjj/picker-choosing-range.png" src="">
+</img></div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-7">
+<p>Mobile date range picker</p></figcaption>
+</figure></div></section></div><h2>Behavior</h2><p>Mobile date range pickers navigate across dates in several ways: </p><ul class="lst-kix_no27yhup0p1i-0 start"><li>To select a range of dates, tap the start and end dates on the calendar</li><li>To navigate across months, scroll vertically</li></ul><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="mobile-pickers-figure-caption-8" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/1MFP4zycggnJ5wGvHeDbXPs8z_zYUi-YW/range-select-select.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-8">
+<p>Select a range of dates with the date range picker.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="mobile-pickers-figure-caption-9" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/1QHIiyyxx6Uq7AROnW2CnbL0lchys_GRz/range-select-scroll.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-9">
+<p>Scroll vertically to access different months.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Mobile date input pickers Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Mobile date input pickers</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Mobile date input pickers allow the manual entry of dates using the numbers on a keyboard. Users can input a date or a range of...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><h2>Usage</h2><p>Mobile date input pickers allow the manual entry of dates using the numbers on a keyboard. Users can input a date or a range of dates in a dialog.</p><p> </p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Mobile date input picker</h2><p>Mobile date input pickers allow for keyboard input to select a date or range of dates.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 52.6315789474%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="mobile-pickers-figure-caption-10" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="52.6315789474%" data-src="../assets/1wNxz6MUqYsaFugCBe80ekoVz6m1XsS2K/picker-choosing-textfield.png" src="">
+</img></div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-10">
+<p>Mobile date input picker</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="mobile-pickers-figure-caption-11" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1W3l886iP3r9TzdvM_FZHSFoTHxgBxKQj/input-do.png" src="">
+</img></div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-11"><p><figcaption>
+<p class="s-tag-caption do">Do.</p></figcaption>For dates that don’t require a calendar view, make the mobile date input picker as the default prompt.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="mobile-pickers-figure-caption-12" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1T2WFOq3etDuGsZ435G7zfhV5xhYzQAFD/input-do-2.png" src="">
+</img></div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-12"><p><figcaption>
+<p class="s-tag-caption do">Do.</p></figcaption> Alternatively, a text field with appropriate hint text can prompt for dates, such as in a form.</p></figcaption>
+</figure></div></section></div><h2>Behavior</h2><p>The mobile date input picker can be accessed from any other mobile date picker, via the edit icon.</p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="mobile-pickers-figure-caption-13" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/1DZxYqXE6_Ube-OYBYInbBFtPwAk9P2el/input-single.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-13">
+<p>Switching from a mobile calendar picker to a mobile date input picker</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="mobile-pickers-figure-caption-14" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/1tCjZSl8cfKsQeDgyeCd2Oo9Io8E1jigd/input-range.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="mobile-pickers-figure-caption-14">
+<p>Switching from a mobile date range picker to a mobile date input picker</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="desktop-pickers" class="container container--large js-waypoints-trigger article__section" data-section-title="Desktop pickers" aria-label="Desktop pickers">
+          <h2 class="article__chapter-title">
+            Desktop pickers
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">pickers</div>
+<div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Desktop date pickers Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Desktop date pickers</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Desktop date pickers allow the selection of a specific date and year. The desktop date picker displays a date input field by default, and a...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><h2>Usage</h2><p>Desktop date pickers allow the selection of a specific date and year. The desktop date picker displays a date input field by default, and a dropdown calendar appears when the user taps on the input field. The user can interact with either form of date entry.</p><p>Desktop date pickers are ideal for navigating dates in both the near future (or past) and the distant future (or past), as they provide multiple ways to select dates. </p><figure class="inline-media inline-media--image rich-media" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 47.3684210526%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="desktop-pickers-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="47.3684210526%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F0B54x0KDcs5U-NWVfejVvS3ltY0U%2Fpicker-desktop-intro.png" src="">
+</img></div>
+</div>
+<figcaption id="desktop-pickers-figure-caption-0"><p>Desktop date picker</p></figcaption>
+</figure><h2>Behavior</h2><p>Users can input dates either using a keyboard or by navigating the calendar UI; both options are immediately available when the desktop date picker is accessed. </p><figure class="inline-media inline-media--image rich-media" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 60.5263157895%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="desktop-pickers-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="60.5263157895%" data-src="../assets/0B54x0KDcs5U-dHFYN1RNOEdIM2M/picker-choosing-singledate-desktop.png" src="">
+</img></div>
+</div>
+<figcaption id="desktop-pickers-figure-caption-1">
+<p>Desktop date picker</p></figcaption>
+</figure><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 111.111111111%;">
+<video aria-describedby="desktop-pickers-figure-caption-2" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/1w0goLOoIj8ldqyuPC3OjWA8bGPHKxf8B/picker-desktop-next-month.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="desktop-pickers-figure-caption-2"><p>Navigate through months by tapping the back and next arrows.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 111.111111111%;">
+<video aria-describedby="desktop-pickers-figure-caption-3" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/15qusPbF-nXXuggaAbSg5NsrXYd0gEbrU/picker-desktop-select-year.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="desktop-pickers-figure-caption-3"><p>Navigate through years by tapping the dropdown.</p></figcaption>
+</figure></div></section></div></div></div></div>
+
+<div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Desktop date range pickers Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Desktop date range pickers</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Desktop date range pickers allow a range of days to be selected. They display both calendar and date input fields. Tooltips can help explain how...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>Desktop date range pickers allow a range of days to be selected. They display both calendar and date input fields.</p><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 60.5263157895%;">
+<video aria-describedby="desktop-pickers-figure-caption-4" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1ow2svD50eumJzHFJUZc4PLKZCAJJCYsX%2Fpicker-desktop-singledate-selectdate.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="desktop-pickers-figure-caption-4"><p>Desktop date range pickers select ranges of dates. The text field reflects the calendar dates selected.</p></figcaption>
+</figure></div></section></div><figure class="inline-media inline-media--image rich-media" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 60.5263157895%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="desktop-pickers-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="60.5263157895%" data-src="../assets/0B54x0KDcs5U-WTJQQlY3ZXNocHM/picker-choosing-daterange-desktop.png" src="">
+</img></div>
+</div>
+<figcaption id="desktop-pickers-figure-caption-5">
+<p>Desktop date range picker</p></figcaption>
+</figure><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 111.111111111%;">
+<video aria-describedby="desktop-pickers-figure-caption-6" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/1EQJ82mhPkr68wM2kFwpDplTdtdBUkA7b/picker-desktop-singledate-hover-do.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="desktop-pickers-figure-caption-6">
+<p class="s-tag-caption do">Do.</p><p>Use hover states to preview a user’s selection.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 111.111111111%;">
+<video aria-describedby="desktop-pickers-figure-caption-7" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/1AEADUzU2gGj4ooW0_3-K-_bjGk11xNcx/picker-desktop-singledate-hover-dont.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="desktop-pickers-figure-caption-7">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t use the same style for hover and selected states.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Tooltips can help explain how to use date picker controls. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 94.7368421053%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="desktop-pickers-figure-caption-8" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="94.7368421053%" data-src="../assets/0B54x0KDcs5U-VkN4TG9Mdk9PRWc/picker-desktop-tooltips.png" src="">
+</img></div>
+</div>
+<figcaption id="desktop-pickers-figure-caption-8">
+<ol class="lst-kix_efw7wkr42i6a-0 start" start="1"><li>Tooltip used on month and year selector</li><li>Tooltip on day selector </li><li>Tooltip used on month pagination control</li><li>Tooltip used on selected date</li></ol></figcaption>
+</figure></div></section></div></div></div></div>
+</div>
+        </div>
+      </section>
+<hr />      <section id="customization" class="container container--large js-waypoints-trigger article__section" data-section-title="Customization" aria-label="Customization">
+          <h2 class="article__chapter-title">
+            Customization
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">pickers</div>
+<div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Pickers can be customized to express your brand identity by altering their:</p><ol class="lst-kix_w2in3g8dsfm3-0 start" start="1"><li>Layout</li><li>Typography</li><li>Shape</li><li>Color</li><li>Motion</li></ol><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/1aBdwRWsyGeQmuqNOlTUCce2eHEerYPJ5/customization-date-picker-intro.png" src="">
+</img></div>
+</div>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/material-studies/crane.html"}
+' href="https://material.io/design/material-studies/crane.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1IUSgSgqu0tZys-SUOIXBjotvn2Pc_s6L%2Fcrane-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1IUSgSgqu0tZys-SUOIXBjotvn2Pc_s6L%2Fcrane-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Crane</h2>
+<p class="object-card__body">Crane is a travel app that uses Material Design components and Material Theming to create a personalized on-brand experience.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Layout</h2><p>Date pickers span the full width of the screen.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="customization-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1_YrujcfWnoDGsmo68qyc4-YpxqFhA8C9%2Fcrane-intro.png" src="">
+</img></div>
+</div>
+<figcaption id="customization-figure-caption-0"><p>A date picker with customized layout, shape, color, and typography</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Shape</h2><p>The shape indicating selection can be customized to match the degree of boldness desired, or align to a specific style. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 94.7368421053%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="customization-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="94.7368421053%" data-src="../assets/1mmhJmxJLPsIDqKL3XeG6ciPgmTNeZF4f/customization-date-picker-shapes.png" src="">
+</img></div>
+</div>
+<figcaption id="customization-figure-caption-1"><p>1. A custom color and shape for selected dates<br>
+2. The rectilinear custom shape <br>
+3. A rounded style for start and end dates and a different color for the dates in between the start and end dates help distinguish the selected period.</br></br></p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Color</h2><p>Color can be used to create bold visual moments in a picker. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="customization-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1XepUYR5PaI9J2VnuVNk048Xgrz0EZEyy/crane-picker.png" src="">
+</img></div>
+</div>
+<figcaption id="customization-figure-caption-2"><p>This date range picker users Crane’s brand colors.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Motion</h2><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 73.6842105263%;">
+<video aria-describedby="customization-figure-caption-3" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/0B8wSqcLwbhFuTUt4NTFTZFJQWlE/crane-elasticity-video.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="customization-figure-caption-3"><p><a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "https://material.io/design/motion/customization.html#movement"}
+' href="https://material.io/design/motion/customization.html#movement" rel="noopener" target="_blank">
+  Stretch</a> is used on the selection indicator.</p></figcaption>
+</figure></div></section></div></div>
+        </div>
+      </section>
+<hr />      <section id="specs" class="container container--large js-waypoints-trigger article__section" data-section-title="Specs" aria-label="Specs">
+          <h2 class="article__chapter-title">
+            Specs
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">pickers</div>
+<div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Accessibility Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Accessibility</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>On mobile, a date picker should allow users to enter dates manually by inputting text, without using the picker. This interaction allows multiple input methods...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>On mobile, a date picker should allow users to enter dates manually by inputting text, without using the picker. This interaction allows multiple input methods and makes it accessible to those using assistive technology. </p><ul class="lst-kix_je0o68n23o5a-0 start"><li>On desktop, the text field can be used for input.</li><li>On mobile, the input picker should be available from the calendar pickers via the edit icon.</li></ul><h2>Touch targets</h2><p>Touch targets for mobile date pickers should be as large as possible, filling the available space. The minimum touch target size for a date picker is 32 x 32dp.</p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="specs-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1lEID4TP7_uUOoEeIVTEkRJOnA94YK4Xw%2Fpicker-a11y-input-icon.png" src="">
+</img></div>
+</div>
+<figcaption id="specs-figure-caption-0">
+<p>The edit icon indicates the ability to switch to the mobile input picker.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="specs-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1kr5aiyzIiANYAmtRz1jTusdRGfiqnppW/picker-a11y-target-size.png" src="">
+</img></div>
+</div>
+<figcaption id="specs-figure-caption-1">
+<p>On the mobile date range picker, touch targets are maximized at 48 x 48dp.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Mobile calendar picker Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Mobile calendar picker</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Calendar header </h2><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 34.2105263158%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="34.2105263158%" data-src="../assets/1YoU1iIareQ0Ingn9YZzQPrjx4O0rStaB/picker-date-mobile-header-redline.png" src="">
+</img></div>
+</div>
+</figure></div></section><section class="module-module-module col-3"><div class="module"><figcaption>
+<p>The mobile calendar picker is a a standard dialog. </p><ul class="lst-kix_ti6wa7uqmxg7-0 start"><li>Left and right padding: 24dp</li><li>Menu bar top and bottom padding: 16dp</li><li>Edit icon: 24 x 24dp</li></ul></figcaption></div><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>First baseline: 32dp from top</li><li>Second baseline: 72dp from first baseline</li><li>Third baseline: 32 dp from bottom of header</li></ul></figcaption></div><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>Padding between month name and button: 4dp</li><li>Month dropdown button: 24 x 24dp</li><li>Month pagination: 24 x 24dp</li><li>Padding between month pagination: 24dp</li></ul></figcaption></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Calendar view</h2><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 86.8421052632%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="86.8421052632%" data-src="../assets/1o8ViPWfyah8hHYMemq4gHJMMbLaguIaZ/picker-date-mobile-redline.png" src="">
+</img></div>
+</div>
+</figure></div></section><section class="module-module col-2"><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>Dimensions: 328 x 512dp</li><li>Left and right padding: 12dp</li><li>Date bounding box: 40 x 40dp</li></ul></figcaption></div><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>Selected date: 36 x 36dp</li><li>Padding between dates: 4dp</li></ul></figcaption></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Year selection view</h2><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 86.8421052632%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="86.8421052632%" data-src="../assets/1ER5KSXF85_lZyAL23pGfdPpR7Oz8yrg4/picker-date-mobile-year-redline.png" src="">
+</img></div>
+</div>
+</figure></div></section><section class="module-module col-2"><div class="module"><figcaption>
+<p>The mobile calendar picker contains an exposed dropdown menu that enables year selection.</p><ul class="lst-kix_ti6wa7uqmxg7-0"><li>Left and right margins: 24dp</li></ul></figcaption></div><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>Year bounding box: 88 x 52 dp</li><li>Selected year: 72 x 36dp</li></ul></figcaption></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Mobile range picker Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Mobile range picker</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 86.8421052632%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="86.8421052632%" data-src="../assets/1RfERhlpCPjmRWnHffpdVZV0Fy22zTU7H/picker-date-range-redline.png" src="">
+</img></div>
+</div>
+</figure></div></section><section class="module-module-module col-3"><div class="module"><figcaption>
+<p>The mobile calendar picker is a full-screen dialog. </p><ul class="lst-kix_ti6wa7uqmxg7-0"><li>Left and right margins: 12dp</li><li>Header height: 128dp</li><li>Header text inset: 60dp from left margin</li></ul></figcaption></div><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>First baseline: 36dp from second baseline</li><li>Second baseline: 24dp from bottom of header</li><li>Third baseline (month name): 32dp from days of week</li><li>Edit icon: 24 x 24dp</li></ul></figcaption></div><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>Edit icon padding: 16dp from right</li><li>Date bounding box: 48 x 48dp</li><li>Selected date: 40 x 40dp</li><li>Padding between months: 4dp</li></ul></figcaption></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Mobile input picker Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Mobile input picker</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 52.6315789474%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="52.6315789474%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1isGXoETx7PGVP9-6W4gmRtEU9P5lLUZK%2Fpicker-input-redline.png" src="">
+</img></div>
+</div>
+</figure></div></section><section class="module-module-module col-3"><div class="module"><figcaption>
+<p>The mobile calendar picker is a standard dialog. </p><ul class="lst-kix_ti6wa7uqmxg7-0"><li>Dimensions: 264 x 328dp</li><li>Left and right padding: 24dp</li></ul></figcaption></div><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>First baseline: 28dp from top</li><li>Second baseline: 72dp from first baseline</li><li>Edit icon: 24 x 24 dp</li></ul></figcaption></div><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>Text field: 16dp from bottom of header</li><li>Text field height: 56dp</li></ul></figcaption></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Desktop date picker Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Desktop date picker</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Calendar view</h2><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 52.6315789474%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="52.6315789474%" data-src="../assets/1zPbz_lgh7hlEfrriZrl7jbCSha4A0llP/picker-desktop-date-redline.png" src="">
+</img></div>
+</div>
+</figure></div></section><section class="module-module-module col-3"><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>Menu left padding: 24dp</li><li>Menu right padding: 8dp</li><li>Menu top padding: 16dp</li><li>Menu bottom padding: 12dp</li></ul></figcaption></div><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>Month dropdown button: 24 x 24dp</li><li>Month pagination: 24 x 24dp</li><li>Padding between month name and button: 4dp</li><li>Padding between month pagination: 24dp</li><li>Left and right padding of calendar area: 16dp</li></ul></figcaption></div><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>Bottom padding: 8dp</li><li>First baseline: 32dp from top</li><li>Second baseline: 36dp from first baseline</li><li>Date bounding box: 32 x 32 dp</li><li>Selected date: 28 x 28dp</li></ul></figcaption></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Year selection view</h2><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 52.6315789474%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="52.6315789474%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1yJDZ--OjAOB9qsEUfzM8FJWEdLDSVhWd%2Fpicker-desktop-year-redline.png" src="">
+</img></div>
+</div>
+</figure></div></section><section class="module-module col-2"><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>Left padding: 12dp</li><li>Right padding: 20dp</li><li>Bottom padding: 8dp</li><li>Menu height: 52dp</li></ul></figcaption></div><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>Padding between menu and years: 4dp</li><li>Year bounding box: 56 x 32dp</li><li>Selected year: 52 x 28dp</li></ul></figcaption></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Desktop date range picker Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Desktop date range picker</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 60.5263157895%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="60.5263157895%" data-src="../assets/1cwoyLWBMBCK77VeAwqWnNwfqFvdXmUvA/picker-desktop-daterange-redline.png" src="">
+</img></div>
+</div>
+</figure></div></section><section class="module-module col-2"><div class="module"><figcaption>
+<p>The desktop date range picker consists of two single pickers displaying consecutive months.</p><ul class="lst-kix_ti6wa7uqmxg7-0"><li>Left, right, and inside padding: 16dp</li><li>Bottom padding: 8dp</li></ul></figcaption></div><div class="module"><figcaption>
+<ul class="lst-kix_ti6wa7uqmxg7-0"><li>Month title baselines from top: 32dp</li><li>Pagination arrows: 24 x 24dp</li></ul></figcaption></div></section></div></div></div></div></div>
+        </div>
+      </section>
+
+  </div>
+
+  <div class="container container--large">
+
+  <h2>Up next
+      <div class="article-controls">
+        
+      </div>
+  </h2>
+
+<div class="suggested-articles"><div>
+<a aria-label="Progress indicators" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../progress-indicators/progress-indicators.html"}
+' href="../progress-indicators/progress-indicators.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1ZX993wxfvg8idkapKjUO0WlUaa2JhwFy%2Fprogress-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Progress indicators</h4>
+</a>
+<a aria-label="Dialogs" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../dialogs/dialogs.html"}
+' href="../dialogs/dialogs.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1FkZfDmof1Ti_JOwPRzkeLKJtErFgGC5h/dialogs-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Dialogs</h4>
+</a><br>
+
+<a aria-label="Selection controls" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../selection-controls/selection-controls.html"}
+' href="../selection-controls/selection-controls.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1GB_QnR0LbKOieDcXzLJy3cBx-i1eKVBQ%2Fselection-controls-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Selection controls</h4>
+</a></div></div>  </div>
+</article>
+    </main>
+
+
+
+<footer class="footer">
+  <div class="container container--jumbo">
+    <div class="footer-block footer-block--about">
+      <a class="footer-block__logo js-analytics-click" href="/"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "/"}
+'>
+        <img class="footer-block__material-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/material_logo.svg" alt="Material Design"/>
+      </a>
+      <div class="footer-block__content">
+        <p class="footer-block__description">Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
+        <ul class="footer-block__social-nav">
+          <li class="footer-block__social-nav-item">  <a href="https://www.github.com/material-components" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on GitHub"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.github.com/material-components"}
+'>GitHub</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.twitter.com/materialdesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on Twitter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.twitter.com/materialdesign"}
+'>Twitter</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/googledesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.youtube.com/googledesign"}
+'>YouTube</a>
+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-block footer-block--legal">
+      <a class="footer-block__logo js-analytics-click" href="https://www.google.com"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.google.com"}
+'>
+        <img class="footer-block__google-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/google_logo.svg" alt="Google"/>
+      </a>
+      <div class="footer-block__content">
+        <ul class="footer-block__legal-nav">
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Privacy Policy"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/privacy"}
+'>Privacy Policy</a>
+</li>
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Terms of Service"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/terms"}
+'>Terms of Service</a>
+</li></ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="ui-mask js-ui-mask"></div>
+<div
+    class="lightbox js-lightbox"
+    data-comp="Lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-labelledby="sr-lightbox-title">
+  <h2 class="screenreader-only sr-lightbox-title" tabindex="0">
+    Explore how Shrine, a retail app, uses Material Design.
+  </h2>
+
+    <header class="lightbox__header">
+      <div class="lightbox__header-title">
+        <span
+            class="lightbox__button js-lightbox-close"
+            data-comp="Tooltip"
+            data-props-tooltip='{"tip": "Close", "direction": "bottom"}'>
+          <i
+              class="material-icons notranslate material-icons--padded mdc-ripple-surface"
+              data-mdc-ripple-is-unbounded tabindex="0">
+            close
+          </i>
+        </span>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+
+      <div class="lightbox__actions">
+        <button type="button" name="button" class="lightbox-redlines-toggle js-redline-sidebar-toggle" data-comp="Tooltip" data-props-tooltip='{"tip": "View Specs", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>flip</i>
+        </button>
+
+        <button type="button" name="button" class="lightbox__button js-share" data-comp="Tooltip" data-props-tooltip='{"tip": "Share", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>share</i>
+        </button>
+
+      </div>
+    </header>
+
+    <div class="lightbox__template js-zoom-wrapper">
+      <div class="lightbox__content js-lightbox-content">
+<img class="ui-loader" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/loader.svg" alt="loader" aria-hidden="true" />      </div>
+<div class="redline-sidebar js-lightbox-sidebar-container" data-comp="RedlineSidebar">
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Image only", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-image js-redline-sidebar-item" value="image" >
+        <i class="material-icons notranslate">&#xE3F4;</i>
+        <span class="redline-sidebar__label-text">Image only</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Measurements", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-measurements js-redline-sidebar-item" value="measurements" >
+        <i class="material-icons notranslate">format_shapes</i>
+        <span class="redline-sidebar__label-text">Measurements</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Text", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-text js-redline-sidebar-item" value="text" >
+        <i class="material-icons notranslate">format_size</i>
+        <span class="redline-sidebar__label-text">Text</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Color", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-colors js-redline-sidebar-item" value="colors" >
+        <i class="material-icons notranslate">palette</i>
+        <span class="redline-sidebar__label-text">Color</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Shape and Elevation", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-shapes js-redline-sidebar-item" value="shapes" >
+        <i class="material-icons notranslate">rounded_corner</i>
+        <span class="redline-sidebar__label-text">Shape and Elevation</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Components", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-components js-redline-sidebar-item" value="components" >
+        <i class="material-icons notranslate">category</i>
+        <span class="redline-sidebar__label-text">Components</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Notes", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-notes js-redline-sidebar-item" value="notes" >
+        <i class="material-icons notranslate">notes</i>
+        <span class="redline-sidebar__label-text">Notes</span>
+      </button>
+    </div>
+<div class="redline-sidebar__toggles js-redline-layer-toggles">
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--dimensions">
+        <input type="checkbox" id="dimensions" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="dimensions">Dimensions</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--padding">
+        <input type="checkbox" id="padding" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="padding">Padding</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--typography">
+        <input type="checkbox" id="typography" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="typography">Text baseline</label>
+  </div>
+</div><nav class="carousel__nav">
+  <button
+      class="carousel__button carousel__button--prev mdc-ripple-surface js-carousel-prev"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Previous", "direction": "right"}'>
+    <i class="material-icons notranslate">chevron_left</i>
+  </button>
+
+  <button
+      class="carousel__button carousel__button--next mdc-ripple-surface js-carousel-next"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Next", "direction": "left"}'>
+    <i class="material-icons notranslate">chevron_right</i>
+  </button>
+</nav><div class="zoom-buttons" data-comp="Zoom">
+  <div class="zoom-buttons__wrapper">
+
+    <button class="mdc-button-zoom js-zoom-out" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom out", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">remove</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-reset" data-comp="Tooltip" data-props-tooltip='{"tip": "Reset", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">search</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-in" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom in", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">add</i>
+    </button>
+
+    <div class="zoom-buttons__extras">
+      <button class="mdc-button-zoom js-colorpicker-toggle" data-comp="Tooltip Colorpicker" data-props-tooltip='{"tip": "Color picker", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">colorize</i>
+      </button>
+      <button class="mdc-button-zoom js-ruler-toggle" data-comp="Tooltip Ruler" data-props-tooltip='{"tip": "Ruler", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">straighten</i>
+      </button>
+    </div>
+
+  </div>
+</div>    </div>
+
+
+<aside class="mdc-dialog" role="alertdialog" aria-labelledby="mdc-dialog-label" aria-describedby="mdc-dialog-description" data-comp="Share">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-label" class="mdc-dialog__header__title">Share</h2>
+      <button type="button" class="mdc-dialog-share-close js-dialog-close">
+        <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>close</i>
+      </button>
+    </header>
+    <section id="mdc-dialog-description" class="mdc-dialog__body">
+      <input type="text" readonly class="mdc-dialog-share-url js-share-url" />
+      <button type="button" class="mdc-button mdc-ripple-surface mdc-dialog-copy js-dialog-copy">Copy</button>
+    </section>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside></div><div class="mdc-snackbar snackbar-wrapper" data-comp="Snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+  <div class="mdc-snackbar__text"></div>
+  <div class="mdc-snackbar__action-wrapper">
+    <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
+  </div>
+</div>
+    <script src="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js"></script>
+    <script src="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js"></script>
+    <script src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/js/main.min.js"></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  </body>
+</html>

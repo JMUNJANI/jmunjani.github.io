@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en" class="preload">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Data tables - Material Design</title>
+
+
+    <meta itemprop="name"        property="og:title"       name="twitter:title"       content="Data tables" />
+    <meta itemprop="description" property="og:description" name="twitter:description" content="Data tables display sets of data." />
+    <meta itemprop="image"       property="og:image"       name="twitter:image"       content="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F14whMvMtHw7d0HVTY8cvchGZtOSikmeTM%2Fdata-tables-thumbnail-2x1.png" />
+    <meta itemprop="url"         property="og:url"         name="twitter:url"         content="https://material.io/components/data-tables/index.html" />
+    <meta property="og:site_name" content="Material Design" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">    <link rel="shortcut icon" href="/favicon.ico">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHRPF8');</script>    <style>
+.animatable {
+        opacity: 0;
+        position: relative;
+        top: 16px;         transition: opacity 235ms cubic-bezier(.4,0,.2,1),
+                    top 500ms cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1568406561463/static/m2/css/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+    <link rel="preload" href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1568406561463/static/m2/js/main.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js" as="script">
+
+
+  </head>
+
+  <body class="header-show page--article left-rail"
+        data-comp="Global "
+        data-slug-id="dataTables"
+        data-spec-alias="mio-components"
+ >
+    <a class="screenreader-only" href="#main_content">Skip to main content</a>
+
+  <header class="header js-header" data-comp="Header">
+      <button class="header__hamburger header__button" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+        <i class="material-icons notranslate header__hamburger-icon" title="Toggle Navigation">menu</i>
+      </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+    <nav class="header__nav" role="navigation">
+      <ul class="header__nav-list header__nav-list--selected">
+            <li class="header__nav-item  js-header-item">
+    <a href="/design"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/design"}
+'>
+      Design
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  header__nav-item--active js-header-item" aria-current="true">
+    <a href="/components"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/components"}
+'>
+      Components
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/develop"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/develop"}
+'>
+      Develop
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/resources"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/resources"}
+'>
+      Resources
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+      </ul>
+    </nav>
+
+    <form id="search-form" class="search-form js-search" data-comp="SearchForm" data-props-searchform='{"basePath": "/", "ajax": false, "showOnLoad": false}'>
+      <button class="search-form__back js-search-back js-analytics-click" type="button" aria-label="Exit search results"
+              data-analytics='  {
+    "event": "trackEvent",
+    "category": "search back",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+        <i class="material-icons notranslate">arrow_back</i>
+      </button>
+
+      <input id="search-query" class="search-form__input js-search-input" name="q" type="text" title="query" placeholder="Search" autocomplete="off" aria-label="Type your search and press enter.">
+    </form>
+
+    <button class="header__search header__button js-toggle-search js-analytics-click"
+            data-analytics='  {
+    "event": "trackEvent",
+    "category": "search",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+      <div class="icons-container mdc-ripple-surface" data-mdc-ripple-is-unbounded>
+        <i class="material-icons notranslate header__spyglass" aria-label="Search Material Design">search</i>
+        <i class="material-icons notranslate header__search-close" aria-label="Close search">close</i>
+      </div>
+    </button>
+  </header>
+
+
+<nav aria-label="Breadcrumbs" class="breadcrumbs" data-comp="Breadcrumbs" aria-hidden="true">
+    <button class="breadcrumbs__hamburger" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+      <i class="material-icons notranslate" title="Toggle Navigation">menu</i>
+    </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+  <ol class="container container--large breadcrumbs__list">
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click "
+           href="../components"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../components"}
+'>Components</a>
+      </li>
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link"
+           href="../data-tables/data-tables.html"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../data-tables/data-tables.html"}
+'>Data tables</a>
+      </li>
+      <li class="breadcrumbs__crumb disabled breadcrumbs__chapter">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link js-breadcrumb-hash"
+           href="#usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>Usage</a>
+      </li>
+  </ol>
+</nav>
+
+
+<nav class="side-nav" data-comp="SideNav" role="navigation">
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+
+
+            <span class="side-nav__section-title">Components</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-bottom"}
+'>
+            App bars: bottom
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-top"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-top"}
+'>
+            App bars: top
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../backdrop"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../backdrop"}
+'>
+            Backdrop
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../banners"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../banners"}
+'>
+            Banners
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../bottom-navigation"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../bottom-navigation"}
+'>
+            Bottom navigation
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons"}
+'>
+            Buttons
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons-floating-action-button"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons-floating-action-button"}
+'>
+            Buttons: floating action button
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../cards"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../cards"}
+'>
+            Cards
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../chips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../chips"}
+'>
+            Chips
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface active js-analytics-click"
+             href="../data-tables"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../data-tables"}
+'>
+            Data tables
+          </a>
+
+              <div class="side-nav__articles">
+    <i class="side-nav__progress-bar">
+      <i class="side-nav__scrub js-submenu-scrub"></i>
+    </i>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-usage js-analytics-click" href="#usage" data-section-id="usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>
+          <span class="js-anchor-text">Usage</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-anatomy js-analytics-click" href="#anatomy" data-section-id="anatomy"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#anatomy"}
+'>
+          <span class="js-anchor-text">Anatomy</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-behavior js-analytics-click" href="#behavior" data-section-id="behavior"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#behavior"}
+'>
+          <span class="js-anchor-text">Behavior</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-theming js-analytics-click" href="#theming" data-section-id="theming"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#theming"}
+'>
+          <span class="js-anchor-text">Theming</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-specs js-analytics-click" href="#specs" data-section-id="specs"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#specs"}
+'>
+          <span class="js-anchor-text">Specs</span>
+        </a>
+      </div>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dialogs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dialogs"}
+'>
+            Dialogs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dividers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dividers"}
+'>
+            Dividers
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../image-lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../image-lists"}
+'>
+            Image lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../lists"}
+'>
+            Lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../menus"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../menus"}
+'>
+            Menus
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../navigation-drawer"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation-drawer"}
+'>
+            Navigation drawer
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../pickers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../pickers"}
+'>
+            Pickers
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../progress-indicators"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../progress-indicators"}
+'>
+            Progress indicators
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../selection-controls"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../selection-controls"}
+'>
+            Selection controls
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sheets-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-bottom"}
+'>
+            Sheets: bottom
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sheets-side"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-side"}
+'>
+            Sheets: side
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sliders"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sliders"}
+'>
+            Sliders
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../snackbars"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../snackbars"}
+'>
+            Snackbars
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tabs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tabs"}
+'>
+            Tabs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../text-fields"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../text-fields"}
+'>
+            Text fields
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tooltips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tooltips"}
+'>
+            Tooltips
+          </a>
+
+      </li>
+
+  </ul>
+</nav>
+
+
+    <main id="main_content" class="main" role="main" aria-labelledby="Main Content">
+<article class="article" data-comp="Waypoints">
+  <div class="article__intro container container--large js-waypoints-trigger-initial">
+    <div class="article__intro-text">
+      <h1 class="article__title animatable js-anim-trigger">
+
+        Data tables
+            <div class="article-controls">
+              
+            </div>
+      </h1>
+
+
+        <div class="article__intro-text animatable js-anim-trigger">
+            <div>
+<div aria-hidden="true" class="keywords hidden">data tables</div>
+<h2>Data tables display sets of data across rows and columns.</h2><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1878px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 40.4685835996%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="data-tables-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="40.4685835996%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1xj6jt9MXlS0Sw1QFTDJTlB23_62DHZly%2Fcomponents-datatables-structure.png" src="">
+</img></div>
+</div>
+<figcaption id="data-tables-figure-caption-0"><hr class="spacer" role="presentation"/></figcaption>
+</figure><h3>Developer documentation</h3><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Platform</p></td><td colspan="1" rowspan="1"><p>Status</p></td></tr><tr><td colspan="1" rowspan="1"><p>Android</p></td><td colspan="1" rowspan="1"><p>Planned</p></td></tr><tr><td colspan="1" rowspan="1"><p>iOS</p></td><td colspan="1" rowspan="1"><p>Planned</p></td></tr><tr><td colspan="1" rowspan="1"><p>Web</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/web/components/data-tables/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>Flutter</p></td><td colspan="1" rowspan="1"><p><a href="https://api.flutter.dev/flutter/material/DataTable-class.html" rel="noopener" target="_blank">Available</a></p></td></tr></tbody></table></div></section></div></div>
+        </div>
+    </div>
+
+      <nav class="article__nav animatable js-anim-trigger">
+        <span class="eyebrow">Contents</span>
+        <ul>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#usage" data-section-id="usage"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#usage"}
+'>Usage</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#anatomy" data-section-id="anatomy"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#anatomy"}
+'>Anatomy</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#behavior" data-section-id="behavior"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#behavior"}
+'>Behavior</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#theming" data-section-id="theming"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#theming"}
+'>Theming</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#specs" data-section-id="specs"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#specs"}
+'>Specs</a>
+            </li>
+        </ul>
+      </nav>
+  </div>
+
+  <hr />
+
+  <div class="article__body animatable js-breadcrumb-toggle js-anim-trigger">
+      <section id="usage" class="container container--large js-waypoints-trigger article__section" data-section-title="Usage" aria-label="Usage">
+          <h2 class="article__chapter-title">
+            Usage
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">data tables</div>
+<p>Data tables display information in a grid-like format of rows and columns. They organize information in a way that’s easy to scan, so that users can look for patterns and insights. </p><p>Data tables can contain:</p><ul class="lst-kix_soz9w7d33dkh-0 start"><li>Interactive components (such as chips, buttons, or menus)</li><li>Non-interactive elements (such as badges)</li><li>Tools to query and manipulate data</li></ul><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Principles Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Principles</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Data tables are hierarchical, interactive, and intuitive</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module-module col-3"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="772px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 99.8704663212%;">
+<img alt="" class=" inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="99.8704663212%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1SfRCcKptl_EyIkggZn9G0SouqK6SocXU%2Fdata-tables-illos-02.png" src="">
+</img></div>
+</figure><h2>Organized  </h2><p>Data tables should organize content in a meaningful way, such as using hierarchy or alphabetization.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="772px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 99.8704663212%;">
+<img alt="" class=" inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="99.8704663212%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F11ofBDXyJQx8NtbP62p1anv1ZAxEadJcC%2Fdata-tables-illos-01.png" src="">
+</img></div>
+</figure><h2>Interactive</h2><p>Data tables should allow user interaction, so that users can customize how data is displayed or interacted with.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="771px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.129701686%;">
+<img alt="" class=" inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.129701686%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1pCdLt9IVM5q7i0KbHPKw3RCGbS9yLVTo%2Fdata-tables-illos-03.png" src="">
+</img></div>
+</figure><h2>Intuitive</h2><p>Data tables should be easy to use, with a logical structure that makes content easy to understand.</p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="anatomy" class="container container--large js-waypoints-trigger article__section" data-section-title="Anatomy" aria-label="Anatomy">
+          <h2 class="article__chapter-title">
+            Anatomy
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">data tables</div>
+<p>Data tables organize information across:</p><ul class="lst-kix_aiki2etkjper-0 start"><li>Columns</li><li>Column header names</li><li>Rows</li><li>Footers</li><li>Pagination</li></ul><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="2000px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 38.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="38.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F14S76V3hPqxyEjI3wEeM5afpNKEUYynag%2Fcomponents-datatables-datatable-anatomy.png" src="">
+</img></div>
+</div>
+</figure><ol class="lst-kix_psjuitfnqzat-0 start" start="1"><li><h3>Container</h3></li><li><h3>Column header names</h3></li><li><h3>Sort button</h3></li><li><h3>Row checkboxes</h3></li><li><h3>Rows</h3></li></ol></div></section></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Data table elements Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Data table elements</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Column header names describe the type of content displayed in each column. Each row contains data related to a single entity. Data tables can include...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><h2>Baseline elements</h2><p>Column header names describe the type of content displayed in each column. Each row contains data related to a single entity. </p><h2>Interactive elements</h2><p>Data tables can include interactive elements, such as:</p><ul class="lst-kix_r37q5tkxj0qp-0 start"><li><a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "../selection-controls/#checkboxes"}
+' href="../selection-controls/#checkboxes">
+  Checkboxes</a> (on rows) </li><li>Sorting (on columns)</li><li>Icons that communicate alerts</li></ul><p>Controls that manipulate how table data is displayed (such as pagination or <a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "../chips/#filter-chips"}
+' href="../chips/#filter-chips">
+  filter chips</a>) should be placed directly above or below a table.</p><figure class="inline-media inline-media--image rich-media" data-maxwidth="2000px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 47.8%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="47.8%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1s4W5twT0ThnL6pnchJmTdSY4uZIUDU00%2Fcomponents-datatables-filtertool.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-0"><p>Above the header row, a filter bar shows two active filters. Pagination is shown below the last row.</p></figcaption>
+</figure></div></div></div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Columns  Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Columns </h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The baseline row height is 52dp, and the column header row height is 56dp (4dp taller than regular rows). There is 32dp or more of...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Height and padding</h2><p>The baseline row height is 52dp, and the column header row height is 56dp (4dp taller than regular rows). </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 52.6315789474%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="52.6315789474%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F148rwvVeNKZKkb0sF-b5jlemjO3nh7VOw%2Fcomponents-datatables-height.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-1"><hr class="spacer" role="presentation"/></figcaption>
+</figure></div></section><section class="module col-1 h2-spacing"><div class="module"><h2>Padding</h2><p>There is 32dp or more of padding between columns.  </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 52.6315789474%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="52.6315789474%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1eZDw4L9zJaasTE5J5sY1Y4ex2mF4xnq5%2Fcomponents-datatables-padding.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-2"><p>There is 16dp padding on the left and right side of each header name. </p><hr class="spacer" role="presentation"/></figcaption>
+</figure></div></section><section class="module col-1 h2-spacing"><div class="module"><h2>Text</h2><p>Column header text uses a medium weight font (to differentiate it from row text). </p><p>Text that is longer than the column width is truncated with an ellipsis. On hover, a tooltip shows the full name.</p></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F18NSi9uWzNPAI53TCT2FagKVzO_iLAGPV%2Fcomponents-datatables-interaction5.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-3">
+<p>Long column headers are truncated with an ellipsis.</p></figcaption>
+</figure><hr class="spacer" role="presentation"/></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1MhKXPwogrFqg8vt0VV9J6rBYvvj3pfT9%2Fcomponents-datatables-interaction6.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-4">
+<p>Hovering over a truncated column header reveals the full text, using a tooltip.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Sorting Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Sorting</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>To help users sort information, a column can display column sorting by default. To indicate which column is sorted by default, place a downward or...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>To help users sort information, a column can display column sorting by default.</p><p>To indicate which column is sorted by default, place a <a href="https://material.io/tools/icons/?search=arro&amp;icon=arrow_downward&amp;style=baseline" rel="noopener" target="_blank">downward</a> or <a href="https://material.io/tools/icons/?search=arro&amp;icon=arrow_upward&amp;style=baseline" rel="noopener" target="_blank">upward</a> arrow icon next to the column header’s name. </p><hr class="spacer" role="presentation"/></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1InKkP8yvNg-iI0n2AxgZdD0FpGJd6yy4%2Fcomponents-datatables-interaction9.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-5">
+<p>Sorting in descending order is indicated with a downward arrow.</p></figcaption>
+</figure><hr class="spacer" role="presentation"/></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Reversing sort order</h2><p>To reverse the sort order of a column, the user taps the header name or arrow icon. Upon sorting, the arrow icon rotates 180 degrees. </p><hr class="spacer" role="presentation"/></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1cko8orKGGUDlY7RXOqwTmp_PmLEk069r%2Fcomponents-datatables-interaction7.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-6">
+<p>Sorting by column (in ascending order) indicated with an upward arrow</p></figcaption>
+</figure><hr class="spacer" role="presentation"/></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1cu_WkWoTH4vo9Z2_Qht6vH8887DprKJ2%2Fcomponents-datatables-interaction8.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-7">
+<p>A table sorted in reverse: the downward arrow shows that the column is sorted in descending order.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Row checkbox Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Row checkbox</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>When a row checkbox is selected, the row should display a background color. For users who use screen magnification, the background color fill provides a...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>When a row checkbox is selected, the row should display a background color. </p><p>For users who use screen magnification, the background color fill provides a way to indicate that a row has been selected, as the selected checkbox may appear outside of the magnified screen area.</p><p>For more information on selection states, visit <a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "https://material.io/design/interaction/states.html#usage"}
+' href="https://material.io/design/interaction/states.html#usage" rel="noopener" target="_blank">
+  States</a>. </p><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-8" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1EHka2HWAnJje9V6S6xw9SOzX4kPD1Yz-%2Fcomponents-datatables-rowcheckbox.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-8">
+<p>A selected row checkbox with background fill color on the entire row</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="behavior" class="container container--large js-waypoints-trigger article__section" data-section-title="Behavior" aria-label="Behavior">
+          <h2 class="article__chapter-title">
+            Behavior
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">data tables</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Row hover (Desktop) Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Row hover (Desktop)</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>When a user hovers over a row, that row displays a background color.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>When a user hovers over a row, that row displays a background color.</p><figure class="inline-media inline-media--image rich-media" data-maxwidth="2256px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 33.6879432624%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6879432624%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1WPDM0CF02rUAaqpTaU3dqc4gV6dNkLhD%2Fcomponents-datatables-rowhover.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-0">
+<p>Hovering over a row</p></figcaption>
+</figure></div></div></div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Column hover (desktop) Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Column hover (desktop)</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>When the user hovers over a column header:</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>When the user hovers over a column header: </p><ul class="lst-kix_lwnavkzz262-0 start"><li>A <strong>tooltip</strong> can display the full column name (if it’s truncated) or a detailed description </li><li>If sorting is enabled, an <strong>arrow icon</strong> can appear next to the column’s header </li></ul><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1zh5WrspNIGyYJclrXUTvGVIE4LSGzJWR%2Fcomponents-datatables-columnhover.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-1"><p>A tooltip or a <a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "https://material.io/tools/icons/?search=arro&amp;icon=arrow_downward&amp;style=baseline"}
+' href="https://material.io/tools/icons/?search=arro&amp;icon=arrow_downward&amp;style=baseline" rel="noopener" target="_blank">
+  downward</a> or <a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "https://material.io/tools/icons/?search=arro&amp;icon=arrow_upward&amp;style=baseline"}
+' href="https://material.io/tools/icons/?search=arro&amp;icon=arrow_upward&amp;style=baseline" rel="noopener" target="_blank">
+  upward</a> arrow icon can be displayed when hovering over a column name. Two cursors are displayed for demonstration purposes.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Focus Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Focus</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>When using keyboard focus, an indicator appears as users tab through interactive items (such as checkboxes).</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>When using keyboard focus, an indicator appears as users tab through interactive items (such as checkboxes).</p><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1FqyeYsJKx1aSyXQR1rfN9UpHxH6OuSko%2Fcomponents-datatables-focus.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-2">
+<p>Keyboard focus on the checkbox</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Inline menus Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Inline menus</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Inline menus allow selection from a predefined set of menu items. They are embedded directly in a table cell. Menus display a list of choices...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Inline menus allow selection from a predefined set of menu items. They are embedded directly in a table cell.</p><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1oifCrKGuolIsbv7osJ6QugiVCYSkIQ_2%2Fcomponents-datatables-inlinemenu.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-3">
+<p>A table with inline menus</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1oW_fsZQPHZGi410i7GsQZFrKo5lvPWMJ%2Fcomponents-datatables-expandedinlinemenu.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-4">
+<p>An expanded inline menu</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../menus/menus.html#menus"}
+' href="../menus/menus.html#menus" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1Hd8IgHigFkdRRM9dDXXE23AxbIR4Qi3j%2Fmenus-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1Hd8IgHigFkdRRM9dDXXE23AxbIR4Qi3j%2Fmenus-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Menus</h2>
+<p class="object-card__body">Menus display a list of choices on temporary surfaces.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Pagination Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Pagination</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Pagination controls provide swift access to all pages, while indicating that more pages exist. They display: Pagination is placed at the bottom of a table.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Pagination controls provide swift access to all pages, while indicating that more pages exist. </p><p>They display:</p><ul class="lst-kix_jvo26slo8dr4-0 start"><li>Number of rows per page</li><li>Left and right arrows for navigating pages </li><li>Total number of rows, including the range currently in view</li></ul><h3>Placement</h3><p>Pagination is placed at the bottom of a table. </p><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1LrTtFQF43qHjbco-QXLkGZsTVned5qV_%2Fcomponents-datatables-pagination.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-5">
+<p>Ten rows per page are displayed, with a total of 100 rows.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="theming" class="container container--large js-waypoints-trigger article__section" data-section-title="Theming" aria-label="Theming">
+          <h2 class="article__chapter-title">
+            Theming
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">data tables</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Rally Material Theme Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Rally Material Theme</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The Rally personal finance app’s data tables have been customized using Material Theming. The areas of customization include color, typography, and shape. Rally is a...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>The Rally personal finance app’s data tables have been customized using Material Theming. The areas of customization include color, typography, and shape.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="theming-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1HXR0_scA0F64NcLrz1Z6wMezft0ccT0D%2Fdatatables-rally-ahero.png" src="">
+</img></div>
+</div>
+<figcaption id="theming-figure-caption-0">
+<p>Rally’s customized data tables</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/material-studies/rally.html"}
+' href="https://material.io/design/material-studies/rally.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1hzaha4VMHk0xaHCGD-BHdBQCmfFNj3Dm%2Frally-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1hzaha4VMHk0xaHCGD-BHdBQCmfFNj3Dm%2Frally-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Rally</h2>
+<p class="object-card__body">Rally is a personal finance app that demonstrates how Material Design can be used for finance.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/the-color-system.html"}
+' href="https://material.io/design/color/the-color-system.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1mxBSDYfuls0HljhtQO1yQqikEBTCaMS2%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1mxBSDYfuls0HljhtQO1yQqikEBTCaMS2%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">The Color System</h2>
+<p class="object-card__body">The Material Design color system can help you create a color theme that reflects your brand or style.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/applying-color-to-ui.html"}
+' href="https://material.io/design/color/applying-color-to-ui.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1mxBSDYfuls0HljhtQO1yQqikEBTCaMS2%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1mxBSDYfuls0HljhtQO1yQqikEBTCaMS2%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Applying color to UI</h2>
+<p class="object-card__body">In a UI, color has a variety of roles: from containing meaning, to expressing a look and feel.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Color</h2><p>Rally’s data tables use custom color on four elements: the container, table text, header text, and dividers.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1DUNB28gh2KZQonYBrD2qB5Z_pNYS4qkE%2Fdatatables-rally-color.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Container</p></td><td colspan="1" rowspan="1"><p>Surface</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#3C3C46</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Table text</p></td><td colspan="1" rowspan="1"><p>On Surface </p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#FFFFFF</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Header text</p></td><td colspan="1" rowspan="1"><p>On Surface </p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#FFFFFF</p><p>60%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Divider</p></td><td colspan="1" rowspan="1"><p>On Surface </p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#FFFFFF</p><p>12%</p></td></tr></tbody></table></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/typography/understanding-typography.html"}
+' href="https://material.io/design/typography/understanding-typography.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1zkzPvVDvnF6Xg23J704FcWGQQDJU6hO1%2Ftypography-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1zkzPvVDvnF6Xg23J704FcWGQQDJU6hO1%2Ftypography-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Understanding typography</h2>
+<p class="object-card__body">Typography is critical in establishing hierarchy and expressing brand presence that supports an effective digital experience.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Typography</h2><p>Rally’s data tables use custom typography for table text.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F100GBzBaJc4v2abauQrWLElr8gLOUE_6E%2Fdatatables-rally-type.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Text</p></td><td colspan="1" rowspan="1"><p>Body 2</p></td><td colspan="1" rowspan="1"><p>Typeface</p><p>Font</p><p>Size</p><p>Case</p></td><td colspan="1" rowspan="1"><p>Roboto Condensed </p><p>Regular</p><p>14</p><p>Title case</p></td></tr></tbody></table></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/shape/about-shape.html"}
+' href="https://material.io/design/shape/about-shape.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F12ISvIFS-f0sMUTigSL0apL_skXo9iE7V%2Fshapes-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F12ISvIFS-f0sMUTigSL0apL_skXo9iE7V%2Fshapes-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">About Shape</h2>
+<p class="object-card__body">Material surfaces can be displayed in different shapes. Shapes direct attention, identify components, communicate state, and express brand.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Shape</h2><p>Rally’s data tables have custom corner shapes, with 0dp long cut corners.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1EdV4hbPb1KsZAv9c8Sr4RDYzEJ_GWnRp%2Fdatatables-rally-shape.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Container</p></td><td colspan="1" rowspan="1"><p>Large component</p></td><td colspan="1" rowspan="1"><p>Family</p><p>Size</p></td><td colspan="1" rowspan="1"><p>Cut </p><p>0;0;0;0dp</p></td></tr></tbody></table></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="specs" class="container container--large js-waypoints-trigger article__section" data-section-title="Specs" aria-label="Specs">
+          <h2 class="article__chapter-title">
+            Specs
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">data tables</div>
+<div class="col-list rich-media"><section class="module-module col-2 h2-spacing"><div class="module"><h2>Touch target area</h2><p>The minimum touch target for interactive elements is 48 x 48 dp.</p><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 111.111111111%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="specs-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="111.111111111%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1Sp2M8y5ux08Ox8mzu_cKlXGMhptWYqHj%2Fcomponents-datatables-targetsize.png" src="">
+</img></div>
+</div>
+<figcaption id="specs-figure-caption-0">
+<p>Touch target size for a checkbox or any other interactive element:  48 x 48dp</p></figcaption>
+</figure><hr class="spacer" role="presentation"/></div><div class="module"><h2>Element bounds</h2><p>Touch targets can extend areas beyond the bounds of an element.  </p><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 111.111111111%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="specs-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="111.111111111%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1XsQjymLErqP3zIVVpTBtIvlkwEREnqFz%2Fcomponents-datatables-iconboundary.png" src="">
+</img></div>
+</div>
+<figcaption id="specs-figure-caption-1">
+<p>Icon size: 40 x 40dp</p></figcaption>
+</figure><hr class="spacer" role="presentation"/></div></section></div><div class="col-list rich-media"><section class="module-module col-2 h2-spacing"><div class="module"><h2>Table cell padding</h2><p>Table cell padding is minimized to improve content density.</p><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 111.111111111%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="specs-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="111.111111111%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1VwL9SHoUqxcVRZHAQvBpiJ_PKbnTmyYZ%2Fcomponents-datatables-paddinginteractiveelements-checkboxht40dp.png" src="">
+</img></div>
+</div>
+<figcaption id="specs-figure-caption-2">
+<ul class="lst-kix_28whrynfe4yj-0 start"><li>Table cell top &amp; bottom padding: 6dp</li><li>Table cell left padding: 8dp</li></ul></figcaption>
+</figure><hr class="spacer" role="presentation"/></div><div class="module"><h2>Corner radius</h2><p>Data tables have a rectangular shape by default, with subtle rounded corners.</p><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 111.111111111%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="specs-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="111.111111111%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1Y2JAvbYt4TF4WwXDCRIKN1wilv6IW560%2Fcomponents-datatables-corners.png" src="">
+</img></div>
+</div>
+<figcaption id="specs-figure-caption-3">
+<p>Table corner radius: 4dp</p></figcaption>
+</figure><hr class="spacer" role="presentation"/></div></section></div><div class="col-list rich-media"><section class="module-module col-2 h2-spacing"><div class="module"><h2>Elevation</h2><p>Data tables don’t express elevation as they are often in front of solid color backgrounds.</p><p>They also don’t move in front of or behind other surfaces.</p><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 111.111111111%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="specs-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="111.111111111%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1MRP2cWOttMVoQBk1WYZr02cm1zDtSKSd%2Fcomponents-datatables-elevation.png" src="">
+</img></div>
+</div>
+<figcaption id="specs-figure-caption-4">
+<p>Elevation: 0dp</p></figcaption>
+</figure><hr class="spacer" role="presentation"/></div><div class="module"><h2>Container outline</h2><p>An outline can separate a table from either another table or other components.</p><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 111.111111111%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="specs-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="111.111111111%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1uEz2Wj47JWegvYwSjv6YQc4sEfTS6Q6F%2Fcomponents-datatables-outline.png" src="">
+</img></div>
+</div>
+<figcaption id="specs-figure-caption-5">
+<p>Container outline: 1dp</p></figcaption>
+</figure><hr class="spacer" role="presentation"/></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Height and padding</h2><figure class="inline-media inline-media--image" data-maxwidth="1440px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 55.5555555556%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="specs-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="55.5555555556%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1bwPuSIsj0bOqHMVi5Vu-2oS-jErsP_fe%2Fcomponents-datatables-heightandmargin.png" src="">
+</img></div>
+</div>
+<figcaption id="specs-figure-caption-6">
+<ul class="lst-kix_luazohb6xg7j-0 start"><li>Header row height: 56dp </li><li>Row height: 52dp (4dp shorter than the header row) </li><li>Padding: 16dp</li><li>Container dimensions expand to fit content</li></ul></figcaption>
+</figure><hr class="spacer" role="presentation"/></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Numerical alignment</h2><p>Align numbers to the right for improved scannability.</p><figure class="inline-media inline-media--image" data-maxwidth="1452px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 55.0964187328%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="specs-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="55.0964187328%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F18iMUoUlOGr-hIxdWLAHAQqSALj8YROtO%2Fcomponents-datatables-alignment.png" src="">
+</img></div>
+</div>
+<figcaption id="specs-figure-caption-7">
+<p>Numbers in the column are right-aligned with the column header name</p></figcaption>
+</figure><hr class="spacer" role="presentation"/></div></section></div></div>
+        </div>
+      </section>
+
+  </div>
+
+  <div class="container container--large">
+
+  <h2>Up next
+      <div class="article-controls">
+        
+      </div>
+  </h2>
+
+<div class="suggested-articles"><div>
+<a aria-label="Dialogs" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../dialogs/dialogs.html"}
+' href="../dialogs/dialogs.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1FkZfDmof1Ti_JOwPRzkeLKJtErFgGC5h/dialogs-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Dialogs</h4>
+</a>
+<a aria-label="Lists" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../lists/lists.html"}
+' href="../lists/lists.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1T3Wid_e-v817pM0BTH0z8KqBbzhTTBdn/list-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Lists</h4>
+</a><br>
+
+<a aria-label="Tooltips" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../tooltips/tooltips.html"}
+' href="../tooltips/tooltips.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1PGKRqLJebSpTKIEjFGedACxv4gkgBUDy%2Ftool-tip-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Tooltips</h4>
+</a></div></div>  </div>
+</article>
+    </main>
+
+
+
+<footer class="footer">
+  <div class="container container--jumbo">
+    <div class="footer-block footer-block--about">
+      <a class="footer-block__logo js-analytics-click" href="/"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "/"}
+'>
+        <img class="footer-block__material-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1568406561463/static/m2/images/material_logo.svg" alt="Material Design"/>
+      </a>
+      <div class="footer-block__content">
+        <p class="footer-block__description">Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
+        <ul class="footer-block__social-nav">
+          <li class="footer-block__social-nav-item">  <a href="https://www.github.com/material-components" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on GitHub"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.github.com/material-components"}
+'>GitHub</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.twitter.com/materialdesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on Twitter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.twitter.com/materialdesign"}
+'>Twitter</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/googledesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.youtube.com/googledesign"}
+'>YouTube</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://services.google.com/fb/forms/materialdesignnewsletter/" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Read our Newsletter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://services.google.com/fb/forms/materialdesignnewsletter/"}
+'>Newsletter</a>
+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-block footer-block--legal">
+      <a class="footer-block__logo js-analytics-click" href="https://www.google.com"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.google.com"}
+'>
+        <img class="footer-block__google-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1568406561463/static/m2/images/google_logo.svg" alt="Google"/>
+      </a>
+      <div class="footer-block__content">
+        <ul class="footer-block__legal-nav">
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Privacy Policy"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/privacy"}
+'>Privacy Policy</a>
+</li>
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Terms of Service"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/terms"}
+'>Terms of Service</a>
+</li></ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="ui-mask js-ui-mask"></div>
+<div
+    class="lightbox js-lightbox"
+    data-comp="Lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-labelledby="sr-lightbox-title">
+  <h2 class="screenreader-only sr-lightbox-title" tabindex="0">
+    Explore how Shrine, a retail app, uses Material Design.
+  </h2>
+
+    <header class="lightbox__header">
+      <div class="lightbox__header-title">
+        <span
+            class="lightbox__button js-lightbox-close"
+            data-comp="Tooltip"
+            data-props-tooltip='{"tip": "Close", "direction": "bottom"}'>
+          <i
+              class="material-icons notranslate material-icons--padded mdc-ripple-surface"
+              data-mdc-ripple-is-unbounded tabindex="0">
+            close
+          </i>
+        </span>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+
+      <div class="lightbox__actions">
+        <button type="button" name="button" class="lightbox-redlines-toggle js-redline-sidebar-toggle" data-comp="Tooltip" data-props-tooltip='{"tip": "View Specs", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>flip</i>
+        </button>
+
+        <button type="button" name="button" class="lightbox__button js-share" data-comp="Tooltip" data-props-tooltip='{"tip": "Share", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>share</i>
+        </button>
+
+      </div>
+    </header>
+
+    <div class="lightbox__template js-zoom-wrapper">
+      <div class="lightbox__content js-lightbox-content">
+<img class="ui-loader" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1568406561463/static/m2/images/loader.svg" alt="loader" aria-hidden="true" />      </div>
+<div class="redline-sidebar js-lightbox-sidebar-container" data-comp="RedlineSidebar">
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Image only", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-image js-redline-sidebar-item" value="image" >
+        <i class="material-icons notranslate">&#xE3F4;</i>
+        <span class="redline-sidebar__label-text">Image only</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Measurements", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-measurements js-redline-sidebar-item" value="measurements" >
+        <i class="material-icons notranslate">format_shapes</i>
+        <span class="redline-sidebar__label-text">Measurements</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Text", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-text js-redline-sidebar-item" value="text" >
+        <i class="material-icons notranslate">format_size</i>
+        <span class="redline-sidebar__label-text">Text</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Color", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-colors js-redline-sidebar-item" value="colors" >
+        <i class="material-icons notranslate">palette</i>
+        <span class="redline-sidebar__label-text">Color</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Shape and Elevation", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-shapes js-redline-sidebar-item" value="shapes" >
+        <i class="material-icons notranslate">rounded_corner</i>
+        <span class="redline-sidebar__label-text">Shape and Elevation</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Components", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-components js-redline-sidebar-item" value="components" >
+        <i class="material-icons notranslate">category</i>
+        <span class="redline-sidebar__label-text">Components</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Notes", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-notes js-redline-sidebar-item" value="notes" >
+        <i class="material-icons notranslate">notes</i>
+        <span class="redline-sidebar__label-text">Notes</span>
+      </button>
+    </div>
+<div class="redline-sidebar__toggles js-redline-layer-toggles">
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--dimensions">
+        <input type="checkbox" id="dimensions" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="dimensions">Dimensions</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--padding">
+        <input type="checkbox" id="padding" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="padding">Padding</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--typography">
+        <input type="checkbox" id="typography" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="typography">Text baseline</label>
+  </div>
+</div><nav class="carousel__nav">
+  <button
+      class="carousel__button carousel__button--prev mdc-ripple-surface js-carousel-prev"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Previous", "direction": "right"}'>
+    <i class="material-icons notranslate">chevron_left</i>
+  </button>
+
+  <button
+      class="carousel__button carousel__button--next mdc-ripple-surface js-carousel-next"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Next", "direction": "left"}'>
+    <i class="material-icons notranslate">chevron_right</i>
+  </button>
+</nav><div class="zoom-buttons" data-comp="Zoom">
+  <div class="zoom-buttons__wrapper">
+
+    <button class="mdc-button-zoom js-zoom-out" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom out", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">remove</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-reset" data-comp="Tooltip" data-props-tooltip='{"tip": "Reset", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">search</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-in" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom in", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">add</i>
+    </button>
+
+    <div class="zoom-buttons__extras">
+      <button class="mdc-button-zoom js-colorpicker-toggle" data-comp="Tooltip Colorpicker" data-props-tooltip='{"tip": "Color picker", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">colorize</i>
+      </button>
+      <button class="mdc-button-zoom js-ruler-toggle" data-comp="Tooltip Ruler" data-props-tooltip='{"tip": "Ruler", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">straighten</i>
+      </button>
+    </div>
+
+  </div>
+</div>    </div>
+
+
+<aside class="mdc-dialog" role="alertdialog" aria-labelledby="mdc-dialog-label" aria-describedby="mdc-dialog-description" data-comp="Share">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-label" class="mdc-dialog__header__title">Share</h2>
+      <button type="button" class="mdc-dialog-share-close js-dialog-close">
+        <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>close</i>
+      </button>
+    </header>
+    <section id="mdc-dialog-description" class="mdc-dialog__body">
+      <input type="text" readonly class="mdc-dialog-share-url js-share-url" />
+      <button type="button" class="mdc-button mdc-ripple-surface mdc-dialog-copy js-dialog-copy">Copy</button>
+    </section>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside></div><div class="mdc-snackbar snackbar-wrapper" data-comp="Snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+  <div class="mdc-snackbar__text"></div>
+  <div class="mdc-snackbar__action-wrapper">
+    <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
+  </div>
+</div>
+    <script src="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js"></script>
+    <script src="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js"></script>
+    <script src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1568406561463/static/m2/js/main.min.js"></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  </body>
+</html>

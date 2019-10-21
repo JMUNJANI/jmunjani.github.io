@@ -1,0 +1,2575 @@
+<!DOCTYPE html>
+<html lang="en" class="preload">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Android notifications - Material Design</title>
+
+
+    <meta itemprop="name"        property="og:title"       name="twitter:title"       content="Android notifications" />
+    <meta itemprop="description" property="og:description" name="twitter:description" content="Notifications provide short, timely, and relevant information about your app when it’s not in use." />
+    <meta itemprop="image"       property="og:image"       name="twitter:image"       content="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F143oP2a2R25cA6TxRzsm5srrE3rQhKjqt%2Fplatform-guidance-thumbnail-2x1.png" />
+    <meta itemprop="url"         property="og:url"         name="twitter:url"         content="https://material.io/design/platform-guidance/android-notifications.html" />
+    <meta property="og:site_name" content="Material Design" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">    <link rel="shortcut icon" href="/favicon.ico">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHRPF8');</script>    <style>
+.animatable {
+        opacity: 0;
+        position: relative;
+        top: 16px;         transition: opacity 235ms cubic-bezier(.4,0,.2,1),
+                    top 500ms cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link href="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/css/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+    <link rel="preload" href="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/js/main.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js" as="script">
+
+
+  </head>
+
+  <body class="header-show page--article left-rail"
+        data-comp="Global "
+        data-slug-id="androidNotifications"
+        data-spec-alias="mio-design"
+ >
+    <a class="screenreader-only" href="#main_content">Skip to main content</a>
+
+  <header class="header js-header" data-comp="Header">
+      <button class="header__hamburger header__button" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+        <i class="material-icons notranslate header__hamburger-icon" title="Toggle Navigation">menu</i>
+      </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+    <nav class="header__nav" role="navigation">
+      <ul class="header__nav-list header__nav-list--cleared">
+            <li class="header__nav-item  header__nav-item--active js-header-item" aria-current="true">
+    <a href="/design"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/design"}
+'>
+      Design
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/components"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/components"}
+'>
+      Components
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/develop"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/develop"}
+'>
+      Develop
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/resources"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/resources"}
+'>
+      Resources
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+      </ul>
+    </nav>
+
+    <form id="search-form" class="search-form js-search" data-comp="SearchForm" data-props-searchform='{"basePath": "/", "ajax": false, "showOnLoad": false}'>
+      <button class="search-form__back js-search-back js-analytics-click" type="button" aria-label="Exit search results"
+              data-analytics='  {
+    "event": "trackEvent",
+    "category": "search back",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+        <i class="material-icons notranslate">arrow_back</i>
+      </button>
+
+      <input id="search-query" class="search-form__input js-search-input" name="q" type="text" title="query" placeholder="Search" autocomplete="off" aria-label="Type your search and press enter.">
+    </form>
+
+    <button class="header__search header__button js-toggle-search js-analytics-click"
+            data-analytics='  {
+    "event": "trackEvent",
+    "category": "search",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+      <div class="icons-container mdc-ripple-surface" data-mdc-ripple-is-unbounded>
+        <i class="material-icons notranslate header__spyglass" aria-label="Search Material Design">search</i>
+        <i class="material-icons notranslate header__search-close" aria-label="Close search">close</i>
+      </div>
+    </button>
+  </header>
+
+
+<nav aria-label="Breadcrumbs" class="breadcrumbs" data-comp="Breadcrumbs" aria-hidden="true">
+    <button class="breadcrumbs__hamburger" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+      <i class="material-icons notranslate" title="Toggle Navigation">menu</i>
+    </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+  <ol class="container container--large breadcrumbs__list">
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click "
+           href="../platform-guidance"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../platform-guidance"}
+'>Platform guidance</a>
+      </li>
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link"
+           href="../platform-guidance/android-notifications.html"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-notifications.html"}
+'>Android notifications</a>
+      </li>
+      <li class="breadcrumbs__crumb disabled breadcrumbs__chapter">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link js-breadcrumb-hash"
+           href="#usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>Usage</a>
+      </li>
+  </ol>
+</nav>
+
+
+<nav class="side-nav" data-comp="SideNav" role="navigation">
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+
+
+            <span class="side-nav__section-title">Material System</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../introduction"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../introduction"}
+'>
+            Introduction
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav1"
+                  aria-expanded="false">
+            Material studies
+          </button>
+            <div class="side-nav__wrapper" id="_nav1">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/about-our-material-studies.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/about-our-material-studies.html"}
+'>
+            About our Material studies
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/basil.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/basil.html"}
+'>
+            Basil
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/crane.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/crane.html"}
+'>
+            Crane
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/fortnightly.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/fortnightly.html"}
+'>
+            Fortnightly
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/owl.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/owl.html"}
+'>
+            Owl
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/rally.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/rally.html"}
+'>
+            Rally
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/reply.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/reply.html"}
+'>
+            Reply
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/shrine.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/shrine.html"}
+'>
+            Shrine
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+      </ul>      <span class="side-nav__section-title">Material Foundation</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../foundation-overview"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../foundation-overview"}
+'>
+            Foundation overview
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav3"
+                  aria-expanded="false">
+            Environment
+          </button>
+            <div class="side-nav__wrapper" id="_nav3">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../environment/surfaces.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../environment/surfaces.html"}
+'>
+            Surfaces
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../environment/elevation.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../environment/elevation.html"}
+'>
+            Elevation
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../environment/light-shadows.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../environment/light-shadows.html"}
+'>
+            Light and shadows
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav4"
+                  aria-expanded="false">
+            Layout
+          </button>
+            <div class="side-nav__wrapper" id="_nav4">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/understanding-layout.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/understanding-layout.html"}
+'>
+            Understanding layout
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/pixel-density.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/pixel-density.html"}
+'>
+            Pixel density
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/responsive-layout-grid.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/responsive-layout-grid.html"}
+'>
+            Responsive layout grid
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/spacing-methods.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/spacing-methods.html"}
+'>
+            Spacing methods
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/component-behavior.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/component-behavior.html"}
+'>
+            Component behavior
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/applying-density.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/applying-density.html"}
+'>
+            Applying density
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav5"
+                  aria-expanded="false">
+            Navigation
+          </button>
+            <div class="side-nav__wrapper" id="_nav5">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../navigation/understanding-navigation.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation/understanding-navigation.html"}
+'>
+            Understanding navigation
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../navigation/navigation-transitions.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation/navigation-transitions.html"}
+'>
+            Navigation transitions
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../navigation/search.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation/search.html"}
+'>
+            Search
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav6"
+                  aria-expanded="false">
+            Color
+          </button>
+            <div class="side-nav__wrapper" id="_nav6">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/the-color-system.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/the-color-system.html"}
+'>
+            The color system
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/applying-color-to-ui.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/applying-color-to-ui.html"}
+'>
+            Applying color to UI
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/color-usage.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/color-usage.html"}
+'>
+            Color usage
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/text-legibility.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/text-legibility.html"}
+'>
+            Text legibility
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/dark-theme.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/dark-theme.html"}
+'>
+            Dark theme
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav7"
+                  aria-expanded="false">
+            Typography
+          </button>
+            <div class="side-nav__wrapper" id="_nav7">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../typography/the-type-system.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../typography/the-type-system.html"}
+'>
+            The type system
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../typography/understanding-typography.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../typography/understanding-typography.html"}
+'>
+            Understanding typography
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../typography/language-support.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../typography/language-support.html"}
+'>
+            Language support
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav8"
+                  aria-expanded="false">
+            Sound
+          </button>
+            <div class="side-nav__wrapper" id="_nav8">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/about-sound.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/about-sound.html"}
+'>
+            About sound
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/applying-sound-to-ui.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/applying-sound-to-ui.html"}
+'>
+            Applying sound to UI
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/sound-attributes.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/sound-attributes.html"}
+'>
+            Sound attributes
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/sound-choreography.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/sound-choreography.html"}
+'>
+            Sound choreography
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/sound-resources.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/sound-resources.html"}
+'>
+            Sound resources
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav9"
+                  aria-expanded="false">
+            Iconography
+          </button>
+            <div class="side-nav__wrapper" id="_nav9">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../iconography/product-icons.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../iconography/product-icons.html"}
+'>
+            Product icons
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../iconography/system-icons.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../iconography/system-icons.html"}
+'>
+            System icons
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../iconography/animated-icons.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../iconography/animated-icons.html"}
+'>
+            Animated icons
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav10"
+                  aria-expanded="false">
+            Shape
+          </button>
+            <div class="side-nav__wrapper" id="_nav10">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/about-shape.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/about-shape.html"}
+'>
+            About shape
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/shape-hierarchy.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/shape-hierarchy.html"}
+'>
+            Shape and hierarchy
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/shape-as-expression.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/shape-as-expression.html"}
+'>
+            Shape as expression
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/shape-motion.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/shape-motion.html"}
+'>
+            Shape and motion
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/applying-shape-to-ui.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/applying-shape-to-ui.html"}
+'>
+            Applying shape to UI
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav11"
+                  aria-expanded="false">
+            Motion
+          </button>
+            <div class="side-nav__wrapper" id="_nav11">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../motion/understanding-motion.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../motion/understanding-motion.html"}
+'>
+            Understanding motion
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../motion/speed.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../motion/speed.html"}
+'>
+            Speed
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../motion/choreography.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../motion/choreography.html"}
+'>
+            Choreography
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../motion/customization.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../motion/customization.html"}
+'>
+            Customization
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav12"
+                  aria-expanded="false">
+            Interaction
+          </button>
+            <div class="side-nav__wrapper" id="_nav12">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../interaction/gestures.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../interaction/gestures.html"}
+'>
+            Gestures
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../interaction/selection.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../interaction/selection.html"}
+'>
+            Selection
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../interaction/states.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../interaction/states.html"}
+'>
+            States
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+      </ul>      <span class="side-nav__section-title">Material Guidelines</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav13"
+                  aria-expanded="false">
+            Communication
+          </button>
+            <div class="side-nav__wrapper" id="_nav13">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/confirmation-acknowledgement.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/confirmation-acknowledgement.html"}
+'>
+            Confirmation &amp; acknowledgement
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/data-formats.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/data-formats.html"}
+'>
+            Data formats
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/data-visualization.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/data-visualization.html"}
+'>
+            Data visualization
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/empty-states.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/empty-states.html"}
+'>
+            Empty states
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/help-feedback.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/help-feedback.html"}
+'>
+            Help &amp; feedback
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/imagery.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/imagery.html"}
+'>
+            Imagery
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/launch-screen.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/launch-screen.html"}
+'>
+            Launch screen
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/onboarding.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/onboarding.html"}
+'>
+            Onboarding
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/offline-states.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/offline-states.html"}
+'>
+            Offline states
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/writing.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/writing.html"}
+'>
+            Writing
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../guidelines-overview"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../guidelines-overview"}
+'>
+            Guidelines overview
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav15"
+                  aria-expanded="false">
+            Material Theming
+          </button>
+            <div class="side-nav__wrapper" id="_nav15">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-theming/overview.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-theming/overview.html"}
+'>
+            Overview
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-theming/implementing-your-theme.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-theming/implementing-your-theme.html"}
+'>
+            Implementing your theme
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav16"
+                  aria-expanded="false">
+            Usability
+          </button>
+            <div class="side-nav__wrapper" id="_nav16">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../usability/accessibility.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../usability/accessibility.html"}
+'>
+            Accessibility
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../usability/bidirectionality.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../usability/bidirectionality.html"}
+'>
+            Bidirectionality
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface active js-submenu-toggle"
+                  aria-controls="_nav17"
+                  aria-expanded="true">
+            Platform guidance
+          </button>
+            <div class="side-nav__wrapper" id="_nav17">
+    <ul class="side-nav__submenu" data-menu-state="open">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-bars.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-bars.html"}
+'>
+            Android bars
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-fingerprint.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-fingerprint.html"}
+'>
+            Android fingerprint
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-haptics.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-haptics.html"}
+'>
+            Android haptics
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-icons.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-icons.html"}
+'>
+            Android icons
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-navigating-between-apps.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-navigating-between-apps.html"}
+'>
+            Android navigating between apps
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+side-nav__link--active js-header-show"
+              href="../platform-guidance/android-notifications.html" aria-current="page" data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-notifications.html"}
+'>
+            Android notifications
+          </a>
+
+              <div class="side-nav__articles">
+    <i class="side-nav__progress-bar">
+      <i class="side-nav__scrub js-submenu-scrub"></i>
+    </i>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-usage js-analytics-click" href="#usage" data-section-id="usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>
+          <span class="js-anchor-text">Usage</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-anatomy-of-a-notification js-analytics-click" href="#anatomy-of-a-notification" data-section-id="anatomy-of-a-notification"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#anatomy-of-a-notification"}
+'>
+          <span class="js-anchor-text">Anatomy of a notification</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-behavior js-analytics-click" href="#behavior" data-section-id="behavior"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#behavior"}
+'>
+          <span class="js-anchor-text">Behavior</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-types-of-notifications js-analytics-click" href="#types-of-notifications" data-section-id="types-of-notifications"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#types-of-notifications"}
+'>
+          <span class="js-anchor-text">Types of notifications</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-settings js-analytics-click" href="#settings" data-section-id="settings"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#settings"}
+'>
+          <span class="js-anchor-text">Settings</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-lock-screen js-analytics-click" href="#lock-screen" data-section-id="lock-screen"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#lock-screen"}
+'>
+          <span class="js-anchor-text">Lock screen</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-style js-analytics-click" href="#style" data-section-id="style"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#style"}
+'>
+          <span class="js-anchor-text">Style</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-templates js-analytics-click" href="#templates" data-section-id="templates"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#templates"}
+'>
+          <span class="js-anchor-text">Templates</span>
+        </a>
+      </div>
+  </div>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-permissions.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-permissions.html"}
+'>
+            Android permissions
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-settings.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-settings.html"}
+'>
+            Android settings
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-slices.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-slices.html"}
+'>
+            Android slices
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-split-screen.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-split-screen.html"}
+'>
+            Android split-screen
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-swipe-to-refresh.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-swipe-to-refresh.html"}
+'>
+            Android swipe to refresh
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-text-selection-toolbar.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-text-selection-toolbar.html"}
+'>
+            Android text selection toolbar
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-widget.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-widget.html"}
+'>
+            Android widget
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/cross-platform-adaptation.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/cross-platform-adaptation.html"}
+'>
+            Cross-platform adaptation
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+  </ul>
+</nav>
+
+
+    <main id="main_content" class="main" role="main" aria-labelledby="Main Content">
+<article class="article" data-comp="Waypoints">
+  <div class="article__intro container container--large js-waypoints-trigger-initial">
+    <div class="article__intro-text">
+      <h1 class="article__title animatable js-anim-trigger">
+
+        Android notifications
+
+            <div class="article-controls">
+              
+            </div>
+      </h1>
+
+
+        <div class="article__intro-text animatable js-anim-trigger">
+        <div>
+<div aria-hidden="true" class="keywords hidden">Android only, notifications</div>
+<h2>Notifications provide short, timely, and relevant information about your app when it’s not in use.</h2></div>
+        </div>
+    </div>
+
+      <nav class="article__nav animatable js-anim-trigger">
+        <span class="eyebrow">Contents</span>
+        <ul>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#usage" data-section-id="usage"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#usage"}
+'>Usage</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#anatomy-of-a-notification" data-section-id="anatomy-of-a-notification"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#anatomy-of-a-notification"}
+'>Anatomy of a notification</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#behavior" data-section-id="behavior"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#behavior"}
+'>Behavior</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#types-of-notifications" data-section-id="types-of-notifications"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#types-of-notifications"}
+'>Types of notifications</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#settings" data-section-id="settings"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#settings"}
+'>Settings</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#lock-screen" data-section-id="lock-screen"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#lock-screen"}
+'>Lock screen</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#style" data-section-id="style"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#style"}
+'>Style</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#templates" data-section-id="templates"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#templates"}
+'>Templates</a>
+            </li>
+        </ul>
+      </nav>
+  </div>
+
+  <hr />
+
+  <div class="article__body animatable js-breadcrumb-toggle js-anim-trigger">
+      <section id="usage" class="container container--large js-waypoints-trigger article__section" data-section-title="Usage" aria-label="Usage">
+          <h2 class="article__chapter-title">
+            Usage
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">Android only, notifications</div>
+<div class="col-list"><section class="module col-1"><div class="module"><p>Notifications are intended to inform users about events in your app. These two types of notifications are the most effective:</p><ul class="lst-kix_ndv4l6ue5nh0-0 start"><li>Communication from other users</li><li>Well-timed and informative task reminders </li></ul><h2>Notification Anatomy</h2><ul class="lst-kix_fbgckyen8d92-0 start"><li>Header area</li><li>Content area</li><li>Action area</li></ul><h2>How notifications may be noticed</h2><ul class="lst-kix_eo1ai26v9jzs-0 start"><li>Showing a status bar icon</li><li>Appearing on the lock screen</li><li>Playing a sound or vibrating</li><li>Peeking onto the current screen</li><li>Blinking the device's LED</li></ul></div></section></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse When not to use a notification Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">When not to use a notification</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Notifications should not be the primary communication channel with your users, as frequent interruptions may cause irritation. The following cases do not warrant notification:</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Notifications should not be the primary communication channel with your users, as frequent interruptions may cause irritation. The following cases do not warrant notification:</p><ul class="lst-kix_list_1-0 start"><li>Cross-promotion, or advertising another product within a notification, which is strictly prohibited by the Play Store</li><li>An app that a user has never opened</li><li>Messages that encourage the user to return to an app, but provide no direct value, such as "Haven't seen you in a while"</li><li>Requests to rate an app</li><li>Operations that don't require user involvement, like syncing information</li><li>Error states from which the app may recover without user interaction</li></ul><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1BDl73iVIwbJkgTKD9SwM8-4mMdWl3y2K%2Fas-notifications-usage-1.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-0">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t send holiday or birthday greetings in the form of notifications.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1YqECJ46Pe9rF0ZZ6UIweY-m2ueZaOux9%2Fas-notifications-usage-2.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-1">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t interrupt the user in the middle of a task for the sole purpose of asking if you're doing a good job.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Required notifications Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Required notifications</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Foreground services are app processes that run in the background while the user is not directly interacting with your app. Because these apps use battery...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Foreground services are app processes that run in the background while the user is not directly interacting with your app. Because these apps use battery and possibly data, Android requires that users are made aware of these types of services by showing a non-dismissible notification.</p><p>Because the user can't dismiss the notification, you should provide an action for the user to stop the service if they don't want it running.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1Podo84JaAWZh7ac70dF897YxD5Rt2ls8%2Fas-notifications-usage-3.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-2">
+<p>While downloading apps and files, Android's Download Manager runs a foreground service and shows a notification that lets the user know downloading is in progress, with an option to cancel.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="anatomy-of-a-notification" class="container container--large js-waypoints-trigger article__section" data-section-title="Anatomy of a notification" aria-label="Anatomy of a notification">
+          <h2 class="article__chapter-title">
+            Anatomy of a notification
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">Android only, notifications</div>
+<div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Notifications have been designed to make it easy to scan and use a notification’s most important elements:</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-of-a-notification-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F11RigA2Xqe4RqclP6cy2H3gwN-KNDLUbt%2Fas-notifications-anatomy-1-collapsed.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-of-a-notification-figure-caption-0">
+<p>Collapsed view of a notification</p></figcaption>
+</figure><h3>Primary content</h3><p>Content is the most prominent element of a notification. Secondary information, such as a timestamp, is smaller and consolidated above the primary content.</p><h3>People</h3><p>If the notification involves a person, an avatar appears on the right where it stands out from the rest of the content.</p><h3>Actions</h3><p>Expandable notifications are revealed by tapping an indicator icon. Actions are displayed with text labels on a separate background color and location.</p></div></section></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Header area Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Header area</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The header area is comprised of: The app icon is a small two-dimensional representation of your app's identity. It appears in monochrome in the status...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-of-a-notification-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1S1g0uIqq8cRvxi60yyYj_L2X8YABU_A6%2Fas-notifications-anatomy-2.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-of-a-notification-figure-caption-1">
+<p>The header area</p></figcaption>
+</figure><p>The header area is comprised of:</p><h3>1. The app icon: </h3><p>The app icon is a small two-dimensional representation of your app's identity. It appears in monochrome in the status bar. If your app sends a wide variety of notifications, you may replace your app's identity icon with a symbol that reflects the content type. For example, Google Now uses a cloud icon for weather notifications.</p><h3>2.The app name: </h3><p>The name of the app automatically appears in the notification. </p><h3>3. Header text (optional): </h3><p>Header text is usually only needed if an app sends notifications from multiple sources, such as the account name for users with multiple accounts.</p><h3>4. Timestamp (optional): </h3><p>By default, a timestamp does not appear, but it may be added if it's important to display when a notification was sent, such as the time of a missed call.</p><h3>5. Expand indicator: </h3><p>This appears if the notification can be expanded.</p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Content area Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Content area</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The content area is comprised of: A brief headline for the notification Supporting information An image may be added to reinforce the notification in a...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-of-a-notification-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1VvwmqARGbj8R1LNwhWlvLWPI1S9AQ-qx%2Fas-notifications-anatomy-3.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-of-a-notification-figure-caption-2">
+<p>The content area</p></figcaption>
+</figure><p>The content area is comprised of:</p><ol class="lst-kix_4zsjirohdpqi-0 start" start="1"><li><h3>A content title: </h3></li></ol><p>A brief headline for the notification</p><ol class="lst-kix_4zsjirohdpqi-0" start="2"><li><h3>Content text: </h3></li></ol><p>Supporting information</p><ol class="lst-kix_4zsjirohdpqi-0" start="3"><li><h3>Large icon (optional): </h3></li></ol><p>An image may be added to reinforce the notification in a meaningful way, such as a message that includes an avatar of the sender.</p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Action area Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Action area</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>When expanded, a notification may display up to three actions on at the bottom. In Android N and later, actions are shown without icons to...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>When expanded, a notification may display up to three actions on at the bottom. </p><p>In Android N and later, actions are shown without icons to accommodate more text. An icon should still be provided because devices with earlier versions of the OS rely on it, as will <a href="https://www.google.com/design/spec-wear/patterns/notifications.html" rel="noopener" target="_blank">Android Wear</a> and <a href="https://www.google.com/design/spec-auto/system-overview/notifications.html#" rel="noopener" target="_blank">Android Auto</a> devices.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-of-a-notification-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1u_U873h4wMoXwkdDyBPq8__M2Ro5UoSt%2Fas-notifications-anatomy-4.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-of-a-notification-figure-caption-3">
+<br>
+<p>The action area</p><br>
+</br></br></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="behavior" class="container container--large js-waypoints-trigger article__section" data-section-title="Behavior" aria-label="Behavior">
+          <h2 class="article__chapter-title">
+            Behavior
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">Android only, notifications</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Notification arrival Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Notification arrival</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>When a notification arrives, it gets added to the notification drawer. Depending on the parameters you set and the current state of the device, the...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>When a notification arrives, it gets added to the notification drawer. Depending on the parameters you set and the current state of the device, the notification may also:</p><ul class="lst-kix_list_3-0 start"><li>Be indicated in the status bar with an icon</li><li>Make a sound or vibrate</li><li>Peek onto the current screen to grab the user's attention<br>
+</br></li></ul><p>Users may choose to alter the notification behaviors you set.</p><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 73.6842105263%;">
+<video aria-describedby="behavior-figure-caption-0" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1CfZrxDhHfWFStu9tKiqD6MQHAWpAO3CR%2Fnotifications-arrival-1.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="behavior-figure-caption-0">
+<p>When a notification arrives, an icon usually appears in the status bar. This signals to the user that there's something to see in the notification drawer.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 73.6842105263%;">
+<video aria-describedby="behavior-figure-caption-1" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1R6V5oqkr0dbbstx5tvR5R_IjEg6kwT4x%2Fnotifications-arrival-2.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="behavior-figure-caption-1">
+<p>If it's important to grab a user's attention in the middle of a task, an app can have the notification peek onto the current screen.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Notification drawer Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Notification drawer</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The notification drawer in Android typically shows notifications in reverse-chronological order, with adjustments influenced by: Starting in Android O, the Android system may alter the...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>The notification drawer in Android typically shows notifications in reverse-chronological order, with adjustments influenced by:</p><ul class="lst-kix_list_2-0 start"><li>The app's stated notification priority or importance</li><li>Whether the notification recently alerted the user with a sound or vibration</li><li>Any people attached to the notification and whether they are starred contacts</li><li>Whether the notification represents an important ongoing activity, such as a phone call in progress or music playing</li></ul><p>Starting in Android O, the Android system may alter the appearance of some notifications at the top and bottom of the list by adding emphasis or deemphasis, to help the user scan content.</p><h2>Stale notifications</h2><p>The notification drawer should show users relevant information for the current moment in time. If a notification sent earlier is no longer relevant, you can automatically dismiss it so the user doesn’t see it.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1dDtyXB8MVBz9Tp3KQIHotS1HNWnkt3Gd%2Fas-notifications-behavior-1.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-2">
+<p>In this notification drawer, a text that just arrived appears at the top. A lower priority notification about the weather appears at the bottom.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Notification interactions Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Notification interactions</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Users may interact with a notification in the following ways: To navigate, a user may tap a notification. If the notification appears on a locked...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Users may interact with a notification in the following ways:</p><h2>1. To navigate to a destination </h2><p>To navigate, a user may tap a notification. If the notification appears on a locked screen, the user will need to double-tap it and then enter their PIN, pattern, or password. </p><p>When the user taps a notification, they should be taken to a screen in your app that relates directly to that notification and lets them take immediate action. For example, if the notification says it's their turn in a two-player game, tapping the notification should take them directly to that game.</p><h2>2. To see an expanded view </h2><p>If offered, an expand indicator appears in the header. A user may tap the indicator or swipe down the notification body to expand it.</p><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 73.6842105263%;">
+<video aria-describedby="behavior-figure-caption-3" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1BYUlH5r8qNfUotaZOuwPWffN_uDQYxD3%2Fnotifications-expand-1.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="behavior-figure-caption-3">
+<p>An expanded notification</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>3. To dismiss it (if permitted)</h2><p>A user may dismiss a notification by swiping it left or right.</p><p>Ongoing notifications that indicate a continuing process in the background, such as music playing, may not be dismissed with a swipe.</p><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 73.6842105263%;">
+<video aria-describedby="behavior-figure-caption-4" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1S2DsfREz0wAgF3TPvUZYpgqoDFZ4iaPY%2Fnotifications-dismiss-1.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="behavior-figure-caption-4">
+<p>A notification being dismissed</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>4. To control similar notifications in the future</h2><p>Notification controls can be accessed by:</p><ul class="lst-kix_list_1-0 start"><li>Touching and holding an individual notification</li><li>Swiping the notification left or right, and then tapping the settings icon</li></ul><p>The controls displayed vary depending on the Android version and whether the app has <a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "../patterns/notifications.html#notifications-settings"}
+' href="../patterns/notifications.html#notifications-settings">
+  channels</a> for its notifications (starting in Android O).</p><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 73.6842105263%;">
+<video aria-describedby="behavior-figure-caption-5" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1pT72NOTYw7pGMJU4ioBIhekvMZbc9ttH%2Fnotifications-controls-1.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="behavior-figure-caption-5">
+<p>Notification settings</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Multiple notifications  Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Multiple notifications </h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>For apps that generate multiple notifications of the same type, Android offers two different approaches to represent them: summarizing and bundling. Instead of displaying multiple...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>For apps that generate multiple notifications of the same type, Android offers two different approaches to represent them: summarizing and bundling.</p><h2>Summarizing</h2><p>Instead of displaying multiple notifications, you can create one notification that summarizes them all. For example, a messaging app might have a summary notification that says "3 new messages.” Upon expansion, it could show a snippet for each message.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1gQJAXOy07TM1f1HZWDWch8sxW8DOo2dA%2Fas-notifications-behavior-2-collapsed.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-6">
+<p>Multiple notifications summarized, shown in collapsed view.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1No_tJqmpuDvMoBG0i7vb1rCsNsQHkjZ8%2Fas-notifications-behavior-2-expanded.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-7">
+<p>Multiple notifications summarized, shown in expanded view.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Grouping</h2><p>Your app can present multiple notifications according to hierarchy:</p><ul class="lst-kix_list_4-0 start"><li>A parent notification displays a summary of its child notifications</li><li>If the parent notification is expanded by the user, all child notifications are revealed</li><li>A child notification may be expanded to reveal its entire content</li></ul><p>Child notifications are presented without duplicate header information. For example, if a child notification has the same app icon as its parent, then the child’s header doesn’t include an icon. </p><p>Child notifications should be understandable if they appear solo, as the system may show them outside of the group when they arrive.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-8" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1WSjp_gs-8DTDGgko01OrC6zOUWS2ZyyK%2Fas-notifications-behavior-3-collapsed.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-8">
+<p>Grouped notifications collapsed view</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-9" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1H0UD0WnITUHlmde0lJCNvOxYWvty4kxZ%2Fas-notifications-behavior-3-expanded.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-9">
+<p>Grouped notifications expanded view</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Expanded views Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Expanded views</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>You may display more information in a notification through an expanded view, without navigating away from the notification. A notification may offer up to three...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>You may display more information in a notification through an expanded view, without navigating away from the notification.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-10" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F145kXoiAod_7dZu58CQR64oO_1dO8g3k3%2Fas-notifications-behavior-4-collapsed.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-10">
+<p>Collapsed notification </p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-11" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1TQri9pLeBjQxk_Ct3Q0Jaj7cCIDrofcI%2Fas-notifications-behavior-4-expanded.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-11">
+<p>Expanded notification</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>A notification may offer up to three actions when expanded. It should not duplicate the action taken from tapping on the notification body.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-12" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1RbNSH8IOZwfKXyp2hpxzZmQQjjnuOU5G%2Fas-notifications-behavior-5.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-12">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t include text actions that duplicate the behavior of tapping on the notification body.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="behavior-figure-caption-13" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1Ivv97ZGyx5_nJvbRpENOsrKwYwKUFDMq%2Fas-notifications-behavior-6.png" src="">
+</img></div>
+</div>
+<figcaption id="behavior-figure-caption-13">
+<p class="s-tag-caption do">Do.</p><p>When Android's Clock app has a timer running, this notification lets the user pause or add a minute directly from the notification.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Enable typing into notifications Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Enable typing into notifications</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>You may enable the user to type directly into a notification. Users may type small amounts of text, such replying to a text message or...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>You may enable the user to type directly into a notification. Users may type small amounts of text, such replying to a text message or jotting a brief note. </p><p>For long-form typing, navigate users to your app, where they benefit from more space to view and edit text.</p><p>If you're using this functionality for a messaging app, keep the notification present after the user has sent the reply, and wait until the conversation is paused before automatically dismissing it.</p><figure class="inline-media inline-media--video" data-maxwidth="1520px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 73.6842105263%;">
+<video aria-describedby="behavior-figure-caption-14" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1un-9WpfChyZpj-X2jvAY94qRPX_hbGGO%2Fnotifications-enabletyping.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="behavior-figure-caption-14">
+<p>Users of Android's Messages app can reply directly to any message without leaving the notification</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="types-of-notifications" class="container container--large js-waypoints-trigger article__section" data-section-title="Types of notifications" aria-label="Types of notifications">
+          <h2 class="article__chapter-title">
+            Types of notifications
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">Android only, notifications</div>
+<p>Notifications are considered either transactional or non-transactional. </p><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Transactional Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Transactional</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Transactional notifications provide content that a user must receive at a specific time in order to do one of the following: Transactional notifications can help...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><p>Transactional notifications provide content that a user must receive at a specific time in order to do one of the following:</p><ul class="lst-kix_jhb70eujfa12-0 start"><li>Enable human-to-human interaction</li><li>Function better in daily life</li><li>Control or resolve transient device states</li><li>Non-transactional</li><li>If none of the above situations describe your notification, then it is non-transactional.</li></ul><hr class="spacer" role="presentation"/></div></section><section class="module col-1"><div class="module"><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Transactional notifications can help users...</p></td><td colspan="1" rowspan="1"><p>Examples</p></td></tr><tr><td colspan="1" rowspan="1"><p>Enable human-to-human interaction</p></td><td colspan="1" rowspan="1"><ul class="lst-kix_list_1-0 start"><li>Incoming phone calls or text messages</li><li>Notification of a user's turn in a two-player game        </li></ul></td></tr><tr><td colspan="1" rowspan="1"><p>Function better in daily life</p></td><td colspan="1" rowspan="1"><ul class="lst-kix_list_6-0 start"><li>Calendar event about to take place</li><li>A reminder or alarm set up by the user</li><li>Delayed flight</li><li>Delivered order                </li></ul></td></tr><tr><td colspan="1" rowspan="1"><p>Monitor, control, or resolve temporary device states</p></td><td colspan="1" rowspan="1"><ul class="lst-kix_list_2-0 start"><li>Music playing</li><li>Turn-by-turn navigation</li><li>Stopwatch running</li><li>Screenshot taken</li><li>App running in the background</li></ul></td></tr></tbody></table></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Non-transactional opt-out and opt-in  Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Non-transactional opt-out and opt-in </h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Non-transactional notifications should be optional, as they may not appeal to all users. You can make them optional in one of two ways: Avoid the...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><p>Non-transactional notifications should be optional, as they may not appeal to all users. You can make them optional in one of two ways:</p><ul class="lst-kix_rjh4j4yd2e66-0 start"><li>Opt-out: Users receive opt-out notifications by default, but they may stop receiving them by turning off a setting.</li><li>Opt-in: Users only receive opt-in notifications by turning on a setting in your app.</li></ul><h2>Opt-out </h2><p>Avoid the opt-out approach unless your notifications meet both of the following criteria:</p><ul class="lst-kix_1mm0h9ypyjou-0 start"><li>They provide concrete value to the user </li><li>They clearly relate to the user's context (such as current location, current date or time, past history, or expressed interests)</li></ul><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Example notification</p></td><td colspan="1" rowspan="1"><p>Reason to avoid using opt-out notifications here</p></td></tr><tr><td colspan="1" rowspan="1"><p>A random tip on how to use an app</p></td><td colspan="1" rowspan="1"><p>Provides concrete user value but isn't contextual</p></td></tr><tr><td colspan="1" rowspan="1"><p>A prompt to rate content recently used in the app</p></td><td colspan="1" rowspan="1"><p>Contextual, but doesn't provide concrete user value</p></td></tr></tbody></table></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="types-of-notifications-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F11hBN8Jii__cLuvVXoe0ttnzUtfCsn2g3%2Fas-notifications-types-1.png" src="">
+</img></div>
+</div>
+<figcaption id="types-of-notifications-figure-caption-0">
+<p>This notification from YouTube takes the opt-out approach. It offers both context (a YouTube channel the user has subscribed to) and value (a new video from that channel). The "Options" action navigates the user to where they can opt out of future notifications for this channel.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Opt-in </h2><p>The opt-in approach is more conservative. Because users explicitly choose to receive these notifications, it's more likely they'll be glad to see them. However, they must visit settings to find out how to receive them. You may inform users about these notifications from other places in your app, such as an <a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "../communication/onboarding.html"}
+' href="../communication/onboarding.html">
+  onboarding flow</a> or a dismissible <a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "../components/cards.html"}
+' href="../components/cards.html">
+  card</a>.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="types-of-notifications-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1CLUTBX_XdlgleYqYpgLsBN1xAIvsrHom%2Fas-notifications-types-2.png" src="">
+</img></div>
+</div>
+<figcaption id="types-of-notifications-figure-caption-1">
+<p>This app takes the opt-in approach. A card at the top of the app lets users know that they can receive notifications for breaking news stories. If the user wants to opt in, they choose “Yes.” Otherwise, they choose “No Thanks” and remain opted out. This choice is also available in the app's settings.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="settings" class="container container--large js-waypoints-trigger article__section" data-section-title="Settings" aria-label="Settings">
+          <h2 class="article__chapter-title">
+            Settings
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">Android only, notifications</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Channels in Android O Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Channels in Android O</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>When you upgrade your app to Android O, you'll be required to define channels for your notifications – one for each type of notification you...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>When you upgrade your app to Android O, you'll be required to define channels for your notifications – one for each type of notification you want to send.</p><p><br>
+Users control app notifications in Android O with channels. If a user doesn't want a certain notification from your app, they can block that channel rather than all notifications.</br></p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="settings-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1VYcbdSRWvrz3d175JG-pjul5mw9tXgfz%2Fas-notifications-settings.png" src="">
+</img></div>
+</div>
+<figcaption id="settings-figure-caption-0">
+<p>This app has three channels, which may be referred to as "categories" in the UI.</p></figcaption>
+</figure></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Channel importance levels</h2><p>For each channel you define, you'll assign it an importance level. Starting in Android O, importance levels control the behavior of each channel (taking the place of priority levels). </p><p>Importance levels have the following restrictions:</p><ul class="lst-kix_list_3-0 start"><li>The importance level you assign will be the channel’s default. Users can change a channel’s importance level in Android Settings. </li><li>Once you choose an importance level, you're limited in how you can change it: you may only lower the importance, and only if the user hasn't explicitly changed it.</li></ul><p><br>
+Channel importance should be chosen with consideration for the user's time and attention. When an unimportant notification is disguised as urgent, it can produce unnecessary alarm.</br></p><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Importance</p></td><td colspan="1" rowspan="1"><p>Behavior</p></td><td colspan="1" rowspan="1"><p>Usage</p></td><td colspan="1" rowspan="1"><p>Examples</p></td></tr><tr><td colspan="1" rowspan="1"><p>HIGH</p></td><td colspan="1" rowspan="1"><p>Makes a sound and appears on screen</p></td><td colspan="1" rowspan="1"><p>Time-critical information that the user must know, or act on, immediately</p></td><td colspan="1" rowspan="1"><p>Text messages, alarms, phone calls</p></td></tr><tr><td colspan="1" rowspan="1"><p>DEFAULT</p></td><td colspan="1" rowspan="1"><p>Makes a sound</p></td><td colspan="1" rowspan="1"><p>Information that should be seen at the user’s earliest convenience, but not interrupt what they're doing</p></td><td colspan="1" rowspan="1"><p>Traffic alerts, task reminders</p></td></tr><tr><td colspan="1" rowspan="1"><p>LOW</p></td><td colspan="1" rowspan="1"><p>No sound</p></td><td colspan="1" rowspan="1"><p>Notification channels that don't meet the requirements of other importance levels</p></td><td colspan="1" rowspan="1"><p>New content the user has subscribed to, social network invitations</p></td></tr><tr><td colspan="1" rowspan="1"><p>MIN</p></td><td colspan="1" rowspan="1"><p>No sound or visual interruption</p></td><td colspan="1" rowspan="1"><p>Non-essential information that can wait or isn’t specifically relevant to the user</p></td><td colspan="1" rowspan="1"><p>Nearby places of interest, weather, promotional content</p></td></tr></tbody></table></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Defining channels</h2><p>To define your channels, take inventory of all the notifications you want to send. Group these notifications into sets that have the following things in common:</p><ul class="lst-kix_list_2-0 start"><li>Subject matter. A single topic can succinctly describe all of these notifications, such as "Downloads."</li></ul><p>Desired importance level. Because notifications in a channel share one importance level, they should carry a similar level of importance to one another from the user’s perspective.</p><h2>Grouping channels</h2><p>You can group your channels to make it easier for users to scan your list of channels in Android Settings.</p><p>Only create channel groupings if:</p><ul class="lst-kix_list_1-0 start"><li>You have more than 10 channels</li><li>Your app supports multiple user accounts (such as personal and business accounts) allowing users to have the same channel names and functions across accounts        </li></ul><h2>Link your app's settings to Android channel settings</h2><p>Keep the settings in your app consistent with those in Android channels. If your app offers controls for different types of notifications, direct users to the settings of the appropriate Android channel settings to make changes.</p><h2>Channels and foreground services</h2><p>In Android O, a channel’s default importance level for <a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "../patterns/notifications.html#notifications-usage"}
+' href="../patterns/notifications.html#notifications-usage">
+  foreground service</a> notifications must be at least IMPORTANCE_LOW so that it shows an icon in the status bar. </p><p>Channels using the less-prominent IMPORTANCE_MIN level will trigger an extra notification from Android at IMPORTANCE_LOW, stating that the app is using battery.</p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Priority levels without channels Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Priority levels without channels</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>For apps not yet upgraded to Android O, you'll need to assign a priority level for each individual notification. Some priority levels offer the option...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><p>For apps not yet upgraded to Android O, you'll need to assign a priority level for each individual notification. Some priority levels offer the option to play sound.</p><h2>Priority levels</h2><p>To affect how each notification is delivered to users, assign it a priority level. The higher the priority, the more interruptive it will be. For example, MAX and HIGH priority notifications will peek onto the user's current screen, regardless of what they are doing. When in doubt, choose a lower priority.</p><h2>Notification sounds</h2><p>Notifications assigned a priority of DEFAULT (or higher) have the option to play a sound (using a sound file you provide) when the notification is delivered. However, a notification should only use sound if:</p><ul class="lst-kix_list_4-0 start"><li>It helps the user uphold a time-sensitive social expectation, such as an incoming phone call or imminent work meeting.</li><li>It helps the user in daily life, such as letting them know that a flight is delayed.</li><li>The user has explicitly requested that this notification make a sound upon arrival (this option is off by default).</li></ul></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Pre-defined categories Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Pre-defined categories</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Whether you're using channels or not, assign each individual notification to the most suitable predefined category. Android may use this information to make ranking and...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><p>Whether you're using channels or not, assign each individual notification to the most suitable predefined category. Android may use this information to make ranking and filtering decisions.</p><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Description</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_CALL</p></td><td colspan="1" rowspan="1"><p>Incoming call (voice or video) or similar synchronous communication request</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_MESSAGE</p></td><td colspan="1" rowspan="1"><p>Incoming direct message (SMS, instant message, etc.)</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_EMAIL</p></td><td colspan="1" rowspan="1"><p>Asynchronous bulk message (email)</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_EVENT</p></td><td colspan="1" rowspan="1"><p>Calendar event</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_PROMO</p></td><td colspan="1" rowspan="1"><p>Promotion or advertisement</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_ALARM</p></td><td colspan="1" rowspan="1"><p>Alarm or timer</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_PROGRESS</p></td><td colspan="1" rowspan="1"><p>Progress of a long-running background operation</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_SOCIAL</p></td><td colspan="1" rowspan="1"><p>Social network or sharing update</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_ERROR</p></td><td colspan="1" rowspan="1"><p>Error in background operation or authentication status</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_TRANSPORT</p></td><td colspan="1" rowspan="1"><p>Media transport control for playback</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_SYSTEM</p></td><td colspan="1" rowspan="1"><p>System or device status update. Reserved for system use.</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_SERVICE</p></td><td colspan="1" rowspan="1"><p>Indication of running background service</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_RECOMMENDATION</p></td><td colspan="1" rowspan="1"><p>A specific, timely recommendation for a single thing. For example, a news app might recommend a news story the user might want to read next.</p></td></tr><tr><td colspan="1" rowspan="1"><p>CATEGORY_STATUS</p></td><td colspan="1" rowspan="1"><p>Ongoing information about device or contextual status</p></td></tr></tbody></table></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="lock-screen" class="container container--large js-waypoints-trigger article__section" data-section-title="Lock screen" aria-label="Lock screen">
+          <h2 class="article__chapter-title">
+            Lock screen
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">Android only, notifications</div>
+<div class="col-list"><section class="module col-1"><div class="module"><p>A user may choose to show notifications when their screen is locked. These notifications may conceal any content that an app marks as sensitive. Android evaluates each notification's visibility level to figure out what can safely be shown. </p></div></section></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Sensitive content on lock screens Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Sensitive content on lock screens</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Because notifications are visible on the lock screen, user privacy is an important consideration. For each notification you create, a visibility level is set to...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Because notifications are visible on the lock screen, user privacy is an important consideration. For each notification you create, a visibility level is set to either public, private, or secret. </p><p>Public notifications are fully visible on secure lock screens, while secret notifications are hidden.</p><p>Private notifications fall in the middle: they show only basic information, including the name of the app that posted it and its icon. In place of the regular content – which will be hidden – you have the option to show text that doesn't reveal personal information, such as "2 new messages".</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="lock-screen-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1qNzjk_ypKXqyMqyJ6gPAp4YELRZq_nw0%2Fas-notifications-lockscreen-1.png" src="">
+</img></div>
+</div>
+<figcaption id="lock-screen-figure-caption-0">
+<p>This user has chosen to show all notification content on the lock screen.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="lock-screen-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1SCZ3JJIJ7B7qPDpPKFwJYMjGqTgqf8O0%2Fas-notifications-lockscreen-2.png" src="">
+</img></div>
+</div>
+<figcaption id="lock-screen-figure-caption-1">
+<p>This user has chosen to hide sensitive content from the lock screen. Because these apps gave their notifications a visibility level of "private,” no content title or text appears.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="style" class="container container--large js-waypoints-trigger article__section" data-section-title="Style" aria-label="Style">
+          <h2 class="article__chapter-title">
+            Style
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">Android only, notifications</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Clear and concise text Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Clear and concise text</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Android truncates content titles to a single line (even when expanded). Content titles should: Content text should:</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Android truncates content titles to a single line (even when expanded). </p><p>Content titles should:</p><ul class="lst-kix_list_3-0 start"><li>Be under under 30 characters long</li><li>Contain the most important information</li><li>Avoid variables – unless they contain a number or short text string, or are preceded by text</li><li>Exclude the app's name, which already appears in the header</li></ul><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="style-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1b0h8dgqfBsXHt_uoMoeMQjpMvc9w4Ld7%2Fas-notifications-style-1.png" src="">
+</img></div>
+</div>
+<figcaption id="style-figure-caption-0">
+<p class="s-tag-caption dont">Don’t.</p><p>The content title shows the app name, which is redundant with the header area and uses up available characters.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Content text should:</p><ul class="lst-kix_list_2-0 start"><li>Avoid exceeding the 40-character limit</li><li>Not repeat what's in the content title</li></ul><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="style-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F12oRIZKR6XjYZNfgc_50wuuULibE_jLam%2Fas-notifications-style-2.png" src="">
+</img></div>
+</div>
+<figcaption id="style-figure-caption-1">
+<p class="s-tag-caption do">Do.</p><p>The content title shows the most important information.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse The large icon Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">The large icon</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>In Android N, the large icon is only meant for specific situations in which imagery meaningfully reinforces the notification's content, including: Large icons should be...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>In Android N, the large icon is only meant for specific situations in which imagery meaningfully reinforces the notification's content, including:</p><ul class="lst-kix_list_1-0 start"><li>Communication from another person, such as the image of someone sending a message </li><li>The source of content if it's different than the app sending the notification, such as the logo from a YouTube channel to which the user is subscribed</li><li>Meaningful symbols about the notification, such as an arrow symbol for driving directions</li></ul><p>Large icons should be circular when showing a person, but square in all other cases.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="style-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F183-_2eEb8-5YMSoW31amXw8uXOz2e74g%2Fas-notifications-style-3.png" src="">
+</img></div>
+</div>
+<figcaption id="style-figure-caption-2">
+<p class="s-tag-caption dont">Don’t.</p><p>The large icon is not intended for branding.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="style-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1ZcHSuw4jAh9JQQhgQn3Z9yqMAVly23MQ%2Fas-notifications-style-4.png" src="">
+</img></div>
+</div>
+<figcaption id="style-figure-caption-3">
+<p class="s-tag-caption do">Do.</p><p>The large icon is meant to reinforce the content of the notification in a meaningful way, such as a person's photo attached to a message notification.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="templates" class="container container--large js-waypoints-trigger article__section" data-section-title="Templates" aria-label="Templates">
+          <h2 class="article__chapter-title">
+            Templates
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">Android only, notifications</div>
+<p>Google uses the following notification templates in its Android apps. These templates can be customized to some extent for your app.</p><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Standard template Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Standard template</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The standard template is suitable for most notifications, allowing succinct text, a large icon (when applicable), and actions.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>The standard template is suitable for most notifications, allowing succinct text, a large icon (when applicable), and actions.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="templates-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1DM3yQsWh_dVsv2xtXeYXKhO1OBGiK6Wy%2Fas-notifications-templates-1-collapsed.png" src="">
+</img></div>
+</div>
+<figcaption id="templates-figure-caption-0">
+<p>Standard template for collapsed notifications</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="templates-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1EoQUkOK8BWMNYCf2zW0uoOYCbZE-r1Ao%2Fas-notifications-templates-1-expanded.png" src="">
+</img></div>
+</div>
+<figcaption id="templates-figure-caption-1">
+<p>Standard template for expanded notifications</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Big text template Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Big text template</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This template should be used when long text is displayed. It lets the user preview more text when the notification is expanded.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>This template should be used when long text is displayed. It lets the user preview more text when the notification is expanded.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="templates-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1nKjJDms4xQdVuNl6duqzg_4BgiWqJlYf%2Fas-notifications-templates-2-collapsed.png" src="">
+</img></div>
+</div>
+<figcaption id="templates-figure-caption-2">
+<p>Big text template for collapsed notifications</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="templates-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1QSNk584vZeYHQrEvqxi7ABi7Xgo5akh_%2Fas-notifications-templates-2-expanded.png" src="">
+</img></div>
+</div>
+<figcaption id="templates-figure-caption-3">
+<p>Big text template for expanded notifications</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Big picture template Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Big picture template</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This template should be used when a notification contains a picture. The large icon offers a thumbnail of the picture, and the user can get...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>This template should be used when a notification contains a picture. The large icon offers a thumbnail of the picture, and the user can get a bigger preview by expanding the notification.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="templates-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F13CSc9bN3G19KrcwgKR7zZfh-_Ed25Mn9%2Fas-notifications-templates-3-collapsed.png" src="">
+</img></div>
+</div>
+<figcaption id="templates-figure-caption-4">
+<p>Big picture template for collapsed notifications</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="templates-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1n3tNMornBgBQYvDEY7a3BWxBFmZje1j8%2Fas-notifications-templates-3-expanded.png" src="">
+</img></div>
+</div>
+<figcaption id="templates-figure-caption-5">
+<p>Big picture template for expanded notifications</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Progress template Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Progress template</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This template should be used for user-initiated activities that take time to complete and can be canceled at any time. (Non-cancelable activities don't warrant notifications.)</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>This template should be used for user-initiated activities that take time to complete and can be canceled at any time. (Non-cancelable activities don't warrant notifications.)</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="templates-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1_Mfq-NTRiDlgha9RogZg-ImGSbbRAs9W%2Fas-notifications-templates-4-collapsed.png" src="">
+</img></div>
+</div>
+<figcaption id="templates-figure-caption-6">
+<p>Progress template for collapsed notifications</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="templates-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1ECEu8yvlGwbu7b9dHiqPDWlVYkr1-Wce%2Fas-notifications-templates-4-expanded.png" src="">
+</img></div>
+</div>
+<figcaption id="templates-figure-caption-7">
+<p>Progress template for expanded notifications</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Media template Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Media template</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This template lets the user control media currently playing from an app.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>This template lets the user control media currently playing from an app. </p><ul class="lst-kix_list_1-0 start"><li>The collapsed view displays up to three actions, and the large icon can show a related image, such as an album cover. </li><li>The expanded view displays up to five actions with a larger image, or six actions if no image is displayed. Colors from provided images automatically color the notification's background and other elements.</li></ul><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="templates-figure-caption-8" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F15IKBln_h5tzesYOeoGiKCkEDEODM_NAh%2Fas-notifications-templates-5-collapsed.png" src="">
+</img></div>
+</div>
+<figcaption id="templates-figure-caption-8">
+<p>Media template for collapsed notifications</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="templates-figure-caption-9" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1Jw_Fi_bb-agd5KrWvHHeymNMinmWcxuc%2Fas-notifications-templates-5-expanded.png" src="">
+</img></div>
+</div>
+<figcaption id="templates-figure-caption-9">
+<p>Media template for expanded notifications</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Messaging template Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Messaging template</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This template is for real-time communication. Optionally, you can offer users the ability to type replies directly into the notification.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>This template is for real-time communication. Optionally, you can offer users the ability to type replies directly into the notification.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="templates-figure-caption-10" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1qsW61MKJVC_mB2SGzmx0I5OOOpzCRGfQ%2Fas-notifications-templates-6-collapsed.png" src="">
+</img></div>
+</div>
+<figcaption id="templates-figure-caption-10">
+<p>Messaging template for collapsed notifications</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="templates-figure-caption-11" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1T7VJdCbz6M4v_42RFsAC9mIHHVg7yzEq%2Fas-notifications-templates-6-expanded.png" src="">
+</img></div>
+</div>
+<figcaption id="templates-figure-caption-11">
+<p>Messaging template for expanded notifications</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+
+  </div>
+
+  <div class="container container--large">
+
+  <h2>Up next
+      <div class="article-controls">
+        
+      </div>
+  </h2>
+
+<div class="suggested-articles"><div>
+<a aria-label="Android permissions" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../platform-guidance/android-permissions.html"}
+' href="../platform-guidance/android-permissions.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1nnMUmjsBW1bibL-sUpIiDLWrSEtRHexH/platform-guidance-thumbnail-2x1.png');">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Platform guidance</h3>
+<h4 class="suggested-articles__item-subtitle">Android permissions</h4>
+</a>
+<a aria-label="Banner" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../components/banners.html"}
+' href="../components/banners.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1u12mzKFwDjDwQyy9r0FF1jjuB8plIjxm/banner-thumbnail-2x1.png');">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Components</h3>
+<h4 class="suggested-articles__item-subtitle">Banner</h4>
+</a><br>
+
+<a aria-label="Snackbar" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../components/snackbars.html"}
+' href="../components/snackbars.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1I7z2-6j6vJB5IuuO7MscUrazLZyKOZ46/snackbar-thumbnail-2x1.png');">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Components</h3>
+<h4 class="suggested-articles__item-subtitle">Snackbar</h4>
+</a></div></div>  </div>
+</article>
+    </main>
+
+
+
+<footer class="footer">
+  <div class="container container--jumbo">
+    <div class="footer-block footer-block--about">
+      <a class="footer-block__logo js-analytics-click" href="/"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "/"}
+'>
+        <img class="footer-block__material-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/images/material_logo.svg" alt="Material Design"/>
+      </a>
+      <div class="footer-block__content">
+        <p class="footer-block__description">Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
+        <ul class="footer-block__social-nav">
+          <li class="footer-block__social-nav-item">  <a href="https://www.github.com/material-components" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on GitHub"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.github.com/material-components"}
+'>GitHub</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.twitter.com/materialdesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on Twitter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.twitter.com/materialdesign"}
+'>Twitter</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/googledesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.youtube.com/googledesign"}
+'>YouTube</a>
+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-block footer-block--legal">
+      <a class="footer-block__logo js-analytics-click" href="https://www.google.com"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.google.com"}
+'>
+        <img class="footer-block__google-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/images/google_logo.svg" alt="Google"/>
+      </a>
+      <div class="footer-block__content">
+        <ul class="footer-block__legal-nav">
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Privacy Policy"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/privacy"}
+'>Privacy Policy</a>
+</li>
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Terms of Service"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/terms"}
+'>Terms of Service</a>
+</li><li class="footer-block__legal-nav-item"><a href="javascript:void(0)" class="footer-block__legal-nav-link" onclick="try{userfeedback.api.startFeedback({'productId': '1027542', 'bucket': 'material_spec', 'locale': 'en', 'allowNonLoggedInFeedback': true});return false;}catch(e){}">Feedback</a></li></ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="ui-mask js-ui-mask"></div>
+<div
+    class="lightbox js-lightbox"
+    data-comp="Lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-labelledby="sr-lightbox-title">
+  <h2 class="screenreader-only sr-lightbox-title" tabindex="0">
+    Explore how Shrine, a retail app, uses Material Design.
+  </h2>
+
+    <header class="lightbox__header">
+      <div class="lightbox__header-title">
+        <span
+            class="lightbox__button js-lightbox-close"
+            data-comp="Tooltip"
+            data-props-tooltip='{"tip": "Close", "direction": "bottom"}'>
+          <i
+              class="material-icons notranslate material-icons--padded mdc-ripple-surface"
+              data-mdc-ripple-is-unbounded tabindex="0">
+            close
+          </i>
+        </span>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+
+      <div class="lightbox__actions">
+        <button type="button" name="button" class="lightbox-redlines-toggle js-redline-sidebar-toggle" data-comp="Tooltip" data-props-tooltip='{"tip": "View Specs", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>flip</i>
+        </button>
+
+        <button type="button" name="button" class="lightbox__button js-share" data-comp="Tooltip" data-props-tooltip='{"tip": "Share", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>share</i>
+        </button>
+
+      </div>
+    </header>
+
+    <div class="lightbox__template js-zoom-wrapper">
+      <div class="lightbox__content js-lightbox-content">
+<img class="ui-loader" src="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/images/loader.svg" alt="loader" aria-hidden="true" />      </div>
+<div class="redline-sidebar js-lightbox-sidebar-container" data-comp="RedlineSidebar">
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Image only", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-image js-redline-sidebar-item" value="image" >
+        <i class="material-icons notranslate">&#xE3F4;</i>
+        <span class="redline-sidebar__label-text">Image only</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Measurements", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-measurements js-redline-sidebar-item" value="measurements" >
+        <i class="material-icons notranslate">format_shapes</i>
+        <span class="redline-sidebar__label-text">Measurements</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Text", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-text js-redline-sidebar-item" value="text" >
+        <i class="material-icons notranslate">format_size</i>
+        <span class="redline-sidebar__label-text">Text</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Color", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-colors js-redline-sidebar-item" value="colors" >
+        <i class="material-icons notranslate">palette</i>
+        <span class="redline-sidebar__label-text">Color</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Shape and Elevation", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-shapes js-redline-sidebar-item" value="shapes" >
+        <i class="material-icons notranslate">rounded_corner</i>
+        <span class="redline-sidebar__label-text">Shape and Elevation</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Components", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-components js-redline-sidebar-item" value="components" >
+        <i class="material-icons notranslate">category</i>
+        <span class="redline-sidebar__label-text">Components</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Notes", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-notes js-redline-sidebar-item" value="notes" >
+        <i class="material-icons notranslate">notes</i>
+        <span class="redline-sidebar__label-text">Notes</span>
+      </button>
+    </div>
+<div class="redline-sidebar__toggles js-redline-layer-toggles">
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--dimensions">
+        <input type="checkbox" id="dimensions" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="dimensions">Dimensions</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--padding">
+        <input type="checkbox" id="padding" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="padding">Padding</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--typography">
+        <input type="checkbox" id="typography" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="typography">Text baseline</label>
+  </div>
+</div><nav class="carousel__nav">
+  <button
+      class="carousel__button carousel__button--prev mdc-ripple-surface js-carousel-prev"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Previous", "direction": "right"}'>
+    <i class="material-icons notranslate">chevron_left</i>
+  </button>
+
+  <button
+      class="carousel__button carousel__button--next mdc-ripple-surface js-carousel-next"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Next", "direction": "left"}'>
+    <i class="material-icons notranslate">chevron_right</i>
+  </button>
+</nav><div class="zoom-buttons" data-comp="Zoom">
+  <div class="zoom-buttons__wrapper">
+
+    <button class="mdc-button-zoom js-zoom-out" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom out", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">remove</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-reset" data-comp="Tooltip" data-props-tooltip='{"tip": "Reset", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">search</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-in" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom in", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">add</i>
+    </button>
+
+    <div class="zoom-buttons__extras">
+      <button class="mdc-button-zoom js-colorpicker-toggle" data-comp="Tooltip Colorpicker" data-props-tooltip='{"tip": "Color picker", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">colorize</i>
+      </button>
+      <button class="mdc-button-zoom js-ruler-toggle" data-comp="Tooltip Ruler" data-props-tooltip='{"tip": "Ruler", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">straighten</i>
+      </button>
+    </div>
+
+  </div>
+</div>    </div>
+
+
+<aside class="mdc-dialog" role="alertdialog" aria-labelledby="mdc-dialog-label" aria-describedby="mdc-dialog-description" data-comp="Share">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-label" class="mdc-dialog__header__title">Share</h2>
+      <button type="button" class="mdc-dialog-share-close js-dialog-close">
+        <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>close</i>
+      </button>
+    </header>
+    <section id="mdc-dialog-description" class="mdc-dialog__body">
+      <input type="text" readonly class="mdc-dialog-share-url js-share-url" />
+      <button type="button" class="mdc-button mdc-ripple-surface mdc-dialog-copy js-dialog-copy">Copy</button>
+    </section>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside></div><div class="mdc-snackbar snackbar-wrapper" data-comp="Snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+  <div class="mdc-snackbar__text"></div>
+  <div class="mdc-snackbar__action-wrapper">
+    <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
+  </div>
+</div>
+    <script src="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js"></script>
+    <script src="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js"></script>
+    <script src="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/js/main.min.js"></script><script src="https://support.google.com/inapp/api.js"></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  </body>
+</html>

@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos;; img-src https://material.io flutter.github.io https://www.google-analytics.com https://stats.g.doubleclick.net https://www.gstatic.com img.shields.io &apos;self&apos; data:; script-src https://*.google.com http://*.google.com https://www.gstatic.com https://adservice.google.com https://www.googletagmanager.com https://www.google-analytics.com survey.g.doubleclick.net &apos;unsafe-inline&apos; &apos;self&apos;; style-src https://fonts.googleapis.com/css https://feedback.googleusercontent.com https://www.gstatic.com &apos;unsafe-inline&apos; &apos;self&apos;; font-src https://fonts.gstatic.com/s/ &apos;self&apos;; child-src https://feedback.googleusercontent.com http://www.google.com;">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Slider - Material Components for iOS</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-NHRPF8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta itemprop="name" content="Slider - Material Components for iOS">
+    <meta itemprop="image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta name="description" content="The Slider component provides a Material Design control for selecting a value from a continuous range or discrete set of values.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Slider - Material Components for iOS">
+    <meta property="og:site_name" content="Material Components for iOS">
+    <meta property="og:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta property="article:section" content="Slider">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@materialdesign">
+    <meta name="twitter:title" content="Material Components">
+    <meta name="twitter:description" content="Create beautiful apps with modular and customizable UI components">
+    <meta name="twitter:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <link rel="icon" sizes="192x192" href="/develop/images/app-icons/material-logo-app-icon-192x192.png">
+    <link rel="shortcut icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/develop/images/app-icons/material-logo-app-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/develop/images/app-icons/material-logo-app-icon-180x180.png">
+    <meta name="msapplication-TileImage" content="https://material.io/static/images/hub/favicons/hub-ms-icon-144x144.png">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/develop/css/codemirror.css">
+    <link rel="stylesheet" href="/develop/css/neo.css">
+    <link rel="stylesheet" href="/develop/css/app.css">
+    <script async defer src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body class="page page--detail page--components page--platform-ios">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <aside class="page__temporary-drawer mdc-drawer mdc-drawer--temporary page_drawer--temporary">
+      <nav class="temporary-drawer__drawer mdc-drawer__drawer mdc-drawer__content">
+        <header class="temporary-drawer__header mdc-drawer__header">
+          <div class="temporary-drawer__header-content mdc-drawer__header-content">
+            <div class="temporary-drawer__header-icon develop-toolbar__leading-icon"></div>
+            Material Design
+          </div>
+        </header>
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label toolbar-platform-chooser__label--no-capital">ios</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <h3 class="drawer-heading">Components</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/action-sheet/">
+                Action Sheet
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/animation-timing/">
+                Animation timing
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/bottomappbar/">
+                App bars: bottom
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/app-bars/">
+                App bars: top
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/app-bars/header-stack-view/">
+                    Header stack view
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/app-bars/navigation-bars/">
+                    Navigation bar
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/bottomnavigation/">
+                Bottom navigation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/buttons/">
+                Buttons
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/cards/">
+                Cards
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/chips/">
+                Chips
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/dialogs/">
+                Dialogs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/feature-highlights/">
+                Feature highlight
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/flexible-headers/">
+                Flexible header
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/ink/">
+                Ink
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/library-info/">
+                Library info
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/list/">
+                List
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/masked-transitions/">
+                Masked transitions
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/navigation-drawer/">
+                NavigationDrawer
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/page-controls/">
+                Page control
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/palette/">
+                Palettes
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/progress-indicators/">
+                Progress indicators
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/progress-indicators/activity-indicators/">
+                    Circular progress &amp; activity indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/progress-indicators/progress-views/">
+                    Linear progress indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/ripple/">
+                Ripple
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/shadows/">
+                Shadow layer
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/shadows/shadow-elevations/">
+                    Shadow elevations
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/shapelibrary/">
+                ShapeLibrary
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/shapes/">
+                Shapes
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/bottom-sheet/">
+                Sheets: bottom
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/sliders/">
+                Slider
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/snackbars/">
+                Snackbar
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/snackbars/overlay-window/">
+                    Overlay window
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/tabs/">
+                Tabs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/textfields/">
+                Text fields
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/theming/">
+                Theming
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/bidirectionality/">
+                    Bidirectionality
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/color/">
+                    Color scheme
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/shape/">
+                    Shape scheme
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/typography/">
+                    Typography scheme
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <a class="drawer-link drawer-link--no-list" href="/components/ios/docs/build-env/">Documentation</a>
+        </nav>
+      </nav>
+    </aside>
+    <header class="develop-toolbar mdc-toolbar mdc-toolbar--fixed
+    
+    
+      mdc-toolbar--platform
+    ">
+      <div class="search-form" id="top-level-search-bar">
+        <form class="search-form__form" id="top-level-search-form">
+          <input type="text" class="search-form__input" id="top-level-search-input" autocomplete="off">
+        </form>
+        <div class="search-form__label" id="top-level-search-label">Search</div>
+        <button class="search-form__button search-form__button--close" id="top-level-search-close" aria-label="Close search">
+          <div class="search-form__close-icon" id="close-button-icon" data-mdc-ripple-is-unbounded=""></div>
+        </button>
+      </div>
+      <div class="develop-toolbar__row mdc-toolbar__row">
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="menu-button" id="menu-open">
+            <div class="menu-button__icon menu-button__icon--initial-load" id="menu-icon"></div>
+          </button>
+          <a class="develop-toolbar__title-link" href="/">
+            <div class="develop-toolbar__leading-icon"></div>
+            <h1 class="develop-toolbar__title mdc-toolbar__title">
+              Material Design
+            </h1>
+          </a>
+        </section>
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+          <nav id="navigation-tabs" class="develop-tab-bar">
+            <a href="/design" class="develop-tab">
+              Design
+            </a>
+            <a href="/components" class="develop-tab">
+              Components
+            </a>
+            <a href="/develop" class="develop-tab develop-tab--active">
+              Develop
+              <span class="develop-tab__nav-indicator"></span>
+            </a>
+            <a href="/resources" class="develop-tab">
+              Resources
+            </a>
+          </nav>
+          <section class="develop-toolbar__section develop-toolbar__section--search mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+            <button class="search-form__button search-form__button--open" id="top-level-search-open" aria-label="Search">
+              <div class="search-form__search-icon" id="spyglass-icon"></div>
+            </button>
+          </section>
+        </section>
+      </div>
+    </header>
+    <div class="page__content page__flex-element">
+      <div class="page__drawer mdc-permanent-drawer">
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label toolbar-platform-chooser__label--no-capital">ios</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <h3 class="drawer-heading">Components</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/action-sheet/">
+                Action Sheet
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/animation-timing/">
+                Animation timing
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/bottomappbar/">
+                App bars: bottom
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/app-bars/">
+                App bars: top
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/app-bars/header-stack-view/">
+                    Header stack view
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/app-bars/navigation-bars/">
+                    Navigation bar
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/bottomnavigation/">
+                Bottom navigation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/buttons/">
+                Buttons
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/cards/">
+                Cards
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/chips/">
+                Chips
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/dialogs/">
+                Dialogs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/feature-highlights/">
+                Feature highlight
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/flexible-headers/">
+                Flexible header
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/ink/">
+                Ink
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/library-info/">
+                Library info
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/list/">
+                List
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/masked-transitions/">
+                Masked transitions
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/navigation-drawer/">
+                NavigationDrawer
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/page-controls/">
+                Page control
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/palette/">
+                Palettes
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/progress-indicators/">
+                Progress indicators
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/progress-indicators/activity-indicators/">
+                    Circular progress &amp; activity indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/progress-indicators/progress-views/">
+                    Linear progress indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/ripple/">
+                Ripple
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/shadows/">
+                Shadow layer
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/shadows/shadow-elevations/">
+                    Shadow elevations
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/shapelibrary/">
+                ShapeLibrary
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/shapes/">
+                Shapes
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/bottom-sheet/">
+                Sheets: bottom
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/sliders/">
+                Slider
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/snackbars/">
+                Snackbar
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/snackbars/overlay-window/">
+                    Overlay window
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/tabs/">
+                Tabs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/textfields/">
+                Text fields
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/theming/">
+                Theming
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/bidirectionality/">
+                    Bidirectionality
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/color/">
+                    Color scheme
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/shape/">
+                    Shape scheme
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/typography/">
+                    Typography scheme
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <a class="drawer-link drawer-link--no-list" href="/components/ios/docs/build-env/">Documentation</a>
+        </nav>
+      </div>
+      <section class="page__main-section">
+        <article class="page__article article article--icon-slider">
+          <!-- This file was auto-generated using ./scripts/generate_readme Slider -->
+          <h1 id="slider">Slider</h1>
+          <p><a href="https://github.com/material-components/material-components-ios/issues?q=is%3Aopen+is%3Aissue+label%3Atype%3ABug+label%3A%5BSlider%5D"><img src="https://img.shields.io/badge/dynamic/json.svg?label=open%20bugs&amp;url=https%3A%2F%2Fapi.github.com%2Fsearch%2Fissues%3Fq%3Dis%253Aopen%2Blabel%253Atype%253ABug%2Blabel%253A%255BSlider%255D&amp;query=%24.total_count" alt="Open bugs badge"></a></p>
+          <p>The <code>MDCSlider</code> object is a Material Design control used to select a value from a continuous range
+            or discrete set of values.</p>
+          <div class="article__asset article__asset--screenshot">
+            <img src="/components/images/content/92e2f57e2e220e0b4e025659942cb919.png" alt="Slider" width="375">
+          </div>
+          <h2 id="design--api-documentation">Design &amp; API documentation</h2>
+          <ul class="icon-list">
+            <li class="icon-list-item icon-list-item--spec"><a href="https://material.io/go/design-sliders">Material Design guidelines: Slider</a></li>
+            <li class="icon-list-item icon-list-item--link">Class: <a href="https://material.io/components/ios/catalog/sliders/api-docs/Classes/MDCSlider.html">MDCSlider</a></li>
+            <li class="icon-list-item icon-list-item--link">Protocol: <a href="https://material.io/components/ios/catalog/sliders/api-docs/Protocols/MDCSliderDelegate.html">MDCSliderDelegate</a></li>
+          </ul>
+          <h2 id="table-of-contents">Table of contents</h2>
+          <ul>
+            <li><a href="#installation">Installation</a>
+              <ul>
+                <li><a href="#installation-with-cocoapods">Installation with CocoaPods</a></li>
+                <li><a href="#importing">Importing</a></li>
+              </ul>
+            </li>
+            <li><a href="#usage">Usage</a>
+              <ul>
+                <li><a href="#typical-use">Typical use</a></li>
+                <li><a href="#stateful-apis">Stateful APIs</a></li>
+                <li><a href="#differences-from-uislider">Differences from UISlider</a></li>
+              </ul>
+            </li>
+            <li><a href="#extensions">Extensions</a>
+              <ul>
+                <li><a href="#color-theming">Color Theming</a></li>
+              </ul>
+            </li>
+            <li><a href="#accessibility">Accessibility</a>
+              <ul>
+                <li><a href="#-`-accessibilitylabel`"> <code>-accessibilityLabel</code></a></li>
+                <li><a href="#minimum-touch-size">Minimum touch size</a></li>
+              </ul>
+            </li>
+          </ul>
+          <hr>
+          <h2 id="installation">Installation</h2>
+          <!-- Extracted from docs/../../../docs/component-installation.md -->
+          <h3 id="installation-with-cocoapods">Installation with CocoaPods</h3>
+          <p>Add the following to your <code>Podfile</code>:</p>
+          <pre class="code-renderer code-renderer--install"><code class="language-bash">pod &apos;MaterialComponents/Slider&apos;
+</code></pre>
+          <p>Then, run the following command:</p>
+          <pre><code class="language-bash">pod install
+</code></pre>
+          <h3 id="importing">Importing</h3>
+          <p>To import the component:</p>
+          <div class="material-code-render">
+            <h4 id="swift">Swift</h4>
+            <pre><code class="language-swift">import MaterialComponents.MaterialSlider
+</code></pre>
+            <h4 id="objective-c">Objective-C</h4>
+            <pre><code class="language-objc">#import &quot;MaterialSlider.h&quot;
+</code></pre>
+          </div>
+          <h2 id="usage">Usage</h2>
+          <!-- Extracted from docs/typical-use.md -->
+          <h3 id="typical-use">Typical use</h3>
+          <p>MDCSlider can be be used like a standard <code>UIControl</code>.</p>
+          <div class="material-code-render">
+            <h4 id="swift-1">Swift</h4>
+            <pre><code class="language-swift">override func viewDidLoad() {
+  super.viewDidLoad()
+
+  let slider = MDCSlider(frame: CGRect(x: 50, y: 50, width: 100, height: 27))
+  slider.addTarget(self,
+                   action: #selector(didChangeSliderValue(senderSlider:)),
+                   for: .valueChanged)
+  view.addSubview(slider)
+}
+
+func didChangeSliderValue(senderSlider:MDCSlider) {
+  print(&quot;Did change slider value to: %@&quot;, senderSlider.value)
+}
+</code></pre>
+            <h4 id="objective-c-1">Objective C</h4>
+            <pre><code class="language-objc">- (void)viewDidLoad {
+  MDCSlider *slider = [[MDCSlider alloc] initWithFrame:CGRectMake(50, 50, 100, 27)];
+  [slider addTarget:self
+                action:@selector(didChangeSliderValue:)
+      forControlEvents:UIControlEventValueChanged];
+  [self.view addSubview:slider];
+}
+
+- (void)didChangeSliderValue:(MDCSlider *)slider {
+  NSLog(@&quot;did change %@ value: %f&quot;, NSStringFromClass([slider class]), slider.value);
+}
+</code></pre>
+          </div>
+          <!-- Extracted from docs/stateful-apis.md -->
+          <h3 id="stateful-apis">Stateful APIs</h3>
+          <p><code>MDCSlider</code> exposes stateful APIs to customize the colors for different control states. In order to use this API you must enable <code>statefulAPIEnabled</code> on your <code>MDCSlider</code> instances.</p>
+          <div class="material-code-render">
+            <h4 id="swift-2">Swift</h4>
+            <pre><code class="language-swift"> let slider = MDCSlider()
+ slider.isStatefulAPIEnabled = true
+
+ // Setting a thumb color for selected state.
+ slider.setThumbColor(.red, for: .selected)
+</code></pre>
+            <h4 id="objective-c-2">Objective C</h4>
+            <pre><code class="language-objc"> MDCSlider *slider = [[MDCSlider alloc] init];
+ slider.statefulAPIEnabled = YES;
+ 
+ // Setting a thumb color for selected state.
+ [slider setThumbColor:[UIColor redColor] forState:UIControlStateSelected];
+</code></pre>
+          </div>
+          <!-- Extracted from docs/differences-from-uislider.md -->
+          <h3 id="differences-from-uislider">Differences from UISlider</h3>
+          <p>Does not have api to:</p>
+          <ul>
+            <li>set right and left icons</li>
+            <li>set the thumb image</li>
+            <li>set the right and left track images (for a custom track)</li>
+            <li>set the right (background track) color</li>
+          </ul>
+          <p>Same features:</p>
+          <ul>
+            <li>set color for thumb via @c thumbColor</li>
+            <li>set color of track via @c trackColor</li>
+          </ul>
+          <p>New features:</p>
+          <ul>
+            <li>making the slider a snap to discrete values via property numberOfDiscreteValues</li>
+          </ul>
+          <h4 id="-accessibilityactivate"><code>-accessibilityActivate</code></h4>
+          <p>Our implementation closely resembles what UISlider does but it&#x2019;s not an exact match. On an
+            <code>accessibilityActivate</code> we move one sixth of the amount between the current value and the midpoint value.</p>
+          <h2 id="extensions">Extensions</h2>
+          <!-- Extracted from docs/color-theming.md -->
+          <h3 id="color-theming">Color Theming</h3>
+          <p>You can theme a slider with your app&#x2019;s color scheme using the ColorThemer extension.</p>
+          <p>You must first add the Color Themer extension to your project:</p>
+          <pre><code class="language-bash">pod &apos;MaterialComponents/Slider+ColorThemer&apos;
+</code></pre>
+          <div class="material-code-render">
+            <h4 id="swift-3">Swift</h4>
+            <pre><code class="language-swift">// Step 1: Import the ColorThemer extension
+import MaterialComponents.MaterialSlider_ColorThemer
+
+// Step 2: Create or get a color scheme
+let colorScheme = MDCSemanticColorScheme()
+
+// Step 3: Apply the color scheme to your component
+MDCSliderColorThemer.applySemanticColorScheme(colorScheme, to: component)
+</code></pre>
+            <h4 id="objective-c-3">Objective-C</h4>
+            <pre><code class="language-objc">// Step 1: Import the ColorThemer extension
+#import &quot;MaterialSlider+ColorThemer.h&quot;
+
+// Step 2: Create or get a color scheme
+id&lt;MDCColorScheming&gt; colorScheme = [[MDCSemanticColorScheme alloc] initWithDefaults:MDCColorSchemeDefaultsMaterial201804];
+
+// Step 3: Apply the color scheme to your component
+[MDCSliderColorThemer applySemanticColorScheme:colorScheme
+     toslider:component];
+</code></pre>
+          </div>
+          <!-- Extracted from docs/accessibility.md -->
+          <h2 id="accessibility">Accessibility</h2>
+          <p>To help ensure your slider is accessible to as many users as possible, please be sure to review the following recommendations:</p>
+          <h3 id="-accessibilitylabel"><code>-accessibilityLabel</code></h3>
+          <p>Set an appropriate <code>accessibilityLabel</code> value for your slider. This should reflect what the slider affects.</p>
+          <h4 id="swift">Swift</h4>
+          <pre><code class="language-swift">slider.accessibilityLabel = &quot;Volume level&quot;
+</code></pre>
+          <h4 id="objective---c">Objective - C</h4>
+          <pre><code class="language-objc">slider.accessibilityLabel = @&quot;Volume level&quot;;
+</code></pre>
+          <h3 id="minimum-touch-size">Minimum touch size</h3>
+          <p>Sliders currently respect the minimum touch size recomended by the Google Material spec <a href="https://material.io/design/layout/spacing-methods.html#touch-click-targets">touch areas should be 
+              at least 48 points high and 48 wide</a>. 
+            The height of the slider is set to 27 points so make sure there is sufficient space so that touches don&#x2019;t affect other 
+            elements.</p>
+        </article>
+        <footer class="footer">
+          <section class="footer__content">
+            <div class="footer__row">
+              <a class="footer__logo-link">
+                <div class="footer__logo"></div>
+              </a>
+              <div class="footer__copy">
+                <p class="footer__description">Material design is an adaptable system&#x2014;backed by open-source code&#x2014;guiding you in the principles and best practices of contemporary UI. Material helps teams streamline the designer-developer collaboration, reduce complexity, and enable fidelity through reusable components, patterns, and code libraries. All while adapting easily to your brand, platform, and users&#x2019; needs.</p>
+                <nav class="footer__navigation">
+                  <ul class="footer__navigation-list">
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.github.com/material-components" target="_blank" class="footer-block__social-nav-link">
+                        Github
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.twitter.com/materialdesign" target="_blank" class="footer-block__social-nav-link">
+                        Twitter
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.youtube.com/googledesign" target="_blank" class="footer-block__social-nav-link">
+                        YouTube
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://services.google.com/fb/forms/materialdesignnewsletter/" target="_blank" class="footer-block__social-nav-link" aria-label="Sign up for our newsletter">
+                        Newsletter
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="footer__row footer-legal">
+              <a class="footer-legal__logo-container" href="https://google.com">
+                <img src="/develop/images/google-logo-gray.svg" alt="Google">
+              </a>
+              <ul class="footer-legal__nav-list">
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/privacy" target="_blank" class="footer-legal__nav-list-link">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/terms" target="_blank" class="footer-legal__nav-list-link">
+                    Terms and Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </footer>
+      </section>
+    </div>
+    <template id="language-radio-template">
+      <div class="mdc-form-field">
+        <div class="mdc-radio">
+          <input class="mdc-radio__native-control" type="radio" id="" name="" value="">
+          <div class="mdc-radio__background">
+            <div class="mdc-radio__outer-circle"></div>
+            <div class="mdc-radio__inner-circle"></div>
+          </div>
+        </div>
+        <label class="language-name" for=""></label>
+      </div>
+    </template>
+    <button class="feedback-button" aria-label="Send Feedback" tabindex="0">
+    </button>
+    <script src="/develop/js/index.js" async></script>
+    <script src="https://www.gstatic.com/feedback/api.js" async></script>
+  </body>
+</html>

@@ -1,0 +1,2330 @@
+<!DOCTYPE html>
+<html lang="en" class="preload">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Applying shape to UI - Material Design</title>
+
+
+    <meta itemprop="name"        property="og:title"       name="twitter:title"       content="Applying shape to UI" />
+    <meta itemprop="description" property="og:description" name="twitter:description" content="The Material Shape System enables you to systematically apply unique shapes across a variety of components." />
+    <meta itemprop="image"       property="og:image"       name="twitter:image"       content="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F11s57vriDVF55wBuGKUPs4MAAJmukQWeY%2Fshapes-thumbnail-2x1.png" />
+    <meta itemprop="url"         property="og:url"         name="twitter:url"         content="https://material.io/design/shape/applying-shape-to-ui.html" />
+    <meta property="og:site_name" content="Material Design" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">    <link rel="shortcut icon" href="/favicon.ico">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHRPF8');</script>    <style>
+.animatable {
+        opacity: 0;
+        position: relative;
+        top: 16px;         transition: opacity 235ms cubic-bezier(.4,0,.2,1),
+                    top 500ms cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link href="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/css/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+    <link rel="preload" href="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/js/main.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js" as="script">
+
+
+  </head>
+
+  <body class="header-show page--article left-rail"
+        data-comp="Global "
+        data-slug-id="applyingShapeToUi"
+        data-spec-alias="mio-design"
+ >
+    <a class="screenreader-only" href="#main_content">Skip to main content</a>
+
+  <header class="header js-header" data-comp="Header">
+      <button class="header__hamburger header__button" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+        <i class="material-icons notranslate header__hamburger-icon" title="Toggle Navigation">menu</i>
+      </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+    <nav class="header__nav" role="navigation">
+      <ul class="header__nav-list header__nav-list--cleared">
+            <li class="header__nav-item  header__nav-item--active js-header-item" aria-current="true">
+    <a href="/design"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/design"}
+'>
+      Design
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/components"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/components"}
+'>
+      Components
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/develop"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/develop"}
+'>
+      Develop
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/resources"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/resources"}
+'>
+      Resources
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+      </ul>
+    </nav>
+
+    <form id="search-form" class="search-form js-search" data-comp="SearchForm" data-props-searchform='{"basePath": "/", "ajax": false, "showOnLoad": false}'>
+      <button class="search-form__back js-search-back js-analytics-click" type="button" aria-label="Exit search results"
+              data-analytics='  {
+    "event": "trackEvent",
+    "category": "search back",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+        <i class="material-icons notranslate">arrow_back</i>
+      </button>
+
+      <input id="search-query" class="search-form__input js-search-input" name="q" type="text" title="query" placeholder="Search" autocomplete="off" aria-label="Type your search and press enter.">
+    </form>
+
+    <button class="header__search header__button js-toggle-search js-analytics-click"
+            data-analytics='  {
+    "event": "trackEvent",
+    "category": "search",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+      <div class="icons-container mdc-ripple-surface" data-mdc-ripple-is-unbounded>
+        <i class="material-icons notranslate header__spyglass" aria-label="Search Material Design">search</i>
+        <i class="material-icons notranslate header__search-close" aria-label="Close search">close</i>
+      </div>
+    </button>
+  </header>
+
+
+<nav aria-label="Breadcrumbs" class="breadcrumbs" data-comp="Breadcrumbs" aria-hidden="true">
+    <button class="breadcrumbs__hamburger" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+      <i class="material-icons notranslate" title="Toggle Navigation">menu</i>
+    </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+  <ol class="container container--large breadcrumbs__list">
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click "
+           href="../shape"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../shape"}
+'>Shape</a>
+      </li>
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link"
+           href="../shape/applying-shape-to-ui.html"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../shape/applying-shape-to-ui.html"}
+'>Applying shape to UI</a>
+      </li>
+      <li class="breadcrumbs__crumb disabled breadcrumbs__chapter">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link js-breadcrumb-hash"
+           href="#shape scheme"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "#shape scheme"}
+'>Shape scheme</a>
+      </li>
+  </ol>
+</nav>
+
+
+<nav class="side-nav" data-comp="SideNav" role="navigation">
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+
+
+            <span class="side-nav__section-title">Material System</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../introduction"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../introduction"}
+'>
+            Introduction
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav1"
+                  aria-expanded="false">
+            Material studies
+          </button>
+            <div class="side-nav__wrapper" id="_nav1">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/about-our-material-studies.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/about-our-material-studies.html"}
+'>
+            About our Material studies
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/basil.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/basil.html"}
+'>
+            Basil
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/crane.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/crane.html"}
+'>
+            Crane
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/fortnightly.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/fortnightly.html"}
+'>
+            Fortnightly
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/owl.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/owl.html"}
+'>
+            Owl
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/rally.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/rally.html"}
+'>
+            Rally
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/reply.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/reply.html"}
+'>
+            Reply
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-studies/shrine.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-studies/shrine.html"}
+'>
+            Shrine
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+      </ul>      <span class="side-nav__section-title">Material Foundation</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../foundation-overview"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../foundation-overview"}
+'>
+            Foundation overview
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav3"
+                  aria-expanded="false">
+            Environment
+          </button>
+            <div class="side-nav__wrapper" id="_nav3">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../environment/surfaces.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../environment/surfaces.html"}
+'>
+            Surfaces
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../environment/elevation.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../environment/elevation.html"}
+'>
+            Elevation
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../environment/light-shadows.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../environment/light-shadows.html"}
+'>
+            Light and shadows
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav4"
+                  aria-expanded="false">
+            Layout
+          </button>
+            <div class="side-nav__wrapper" id="_nav4">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/understanding-layout.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/understanding-layout.html"}
+'>
+            Understanding layout
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/pixel-density.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/pixel-density.html"}
+'>
+            Pixel density
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/responsive-layout-grid.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/responsive-layout-grid.html"}
+'>
+            Responsive layout grid
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/spacing-methods.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/spacing-methods.html"}
+'>
+            Spacing methods
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/component-behavior.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/component-behavior.html"}
+'>
+            Component behavior
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../layout/applying-density.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../layout/applying-density.html"}
+'>
+            Applying density
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav5"
+                  aria-expanded="false">
+            Navigation
+          </button>
+            <div class="side-nav__wrapper" id="_nav5">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../navigation/understanding-navigation.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation/understanding-navigation.html"}
+'>
+            Understanding navigation
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../navigation/navigation-transitions.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation/navigation-transitions.html"}
+'>
+            Navigation transitions
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../navigation/search.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation/search.html"}
+'>
+            Search
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav6"
+                  aria-expanded="false">
+            Color
+          </button>
+            <div class="side-nav__wrapper" id="_nav6">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/the-color-system.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/the-color-system.html"}
+'>
+            The color system
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/applying-color-to-ui.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/applying-color-to-ui.html"}
+'>
+            Applying color to UI
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/color-usage.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/color-usage.html"}
+'>
+            Color usage
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/text-legibility.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/text-legibility.html"}
+'>
+            Text legibility
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../color/dark-theme.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../color/dark-theme.html"}
+'>
+            Dark theme
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav7"
+                  aria-expanded="false">
+            Typography
+          </button>
+            <div class="side-nav__wrapper" id="_nav7">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../typography/the-type-system.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../typography/the-type-system.html"}
+'>
+            The type system
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../typography/understanding-typography.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../typography/understanding-typography.html"}
+'>
+            Understanding typography
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../typography/language-support.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../typography/language-support.html"}
+'>
+            Language support
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav8"
+                  aria-expanded="false">
+            Sound
+          </button>
+            <div class="side-nav__wrapper" id="_nav8">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/about-sound.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/about-sound.html"}
+'>
+            About sound
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/applying-sound-to-ui.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/applying-sound-to-ui.html"}
+'>
+            Applying sound to UI
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/sound-attributes.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/sound-attributes.html"}
+'>
+            Sound attributes
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/sound-choreography.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/sound-choreography.html"}
+'>
+            Sound choreography
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../sound/sound-resources.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sound/sound-resources.html"}
+'>
+            Sound resources
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav9"
+                  aria-expanded="false">
+            Iconography
+          </button>
+            <div class="side-nav__wrapper" id="_nav9">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../iconography/product-icons.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../iconography/product-icons.html"}
+'>
+            Product icons
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../iconography/system-icons.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../iconography/system-icons.html"}
+'>
+            System icons
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../iconography/animated-icons.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../iconography/animated-icons.html"}
+'>
+            Animated icons
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface active js-submenu-toggle"
+                  aria-controls="_nav10"
+                  aria-expanded="true">
+            Shape
+          </button>
+            <div class="side-nav__wrapper" id="_nav10">
+    <ul class="side-nav__submenu" data-menu-state="open">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/about-shape.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/about-shape.html"}
+'>
+            About shape
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/shape-hierarchy.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/shape-hierarchy.html"}
+'>
+            Shape and hierarchy
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/shape-as-expression.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/shape-as-expression.html"}
+'>
+            Shape as expression
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../shape/shape-motion.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/shape-motion.html"}
+'>
+            Shape and motion
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+side-nav__link--active js-header-show"
+              href="../shape/applying-shape-to-ui.html" aria-current="page" data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../shape/applying-shape-to-ui.html"}
+'>
+            Applying shape to UI
+          </a>
+
+              <div class="side-nav__articles">
+    <i class="side-nav__progress-bar">
+      <i class="side-nav__scrub js-submenu-scrub"></i>
+    </i>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-shape-scheme js-analytics-click" href="#shape-scheme" data-section-id="shape-scheme"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#shape-scheme"}
+'>
+          <span class="js-anchor-text">Shape scheme</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-shape-attributes js-analytics-click" href="#shape-attributes" data-section-id="shape-attributes"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#shape-attributes"}
+'>
+          <span class="js-anchor-text">Shape attributes</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-picking-shapes js-analytics-click" href="#picking-shapes" data-section-id="picking-shapes"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#picking-shapes"}
+'>
+          <span class="js-anchor-text">Picking shapes</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-baseline-shape-values js-analytics-click" href="#baseline-shape-values" data-section-id="baseline-shape-values"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#baseline-shape-values"}
+'>
+          <span class="js-anchor-text">Baseline shape values</span>
+        </a>
+      </div>
+  </div>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav11"
+                  aria-expanded="false">
+            Motion
+          </button>
+            <div class="side-nav__wrapper" id="_nav11">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../motion/understanding-motion.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../motion/understanding-motion.html"}
+'>
+            Understanding motion
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../motion/speed.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../motion/speed.html"}
+'>
+            Speed
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../motion/choreography.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../motion/choreography.html"}
+'>
+            Choreography
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../motion/customization.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../motion/customization.html"}
+'>
+            Customization
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav12"
+                  aria-expanded="false">
+            Interaction
+          </button>
+            <div class="side-nav__wrapper" id="_nav12">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../interaction/gestures.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../interaction/gestures.html"}
+'>
+            Gestures
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../interaction/selection.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../interaction/selection.html"}
+'>
+            Selection
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../interaction/states.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../interaction/states.html"}
+'>
+            States
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+      </ul>      <span class="side-nav__section-title">Material Guidelines</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav13"
+                  aria-expanded="false">
+            Communication
+          </button>
+            <div class="side-nav__wrapper" id="_nav13">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/confirmation-acknowledgement.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/confirmation-acknowledgement.html"}
+'>
+            Confirmation &amp; acknowledgement
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/data-formats.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/data-formats.html"}
+'>
+            Data formats
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/data-visualization.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/data-visualization.html"}
+'>
+            Data visualization
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/empty-states.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/empty-states.html"}
+'>
+            Empty states
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/help-feedback.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/help-feedback.html"}
+'>
+            Help &amp; feedback
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/imagery.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/imagery.html"}
+'>
+            Imagery
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/launch-screen.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/launch-screen.html"}
+'>
+            Launch screen
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/onboarding.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/onboarding.html"}
+'>
+            Onboarding
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/offline-states.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/offline-states.html"}
+'>
+            Offline states
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../communication/writing.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../communication/writing.html"}
+'>
+            Writing
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../guidelines-overview"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../guidelines-overview"}
+'>
+            Guidelines overview
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav15"
+                  aria-expanded="false">
+            Material Theming
+          </button>
+            <div class="side-nav__wrapper" id="_nav15">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-theming/overview.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-theming/overview.html"}
+'>
+            Overview
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../material-theming/implementing-your-theme.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../material-theming/implementing-your-theme.html"}
+'>
+            Implementing your theme
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav16"
+                  aria-expanded="false">
+            Usability
+          </button>
+            <div class="side-nav__wrapper" id="_nav16">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../usability/accessibility.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../usability/accessibility.html"}
+'>
+            Accessibility
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../usability/bidirectionality.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../usability/bidirectionality.html"}
+'>
+            Bidirectionality
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <button class="side-nav__toggle mdc-ripple-surface js-submenu-toggle"
+                  aria-controls="_nav17"
+                  aria-expanded="false">
+            Platform guidance
+          </button>
+            <div class="side-nav__wrapper" id="_nav17">
+    <ul class="side-nav__submenu" data-menu-state="closed">
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-bars.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-bars.html"}
+'>
+            Android bars
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-fingerprint.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-fingerprint.html"}
+'>
+            Android fingerprint
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-haptics.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-haptics.html"}
+'>
+            Android haptics
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-icons.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-icons.html"}
+'>
+            Android icons
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-navigating-between-apps.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-navigating-between-apps.html"}
+'>
+            Android navigating between apps
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-notifications.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-notifications.html"}
+'>
+            Android notifications
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-permissions.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-permissions.html"}
+'>
+            Android permissions
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-settings.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-settings.html"}
+'>
+            Android settings
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-slices.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-slices.html"}
+'>
+            Android slices
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-split-screen.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-split-screen.html"}
+'>
+            Android split-screen
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-swipe-to-refresh.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-swipe-to-refresh.html"}
+'>
+            Android swipe to refresh
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-text-selection-toolbar.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-text-selection-toolbar.html"}
+'>
+            Android text selection toolbar
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/android-widget.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/android-widget.html"}
+'>
+            Android widget
+          </a>
+
+        </li>
+
+        <li>
+          <a class="side-nav__link mdc-ripple-surface js-submenu-link js-analytics-click
+"
+              href="../platform-guidance/cross-platform-adaptation.html"data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../platform-guidance/cross-platform-adaptation.html"}
+'>
+            Cross-platform adaptation
+          </a>
+
+        </li>
+    </ul>
+  </div>
+
+      </li>
+
+  </ul>
+</nav>
+
+
+    <main id="main_content" class="main" role="main" aria-labelledby="Main Content">
+<article class="article" data-comp="Waypoints">
+  <div class="article__intro container container--large js-waypoints-trigger-initial">
+    <div class="article__intro-text">
+      <h1 class="article__title animatable js-anim-trigger">
+
+        Applying shape to UI
+
+            <div class="article-controls">
+              
+            </div>
+      </h1>
+
+
+        <div class="article__intro-text animatable js-anim-trigger">
+        <div>
+<div aria-hidden="true" class="keywords hidden">shape</div>
+<h2>The Material Shape System enables you to systematically apply unique shapes across a variety of components.</h2></div>
+        </div>
+    </div>
+
+      <nav class="article__nav animatable js-anim-trigger">
+        <span class="eyebrow">Contents</span>
+        <ul>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#shape-scheme" data-section-id="shape-scheme"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#shape-scheme"}
+'>Shape scheme</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#shape-attributes" data-section-id="shape-attributes"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#shape-attributes"}
+'>Shape attributes</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#picking-shapes" data-section-id="picking-shapes"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#picking-shapes"}
+'>Picking shapes</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#baseline-shape-values" data-section-id="baseline-shape-values"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#baseline-shape-values"}
+'>Baseline shape values</a>
+            </li>
+        </ul>
+      </nav>
+  </div>
+
+  <hr />
+
+  <div class="article__body animatable js-breadcrumb-toggle js-anim-trigger">
+      <section id="shape-scheme" class="container container--large js-waypoints-trigger article__section" data-section-title="Shape scheme" aria-label="Shape scheme">
+          <h2 class="article__chapter-title">
+            Shape scheme
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">shape</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Shape categories Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Shape categories</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Components are grouped into shape categories based on their size. These categories provide a way to change multiple component values at once, by changing the...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><p>Components are grouped into shape categories based on their size. These categories provide a way to change multiple component values at once, by changing the <a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "../shape/applying-shape-to-ui.html#baseline-shape-values"}
+' href="../shape/applying-shape-to-ui.html#baseline-shape-values">
+  category’s values</a>. Shape categories include:</p><ul class="lst-kix_v14jv4ektsw4-0 start"><li>Small components</li><li>Medium components</li><li>Large components</li></ul></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Components that can customize their shape</h2><p>The following components can use unique corner shapes:</p></div></section></div><div class="col-list"><section class="module-module-module col-3"><div class="module"><p><strong>Small Components</strong></p></div><div class="module"><p><strong>Medium Components</strong></p></div><div class="module"><p><strong>Large Components</strong></p></div></section><section class="module-module-module col-3"><div class="module"><p>Button</p><p>Chip</p><p>Expanding bottom sheet<br>
+(collapsed) *</br></p><p>Extended floating action button</p><p>Floating action button</p><p>Filled text field</p><p>Outlined text field</p><p>Snackbar</p><p>Tooltip</p></div><div class="module"><p>Card</p><p>Dialog</p><p>Image list item</p><p>Menu</p></div><div class="module"><p>Backdrop *</p><p>Data table</p><p>Expanding bottom sheet (expanded / full-screen) *</p><p>Modal bottom sheet<br>
+(collapsed)</br></p><p>Modal bottom sheet<br>
+(expanded / full-screen) *</br></p><p>Nav drawer (bottom - collapsed)</p><p>Nav drawer (bottom - expanded / full-screen) *</p><p>Nav drawer (side)</p><p>Side sheet</p><p>Standard bottom sheet<br>
+(collapsed)</br></p><p>Standard bottom sheet<br>
+(expanded / full-screen) *</br></p></div></section><section class="module col-1"><div class="module"><p>*Indicates components with certain corners that cannot be customized.</p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="shape-attributes" class="container container--large js-waypoints-trigger article__section" data-section-title="Shape attributes" aria-label="Shape attributes">
+          <h2 class="article__chapter-title">
+            Shape attributes
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">shape</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Category attributes Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Category attributes</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Shape categories use attributes to define how shape is assigned to the corners of components. The following attributes can be customized: The button displayed above...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><p>Shape categories use attributes to define how shape is assigned to the corners of components. The following attributes can be customized:</p><ul class="lst-kix_wjg3gc6g4mn6-0 start"><li>Shape family</li><li>Shape size</li><li>Symmetry</li></ul></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1q_PUE4Uyk0m77WGQwVgVgR1uIsuWNN-J%2Fcategory-attributes-button.png" src="">
+</img></div>
+</div>
+</figure></div></section></div><p>The button displayed above has the following attributes:</p><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Component</p></td><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="2"><p>Button</p></td><td colspan="1" rowspan="2"><p>Container</p></td><td colspan="1" rowspan="2"><p>Small</p></td><td colspan="1" rowspan="1"><p>Shape family</p></td><td colspan="1" rowspan="1"><p>Cut</p></td></tr><tr><td colspan="1" rowspan="1"><p>Size</p></td><td colspan="1" rowspan="1"><p>4dp;4dp;4dp;4dp</p></td></tr></tbody></table><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1gHCHnh5z0UY4QrBfFPfK7X7wL16oA1nZ%2Fcategory-attributes-modalsheet.png" src="">
+</img></div>
+</div>
+</figure></div></section></div><p>The modal bottom sheet displayed above has the following attributes:</p><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Component</p></td><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="2"><p>Modal bottom sheet</p></td><td colspan="1" rowspan="2"><p>Container</p></td><td colspan="1" rowspan="2"><p>Medium</p></td><td colspan="1" rowspan="1"><p>Shape family</p></td><td colspan="1" rowspan="1"><p>Rounded</p></td></tr><tr><td colspan="1" rowspan="1"><p>Size</p></td><td colspan="1" rowspan="1"><p>4dp;4dp;n/a;n/a </p></td></tr></tbody></table><p>*Bottom sheets can only be shaped on the top left and top right corners.</p></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Shape family Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Shape family</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Components can apply one of two styles to the shapes of their corners: A rounded corner A cut corner</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Components can apply one of two styles to the shapes of their corners:</p><ul class="lst-kix_ovrbj5fxpj80-0 start"><li>Rounded corner</li><li>Cut corner</li></ul></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 105.555555556%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="shape-attributes-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="105.555555556%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1sNC1KGSx12gv2HnUqK5ZYFgRweWh-KPN%2Frounded-corner.png" src="">
+</img></div>
+</div>
+<figcaption id="shape-attributes-figure-caption-0">
+<br>
+<p>A rounded corner</p></br></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 105.555555556%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="shape-attributes-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="105.555555556%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1ICMH_WCQaQxLOa_KT9pgM_5CFmjE8Qoe%2Fcut-corner.png" src="">
+</img></div>
+</div>
+<figcaption id="shape-attributes-figure-caption-1">
+<br>
+<p>A cut corner</p></br></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Shape size Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Shape size</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Shape size can be determined using a value that is either absolute or a percentage. Absolute size refers to having a specific value, such as...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Shape size can be determined using a value that is either <strong>absolute</strong> or a <strong>percentage</strong>.</p><h2>Absolute size</h2><p><strong>Absolute </strong>size refers to having a specific value, such as 2dp. When a corner radius or cut length has an absolute size, it remains the same regardless of the component’s height. For example, if a component dynamically changes its height, its corner shape maintains the absolute corner radius or cut length size.</p><h2>Percentage size</h2><p>Small components can set the size of their corner shape using a percentage of the absolute height of the component. This means the corner shape will change as the component height changes. </p></div></section><section class="figure-figure col-2"><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 105.555555556%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" poster="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1e2Bl2L63no5y7C8O4y7sVtPlaJ-kRADw%2Fmotion-asolute-poster.png" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1JpZiQtkqZZHiGrdB6Jy5eIsoB7DRZTrd%2Fmotion-absolute.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<br>
+<p>On a button with corner shapes of absolute size, the corners remain the same size and shape as the button grows taller.</p></br></figcaption></div><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 105.555555556%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" poster="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1ptWwVqEJxYGB0Kc4epUxuftLFkx8Ln2v%2Fmotion-percentage-poster.png" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1AxDdwkZlKIC-VQMV9G5JZvsoJLSF9PYa%2Fmotion-percentage-01.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<br>
+<p>On a button with corner shapes using percentage sizing, the corner shapes get larger as the button grows taller.</p></br></figcaption></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Avoid using percentage values for components that dynamically change their height, because the shape will change as the height changes.</p></div></section><section class="figure-figure col-2"><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 105.555555556%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" poster="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1_DSdA_nwtF1-_R0IVu7zHeCisjy2Qa0Z%2Fmotion-absolutedo-02-poster.png" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1egqin5qzfG581vhhwyK5kr5LzE7d4iqE%2Fmotion-absolutedo-02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p class="s-tag-caption do">Do.</p><p>Use absolute rounded corners on components like cards that change in size along with the amount of content they contain.</p></figcaption></div><div class="figure"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 105.555555556%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" poster="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1hOEyrW3sLKHmV6XQ6QSK99HFctHNqfuH%2Fmotion-percentagedont-02-poster.png" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1oNwBBXWZgQSIaYpZYg_GKW4bq5pCEPro%2Fmotion-percentagedont-02.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t use percentage rounded corner on components that dynamically change in size.</p></figcaption></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Component symmetry  Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Component symmetry </h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Components can apply corner shapes in either a symmetrical or asymmetrical way. Symmetrical components apply the same values to all corners, whereas asymmetric components can...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Components can apply corner shapes in either a symmetrical or asymmetrical way. Symmetrical components apply the same values to all corners, whereas asymmetric components can have corners with different values from each other.</p><ul class="lst-kix_myfq76aklh3c-0 start"><li>For a symmetrical component shape, specify a single shape family and single size value that will be used by all corners. </li><li>For an asymmetric component shape, specify the shape family and size values of each corner. Shape family and size values are applied clockwise, starting from the top-left corner.</li></ul><p>When mirroring a design for RTL layouts, components may need to mirror their shape customizations if they are positioned along an edge of the UI, or if the change affects usability. Shape customizations based on brand can optionally be mirrored.</p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 105.555555556%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="shape-attributes-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="105.555555556%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1dgPR25aJ4ZDvcMsRFWOI15MIKaKrCp8F%2Fbackdrop-symmetry.png" src="">
+</img></div>
+</div>
+<figcaption id="shape-attributes-figure-caption-2">
+<p>Symmetrically shaped component</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 105.555555556%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="shape-attributes-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="105.555555556%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1WdkNweMYkCIbXw6H9i1fuIXi95Tg_c9E%2Fbackdrop-asymmetry.png" src="">
+</img></div>
+</div>
+<figcaption id="shape-attributes-figure-caption-3">
+<p>Asymmetrically shaped component</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Component corners that are anchored to screen edges can’t be customized. Unique shapes on anchored corners would create gaps that display content behind a component.</p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 105.555555556%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="shape-attributes-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="105.555555556%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1cIoUIwASjjZ8xShTqJ8OuEDsvr6WQDdo%2Fanchored-cornersdo.png" src="">
+</img></div>
+</div>
+<figcaption id="shape-attributes-figure-caption-4">
+<p class="s-tag-caption do">Do.</p><p>Corners anchored to screen edges cannot use customized shape.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 105.555555556%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="shape-attributes-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="105.555555556%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1Cc15y3u5MjHZOxCeS8ojDaogAoxP6n1n%2Fanchored-cornersdont.png" src="">
+</img></div>
+</div>
+<figcaption id="shape-attributes-figure-caption-5">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t customize corner shapes that are anchored to screen edges. </p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Categories and overrides Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Categories and overrides</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>To apply a shape family and size across all components in a category, set values for the shape category. When adjustments are made to a...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Shape categories</h2><p>To apply a shape family and size across all components in a category, set values for the shape category. When adjustments are made to a shape category, the changes affect all components in that shape category, except for those with an override. </p><h2>Shape overrides</h2><p>When a component requires a different shape than the one defined by a category, it can use an <strong>override</strong> to its shape family, size, or both. Use overrides for branding, usability, layout, hierarchy, or other factors.</p><p>When a specific component is assigned a value, it overrides the value inherited from the shape category. </p><p>The baseline theme includes several shaped components with overrides.</p></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 34.2105263158%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="shape-attributes-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="34.2105263158%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1XY9pzdz_SVgzIJDXq48CcPU2_bJg0m3u%2Fcategories-overrides.png" src="">
+</img></div>
+</div>
+<figcaption id="shape-attributes-figure-caption-6">
+<ol class="lst-kix_d4zqnbzaki5p-0 start" start="1"><li>A chip and floating action button with baseline shape family and size values</li><li> A chip and floating action button with customized shape family and size values</li></ol></figcaption>
+</figure></div></section><section class="module col-1"><div class="module"><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Component</p></td><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="2"><p>Chip</p></td><td colspan="1" rowspan="2"><p>Container</p></td><td colspan="1" rowspan="2"><p>Override*</p></td><td colspan="1" rowspan="1"><p>Shape family</p></td><td colspan="1" rowspan="1"><p>Round</p></td></tr><tr><td colspan="1" rowspan="1"><p>Size</p></td><td colspan="1" rowspan="1"><p>50%</p></td></tr><tr><td colspan="1" rowspan="2"><p>FAB</p></td><td colspan="1" rowspan="2"><p>Container</p></td><td colspan="1" rowspan="2"><p>Override*</p></td><td colspan="1" rowspan="1"><p>Shape family</p></td><td colspan="1" rowspan="1"><p>Round</p></td></tr><tr><td colspan="1" rowspan="1"><p>Size</p></td><td colspan="1" rowspan="1"><p>50%</p></td></tr></tbody></table><p>*The baseline theme chips and floating action buttons override the size value of the small component shape category value.</p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="picking-shapes" class="container container--large js-waypoints-trigger article__section" data-section-title="Picking shapes" aria-label="Picking shapes">
+          <h2 class="article__chapter-title">
+            Picking shapes
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">shape</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Brand and hierarchy Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Brand and hierarchy</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>When applying shape to components, the shape choices you make can support your brand and your UI’s hierarchy. When applying shape in a UI, identify...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>When applying shape to components, the shape choices you make can support your brand and your UI’s hierarchy.</p><h2>Brand</h2><p>When applying shape in a UI, identify the distinctive shape of your brand, such as an organic or geometric form that reflects your brand’s attributes. </p><p>Based on this shape, develop a set of similar, related shapes to apply across your product, helping to unify your brand’s expression throughout it.</p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 105.555555556%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="picking-shapes-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="105.555555556%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1IJ7WsoJVKkh-61IflhQWeHqQiu0AZSbI%2Fshape-familydo.png" src="">
+</img></div>
+</div>
+<figcaption id="picking-shapes-figure-caption-0">
+<p class="s-tag-caption do">Do.</p><p>An identifying shape, such as this diamond logo, is used to develop a set of similar, related shapes to unify brand expression throughout an app or set of products.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 105.555555556%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="picking-shapes-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="105.555555556%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1l1jz44OMLb53BvD8irpKQU4wUcoZEDm6%2Fshape-familydont.png" src="">
+</img></div>
+</div>
+<figcaption id="picking-shapes-figure-caption-1">
+<p class="s-tag-caption dont">Don’t.</p><p>Mixing shapes can make it hard to distinguish a brand’s style.</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../shape/shape-as-expression.html#expressing-brand"}
+' href="../shape/shape-as-expression.html#expressing-brand" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1neOt9sPKdw2L8o9ItxGaOGG60r3uQYzg%2Fshapes-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1neOt9sPKdw2L8o9ItxGaOGG60r3uQYzg%2Fshapes-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Expressing brand</h2>
+<p class="object-card__body">Shape can communicate an element’s state or contribute to developing a brand.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../shape/about-shape.html#shape-customization-tool"}
+' href="../shape/about-shape.html#shape-customization-tool" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1a6QBGzwGXpPSCfUAPAN2lxLyVjXiEk6i%2Fshapes-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1a6QBGzwGXpPSCfUAPAN2lxLyVjXiEk6i%2Fshapes-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Shape customization tool</h2>
+<p class="object-card__body">Material surfaces can be displayed in different shapes. Shapes direct attention, identify components, communicate state, and express brand.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Hierarchy</h2><p>Components with unique shapes stand out, and can be used to draw user attention to specific parts of the screen or emphasize certain areas in a layout. For example, a floating action button can use a unique shape to help it stand out from other UI elements.</p></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="picking-shapes-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1jBwPa1jphE5cJ7PLmpbxYomnzZ8-RiTs%2Fhierarchy-contrast.png" src="">
+</img></div>
+</div>
+<figcaption id="picking-shapes-figure-caption-2">
+<p class="s-tag-caption do">Do.</p><p>The round shape of this floating action button stands out against the straight lines of the other UI elements.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="picking-shapes-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1tXJCPl4xFRTCy4RMYuVC0R7EW-HgrQLc%2Fhierarchy-no-contrast.png" src="">
+</img></div>
+</div>
+<figcaption id="picking-shapes-figure-caption-3">
+<p class="s-tag-caption dont">Don’t.</p><p>This floating action button has the same shape as other elements, making it difficult to find.</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../shape/shape-hierarchy.html#shape-hierarchy-introduction"}
+' href="../shape/shape-hierarchy.html#shape-hierarchy-introduction" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1bnTzbfUhr8oSwcwHRDQxzxAURSLHe1NK%2Fshapes-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1bnTzbfUhr8oSwcwHRDQxzxAURSLHe1NK%2Fshapes-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Shape and hierarchy - introduction</h2>
+<p class="object-card__body">Shapes can direct attention to important elements and show how surfaces relate to one another.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><h2>Combining brand and hierarchy</h2><p>Use a set of similar, related shapes across your product’s components as a basis for developing a consistent hierarchy and brand expression.</p><p>Components that need to stand out can also use shapes that express your brand. Apply the brand shapes to components using overrides.</p><p>Overuse of shape to express brand can lead to brand dilution, where the shape loses its brand connection and becomes commonplace.</p><p>Too many unique shapes can lead to no shape being especially prominent as well as a lack of visual cohesion across components.</p></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Transformations Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Transformations</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Components that transform between two shapes should consider how those transformations may affect the component’s identifiability. Shaped components that expand to fill the entire screen...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><p>Components that transform between two shapes should consider how those transformations may affect the component’s identifiability. </p><p>Shaped components that expand to fill the entire screen should not use shaping when they become full screen.</p><h2>Changes in state</h2><p>Components can use <strong>shape</strong> changes to indicate <strong>state</strong> changes. For example, the selected state of a card can use a unique shape treatment that distinguishes it from unselected cards. Shapes used to indicate state should be distinct from the component’s typical shape.</p><h2>Full-screen components</h2><p>Don’t use shape on the corners of full-screen and expanded components. Rectangular shapes provide more space for scrollable content. Rectangular shapes also prevent content behind full-screen components from appearing through gaps between the shape and a screen edge.</p></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="picking-shapes-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1IWIhnXieThdsVIemoDcM2a8sgwpQdEdL%2Fselected-card-shape.png" src="">
+</img></div>
+</div>
+<figcaption id="picking-shapes-figure-caption-4">
+<p>A rounded corner is used to indicate selected cards and distinguish them from unselected cards.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="picking-shapes-figure-caption-5" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1QwOW0N8RwhUGbp4q1GjnvffoJqSu9x_p%2Fsurfacerelationships-do-owl.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="picking-shapes-figure-caption-5">
+<p>The curved shape is removed from a bottom sheet’s corners as it expands to full-screen.</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../shape/shape-motion.html#shape-motion"}
+' href="../shape/shape-motion.html#shape-motion" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1Z6C_2LvIlRb53PTU_ZEstom85RSGOe-y%2Fshapes-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F1Z6C_2LvIlRb53PTU_ZEstom85RSGOe-y%2Fshapes-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Shape and motion</h2>
+<p class="object-card__body">Shaped elements can change their shape if their content changes or in response to interaction.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse How content and shape affect one another Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">How content and shape affect one another</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>A component’s shape can be affected by its content or system customizations. System customizations, such as changes to the type scale, can affect a component’s...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>A component’s shape can be affected by its content or system customizations.</p><h2>Changes to other systems</h2><p>System customizations, such as changes to the type scale, can affect a component’s use of shape. For example, increasing the type size used by a component could cause:</p><ul class="lst-kix_bft7wd1eq30i-0 start"><li>Text in the component to be cropped by the shape </li><li>The component’s height and shape to change, if its shape sizes are defined as percentages.</li></ul><h2>Changes to content</h2><p>Changes to content can also affect the shape of a component. For example, if the text length increases, the text could wrap to an additional line, increasing the height of the component and affecting shapes defined as a percentage.</p><h2>Shape choice</h2><p>Changing the shape style can affect content within a component. For example, a large cut corner on a card will intrude on the content area more than a rounded corner of the same size, potentially affecting the layout of content or clipping images. To avoid unintended results, consider the choice of shape family and size in tandem with a component’s layout and content.</p></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1100px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 34.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="picking-shapes-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="34.0%" data-src="https://storage.googleapis.com/spec-host-backup/mio-design%2Fassets%2F14wUfFK871QZPPzx7Y20WlVYwVHHelDmq%2Fcut-vs-rounded.mov.gif" src="">
+</img></div>
+</div>
+<figcaption id="picking-shapes-figure-caption-6">
+<p class="s-tag-caption caution">Caution.</p><p>Cut corners take up more space in the content area than rounded corners.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="baseline-shape-values" class="container container--large js-waypoints-trigger article__section" data-section-title="Baseline shape values" aria-label="Baseline shape values">
+          <h2 class="article__chapter-title">
+            Baseline shape values
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">shape</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Shape value ranges Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Shape value ranges</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Each component can apply shape in different ways. The recommended range of values for each shape family are listed in the following table. Each component...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><p>Each component can apply shape in different ways. The recommended range of values for each shape family are listed in the following table.</p><h2>How to read the table</h2><p>Each component has two values: one for size and one for shape family. Values are applied to a component in the following order (similar to the syntax used in css), describing each corner in a clockwise pattern:<br>
+Top-left corner; top-right corner; bottom-right corner; bottom-left corner</br></p><p>If a single value range is listed, it applies to all corners that can be shaped.</p><p>Corner shapes can have a maximum size of 50% of a component’s absolute height. Cut corners are not recommended for some components, because the cut shape is likely to clip content.</p></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Category: Small components</h2><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1">
+</td><td colspan="1" rowspan="1"><p><strong>Corners can be shaped?</strong></p></td><td colspan="1" rowspan="1"><p><strong>Rounded</strong><br>
+Min / Max</br></p></td><td colspan="1" rowspan="1"><p><strong>Cut</strong><br>
+Min / Max</br></p></td><td colspan="1" rowspan="1"><p>Baseline theme values</p></td></tr><tr><td colspan="1" rowspan="1"><p>Small components category</p></td><td colspan="1" rowspan="1"><p>Not applicable</p></td><td colspan="1" rowspan="1"><p>0-28;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>0-28;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>Rounded, 4dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Button</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-20;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>0-6;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>Rounded, 4dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Chip</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-16;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>0-0;<br>
+0-0%</br></p></td><td colspan="1" rowspan="1"><p>Rounded, 50%*</p></td></tr><tr><td colspan="1" rowspan="1"><p>Expanding bottom sheet (collapsed)</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; No; No</p></td><td colspan="1" rowspan="1"><p>0-24;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>0-12;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>Rounded, 24dp*</p></td></tr><tr><td colspan="1" rowspan="1"><p>Extended floating action button</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-28;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>0-28;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>Rounded, 50%*</p></td></tr><tr><td colspan="1" rowspan="1"><p>Floating action button</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>12-28;<br>
+20-50%</br></p></td><td colspan="1" rowspan="1"><p>12-28;<br>
+20-50%</br></p></td><td colspan="1" rowspan="1"><p>Rounded, 50%*</p></td></tr><tr><td colspan="1" rowspan="1"><p>Filled text field</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-20;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>0-12;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>Rounded, 4dp;4dp;0dp;0dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Outlined text field</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-20;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>0-12;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>Rounded, 4dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Snackbar</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-24;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>0-12;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>Rounded, 4dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Tooltip</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-16;<br>
+0-50%</br></p></td><td colspan="1" rowspan="1"><p>0-0;<br>
+0-0%</br></p></td><td colspan="1" rowspan="1"><p>Rounded, 4dp</p></td></tr></tbody></table><p>* indicates override of category value</p></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Category: Medium components</h2><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1">
+</td><td colspan="1" rowspan="1"><p><strong>Corners can be shaped?</strong></p></td><td colspan="1" rowspan="1"><p><strong>Rounded</strong></p><p>Min / Max</p></td><td colspan="1" rowspan="1"><p><strong>Cut</strong></p><p>Min / Max</p></td><td colspan="1" rowspan="1"><p>Baseline values</p></td></tr><tr><td colspan="1" rowspan="1"><p>Medium components category</p></td><td colspan="1" rowspan="1"><p>Not applicable</p></td><td colspan="1" rowspan="1"><p>0-36</p></td><td colspan="1" rowspan="1"><p>0-16</p></td><td colspan="1" rowspan="1"><p>Rounded, 4dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Card</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-24</p></td><td colspan="1" rowspan="1"><p>0-16</p></td><td colspan="1" rowspan="1"><p>Rounded, 4dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Dialog</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-36</p></td><td colspan="1" rowspan="1"><p>0-16</p></td><td colspan="1" rowspan="1"><p>Rounded, 4dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Image list item</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-24</p></td><td colspan="1" rowspan="1"><p>0-16</p></td><td colspan="1" rowspan="1"><p>Rounded, 0dp*</p></td></tr><tr><td colspan="1" rowspan="1"><p>Menu</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-20</p></td><td colspan="1" rowspan="1"><p>0-12</p></td><td colspan="1" rowspan="1"><p>Rounded, 4dp</p></td></tr></tbody></table><p>* indicates override of category value</p></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Category: Large components</h2><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1">
+</td><td colspan="1" rowspan="1"><p><strong>Corners can be shaped?</strong></p></td><td colspan="1" rowspan="1"><p><strong>Rounded</strong></p><p>Min / Max</p></td><td colspan="1" rowspan="1"><p><strong>Cut</strong></p><p>Min / Max</p></td><td colspan="1" rowspan="1"><p>Baseline values</p></td></tr><tr><td colspan="1" rowspan="1"><p>Large components category</p></td><td colspan="1" rowspan="1"><p>Not applicable</p></td><td colspan="1" rowspan="1"><p>0-36</p></td><td colspan="1" rowspan="1"><p>0-24</p></td><td colspan="1" rowspan="1"><p>Rounded, 0dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Backdrop</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; No; No</p></td><td colspan="1" rowspan="1"><p>0-36</p></td><td colspan="1" rowspan="1"><p>0-24</p></td><td colspan="1" rowspan="1"><p>Rounded, 24dp*</p></td></tr><tr><td colspan="1" rowspan="1"><p>Data table</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-20</p></td><td colspan="1" rowspan="1"><p>0-12</p></td><td colspan="1" rowspan="1"><p>Rounded, 4dp*</p></td></tr><tr><td colspan="1" rowspan="1"><p>Expanding bottom sheet (expanded / full-screen)</p></td><td colspan="1" rowspan="1"><p>No; No; No; No</p></td><td colspan="1" rowspan="1"><p>0-0</p></td><td colspan="1" rowspan="1"><p>0-0</p></td><td colspan="1" rowspan="1"><p>Rounded, 0dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Modal bottom sheet (collapsed)</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; No; No</p></td><td colspan="1" rowspan="1"><p>0-24 </p></td><td colspan="1" rowspan="1"><p>0-12</p></td><td colspan="1" rowspan="1"><p>Rounded, 0dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Modal bottom sheet (expanded / full screen)</p></td><td colspan="1" rowspan="1"><p>No; No; No; No</p></td><td colspan="1" rowspan="1"><p>0-0</p></td><td colspan="1" rowspan="1"><p>0-0</p></td><td colspan="1" rowspan="1"><p>Rounded, 0dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Navigation drawer (bottom - collapsed)</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; No; No</p></td><td colspan="1" rowspan="1"><p>0-24</p></td><td colspan="1" rowspan="1"><p>0-12</p></td><td colspan="1" rowspan="1"><p>Rounded, 0dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Navigation drawer (bottom - expanded / full screen)</p></td><td colspan="1" rowspan="1"><p>No; No; No; No</p></td><td colspan="1" rowspan="1"><p>0-0</p></td><td colspan="1" rowspan="1"><p>0-0</p></td><td colspan="1" rowspan="1"><p>Rounded, 0dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Navigation drawer (side)</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-36</p></td><td colspan="1" rowspan="1"><p>0-18</p></td><td colspan="1" rowspan="1"><p>Rounded, 0dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Side sheet</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; Yes; Yes</p></td><td colspan="1" rowspan="1"><p>0-36</p></td><td colspan="1" rowspan="1"><p>0-18</p></td><td colspan="1" rowspan="1"><p>Rounded, 0dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Standard bottom sheet (collapsed)</p></td><td colspan="1" rowspan="1"><p>Yes; Yes; No; No</p></td><td colspan="1" rowspan="1"><p>0-24</p></td><td colspan="1" rowspan="1"><p>0-12</p></td><td colspan="1" rowspan="1"><p>Rounded, 0dp</p></td></tr><tr><td colspan="1" rowspan="1"><p>Standard bottom sheet (expanded / full-screen)</p></td><td colspan="1" rowspan="1"><p>No; No; No; No</p></td><td colspan="1" rowspan="1"><p>0-0</p></td><td colspan="1" rowspan="1"><p>0-0</p></td><td colspan="1" rowspan="1"><p>Rounded, 0dp</p></td></tr></tbody></table><p>* indicates override of category value</p></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Components that can’t have customized shape</h2><p>The following components cannot customize their shape, as a shape could interfere with a components’ identifiability or legibility. A shape can also imply an unsupported action. For example, a bottom app bar with rounded corners may appear as though it can be dragged up, but that action is not possible. </p><ul class="lst-kix_a4giotz9x0wt-0 start"><li>App Bar: Bottom</li><li>App Bar: Top</li><li>Banner</li><li>Checkbox</li><li>Divider</li><li>Expanding bottom sheet (when full screen)</li><li>Modal bottom sheet (when full screen)</li><li>Radio button</li><li>Standard bottom sheet (when full screen)</li><li>Tabs</li></ul></div></section></div></div></div></div></div>
+        </div>
+      </section>
+
+  </div>
+
+  <div class="container container--large">
+
+  <h2>Up next
+      <div class="article-controls">
+        
+      </div>
+  </h2>
+
+<div class="suggested-articles"><div>
+<a aria-label="Understanding motion" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../motion/understanding-motion.html"}
+' href="../motion/understanding-motion.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1SHXRSLGMylQOsSrz0EMIeyY6m-J6yuHk/motion-thumbnail-2x1.png');">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Motion</h3>
+<h4 class="suggested-articles__item-subtitle">Understanding motion</h4>
+</a>
+<a aria-label="About Shape" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../shape/about-shape.html"}
+' href="../shape/about-shape.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1lRunRe11OP7A3u6tc4Mh8c4N16hK0Vtt/shapes-thumbnail-2x1.png');">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Shape</h3>
+<h4 class="suggested-articles__item-subtitle">About Shape</h4>
+</a><br>
+
+<a aria-label="Shape as expression" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../shape/shape-as-expression.html"}
+' href="../shape/shape-as-expression.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1yPFwN7TyE5vUjedDNQcIz3HDTlgEf07g/shapes-thumbnail-2x1.png');">
+</div>
+<h3 class="suggested-articles__item-title eyebrow">Shape</h3>
+<h4 class="suggested-articles__item-subtitle">Shape as expression</h4>
+</a></div></div>  </div>
+</article>
+    </main>
+
+
+
+<footer class="footer">
+  <div class="container container--jumbo">
+    <div class="footer-block footer-block--about">
+      <a class="footer-block__logo js-analytics-click" href="/"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "/"}
+'>
+        <img class="footer-block__material-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/images/material_logo.svg" alt="Material Design"/>
+      </a>
+      <div class="footer-block__content">
+        <p class="footer-block__description">Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
+        <ul class="footer-block__social-nav">
+          <li class="footer-block__social-nav-item">  <a href="https://www.github.com/material-components" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on GitHub"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.github.com/material-components"}
+'>GitHub</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.twitter.com/materialdesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on Twitter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.twitter.com/materialdesign"}
+'>Twitter</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/googledesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.youtube.com/googledesign"}
+'>YouTube</a>
+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-block footer-block--legal">
+      <a class="footer-block__logo js-analytics-click" href="https://www.google.com"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.google.com"}
+'>
+        <img class="footer-block__google-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/images/google_logo.svg" alt="Google"/>
+      </a>
+      <div class="footer-block__content">
+        <ul class="footer-block__legal-nav">
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Privacy Policy"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/privacy"}
+'>Privacy Policy</a>
+</li>
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Terms of Service"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/terms"}
+'>Terms of Service</a>
+</li><li class="footer-block__legal-nav-item"><a href="javascript:void(0)" class="footer-block__legal-nav-link" onclick="try{userfeedback.api.startFeedback({'productId': '1027542', 'bucket': 'material_spec', 'locale': 'en', 'allowNonLoggedInFeedback': true});return false;}catch(e){}">Feedback</a></li></ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="ui-mask js-ui-mask"></div>
+<div
+    class="lightbox js-lightbox"
+    data-comp="Lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-labelledby="sr-lightbox-title">
+  <h2 class="screenreader-only sr-lightbox-title" tabindex="0">
+    Explore how Shrine, a retail app, uses Material Design.
+  </h2>
+
+    <header class="lightbox__header">
+      <div class="lightbox__header-title">
+        <span
+            class="lightbox__button js-lightbox-close"
+            data-comp="Tooltip"
+            data-props-tooltip='{"tip": "Close", "direction": "bottom"}'>
+          <i
+              class="material-icons notranslate material-icons--padded mdc-ripple-surface"
+              data-mdc-ripple-is-unbounded tabindex="0">
+            close
+          </i>
+        </span>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+
+      <div class="lightbox__actions">
+        <button type="button" name="button" class="lightbox-redlines-toggle js-redline-sidebar-toggle" data-comp="Tooltip" data-props-tooltip='{"tip": "View Specs", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>flip</i>
+        </button>
+
+        <button type="button" name="button" class="lightbox__button js-share" data-comp="Tooltip" data-props-tooltip='{"tip": "Share", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>share</i>
+        </button>
+
+      </div>
+    </header>
+
+    <div class="lightbox__template js-zoom-wrapper">
+      <div class="lightbox__content js-lightbox-content">
+<img class="ui-loader" src="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/images/loader.svg" alt="loader" aria-hidden="true" />      </div>
+<div class="redline-sidebar js-lightbox-sidebar-container" data-comp="RedlineSidebar">
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Image only", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-image js-redline-sidebar-item" value="image" >
+        <i class="material-icons notranslate">&#xE3F4;</i>
+        <span class="redline-sidebar__label-text">Image only</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Measurements", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-measurements js-redline-sidebar-item" value="measurements" >
+        <i class="material-icons notranslate">format_shapes</i>
+        <span class="redline-sidebar__label-text">Measurements</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Text", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-text js-redline-sidebar-item" value="text" >
+        <i class="material-icons notranslate">format_size</i>
+        <span class="redline-sidebar__label-text">Text</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Color", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-colors js-redline-sidebar-item" value="colors" >
+        <i class="material-icons notranslate">palette</i>
+        <span class="redline-sidebar__label-text">Color</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Shape and Elevation", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-shapes js-redline-sidebar-item" value="shapes" >
+        <i class="material-icons notranslate">rounded_corner</i>
+        <span class="redline-sidebar__label-text">Shape and Elevation</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Components", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-components js-redline-sidebar-item" value="components" >
+        <i class="material-icons notranslate">category</i>
+        <span class="redline-sidebar__label-text">Components</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Notes", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-notes js-redline-sidebar-item" value="notes" >
+        <i class="material-icons notranslate">notes</i>
+        <span class="redline-sidebar__label-text">Notes</span>
+      </button>
+    </div>
+<div class="redline-sidebar__toggles js-redline-layer-toggles">
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--dimensions">
+        <input type="checkbox" id="dimensions" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="dimensions">Dimensions</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--padding">
+        <input type="checkbox" id="padding" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="padding">Padding</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--typography">
+        <input type="checkbox" id="typography" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="typography">Text baseline</label>
+  </div>
+</div><nav class="carousel__nav">
+  <button
+      class="carousel__button carousel__button--prev mdc-ripple-surface js-carousel-prev"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Previous", "direction": "right"}'>
+    <i class="material-icons notranslate">chevron_left</i>
+  </button>
+
+  <button
+      class="carousel__button carousel__button--next mdc-ripple-surface js-carousel-next"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Next", "direction": "left"}'>
+    <i class="material-icons notranslate">chevron_right</i>
+  </button>
+</nav><div class="zoom-buttons" data-comp="Zoom">
+  <div class="zoom-buttons__wrapper">
+
+    <button class="mdc-button-zoom js-zoom-out" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom out", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">remove</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-reset" data-comp="Tooltip" data-props-tooltip='{"tip": "Reset", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">search</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-in" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom in", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">add</i>
+    </button>
+
+    <div class="zoom-buttons__extras">
+      <button class="mdc-button-zoom js-colorpicker-toggle" data-comp="Tooltip Colorpicker" data-props-tooltip='{"tip": "Color picker", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">colorize</i>
+      </button>
+      <button class="mdc-button-zoom js-ruler-toggle" data-comp="Tooltip Ruler" data-props-tooltip='{"tip": "Ruler", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">straighten</i>
+      </button>
+    </div>
+
+  </div>
+</div>    </div>
+
+
+<aside class="mdc-dialog" role="alertdialog" aria-labelledby="mdc-dialog-label" aria-describedby="mdc-dialog-description" data-comp="Share">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-label" class="mdc-dialog__header__title">Share</h2>
+      <button type="button" class="mdc-dialog-share-close js-dialog-close">
+        <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>close</i>
+      </button>
+    </header>
+    <section id="mdc-dialog-description" class="mdc-dialog__body">
+      <input type="text" readonly class="mdc-dialog-share-url js-share-url" />
+      <button type="button" class="mdc-button mdc-ripple-surface mdc-dialog-copy js-dialog-copy">Copy</button>
+    </section>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside></div><div class="mdc-snackbar snackbar-wrapper" data-comp="Snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+  <div class="mdc-snackbar__text"></div>
+  <div class="mdc-snackbar__action-wrapper">
+    <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
+  </div>
+</div>
+    <script src="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js"></script>
+    <script src="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js"></script>
+    <script src="https://storage.googleapis.com/spec-host/mio-staging/mio-design/1567106676146/static/m2/js/main.min.js"></script><script src="https://support.google.com/inapp/api.js"></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  </body>
+</html>

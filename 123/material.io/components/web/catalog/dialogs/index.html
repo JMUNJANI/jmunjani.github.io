@@ -1,0 +1,2527 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://material.io flutter.github.io https://www.google-analytics.com https://stats.g.doubleclick.net img.shields.io 'self'; script-src https://www.google.com https://www.gstatic.com https://adservice.google.com https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline' 'self'; style-src https://fonts.googleapis.com/css 'unsafe-inline' 'self'; font-src https://fonts.gstatic.com/s/ 'self'; child-src 'none';">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <title>Dialogs - Material Components for the Web</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-NHRPF8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta itemprop="name" content="Dialogs - Material Components for the Web" />
+    <meta itemprop="image" content="https://material.io/static/images/simple-lp/components-share.png" />
+    <meta name="description" content="Modal dialogs." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Dialogs - Material Components for the Web" />
+    <meta property="og:site_name" content="Material Components for the Web" />
+    <meta property="og:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta property="article:section" content="Dialogs" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@materialdesign">
+    <meta name="twitter:title" content="Material Components">
+    <meta name="twitter:description" content="Create beautiful apps with modular and customizable UI components">
+    <meta name="twitter:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <link rel="icon" sizes="192x192" href="/develop/images/app-icons/material-logo-app-icon-192x192.png">
+    <link rel="shortcut icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/develop/images/app-icons/material-logo-app-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/develop/images/app-icons/material-logo-app-icon-180x180.png">
+    <meta name="msapplication-TileImage" content="https://material.io/static/images/hub/favicons/hub-ms-icon-144x144.png">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/develop/css/codemirror.css">
+    <link rel="stylesheet" href="/develop/css/neo.css">
+    <link rel="stylesheet" href="/develop/css/app.css">
+    <script async="" defer="" src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body class="page page--detail page--components page--platform-web">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <aside class="page__temporary-drawer mdc-drawer mdc-drawer--temporary page_drawer--temporary">
+      <nav class="temporary-drawer__drawer mdc-drawer__drawer mdc-drawer__content">
+        <header class="temporary-drawer__header mdc-drawer__header">
+          <div class="temporary-drawer__header-content mdc-drawer__header-content">
+            <div class="temporary-drawer__header-icon develop-toolbar__leading-icon"></div>
+            Material Design
+          </div>
+        </header>
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label">web</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <h3 class="drawer-heading">Components</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/animation/"
+     >
+                Animation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/auto-init/"
+     >
+                Auto Init
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/base/"
+     >
+                Base
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/"
+     >
+                Buttons
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/floating-action-buttons/"
+     >
+                    Floating Action Button
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/icon-buttons/"
+     >
+                    Icon Buttons
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/cards/"
+     >
+                Cards
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/chips/"
+     >
+                Chips
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/data-tables/"
+     >
+                Data Tables
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/dialogs/"
+     >
+                Dialogs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/dom/"
+     >
+                DOM
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/drawers/"
+     >
+                Drawers
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/elevation/"
+     >
+                Elevation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/feature-targeting/"
+     >
+                Feature Targeting
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/grid-lists/"
+     >
+                Grid Lists
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/image-lists/"
+     >
+                Image List
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+        
+      
+        
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/"
+     >
+                Inputs and Controls
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/checkboxes/"
+     >
+                    Checkboxes
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/floating-label/"
+     >
+                    Floating Label
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/form-fields/"
+     >
+                    Form Fields
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/line-ripple/"
+     >
+                    Line Ripple
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/notched-outline/"
+     >
+                    Notched Outline
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/radio-buttons/"
+     >
+                    Radio Buttons
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/"
+     >
+                    Select Menus
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/helper-text/"
+     >
+                        Select Helper Text
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/icon/"
+     >
+                        Select Icon
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/sliders/"
+     >
+                    Sliders
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/switches/"
+     >
+                    Switches
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/"
+     >
+                    Text Field
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/character-counter/"
+     >
+                        Text Field Character Counter
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/helper-text/"
+     >
+                        Text Field Helper Text
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/icon/"
+     >
+                        Text Field Icon
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/layout-grid/"
+     >
+                Layout Grid
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/linear-progress/"
+     >
+                Linear Progress
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/lists/"
+     >
+                Lists
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/menu-surface/"
+     >
+                Menu Surface
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/menus/"
+     >
+                Menus
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/ripples/"
+     >
+                Ripples
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/rtl/"
+     >
+                RTL
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/shape/"
+     >
+                Shape
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/snackbars/"
+     >
+                Snackbars
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/"
+     >
+                Tabs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/tab/"
+     >
+                    Tab
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/tab-bar/"
+     >
+                    Tab Bar
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/indicator/"
+     >
+                    Tab Indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/scroller/"
+     >
+                    Tab Scroller
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/theme/"
+     >
+                Theme
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/top-app-bar/"
+     >
+                Top App Bar
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/typography/"
+     >
+                Typography
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/web/docs/authoring-components/">Documentation</a>
+        </nav>
+      </nav>
+    </aside>
+    <header class="develop-toolbar mdc-toolbar mdc-toolbar--fixed
+    
+    
+      mdc-toolbar--platform
+    ">
+      <div class="search-form" id="top-level-search-bar">
+        <form class="search-form__form" id="top-level-search-form">
+          <input type="text"
+        class="search-form__input"
+        id="top-level-search-input"
+        autocomplete="off" />
+        </form>
+        <div class="search-form__label" id="top-level-search-label">Search</div>
+        <button
+      class="search-form__button search-form__button--close"
+      id="top-level-search-close"
+      aria-label="Close search">
+          <div class="search-form__close-icon" id="close-button-icon" data-mdc-ripple-is-unbounded></div>
+        </button>
+      </div>
+      <div class="develop-toolbar__row mdc-toolbar__row">
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="menu-button" id="menu-open">
+            <div class="menu-button__icon menu-button__icon--initial-load" id="menu-icon"></div>
+          </button>
+          <a class="develop-toolbar__title-link" href="/">
+            <div class="develop-toolbar__leading-icon"></div>
+            <h1 class="develop-toolbar__title mdc-toolbar__title">
+              Material Design
+            </h1>
+          </a>
+        </section>
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+          <nav id="navigation-tabs" class="develop-tab-bar">
+            <a href="/design"
+      class="develop-tab">
+              Design
+            </a>
+            <a href="/components"
+      class="develop-tab">
+              Components
+            </a>
+            <a href="/develop"
+      class="develop-tab develop-tab--active">
+              Develop
+              <span class="develop-tab__nav-indicator"></span>
+            </a>
+            <a href="/resources"
+     class="develop-tab">
+              Resources
+            </a>
+          </nav>
+          <section class="develop-toolbar__section develop-toolbar__section--search mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+            <button 
+    class="search-form__button search-form__button--open"
+    id="top-level-search-open"
+    aria-label="Search">
+              <div class="search-form__search-icon" id="spyglass-icon"></div>
+            </button>
+          </section>
+        </section>
+      </div>
+    </header>
+    <div class="page__content page__flex-element">
+      <div class="page__drawer mdc-permanent-drawer">
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label">web</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <h3 class="drawer-heading">Components</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/animation/"
+     >
+                Animation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/auto-init/"
+     >
+                Auto Init
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/base/"
+     >
+                Base
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/"
+     >
+                Buttons
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/floating-action-buttons/"
+     >
+                    Floating Action Button
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/icon-buttons/"
+     >
+                    Icon Buttons
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/cards/"
+     >
+                Cards
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/chips/"
+     >
+                Chips
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/data-tables/"
+     >
+                Data Tables
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/dialogs/"
+     >
+                Dialogs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/dom/"
+     >
+                DOM
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/drawers/"
+     >
+                Drawers
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/elevation/"
+     >
+                Elevation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/feature-targeting/"
+     >
+                Feature Targeting
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/grid-lists/"
+     >
+                Grid Lists
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/image-lists/"
+     >
+                Image List
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+        
+      
+        
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/"
+     >
+                Inputs and Controls
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/checkboxes/"
+     >
+                    Checkboxes
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/floating-label/"
+     >
+                    Floating Label
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/form-fields/"
+     >
+                    Form Fields
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/line-ripple/"
+     >
+                    Line Ripple
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/notched-outline/"
+     >
+                    Notched Outline
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/radio-buttons/"
+     >
+                    Radio Buttons
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/"
+     >
+                    Select Menus
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/helper-text/"
+     >
+                        Select Helper Text
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/icon/"
+     >
+                        Select Icon
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/sliders/"
+     >
+                    Sliders
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/switches/"
+     >
+                    Switches
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/"
+     >
+                    Text Field
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/character-counter/"
+     >
+                        Text Field Character Counter
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/helper-text/"
+     >
+                        Text Field Helper Text
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/icon/"
+     >
+                        Text Field Icon
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/layout-grid/"
+     >
+                Layout Grid
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/linear-progress/"
+     >
+                Linear Progress
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/lists/"
+     >
+                Lists
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/menu-surface/"
+     >
+                Menu Surface
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/menus/"
+     >
+                Menus
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/ripples/"
+     >
+                Ripples
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/rtl/"
+     >
+                RTL
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/shape/"
+     >
+                Shape
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/snackbars/"
+     >
+                Snackbars
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/"
+     >
+                Tabs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/tab/"
+     >
+                    Tab
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/tab-bar/"
+     >
+                    Tab Bar
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/indicator/"
+     >
+                    Tab Indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/scroller/"
+     >
+                    Tab Scroller
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/theme/"
+     >
+                Theme
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/top-app-bar/"
+     >
+                Top App Bar
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/typography/"
+     >
+                Typography
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/web/docs/authoring-components/">Documentation</a>
+        </nav>
+      </div>
+      <section class="page__main-section">
+        <article class="page__article article article--icon-dialog">
+          <h1 id="dialog">Dialog</h1>
+          <div class="article__asset">
+            <a class="article__asset-link" href="https://material-components.github.io/material-components-web-catalog/#/component/dialog">
+              <img src="/components/images/mdc_web_screenshots/dialogs.png" width="714" alt="Dialogs screenshot" />
+            </a>
+          </div>
+          <p>Dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks.</p>
+          <h2 id="design--api-documentation">Design &amp; API Documentation</h2>
+          <ul class="icon-list">
+            <li class="icon-list-item icon-list-item--spec">
+              <a href="https://material.io/go/design-dialogs">Material Design guidelines: Dialogs</a>
+            </li>
+            <li class="icon-list-item icon-list-item--link">
+              <a href="https://material-components.github.io/material-components-web-catalog/#/component/dialog">Demo</a>
+            </li>
+          </ul>
+          <h2 id="installation">Installation</h2>
+          <pre><code>npm install @material/dialog
+</code></pre>
+          <h2 id="basic-usage">Basic Usage</h2>
+          <h3 id="html-structure">HTML Structure</h3>
+          <pre><code class="language-html">&lt;div class="mdc-dialog"
+     role="alertdialog"
+     aria-modal="true"
+     aria-labelledby="my-dialog-title"
+     aria-describedby="my-dialog-content"&gt;
+  &lt;div class="mdc-dialog__container"&gt;
+    &lt;div class="mdc-dialog__surface"&gt;
+      &lt;!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() --&gt;
+      &lt;h2 class="mdc-dialog__title" id="my-dialog-title"&gt;&lt;!--
+     --&gt;Dialog Title&lt;!--
+   --&gt;&lt;/h2&gt;
+      &lt;div class="mdc-dialog__content" id="my-dialog-content"&gt;
+        Dialog body text goes here.
+      &lt;/div&gt;
+      &lt;footer class="mdc-dialog__actions"&gt;
+        &lt;button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no"&gt;
+          &lt;span class="mdc-button__label"&gt;No&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes"&gt;
+          &lt;span class="mdc-button__label"&gt;Yes&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/footer&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="mdc-dialog__scrim"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <blockquote>
+            <p><em>NOTE</em>: Titles cannot contain leading whitespace due to how <code>mdc-typography-baseline-top()</code> works.</p>
+          </blockquote>
+          <h3 id="styles">Styles</h3>
+          <pre><code class="language-scss">@import "@material/dialog/mdc-dialog";
+</code></pre>
+          <blockquote>
+            <p><em>NOTE</em>: Styles for any components you intend to include within dialogs (e.g. List, Checkboxes, etc.) must also be
+              imported.</p>
+          </blockquote>
+          <h3 id="javascript-instantiation">JavaScript Instantiation</h3>
+          <pre><code class="language-js">import {MDCDialog} from '@material/dialog';
+const dialog = new MDCDialog(document.querySelector('.mdc-dialog'));
+</code></pre>
+          <blockquote>
+            <p>See <a href="/components/web/docs/importing-js/">Importing the JS component</a> for more information on how to import JavaScript.</p>
+          </blockquote>
+          <p>MDC Dialog makes no assumptions about what will be added to the <code>mdc-dialog__content</code> element. Any List, Checkboxes,
+            etc. must also be instantiated. If your dialog contains any layout-sensitive components, you should wait until
+            <code>MDCDialog:opened</code> is emitted to instantiate them (or call <code>layout</code> on them) so that the dialog’s transition finishes
+            first.</p>
+          <p>For example, to instantiate an MDC List inside of a Simple or Confirmation Dialog:</p>
+          <pre><code class="language-js">import {MDCList} from '@material/list';
+const list = new MDCList(document.querySelector('.mdc-dialog .mdc-list'));
+
+dialog.listen('MDCDialog:opened', () =&gt; {
+  list.layout();
+});
+</code></pre>
+          <blockquote>
+            <p><em>NOTE</em>: Mispositioned or incorrectly-sized elements (e.g. ripples, floating labels, notched outlines) are a strong
+              indication that child components are being instantiated before the dialog has finished opening.</p>
+          </blockquote>
+          <h2 id="variants">Variants</h2>
+          <h3 id="simple-dialog">Simple Dialog</h3>
+          <p>The Simple Dialog contains a list of potential actions. It does not contain buttons.</p>
+          <pre><code class="language-html">&lt;div class="mdc-dialog"
+     role="alertdialog"
+     aria-modal="true"
+     aria-labelledby="my-dialog-title"
+     aria-describedby="my-dialog-content"&gt;
+  &lt;div class="mdc-dialog__container"&gt;
+    &lt;div class="mdc-dialog__surface"&gt;
+      &lt;!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() --&gt;
+      &lt;h2 class="mdc-dialog__title" id="my-dialog-title"&gt;&lt;!--
+     --&gt;Choose a Ringtone&lt;!--
+   --&gt;&lt;/h2&gt;
+      &lt;div class="mdc-dialog__content" id="my-dialog-content"&gt;
+        &lt;ul class="mdc-list mdc-list--avatar-list"&gt;
+          &lt;li class="mdc-list-item" tabindex="0" data-mdc-dialog-action="none"&gt;
+            &lt;span class="mdc-list-item__text"&gt;None&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li class="mdc-list-item" data-mdc-dialog-action="callisto"&gt;
+            &lt;span class="mdc-list-item__text"&gt;Callisto&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;!-- ... --&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="mdc-dialog__scrim"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <blockquote>
+            <p>Note the inclusion of the <code>mdc-list--avatar-list</code> class, which aligns with the Simple Dialog spec.</p>
+          </blockquote>
+          <h3 id="confirmation-dialog">Confirmation Dialog</h3>
+          <p>The Confirmation Dialog contains a list of choices, and buttons to confirm or cancel. Choices are accompanied by
+            radio buttons (indicating single selection) or checkboxes (indicating multiple selection).</p>
+          <pre><code class="language-html">&lt;div class="mdc-dialog"
+     role="alertdialog"
+     aria-modal="true"
+     aria-labelledby="my-dialog-title"
+     aria-describedby="my-dialog-content"&gt;
+  &lt;div class="mdc-dialog__container"&gt;
+    &lt;div class="mdc-dialog__surface"&gt;
+      &lt;!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() --&gt;
+      &lt;h2 class="mdc-dialog__title" id="my-dialog-title"&gt;&lt;!--
+     --&gt;Choose a Ringtone&lt;!--
+   --&gt;&lt;/h2&gt;
+      &lt;div class="mdc-dialog__content" id="my-dialog-content"&gt;
+        &lt;ul class="mdc-list"&gt;
+          &lt;li class="mdc-list-item" tabindex="0"&gt;
+            &lt;span class="mdc-list-item__graphic"&gt;
+              &lt;div class="mdc-radio"&gt;
+                &lt;input class="mdc-radio__native-control"
+                       type="radio"
+                       id="test-dialog-baseline-confirmation-radio-1"
+                       name="test-dialog-baseline-confirmation-radio-group"
+                       checked&gt;
+                &lt;div class="mdc-radio__background"&gt;
+                  &lt;div class="mdc-radio__outer-circle"&gt;&lt;/div&gt;
+                  &lt;div class="mdc-radio__inner-circle"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/span&gt;
+            &lt;label id="test-dialog-baseline-confirmation-radio-1-label"
+                   for="test-dialog-baseline-confirmation-radio-1"
+                   class="mdc-list-item__text"&gt;None&lt;/label&gt;
+          &lt;/li&gt;
+          &lt;!-- ... --&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;footer class="mdc-dialog__actions"&gt;
+        &lt;button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close"&gt;
+          &lt;span class="mdc-button__label"&gt;Cancel&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="accept"&gt;
+          &lt;span class="mdc-button__label"&gt;OK&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/footer&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="mdc-dialog__scrim"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <blockquote>
+            <p><em>NOTE</em>: In the example above, the Cancel button intentionally has the <code>close</code> action to align with the behavior of
+              clicking the scrim or pressing the Escape key, allowing all interactions involving dismissal without taking an action
+              to be detected the same way.</p>
+          </blockquote>
+          <h3 id="additional-information">Additional Information</h3>
+          <h4 id="dialog-actions">Dialog Actions</h4>
+          <p>All dialog variants support the concept of dialog actions. Any element within a dialog may include the
+            <code>data-mdc-dialog-action</code> attribute to indicate that interacting with it should close the dialog with the specified action.
+            This action is then reflected via <code>event.detail.action</code> in the <code>MDCDialog:closing</code> and <code>MDCDialog:closed</code> events.</p>
+          <p>Additionally, two interactions have defined actions by default:</p>
+          <ul>
+            <li>Clicking on the scrim</li>
+            <li>Pressing the Escape key within the dialog</li>
+          </ul>
+          <p>Both of these map to the <code>close</code> action by default. This can be accessed and customized via the component’s
+            <code>scrimClickAction</code> and <code>escapeKeyAction</code> properties, respectively.</p>
+          <p>Setting either of these properties to an empty string will result in that interaction being disabled (i.e. the dialog
+            will no longer close in response to the interaction). Exercise caution when doing this - it should always be possible
+            for a user to dismiss the dialog.</p>
+          <p>Any action buttons within the dialog which equate strictly to a dismissal with no further action should also use the
+            <code>close</code> action; this will make it easy to handle all such interactions consistently, while separately handling other
+            actions.</p>
+          <h4 id="action-button-arrangement">Action Button Arrangement</h4>
+          <p>As indicated in the <a href="https://material.io/design/components/dialogs.html#anatomy">Dialog design article</a>, buttons within
+            the <code>mdc-dialog__actions</code> element are arranged horizontally by default, with the confirming action <em>last</em>.</p>
+          <p>In cases where the button text is too long for all buttons to fit on a single line, the buttons are stacked vertically,
+            with the confirming action <em>first</em>.</p>
+          <p>MDC Dialog detects and handles this automatically by default, reversing the buttons when applying the stacked layout.
+            This automatic behavior can be disabled by setting <code>autoStackButtons</code> to <code>false</code> on the component instance:</p>
+          <pre><code class="language-js">dialog.autoStackButtons = false;
+</code></pre>
+          <p>This will also be disabled if the <code>mdc-dialog--stacked</code> modifier class is applied manually to the root element before the
+            component is instantiated, but note that dialog action button labels are recommended to be short enough to fit on a
+            single line if possible.</p>
+          <h4 id="default-action-button">Default Action Button</h4>
+          <p>MDC Dialog supports indicating that one of its action buttons represents the default action, triggered by pressing the
+            Enter key. This can be used e.g. for single-choice Confirmation Dialogs to accelerate the process of making a selection,
+            avoiding the need to tab through to the appropriate button to confirm the choice.</p>
+          <p>To indicate that a button represents the default action, add the <code>data-mdc-dialog-button-default</code> data attribute.
+            For example:</p>
+          <pre><code class="language-html">...
+&lt;footer class="mdc-dialog__actions"&gt;
+  &lt;button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close"&gt;
+    &lt;span class="mdc-button__label"&gt;Cancel&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="accept" data-mdc-dialog-button-default&gt;
+    &lt;span class="mdc-button__label"&gt;OK&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/footer&gt;
+...
+</code></pre>
+          <h4 id="actions-and-selections">Actions and Selections</h4>
+          <p>Dialogs which require making a choice via selection controls should initially disable any button which performs an
+            action if no choice is selected by default. MDC Dialog does not include built-in logic for this, since it aims to remain
+            as unopinionated as possible regarding dialog contents, aside from relaying information on which action is taken.</p>
+          <h4 id="accessibility">Accessibility</h4>
+          <h5 id="using-aria-hidden-as-a-fallback-for-aria-modal">Using <code>aria-hidden</code> as a fallback for <code>aria-modal</code></h5>
+          <p><code>aria-modal</code> is part of the ARIA 1.1 specification, and indicates to screen readers that they should confine themselves
+            to a single element. MDC Dialog recommends adding <code>aria-modal="true"</code> to the root element of its DOM structure; however,
+            not all user agents and screen readers properly honor this attribute.</p>
+          <p>The fallback is to apply <code>aria-hidden="true"</code> to all static content behind the dialog, when the dialog is open. This will
+            be easiest to achieve if all non-modal elements are under a single common ancestor under the body, so that <code>aria-hidden</code>
+            can be applied to one element.</p>
+          <pre><code class="language-js">dialog.listen('MDCDialog:opened', function() {
+  // Assuming contentElement references a common parent element with the rest of the page's content
+  contentElement.setAttribute('aria-hidden', 'true');
+});
+
+dialog.listen('MDCDialog:closing', function() {
+  contentElement.removeAttribute('aria-hidden');
+});
+</code></pre>
+          <blockquote>
+            <p>Note: The example above intentionally listens to the <strong>opened</strong> (not opening) event and the <strong>closing</strong> (not closed)
+              event in order to avoid additional jumping between elements by screen readers due to one element becoming hidden
+              before others become visible.</p>
+          </blockquote>
+          <h2 id="style-customization">Style Customization</h2>
+          <h3 id="css-classes">CSS Classes</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>CSS Class</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>mdc-dialog</code></td>
+                <td>Mandatory. The root DOM element containing the surface and the container.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog__scrim</code></td>
+                <td>Mandatory. Semitransparent backdrop that displays behind a dialog.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog__container</code></td>
+                <td>Mandatory. Wrapper element needed to ensure flexbox behavior in IE 11.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog__surface</code></td>
+                <td>Mandatory. The bounding box for the dialog’s content.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog__title</code></td>
+                <td>Optional. Brief summary of the dialog’s purpose.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog__content</code></td>
+                <td>Optional. Primary content area. May contain a list, a form, or prose.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog__actions</code></td>
+                <td>Optional. Footer area containing the dialog’s action buttons.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog__button</code></td>
+                <td>Optional. Individual action button. Typically paired with <a href="/components/web/catalog/buttons/"><code>mdc-button</code></a>.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog--open</code></td>
+                <td>Optional. Indicates that the dialog is open and visible.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog--opening</code></td>
+                <td>Optional. Applied automatically when the dialog is in the process of animating open.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog--closing</code></td>
+                <td>Optional. Applied automatically when the dialog is in the process of animating closed.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog--scrollable</code></td>
+                <td>Optional. Applied automatically when the dialog has overflowing content to warrant scrolling.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog--stacked</code></td>
+                <td>Optional. Applied automatically when the dialog’s action buttons can’t fit on a single line and must be stacked.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 id="sass-mixins">Sass Mixins</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Mixin</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>mdc-dialog-container-fill-color($color)</code></td>
+                <td>Sets the fill color of the dialog.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog-scrim-color($color, $opacity)</code></td>
+                <td>Sets the color of the scrim behind the dialog.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog-title-ink-color($color, $opacity)</code></td>
+                <td>Sets the color of the dialog’s title text.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog-content-ink-color($color, $opacity)</code></td>
+                <td>Sets the color of the dialog’s content text.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog-scroll-divider-color($color, $opacity)</code></td>
+                <td>Sets the color of the dividers which display around scrollable content.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog-shape-radius($radius, $rtl-reflexive)</code></td>
+                <td>Sets the rounded shape to dialog surface with given radius size. Set <code>$rtl-reflexive</code> to true to flip radius values in RTL context, defaults to false.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog-min-width($min-width)</code></td>
+                <td>Sets the minimum width of the dialog (defaults to 280px).</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog-max-width($max-width, $margin)</code></td>
+                <td>Sets the maximum width of the dialog (defaults to 560px max width and 16px margins).</td>
+              </tr>
+              <tr>
+                <td><code>mdc-dialog-max-height($max-height, $margin)</code></td>
+                <td>Sets the maximum height of the dialog (defaults to no max height and 16px margins).</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote>
+            <p><em>NOTE</em>: The <code>max-width</code> and <code>max-height</code> mixins only apply their maximum when the viewport is large enough to accommodate the specified value when accounting for the specified margin on either side. When the viewport is smaller, the dialog is sized such that the given margin is retained around the edges.</p>
+          </blockquote>
+          <h2 id="other-customizations">Other Customizations</h2>
+          <p>Data Attributes | Description
+            — | —
+            <code>data-mdc-dialog-button-default</code> | Optional. Add to a button to indicate that it is the default action button (see Default Action Button section above).
+            <code>data-mdc-dialog-initial-focus</code> | Optional. Add to an element to indicate that it is the element to initially focus on after the dialog has opened.</p>
+          <h2 id="mdcdialog-properties-and-methods"><code>MDCDialog</code> Properties and Methods</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Value Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>isOpen</code></td>
+                <td><code>boolean</code> (read-only)</td>
+                <td>Proxies to the foundation’s <code>isOpen</code> method.</td>
+              </tr>
+              <tr>
+                <td><code>escapeKeyAction</code></td>
+                <td><code>string</code></td>
+                <td>Proxies to the foundation’s <code>getEscapeKeyAction</code> and <code>setEscapeKeyAction</code> methods.</td>
+              </tr>
+              <tr>
+                <td><code>scrimClickAction</code></td>
+                <td><code>string</code></td>
+                <td>Proxies to the foundation’s <code>getScrimClickAction</code> and <code>setScrimClickAction</code> methods.</td>
+              </tr>
+              <tr>
+                <td><code>autoStackButtons</code></td>
+                <td><code>boolean</code></td>
+                <td>Proxies to the foundation’s <code>getAutoStackButtons</code> and <code>setAutoStackButtons</code> methods.</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th>Method Signature</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>layout() =&gt; void</code></td>
+                <td>Recalculates layout and automatically adds/removes modifier classes like <code>--scrollable</code>.</td>
+              </tr>
+              <tr>
+                <td><code>open() =&gt; void</code></td>
+                <td>Opens the dialog.</td>
+              </tr>
+              <tr>
+                <td><code>close(action: string?) =&gt; void</code></td>
+                <td>Closes the dialog, optionally with the specified action indicating why it was closed.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 id="events">Events</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Event Name</th>
+                <th><code>event.detail</code></th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>MDCDialog:opening</code></td>
+                <td><code>{}</code></td>
+                <td>Indicates when the dialog begins its opening animation.</td>
+              </tr>
+              <tr>
+                <td><code>MDCDialog:opened</code></td>
+                <td><code>{}</code></td>
+                <td>Indicates when the dialog finishes its opening animation.</td>
+              </tr>
+              <tr>
+                <td><code>MDCDialog:closing</code></td>
+                <td><code>{action: string?}</code></td>
+                <td>Indicates when the dialog begins its closing animation. <code>action</code> represents the action which closed the dialog.</td>
+              </tr>
+              <tr>
+                <td><code>MDCDialog:closed</code></td>
+                <td><code>{action: string?}</code></td>
+                <td>Indicates when the dialog finishes its closing animation. <code>action</code> represents the action which closed the dialog.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h2 id="usage-within-web-frameworks">Usage within Web Frameworks</h2>
+          <p>If you are using a JavaScript framework, such as React or Angular, you can create a Dialog for your framework. Depending on your needs, you can use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or the <em>Advanced Approach: Using Foundations and Adapters</em>. Please follow the instructions <a href="/components/web/docs/framework-integration/">here</a>.</p>
+          <h3 id="mdcdialogadapter"><code>MDCDialogAdapter</code></h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Method Signature</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>addClass(className: string) =&gt; void</code></td>
+                <td>Adds a class to the root element.</td>
+              </tr>
+              <tr>
+                <td><code>removeClass(className: string) =&gt; void</code></td>
+                <td>Removes a class from the root element.</td>
+              </tr>
+              <tr>
+                <td><code>hasClass(className: string) =&gt; boolean</code></td>
+                <td>Returns whether the given class exists on the root element.</td>
+              </tr>
+              <tr>
+                <td><code>addBodyClass(className: string) =&gt; void</code></td>
+                <td>Adds a class to the <code>&lt;body&gt;</code>.</td>
+              </tr>
+              <tr>
+                <td><code>removeBodyClass(className: string) =&gt; void</code></td>
+                <td>Removes a class from the <code>&lt;body&gt;</code>.</td>
+              </tr>
+              <tr>
+                <td><code>eventTargetMatches(target: EventTarget | null, selector: string) =&gt; void</code></td>
+                <td>Returns <code>true</code> if the target element matches the given CSS selector, otherwise <code>false</code>.</td>
+              </tr>
+              <tr>
+                <td><code>trapFocus(initialFocusEl: HTMLElement|null) =&gt; void</code></td>
+                <td>Sets up the DOM such that keyboard navigation is restricted to focusable elements within the dialog surface (see <a href="#handling-focus-trapping">Handling Focus Trapping</a> below for more details). Moves focus to <code>initialFocusEl</code>, if set.</td>
+              </tr>
+              <tr>
+                <td><code>releaseFocus() =&gt; void</code></td>
+                <td>Removes any effects of focus trapping on the dialog surface (see <a href="#handling-focus-trapping">Handling Focus Trapping</a> below for more details).</td>
+              </tr>
+              <tr>
+                <td><code>getInitialFocusEl() =&gt; HTMLElement|null</code></td>
+                <td>Returns the <code>data-mdc-dialog-initial-focus</code> element to add focus to after the dialog has opened.</td>
+              </tr>
+              <tr>
+                <td><code>isContentScrollable() =&gt; boolean</code></td>
+                <td>Returns <code>true</code> if <code>mdc-dialog__content</code> can be scrolled by the user, otherwise <code>false</code>.</td>
+              </tr>
+              <tr>
+                <td><code>areButtonsStacked() =&gt; boolean</code></td>
+                <td>Returns <code>true</code> if <code>mdc-dialog__action</code> buttons (<code>mdc-dialog__button</code>) are stacked vertically, otherwise <code>false</code> if they are side-by-side.</td>
+              </tr>
+              <tr>
+                <td><code>getActionFromEvent(event: Event) =&gt; string \| null</code></td>
+                <td>Retrieves the value of the <code>data-mdc-dialog-action</code> attribute from the given event’s target, or an ancestor of the target.</td>
+              </tr>
+              <tr>
+                <td><code>clickDefaultButton() =&gt; void</code></td>
+                <td>Invokes <code>click()</code> on the <code>data-mdc-dialog-button-default</code> element, if one exists in the dialog.</td>
+              </tr>
+              <tr>
+                <td><code>reverseButtons() =&gt; void</code></td>
+                <td>Reverses the order of action buttons in the <code>mdc-dialog__actions</code> element. Used when switching between stacked and unstacked button layouts.</td>
+              </tr>
+              <tr>
+                <td><code>notifyOpening() =&gt; void</code></td>
+                <td>Broadcasts an event denoting that the dialog has just started to open.</td>
+              </tr>
+              <tr>
+                <td><code>notifyOpened() =&gt; void</code></td>
+                <td>Broadcasts an event denoting that the dialog has finished opening.</td>
+              </tr>
+              <tr>
+                <td><code>notifyClosing(action: string) {}</code></td>
+                <td>Broadcasts an event denoting that the dialog has just started closing. If a non-empty <code>action</code> is passed, the event’s <code>detail</code> object should include its value in the <code>action</code> property.</td>
+              </tr>
+              <tr>
+                <td><code>notifyClosed(action: string) {}</code></td>
+                <td>Broadcasts an event denoting that the dialog has finished closing. If a non-empty <code>action</code> is passed, the event’s <code>detail</code> object should include its value in the <code>action</code> property.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 id="mdcdialogfoundation"><code>MDCDialogFoundation</code></h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Method Signature</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>open()</code></td>
+                <td>Opens the dialog.</td>
+              </tr>
+              <tr>
+                <td><code>close(action: string)</code></td>
+                <td>Closes the dialog, optionally with the specified action indicating why it was closed.</td>
+              </tr>
+              <tr>
+                <td><code>isOpen() =&gt; boolean</code></td>
+                <td>Returns whether the dialog is open.</td>
+              </tr>
+              <tr>
+                <td><code>layout()</code></td>
+                <td>Recalculates layout and automatically adds/removes modifier classes e.g. <code>--scrollable</code>.</td>
+              </tr>
+              <tr>
+                <td><code>getEscapeKeyAction() =&gt; string</code></td>
+                <td>Returns the action reflected when the Escape key is pressed.</td>
+              </tr>
+              <tr>
+                <td><code>setEscapeKeyAction(action: string)</code></td>
+                <td>Sets the action reflected when the Escape key is pressed. Setting to <code>''</code> disables closing the dialog via Escape key.</td>
+              </tr>
+              <tr>
+                <td><code>getScrimClickAction() =&gt; string</code></td>
+                <td>Returns the action reflected when the scrim is clicked.</td>
+              </tr>
+              <tr>
+                <td><code>setScrimClickAction(action: string)</code></td>
+                <td>Sets the action reflected when the scrim is clicked. Setting to <code>''</code> disables closing the dialog via scrim click.</td>
+              </tr>
+              <tr>
+                <td><code>getAutoStackButtons() =&gt; boolean</code></td>
+                <td>Returns whether stacked/unstacked action button layout is automatically handled during layout logic.</td>
+              </tr>
+              <tr>
+                <td><code>setAutoStackButtons(autoStack: boolean) =&gt; void</code></td>
+                <td>Sets whether stacked/unstacked action button layout is automatically handled during layout logic.</td>
+              </tr>
+              <tr>
+                <td><code>handleClick(event: MouseEvent)</code></td>
+                <td>Handles <code>click</code> events on or within the dialog’s root element.</td>
+              </tr>
+              <tr>
+                <td><code>handleKeydown(event: KeyboardEvent)</code></td>
+                <td>Handles <code>keydown</code> events on or within the dialog’s root element.</td>
+              </tr>
+              <tr>
+                <td><code>handleDocumentKeydown(event: Event)</code></td>
+                <td>Handles <code>keydown</code> events on or within the document while the dialog is open.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 id="event-handlers">Event Handlers</h4>
+          <p>When wrapping the Dialog foundation, the following events must be bound to the indicated foundation methods:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Event</th>
+                <th>Target</th>
+                <th>Foundation Handler</th>
+                <th>Register</th>
+                <th>Deregister</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>click</code></td>
+                <td><code>.mdc-dialog</code> (root)</td>
+                <td><code>handleClick</code></td>
+                <td>During initialization</td>
+                <td>During destruction</td>
+              </tr>
+              <tr>
+                <td><code>keydown</code></td>
+                <td><code>.mdc-dialog</code> (root)</td>
+                <td><code>handleKeydown</code></td>
+                <td>During initialization</td>
+                <td>During destruction</td>
+              </tr>
+              <tr>
+                <td><code>keydown</code></td>
+                <td><code>document</code></td>
+                <td><code>handleDocumentKeydown</code></td>
+                <td>On <code>MDCDialog:opening</code></td>
+                <td>On <code>MDCDialog:closing</code></td>
+              </tr>
+              <tr>
+                <td><code>resize</code></td>
+                <td><code>window</code></td>
+                <td><code>layout</code></td>
+                <td>On <code>MDCDialog:opening</code></td>
+                <td>On <code>MDCDialog:closing</code></td>
+              </tr>
+              <tr>
+                <td><code>orientationchange</code></td>
+                <td><code>window</code></td>
+                <td><code>layout</code></td>
+                <td>On <code>MDCDialog:opening</code></td>
+                <td>On <code>MDCDialog:closing</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 id="the-util-api">The Util API</h3>
+          <p>External frameworks and libraries can use the following utility methods from the <code>util</code> module when implementing their own component.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Method Signature</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>createFocusTrapInstance(surfaceEl: Element, focusTrapFactory: function(): !FocusTrap, initialFocusEl: ?Element) =&gt; !FocusTrap</code></td>
+                <td>Creates a properly configured <a href="https://github.com/davidtheclark/focus-trap">focus-trap</a> instance.</td>
+              </tr>
+              <tr>
+                <td><code>isScrollable(el: Element \| null) =&gt; boolean</code></td>
+                <td>Determines if the given element is scrollable.</td>
+              </tr>
+              <tr>
+                <td><code>areTopsMisaligned(els: Element[]) =&gt; boolean</code></td>
+                <td>Determines if two or more of the given elements have different <code>offsetTop</code> values.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 id="handling-focus-trapping">Handling Focus Trapping</h3>
+          <p>In order for dialogs to be fully accessible, they must conform to the guidelines outlined in:</p>
+          <ul>
+            <li>https://www.w3.org/TR/wai-aria-practices/#dialog_modal</li>
+            <li>https://www.w3.org/TR/wai-aria-practices-1.1/examples/dialog-modal/dialog.html</li>
+            <li>https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_dialog_role</li>
+          </ul>
+          <p>The main implication of these guidelines is that the only focusable elements are those contained within a dialog
+            surface.</p>
+          <p>Trapping focus correctly for a modal dialog requires a complex set of events and interaction
+            patterns that we feel is best not duplicated within the logic of this component. Furthermore,
+            frameworks and libraries may have their own ways of trapping focus that framework authors may want
+            to make use of. For this reason, we have two methods on the adapter that should be used to handle
+            focus trapping:</p>
+          <ul>
+            <li><code>trapFocus()</code> is called when the dialog is open and should set up focus trapping adhering
+              to the ARIA practices in the link above.</li>
+            <li><code>releaseFocus()</code> is called when the dialog is closed and should tear down any focus
+              trapping set up when the dialog was open.</li>
+          </ul>
+          <p>The <code>MDCDialog</code> component uses the <a href="https://github.com/davidtheclark/focus-trap">focus-trap</a> package to handle this.
+            <strong>You can use <code>util.createFocusTrapInstance()</code> (see below) to easily create
+              a focus trapping solution for your component code.</strong></p>
+          <blockquote>
+            <p>NOTE: iOS platform doesn’t seem to register currently focused element via <code>document.activeElement</code> which causes releasing
+              focus to last focused element fail.</p>
+          </blockquote>
+          <h4 id="createfocustrapinstance"><code>createFocusTrapInstance()</code></h4>
+          <pre><code class="language-js">const {activate, deactivate} =
+  util.createFocusTrapInstance(surfaceEl, focusTrapFactory, initialFocusEl);
+</code></pre>
+          <p>Given a dialog surface element an optional <code>focusTrap</code> factory function, and an optional initial element to focus,
+            such that:</p>
+          <ul>
+            <li>The focus is trapped within the <code>surfaceEl</code></li>
+            <li>The <code>initialFocusEl</code> receives focus when the focus trap is activated
+              <ul>
+                <li>If omitted, defaults to the first focusable element in <code>surfaceEl</code></li>
+              </ul>
+            </li>
+            <li>Closing the dialog in any way (including pressing Escape or clicking outside the dialog) deactivates focus trapping</li>
+            <li>Focus is returned to the previously focused element before the focus trap was activated</li>
+          </ul>
+          <p>This focus trap instance can be used to implement the <code>trapFocus</code> and <code>releaseFocus</code> adapter methods by calling
+            <code>instance.activate()</code> and <code>instance.deactivate()</code> respectively within those methods.</p>
+          <p>The <code>focusTrapFactory</code> can be used to override the <code>focus-trap</code> function used to create the focus trap. Its API is the
+            same as focus-trap’s <a href="https://github.com/davidtheclark/focus-trap#focustrap--createfocustrapelement-createoptions">createFocusTrap</a>
+            (which is what it defaults to). You can pass in a custom function for mocking out the actual function within tests,
+            or to modify the arguments passed to the function before it’s called.</p>
+        </article>
+        <footer class="footer">
+          <section class="footer__content">
+            <div class="footer__row">
+              <a class="footer__logo-link">
+                <div class="footer__logo"></div>
+              </a>
+              <div class="footer__copy">
+                <p class="footer__description">Material design is an adaptable system—backed by open-source code—guiding you in the principles and best practices of contemporary UI. Material helps teams streamline the designer-developer collaboration, reduce complexity, and enable fidelity through reusable components, patterns, and code libraries. All while adapting easily to your brand, platform, and users’ needs.</p>
+                <nav class="footer__navigation">
+                  <ul class="footer__navigation-list">
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.github.com/material-components"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Github
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.twitter.com/materialdesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Twitter
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.youtube.com/googledesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        YouTube
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://services.google.com/fb/forms/materialdesignnewsletter/"
+                  target="_blank"
+                  class="footer-block__social-nav-link"
+                  aria-label="Sign up for our newsletter">
+                        Newsletter
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="footer__row footer-legal">
+              <a class="footer-legal__logo-container" href="https://google.com">
+                <img src="/develop/images/google-logo-gray.svg" alt="Google" />
+              </a>
+              <ul class="footer-legal__nav-list">
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/privacy"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/terms"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Terms and Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </footer>
+      </section>
+    </div>
+    <template id="language-radio-template">
+      <div class="mdc-form-field">
+        <div class="mdc-radio">
+          <input class="mdc-radio__native-control"
+             type="radio"
+             id="" name="" value="">
+          <div class="mdc-radio__background">
+            <div class="mdc-radio__outer-circle"></div>
+            <div class="mdc-radio__inner-circle"></div>
+          </div>
+        </div>
+        <label class="language-name" for=""></label>
+      </div>
+    </template>
+    <button
+    class="feedback-button"
+    aria-label="Send Feedback"
+    tabindex="0">
+    </button>
+    <script src="/develop/js/index.js" async></script>
+    <script src="https://www.gstatic.com/feedback/api.js" async></script>
+  </body>
+</html>

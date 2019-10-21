@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos;; img-src https://material.io flutter.github.io https://www.google-analytics.com https://stats.g.doubleclick.net img.shields.io &apos;self&apos;; script-src https://www.google.com https://www.gstatic.com https://adservice.google.com https://www.googletagmanager.com https://www.google-analytics.com &apos;unsafe-inline&apos; &apos;self&apos;; style-src https://fonts.googleapis.com/css &apos;unsafe-inline&apos; &apos;self&apos;; font-src https://fonts.gstatic.com/s/ &apos;self&apos;; child-src &apos;none&apos;;">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>App bars: top - Material Components for iOS</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-NHRPF8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta itemprop="name" content="App bars: top - Material Components for iOS">
+    <meta itemprop="image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta name="description" content="The Material Design top app bar displays information and actions relating to the current view.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="App bars: top - Material Components for iOS">
+    <meta property="og:site_name" content="Material Components for iOS">
+    <meta property="og:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta property="article:section" content="App bars: top">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@materialdesign">
+    <meta name="twitter:title" content="Material Components">
+    <meta name="twitter:description" content="Create beautiful apps with modular and customizable UI components">
+    <meta name="twitter:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <link rel="icon" sizes="192x192" href="/develop/images/app-icons/material-logo-app-icon-192x192.png">
+    <link rel="shortcut icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/develop/images/app-icons/material-logo-app-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/develop/images/app-icons/material-logo-app-icon-180x180.png">
+    <meta name="msapplication-TileImage" content="https://material.io/static/images/hub/favicons/hub-ms-icon-144x144.png">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/develop/css/codemirror.css">
+    <link rel="stylesheet" href="/develop/css/neo.css">
+    <link rel="stylesheet" href="/develop/css/app.css">
+    <script async defer src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body class="page page--detail page--components page--platform-ios">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <aside class="page__temporary-drawer mdc-drawer mdc-drawer--temporary page_drawer--temporary">
+      <nav class="temporary-drawer__drawer mdc-drawer__drawer mdc-drawer__content">
+        <header class="temporary-drawer__header mdc-drawer__header">
+          <div class="temporary-drawer__header-content mdc-drawer__header-content">
+            <div class="temporary-drawer__header-icon develop-toolbar__leading-icon"></div>
+            Material Design
+          </div>
+        </header>
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label toolbar-platform-chooser__label--no-capital">ios</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <h3 class="drawer-heading">Components</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/action-sheet/">
+                Action Sheet
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/animation-timing/">
+                Animation timing
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/bottomappbar/">
+                App bars: bottom
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/app-bars/">
+                App bars: top
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/app-bars/header-stack-view/">
+                    Header stack view
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/app-bars/navigation-bars/">
+                    Navigation bar
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/bottomnavigation/">
+                Bottom navigation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/buttons/">
+                Buttons
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/cards/">
+                Cards
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/chips/">
+                Chips
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/dialogs/">
+                Dialogs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/feature-highlights/">
+                Feature highlight
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/flexible-headers/">
+                Flexible header
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/ink/">
+                Ink
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/library-info/">
+                Library info
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/list/">
+                List
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/masked-transitions/">
+                Masked transitions
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/navigation-drawer/">
+                NavigationDrawer
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/page-controls/">
+                Page control
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/palette/">
+                Palettes
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/progress-indicators/">
+                Progress indicators
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/progress-indicators/activity-indicators/">
+                    Circular progress &amp; activity indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/progress-indicators/progress-views/">
+                    Linear progress indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/ripple/">
+                Ripple
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/shadows/">
+                Shadow layer
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/shadows/shadow-elevations/">
+                    Shadow elevations
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/shapelibrary/">
+                ShapeLibrary
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/shapes/">
+                Shapes
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/bottom-sheet/">
+                Sheets: bottom
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/sliders/">
+                Slider
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/snackbars/">
+                Snackbar
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/snackbars/overlay-window/">
+                    Overlay window
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/tabs/">
+                Tabs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/textfields/">
+                Text fields
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/theming/">
+                Theming
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/bidirectionality/">
+                    Bidirectionality
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/color/">
+                    Color scheme
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/shape/">
+                    Shape scheme
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/typography/">
+                    Typography scheme
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <a class="drawer-link drawer-link--no-list" href="/components/ios/docs/build-env/">Documentation</a>
+        </nav>
+      </nav>
+    </aside>
+    <header class="develop-toolbar mdc-toolbar mdc-toolbar--fixed
+    
+    
+      mdc-toolbar--platform
+    ">
+      <div class="search-form" id="top-level-search-bar">
+        <form class="search-form__form" id="top-level-search-form">
+          <input type="text" class="search-form__input" id="top-level-search-input" autocomplete="off">
+        </form>
+        <div class="search-form__label" id="top-level-search-label">Search</div>
+        <button class="search-form__button search-form__button--close" id="top-level-search-close" aria-label="Close search">
+          <div class="search-form__close-icon" id="close-button-icon" data-mdc-ripple-is-unbounded=""></div>
+        </button>
+      </div>
+      <div class="develop-toolbar__row mdc-toolbar__row">
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="menu-button" id="menu-open">
+            <div class="menu-button__icon menu-button__icon--initial-load" id="menu-icon"></div>
+          </button>
+          <a class="develop-toolbar__title-link" href="/">
+            <div class="develop-toolbar__leading-icon"></div>
+            <h1 class="develop-toolbar__title mdc-toolbar__title">
+              Material Design
+            </h1>
+          </a>
+        </section>
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+          <nav id="navigation-tabs" class="develop-tab-bar">
+            <a href="/design" class="develop-tab">
+              Design
+            </a>
+            <a href="/components" class="develop-tab">
+              Components
+            </a>
+            <a href="/develop" class="develop-tab develop-tab--active">
+              Develop
+              <span class="develop-tab__nav-indicator"></span>
+            </a>
+            <a href="/resources" class="develop-tab">
+              Resources
+            </a>
+          </nav>
+          <section class="develop-toolbar__section develop-toolbar__section--search mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+            <button class="search-form__button search-form__button--open" id="top-level-search-open" aria-label="Search">
+              <div class="search-form__search-icon" id="spyglass-icon"></div>
+            </button>
+          </section>
+        </section>
+      </div>
+    </header>
+    <div class="page__content page__flex-element">
+      <div class="page__drawer mdc-permanent-drawer">
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label toolbar-platform-chooser__label--no-capital">ios</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item" role="menuitem" tabindex="0" data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <h3 class="drawer-heading">Components</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/action-sheet/">
+                Action Sheet
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/animation-timing/">
+                Animation timing
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/bottomappbar/">
+                App bars: bottom
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/app-bars/">
+                App bars: top
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/app-bars/header-stack-view/">
+                    Header stack view
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/app-bars/navigation-bars/">
+                    Navigation bar
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/bottomnavigation/">
+                Bottom navigation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/buttons/">
+                Buttons
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/cards/">
+                Cards
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/chips/">
+                Chips
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/dialogs/">
+                Dialogs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/feature-highlights/">
+                Feature highlight
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/flexible-headers/">
+                Flexible header
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/ink/">
+                Ink
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/library-info/">
+                Library info
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/list/">
+                List
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/masked-transitions/">
+                Masked transitions
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/navigation-drawer/">
+                NavigationDrawer
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/page-controls/">
+                Page control
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/palette/">
+                Palettes
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/progress-indicators/">
+                Progress indicators
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/progress-indicators/activity-indicators/">
+                    Circular progress &amp; activity indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/progress-indicators/progress-views/">
+                    Linear progress indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/ripple/">
+                Ripple
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/shadows/">
+                Shadow layer
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/shadows/shadow-elevations/">
+                    Shadow elevations
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/shapelibrary/">
+                ShapeLibrary
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/shapes/">
+                Shapes
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/bottom-sheet/">
+                Sheets: bottom
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/sliders/">
+                Slider
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/snackbars/">
+                Snackbar
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/snackbars/overlay-window/">
+                    Overlay window
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/tabs/">
+                Tabs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/textfields/">
+                Text fields
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link" href="/components/ios/catalog/theming/">
+                Theming
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/bidirectionality/">
+                    Bidirectionality
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/color/">
+                    Color scheme
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/shape/">
+                    Shape scheme
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link" href="/components/ios/catalog/theming/typography/">
+                    Typography scheme
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <a class="drawer-link drawer-link--no-list" href="/components/ios/docs/build-env/">Documentation</a>
+        </nav>
+      </div>
+      <section class="page__main-section">
+        <article class="page__article article article--icon-toolbar">
+          <!-- This file was auto-generated using ./scripts/generate_readme AppBar -->
+          <h1 id="app-bars-top">App bars: top</h1>
+          <p><a href="https://github.com/material-components/material-components-ios/issues?q=is%3Aopen+is%3Aissue+label%3Atype%3ABug+label%3A%5BAppBar%5D"><img src="https://img.shields.io/badge/dynamic/json.svg?label=open%20bugs&amp;url=https%3A%2F%2Fapi.github.com%2Fsearch%2Fissues%3Fq%3Dis%253Aopen%2Blabel%253Atype%253ABug%2Blabel%253A%255BAppBar%255D&amp;query=%24.total_count" alt="Open bugs badge"></a></p>
+          <p>The Material Design top app bar displays information and actions relating to the current view.</p>
+          <div class="article__asset article__asset--screenshot">
+            <img src="/components/images/content/44f36a1675da121828059c35cb7657d5.gif" alt="An animation showing a top app bar appearing and disappearing." width="320">
+          </div>
+          <h2 id="design--api-documentation">Design &amp; API documentation</h2>
+          <ul class="icon-list">
+            <li class="icon-list-item icon-list-item--spec"><a href="https://material.io/go/design-app-bar-top">Material Design guidelines: App bars: top</a></li>
+            <li class="icon-list-item icon-list-item--link">Class: <a href="https://material.io/components/ios/catalog/app-bars/api-docs/Classes/MDCAppBar.html">MDCAppBar</a></li>
+            <li class="icon-list-item icon-list-item--link">Class: <a href="https://material.io/components/ios/catalog/app-bars/api-docs/Classes/MDCAppBarContainerViewController.html">MDCAppBarContainerViewController</a></li>
+            <li class="icon-list-item icon-list-item--link">Class: <a href="https://material.io/components/ios/catalog/app-bars/api-docs/Classes/MDCAppBarNavigationController.html">MDCAppBarNavigationController</a></li>
+            <li class="icon-list-item icon-list-item--link">Class: <a href="https://material.io/components/ios/catalog/app-bars/api-docs/Classes/MDCAppBarViewController.html">MDCAppBarViewController</a></li>
+            <li class="icon-list-item icon-list-item--link">Protocol: <a href="https://material.io/components/ios/catalog/app-bars/api-docs/Protocols/MDCAppBarNavigationControllerDelegate.html">MDCAppBarNavigationControllerDelegate</a></li>
+          </ul>
+          <h2 id="related-components">Related components</h2>
+          <ul class="icon-list">
+            <li class="icon-list-item icon-list-item--link"><a href="/components/ios/catalog/flexible-headers/">FlexibleHeader</a></li>
+            <li class="icon-list-item icon-list-item--link"><a href="/components/ios/catalog/app-bars/header-stack-view/">HeaderStackView</a></li>
+            <li class="icon-list-item icon-list-item--link"><a href="/components/ios/catalog/app-bars/navigation-bars/">NavigationBar</a></li>
+          </ul>
+          <h2 id="table-of-contents">Table of contents</h2>
+          <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#installation">Installation</a>
+              <ul>
+                <li><a href="#installation-with-cocoapods">Installation with CocoaPods</a></li>
+                <li><a href="#importing">Importing</a></li>
+              </ul>
+            </li>
+            <li><a href="#usage">Usage</a>
+              <ul>
+                <li><a href="#typical-use-view-controller-containment-as-a-navigation-controller">Typical use: View controller containment, as a navigation controller</a></li>
+                <li><a href="#typical-use-view-controller-containment-as-a-child">Typical use: View controller containment, as a child</a></li>
+                <li><a href="#typical-use-view-controller-containment-as-a-container">Typical use: View controller containment, as a container</a></li>
+                <li><a href="#typical-use-tracking-a-scroll-view">Typical use: Tracking a scroll view</a></li>
+                <li><a href="#enabling-observation-of-the-tracking-scroll-view">Enabling observation of the tracking scroll view</a></li>
+                <li><a href="#uinavigationitem-support">UINavigationItem support</a></li>
+                <li><a href="#interactive-background-views">Interactive background views</a></li>
+                <li><a href="#adjusting-the-top-layout-guide-of-a-view-controller">Adjusting the top layout guide of a view controller</a></li>
+              </ul>
+            </li>
+            <li><a href="#behavioral-flags">Behavioral flags</a>
+              <ul>
+                <li><a href="#recommended-behavioral-flags">Recommended behavioral flags</a></li>
+                <li><a href="#removing-safe-area-insets-from-the-minmax-heights">Removing safe area insets from the min/max heights</a></li>
+                <li><a href="#enabling-top-layout-guide-adjustment">Enabling top layout guide adjustment</a></li>
+                <li><a href="#enabling-inferred-top-safe-area-insets">Enabling inferred top safe area insets</a></li>
+              </ul>
+            </li>
+            <li><a href="#extensions">Extensions</a>
+              <ul>
+                <li><a href="#theming">Theming</a></li>
+              </ul>
+            </li>
+            <li><a href="#accessibility">Accessibility</a>
+              <ul>
+                <li><a href="#mdcappbar-accessibility">MDCAppBar Accessibility</a></li>
+              </ul>
+            </li>
+            <li><a href="#migration-guides">Migration guides</a>
+              <ul>
+                <li><a href="#migration-guide-mdcappbar-to-mdcappbarviewcontroller">Migration guide: MDCAppBar to MDCAppBarViewController</a></li>
+              </ul>
+            </li>
+            <li><a href="#unsupported">Unsupported</a>
+              <ul>
+                <li><a href="#color-theming">Color Theming</a></li>
+                <li><a href="#typography-theming">Typography Theming</a></li>
+              </ul>
+            </li>
+          </ul>
+          <hr>
+          <h2 id="overview">Overview</h2>
+          <p>App bar is composed of the following components:</p>
+          <ul class="icon-list">
+            <li class="icon-list-item icon-list-item--link"><a href="/components/ios/catalog/flexible-headers/">FlexibleHeader</a></li>
+            <li class="icon-list-item icon-list-item--link"><a href="/components/ios/catalog/app-bars/header-stack-view/">HeaderStackView</a></li>
+            <li class="icon-list-item icon-list-item--link"><a href="/components/ios/catalog/app-bars/navigation-bars/">NavigationBar</a></li>
+          </ul>
+          <p>It is essentially a FlexibleHeader with a HeaderStackView and NavigationBar added as subviews.</p>
+          <p><code>MDCAppBarViewController</code> is the primary API for the component. All integration strategies will
+            make use of it in some manner. Unlike UIKit, which shares a single <code>UINavigationBar</code> instance across
+            many view controllers in a stack, app bar relies on each view controller creating and managing its
+            own <code>MDCAppBarViewController</code> instance.</p>
+          <h2 id="installation">Installation</h2>
+          <!-- Extracted from docs/../../../docs/component-installation.md -->
+          <h3 id="installation-with-cocoapods">Installation with CocoaPods</h3>
+          <p>Add the following to your <code>Podfile</code>:</p>
+          <pre class="code-renderer code-renderer--install"><code class="language-bash">pod &apos;MaterialComponents/AppBar&apos;
+</code></pre>
+          <p>Then, run the following command:</p>
+          <pre><code class="language-bash">pod install
+</code></pre>
+          <h3 id="importing">Importing</h3>
+          <p>To import the component:</p>
+          <div class="material-code-render">
+            <h4 id="swift">Swift</h4>
+            <pre><code class="language-swift">import MaterialComponents.MaterialAppBar
+</code></pre>
+            <h4 id="objective-c">Objective-C</h4>
+            <pre><code class="language-objc">#import &quot;MaterialAppBar.h&quot;
+</code></pre>
+          </div>
+          <h2 id="usage">Usage</h2>
+          <!-- Extracted from docs/typical-use-navigation-controller.md -->
+          <h3 id="typical-use-view-controller-containment-as-a-navigation-controller">Typical use: View controller containment, as a navigation controller</h3>
+          <p>The easiest integration path for using the app bar is through the <code>MDCAppBarNavigationController</code>.
+            This API is a subclass of UINavigationController that automatically adds an
+            <code>MDCAppBarViewController</code> instance to each view controller that is pushed onto it, unless an app bar
+            or flexible header already exists.</p>
+          <p>When using the <code>MDCAppBarNavigationController</code> you will, at a minimum, need to configure the added
+            app bar&#x2019;s background color using the delegate.</p>
+          <h4 id="example">Example</h4>
+          <div class="material-code-render">
+            <h4 id="swift-1">Swift</h4>
+            <pre><code class="language-swift">let navigationController = MDCAppBarNavigationController()
+navigationController.pushViewController(&lt;#T##viewController: UIViewController##UIViewController#&gt;, animated: &lt;#T##Bool#&gt;)
+
+// MARK: MDCAppBarNavigationControllerDelegate
+
+func appBarNavigationController(_ navigationController: MDCAppBarNavigationController,
+                                willAdd appBarViewController: MDCAppBarViewController,
+                                asChildOf viewController: UIViewController) {
+  appBarViewController.headerView.backgroundColor = &lt;#(UIColor)#&gt;
+}
+</code></pre>
+            <h4 id="objective-c-1">Objective-C</h4>
+            <pre><code class="language-objc">MDCAppBarNavigationController *navigationController =
+    [[MDCAppBarNavigationController alloc] init];
+[navigationController pushViewController:&lt;#(nonnull UIViewController *)#&gt; animated:&lt;#(BOOL)#&gt;];
+
+#pragma mark - MDCAppBarNavigationControllerDelegate
+
+- (void)appBarNavigationController:(MDCAppBarNavigationController *)navigationController
+       willAddAppBarViewController:(MDCAppBarViewController *)appBarViewController
+           asChildOfViewController:(UIViewController *)viewController {
+  appBarViewController.headerView.backgroundColor = &lt;#(nonnull UIColor *)#&gt;;
+}
+</code></pre>
+          </div>
+          <!-- Extracted from docs/typical-use-child.md -->
+          <h3 id="typical-use-view-controller-containment-as-a-child">Typical use: View controller containment, as a child</h3>
+          <p>When an <code>MDCAppBarViewController</code> instance is added as a child to another view controller. In this
+            case, the parent view controller is often the object that creates and manages the
+            <code>MDCAppBarViewController</code> instance. This allows the parent view controller to configure the app bar
+            directly.</p>
+          <p>You&#x2019;ll typically push the parent onto a navigation controller, in which case you will also hide the
+            navigation controller&#x2019;s navigation bar using <code>UINavigationController</code>&#x2019;s
+            <code>-setNavigationBarHidden:animated:</code>.</p>
+          <h4 id="example-1">Example</h4>
+          <div class="material-code-render">
+            <h4 id="swift-2">Swift</h4>
+            <pre><code class="language-swift">let appBarViewController = MDCAppBarViewController()
+
+override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+  super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+  self.addChildViewController(appBarViewController)
+}
+
+override func viewDidLoad() {
+  super.viewDidLoad()
+
+  view.addSubview(appBarViewController.view)
+  appBarViewController.didMove(toParentViewController: self)
+}
+</code></pre>
+            <h4 id="objective-c-2">Objective-C</h4>
+            <pre><code class="language-objc">@interface MyViewController ()
+@property(nonatomic, strong, nonnull) MDCAppBarViewController *appBarViewController;
+@end
+
+@implementation MyViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+  if (self) {
+    _appBarViewController = [[MDCAppBarViewController alloc] init];
+
+    [self addChildViewController:_appBarViewController];
+  }
+  return self;
+}
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+
+  [self.view addSubview:self.appBarViewController.view];
+  [self.appBarViewController didMoveToParentViewController:self];
+}
+
+@end
+</code></pre>
+          </div>
+          <!-- Extracted from docs/typical-use-container.md -->
+          <h3 id="typical-use-view-controller-containment-as-a-container">Typical use: View controller containment, as a container</h3>
+          <p>There are cases where adding an <code>MDCAppBarViewController</code> as a child is not possible, most notably:</p>
+          <ul>
+            <li>UIPageViewController&#x2019;s view is a horizontally-paging scroll view, meaning there is no fixed view
+              to which an app bar could be added.</li>
+            <li>Any other view controller that animates its content horizontally without providing a fixed,
+              non-horizontally-moving parent view.</li>
+          </ul>
+          <p>In such cases, using <code>MDCAppBarContainerViewController</code> is preferred.
+            <code>MDCAppBarContainerViewController</code> is a simple container view controller that places a content view
+            controller as a sibling to an <code>MDCAppBarViewController</code>.</p>
+          <p><strong>Note:</strong> the trade off to using this API is that it will affect your view controller hierarchy. If
+            the view controller makes any assumptions about its parent view controller or its
+            navigationController properties then these assumptions may break once the view controller is
+            wrapped.</p>
+          <p>You&#x2019;ll typically push the container view controller onto a navigation controller, in which case you
+            will also hide the navigation controller&#x2019;s navigation bar using UINavigationController&#x2019;s
+            <code>-setNavigationBarHidden:animated:</code>.</p>
+          <h4 id="example-2">Example</h4>
+          <div class="material-code-render">
+            <h4 id="swift-3">Swift</h4>
+            <pre><code class="language-swift">let container = MDCAppBarContainerViewController(contentViewController: &lt;#T##UIViewController#&gt;)
+</code></pre>
+            <h4 id="objective-c-3">Objective-C</h4>
+            <pre><code class="language-objc">MDCAppBarContainerViewController *container =
+    [[MDCAppBarContainerViewController alloc] initWithContentViewController:&lt;#(nonnull UIViewController *)#&gt;];
+</code></pre>
+          </div>
+          <!-- Extracted from docs/../../FlexibleHeader/docs/typical-use-tracking-a-scroll-view.md -->
+          <h3 id="typical-use-tracking-a-scroll-view">Typical use: Tracking a scroll view</h3>
+          <p>The flexible header can be provided with tracking scroll view. This allows the flexible header to
+            expand, collapse, and shift off-screen in reaction to the tracking scroll view&#x2019;s delegate events.</p>
+          <blockquote>
+            <p>Important: When using a tracking scroll view you must forward the relevant UIScrollViewDelegate
+              events to the flexible header.</p>
+          </blockquote>
+          <p>Follow these steps to hook up a tracking scroll view:</p>
+          <p>Step 1: <strong>Set the tracking scroll view</strong>.</p>
+          <p>In your viewDidLoad, set the <code>trackingScrollView</code> property on the header view:</p>
+          <div class="material-code-render">
+            <h4 id="swift-4">Swift</h4>
+            <pre><code class="language-swift">headerViewController.headerView.trackingScrollView = scrollView
+</code></pre>
+            <h4 id="objective-c-4">Objective-C</h4>
+            <pre><code class="language-objc">self.headerViewController.headerView.trackingScrollView = scrollView;
+</code></pre>
+          </div>
+          <p><code>scrollView</code> might be a table view, collection view, or a plain UIScrollView.</p>
+          <p>Step 2: <strong>Forward UIScrollViewDelegate events to the Header View</strong>.</p>
+          <p>There are two ways to forward scroll events.</p>
+          <p>Option 1: if your controller does not need to respond to UIScrollViewDelegate events and you&#x2019;re
+            using either a plain UIScrollView or a UITableView you can set your MDCFlexibleHeaderViewController
+            instance as the scroll view&#x2019;s delegate.</p>
+          <div class="material-code-render">
+            <h4 id="swift-5">Swift</h4>
+            <pre><code class="language-swift">scrollView.delegate = headerViewController
+</code></pre>
+            <h4 id="objective-c-5">Objective-C</h4>
+            <pre><code class="language-objc">scrollView.delegate = self.headerViewController;
+</code></pre>
+          </div>
+          <p>Option 2: implement the required UIScrollViewDelegate methods and forward them to the
+            MDCFlexibleHeaderView instance. This is the most flexible approach and will work with any
+            UIScrollView subclass.</p>
+          <div class="material-code-render">
+            <h4 id="swift-6">Swift</h4>
+            <pre><code class="language-swift">// MARK: UIScrollViewDelegate
+
+override func scrollViewDidScroll(scrollView: UIScrollView) {
+  if scrollView == headerViewController.headerView.trackingScrollView {
+    headerViewController.headerView.trackingScrollViewDidScroll()
+  }
+}
+
+override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+  if scrollView == headerViewController.headerView.trackingScrollView {
+    headerViewController.headerView.trackingScrollViewDidEndDecelerating()
+  }
+}
+
+override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+  let headerView = headerViewController.headerView
+  if scrollView == headerView.trackingScrollView {
+    headerView.trackingScrollViewDidEndDraggingWillDecelerate(decelerate)
+  }
+}
+
+override func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer&lt;CGPoint&gt;) {
+  let headerView = headerViewController.headerView
+  if scrollView == headerView.trackingScrollView {
+    headerView.trackingScrollViewWillEndDraggingWithVelocity(velocity, targetContentOffset: targetContentOffset)
+  }
+}
+</code></pre>
+            <h4 id="objective-c-6">Objective-C</h4>
+            <pre><code class="language-objc">#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  if (scrollView == self.headerViewController.headerView.trackingScrollView) {
+    [self.headerViewController.headerView trackingScrollViewDidScroll];
+  }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+  if (scrollView == self.headerViewController.headerView.trackingScrollView) {
+    [self.headerViewController.headerView trackingScrollViewDidEndDecelerating];
+  }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+  if (scrollView == self.headerViewController.headerView.trackingScrollView) {
+    [self.headerViewController.headerView trackingScrollViewDidEndDraggingWillDecelerate:decelerate];
+  }
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView
+                     withVelocity:(CGPoint)velocity
+              targetContentOffset:(inout CGPoint *)targetContentOffset {
+  if (scrollView == self.headerViewController.headerView.trackingScrollView) {
+    [self.headerViewController.headerView trackingScrollViewWillEndDraggingWithVelocity:velocity
+                                                                    targetContentOffset:targetContentOffset];
+  }
+}
+</code></pre>
+          </div>
+          <!-- Extracted from docs/../../FlexibleHeader/docs/typical-use-scroll-view-observation.md -->
+          <h3 id="enabling-observation-of-the-tracking-scroll-view">Enabling observation of the tracking scroll view</h3>
+          <p>If you do not require the flexible header&#x2019;s shift behavior, then you can avoid having to manually
+            forward UIScrollViewDelegate events to the flexible header by enabling
+            <code>observesTrackingScrollViewScrollEvents</code> on the flexible header view. Observing the tracking
+            scroll view allows the flexible header to over-extend, if enabled, and allows the header&#x2019;s shadow to
+            show and hide itself as the content is scrolled.</p>
+          <p><strong>Note:</strong> if you support pre-iOS 11 then you will also need to explicitly clear your tracking scroll
+            view in your deinit/dealloc method.</p>
+          <div class="material-code-render">
+            <h4 id="swift-7">Swift</h4>
+            <pre><code class="language-swift">flexibleHeaderViewController.headerView.observesTrackingScrollViewScrollEvents = true
+
+deinit {
+  // Required for pre-iOS 11 devices because we&apos;ve enabled observesTrackingScrollViewScrollEvents.
+  appBarViewController.headerView.trackingScrollView = nil
+}
+</code></pre>
+            <h4 id="objective-c-7">Objective-C</h4>
+            <pre><code class="language-objc">flexibleHeaderViewController.headerView.observesTrackingScrollViewScrollEvents = YES;
+
+- (void)dealloc {
+  // Required for pre-iOS 11 devices because we&apos;ve enabled observesTrackingScrollViewScrollEvents.
+  self.appBarViewController.headerView.trackingScrollView = nil;
+}
+</code></pre>
+          </div>
+          <p><strong>Note:</strong> if <code>observesTrackingScrollViewScrollEvents</code> is enabled then you can neither enable shift
+            behavior nor manually forward scroll view delegate events to the flexible header.</p>
+          <!-- Extracted from docs/uinavigationitem-support.md -->
+          <h3 id="uinavigationitem-support">UINavigationItem support</h3>
+          <p>The App Bar begins mirroring the state of your view controller&#x2019;s <code>navigationItem</code> in the provided
+            <code>navigationBar</code> once you call <code>addSubviewsToParent</code>.</p>
+          <p>Learn more by reading the Navigation Bar section on
+            <a href="/components/ios/catalog/app-bars/navigation-bars/#observing-uinavigationitem-instances">Observing UINavigationItem instances</a>.
+            Notably: read the section on &#x201C;Exceptions&#x201D; to understand which UINavigationItem are <strong>not</strong>
+            supported.</p>
+          <!-- Extracted from docs/interactive-background-views.md -->
+          <h3 id="interactive-background-views">Interactive background views</h3>
+          <p>Scenario: you&#x2019;ve added a background image to your App Bar and you&#x2019;d now like to be able to tap the
+            background image.</p>
+          <p>This is not trivial to do with the App Bar APIs due to considerations being discussed in
+            <a href="https://github.com/material-components/material-components-ios/issues/184">Issue #184</a>.</p>
+          <p>The heart of the limitation is that we&#x2019;re using a view (<code>headerStackView</code>) to lay out the Navigation
+            Bar. If you add a background view behind the <code>headerStackView</code> instance then <code>headerStackView</code> will
+            end up eating all of your touch events.</p>
+          <p>Until <a href="https://github.com/material-components/material-components-ios/issues/184">Issue #184</a> is resolved, our recommendation for building interactive background views is the following:</p>
+          <ol>
+            <li>Do not use the App Bar component.</li>
+            <li>Create your own Flexible Header. Learn more by reading the Flexible Header
+              <a href="/components/ios/catalog/flexible-headers/#usage">Usage</a> docs.</li>
+            <li>Add your views to this flexible header instance.</li>
+            <li>Create a Navigation Bar if you need one. Treat it like any other custom view.</li>
+          </ol>
+          <!-- Extracted from docs/../../FlexibleHeader/docs/top-layout-guide-adjustment.md -->
+          <h3 id="adjusting-the-top-layout-guide-of-a-view-controller">Adjusting the top layout guide of a view controller</h3>
+          <p>If your content view controller depends on the top layout guide being adjusted &#x2014; e.g. if the
+            content does not have a tracking scroll view and therefore relies on the top layout guide to perform
+            layout calculations &#x2014; then you should consider setting <code>topLayoutGuideViewController</code> to the
+            content view controller.</p>
+          <p>Setting this property does two things:</p>
+          <ol>
+            <li>Adjusts the view controller&#x2019;s <code>topLayoutGuide</code> property to take the flexible header into account
+              (most useful pre-iOS 11).</li>
+            <li>On iOS 11 and up &#x2014; if there is no tracking scroll view &#x2014; also adjusts the
+              <code>additionalSafeAreaInsets</code> property to take the flexible header into account.</li>
+          </ol>
+          <p><strong>Note:</strong> <code>topLayoutGuideAdjustmentEnabled</code> is automatically enabled if this property is set.</p>
+          <div class="material-code-render">
+            <h4 id="swift-8">Swift</h4>
+            <pre><code class="language-swift">flexibleHeaderViewController.topLayoutGuideViewController = contentViewController
+</code></pre>
+            <h4 id="objective-c-8">Objective-C</h4>
+            <pre><code class="language-objc">flexibleHeaderViewController.topLayoutGuideViewController = contentViewController;
+</code></pre>
+          </div>
+          <h2 id="behavioral-flags">Behavioral flags</h2>
+          <p>A behavioral flag is a temporary API that is introduced to allow client teams to migrate from an old
+            behavior to a new one in a graceful fashion. Behavioral flags all go through the following life
+            cycle:</p>
+          <ol>
+            <li>The flag is introduced. The default is chosen such that clients must opt in to the new behavior.</li>
+            <li>After some time, the default changes to the new behavior and the flag is marked as deprecated.</li>
+            <li>After some time, the flag is removed.</li>
+          </ol>
+          <!-- Extracted from docs/recommended-behavioral-flags.md -->
+          <h3 id="recommended-behavioral-flags">Recommended behavioral flags</h3>
+          <p>The app bar component and its dependencies include a variety of flags that affect the behavior of
+            the <code>MDCAppBarViewController</code>. Many of these flags represent feature flags that we are using
+            to allow client teams to migrate from an old behavior to a new, usually less-buggy one.</p>
+          <p>You are encouraged to set all of the behavioral flags immediately after creating an instance of the
+            app bar.</p>
+          <p>The minimal set of recommended flag values are:</p>
+          <div class="material-code-render">
+            <h4 id="swift-9">Swift</h4>
+            <pre><code class="language-swift">// Enables support for iPad popovers and extensions.
+// Automatically enables topLayoutGuideAdjustmentEnabled as well, but does not set a
+// topLayoutGuideViewController.
+appBarViewController.inferTopSafeAreaInsetFromViewController = true
+
+// Enables support for iPhone X safe area insets.
+appBarViewController.headerView.minMaxHeightIncludesSafeArea = false
+</code></pre>
+            <h4 id="objective-c-9">Objective-C</h4>
+            <pre><code class="language-objc">// Enables support for iPad popovers and extensions.
+// Automatically enables topLayoutGuideAdjustmentEnabled as well, but does not set a
+// topLayoutGuideViewController.
+appBarViewController.inferTopSafeAreaInsetFromViewController = YES;
+
+// Enables support for iPhone X safe area insets.
+appBarViewController.headerView.minMaxHeightIncludesSafeArea = NO;
+</code></pre>
+          </div>
+          <!-- Extracted from docs/../../FlexibleHeader/docs/behavior-minmax-safearea.md -->
+          <h3 id="removing-safe-area-insets-from-the-minmax-heights">Removing safe area insets from the min/max heights</h3>
+          <p>The minimum and maximum height values of the flexible header view assume by default that the values
+            include the top safe area insets value. This assumption no longer holds true on devices with a
+            physical safe area inset and it never held true when flexible headers were shown in non full screen
+            settings (such as popovers on iPad).</p>
+          <p>This behavioral flag is enabled by default, but will eventually be disabled by default and the flag
+            will eventually be removed.</p>
+          <div class="material-code-render">
+            <h4 id="swift-10">Swift</h4>
+            <pre><code class="language-swift">flexibleHeaderViewController.headerView.minMaxHeightIncludesSafeArea = false
+</code></pre>
+            <h4 id="objective-c-10">Objective-C</h4>
+            <pre><code class="language-objc">flexibleHeaderViewController.headerView.minMaxHeightIncludesSafeArea = NO;
+</code></pre>
+          </div>
+          <!-- Extracted from docs/../../FlexibleHeader/docs/behavior-top-layout-adjustment.md -->
+          <h3 id="enabling-top-layout-guide-adjustment">Enabling top layout guide adjustment</h3>
+          <p>The <code>topLayoutGuideAdjustmentEnabled</code> behavior flag affects <code>topLayoutGuideViewController</code>.
+            Setting <code>topLayoutGuideAdjustmentEnabled</code> to YES enables the new behavior.</p>
+          <p><code>topLayoutGuideAdjustmentEnabled</code> is disabled by default, but will eventually be enabled by default
+            and the flag will eventually be removed.</p>
+          <div class="material-code-render">
+            <h4 id="swift-11">Swift</h4>
+            <pre><code class="language-swift">flexibleHeaderViewController.topLayoutGuideAdjustmentEnabled = true
+</code></pre>
+            <h4 id="objective-c-11">Objective-C</h4>
+            <pre><code class="language-objc">flexibleHeaderViewController.topLayoutGuideAdjustmentEnabled = YES;
+</code></pre>
+          </div>
+          <!-- Extracted from docs/../../FlexibleHeader/docs/behavior-inferred-top-safe-area-inset.md -->
+          <h3 id="enabling-inferred-top-safe-area-insets">Enabling inferred top safe area insets</h3>
+          <p>Prior to this behavioral flag, the flexible header always assumed that it was presented in a
+            full-screen capacity, meaning it would be placed directly behind the status bar or device bezel
+            (such as the iPhone X&#x2019;s notch). This assumption does not support extensions and iPad popovers.</p>
+          <p>Enabling the <code>inferTopSafeAreaInsetFromViewController</code> flag tells the flexible header to use its
+            view controller ancestry to extract a safe area inset from its context, instead of relying on
+            assumptions about placement of the header.</p>
+          <p>This behavioral flag is disabled by default, but will eventually be enabled by default and the flag
+            will eventually be removed.</p>
+          <div class="material-code-render">
+            <h4 id="swift-12">Swift</h4>
+            <pre><code class="language-swift">flexibleHeaderViewController.inferTopSafeAreaInsetFromViewController = true
+</code></pre>
+            <h4 id="objective-c-12">Objective-C</h4>
+            <pre><code class="language-objc">flexibleHeaderViewController.inferTopSafeAreaInsetFromViewController = YES;
+</code></pre>
+          </div>
+          <p><strong>Note:</strong> if this flag is enabled and you&#x2019;ve also provided a <code>topLayoutGuideViewController</code>, take
+            care that the <code>topLayoutGuideViewController</code> is not a direct ancestor of the flexible header or your
+            app <strong>will</strong> enter an infinite loop. As a general rule, your <code>topLayoutGuideViewController</code> should
+            be a sibling to the flexible header.</p>
+          <p>See the <a href="/components/ios/catalog/flexible-headers/">FlexibleHeader</a> documentation for additional usage guides.</p>
+          <h2 id="extensions">Extensions</h2>
+          <!-- Extracted from docs/theming.md -->
+          <h3 id="theming">Theming</h3>
+          <p><code>MDCAppBarViewController</code> supports Material Theming using a Container Scheme.
+            There are two variants for Material Theming of an AppBar.  The Surface Variant colors the App Bar
+            background to be <code>surfaceColor</code> and the Primary Variant colors the App Bar background to be
+            <code>primaryColor</code>.</p>
+          <div class="material-code-render">
+            <h4 id="swift-13">Swift</h4>
+            <pre><code class="language-swift">// Import the AppBar Theming Extensions module
+import MaterialComponents.MaterialAppBar_Theming
+
+...
+
+// Apply your app&apos;s Container Scheme to the App Bar controller
+let containerScheme = MDCContainerScheme()
+
+// Either Primary Theme
+appBarViewController.applyPrimaryTheme(withScheme: containerScheme)
+
+// Or Surface Theme
+appBarViewController.applySurfaceTheme(withScheme: containerScheme)
+</code></pre>
+            <h4 id="objective-c-13">Objective-C</h4>
+            <pre><code class="language-objc">// Import the AppBar Theming Extensions header
+#import &quot;MaterialAppBar+Theming.h&quot;
+
+...
+
+// Apply your app&apos;s Container Scheme to the App Bar controller
+MDCContainerScheme *containerScheme = [[MDCContainerScheme alloc] init];
+
+// Either Primary Theme
+[self.appBarController applyPrimaryThemeWithScheme:containerScheme];
+
+// Or Surface Theme
+[self.appBarController applySurfaceThemeWithScheme:containerScheme];
+</code></pre>
+          </div>
+          <h2 id="accessibility">Accessibility</h2>
+          <!-- Extracted from docs/accessibility.md -->
+          <h3 id="mdcappbar-accessibility">MDCAppBar Accessibility</h3>
+          <p>Because the App Bar mirrors the state of your view controller&#x2019;s navigationItem, making an App Bar accessible often
+            does not require any extra work.</p>
+          <p>See the following examples:</p>
+          <h5 id="objective-c">Objective-C</h5>
+          <pre><code>self.navigationItem.rightBarButtonItem =
+   [[UIBarButtonItem alloc] initWithTitle:@&quot;Right&quot;
+                                    style:UIBarButtonItemStyleDone
+                                   target:nil
+                                   action:nil];
+
+NSLog(@&quot;accessibilityLabel: %@&quot;,self.navigationItem.rightBarButtonItem.accessibilityLabel);
+// Prints out &quot;accessibilityLabel: Right&quot;
+</code></pre>
+          <h5 id="swift">Swift</h5>
+          <pre><code>self.navigationItem.rightBarButtonItem =
+    UIBarButtonItem(title: &quot;Right&quot;, style: .done, target: nil, action: nil)
+
+print(&quot;accessibilityLabel: \(self.navigationItem.rightBarButtonItem.accessibilityLabel)&quot;)
+// Prints out &quot;accessibilityLabel: Right&quot;
+</code></pre>
+          <h2 id="migration-guides">Migration guides</h2>
+          <!-- Extracted from docs/migration-guide-appbar-appbarviewcontroller.md -->
+          <h3 id="migration-guide-mdcappbar-to-mdcappbarviewcontroller">Migration guide: MDCAppBar to MDCAppBarViewController</h3>
+          <p>Deprecation schedule:</p>
+          <ul>
+            <li>October 15, 2018: MDCAppBar and any references to it in MDC will deprecated.</li>
+            <li>November 15, 2018: MDCAppBar and any references to it in MDC will be deleted.</li>
+          </ul>
+          <p><code>MDCAppBarViewController</code> is a direct replacement for <code>MDCAppBar</code>. The migration essentially looks
+            like so:</p>
+          <pre><code class="language-swift">// Step 1
+-  let appBar = MDCAppBar()
++  let appBarViewController = MDCAppBarViewController()
+
+// Step 2
+-  self.addChildViewController(appBar.headerViewController)
++  self.addChildViewController(appBarViewController)
+
+// Step 3
+-  appBar.addSubviewsToParent()
++  // Match the width of the parent view.
++  CGRect frame = appBarViewController.view.frame;
++  frame.origin.x = 0;
++  frame.size.width = appBarViewController.parentViewController.view.bounds.size.width;
++  appBarViewController.view.frame = frame;
++
++  view.addSubview(appBarViewController.view)
++  appBarViewController.didMove(toParentViewController: self)
+</code></pre>
+          <p><code>MDCAppBarViewController</code> is a subclass of <code>MDCFlexibleHeaderViewController</code>, meaning you configure
+            an <code>MDCAppBarViewController</code> instance exactly the same way you&#x2019;d configure an
+            <code>MDCFlexibleHeaderViewController</code> instance.</p>
+          <p><code>MDCAppBar</code> also already uses <code>MDCAppBarViewController</code> under the hood so you can directly replace
+            any references of <code>appBar.headerViewController</code> with <code>appBarViewController</code>.</p>
+          <h4 id="swift-find-and-replace-recommendations">Swift find and replace recommendations</h4>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left">Find</th>
+                <th style="text-align: left">Replace</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: left"><code>let appBar = MDCAppBar()</code></td>
+                <td style="text-align: left"><code>let appBarViewController = MDCAppBarViewController()</code></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><code>self.addChildViewController(appBar.headerViewController)</code></td>
+                <td style="text-align: left"><code>self.addChildViewController(appBarViewController)</code></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><code>appBar.addSubviewsToParent()</code></td>
+                <td style="text-align: left"><code>view.addSubview(appBarViewController.view)</code><br>
+                  <code>appBarViewController.didMove(toParentViewController: self)</code></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><code>self.appBar.headerViewController</code></td>
+                <td style="text-align: left"><code>self.appBarViewController</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 id="objective-c-find-and-replace-recommendations">Objective-C find and replace recommendations</h4>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: left">Find</th>
+                <th style="text-align: left">Replace</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: left"><code>MDCAppBar *appBar;</code></td>
+                <td style="text-align: left"><code>MDCAppBarViewController *appBarViewController;</code></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><code>appBar = [[MDCAppBar alloc] init]</code></td>
+                <td style="text-align: left"><code>appBarViewController = [[MDCAppBarViewController alloc] init]</code></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><code>addChildViewController:appBar.headerViewController</code></td>
+                <td style="text-align: left"><code>addChildViewController:appBarViewController</code></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><code>[self.appBar addSubviewsToParent];</code></td>
+                <td style="text-align: left"><code>[self.view addSubview:self.appBarViewController.view];</code><br>
+                  <code>[self.appBarViewController didMoveToParentViewController:self];</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 id="example-migrations">Example migrations</h4>
+          <ul>
+            <li><a href="https://github.com/material-components/material-components-ios/commit/50e1fd091d8d08426f390c124bf6310c54174d8c">MDCCatalog examples</a></li>
+          </ul>
+          <h2 id="unsupported">Unsupported</h2>
+          <!-- Extracted from docs/color-theming.md -->
+          <h3 id="color-theming">Color Theming</h3>
+          <p>You can theme an app bar with your app&#x2019;s color scheme using the ColorThemer extension.</p>
+          <p>You must first add the Color Themer extension to your project:</p>
+          <pre><code class="language-bash">pod &apos;MaterialComponents/AppBar+ColorThemer&apos;
+</code></pre>
+          <div class="material-code-render">
+            <h4 id="swift-14">Swift</h4>
+            <pre><code class="language-swift">// Step 1: Import the ColorThemer extension
+import MaterialComponents.MaterialAppBar_ColorThemer
+
+// Step 2: Create or get a color scheme
+let colorScheme = MDCSemanticColorScheme()
+
+// Step 3: Apply the color scheme to your component
+MDCAppBarColorThemer.applySemanticColorScheme(colorScheme, to: component)
+</code></pre>
+            <h4 id="objective-c-14">Objective-C</h4>
+            <pre><code class="language-objc">// Step 1: Import the ColorThemer extension
+#import &quot;MaterialAppBar+ColorThemer.h&quot;
+
+// Step 2: Create or get a color scheme
+id&lt;MDCColorScheming&gt; colorScheme = [[MDCSemanticColorScheme alloc] initWithDefaults:MDCColorSchemeDefaultsMaterial201804];
+
+// Step 3: Apply the color scheme to your component
+[MDCAppBarColorThemer applySemanticColorScheme:colorScheme
+                                      toAppBar:component];
+</code></pre>
+          </div>
+          <!-- Extracted from docs/typography-theming.md -->
+          <h3 id="typography-theming">Typography Theming</h3>
+          <p>You can theme an app bar with your app&#x2019;s typography scheme using the TypographyThemer extension.</p>
+          <p>You must first add the Typography Themer extension to your project:</p>
+          <pre><code class="language-bash">pod &apos;MaterialComponents/AppBar+TypographyThemer&apos;
+</code></pre>
+          <div class="material-code-render">
+            <h4 id="swift-15">Swift</h4>
+            <pre><code class="language-swift">// Step 1: Import the TypographyThemer extension
+import MaterialComponents.MaterialAppBar_TypographyThemer
+
+// Step 2: Create or get a typography scheme
+let typographyScheme = MDCTypographyScheme()
+
+// Step 3: Apply the typography scheme to your component
+MDCAppBarTypographyThemer.applyTypographyScheme(typographyScheme, to: component)
+</code></pre>
+            <h4 id="objective-c-15">Objective-C</h4>
+            <pre><code class="language-objc">// Step 1: Import the TypographyThemer extension
+#import &quot;MaterialAppBar+TypographyThemer.h&quot;
+
+// Step 2: Create or get a typography scheme
+id&lt;MDCTypographyScheming&gt; typographyScheme = [[MDCTypographyScheme alloc] init];
+
+// Step 3: Apply the typography scheme to your component
+[MDCAppBarTypographyThemer applyTypographyScheme:colorScheme
+                                        toAppBar:component];
+</code></pre>
+          </div>
+        </article>
+        <footer class="footer">
+          <section class="footer__content">
+            <div class="footer__row">
+              <a class="footer__logo-link">
+                <div class="footer__logo"></div>
+              </a>
+              <div class="footer__copy">
+                <p class="footer__description">Material design is an adaptable system&#x2014;backed by open-source code&#x2014;guiding you in the principles and best practices of contemporary UI. Material helps teams streamline the designer-developer collaboration, reduce complexity, and enable fidelity through reusable components, patterns, and code libraries. All while adapting easily to your brand, platform, and users&#x2019; needs.</p>
+                <nav class="footer__navigation">
+                  <ul class="footer__navigation-list">
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.github.com/material-components" target="_blank" class="footer-block__social-nav-link">
+                        Github
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.twitter.com/materialdesign" target="_blank" class="footer-block__social-nav-link">
+                        Twitter
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.youtube.com/googledesign" target="_blank" class="footer-block__social-nav-link">
+                        YouTube
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="footer__row footer-legal">
+              <a class="footer-legal__logo-container" href="https://google.com">
+                <img src="/develop/images/google-logo-gray.svg" alt="Google">
+              </a>
+              <ul class="footer-legal__nav-list">
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/privacy" target="_blank" class="footer-legal__nav-list-link">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/terms" target="_blank" class="footer-legal__nav-list-link">
+                    Terms and Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </footer>
+      </section>
+    </div>
+    <template id="language-radio-template">
+      <div class="mdc-form-field">
+        <div class="mdc-radio">
+          <input class="mdc-radio__native-control" type="radio" id="" name="" value="">
+          <div class="mdc-radio__background">
+            <div class="mdc-radio__outer-circle"></div>
+            <div class="mdc-radio__inner-circle"></div>
+          </div>
+        </div>
+        <label class="language-name" for=""></label>
+      </div>
+    </template>
+    <button class="feedback-button" aria-label="Send Feedback" tabindex="0">
+    </button>
+    <script src="/develop/js/index.js" async></script>
+    <script src="https://www.gstatic.com/feedback/api.js" async></script>
+  </body>
+</html>

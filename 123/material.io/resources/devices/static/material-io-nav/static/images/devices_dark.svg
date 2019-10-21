@@ -1,0 +1,7 @@
+<svg id="content" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144">
+  <title>ic_devices_144px_dark</title>
+  <polygon points="144 144 96 144 48 48 48 0 144 0 144 144" fill="#212121"/>
+  <rect width="144" height="144" fill="none"/>
+  <rect x="-24" y="72" width="96" height="48" transform="translate(120 72) rotate(90)" fill="#40c4ff"/>
+  <rect x="48" y="48" width="48" height="96" fill="#2979ff"/>
+</svg>

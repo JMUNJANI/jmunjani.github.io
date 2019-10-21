@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MDCInkTouchControllerDelegate Protocol Reference</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/develop/css/jazzy.css">
+    <link rel="stylesheet" type="text/css" href="/develop/css/jazzy-highlight.css">
+
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+    <script src="/develop/js/jazzy.js" defer></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90255304-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async defer src="//www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Protocol/MDCInkTouchControllerDelegate" class="dashAnchor"></a>
+
+    <a title="MDCInkTouchControllerDelegate Protocol Reference"></a>
+
+    <header class="header">
+      <div class="header-col">
+        <a class="header-link" href="../../">
+          <div class="header-col__logo"></div>
+          Ink Docs
+        </a>
+          <span class="header__coverage">(100% documented)</span>
+    
+      </div>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../../">Ink Reference</a>
+      <svg class="caret" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewbox="0 0 24 24">
+        <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/>
+      </svg>
+      MDCInkTouchControllerDelegate Protocol Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MDCInkGestureRecognizer.html">MDCInkGestureRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MDCInkTouchController.html">MDCInkTouchController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MDCInkView.html">MDCInkView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enumerations.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MDCInkStyle.html">MDCInkStyle</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCInkTouchControllerDelegate.html">MDCInkTouchControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCInkViewDelegate.html">MDCInkViewDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Type Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:MDCInkView.h@T@MDCInkCompletionBlock">MDCInkCompletionBlock</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>MDCInkTouchControllerDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">MDCInkTouchControllerDelegate</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>Delegate methods for MDCInkTouchController.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MDCInkTouchControllerDelegate(im)inkTouchController:insertInkView:intoView:"></a>
+                    <a name="//apple_ref/objc/Method/-inkTouchController:insertInkView:intoView:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MDCInkTouchControllerDelegate(im)inkTouchController:insertInkView:intoView:">-inkTouchController:insertInkView:intoView:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Inserts the ink view into the given view.</p>
+
+<p>If this method is not implemented, the ink view is added as a subview of the view when the
+controller&#x2019;s addInkView method is called. Delegates can choose to insert the ink view below the
+contents as a background view. When inkTouchController:inkViewAtTouchLocation is implemented
+this method will not be invoked.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">inkTouchController</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MDCInkTouchController.html">MDCInkTouchController</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">inkTouchController</span>
+             <span class="nf">insertInkView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nv">inkView</span>
+                  <span class="nf">intoView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIView</span> <span class="o">*</span><span class="p">)</span><span class="nv">view</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inkTouchController</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ink touch controller.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inkView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ink view.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>view</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The view to add the ink view to.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MDCInkTouchControllerDelegate(im)inkTouchController:inkViewAtTouchLocation:"></a>
+                    <a name="//apple_ref/objc/Method/-inkTouchController:inkViewAtTouchLocation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MDCInkTouchControllerDelegate(im)inkTouchController:inkViewAtTouchLocation:">-inkTouchController:inkViewAtTouchLocation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the ink view to use for a touch located at location in inkTouchController.view.</p>
+
+<p>If the delegate implements this method, the controller will not create an ink view of its own and
+inkTouchController:insertInkView:intoView: will not be called. This method allows the delegate
+to control the creation and reuse of ink views.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/MDCInkView.html">MDCInkView</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">inkTouchController</span><span class="p">:</span>
+                             <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MDCInkTouchController.html">MDCInkTouchController</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">inkTouchController</span>
+                     <span class="nf">inkViewAtTouchLocation</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">location</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inkTouchController</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ink touch controller.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>location</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The touch location in the coords of @c inkTouchController.view.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An ink view to use at the touch location.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MDCInkTouchControllerDelegate(im)inkTouchController:shouldProcessInkTouchesAtTouchLocation:"></a>
+                    <a name="//apple_ref/objc/Method/-inkTouchController:shouldProcessInkTouchesAtTouchLocation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MDCInkTouchControllerDelegate(im)inkTouchController:shouldProcessInkTouchesAtTouchLocation:">-inkTouchController:shouldProcessInkTouchesAtTouchLocation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Controls whether the ink touch controller should be processing touches.</p>
+
+<p>The touch controller will query this method to determine if it should start or continue to
+process touches controlling the ink. Returning NO at the start of a gesture will prevent any ink
+from being displayed, and returning NO in the middle of a gesture will cancel that gesture and
+evaporate the ink.</p>
+
+<p>If not implemented then YES is assumed.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <p>cancelInkTouchProcessing</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">inkTouchController</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MDCInkTouchController.html">MDCInkTouchController</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">inkTouchController</span>
+    <span class="nf">shouldProcessInkTouchesAtTouchLocation</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">location</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inkTouchController</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ink touch controller.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>location</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The touch location relative to the inkTouchController view.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>YES if the controller should process touches at @c location.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MDCInkTouchControllerDelegate(im)inkTouchController:didProcessInkView:atTouchLocation:"></a>
+                    <a name="//apple_ref/objc/Method/-inkTouchController:didProcessInkView:atTouchLocation:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MDCInkTouchControllerDelegate(im)inkTouchController:didProcessInkView:atTouchLocation:">-inkTouchController:didProcessInkView:atTouchLocation:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Notifies the receiver that the ink touch controller did process an ink view at the
+touch location.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">inkTouchController</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MDCInkTouchController.html">MDCInkTouchController</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">inkTouchController</span>
+         <span class="nf">didProcessInkView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MDCInkView.html">MDCInkView</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">inkView</span>
+           <span class="nf">atTouchLocation</span><span class="p">:(</span><span class="n">CGPoint</span><span class="p">)</span><span class="nv">location</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inkTouchController</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ink touch controller.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inkView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ink view.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>location</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The touch location relative to the inkTouchController superView.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+
+    <section class="footer">
+      <p>&#xA9; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-09-25)</p>
+    </section>
+  </body>
+
+</html>

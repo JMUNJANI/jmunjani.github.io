@@ -1,0 +1,680 @@
+<html><head><meta charset="UTF-8"></head><body><div hidden="" by-vulcanize="">
+
+<script>
+
+  Polymer({
+
+    is: 'iron-media-query',
+
+    properties: {
+
+      /**
+       * The Boolean return value of the media query.
+       */
+      queryMatches: {
+        type: Boolean,
+        value: false,
+        readOnly: true,
+        notify: true
+      },
+
+      /**
+       * The CSS media query to evaluate.
+       */
+      query: {
+        type: String,
+        observer: 'queryChanged'
+      },
+
+      /**
+       * If true, the query attribute is assumed to be a complete media query
+       * string rather than a single media feature.
+       */
+      full: {
+        type: Boolean,
+        value: false
+      },
+
+      /**
+       * @type {function(MediaQueryList)}
+       */
+      _boundMQHandler: {
+        value: function() {
+          return this.queryHandler.bind(this);
+        }
+      },
+
+      /**
+       * @type {MediaQueryList}
+       */
+      _mq: {
+        value: null
+      }
+    },
+
+    attached: function() {
+      this.style.display = 'none';
+      this.queryChanged();
+    },
+
+    detached: function() {
+      this._remove();
+    },
+
+    _add: function() {
+      if (this._mq) {
+        this._mq.addListener(this._boundMQHandler);
+      }
+    },
+
+    _remove: function() {
+      if (this._mq) {
+        this._mq.removeListener(this._boundMQHandler);
+      }
+      this._mq = null;
+    },
+
+    queryChanged: function() {
+      this._remove();
+      var query = this.query;
+      if (!query) {
+        return;
+      }
+      if (!this.full && query[0] !== '(') {
+        query = '(' + query + ')';
+      }
+      this._mq = window.matchMedia(query);
+      this._add();
+      this.queryHandler(this._mq);
+    },
+
+    queryHandler: function(mq) {
+      this._setQueryMatches(mq.matches);
+    }
+
+  });
+
+</script><dom-module id="material-io-nav" assetpath="./">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Mono:300,400,500|Roboto:400">
+  <script>
+  const CONTENT = {
+    resizer: {
+      theme: 'light',
+      title: 'Resizer',
+      subtitle: 'An interactive viewer that helps designers test material design breakpoints across desktop, mobile, and tablet.'
+    },
+    devices: {
+      theme: 'dark',
+      title: 'Device Metrics',
+      subtitle: 'A comprehensive resource for sizing, resolution, and more across multiple devices.'
+    },
+    icons: {
+      theme: 'dark',
+      title: 'Icons',
+      subtitle: 'A comprehensive resource for sizing, resolution, and more across multiple devices.'
+    }
+  };
+</script>
+
+  
+
+  <template><style>
+:host {
+  box-sizing: border-box;
+  border-bottom: 1px solid #E0E0E0;
+  display: block;
+  font-family: "Roboto Mono", monospace;
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
+}
+:host.nav-collapsed {
+  border-width: 0px;
+  height: 0px;
+}
+:host[theme='light'] {
+  background: #FFF;
+}
+:host[theme='dark'] {
+  background: #212121;
+}
+:host[theme='light'] .copy {
+  color: #000;
+}
+:host[theme='dark'] .copy {
+  color: rgba(255,255,255,0.87);
+}
+:host[theme='dark'] .material-link {
+  background-image: var(--material-io-nav-dark-logo);
+}
+:host[theme='light'] .material-link {
+  background-image: var(--material-io-nav-light-logo);
+}
+:host[theme='light'] .material-link ._text {
+  background-image: url("static/images/material_wordmark-dark.svg");
+}
+:host[theme='dark'][property='resizer'] .icon,
+:host[theme='dark'][property='resizer'] .graphic {
+  background-image: url("static/images/resizer_light.svg");
+}
+:host[theme='dark'][property='icons'] .icon ,
+:host[theme='dark'][property='icons'] .graphic {
+  background-image: url("static/images/icons_light.svg");
+}
+:host[theme='dark'][property='devices'] .icon,
+:host[theme='dark'][property='devices'] .graphic {
+  background-image: url("static/images/devices_light.svg");
+}
+:host[theme='light'][property='resizer'] .icon,
+:host[theme='light'][property='resizer'] .graphic {
+  background-image: url("static/images/resizer_dark.svg");
+}
+:host[theme='light'][property='icons'] .icon ,
+:host[theme='light'][property='icons'] .graphic {
+  background-image: url("static/images/icons_dark.svg");
+}
+:host[theme='light'][property='devices'] .icon,
+:host[theme='light'][property='devices'] .graphic {
+  background-image: url("static/images/devices_dark.svg");
+}
+:host[full-nav] header {
+  width: 100%;
+}
+
+:host[snap] {
+  overflow: visible;
+}
+
+header {
+  height: var(--material-io-nav-collapsed-height);
+  position: fixed;
+  transition: background-color 0.1s ease-in-out;
+  -webkit-transition: background-color 0.1s ease-in-out;
+  width: 150px;
+  z-index: var(--material-io-nav-z-index);
+}
+header .nav-background {
+  height:100%;
+  opacity: var(--material-io-nav-opacity);
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+:host[theme='dark'] header .nav-background {
+  background-color: var(--material-io-nav-dark-color);
+}
+:host[theme='light'] header .nav-background {
+  background-color: var(--material-io-nav-light-color);
+}
+.brand-wrapper {
+  display: inline-block;
+  height: var(--material-io-nav-brand-logo-height);
+  left: var(--material-io-brand-wrapper-left);
+  overflow: hidden;
+  position: relative;
+  top: var(--material-io-brand-wrapper-top);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  transition: top 0.1s ease-in-out;
+  -webkit-transition: top 0.1s ease-in-out;
+}
+
+.brand-wrapper .brand-carousel {
+  -webkit-transition: top 0.25s var(--ease-out-quad);
+  position: relative;
+  top: 0px;
+  transition: top 0.25s var(--ease-out-quad);
+}
+.brand-wrapper .brand-carousel.reveal-brand {
+  top: -var(--material-io-nav-brand-logo-height);
+}
+.material-link {
+  -webkit-transform: translateY(0);
+  align-items: center;
+  background-repeat: no-repeat;
+  display: flex;
+  height: var(--material-io-nav-brand-logo-height);
+  padding-left: 54px;
+  transform: translateY(0);
+}
+.material-link ._text {
+    background: url("static/images/material_wordmark.svg");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 180px auto;
+    margin: 0;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 180px;
+  }
+.container {
+	-webkit-flex-direction: row;
+	display: flex;
+	flex-direction: row;
+  display: -webkit-flex;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  top: var(--material-io-content-top);
+}
+:host[graphic-left] .container {
+	flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+}
+/* Graphic Container */
+.graphic-container {
+  height: 320px;
+  margin-left: 64px;
+  width: 50%;
+}
+:host[graphic-left] .graphic-container {
+  margin-right: 64px;
+}
+:host[graphic-left] .graphic {
+  background-position: bottom right;
+}
+.graphic-container .graphic {
+  background-repeat: no-repeat;
+  height: 100%;
+  z-index: 9999;
+}
+/* Content Container */
+.content-container {
+  position: relative;
+  width: 50%;
+}
+.content-container .copy {
+  padding-top: 139px;
+  position: absolute;
+  text-align: right;
+  width: 360px;
+}
+:host[graphic-right] .content-container .copy {
+  right: 0;
+}
+:host[graphic-left] .content-container .copy {
+  left: 0;
+  text-align: left;
+}
+.content-container .copy h3 {
+  font-family: Roboto Mono;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: -1.25px;
+  line-height: 53px;
+  margin-bottom: 16px;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+.content-container .copy p {
+  font-family: Roboto;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+/* Property Brand */
+.property-brand {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0;
+  position: relative;
+}
+.property-brand .icon {
+  height: 30px;
+  width: 30px;
+}
+.property-brand div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.property-brand .brand-name {
+  font-family: Roboto Mono;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+  padding-left: 24px;
+  text-transform: uppercase;
+}
+:host[theme='dark'] .property-brand .brand-name {
+  color: rgba(255,255,255,0.87);
+}
+/* Overlay */
+.overlay {
+  background-color: rgb(0,0,0);
+  height: 100vh;
+  left: 0;
+  opacity: 0.5;
+  position: relative;
+  top: 64px;
+  transition: top 0.1s ease-in-out;
+  -webkit-transition: top 0.1s ease-in-out;
+  width: 100%;
+  z-index: 99999;
+}
+.overlay.hidden {
+  opacity: 0;
+}
+
+.overlay[mobilesnap] {
+  top: 197px;
+}
+/* Mobile */
+
+.brand-wrapper[mobile-layout],
+.brand-wrapper[tiny-mobile] {
+  -webkit-transform: scale(0.8);
+  left: 16px !important;
+  transform-origin: left;
+  transform: scale(0.8);
+}
+
+:host[graphic-left] .container[mobile-layout],
+:host[graphic-left] .container[tiny-mobile] {
+    flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+}
+:host[graphic-right] .container[mobile-layout],
+:host[graphic-left] .container[tiny-mobile] {
+    flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+}
+.container[mobile-layout] .content-container,
+.container[tiny-mobile] .content-container {
+  width: 100%;
+}
+
+.container[mobile-layout] .content-container .copy,
+.container[tiny-mobile] .content-container .copy {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  margin: 8px 16px 16px;
+  width: auto;
+  padding-top: 0;
+}
+
+.container[tablet] .content-container .copy {
+  width: 330px;
+}
+.container[mobile-layout] .content-container .copy  h3,
+.container[tiny-mobile] .content-container .copy  h3 {
+  font-size: 26px;
+  margin-bottom: 0;
+}
+.container[mobile-layout] .content-container .copy  p,
+.container[tiny-mobile] .content-container .copy  p{
+  margin: 0;
+}
+.container[mobile-layout] .graphic-container,
+.container[tiny-mobile] .graphic-container {
+  margin: 0;
+  width: 100%;
+  position: relative;
+  height: 125px;
+  top: 0;
+}
+.container[tiny-mobile] .graphic-container {
+  height: 100px;
+}
+.container[mobile-layout] .graphic,
+.container[tiny-mobile] .graphic {
+  background-position: center;
+}
+.container[mobile-layout],
+.container[tiny-mobile] {
+  top: 64px !important;
+  height: auto;
+}
+:host[graphic-left] .container[tablet] .graphic-container {
+  -webkit-transform-origin: bottom;
+  -webkit-transform: scale(0.8);
+  transform-origin: bottom;
+  transform: scale(0.8);
+}
+
+</style><style>
+:root {
+  /* Dark Styles */
+  --material-io-nav-dark-color: #212121;
+  --material-io-nav-dark-logo: url("static/images/logo.svg");
+
+  /* Light Styles */
+  --material-io-nav-light-logo: url("static/images/material_logo.svg");
+  --material-io-nav-light-color: #FFFFFF;
+
+  /* Animations */
+  --ease-out-quad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+
+  /* Main Navigation Styles */
+  --material-io-nav-height: 320px;
+  --material-io-nav-collapsed-height: 60px;
+  --material-io-nav-opacity: 0;
+  --material-io-nav-z-index: 100;
+  --material-io-content-top: 0px;
+
+  /* Brand Carousel Styles */
+  --material-io-brand-wrapper-top: 16px;
+  --material-io-brand-wrapper-left: 32px;
+  --material-io-brand-logo-top: 0px;
+  --material-io-nav-brand-logo-height: 34px;
+}
+
+</style>
+    <iron-media-query query="(min-width: 767px) and (max-width: 1200px)" query-matches="{{tablet}}"></iron-media-query>
+    <iron-media-query query="(min-width: 360px) and (max-width: 767px)" query-matches="{{mobile}}"></iron-media-query>
+    <iron-media-query query="(min-width: 767px) and (max-width: 900px)" query-matches="{{small-desktop}}"></iron-media-query>
+    <iron-media-query query="(max-width: 359px)" query-matches="{{tiny-mobile}}"></iron-media-query>
+    <iron-media-query query="(max-width: 840px)" query-matches="{{mobilesnap}}"></iron-media-query>
+
+    <header class$="header">
+      <div class="nav-background"></div>
+      <div class="brand-wrapper" mobile-layout$="{{mobile}}" tiny-mobile$="{{tiny-mobile}}">
+        <div class="brand-carousel">
+          <a class="material-link" href$="[[url]]" aria-labelledby="page-heading">
+            <h2 id="page-heading" class="_text">Material Design</h2>
+          </a>
+          <div class="property-brand" aria-labelledby="brand-name">
+            <div class="icon"></div>
+            <div class="brand-name" id="brand-name">[[getTitle(property)]]</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container" mobile-layout$="{{mobile}}" tiny-mobile$="{{tiny-mobile}}" tablet$="{{tablet}}" small-desktop$="{{small-desktop}}">
+      <div class="content-container">
+        <div class="copy">
+          <h3>[[getTitle(property)]]</h3>
+          <p>[[getCopy(property)]]</p>
+        </div>
+      </div>
+      <div class="graphic-container">
+        <div class$="graphic [[property]]"></div>
+      </div>
+    </div>
+    <div class="overlay" on-tap="clickOverlay" hidden$="{{!snap}}" mobilesnap$="{{mobilesnap}}"></div>
+  </template>
+
+  <script>
+    MaterialIoNav =  Polymer({
+      is: 'material-io-nav',
+      properties: {
+        url: {
+          type: String,
+          value: '/'
+        },
+
+        property: {
+          type: String,
+          reflectToAttribute: true,
+          notify: true
+        },
+
+        theme: {
+          type: String,
+          value: 'dark',
+          reflectToAttribute: true
+        },
+
+        snap: {
+          type: Boolean,
+          value: false,
+        },
+
+        fullNav: {
+          type: Boolean,
+          value: false
+        },
+
+        graphicLeft: Boolean,
+
+        graphicRight: Boolean,
+
+        navZ: String
+      },
+
+      ready: function () {
+        this.expanded = true;
+        this.tapped = false;
+      },
+
+      attached: function() {
+        this.$$brandCarousel = this.$$('.brand-wrapper .brand-carousel');
+        this.$$navContainer = this.$$('.nav-background');
+        this.$$mainContainer = this.$$('.container');
+        this.setHeight();
+
+        /* Specify the Z-index of the nav */
+        this.customStyle['--material-io-nav-z-index'] = this.navZ;
+        this.customStyle['--material-io-content-top'] = '0px';
+        this.updateStyles();
+
+        /* Events */
+        if (!this.snap) {
+          document.addEventListener('scroll', this.updateNav.bind(this));
+        }
+        document.addEventListener('click', this.clickDelegator.bind(this));
+      },
+
+      getTitle: function(property) {
+        const content = CONTENT[property];
+        return content ? content.title : '';
+      },
+
+      getCopy: function(property) {
+        const content = CONTENT[property];
+        return content ? content.subtitle : '';
+      },
+
+      getOverlayClass: function(tapped, snap) {
+        return (tapped || !snap) ?
+          'hidden' : '';
+      },
+
+      clickDelegator: function(e) {
+        const targetClass = e.target.className;
+        const targetParentClass = e.target.parentNode.className;
+
+        if (targetClass.indexOf('material-io-nav') >= 0) {
+          if (targetClass.indexOf('_text') >= 0 ||
+            targetClass.indexOf('material-link') >= 0) {
+              return false;
+            }
+          if (targetParentClass.indexOf('property-brand') >= 0) {
+            this.backToTop();
+            return;
+          }
+        }
+
+        if (!this.tapped && this.snap) {
+          this.hideMainHeader();
+          this.revealBrandLogo();
+          this.updateStyles();
+          this.tapped = true;
+        }
+      },
+
+      toggleOverlay: function(show) {
+        var $$overlay = this.$$('.overlay');
+        this.toggleClass('hidden', show, $$overlay);
+      },
+
+      updateNav: function() {
+        const scrollY = window.scrollY;
+        const SNAP = 320 - 60;
+
+        if (scrollY < SNAP) {
+          if (!this.snap) {
+            this.hideBrandLogo();
+          }
+          if (this.fullNav) {
+            const opacity = parseFloat(scrollY / SNAP, 10).toFixed(1);
+            this.customStyle['--material-io-nav-opacity'] = opacity;
+          }
+        }
+
+        if (scrollY >= SNAP) {
+          if (this.fullNav) {
+            this.customStyle['--material-io-nav-opacity'] = '1';
+          }
+
+          if (this.snap) {
+            document.removeEventListener('scroll', this.updateNav);
+            this.tapped = true;
+            this.hideMainHeader();
+          }
+
+          this.revealBrandLogo();
+        }
+        this.updateStyles();
+      },
+
+      getContainerHeight: function(container) {
+        return container.offsetHeight;
+      },
+
+      setHeight: function() {
+        this.navHeight = this.$$mainContainer.offsetHeight;
+      },
+
+      revealMainHeader: function() {
+        if(!this.expanded) {
+          this.toggleOverlay(false);
+          this.toggleClass('nav-collapsed', false);
+          this.updateStyles();
+          window.scrollTo(0,0);
+          this.expanded = true;
+        }
+      },
+
+      hideMainHeader: function() {
+        if (this.expanded) {
+          this.toggleOverlay(true);
+          this.toggleClass('nav-collapsed', true);
+          this.updateStyles();
+          this.expanded = false;
+        }
+      },
+
+      revealBrandLogo: function() {
+        this.toggleClass('reveal-brand', true, this.$$brandCarousel);
+      },
+
+      hideBrandLogo: function() {
+        this.toggleClass('reveal-brand', false, this.$$brandCarousel);
+      },
+
+      backToTop: function() {
+        this.revealMainHeader();
+        this.hideBrandLogo();
+        this.updateStyles();
+        window.scrollTo(0,0);
+        document.addEventListener('scroll', this.updateNav.bind(this));
+        this.tapped = false;
+      }
+    });
+  </script>
+</dom-module>
+</div></body></html>

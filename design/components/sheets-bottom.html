@@ -1,0 +1,2192 @@
+<!DOCTYPE html>
+<html lang="en" class="preload">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Sheets: bottom - Material Design</title>
+
+
+    <meta itemprop="name"        property="og:title"       name="twitter:title"       content="Sheets: bottom" />
+    <meta itemprop="description" property="og:description" name="twitter:description" content="Bottom sheets are surfaces containing supplementary content that are anchored to the bottom of the screen." />
+    <meta itemprop="image"       property="og:image"       name="twitter:image"       content="https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1Jemv3-5kV0noAOEBnE0WXIHJkW8rm_DF%2Fsheets-thumbnail-2x1.png" />
+    <meta itemprop="url"         property="og:url"         name="twitter:url"         content="https://material.io/components/sheets-bottom/index.html" />
+    <meta property="og:site_name" content="Material Design" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">    <link rel="shortcut icon" href="/favicon.ico">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHRPF8');</script>    <style>
+.animatable {
+        opacity: 0;
+        position: relative;
+        top: 16px;         transition: opacity 235ms cubic-bezier(.4,0,.2,1),
+                    top 500ms cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/css/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+    <link rel="preload" href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/js/main.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js" as="script">
+
+
+  </head>
+
+  <body class="header-show page--article left-rail"
+        data-comp="Global "
+        data-slug-id="sheetsBottom"
+        data-spec-alias="mio-components"
+ >
+    <a class="screenreader-only" href="#main_content">Skip to main content</a>
+
+  <header class="header js-header" data-comp="Header">
+      <button class="header__hamburger header__button" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+        <i class="material-icons notranslate header__hamburger-icon" title="Toggle Navigation">menu</i>
+      </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+    <nav class="header__nav" role="navigation">
+      <ul class="header__nav-list header__nav-list--selected">
+            <li class="header__nav-item  js-header-item">
+    <a href="/design"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/design"}
+'>
+      Design
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  header__nav-item--active js-header-item" aria-current="true">
+    <a href="/components"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/components"}
+'>
+      Components
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/develop"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/develop"}
+'>
+      Develop
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/resources"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/resources"}
+'>
+      Resources
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+      </ul>
+    </nav>
+
+    <form id="search-form" class="search-form js-search" data-comp="SearchForm" data-props-searchform='{"basePath": "/", "ajax": false, "showOnLoad": false}'>
+      <button class="search-form__back js-search-back js-analytics-click" type="button" aria-label="Exit search results"
+              data-analytics='  {
+    "event": "trackEvent",
+    "category": "search back",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+        <i class="material-icons notranslate">arrow_back</i>
+      </button>
+
+      <input id="search-query" class="search-form__input js-search-input" name="q" type="text" title="query" placeholder="Search" autocomplete="off" aria-label="Type your search and press enter.">
+    </form>
+
+    <button class="header__search header__button js-toggle-search js-analytics-click"
+            data-analytics='  {
+    "event": "trackEvent",
+    "category": "search",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+      <div class="icons-container mdc-ripple-surface" data-mdc-ripple-is-unbounded>
+        <i class="material-icons notranslate header__spyglass" aria-label="Search Material Design">search</i>
+        <i class="material-icons notranslate header__search-close" aria-label="Close search">close</i>
+      </div>
+    </button>
+  </header>
+
+
+<nav aria-label="Breadcrumbs" class="breadcrumbs" data-comp="Breadcrumbs" aria-hidden="true">
+    <button class="breadcrumbs__hamburger" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+      <i class="material-icons notranslate" title="Toggle Navigation">menu</i>
+    </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+  <ol class="container container--large breadcrumbs__list">
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click "
+           href="../components"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../components"}
+'>Components</a>
+      </li>
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link"
+           href="../sheets-bottom/sheets-bottom.html"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../sheets-bottom/sheets-bottom.html"}
+'>Sheets: bottom</a>
+      </li>
+      <li class="breadcrumbs__crumb disabled breadcrumbs__chapter">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link js-breadcrumb-hash"
+           href="#usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>Usage</a>
+      </li>
+  </ol>
+</nav>
+
+
+<nav class="side-nav" data-comp="SideNav" role="navigation">
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+
+
+            <span class="side-nav__section-title">Components</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-bottom"}
+'>
+            App bars: bottom
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-top"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-top"}
+'>
+            App bars: top
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../backdrop"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../backdrop"}
+'>
+            Backdrop
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../banners"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../banners"}
+'>
+            Banners
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../bottom-navigation"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../bottom-navigation"}
+'>
+            Bottom navigation
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons"}
+'>
+            Buttons
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons-floating-action-button"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons-floating-action-button"}
+'>
+            Buttons: floating action button
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../cards"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../cards"}
+'>
+            Cards
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../chips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../chips"}
+'>
+            Chips
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../data-tables"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../data-tables"}
+'>
+            Data tables
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dialogs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dialogs"}
+'>
+            Dialogs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dividers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dividers"}
+'>
+            Dividers
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../image-lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../image-lists"}
+'>
+            Image lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../lists"}
+'>
+            Lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../menus"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../menus"}
+'>
+            Menus
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../navigation-drawer"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation-drawer"}
+'>
+            Navigation drawer
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../pickers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../pickers"}
+'>
+            Pickers
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../progress-indicators"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../progress-indicators"}
+'>
+            Progress indicators
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../selection-controls"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../selection-controls"}
+'>
+            Selection controls
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface active js-analytics-click"
+             href="../sheets-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-bottom"}
+'>
+            Sheets: bottom
+          </a>
+
+              <div class="side-nav__articles">
+    <i class="side-nav__progress-bar">
+      <i class="side-nav__scrub js-submenu-scrub"></i>
+    </i>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-usage js-analytics-click" href="#usage" data-section-id="usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>
+          <span class="js-anchor-text">Usage</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-anatomy js-analytics-click" href="#anatomy" data-section-id="anatomy"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#anatomy"}
+'>
+          <span class="js-anchor-text">Anatomy</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-behavior js-analytics-click" href="#behavior" data-section-id="behavior"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#behavior"}
+'>
+          <span class="js-anchor-text">Behavior</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-standard-bottom-sheet js-analytics-click" href="#standard-bottom-sheet" data-section-id="standard-bottom-sheet"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#standard-bottom-sheet"}
+'>
+          <span class="js-anchor-text">Standard bottom sheet</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-modal-bottom-sheet js-analytics-click" href="#modal-bottom-sheet" data-section-id="modal-bottom-sheet"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#modal-bottom-sheet"}
+'>
+          <span class="js-anchor-text">Modal bottom sheet</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-expanding-bottom-sheet js-analytics-click" href="#expanding-bottom-sheet" data-section-id="expanding-bottom-sheet"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#expanding-bottom-sheet"}
+'>
+          <span class="js-anchor-text">Expanding bottom sheet</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-theming js-analytics-click" href="#theming" data-section-id="theming"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#theming"}
+'>
+          <span class="js-anchor-text">Theming</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-specs js-analytics-click" href="#specs" data-section-id="specs"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#specs"}
+'>
+          <span class="js-anchor-text">Specs</span>
+        </a>
+      </div>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sheets-side"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-side"}
+'>
+            Sheets: side
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sliders"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sliders"}
+'>
+            Sliders
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../snackbars"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../snackbars"}
+'>
+            Snackbars
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tabs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tabs"}
+'>
+            Tabs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../text-fields"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../text-fields"}
+'>
+            Text fields
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tooltips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tooltips"}
+'>
+            Tooltips
+          </a>
+
+      </li>
+
+  </ul>
+</nav>
+
+
+    <main id="main_content" class="main" role="main" aria-labelledby="Main Content">
+<article class="article" data-comp="Waypoints">
+  <div class="article__intro container container--large js-waypoints-trigger-initial">
+    <div class="article__intro-text">
+      <h1 class="article__title animatable js-anim-trigger">
+
+        Sheets: bottom
+
+            <div class="article-controls">
+              
+            </div>
+      </h1>
+
+
+        <div class="article__intro-text animatable js-anim-trigger">
+        <div>
+<div aria-hidden="true" class="keywords hidden">sheets, bottom</div>
+<h2>Bottom sheets are surfaces containing supplementary content that are anchored to the bottom of the screen.</h2><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="sheets-bottom-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/15UG-wMUArpc8e1dJQMurk72FPJuoWsPX/bottom-sheet-intro.png" src="">
+</img></div>
+</div>
+<figcaption id="sheets-bottom-figure-caption-0"><hr class="spacer" role="presentation"/></figcaption>
+</figure><h3>Developer documentation</h3><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Platform</p></td><td colspan="1" rowspan="1"><p>Status</p></td></tr><tr><td colspan="1" rowspan="1"><p>Android</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/android/components/bottom-sheet-behavior/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>iOS</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/ios/components/bottom-sheet/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>Web</p></td><td colspan="1" rowspan="1"><p>Planned</p></td></tr><tr><td colspan="1" rowspan="1"><p>Flutter</p></td><td colspan="1" rowspan="1"><p><a href="https://api.flutter.dev/flutter/material/BottomSheet-class.html" rel="noopener" target="_blank">Available</a></p></td></tr></tbody></table></div></section></div></div>
+        </div>
+    </div>
+
+      <nav class="article__nav animatable js-anim-trigger">
+        <span class="eyebrow">Contents</span>
+        <ul>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#usage" data-section-id="usage"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#usage"}
+'>Usage</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#anatomy" data-section-id="anatomy"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#anatomy"}
+'>Anatomy</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#behavior" data-section-id="behavior"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#behavior"}
+'>Behavior</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#standard-bottom-sheet" data-section-id="standard-bottom-sheet"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#standard-bottom-sheet"}
+'>Standard bottom sheet</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#modal-bottom-sheet" data-section-id="modal-bottom-sheet"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#modal-bottom-sheet"}
+'>Modal bottom sheet</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#expanding-bottom-sheet" data-section-id="expanding-bottom-sheet"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#expanding-bottom-sheet"}
+'>Expanding bottom sheet</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#theming" data-section-id="theming"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#theming"}
+'>Theming</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#specs" data-section-id="specs"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#specs"}
+'>Specs</a>
+            </li>
+        </ul>
+      </nav>
+  </div>
+
+  <hr />
+
+  <div class="article__body animatable js-breadcrumb-toggle js-anim-trigger">
+      <section id="usage" class="container container--large js-waypoints-trigger article__section" data-section-title="Usage" aria-label="Usage">
+          <h2 class="article__chapter-title">
+            Usage
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sheets, bottom</div>
+<p>Bottom sheets are supplementary surfaces primarily used on mobile. There are three types suitable for different use cases:</p><ul class="lst-kix_idz5b1qk41ia-0 start"><li><strong>Standard bottom sheets</strong> display content that complements the screen’s primary content. They remain visible while users interact with the primary content.</li><li><strong>Modal bottom sheets</strong> are an alternative to inline menus or simple dialogs on mobile and provide room for additional items, longer descriptions, and iconography. They must be dismissed in order to interact with the underlying content.</li><li><strong>Expanding bottom sheets</strong> provide a small, collapsed surface that can be expanded by the user to access a key feature or task. They offer the persistent access of a standard sheet with the space and focus of a modal sheet.</li></ul><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../cards/cards.html#cards"}
+' href="../cards/cards.html#cards" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="../assets/1hGIRbJ4hD8kcpyu7Oe2oZ0aGqjKkkVR9/card-thumbnail-1x1-circle.png" style="background-image: url('../assets/1hGIRbJ4hD8kcpyu7Oe2oZ0aGqjKkkVR9/card-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Cards</h2>
+<p class="object-card__body">Cards contain content and links about a single subject.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../menus/menus.html#menus"}
+' href="../menus/menus.html#menus" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="../assets/1Hd8IgHigFkdRRM9dDXXE23AxbIR4Qi3j/menus-thumbnail-1x1-circle.png" style="background-image: url('../assets/1Hd8IgHigFkdRRM9dDXXE23AxbIR4Qi3j/menus-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Menus</h2>
+<p class="object-card__body">Menus display a list of choices on temporary surfaces.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../sheets-side/sheets-side.html#sheets-side"}
+' href="../sheets-side/sheets-side.html#sheets-side" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="../assets/1_tlP1E-w9t_kd14LU1YAcfpN9AlnObOC/sheets-side-thumbnail-1x1-circle.png" style="background-image: url('../assets/1_tlP1E-w9t_kd14LU1YAcfpN9AlnObOC/sheets-side-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Sheets: Side</h2>
+<p class="object-card__body">Side sheets are surfaces containing supplementary content that are anchored to the left or right edge of the screen.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1gyJUH0iRN55Zt4Kok16aCfilak4QWzi0/usage-standard.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-0">
+<h3>Standard bottom sheet</h3><p>A user can view and interact with a standard bottom sheet and the rest of the screen, useful for multi-tasking. The music player in this standard bottom sheet allows users to control their music while browsing albums.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1l977rQR5188GXu1p8Ci1NKSC0nLDIS0v/usage-modal.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-1">
+<h3>Modal bottom sheet</h3><p>A user must interact with or dismiss a modal bottom sheet. Their blocking behavior make them suitable for menus, such as in this files app, to help users focus on their available choices.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1H-6B4aN4_U03u5QAYIidANyALuxIkC69/usage-expanding.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-2">
+<h3>Expanding bottom sheet</h3><p>A user can tap an expanding bottom sheet when needed to access its full contents. The collapsed state can be used an indicator of the feature’s current status, such as the number of selected items or unread messages.</p></figcaption>
+</figure></div><div class="module"></div></section></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Principles Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Principles</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Bottom sheets contain content that supplements the screen’s primary UI region. Bottom sheets can display a wide variety of content and layouts. Bottom sheets are...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module-module col-3"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="751px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/18YD31MhovXCmF4WesC4LN2CBpuU1wCYY/sheets-bottom-illos-01.png" src="">
+</img></div>
+</div>
+</figure><h2>Supporting</h2><p>Bottom sheets contain content that supplements the screen’s primary UI region.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="751px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F106-FIS-U_KCElYX0KMSRzxiB35xnvfZ-%2Fsheets-bottom-illos-03.png" src="">
+</img></div>
+</div>
+</figure><h2>Flexible</h2><p>Bottom sheets can display a wide variety of content and layouts.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="751px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1EnHB0ouAdhd5pDJtrjzaFzJQ_id3pLpN%2Fsheets-bottom-illos-02.png" src="">
+</img></div>
+</div>
+</figure><h2>Ergonomic</h2><p>Bottom sheets are easy to reach on a mobile device.</p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="anatomy" class="container container--large js-waypoints-trigger article__section" data-section-title="Anatomy" aria-label="Anatomy">
+          <h2 class="article__chapter-title">
+            Anatomy
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sheets, bottom</div>
+<div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F186Ay__j_pDHIIzB9ke4M5Ye1XJC1HQEM%2Fanatomy.png" src="">
+</img></div>
+</div>
+</figure><ol class="lst-kix_p8ztiae9gk6v-0 start" start="1"><li>Sheet</li><li>Contents</li><li>Scrim (Modal only)</li></ol></div></section></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Sheet Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Sheet</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Bottom sheets are anchored to the bottom edge of the screen and appear in front of other UI elements. Standard and modal bottom sheets are...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Bottom sheets are anchored to the bottom edge of the screen and appear in front of other UI elements. Standard and modal bottom sheets are full-width on mobile and can be inset or full-width on tablet or desktop.</p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1ENyK4zHmr3lbLgbR22-7VjiyRyzVO7ZI/anatomy-sheet-placement-do.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-0">
+<p class="s-tag-caption do">Do.</p><p>A bottom sheet is anchored to the bottom edge of the screen.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1uMWZzTku4ngb02PsrVtYfv8iibni2oiL/anatomy-sheet-placement-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-1">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t inset all sides of a bottom sheet from screen edges. This can make it hard to see and allow it to be confused for other components, such as snackbars.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1gen_wrwpwCmIlGJowLAKg64Qoki8taa2/anatomy-sheet-desktop.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-2">
+<p>Standard bottom sheet inset on desktop</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Contents Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Contents</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Bottom sheets can display a wide variety of content and layouts, ranging from menu items (in list and grid layouts), to supplemental content laid out...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Bottom sheets can display a wide variety of content and layouts, ranging from menu items (in list and grid layouts), to supplemental content laid out according to the layout grid. </p><p>Content from a bottom sheet that initially appears below the screen edge can become visible when the sheet is dragged into view.</p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1uiZmXDew-Pm06Vln6Io2JTszlbGjOXEe/anatomy-contents-list.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-3">
+<p>Menu of actions (in a list) inside a modal bottom sheet</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1da87jIO5mur4d_CfoWe6PFFWiMgKJaoO/anatomy-contents-grid.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-4">
+<p>Menu of apps (in a grid layout) inside a modal bottom sheet</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/11OfhrcSIkQmfj8wHMN4___5jdIjQUIkY/anatomy-contents-partial.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-5">
+<p>The location information in this standard bottom sheet initially extends below the screen edge. It can be dragged into view.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1HGv_tpLnY9QGWXHytowWi0a9O0B68bOr/anatomy-contents-full.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-6">
+<p>This music player has been made fully visible to reveal a track list beneath the player.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="behavior" class="container container--large js-waypoints-trigger article__section" data-section-title="Behavior" aria-label="Behavior">
+          <h2 class="article__chapter-title">
+            Behavior
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sheets, bottom</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Visibility Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Visibility</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>When bottom sheets initially appear on screen, they may contain content that extends below the bottom of the screen. They can be swiped or dragged...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Initial appearance</h2><p>When bottom sheets initially appear on screen, they may contain content that extends below the bottom of the screen. They can be swiped or dragged up to become full-screen. Depending on the content, bottom sheets can also become full-screen by tapping on their surface or an expand icon.</p><h2>Full-screen</h2><p>When full-screen, bottom sheets can be internally scrolled to reveal additional content. A toolbar should be used to provide a collapse or close affordance to exit this view.</p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="behavior-figure-caption-0" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/10oN2rj2F4Ju3jJUg6wFCRqA_G5TsWQUm/behavior-visibility-standard.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="behavior-figure-caption-0">
+<p class="s-tag-caption do">Do.</p><p>Partially visible bottom sheets can be dragged to full-screen view and scroll internally.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="behavior-figure-caption-1" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/1mYYvVz_dCIx0bRyY_VV4hOs9709f1ESb/modal-behavior-dismissal-close.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="behavior-figure-caption-1">
+<p class="s-tag-caption do">Do.</p><p>Include a close affordance in a full-height modal bottom sheet to dismiss the sheet.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="standard-bottom-sheet" class="container container--large js-waypoints-trigger article__section" data-section-title="Standard bottom sheet" aria-label="Standard bottom sheet">
+          <h2 class="article__chapter-title">
+            Standard bottom sheet
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sheets, bottom</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Usage Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Usage</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Standard bottom sheets co-exist with the screen’s main UI region and allow for simultaneously viewing and interacting with both regions. They are commonly used to...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Standard bottom sheets co-exist with the screen’s main UI region and allow for simultaneously viewing and interacting with both regions. They are commonly used to keep a feature or secondary content visible on screen when content in main UI region is frequently scrolled or panned.</p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="standard-bottom-sheet-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1rHpxlkMgBKp_I9Eva6aC16tpaeolyy9n/standard-usage-content.png" src="">
+</img></div>
+</div>
+<figcaption id="standard-bottom-sheet-figure-caption-0">
+<p class="s-tag-caption do">Do.</p><p>Standard bottom sheets can contain supplementary content that continues below the screen, such as location information over a map.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="standard-bottom-sheet-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/12XEzozvtJXJtfAl6p7XmNzWsqoHK4aO1/standard-usage-feature.png" src="">
+</img></div>
+</div>
+<figcaption id="standard-bottom-sheet-figure-caption-1">
+<p class="s-tag-caption do">Do.</p><p>Use a standard bottom sheet to persist an important feature such as media controls in a music app.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Behavior Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Behavior</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Standard bottom sheets remain on-screen when a user interacts with the main UI region or the sheet itself. They have a default elevation of 8dp,...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Interaction</h2><p>Standard bottom sheets remain on-screen when a user interacts with the main UI region or the sheet itself. They have a default elevation of 8dp, which allows content in the main UI region behind to scroll or pan and for the sheet to temporarily cover the main UI region when made full-screen. At full-screen height, they should contain a collapse icon in an app bar to return to their initial position.</p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="standard-bottom-sheet-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1DrttY-lWiK_HxgNEH2niRpyUqHfvcjhY/standard-behavior-interaction-drag.png" src="">
+</img></div>
+</div>
+<figcaption id="standard-bottom-sheet-figure-caption-2">
+<p class="s-tag-caption do">Do.</p><p>Standard bottom sheets are elevated above the main UI region so their visibility is not affected by panning or scrolling.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="standard-bottom-sheet-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/18IiOz7xuVCVouOPrOjIGItpCMwJ5z8H6/standard-behavior-interaction-scroll.png" src="">
+</img></div>
+</div>
+<figcaption id="standard-bottom-sheet-figure-caption-3">
+<p class="s-tag-caption do">Do.</p><p>This music player in a standard bottom sheet remains on-screen as the user browses available music.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Placement Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Placement</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The contents of standard bottom sheets on mobile can be moved into side sheets on larger screen sizes given the additional horizontal space. Side sheets...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>The contents of standard bottom sheets on mobile can be moved into side sheets on larger screen sizes given the additional horizontal space. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="standard-bottom-sheet-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F12fiIOKSBCqjFRePXnWZnQ88oGFWhfBXv%2Fstandard-placement-mobile.png" src="">
+</img></div>
+</div>
+<figcaption id="standard-bottom-sheet-figure-caption-4">
+<p>On mobile, the location information for this map is displayed in a standard bottom sheet due to limited screen width.</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../sheets-side/sheets-side.html#sheets-side"}
+' href="../sheets-side/sheets-side.html#sheets-side" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="../assets/1_tlP1E-w9t_kd14LU1YAcfpN9AlnObOC/sheets-side-thumbnail-1x1-circle.png" style="background-image: url('../assets/1_tlP1E-w9t_kd14LU1YAcfpN9AlnObOC/sheets-side-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Sheets: Side</h2>
+<p class="object-card__body">Side sheets are surfaces containing supplementary content that are anchored to the left or right edge of the screen.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="standard-bottom-sheet-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/16fve1jdc23WUaFbeNXPwaiWyfP_HTUFB/standard-placement-desktop.png" src="">
+</img></div>
+</div>
+<figcaption id="standard-bottom-sheet-figure-caption-5">
+<p>On desktop, the location information for this map is displayed in side sheet because screen widths are larger than screen heights.</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="modal-bottom-sheet" class="container container--large js-waypoints-trigger article__section" data-section-title="Modal bottom sheet" aria-label="Modal bottom sheet">
+          <h2 class="article__chapter-title">
+            Modal bottom sheet
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sheets, bottom, modal</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Usage Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Usage</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Modal bottom sheets present a set of choices while blocking interaction with the rest of the screen. They are an alternative to inline menus and...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Modal bottom sheets present a set of choices while blocking interaction with the rest of the screen. They are an alternative to inline menus and simple dialogs on mobile, providing additional room for content, iconography, and actions. </p><p>Modal bottom sheets are used in mobile apps only.</p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="modal-bottom-sheet-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1XSxAfCWJqiC7_k4hoG19b4lVjJMJCjHo/modal-usage-overflow.png" src="">
+</img></div>
+</div>
+<figcaption id="modal-bottom-sheet-figure-caption-0">
+<p class="s-tag-caption do">Do.</p><p>Modal bottom sheets can be used instead of menus to present additional screen actions.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="modal-bottom-sheet-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1UwO1hSg7L1rVggHB8BpxYZGka9L9b7qV%2Fmodal-usage-cross-app.png" src="">
+</img></div>
+</div>
+<figcaption id="modal-bottom-sheet-figure-caption-1">
+<p class="s-tag-caption do">Do.</p><p>Use a modal bottom sheet to provide deep links to another app.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Behavior Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Behavior</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Modal bottom sheets have a default elevation of 16dp. This elevation allows them to appear over most UI elements and allows them to be pulled...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Elevation and scrim</h2><p>Modal bottom sheets have a default elevation of 16dp. This elevation allows them to appear over most UI elements and allows them to be pulled up in front of the entire UI to display more options. </p><p>A modal bottom sheet causes all content and UI elements behind it to display a scrim, which indicates that they will not respond to user interaction. Tapping the scrim dismisses both the modal bottom sheet and scrim from view.</p></div></section><section class="figure-figure col-2"><div class="figure"><figure aria-hidden="true" class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder hide-controls bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": true}' style="padding-top: 177.777777778%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1xY0fPveXIEcZrtyPbRtnDDEcn1IOJTch%2Fmodal-usage-overflow.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p class="s-tag-caption do">Do.</p><p>Use a visible scrim with modal bottom sheets to inform users they cannot interact with the rest of the screen.</p></figcaption></div><div class="figure"><figure aria-hidden="true" class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder hide-controls bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": true, "hideControls": true}' style="padding-top: 177.777777778%;">
+<video class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/1X3B201togJiodYmO7_1ZijVYH4L7VTsm/modal-usage-overflow-dont.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div></figure><figcaption>
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t use an invisible scrim for modal bottom sheets. This can mislead users about their ability to interact with the rest of the screen.</p></figcaption></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Visibility</h2><p>To provide initial access to its top actions, the initial vertical position of modal bottom sheets is capped at 50% of the screen height. </p><p>Modal bottom sheets whose contents exceed 50% of the screen height can then be pulled across the full screen, scrolling internally to access their remaining items.</p><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Sheet height</p></td><td colspan="1" rowspan="1"><p>Visibility and behavior</p></td></tr><tr><td colspan="1" rowspan="1"><p>Under 50% of screen height</p></td><td colspan="1" rowspan="1"><p>Visible at full height</p></td></tr><tr><td colspan="1" rowspan="1"><p>50 to 100% of screen height</p></td><td colspan="1" rowspan="1"><p>Partially visibility at 50% of screen height. <br>
+On scroll or surface tap, reveal full sheet.</br></p></td></tr><tr><td colspan="1" rowspan="1"><p>Greater than or equal to 100% of screen height</p></td><td colspan="1" rowspan="1"><p>Partially visible at 50% of screen height. <br>
+On scroll or container tap, move to top of screen and scroll contents internally. <br>
+Add internal action to close.</br></br></p></td></tr></tbody></table></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="modal-bottom-sheet-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/11Ozux0Ar4ZlTr0oRg4csXXNfjKdwic1h/modal-behavior-visibility-under-half-do.png" src="">
+</img></div>
+</div>
+<figcaption id="modal-bottom-sheet-figure-caption-2">
+<p class="s-tag-caption do">Do.</p><p>Modal bottom sheets with few items are fully visible upon opening.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="modal-bottom-sheet-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1xvqxV9p40rnXtVpkK7mPbi5XPqTIX5ko%2Fmodal-behavior-visibility-over-half-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="modal-bottom-sheet-figure-caption-3">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t make tall bottom sheets full-screen upon opening. This places the top content immediately out of reach for users on mobile devices.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Control</h2><p>Modal bottom sheets appear when triggered by a user action, such as tapping a button or an overflow icon. They can be dismissed by: </p><ul class="lst-kix_3nk7rajms4l3-0 start"><li>Tapping a menu item or action within the bottom sheet </li><li>Tapping the scrim</li><li>Swiping the sheet down</li><li>Using a close affordance within the bottom sheet’s top app bar, if available</li></ul><hr class="spacer" role="presentation"/></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="modal-bottom-sheet-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1sbr84Gqfhcdz9ch3MxwGYeeegxXHnvTP/modal-behavior-dismissal-tap.png" src="">
+</img></div>
+</div>
+<figcaption id="modal-bottom-sheet-figure-caption-4">
+<p class="s-tag-caption do">Do.</p><p>Tapping the scrim dismisses a modal bottom sheet.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="modal-bottom-sheet-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F18m3oFO85fgCjC7T9p4luBZhmbg6zZhew%2Fmodal-behavior-dismissal-swipe.png" src="">
+</img></div>
+</div>
+<figcaption id="modal-bottom-sheet-figure-caption-5">
+<p class="s-tag-caption do">Do.</p><p>A modal bottom sheet can be dismissed by swiping the sheet down.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="modal-bottom-sheet-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F125yJb9HggawiDdNSRAtRtsydje0FHwsp%2Fmodal-behavior-dismissal-close.png" src="">
+</img></div>
+</div>
+<figcaption id="modal-bottom-sheet-figure-caption-6">
+<p class="s-tag-caption do">Do.</p><p>Display a close affordance in a full-screen modal bottom sheet.</p></figcaption>
+</figure></div><div class="module"></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Placement Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Placement</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Modal bottom sheets are most effective on small screens. Menus display a list of choices on temporary surfaces. Related Article arrow_downward Dialogs inform users about...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>Modal bottom sheets are most effective on small screens. </p><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../menus/menus.html#menus"}
+' href="../menus/menus.html#menus" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="../assets/1Hd8IgHigFkdRRM9dDXXE23AxbIR4Qi3j/menus-thumbnail-1x1-circle.png" style="background-image: url('../assets/1Hd8IgHigFkdRRM9dDXXE23AxbIR4Qi3j/menus-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Menus</h2>
+<p class="object-card__body">Menus display a list of choices on temporary surfaces.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../dialogs/dialogs.html#dialogs"}
+' href="../dialogs/dialogs.html#dialogs" rel="noopener" target="_blank">
+<div class="object-card__copy">
+<h2 class="object-card__title">Dialogs</h2>
+<p class="object-card__body">Dialogs inform users about a specific task and may contain critical information, require decisions, or involve multiple tasks. They remain until dismissed or a required action has been taken.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>On larger screens, use menus or dialogs to create clear visual connections to the triggering UI element. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="modal-bottom-sheet-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/1UPs5DGL5jxMx271nOeUoPU5ws25kxYMb/modal-placement.png" src="">
+</img></div>
+</div>
+<figcaption id="modal-bottom-sheet-figure-caption-7">
+<p>An overflow menu using a bottom sheet on mobile (1) and an inline menu on desktop (2).</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="expanding-bottom-sheet" class="container container--large js-waypoints-trigger article__section" data-section-title="Expanding bottom sheet" aria-label="Expanding bottom sheet">
+          <h2 class="article__chapter-title">
+            Expanding bottom sheet
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sheets, bottom, expanding</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Usage Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Usage</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>An expanding bottom sheet is a surface anchored to the bottom of the screen that users can expand to access a feature or task. It...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>An expanding bottom sheet is a surface anchored to the bottom of the screen that users can expand to access a feature or task. It can be used for:</p><ul class="lst-kix_y4yrccg2d3h0-0 start"><li><strong>Persistently displaying a cross-app feature</strong>, such as a shopping cart</li><li><strong>Collecting and acting on user selections</strong> from a set of items, such as photos in a gallery</li><li><strong>Supporting tasks</strong>, such as chat and comments </li><li><strong>Indirect navigation</strong> between items, such as videos in a playlist</li></ul><p>Expanding bottom sheets are recommended for use on mobile and tablet.</p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="expanding-bottom-sheet-figure-caption-0" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="../assets/11GZihcMe2EcvRVEBydRCZj2_rUrmUez0/expanding-usage-chat.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-0">
+<p class="s-tag-caption do">Do.</p><p>Place supporting features, such as chat, in an expanding bottom sheet. In this example, an expanding bottom sheet allows users to switch between viewing a product and contacting customer service.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--video" data-maxwidth="720px">
+<div class="video-player media-placeholder bordered frame" data-comp="VideoPlayer" data-props-videoplayer='{"autoPlay": false, "hideControls": false}' style="padding-top: 177.777777778%;">
+<video aria-describedby="expanding-bottom-sheet-figure-caption-1" class="video-player__video animatable js-video-player js-video-load" controls="" loop="" muted="" preload="metadata">
+<source data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1wOrBxe45L6RbiAbCvHXVl6Mc2jr9AJFq%2Fexpanding-usage-selection.mp4" src="" type="video/mp4"> </source></video>
+<div class="video-player__controls">
+<button aria-label="Play" class="video-player__button video-player__play js-video-controls-play">
+</button>
+<button aria-label="Pause" class="video-player__button video-player__pause js-video-controls-pause">
+</button>
+<button aria-label="Mute" class="video-player__button video-player__mute js-video-controls-mute" data-comp="Tooltip" data-props-tooltip='{"tip": "Mute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_up</i>
+</button>
+<button aria-label="Unmute" class="video-player__button video-player__unmute js-video-controls-unmute" data-comp="Tooltip" data-props-tooltip='{"tip": "Unmute", "direction": "bottom"}'>
+<i class="material-icons notranslate video-player__icon">volume_off</i>
+</button>
+</div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-1">
+<p class="s-tag-caption do">Do.</p><p>Use an expanding bottom sheet for advanced item selection. In this photos app, the expanded sheet allows users to review and take action on selected images.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Expanding bottom sheets and floating action buttons shouldn’t be used for the same purposes. </p><ul class="lst-kix_h9qcbdlte9zp-0 start"><li><strong>Floating action buttons</strong> are used for actions only, and they don’t respond to a user’s interaction with the rest of the screen. They can transform into larger surfaces to allow a user to complete an action. </li><li><strong>Expanding bottom sheets</strong> transform into larger surfaces and can update their content to reflect user interactions.</li></ul></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1f9OvnGqsZNMC7cwYGictHQhySG3Sn5Au%2Fexpanding-usage-do.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-2">
+<p class="s-tag-caption do">Do.</p><p>Use an expanding bottom sheet to give access to a feature. It can also display updates on the status of that feature.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1So1c4ur93lQ53i7djfer9ozTovf5kkMQ/expanding-usage-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-3">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t use a floating action button in place of an expanding bottom sheet. Floating action buttons are meant for actions only.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Anatomy Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Anatomy</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Expanding bottom sheets are anchored to the bottom corner of the screen. They have two states: a small, collapsed state and a larger, expanded state....</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Expanding bottom sheets are anchored to the bottom corner of the screen. They have two states: a small, collapsed state and a larger, expanded state.</p></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/18EHVSk7s4hDz0XXwTteuDvCcs3Dv9DFZ/expanding-anatomy.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-4"><p><strong>Collapsed state</strong></p></figcaption>
+</figure><ol class="lst-kix_43ry6dpsi9pt-0 start" start="1"><li>Container</li><li>Icon</li><li>Label (Optional)</li></ol><p><strong>Expanded state</strong></p><ol class="lst-kix_43ry6dpsi9pt-0" start="4"><li>Header</li><li>Close action</li><li>Label</li><li>Content</li></ol></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Collapsed</h2><p>When collapsed, an expanding bottom sheet is intended to be small and informative. </p><ul class="lst-kix_btka0xt6s5h0-0 start"><li>It can use <strong>shape and color</strong> to express that it is interactive. </li><li>An <strong>icon </strong>is required at minimum, and larger screen sizes should also include a short text label.</li><li>To avoid blocking content, the <strong>width </strong>shouldn’t exceed half the screen.</li></ul></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1RTePBaYi0hLAKwJSSLy-aJxPt_pdzwBp/expanding-anatomy-collapsed-do.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-5">
+<p class="s-tag-caption do">Do.</p><p>Use a short label in the collapsed state of an expanding bottom sheet to explain the feature or track updates, such as the number of unread messages.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1wO-VBwTlJfl7Jrk6OroTs3k9R-ZZlV5A/expanding-anatomy-collapsed-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-6">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t increase the height or width of a collapsed expanding bottom sheet by stacking elements, wrapping text, or using long labels.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Expanded</h2><p>When expanded, an expanding bottom sheet is full-screen on mobile (1), but can be smaller on tablet and desktop based on its content (2). </p><ul class="lst-kix_ctf2mup3u4mb-0 start"><li>It contains a fixed header with a <strong>title </strong>and an <strong>affordance to collapse</strong> the sheet.</li></ul></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/1Kp_Osn1GKwJpVV0HbZXr5Ebjo7xewr0k/expanding-anatomy-expanded.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-7">
+<p>This bottom sheet covers the full screen on mobile (1). On tablet, it’s shorter to keep the main content visible (2) (Tablet example scaled to 62.5%.)</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Behavior Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Behavior</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Expanding bottom sheets can be expanded and collapsed.</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Controls</h2><p>Expanding bottom sheets can be expanded and collapsed. </p><ul class="lst-kix_xbst7n6kcgvb-0 start"><li>When <strong>collapsed</strong>, the entire container is interactive, and tapping it expands the sheet. </li><li>Once <strong>expanded</strong>, the sheet displays an app bar with an action icon that enables collapsing the sheet. In addition, it can display a contextual action in the sheet that completes a task, such as “Checkout”, “Submit”, or “Download” buttons.</li></ul></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-8" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1kpTaYTJcdfq0sI9IdXWu8WMhznj5qda5/expanding-behavior-control-collapsed-do.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-8">
+<p class="s-tag-caption do">Do.</p><p>A collapsed bottom sheet expands the sheet when tapped.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-9" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1J-4_8FJ7Ee8UuC7LBJRQCnE8ye6X_cyv/expanding-behavior-control-collapsed-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-9">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t add additional actions to a collapsed bottom sheet. Those actions should only appear when the sheet is expanded, in the expanded area.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-10" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/1nPRcvWOZFx5uMs6svKpZNnulhMUo7NKY/expanding-behavior-control-expanded.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-10">
+<p>Expanded bottom sheets must contain a dedicated affordance to collapse, such as an action icon (1). They can also be dismissed by an embedded action that completes the sheet’s task, such as the “Save” button in this image selection screen (2).</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Placement Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Placement</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Expanding bottom sheets are fixed to the bottom, trailing corner of the screen to minimize obstructing the screen’s main content. On mobile devices, an expanding...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Expanding bottom sheets are fixed to the bottom, trailing corner of the screen to minimize obstructing the screen’s main content. </p></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-11" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1dMPNxJaJuRfo2u9zWjTD46C3V6ERtG4f/expanding-placement-location-do.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-11">
+<p class="s-tag-caption do">Do.</p><p>Place expanding bottom sheets along the trailing edge of the screen. In this layout, the page’s headings can be read without interruption.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-12" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1bhLg9r9Pwt6oMOAY41B_ye7anTFys0Wi/expanding-placement-location-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-12">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t place expanding bottom sheets along the leading edge of the screen. In this layout, the placement of the collapsed sheet obstructs headings and actions.</p></figcaption>
+</figure></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Mobile</h2><p>On mobile devices, an expanding bottom sheet affects other bottom-aligned components. It could obstruct important features such as bottom navigation, or create confusion when placed next to a floating action button. </p><p>The following recommendations suggest when and how to pair an expanding bottom sheet with nearby components:</p><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p><strong>Component</strong></p></td><td colspan="1" rowspan="1"><p><strong>Pair with an expanding bottom sheet?</strong></p></td><td colspan="1" rowspan="1"><p><strong>Recommendation</strong></p></td></tr><tr><td colspan="1" rowspan="1"><p>Bottom navigation</p></td><td colspan="1" rowspan="1"><p>Caution</p></td><td colspan="1" rowspan="1"><p>Place a collapsed sheet above bottom navigation. Hide bottom navigation on scroll and when a sheet expands.</p></td></tr><tr><td colspan="1" rowspan="1"><p>Bottom app bar</p></td><td colspan="1" rowspan="1"><p>No</p></td><td colspan="1" rowspan="1"><p>A bottom app bar would obstruct a collapsed sheet.</p></td></tr><tr><td colspan="1" rowspan="1"><p>Floating action button: Regular</p></td><td colspan="1" rowspan="1"><p>No</p></td><td colspan="1" rowspan="1"><p>Collapsed sheets have similar size and placement as floating action buttons, which may confuse users about the usage of each.</p></td></tr><tr><td colspan="1" rowspan="1"><p>Floating action button: Extended</p></td><td colspan="1" rowspan="1"><p>Caution</p></td><td colspan="1" rowspan="1"><p>An extended floating action button can be used if center-aligned, so it doesn’t overlap with a collapsed sheet. The button width and collapsed sheet should both be short and styled differently from one other.</p></td></tr><tr><td colspan="1" rowspan="1"><p>On-screen keyboard</p></td><td colspan="1" rowspan="1"><p>Yes</p></td><td colspan="1" rowspan="1"><p>When the keyboard appears, it covers the sheet. When the sheet is collapsed, it doesn’t attach to the keyboard.</p></td></tr><tr><td colspan="1" rowspan="1"><p>Snackbar</p></td><td colspan="1" rowspan="1"><p>Yes</p></td><td colspan="1" rowspan="1"><p>To avoid overlap, place a snackbar above a collapsed sheet.</p></td></tr></tbody></table></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 84.2105263158%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-13" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="84.2105263158%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1xzKKbRMHCuyYrbKk-RQMLXXCJmOW1V8a%2Fexpanding-placement-mobile-fab-extended-caution.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-13">
+<p class="s-tag-caption caution">Caution.</p><p>An expanding bottom sheet can be paired with other bottom-aligned components if done carefully. Example A shows a bottom sheet displaying both a label and message, as there is sufficient room to do so. Example B has a prominent extended floating action button instead, giving the sheet room to display only an icon.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Tablet and desktop</h2><p>On larger screens, expanding bottom sheets don’t need to expand to the screen’s height or width. At a smaller size, expanding bottom sheets enable multi-tasking and other uses of screen space. </p><p>As their placement at the bottom of the screen may make them less noticeable, their content can be placed in a side sheet or accessed from a top app bar.</p></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-14" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1OpRh7TMsN0S1WwwPouorRZUPY7cp0956%2Fexpanding-placement-tablet-desktop-partial-height.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-14">
+<p>On tablet and desktop, this expanding bottom sheet doesn’t take up the full width or height of the screen, as it does on mobile.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="expanding-bottom-sheet-figure-caption-15" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/1bJ-JNFhzzYFj-B1j0Orj_wbqfYykwjHL/expanding-placement-tablet-desktop-alternate.png" src="">
+</img></div>
+</div>
+<figcaption id="expanding-bottom-sheet-figure-caption-15">
+<p>On tablet and desktop, the bottom sheet content moves into a side sheet, where it remains visible. On mobile, this expanding bottom sheet contains a selection queue. </p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="theming" class="container container--large js-waypoints-trigger article__section" data-section-title="Theming" aria-label="Theming">
+          <h2 class="article__chapter-title">
+            Theming
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sheets, bottom</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Posivibes Material Theme Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Posivibes Material Theme</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This social media app’s bottom sheets have been customized using Material Theming. Areas of customization include color and shape. Posivibe’s bottom sheets use custom color...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>This social media app’s bottom sheets have been customized using Material Theming. Areas of customization include color and shape.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="theming-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1MiMyupT-NSiMxckjWfxK5e136Ywsff3g/sheets-posivibes-ahero.png" src="">
+</img></div>
+</div>
+<figcaption id="theming-figure-caption-0">
+<p>Posivibe’s customized bottom sheets</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Color</h2><p>Posivibe’s bottom sheets use custom color on three elements: container, text, and icons.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1WE0K4VWDkOz5-cPSLXft28NDqEQcl0Pp/sheets-posivibes-color.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Container</p></td><td colspan="1" rowspan="1"><p>Surface</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#FFFFFF</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Text, icons</p></td><td colspan="1" rowspan="1"><p>On Surface </p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#000000</p><p>100%</p></td></tr></tbody></table></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/the-color-system.html"}
+' href="https://material.io/design/color/the-color-system.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1Bw_r_36vZGrT3NavGzzcirmxmKjB6y8t%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1Bw_r_36vZGrT3NavGzzcirmxmKjB6y8t%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">The Color System</h2>
+<p class="object-card__body">The Material Design color system can help you create a color theme that reflects your brand or style.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/applying-color-to-ui.html"}
+' href="https://material.io/design/color/applying-color-to-ui.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1Bw_r_36vZGrT3NavGzzcirmxmKjB6y8t%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1Bw_r_36vZGrT3NavGzzcirmxmKjB6y8t%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Applying color to UI</h2>
+<p class="object-card__body">In a UI, color has a variety of roles: from containing meaning, to expressing a look and feel.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/shape/about-shape.html"}
+' href="https://material.io/design/shape/about-shape.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F18JOBnsZCQSehoZCuijh0_ZA76MWXd6m-%2Fshapes-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F18JOBnsZCQSehoZCuijh0_ZA76MWXd6m-%2Fshapes-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">About Shape</h2>
+<p class="object-card__body">Material surfaces can be displayed in different shapes. Shapes direct attention, identify components, communicate state, and express brand.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Shape</h2><p>Posivibe’s bottom sheets use a custom container shape.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1WO4Oi2ShTsZt_6qAXs6RxkPolVX5Dxrw%2Fsheets-posivibes-shape.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Container</p></td><td colspan="1" rowspan="1"><p>Large component</p></td><td colspan="1" rowspan="1"><p>Family</p><p>Size</p></td><td colspan="1" rowspan="1"><p>Cut </p><p>0;0; n/a; n/a dp*</p></td></tr></tbody></table><p>*Bottom sheets can only be shaped on the top left and top right corners.</p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible"><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Shrine Material Theme Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Shrine Material Theme</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Shrine is a retail app, and its expanding bottom sheet has been customized using Material Theming. Areas of customization include color and shape. Shrine’s expanding...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Shrine is a retail app, and its expanding bottom sheet has been customized using Material Theming. Areas of customization include color and shape.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="theming-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F14lb086fWqFHqHn_Fbo06kJkpkOjaZM66%2Ftheming-expanding-shrine-hero.png" src="">
+</img></div>
+</div>
+<figcaption id="theming-figure-caption-1">
+<p>Shrine’s customized expanding bottom sheet</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Color</h2><p>Shrine’s expanding bottom sheet uses custom colors on its container and icon.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1hptSkUs86kbAFvLtsCaLCrZzuGz81kzL%2Ftheming-expanding-shrine-color.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Container</p></td><td colspan="1" rowspan="1"><p>Secondary</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#FEEAE6</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Icon</p></td><td colspan="1" rowspan="1"><p>On Secondary </p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#442C2E</p><p>100%</p></td></tr></tbody></table></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Shape</h2><p>The collapsed state of Shrine’s expanding bottom sheet uses a custom container shape. The top leading corner is shaped to help indicate it is interactive.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1oKE3KDXleIebIDKMjxcsOBkjvvR4HpFd/theming-expanding-shrine-shape.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Container</p></td><td colspan="1" rowspan="1"><p>Large component</p></td><td colspan="1" rowspan="1"><p>Family</p><p>Size</p></td><td colspan="1" rowspan="1"><p>Cut </p><p>0; n/a; n/a; n/a dp*</p></td></tr></tbody></table><p>*Expanding bottom sheets can only be shaped on the top left corner.</p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="specs" class="container container--large js-waypoints-trigger article__section" data-section-title="Specs" aria-label="Specs">
+          <h2 class="article__chapter-title">
+            Specs
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">sheets, bottom</div>
+<div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Modal bottom sheet for mobile</h2><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "../assets/16oM35pHAoBGq6R3oJi0fSw8eaCxN_asQ/specs-sheets-bottom-modal-50.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:216px;width:420px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:75px;width:760px;">
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:40px;width:320px;left:182px;">
+<span aria-hidden="true" class="measurement__value">
+          max-height 1/2 screen
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+          max-height 1/2 screen
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-top js-measurement-dimensions" style="left:200px;width:360px;top:11px;">
+<span aria-hidden="true" class="measurement__value">
+            360
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            360
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:200px;width:16px;top:366px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            16
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            16
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-right js-measurement-dimensions" style="top:40px;width:56px;left:588px;">
+<span aria-hidden="true" class="measurement__value">
+            56
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            56
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-right js-measurement-dimensions" style="top:152px;width:56px;left:586px;">
+<span aria-hidden="true" class="measurement__value">
+            56
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            56
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:40px;width:36px;left:618px;">
+<span aria-hidden="true" class="measurement__value">
+            36
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            36
+      </span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:40px; left:200px; width:360px; height:56px">
+<span class="">
+</span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:152px; left:200px; width:360px; height:56px">
+<span class="">
+</span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:328px; height:24px; left:216px; top:57px"></span>
+<span class="annotation__vector" style="left:239px; top:71px; width:381px; transform:rotate(177.145095deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:239px; top:71px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:-222px; top:48px;" style="left:-222px; top:48px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">16dp</p><p class="annotation__value annotation__value--second">#0000008a</p> </div>
+</li>
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:272px; height:24px; left:272px; top:113px"></span>
+<span class="annotation__vector" style="left:293px; top:128px; width:438px; transform:rotate(176.211973deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:293px; top:128px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:-225px; top:115px;" style="left:-225px; top:115px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">16dp</p><p class="annotation__value annotation__value--second">#000000de</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:320px; left:200px; top:40px"></span>
+<span class="annotation__vector" style="left:545px; top:50px; width:356px; transform:rotate(-21.233847deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:545px; top:50px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:797px; top:-121px;" style="left:797px; top:-121px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">16dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:56px; left:200px; top:96px"></span>
+<span class="annotation__vector" style="left:350px; top:100px; width:528px; transform:rotate(3.583103deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:350px; top:100px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:797px; top:91px;" style="left:797px; top:91px;">
+<a class="annotation__note-link" href="../components/lists.html" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">List</p>
+</div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+<li class="annotation annotation--notes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:359px; left:200px; top:0px"></span>
+<span class="annotation__vector" style="left:443px; top:17px; width:208px; transform:rotate(-86.149361deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:443px; top:17px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:377px; top:-233px;" style="left:377px; top:-233px;">
+<span class="annotation__note-type">General</span>
+<p class="annotation__note-title">Scrim</p>
+<p class="annotation__value annotation__value--first">#000000 Opacity:32%</p> </div>
+</li>
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 420px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="../assets/16oM35pHAoBGq6R3oJi0fSw8eaCxN_asQ/specs-sheets-bottom-modal-50.png" src="" style="width: 760px; height: 420px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div><div class="col-list"><section class="module col-1"><div class="module"><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1MYljOgtsZNS7wJ0BlFsL-xqILjXyev0V%2Fspecs-sheets-bottom-modal-lessthan50.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:216px;width:420px;">
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-top js-measurement-dimensions" style="left:200px;width:360px;top:106px;">
+<span aria-hidden="true" class="measurement__value">
+            360
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            360
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:136px;width:223px;left:182px;">
+<span aria-hidden="true" class="measurement__value">
+          max-height 1/2 screen
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+          max-height 1/2 screen
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-right js-measurement-dimensions" style="top:136px;width:56px;left:587px;">
+<span aria-hidden="true" class="measurement__value">
+            56
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            56
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-right js-measurement-dimensions" style="top:248px;width:56px;left:589px;">
+<span aria-hidden="true" class="measurement__value">
+            56
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            56
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:200px;width:16px;top:359px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            16
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            16
+      </span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:136px; left:200px; width:360px; height:56px">
+<span class="">
+</span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:248px; left:200px; width:360px; height:56px">
+<span class="">
+</span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:328px; height:24px; left:216px; top:153px"></span>
+<span class="annotation__vector" style="left:260px; top:167px; width:409px; transform:rotate(178.599404deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:260px; top:167px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:-229px; top:135px;" style="left:-229px; top:135px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">16dp</p><p class="annotation__value annotation__value--second">#0000008a</p> </div>
+</li>
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:272px; height:24px; left:272px; top:209px"></span>
+<span class="annotation__vector" style="left:291px; top:223px; width:443px; transform:rotate(174.957549deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:291px; top:223px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:-231px; top:220px;" style="left:-231px; top:220px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">16dp</p><p class="annotation__value annotation__value--second">#000000de</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:224px; left:200px; top:136px"></span>
+<span class="annotation__vector" style="left:507px; top:142px; width:134px; transform:rotate(-90.427573deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:507px; top:142px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:426px; top:-34px;" style="left:426px; top:-34px;">
+<span class="annotation__swatch" style="background-color:#ffffff"></span>
+<p class="annotation__value annotation__value--first">#ffffff</p><p class="annotation__value annotation__value--second">R255 G255 B255</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:224px; left:200px; top:136px"></span>
+<span class="annotation__vector" style="left:513px; top:147px; width:367px; transform:rotate(-24.753380deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:513px; top:147px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:767px; top:-49px;" style="left:767px; top:-49px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">16dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:56px; left:200px; top:192px"></span>
+<span class="annotation__vector" style="left:359px; top:200px; width:494px; transform:rotate(-0.463923deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:359px; top:200px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:773px; top:154px;" style="left:773px; top:154px;">
+<a class="annotation__note-link" href="../components/lists.html" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">List</p>
+</div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+<li class="annotation annotation--notes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:359px; left:200px; top:0px"></span>
+<span class="annotation__vector" style="left:400px; top:48px; width:212px; transform:rotate(-87.838921deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:400px; top:48px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:328px; top:-206px;" style="left:328px; top:-206px;">
+<span class="annotation__note-type">General</span>
+<p class="annotation__note-title">Scrim</p>
+<p class="annotation__value annotation__value--first">#000000 Opacity:32%</p> </div>
+</li>
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 420px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1MYljOgtsZNS7wJ0BlFsL-xqILjXyev0V%2Fspecs-sheets-bottom-modal-lessthan50.png" src="" style="width: 760px; height: 420px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Standard bottom sheet for mobile</h2><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1CLhBDAZt0MZui6C5w1svaeBJ1c7n7QZm%2Fspecs-sheets-bottom-coplanar.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:80px;width:240px;left:187px;">
+<span aria-hidden="true" class="measurement__value">
+          min height: 56dp
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+          min height: 56dp
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-top js-measurement-dimensions" style="left:200px;width:360px;top:48px;">
+<span aria-hidden="true" class="measurement__value">
+            360
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            360
+      </span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:240px; left:200px; top:80px"></span>
+<span class="annotation__vector" style="left:517px; top:86px; width:362px; transform:rotate(2.214755deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:517px; top:86px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:799px; top:58px;" style="left:799px; top:58px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">8dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 380px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1CLhBDAZt0MZui6C5w1svaeBJ1c7n7QZm%2Fspecs-sheets-bottom-coplanar.png" src="" style="width: 760px; height: 380px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div></div>
+        </div>
+      </section>
+
+  </div>
+
+  <div class="container container--large">
+
+  <h2>Up next
+      <div class="article-controls">
+        
+      </div>
+  </h2>
+
+<div class="suggested-articles"><div>
+<a aria-label="Sheets: side" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../sheets-side/sheets-side.html"}
+' href="../sheets-side/sheets-side.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566408167639%2Fassets%2F1pqN0sJLJllPaIjCz4ZLFhezCjR4j6d28%2Fsheets-side-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Sheets: side</h4>
+</a>
+<a aria-label="Backdrop" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../backdrop/backdrop.html"}
+' href="../backdrop/backdrop.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/19OQPzgBSzZCE1cf2Z_zlA2QEir-8gunD/backdrop-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Backdrop</h4>
+</a><br>
+
+<a aria-label="Navigation drawer" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../navigation-drawer/navigation-drawer.html"}
+' href="../navigation-drawer/navigation-drawer.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1WAOT-IjNA2ubSgYQERjqbKkwrqxPItCU/nav-drawer-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Navigation drawer</h4>
+</a></div></div>  </div>
+</article>
+    </main>
+
+
+
+<footer class="footer">
+  <div class="container container--jumbo">
+    <div class="footer-block footer-block--about">
+      <a class="footer-block__logo js-analytics-click" href="/"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "/"}
+'>
+        <img class="footer-block__material-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/material_logo.svg" alt="Material Design"/>
+      </a>
+      <div class="footer-block__content">
+        <p class="footer-block__description">Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
+        <ul class="footer-block__social-nav">
+          <li class="footer-block__social-nav-item">  <a href="https://www.github.com/material-components" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on GitHub"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.github.com/material-components"}
+'>GitHub</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.twitter.com/materialdesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on Twitter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.twitter.com/materialdesign"}
+'>Twitter</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/googledesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.youtube.com/googledesign"}
+'>YouTube</a>
+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-block footer-block--legal">
+      <a class="footer-block__logo js-analytics-click" href="https://www.google.com"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.google.com"}
+'>
+        <img class="footer-block__google-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/google_logo.svg" alt="Google"/>
+      </a>
+      <div class="footer-block__content">
+        <ul class="footer-block__legal-nav">
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Privacy Policy"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/privacy"}
+'>Privacy Policy</a>
+</li>
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Terms of Service"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/terms"}
+'>Terms of Service</a>
+</li></ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="ui-mask js-ui-mask"></div>
+<div
+    class="lightbox js-lightbox"
+    data-comp="Lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-labelledby="sr-lightbox-title">
+  <h2 class="screenreader-only sr-lightbox-title" tabindex="0">
+    Explore how Shrine, a retail app, uses Material Design.
+  </h2>
+
+    <header class="lightbox__header">
+      <div class="lightbox__header-title">
+        <span
+            class="lightbox__button js-lightbox-close"
+            data-comp="Tooltip"
+            data-props-tooltip='{"tip": "Close", "direction": "bottom"}'>
+          <i
+              class="material-icons notranslate material-icons--padded mdc-ripple-surface"
+              data-mdc-ripple-is-unbounded tabindex="0">
+            close
+          </i>
+        </span>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+
+      <div class="lightbox__actions">
+        <button type="button" name="button" class="lightbox-redlines-toggle js-redline-sidebar-toggle" data-comp="Tooltip" data-props-tooltip='{"tip": "View Specs", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>flip</i>
+        </button>
+
+        <button type="button" name="button" class="lightbox__button js-share" data-comp="Tooltip" data-props-tooltip='{"tip": "Share", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>share</i>
+        </button>
+
+      </div>
+    </header>
+
+    <div class="lightbox__template js-zoom-wrapper">
+      <div class="lightbox__content js-lightbox-content">
+<img class="ui-loader" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/loader.svg" alt="loader" aria-hidden="true" />      </div>
+<div class="redline-sidebar js-lightbox-sidebar-container" data-comp="RedlineSidebar">
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Image only", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-image js-redline-sidebar-item" value="image" >
+        <i class="material-icons notranslate">&#xE3F4;</i>
+        <span class="redline-sidebar__label-text">Image only</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Measurements", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-measurements js-redline-sidebar-item" value="measurements" >
+        <i class="material-icons notranslate">format_shapes</i>
+        <span class="redline-sidebar__label-text">Measurements</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Text", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-text js-redline-sidebar-item" value="text" >
+        <i class="material-icons notranslate">format_size</i>
+        <span class="redline-sidebar__label-text">Text</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Color", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-colors js-redline-sidebar-item" value="colors" >
+        <i class="material-icons notranslate">palette</i>
+        <span class="redline-sidebar__label-text">Color</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Shape and Elevation", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-shapes js-redline-sidebar-item" value="shapes" >
+        <i class="material-icons notranslate">rounded_corner</i>
+        <span class="redline-sidebar__label-text">Shape and Elevation</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Components", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-components js-redline-sidebar-item" value="components" >
+        <i class="material-icons notranslate">category</i>
+        <span class="redline-sidebar__label-text">Components</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Notes", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-notes js-redline-sidebar-item" value="notes" >
+        <i class="material-icons notranslate">notes</i>
+        <span class="redline-sidebar__label-text">Notes</span>
+      </button>
+    </div>
+<div class="redline-sidebar__toggles js-redline-layer-toggles">
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--dimensions">
+        <input type="checkbox" id="dimensions" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="dimensions">Dimensions</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--padding">
+        <input type="checkbox" id="padding" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="padding">Padding</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--typography">
+        <input type="checkbox" id="typography" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="typography">Text baseline</label>
+  </div>
+</div><nav class="carousel__nav">
+  <button
+      class="carousel__button carousel__button--prev mdc-ripple-surface js-carousel-prev"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Previous", "direction": "right"}'>
+    <i class="material-icons notranslate">chevron_left</i>
+  </button>
+
+  <button
+      class="carousel__button carousel__button--next mdc-ripple-surface js-carousel-next"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Next", "direction": "left"}'>
+    <i class="material-icons notranslate">chevron_right</i>
+  </button>
+</nav><div class="zoom-buttons" data-comp="Zoom">
+  <div class="zoom-buttons__wrapper">
+
+    <button class="mdc-button-zoom js-zoom-out" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom out", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">remove</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-reset" data-comp="Tooltip" data-props-tooltip='{"tip": "Reset", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">search</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-in" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom in", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">add</i>
+    </button>
+
+    <div class="zoom-buttons__extras">
+      <button class="mdc-button-zoom js-colorpicker-toggle" data-comp="Tooltip Colorpicker" data-props-tooltip='{"tip": "Color picker", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">colorize</i>
+      </button>
+      <button class="mdc-button-zoom js-ruler-toggle" data-comp="Tooltip Ruler" data-props-tooltip='{"tip": "Ruler", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">straighten</i>
+      </button>
+    </div>
+
+  </div>
+</div>    </div>
+
+
+<aside class="mdc-dialog" role="alertdialog" aria-labelledby="mdc-dialog-label" aria-describedby="mdc-dialog-description" data-comp="Share">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-label" class="mdc-dialog__header__title">Share</h2>
+      <button type="button" class="mdc-dialog-share-close js-dialog-close">
+        <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>close</i>
+      </button>
+    </header>
+    <section id="mdc-dialog-description" class="mdc-dialog__body">
+      <input type="text" readonly class="mdc-dialog-share-url js-share-url" />
+      <button type="button" class="mdc-button mdc-ripple-surface mdc-dialog-copy js-dialog-copy">Copy</button>
+    </section>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside></div><div class="mdc-snackbar snackbar-wrapper" data-comp="Snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+  <div class="mdc-snackbar__text"></div>
+  <div class="mdc-snackbar__action-wrapper">
+    <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
+  </div>
+</div>
+    <script src="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js"></script>
+    <script src="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js"></script>
+    <script src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/js/main.min.js"></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  </body>
+</html>

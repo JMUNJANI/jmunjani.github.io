@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MDCTabBar Class Reference</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/develop/css/jazzy.css">
+    <link rel="stylesheet" type="text/css" href="/develop/css/jazzy-highlight.css">
+
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+    <script src="/develop/js/jazzy.js" defer></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90255304-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async defer src="//www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/MDCTabBar" class="dashAnchor"></a>
+
+    <a title="MDCTabBar Class Reference"></a>
+
+    <header class="header">
+      <div class="header-col">
+        <a class="header-link" href="../../">
+          <div class="header-col__logo"></div>
+          Tabs Docs
+        </a>
+          <span class="header__coverage">(94% documented)</span>
+    
+      </div>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../../">Tabs Reference</a>
+      <svg class="caret" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewbox="0 0 24 24">
+        <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/>
+      </svg>
+      MDCTabBar Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/UIColor_28MaterialElevation_29.html">UIColor(MaterialElevation)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/UIView_28MaterialElevationResponding_29.html">UIView(MaterialElevationResponding)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MDCTabBar.html">MDCTabBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MDCTabBarIndicatorAttributes.html">MDCTabBarIndicatorAttributes</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes.html#/c:objc(cs)MDCTabBarUnderlineIndicatorTemplate">MDCTabBarUnderlineIndicatorTemplate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MDCTabBarViewController.html">MDCTabBarViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@MDCTabBarViewControllerAnimationDuration">MDCTabBarViewControllerAnimationDuration</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enumerations.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MDCTabBarAlignment.html">MDCTabBarAlignment</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MDCTabBarItemAppearance.html">MDCTabBarItemAppearance</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MDCTabBarItemState.html">MDCTabBarItemState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MDCTabBarTextTransform.html">MDCTabBarTextTransform</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCElevatable.html">MDCElevatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCElevationOverriding.html">MDCElevationOverriding</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCTabBarControllerDelegate.html">MDCTabBarControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCTabBarDelegate.html">MDCTabBarDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCTabBarIndicatorContext.html">MDCTabBarIndicatorContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MDCTabBarIndicatorTemplate.html">MDCTabBarIndicatorTemplate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>MDCTabBar</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MDCTabBar</span>
+    <span class="p">:</span> <span class="nc">UIView</span> <span class="o">&lt;</span><span class="n">UIBarPositioning</span><span class="p">,</span> <span class="n"><a href="../Protocols/MDCElevatable.html">MDCElevatable</a></span><span class="p">,</span> <span class="n"><a href="../Protocols/MDCElevationOverriding.html">MDCElevationOverriding</a></span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>A material tab bar for switching between views of grouped content.</p>
+
+<p>Clients are responsible for responding to changes to the selected tab and updating the selected
+tab as necessary.</p>
+
+<p>Note: This class is not intended to be subclassed.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <a href="https://material.io/go/design-tabs">https://material.io/go/design-tabs</a>
+
+</div>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(cm)defaultHeightForBarPosition:itemAppearance:"></a>
+                    <a name="//apple_ref/objc/Method/+defaultHeightForBarPosition:itemAppearance:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(cm)defaultHeightForBarPosition:itemAppearance:">+defaultHeightForBarPosition:itemAppearance:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The default height for the tab bar with a given position and item appearance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nf">defaultHeightForBarPosition</span><span class="p">:(</span><span class="n">UIBarPosition</span><span class="p">)</span><span class="nv">position</span>
+                        <span class="nf">itemAppearance</span><span class="p">:(</span><span class="n"><a href="../Enums/MDCTabBarItemAppearance.html">MDCTabBarItemAppearance</a></span><span class="p">)</span><span class="nv">appearance</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(cm)defaultHeightForItemAppearance:"></a>
+                    <a name="//apple_ref/objc/Method/+defaultHeightForItemAppearance:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(cm)defaultHeightForItemAppearance:">+defaultHeightForItemAppearance:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The default height for the tab bar in the top position, given an item appearance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nf">defaultHeightForItemAppearance</span><span class="p">:(</span><span class="n"><a href="../Enums/MDCTabBarItemAppearance.html">MDCTabBarItemAppearance</a></span><span class="p">)</span><span class="nv">appearance</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)items"></a>
+                    <a name="//apple_ref/objc/Property/items" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)items">items</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Items displayed in the tab bar.</p>
+
+<p>The bar determines the newly-selected item using the following logic:</p>
+
+<ul>
+<li>Reselect the previously-selected item if it&#x2019;s still present in <code>items</code> after the update.</li>
+<li>If there was no selection previously or if the old selected item is gone, select the first item.
+Clients that need empty selection to be preserved across updates to <code>items</code> must manually reset
+selectedItem to nil after the update.</li>
+</ul>
+
+<p>Changes to this property are not animated.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">UITabBarItem</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">items</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)selectedItem"></a>
+                    <a name="//apple_ref/objc/Property/selectedItem" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)selectedItem">selectedItem</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The currently selected item. Setting to nil will clear the selection.</p>
+
+<p>Changes to <code>selectedItem</code> are not animated.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">UITabBarItem</span> <span class="o">*</span><span class="n">selectedItem</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)delegate"></a>
+                    <a name="//apple_ref/objc/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)delegate">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The tab bar&#x2019;s delegate.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/MDCTabBarDelegate.html">MDCTabBarDelegate</a></span><span class="o">&gt;</span> <span class="n">delegate</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)tintColor"></a>
+                    <a name="//apple_ref/objc/Property/tintColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)tintColor">tintColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tint color for the tab bar, which determines the color of the tab indicator bar. If
+selectedItemTintColor is nil, tintColor also affects tinting of selected item titles and images.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">null_resettable</span><span class="p">)</span> <span class="n">UIColor</span> <span class="o">*</span><span class="n">tintColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)selectedItemTintColor"></a>
+                    <a name="//apple_ref/objc/Property/selectedItemTintColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)selectedItemTintColor">selectedItemTintColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tint color for selected items. If set overrides titleColorForState: and imageTintColorForState:
+for MDCTabBarItemStateSelected. Returns imageTintColorForState: for MDCTabBarItemStateSelected.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span>
+    <span class="n">UIColor</span> <span class="o">*</span><span class="n">selectedItemTintColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)unselectedItemTintColor"></a>
+                    <a name="//apple_ref/objc/Property/unselectedItemTintColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)unselectedItemTintColor">unselectedItemTintColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tint color for unselected items. If set overrides titleColorForState: and imageTintColorForState:
+for MDCTabBarItemStateNormal. Returns imageTintColorForState: for MDCTabBarItemStateNormal.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span>
+    <span class="n">UIColor</span> <span class="o">*</span><span class="n">unselectedItemTintColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)enableRippleBehavior"></a>
+                    <a name="//apple_ref/objc/Property/enableRippleBehavior" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)enableRippleBehavior">enableRippleBehavior</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>By setting this property to @c YES, the Ripple component will be used instead of Ink
+to display visual feedback to the user.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    This property will eventually be enabled by default, deprecated, and then deleted as part
+of our migration to Ripple. Learn more at
+<a href="https://github.com/material-components/material-components-ios/tree/develop/components/Ink#migration-guide-ink-to-ripple">https://github.com/material-components/material-components-ios/tree/develop/components/Ink#migration-guide-ink-to-ripple</a>
+
+</div>
+
+<p>Defaults to NO.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">enableRippleBehavior</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)rippleColor"></a>
+                    <a name="//apple_ref/objc/Property/rippleColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)rippleColor">rippleColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Ripple color for taps on tab bar items. Default: Semi-transparent white.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">UIColor</span> <span class="o">*</span><span class="n">rippleColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)bottomDividerColor"></a>
+                    <a name="//apple_ref/objc/Property/bottomDividerColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)bottomDividerColor">bottomDividerColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Color for the bottom divider. Default: Clear.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">UIColor</span> <span class="o">*</span><span class="n">bottomDividerColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)selectedItemTitleFont"></a>
+                    <a name="//apple_ref/objc/Property/selectedItemTitleFont" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)selectedItemTitleFont">selectedItemTitleFont</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Font used for selected item titles.
+By default this uses +[MDCTypography buttonFont]. Ignored for bottom-position tab bars.</p>
+
+<p>Note: Tab sizes are determined based on their unselected state and do not vary based on selection.
+To avoid clipped layouts and other layout issues, the font provided here should have similar
+metrics to <code><a href="../Classes/MDCTabBar.html#/c:objc(cs)MDCTabBar(py)unselectedItemTitleFont">unselectedItemTitleFont</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">UIFont</span> <span class="o">*</span><span class="n">selectedItemTitleFont</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)unselectedItemTitleFont"></a>
+                    <a name="//apple_ref/objc/Property/unselectedItemTitleFont" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)unselectedItemTitleFont">unselectedItemTitleFont</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Font used for unselected item titles.
+By default this uses the MDCTypography button font. Ignored for bottom-position tab bars.</p>
+
+<p>Note: Tab sizes are determined based on their unselected state and do not vary based on selection.
+To avoid clipped layouts and other layout issues, the font provided here should have similar
+metrics to <code><a href="../Classes/MDCTabBar.html#/c:objc(cs)MDCTabBar(py)selectedItemTitleFont">selectedItemTitleFont</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span>
+    <span class="n">UIFont</span> <span class="o">*</span><span class="n">unselectedItemTitleFont</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)barTintColor"></a>
+                    <a name="//apple_ref/objc/Property/barTintColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)barTintColor">barTintColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tint color to apply to the tab bar background.</p>
+
+<p>If nil, the receiver uses the default background appearance. Default: nil.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">UIColor</span> <span class="o">*</span><span class="n">barTintColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)alignment"></a>
+                    <a name="//apple_ref/objc/Property/alignment" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)alignment">alignment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Horizontal alignment of tabs within the tab bar. Changes are not animated. Default alignment is
+MDCTabBarAlignmentLeading.</p>
+
+<p>The default value is based on the position and is recommended for most applications.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n"><a href="../Enums/MDCTabBarAlignment.html">MDCTabBarAlignment</a></span> <span class="n">alignment</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)itemAppearance"></a>
+                    <a name="//apple_ref/objc/Property/itemAppearance" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)itemAppearance">itemAppearance</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Appearance of tabs within the tab bar. Changes are not animated.</p>
+
+<p>The default value is based on the position and is recommended for most applications.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n"><a href="../Enums/MDCTabBarItemAppearance.html">MDCTabBarItemAppearance</a></span> <span class="n">itemAppearance</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)displaysUppercaseTitles"></a>
+                    <a name="//apple_ref/objc/Property/displaysUppercaseTitles" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)displaysUppercaseTitles">displaysUppercaseTitles</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates if all tab titles should be uppercased for display. If NO, item titles will be displayed
+verbatim.</p>
+
+<p>The default value is based on the position and is recommended for most applications.</p>
+
+<p>NOTE: This property will be deprecated in a future release. Use <code><a href="../Classes/MDCTabBar.html#/c:objc(cs)MDCTabBar(py)titleTextTransform">titleTextTransform</a></code> instead.
+<a href="https://github.com/material-components/material-components-ios/issues/2552">https://github.com/material-components/material-components-ios/issues/2552</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">displaysUppercaseTitles</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)titleTextTransform"></a>
+                    <a name="//apple_ref/objc/Property/titleTextTransform" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)titleTextTransform">titleTextTransform</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Defines how tab bar item titles are transformed for display.</p>
+
+<p>The default value is MDCTabBarTextTransformAutomatic.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n"><a href="../Enums/MDCTabBarTextTransform.html">MDCTabBarTextTransform</a></span> <span class="n">titleTextTransform</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)selectionIndicatorTemplate"></a>
+                    <a name="//apple_ref/objc/Property/selectionIndicatorTemplate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)selectionIndicatorTemplate">selectionIndicatorTemplate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Template that defines the appearance of the selection indicator.</p>
+
+<p>The default indicator template is a fixed-height rectangular bar under the selected tab.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">null_resettable</span><span class="p">)</span>
+    <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/MDCTabBarIndicatorTemplate.html">MDCTabBarIndicatorTemplate</a></span><span class="o">&gt;</span>
+        <span class="n">selectionIndicatorTemplate</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(im)setSelectedItem:animated:"></a>
+                    <a name="//apple_ref/objc/Method/-setSelectedItem:animated:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(im)setSelectedItem:animated:">-setSelectedItem:animated:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Select an item with optional animation. Setting to nil will clear the selection.</p>
+
+<p><code><a href="../Classes/MDCTabBar.html#/c:objc(cs)MDCTabBar(py)selectedItem">selectedItem</a></code> must be nil or in <code><a href="../Classes/MDCTabBar.html#/c:objc(cs)MDCTabBar(py)items">items</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setSelectedItem</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">UITabBarItem</span> <span class="o">*</span><span class="p">)</span><span class="nv">selectedItem</span>
+               <span class="nf">animated</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(im)setAlignment:animated:"></a>
+                    <a name="//apple_ref/objc/Method/-setAlignment:animated:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(im)setAlignment:animated:">-setAlignment:animated:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the alignment with optional animation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setAlignment</span><span class="p">:(</span><span class="n"><a href="../Enums/MDCTabBarAlignment.html">MDCTabBarAlignment</a></span><span class="p">)</span><span class="nv">alignment</span> <span class="nf">animated</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(im)setTitleColor:forState:"></a>
+                    <a name="//apple_ref/objc/Method/-setTitleColor:forState:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(im)setTitleColor:forState:">-setTitleColor:forState:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the color of the title for the specified state.</p>
+
+<p>If the @c MDCTabBarItemState value is not set, then defaults to a default value. Therefore,
+at a minimum, you should set the value for MDCTabBarItemStateNormal.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setTitleColor</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">UIColor</span> <span class="o">*</span><span class="p">)</span><span class="nv">color</span>
+             <span class="nf">forState</span><span class="p">:(</span><span class="n"><a href="../Enums/MDCTabBarItemState.html">MDCTabBarItemState</a></span><span class="p">)</span><span class="nv">state</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(im)titleColorForState:"></a>
+                    <a name="//apple_ref/objc/Method/-titleColorForState:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(im)titleColorForState:">-titleColorForState:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the title color associated with the specified state.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">UIColor</span> <span class="o">*</span><span class="p">)</span><span class="nf">titleColorForState</span><span class="p">:(</span><span class="n"><a href="../Enums/MDCTabBarItemState.html">MDCTabBarItemState</a></span><span class="p">)</span><span class="nv">state</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(im)setImageTintColor:forState:"></a>
+                    <a name="//apple_ref/objc/Method/-setImageTintColor:forState:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(im)setImageTintColor:forState:">-setImageTintColor:forState:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the tint color of the image for the specified state.</p>
+
+<p>If the @c MDCTabBarItemState value is not set, then defaults to a default value. Therefore,
+at a minimum, you should set the value for MDCTabBarItemStateNormal.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setImageTintColor</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">UIColor</span> <span class="o">*</span><span class="p">)</span><span class="nv">color</span>
+                 <span class="nf">forState</span><span class="p">:(</span><span class="n"><a href="../Enums/MDCTabBarItemState.html">MDCTabBarItemState</a></span><span class="p">)</span><span class="nv">state</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(im)imageTintColorForState:"></a>
+                    <a name="//apple_ref/objc/Method/-imageTintColorForState:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(im)imageTintColorForState:">-imageTintColorForState:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the image tint color associated with the specified state.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">UIColor</span> <span class="o">*</span><span class="p">)</span><span class="nf">imageTintColorForState</span><span class="p">:(</span><span class="n"><a href="../Enums/MDCTabBarItemState.html">MDCTabBarItemState</a></span><span class="p">)</span><span class="nv">state</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)traitCollectionDidChangeBlock"></a>
+                    <a name="//apple_ref/objc/Property/traitCollectionDidChangeBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)traitCollectionDidChangeBlock">traitCollectionDidChangeBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A block that is invoked when the @c MDCTabBar receives a call to @c
+traitCollectionDidChange:. The block is called after the call to the superclass.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">copy</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">MDCTabBar</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span> <span class="n">UITraitCollection</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span>
+        <span class="n">traitCollectionDidChangeBlock</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/MDCAccessibility"></a>
+                <a name="//apple_ref/objc/Section/MDCAccessibility" class="dashAnchor"></a>
+                <a href="#/MDCAccessibility">
+                  <h3 class="section-name">MDCAccessibility</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(im)accessibilityElementForItem:"></a>
+                    <a name="//apple_ref/objc/Method/-accessibilityElementForItem:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(im)accessibilityElementForItem:">-accessibilityElementForItem:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get the accessibility element representing the given item. Returns nil if item is not in <code><a href="../Classes/MDCTabBar.html#/c:objc(cs)MDCTabBar(py)items">items</a></code>
+or if the item is not on screen.</p>
+
+<p>The accessibility element returned from this method may be used as the focused element after a
+run loop iteration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n">id</span><span class="p">)</span><span class="nf">accessibilityElementForItem</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UITabBarItem</span> <span class="o">*</span><span class="p">)</span><span class="nv">item</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ToBeDeprecated"></a>
+                <a name="//apple_ref/objc/Section/ToBeDeprecated" class="dashAnchor"></a>
+                <a href="#/ToBeDeprecated">
+                  <h3 class="section-name">ToBeDeprecated</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MDCTabBar(py)inkColor"></a>
+                    <a name="//apple_ref/objc/Property/inkColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MDCTabBar(py)inkColor">inkColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Ink color for taps on tab bar items. Default: Semi-transparent white.</p>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    This method will eventually be deprecated. Opt-in to Ripple by setting
+enableRippleBehavior to YES, and then use rippleColor instead. Learn more at
+<a href="https://github.com/material-components/material-components-ios/tree/develop/components/Ink#migration-guide-ink-to-ripple">https://github.com/material-components/material-components-ios/tree/develop/components/Ink#migration-guide-ink-to-ripple</a>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">UIColor</span> <span class="o">*</span><span class="n">inkColor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+
+    <section class="footer">
+      <p>&#xA9; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-09-25)</p>
+    </section>
+  </body>
+
+</html>

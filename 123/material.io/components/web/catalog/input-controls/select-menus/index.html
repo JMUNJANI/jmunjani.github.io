@@ -1,0 +1,2471 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://material.io flutter.github.io https://www.google-analytics.com https://stats.g.doubleclick.net img.shields.io 'self'; script-src https://www.google.com https://www.gstatic.com https://adservice.google.com https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline' 'self'; style-src https://fonts.googleapis.com/css 'unsafe-inline' 'self'; font-src https://fonts.gstatic.com/s/ 'self'; child-src 'none';">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <title>Select Menus - Material Components for the Web</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-NHRPF8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta itemprop="name" content="Select Menus - Material Components for the Web" />
+    <meta itemprop="image" content="https://material.io/static/images/simple-lp/components-share.png" />
+    <meta name="description" content="Material Components for Web is a set of user interface components that help developers build web apps with material design.
+" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Select Menus - Material Components for the Web" />
+    <meta property="og:site_name" content="Material Components for the Web" />
+    <meta property="og:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta property="article:section" content="Select Menus" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@materialdesign">
+    <meta name="twitter:title" content="Material Components">
+    <meta name="twitter:description" content="Create beautiful apps with modular and customizable UI components">
+    <meta name="twitter:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <link rel="icon" sizes="192x192" href="/develop/images/app-icons/material-logo-app-icon-192x192.png">
+    <link rel="shortcut icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/develop/images/app-icons/material-logo-app-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/develop/images/app-icons/material-logo-app-icon-180x180.png">
+    <meta name="msapplication-TileImage" content="https://material.io/static/images/hub/favicons/hub-ms-icon-144x144.png">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/develop/css/codemirror.css">
+    <link rel="stylesheet" href="/develop/css/neo.css">
+    <link rel="stylesheet" href="/develop/css/app.css">
+    <script async="" defer="" src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body class="page page--detail page--components page--platform-web">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <aside class="page__temporary-drawer mdc-drawer mdc-drawer--temporary page_drawer--temporary">
+      <nav class="temporary-drawer__drawer mdc-drawer__drawer mdc-drawer__content">
+        <header class="temporary-drawer__header mdc-drawer__header">
+          <div class="temporary-drawer__header-content mdc-drawer__header-content">
+            <div class="temporary-drawer__header-icon develop-toolbar__leading-icon"></div>
+            Material Design
+          </div>
+        </header>
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label">web</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <h3 class="drawer-heading">Components</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/animation/"
+     >
+                Animation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/auto-init/"
+     >
+                Auto Init
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/base/"
+     >
+                Base
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/"
+     >
+                Buttons
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/floating-action-buttons/"
+     >
+                    Floating Action Button
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/icon-buttons/"
+     >
+                    Icon Buttons
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/cards/"
+     >
+                Cards
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/chips/"
+     >
+                Chips
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/data-tables/"
+     >
+                Data Tables
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/dialogs/"
+     >
+                Dialogs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/dom/"
+     >
+                DOM
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/drawers/"
+     >
+                Drawers
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/elevation/"
+     >
+                Elevation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/feature-targeting/"
+     >
+                Feature Targeting
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/grid-lists/"
+     >
+                Grid Lists
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/image-lists/"
+     >
+                Image List
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+      drawer-list__item--active
+    
+    
+      
+        
+      
+        
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/"
+     >
+                Inputs and Controls
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/checkboxes/"
+     >
+                    Checkboxes
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/floating-label/"
+     >
+                    Floating Label
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/form-fields/"
+     >
+                    Form Fields
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/line-ripple/"
+     >
+                    Line Ripple
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/notched-outline/"
+     >
+                    Notched Outline
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/radio-buttons/"
+     >
+                    Radio Buttons
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  drawer-list__item--active
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/"
+     >
+                    Select Menus
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/helper-text/"
+     >
+                        Select Helper Text
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/icon/"
+     >
+                        Select Icon
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/sliders/"
+     >
+                    Sliders
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/switches/"
+     >
+                    Switches
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/"
+     >
+                    Text Field
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/character-counter/"
+     >
+                        Text Field Character Counter
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/helper-text/"
+     >
+                        Text Field Helper Text
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/icon/"
+     >
+                        Text Field Icon
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/layout-grid/"
+     >
+                Layout Grid
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/linear-progress/"
+     >
+                Linear Progress
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/lists/"
+     >
+                Lists
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/menu-surface/"
+     >
+                Menu Surface
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/menus/"
+     >
+                Menus
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/ripples/"
+     >
+                Ripples
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/rtl/"
+     >
+                RTL
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/shape/"
+     >
+                Shape
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/snackbars/"
+     >
+                Snackbars
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/"
+     >
+                Tabs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/tab/"
+     >
+                    Tab
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/tab-bar/"
+     >
+                    Tab Bar
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/indicator/"
+     >
+                    Tab Indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/scroller/"
+     >
+                    Tab Scroller
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/theme/"
+     >
+                Theme
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/top-app-bar/"
+     >
+                Top App Bar
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/typography/"
+     >
+                Typography
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/web/docs/authoring-components/">Documentation</a>
+        </nav>
+      </nav>
+    </aside>
+    <header class="develop-toolbar mdc-toolbar mdc-toolbar--fixed
+    
+    
+      mdc-toolbar--platform
+    ">
+      <div class="search-form" id="top-level-search-bar">
+        <form class="search-form__form" id="top-level-search-form">
+          <input type="text"
+        class="search-form__input"
+        id="top-level-search-input"
+        autocomplete="off" />
+        </form>
+        <div class="search-form__label" id="top-level-search-label">Search</div>
+        <button
+      class="search-form__button search-form__button--close"
+      id="top-level-search-close"
+      aria-label="Close search">
+          <div class="search-form__close-icon" id="close-button-icon" data-mdc-ripple-is-unbounded></div>
+        </button>
+      </div>
+      <div class="develop-toolbar__row mdc-toolbar__row">
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="menu-button" id="menu-open">
+            <div class="menu-button__icon menu-button__icon--initial-load" id="menu-icon"></div>
+          </button>
+          <a class="develop-toolbar__title-link" href="/">
+            <div class="develop-toolbar__leading-icon"></div>
+            <h1 class="develop-toolbar__title mdc-toolbar__title">
+              Material Design
+            </h1>
+          </a>
+        </section>
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+          <nav id="navigation-tabs" class="develop-tab-bar">
+            <a href="/design"
+      class="develop-tab">
+              Design
+            </a>
+            <a href="/components"
+      class="develop-tab">
+              Components
+            </a>
+            <a href="/develop"
+      class="develop-tab develop-tab--active">
+              Develop
+              <span class="develop-tab__nav-indicator"></span>
+            </a>
+            <a href="/resources"
+     class="develop-tab">
+              Resources
+            </a>
+          </nav>
+          <section class="develop-toolbar__section develop-toolbar__section--search mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+            <button 
+    class="search-form__button search-form__button--open"
+    id="top-level-search-open"
+    aria-label="Search">
+              <div class="search-form__search-icon" id="spyglass-icon"></div>
+            </button>
+          </section>
+        </section>
+      </div>
+    </header>
+    <div class="page__content page__flex-element">
+      <div class="page__drawer mdc-permanent-drawer">
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label">web</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <h3 class="drawer-heading">Components</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/animation/"
+     >
+                Animation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/auto-init/"
+     >
+                Auto Init
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/base/"
+     >
+                Base
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/"
+     >
+                Buttons
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/floating-action-buttons/"
+     >
+                    Floating Action Button
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/buttons/icon-buttons/"
+     >
+                    Icon Buttons
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/cards/"
+     >
+                Cards
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/chips/"
+     >
+                Chips
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/data-tables/"
+     >
+                Data Tables
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/dialogs/"
+     >
+                Dialogs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/dom/"
+     >
+                DOM
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/drawers/"
+     >
+                Drawers
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/elevation/"
+     >
+                Elevation
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/feature-targeting/"
+     >
+                Feature Targeting
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/grid-lists/"
+     >
+                Grid Lists
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/image-lists/"
+     >
+                Image List
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+      drawer-list__item--active
+    
+    
+      
+        
+      
+        
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/"
+     >
+                Inputs and Controls
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/checkboxes/"
+     >
+                    Checkboxes
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/floating-label/"
+     >
+                    Floating Label
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/form-fields/"
+     >
+                    Form Fields
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/line-ripple/"
+     >
+                    Line Ripple
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/notched-outline/"
+     >
+                    Notched Outline
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/radio-buttons/"
+     >
+                    Radio Buttons
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  drawer-list__item--active
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/"
+     >
+                    Select Menus
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/helper-text/"
+     >
+                        Select Helper Text
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/select-menus/icon/"
+     >
+                        Select Icon
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/sliders/"
+     >
+                    Sliders
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/switches/"
+     >
+                    Switches
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/"
+     >
+                    Text Field
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/character-counter/"
+     >
+                        Text Field Character Counter
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/helper-text/"
+     >
+                        Text Field Helper Text
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                    <li class="drawer-list__item
+  
+  
+  ">
+                      <a class="drawer-link"
+     
+       href="/components/web/catalog/input-controls/text-field/icon/"
+     >
+                        Text Field Icon
+                      </a>
+                      <ul class="drawer-list drawer-list--sublevel">
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/layout-grid/"
+     >
+                Layout Grid
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/linear-progress/"
+     >
+                Linear Progress
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/lists/"
+     >
+                Lists
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/menu-surface/"
+     >
+                Menu Surface
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/menus/"
+     >
+                Menus
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/ripples/"
+     >
+                Ripples
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/rtl/"
+     >
+                RTL
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/shape/"
+     >
+                Shape
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/snackbars/"
+     >
+                Snackbars
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  drawer-list__item--has-children
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/"
+     >
+                Tabs
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/tab/"
+     >
+                    Tab
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/tab-bar/"
+     >
+                    Tab Bar
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/indicator/"
+     >
+                    Tab Indicator
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+                <li class="drawer-list__item
+  
+  
+  ">
+                  <a class="drawer-link"
+     
+       href="/components/web/catalog/tabs/scroller/"
+     >
+                    Tab Scroller
+                  </a>
+                  <ul class="drawer-list drawer-list--sublevel">
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/theme/"
+     >
+                Theme
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/top-app-bar/"
+     >
+                Top App Bar
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/catalog/typography/"
+     >
+                Typography
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/web/docs/authoring-components/">Documentation</a>
+        </nav>
+      </div>
+      <section class="page__main-section">
+        <article class="page__article article article--icon-menu">
+          <h1 id="select-menus">Select Menus</h1>
+          <div class="article__asset">
+            <a class="article__asset-link" href="https://material-components.github.io/material-components-web-catalog/#/component/select">
+              <img src="/components/images/mdc_web_screenshots/selects.png" width="376" alt="Select screenshot" />
+            </a>
+          </div>
+          <p>MDC Select provides Material Design single-option select menus. It supports using the browser’s native <code>&lt;select&gt;</code>
+            element, or a MDC Menu. It is fully accessible, and fully RTL-aware.</p>
+          <h2 id="design--api-documentation">Design &amp; API Documentation</h2>
+          <ul class="icon-list">
+            <li class="icon-list-item icon-list-item--spec">
+              <a href="https://material.io/go/design-text-fields">Material Design guidelines: Text Fields</a>
+            </li>
+            <li class="icon-list-item icon-list-item--link">
+              <a href="https://material-components.github.io/material-components-web-catalog/#/component/select">Demo</a>
+            </li>
+          </ul>
+          <h2 id="installation">Installation</h2>
+          <pre><code>npm install @material/select
+</code></pre>
+          <h2 id="basic-usage">Basic Usage</h2>
+          <p>This section documents how to use a MDC Select with a native <code>&lt;select&gt;</code> element. For information on using
+            MDC Select with a MDC Menu, see the <a href="#variants">Variants</a> section below.</p>
+          <h3 id="html-structure">HTML Structure</h3>
+          <pre><code class="language-html">&lt;div class="mdc-select"&gt;
+  &lt;i class="mdc-select__dropdown-icon"&gt;&lt;/i&gt;
+  &lt;select class="mdc-select__native-control"&gt;
+    &lt;option value="" disabled selected&gt;&lt;/option&gt;
+    &lt;option value="grains"&gt;
+      Bread, Cereal, Rice, and Pasta
+    &lt;/option&gt;
+    &lt;option value="vegetables"&gt;
+      Vegetables
+    &lt;/option&gt;
+    &lt;option value="fruit"&gt;
+      Fruit
+    &lt;/option&gt;
+  &lt;/select&gt;
+  &lt;label class="mdc-floating-label"&gt;Pick a Food Group&lt;/label&gt;
+  &lt;div class="mdc-line-ripple"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <h3 id="styles">Styles</h3>
+          <p>For the native select, you can simply include the <code>mdc-select</code> Sass file.</p>
+          <pre><code class="language-scss">@import "@material/select/mdc-select";
+</code></pre>
+          <h3 id="javascript-instantiation">JavaScript Instantiation</h3>
+          <pre><code class="language-js">import {MDCSelect} from '@material/select';
+
+const select = new MDCSelect(document.querySelector('.mdc-select'));
+
+select.listen('MDCSelect:change', () =&gt; {
+  alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
+});
+</code></pre>
+          <p>See <a href="/components/web/docs/importing-js/">Importing the JS component</a> for more information on how to import JavaScript.</p>
+          <h2 id="variants">Variants</h2>
+          <h3 id="enhanced-select">Enhanced Select</h3>
+          <p>The enhanced select uses an <a href="/components/web/catalog/menus/"><code>MDCMenu</code></a> component instance to contain the list of options, but uses the
+            <code>data-value</code> attribute instead of <code>value</code> to represent the options’ values.</p>
+          <blockquote>
+            <p>Note: The <code>data-value</code> attribute <em>must</em> be present on each option.</p>
+          </blockquote>
+          <p>The enhanced select requires that you set the <code>width</code> of the root element (containing the
+            <code>mdc-select</code> class) as well as setting the width of the <code>mdc-select__menu</code> element to match. This is best done
+            through the use of another class (e.g. <code>demo-width-class</code> in the example HTML and CSS below).</p>
+          <p>If you are using the enhanced select within an HTML form, you can include a hidden <code>&lt;input&gt;</code> element under the root
+            <code>mdc-select</code> element, and it will be synchronized when the value is updated via user interaction or programmatically.</p>
+          <pre><code class="language-html">&lt;div class="mdc-select demo-width-class"&gt;
+  &lt;input type="hidden" name="enhanced-select"&gt;
+  &lt;i class="mdc-select__dropdown-icon"&gt;&lt;/i&gt;
+  &lt;div class="mdc-select__selected-text"&gt;&lt;/div&gt;
+  &lt;div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class"&gt;
+    &lt;ul class="mdc-list"&gt;
+      &lt;li class="mdc-list-item mdc-list-item--selected" data-value="" aria-selected="true"&gt;&lt;/li&gt;
+      &lt;li class="mdc-list-item" data-value="grains"&gt;
+        Bread, Cereal, Rice, and Pasta
+      &lt;/li&gt;
+      &lt;li class="mdc-list-item" data-value="vegetables"&gt;
+        Vegetables
+      &lt;/li&gt;
+      &lt;li class="mdc-list-item" data-value="fruit"&gt;
+        Fruit
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;span class="mdc-floating-label"&gt;Pick a Food Group&lt;/span&gt;
+  &lt;div class="mdc-line-ripple"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <p>When using the enhanced select, you will also need to load the Menu and List components’ styles.</p>
+          <pre><code class="language-scss">@import "@material/list/mdc-list";
+@import "@material/menu-surface/mdc-menu-surface";
+@import "@material/menu/mdc-menu";
+@import "@material/select/mdc-select";
+
+.demo-width-class {
+  width: 400px;
+}
+</code></pre>
+          <h4 id="usability-notes">Usability Notes</h4>
+          <p>The enhanced select provides a look and feel more consistent with the rest of Material Design, but there are some
+            trade-offs to consider when choosing it over the native <code>&lt;select&gt;</code> element.</p>
+          <ul>
+            <li><strong>Keyboard type-ahead:</strong> Native selects typically benefit from OS-implemented keyboard type-ahead support
+              (i.e. they will automatically select an item starting with the letters typed). This is not present in the enhanced select.</li>
+            <li><strong>Mobile UI:</strong> Mobile OSes implement native selects as a modal dialog or bottom sheet. The enhanced select always uses
+              an MDC Menu, which may not provide an optimal experience for small screens.</li>
+          </ul>
+          <h4 id="accessibility-a11y">Accessibility (a11y)</h4>
+          <p>In order to have an accessible component for users, it’s recommended that you follow the WAI-ARIA example for
+            <a href="https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html">Collapsible Dropdown Listbox</a>.
+            The following is an example of the enhanced select component with all of the necessary aria attributes.</p>
+          <pre><code class="language-html">&lt;div class="mdc-select"&gt;
+  &lt;input type="hidden" name="enhanced-select"&gt;
+  &lt;i class="mdc-select__dropdown-icon"&gt;&lt;/i&gt;
+  &lt;div id="demo-selected-text" class="mdc-select__selected-text" role="button" aria-haspopup="listbox" aria-labelledby="demo-label demo-selected-text"&gt;Vegetables&lt;/div&gt;
+  &lt;div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox"&gt;
+    &lt;ul class="mdc-list"&gt;
+      &lt;li class="mdc-list-item mdc-list-item--selected" data-value="" role="option"&gt;&lt;/li&gt;
+      &lt;li class="mdc-list-item" data-value="grains" role="option"&gt;
+        Bread, Cereal, Rice, and Pasta
+      &lt;/li&gt;
+      &lt;li class="mdc-list-item mdc-list-item--disabled" data-value="vegetables" aria-selected="true" aria-disabled="true" role="option"&gt;
+        Vegetables
+      &lt;/li&gt;
+      &lt;li class="mdc-list-item" data-value="fruit" role="option"&gt;
+        Fruit
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;span id="demo-label" class="mdc-floating-label mdc-floating-label--float-above"&gt;Pick a Food Group&lt;/span&gt;
+  &lt;div class="mdc-line-ripple"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <h3 id="outlined-select">Outlined Select</h3>
+          <p>The Select Outlined variant uses the <code>mdc-notched-outline</code> in place of the <code>mdc-line-ripple</code> element and adds the
+            <code>mdc-select--outlined</code> modifier class on the root element. All other elements for each type of select remain the
+            same.</p>
+          <pre><code class="language-html">&lt;div class="mdc-select mdc-select--outlined"&gt;
+  &lt;!-- Other elements from the native or enhanced select remain. --&gt;
+   &lt;div class="mdc-notched-outline"&gt;
+     &lt;div class="mdc-notched-outline__leading"&gt;&lt;/div&gt;
+     &lt;div class="mdc-notched-outline__notch"&gt;
+       &lt;label class="mdc-floating-label"&gt;Pick a Food Group&lt;/label&gt;
+     &lt;/div&gt;
+     &lt;div class="mdc-notched-outline__trailing"&gt;&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <h3 id="additional-information">Additional Information</h3>
+          <h4 id="select-with-pre-selected-option">Select with pre-selected option</h4>
+          <p>When dealing with a select component that has a pre-selected value, include the <code>mdc-floating-label--float-above</code>
+            modifier class on the <code>mdc-floating-label</code> element, and add the <code>selected</code> attribute to the selected option.
+            This will ensure that the label moves out of the way of the select’s value and prevents a Flash Of Unstyled Content
+            (<strong>FOUC</strong>).</p>
+          <pre><code class="language-html">&lt;div class="mdc-select"&gt;
+  &lt;i class="mdc-select__dropdown-icon"&gt;&lt;/i&gt;
+  &lt;select class="mdc-select__native-control"&gt;
+    &lt;option value="vegetables"&gt;
+      Vegetables
+    &lt;/option&gt;
+    &lt;option value="fruit"&gt;
+      Fruit
+    &lt;/option&gt;
+    &lt;option value="dairy" selected&gt;
+      Milk, Yogurt, and Cheese
+    &lt;/option&gt;
+  &lt;/select&gt;
+  &lt;label class="mdc-floating-label mdc-floating-label--float-above"&gt;Pick a Food Group&lt;/label&gt;
+  &lt;div class="mdc-line-ripple"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <p>The enhanced select works in a similar way, but uses the <code>mdc-list-item--selected</code> class to set the selected item. The
+            enhanced select also needs the text from the selected element copied to the <code>mdc-select__selected-text</code> element.</p>
+          <pre><code class="language-html">&lt;div class="mdc-select demo-width-class"&gt;
+  &lt;input type="hidden" name="enhanced-select"&gt;
+  &lt;i class="mdc-select__dropdown-icon"&gt;&lt;/i&gt;
+  &lt;div class="mdc-select__selected-text"&gt;Vegetables&lt;/div&gt;
+  &lt;div class="mdc-select__menu demo-width-class mdc-menu mdc-menu-surface"&gt;
+    &lt;ul class="mdc-list"&gt;
+      &lt;li class="mdc-list-item" data-value=""&gt;&lt;/li&gt;
+      &lt;li class="mdc-list-item" data-value="grains"&gt;
+        Bread, Cereal, Rice, and Pasta
+      &lt;/li&gt;
+      &lt;li class="mdc-list-item mdc-list-item--selected" data-value="vegetables" aria-selected="true"&gt;
+        Vegetables
+      &lt;/li&gt;
+      &lt;li class="mdc-list-item" data-value="fruit"&gt;
+        Fruit
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;span class="mdc-floating-label mdc-floating-label--float-above"&gt;Pick a Food Group&lt;/span&gt;
+  &lt;div class="mdc-line-ripple"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <h4 id="using-the-floating-label-as-the-placeholder">Using the floating label as the placeholder</h4>
+          <p>By default, <code>&lt;select&gt;</code> elements will select their first enabled option. In order to initially display a placeholder
+            instead, add an initial <code>&lt;option&gt;</code> element with the <code>selected</code> attribute set (and optionally <code>disabled</code>, if the field is
+            required), and with <code>value</code> set to <code>""</code>.</p>
+          <pre><code class="language-html">&lt;option value="" disabled selected&gt;&lt;/option&gt;
+</code></pre>
+          <p>For the enhanced select, simply leave the <code>mdc-select__selected-text</code> element empty and don’t specify an element as
+            selected. If leaving the field empty should be a valid option, include an <code>mdc-list-item</code> element at the beginning of
+            the list with an empty <code>data-value</code> attribute.</p>
+          <pre><code class="language-html">&lt;li class="mdc-list-item mdc-list-item--selected" aria-selected="true" role="option" data-value=""&gt;&lt;/li&gt;
+</code></pre>
+          <h4 id="disabled-select">Disabled select</h4>
+          <p>To initially render a MDC Select in a disabled state, add the <code>mdc-select--disabled</code> class to the <code>mdc-select</code> element,
+            and add the <code>disabled</code> attribute to the <code>&lt;select&gt;</code> element.</p>
+          <pre><code class="language-html">&lt;div class="mdc-select mdc-select--disabled"&gt;
+  &lt;i class="mdc-select__dropdown-icon"&gt;&lt;/i&gt;
+  &lt;select class="mdc-select__native-control" disabled&gt;
+    ...
+  &lt;/select&gt;
+  &lt;label class="mdc-floating-label"&gt;Pick a Food Group&lt;/label&gt;
+  &lt;div class="mdc-line-ripple"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <p>For the enhanced select, add the <code>mdc-select--disabled</code> class to the <code>mdc-select</code> element, and add the <code>disabled</code>
+            attribute to the hidden <code>&lt;input&gt;</code> element if present.</p>
+          <pre><code class="language-html">&lt;div class="mdc-select mdc-select--disabled"&gt;
+  &lt;input type="hidden" name="enhanced-select" disabled&gt;
+  &lt;i class="mdc-select__dropdown-icon"&gt;&lt;/i&gt;
+  &lt;div class="mdc-select__selected-text"&gt;&lt;/div&gt;
+  &lt;div class="mdc-select__menu mdc-menu mdc-menu-surface"&gt;
+    ...
+  &lt;/div&gt;
+  &lt;span class="mdc-floating-label"&gt;Pick a Food Group&lt;/span&gt;
+  &lt;div class="mdc-line-ripple"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <h4 id="disabled-options">Disabled options</h4>
+          <p>For the native <code>select</code>, simply add the <code>disabled</code> attribute to individual options to disable them.</p>
+          <pre><code class="language-html">&lt;div class="mdc-select"&gt;
+  &lt;select class="mdc-select__native-control"&gt;
+    &lt;option value="grains"&gt;
+      Bread, Cereal, Rice, and Pasta
+    &lt;/option&gt;
+    &lt;option value="vegetables" disabled&gt;
+      Vegetables
+    &lt;/option&gt;
+    &lt;option value="fruit"&gt;
+      Fruit
+    &lt;/option&gt;
+  &lt;/select&gt;
+  &lt;label class="mdc-floating-label"&gt;Pick a Food Group&lt;/label&gt;
+  &lt;div class="mdc-line-ripple"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <p>For the enhanced select, you should add the <code>mdc-list-item--disabled</code> class to list items that are disabled. Unlike the
+            native select, disabled list items are removed from the list items index, and are ignored entirely. You cannot
+            programmatically select a disabled list item in the enhanced select.</p>
+          <pre><code class="language-html">&lt;div class="mdc-select"&gt;
+  &lt;input type="hidden" name="enhanced-select"&gt;
+  &lt;i class="mdc-select__dropdown-icon"&gt;&lt;/i&gt;
+  &lt;div class="mdc-select__selected-text"&gt;Vegetables&lt;/div&gt;
+  &lt;div class="mdc-select__menu mdc-menu mdc-menu-surface"&gt;
+    &lt;ul class="mdc-list"&gt;
+      &lt;li class="mdc-list-item" data-value=""&gt;&lt;/li&gt;
+      &lt;li class="mdc-list-item" data-value="grains"&gt;
+        Bread, Cereal, Rice, and Pasta
+      &lt;/li&gt;
+      &lt;li class="mdc-list-item mdc-list-item--selected mdc-list-item--disabled" data-value="vegetables"&gt;
+        Vegetables
+      &lt;/li&gt;
+      &lt;li class="mdc-list-item" data-value="fruit"&gt;
+        Fruit
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;span class="mdc-floating-label mdc-floating-label--float-above"&gt;Pick a Food Group&lt;/span&gt;
+  &lt;div class="mdc-line-ripple"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <h3 id="select-with-helper-text">Select with Helper Text</h3>
+          <p>The helper text provides supplemental information and/or validation messages to users. It appears when the select
+            element is focused and disappears on blur by default, or it can be persistent.
+            See <a href="/components/web/catalog/input-controls/select-menus/helper-text/">here</a> for more information on using helper text.</p>
+          <h3 id="select-with-leading--icons">Select with Leading  Icons</h3>
+          <p>Leading icons can be added within the default or outlined variant of MDC Select as visual indicators as
+            well as interaction targets. See <a href="/components/web/catalog/input-controls/select-menus/icon/">here</a> for more information on using icons.</p>
+          <h2 id="style-customization">Style Customization</h2>
+          <h4 id="css-classes">CSS Classes</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>mdc-select</code></td>
+                <td>Mandatory.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select__menu</code></td>
+                <td>Mandatory when using the enhanced select. This class should be placed on the <code>mdc-menu</code> element within the <code>mdc-select</code> element.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select__dropdown-icon</code></td>
+                <td>Mandatory. Should be placed on an <code>i</code> element within the <code>mdc-select</code> element. Used for the dropdown arrow svg and animation.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select__icon</code></td>
+                <td>Optional. Should be placed on an <code>i</code> or <code>svg</code> element within the <code>mdc-select</code> element. Used for the leading icon.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select--activated</code></td>
+                <td>Optional. Styles the activated state of select. This class will be added automatically when menu is opened.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select--disabled</code></td>
+                <td>Optional. Styles the select as disabled. This class should be applied to the root element when the <code>disabled</code> attribute is applied to the <code>&lt;select&gt;</code> element.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select--outlined</code></td>
+                <td>Optional. Styles the select as outlined select.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select__native-control</code></td>
+                <td>Mandatory for the native select. The native <code>&lt;select&gt;</code> element.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select__selected-text</code></td>
+                <td>Mandatory for the enhanced select. This class should be placed on a <code>div</code> within the <code>mdc-select</code> element.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select--with-leading-icon</code></td>
+                <td>Styles the select as a select with a leading icon.</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote>
+            <p>Note: To further customize the <a href="/components/web/catalog/menus/">MDCMenu</a> or the <a href="/components/web/catalog/lists/">MDCList</a> component contained within the select, please refer to their respective documentation.</p>
+          </blockquote>
+          <h3 id="sass-mixins">Sass Mixins</h3>
+          <p>Mixins should be included in the context of a custom class applied to the component’s root element, e.g. <code>.my-select</code>.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Mixin</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>mdc-select-ink-color($color)</code></td>
+                <td>Customizes the color of the selected item displayed in the select.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select-container-fill-color($color)</code></td>
+                <td>Customizes the background color of the select.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select-label-color($color)</code></td>
+                <td>Customizes the label color of the select in the unfocused state.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select-focused-label-color($color)</code></td>
+                <td>Customizes the label color of the select when focused.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select-bottom-line-color($color)</code></td>
+                <td>Customizes the color of the default bottom line of the select.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select-focused-bottom-line-color($color)</code></td>
+                <td>Customizes the color of the bottom line of the select when focused.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select-shape-radius($radius, $rtl-reflexive)</code></td>
+                <td>Sets rounded shape to boxed select variant with given radius size. Set <code>$rtl-reflexive</code> to true to flip radius values in RTL context, defaults to false.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select-hover-bottom-line-color($color)</code></td>
+                <td>Customizes the color of the bottom line when the select is hovered.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select-outline-color($color)</code></td>
+                <td>Customizes the color of the notched outline.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select-outline-shape-radius($radius, $rtl-reflexive)</code></td>
+                <td>Sets the border radius of of the outlined select variant. Set <code>$rtl-reflexive</code> to true to flip radius values in RTL context, defaults to false.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select-focused-outline-color($color)</code></td>
+                <td>Customizes the color of the outline of the select when focused.</td>
+              </tr>
+              <tr>
+                <td><code>mdc-select-hover-outline-color($color)</code></td>
+                <td>Customizes the color of the outline when the select is hovered.</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote>
+            <p>NOTE: To further customize the floating label, please see the <a href="/components/web/catalog/input-controls/floating-label/">floating label documentation</a>.</p>
+          </blockquote>
+          <h2 id="mdcselect-api"><code>MDCSelect</code> API</h2>
+          <p>The <code>MDCSelect</code> component API is modeled after a subset of the <code>HTMLSelectElement</code> functionality.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>value</code></td>
+                <td><code>string</code></td>
+                <td>The <code>value</code>/<code>data-value</code> of the currently selected option.</td>
+              </tr>
+              <tr>
+                <td><code>selectedIndex</code></td>
+                <td><code>number</code></td>
+                <td>The index of the currently selected option. Set to -1 if no option is currently selected. Changing this property will update the select element.</td>
+              </tr>
+              <tr>
+                <td><code>disabled</code></td>
+                <td><code>boolean</code></td>
+                <td>Whether or not the component is disabled. Setting this sets the disabled state on the component.</td>
+              </tr>
+              <tr>
+                <td><code>valid</code></td>
+                <td><code>boolean</code></td>
+                <td>Whether or not the component is in a valid state. Setting this updates styles on the component, but does not affect the native validity state.</td>
+              </tr>
+              <tr>
+                <td><code>required</code></td>
+                <td><code>boolean</code></td>
+                <td>Whether or not the component is required. Setting this updates the <code>required</code> or <code>aria-required</code> attribute on the component and enables validation.</td>
+              </tr>
+              <tr>
+                <td><code>leadingIconAriaLabel</code></td>
+                <td><code>string</code> (write-only)</td>
+                <td>Proxies to the foundation’s <code>setLeadingIconAriaLabel</code> method.</td>
+              </tr>
+              <tr>
+                <td><code>leadingIconContent</code></td>
+                <td><code>string</code> (write-only)</td>
+                <td>Proxies to the foundation’s <code>setLeadingIconContent</code> method.</td>
+              </tr>
+              <tr>
+                <td><code>helperTextContent</code></td>
+                <td><code>string</code> (write-only)</td>
+                <td>Proxies to the foundation’s <code>setHelperTextContent</code> method when set.</td>
+              </tr>
+              <tr>
+                <td><code>ripple</code></td>
+                <td><code>MDCRipple</code></td>
+                <td>Ripple instance attached to outlined select variant, or <code>null</code> for all other variants.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 id="events">Events</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Event Name</th>
+                <th>Data</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>MDCSelect:change</code></td>
+                <td><code>{value: string, index: number}</code></td>
+                <td>Used to indicate when an element has been selected. This event also includes the value of the item and the index.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h2 id="usage-within-web-frameworks">Usage within Web Frameworks</h2>
+          <p>If you are using a JavaScript framework, such as React or Angular, you can create a Select for your framework. Depending on your needs, you can use the <em>Simple Approach: Wrapping MDC Web Vanilla Components</em>, or the <em>Advanced Approach: Using Foundations and Adapters</em>. Please follow the instructions <a href="/components/web/docs/framework-integration/">here</a>.</p>
+          <h3 id="mdcselectadapter"><code>MDCSelectAdapter</code></h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Method Signature</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>addClass(className: string) =&gt; void</code></td>
+                <td>Adds a class to the root element.</td>
+              </tr>
+              <tr>
+                <td><code>removeClass(className: string) =&gt; void</code></td>
+                <td>Removes a class from the root element.</td>
+              </tr>
+              <tr>
+                <td><code>hasClass(className: string) =&gt; boolean</code></td>
+                <td>Returns true if the root element has the className in its classList.</td>
+              </tr>
+              <tr>
+                <td><code>activateBottomLine() =&gt; void</code></td>
+                <td>Activates the bottom line component.</td>
+              </tr>
+              <tr>
+                <td><code>deactivateBottomLine() =&gt; void</code></td>
+                <td>Deactivates the bottom line component.</td>
+              </tr>
+              <tr>
+                <td><code>getValue() =&gt; string</code></td>
+                <td>Returns the value selected <code>option</code> on the <code>select</code> element and the <code>data-value</code> of the selected list item on the enhanced select.</td>
+              </tr>
+              <tr>
+                <td><code>floatLabel(value: boolean) =&gt; void</code></td>
+                <td>Floats or defloats label.</td>
+              </tr>
+              <tr>
+                <td><code>getLabelWidth() =&gt; number</code></td>
+                <td>Returns the offsetWidth of the label element.</td>
+              </tr>
+              <tr>
+                <td><code>hasOutline() =&gt; boolean</code></td>
+                <td>Returns true if the <code>select</code> has the notched outline element.</td>
+              </tr>
+              <tr>
+                <td><code>notchOutline(labelWidth: number) =&gt; void</code></td>
+                <td>Switches the notched outline element to its “notched state.”</td>
+              </tr>
+              <tr>
+                <td><code>closeOutline() =&gt; void</code></td>
+                <td>Switches the notched outline element to its closed state.</td>
+              </tr>
+              <tr>
+                <td><code>openMenu() =&gt; void</code></td>
+                <td>Causes the menu element in the enhanced select to open.</td>
+              </tr>
+              <tr>
+                <td><code>closeMenu() =&gt; void</code></td>
+                <td>Causes the menu element in the enhanced select to close.</td>
+              </tr>
+              <tr>
+                <td><code>setValue(value: string) =&gt; void</code></td>
+                <td>Sets the value of the select or text content of the selected-text element.</td>
+              </tr>
+              <tr>
+                <td><code>isMenuOpen() =&gt; boolean</code></td>
+                <td>Returns true if the menu is currently opened in the enhanced select.</td>
+              </tr>
+              <tr>
+                <td><code>setSelectedIndex(index: number) =&gt; void</code></td>
+                <td>Selects the option or list item at the specified index.</td>
+              </tr>
+              <tr>
+                <td><code>setDisabled(isDisabled: boolean) =&gt; void</code></td>
+                <td>Enables or disables the native or enhanced select.</td>
+              </tr>
+              <tr>
+                <td><code>setRippleCenter(normalizedX: number) =&gt; void</code></td>
+                <td>Sets the line ripple center to the provided normalizedX value.</td>
+              </tr>
+              <tr>
+                <td><code>notifyChange(value: string) =&gt; void</code></td>
+                <td>Emits the <code>MDCSelect:change</code> event when an element is selected.</td>
+              </tr>
+              <tr>
+                <td><code>checkValidity() =&gt; boolean</code></td>
+                <td>Returns whether the component is currently valid, using the native select’s <code>checkValidity</code> or equivalent logic for the enhanced select.</td>
+              </tr>
+              <tr>
+                <td><code>setValid(isValid: boolean) =&gt; void</code></td>
+                <td>Adds or removes invalid styles.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 id="mdcselectfoundation"><code>MDCSelectFoundation</code></h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Method Signature</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>notchOutline(openNotch: boolean) =&gt; void</code></td>
+                <td>Opens/closes the notched outline.</td>
+              </tr>
+              <tr>
+                <td><code>setDisabled(isDisabled: boolean) =&gt; void</code></td>
+                <td>Updates appearance based on disabled state. This must be called whenever the <code>disabled</code> state changes.</td>
+              </tr>
+              <tr>
+                <td><code>handleFocus() =&gt; void</code></td>
+                <td>Handles a focus event on the <code>select</code> element.</td>
+              </tr>
+              <tr>
+                <td><code>handleBlur() =&gt; void</code></td>
+                <td>Handles a blur event on the <code>select</code> element.</td>
+              </tr>
+              <tr>
+                <td><code>handleClick(normalizedX: number) =&gt; void</code></td>
+                <td>Sets the line ripple center to the normalizedX for the line ripple.</td>
+              </tr>
+              <tr>
+                <td><code>handleMenuOpened() =&gt; void</code></td>
+                <td>Handles menu or menu surface opened event.</td>
+              </tr>
+              <tr>
+                <td><code>handleMenuClosed() =&gt; void</code></td>
+                <td>Handles menu or menu surface closed event.</td>
+              </tr>
+              <tr>
+                <td><code>handleChange() =&gt; void</code></td>
+                <td>Handles a change to the <code>select</code> element’s value. This must be called both for <code>change</code> events and programmatic changes requested via the component API.</td>
+              </tr>
+              <tr>
+                <td><code>handleKeydown(event: KeyboardEvent) =&gt; void</code></td>
+                <td>Handles opening the menu (enhanced select) when the <code>mdc-select__selected-text</code> element is focused and the user presses the <code>Enter</code> or <code>Space</code> key.</td>
+              </tr>
+              <tr>
+                <td><code>setSelectedIndex(index: number) =&gt; void</code></td>
+                <td>Handles setting the <code>mdc-select__selected-text</code> element and closing the menu (enhanced select only). Also causes the label to float and outline to notch if needed.</td>
+              </tr>
+              <tr>
+                <td><code>setValue(value: string) =&gt; void</code></td>
+                <td>Handles setting the value through the adapter and causes the label to float and outline to notch if needed.</td>
+              </tr>
+              <tr>
+                <td><code>getValue() =&gt; string</code></td>
+                <td>Handles getting the value through the adapter.</td>
+              </tr>
+              <tr>
+                <td><code>setValid(isValid: boolean) =&gt; void</code></td>
+                <td>Sets the valid state through the adapter.</td>
+              </tr>
+              <tr>
+                <td><code>isValid() =&gt; boolean</code></td>
+                <td>Gets the valid state through the adapter’s <code>checkValidity</code> API.</td>
+              </tr>
+              <tr>
+                <td><code>layout() =&gt; void</code></td>
+                <td>Handles determining if the notched outline should be notched.</td>
+              </tr>
+              <tr>
+                <td><code>setLeadingIconAriaLabel(label: string) =&gt; void</code></td>
+                <td>Sets the aria label of the leading icon.</td>
+              </tr>
+              <tr>
+                <td><code>setLeadingIconContent(content: string) =&gt; void</code></td>
+                <td>Sets the text content of the leading icon.</td>
+              </tr>
+              <tr>
+                <td><code>setHelperTextContent(content: string) =&gt; void</code></td>
+                <td>Sets the content of the helper text.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><code>MDCSelectFoundation</code> supports multiple optional sub-elements: helper text and icon. The foundations of these sub-elements must be passed in as constructor arguments to <code>MDCSelectFoundation</code>.</p>
+        </article>
+        <footer class="footer">
+          <section class="footer__content">
+            <div class="footer__row">
+              <a class="footer__logo-link">
+                <div class="footer__logo"></div>
+              </a>
+              <div class="footer__copy">
+                <p class="footer__description">Material design is an adaptable system—backed by open-source code—guiding you in the principles and best practices of contemporary UI. Material helps teams streamline the designer-developer collaboration, reduce complexity, and enable fidelity through reusable components, patterns, and code libraries. All while adapting easily to your brand, platform, and users’ needs.</p>
+                <nav class="footer__navigation">
+                  <ul class="footer__navigation-list">
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.github.com/material-components"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Github
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.twitter.com/materialdesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Twitter
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.youtube.com/googledesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        YouTube
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://services.google.com/fb/forms/materialdesignnewsletter/"
+                  target="_blank"
+                  class="footer-block__social-nav-link"
+                  aria-label="Sign up for our newsletter">
+                        Newsletter
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="footer__row footer-legal">
+              <a class="footer-legal__logo-container" href="https://google.com">
+                <img src="/develop/images/google-logo-gray.svg" alt="Google" />
+              </a>
+              <ul class="footer-legal__nav-list">
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/privacy"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/terms"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Terms and Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </footer>
+      </section>
+    </div>
+    <template id="language-radio-template">
+      <div class="mdc-form-field">
+        <div class="mdc-radio">
+          <input class="mdc-radio__native-control"
+             type="radio"
+             id="" name="" value="">
+          <div class="mdc-radio__background">
+            <div class="mdc-radio__outer-circle"></div>
+            <div class="mdc-radio__inner-circle"></div>
+          </div>
+        </div>
+        <label class="language-name" for=""></label>
+      </div>
+    </template>
+    <button
+    class="feedback-button"
+    aria-label="Send Feedback"
+    tabindex="0">
+    </button>
+    <script src="/develop/js/index.js" async></script>
+    <script src="https://www.gstatic.com/feedback/api.js" async></script>
+  </body>
+</html>

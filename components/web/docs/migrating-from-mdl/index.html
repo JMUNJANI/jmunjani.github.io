@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://material.io flutter.github.io https://www.google-analytics.com https://stats.g.doubleclick.net img.shields.io 'self'; script-src https://www.google.com https://www.gstatic.com https://adservice.google.com https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline' 'self'; style-src https://fonts.googleapis.com/css 'unsafe-inline' 'self'; font-src https://fonts.gstatic.com/s/ 'self'; child-src 'none';">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <title>Migrating from Material Design Lite - Material Components for the Web</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-NHRPF8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta itemprop="name" content="Migrating from Material Design Lite - Material Components for the Web" />
+    <meta itemprop="image" content="https://material.io/static/images/simple-lp/components-share.png" />
+    <meta name="description" content="Material Components for Web is a set of user interface components that help developers build web apps with material design.
+" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Migrating from Material Design Lite - Material Components for the Web" />
+    <meta property="og:site_name" content="Material Components for the Web" />
+    <meta property="og:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <meta property="article:section" content="Migrating from Material Design Lite" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@materialdesign">
+    <meta name="twitter:title" content="Material Components">
+    <meta name="twitter:description" content="Create beautiful apps with modular and customizable UI components">
+    <meta name="twitter:image" content="https://material.io/static/images/simple-lp/components-share.png">
+    <link rel="icon" sizes="192x192" href="/develop/images/app-icons/material-logo-app-icon-192x192.png">
+    <link rel="shortcut icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/develop/images/app-icons/material-logo-app-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/develop/images/app-icons/material-logo-app-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/develop/images/app-icons/material-logo-app-icon-180x180.png">
+    <meta name="msapplication-TileImage" content="https://material.io/static/images/hub/favicons/hub-ms-icon-144x144.png">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Mono:400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/develop/css/codemirror.css">
+    <link rel="stylesheet" href="/develop/css/neo.css">
+    <link rel="stylesheet" href="/develop/css/app.css">
+    <script async="" defer="" src="https://www.google.com/insights/consumersurveys/async_survey?site=znr647dh46pklceehuqef2fsua"></script>
+  </head>
+  <body class="page page--landing page--docs page--platform-web">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <aside class="page__temporary-drawer mdc-drawer mdc-drawer--temporary page_drawer--temporary">
+      <nav class="temporary-drawer__drawer mdc-drawer__drawer mdc-drawer__content">
+        <header class="temporary-drawer__header mdc-drawer__header">
+          <div class="temporary-drawer__header-content mdc-drawer__header-content">
+            <div class="temporary-drawer__header-icon develop-toolbar__leading-icon"></div>
+            Material Design
+          </div>
+        </header>
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label">web</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/web/catalog/animation/">Components</a>
+          <h3 class="drawer-heading">Documentation</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/authoring-components/"
+     >
+                Authoring Components
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/examples/"
+     >
+                Examples
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/framework-integration/"
+     >
+                Framework Integration
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/framework-wrappers/"
+     >
+                Framework Wrappers
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/getting-started/"
+     >
+                Getting Started
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/importing-js/"
+     >
+                Importing JS Components
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/migrating-from-mdl/"
+     >
+                Migrating from MDL
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/theming/"
+     >
+                Theming Guide
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </nav>
+    </aside>
+    <header class="develop-toolbar mdc-toolbar mdc-toolbar--fixed
+    
+    
+      mdc-toolbar--platform
+    ">
+      <div class="search-form" id="top-level-search-bar">
+        <form class="search-form__form" id="top-level-search-form">
+          <input type="text"
+        class="search-form__input"
+        id="top-level-search-input"
+        autocomplete="off" />
+        </form>
+        <div class="search-form__label" id="top-level-search-label">Search</div>
+        <button
+      class="search-form__button search-form__button--close"
+      id="top-level-search-close"
+      aria-label="Close search">
+          <div class="search-form__close-icon" id="close-button-icon" data-mdc-ripple-is-unbounded></div>
+        </button>
+      </div>
+      <div class="develop-toolbar__row mdc-toolbar__row">
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="menu-button" id="menu-open">
+            <div class="menu-button__icon menu-button__icon--initial-load" id="menu-icon"></div>
+          </button>
+          <a class="develop-toolbar__title-link" href="/">
+            <div class="develop-toolbar__leading-icon"></div>
+            <h1 class="develop-toolbar__title mdc-toolbar__title">
+              Material Design
+            </h1>
+          </a>
+        </section>
+        <section class="develop-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+          <nav id="navigation-tabs" class="develop-tab-bar">
+            <a href="/design"
+      class="develop-tab">
+              Design
+            </a>
+            <a href="/components"
+      class="develop-tab">
+              Components
+            </a>
+            <a href="/develop"
+      class="develop-tab develop-tab--active">
+              Develop
+              <span class="develop-tab__nav-indicator"></span>
+            </a>
+            <a href="/resources"
+     class="develop-tab">
+              Resources
+            </a>
+          </nav>
+          <section class="develop-toolbar__section develop-toolbar__section--search mdc-toolbar__section mdc-toolbar__section--align-end develop-toolbar__section--fit-content">
+            <button 
+    class="search-form__button search-form__button--open"
+    id="top-level-search-open"
+    aria-label="Search">
+              <div class="search-form__search-icon" id="spyglass-icon"></div>
+            </button>
+          </section>
+        </section>
+      </div>
+    </header>
+    <div class="page__content page__flex-element">
+      <div class="page__drawer mdc-permanent-drawer">
+        <div class="develop-menu-anchor mdc-menu-anchor mdc-toolbar__platform-chooser">
+          <button class="toolbar-platform-chooser__button">
+            <span class="toolbar-platform-chooser__label">web</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+          <div class="toolbar-platform-chooser__menu mdc-menu" tabindex="-1">
+            <ul class="platform-selection__items mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/android">
+                Android
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/ios">
+                iOS
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/web">
+                Web
+              </li>
+              <li class="platform-selection__item mdc-list-item"
+          role="menuitem"
+          tabindex="0"
+          data-href="/develop/flutter">
+                Flutter
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="temporary-drawer__nav">
+          <a class="drawer-link drawer-link--no-list"
+        href="/components/web/catalog/animation/">Components</a>
+          <h3 class="drawer-heading">Documentation</h3>
+          <ul class="drawer-list">
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/authoring-components/"
+     >
+                Authoring Components
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/examples/"
+     >
+                Examples
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/framework-integration/"
+     >
+                Framework Integration
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/framework-wrappers/"
+     >
+                Framework Wrappers
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/getting-started/"
+     >
+                Getting Started
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/importing-js/"
+     >
+                Importing JS Components
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  drawer-list__item--active
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/migrating-from-mdl/"
+     >
+                Migrating from MDL
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+            <li class="drawer-list__item
+  
+  
+  ">
+              <a class="drawer-link"
+     
+       href="/components/web/docs/theming/"
+     >
+                Theming Guide
+              </a>
+              <ul class="drawer-list drawer-list--sublevel">
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <section class="page__main-section">
+        <article class="page__article article">
+          <h1 id="migrating-from-material-design-lite">Migrating from Material Design Lite</h1>
+          <p>Material Components for the web (MDC Web) is the successor to the Material Design Lite (MDL) project.</p>
+          <p>While the philosophy behind the two projects is quite similar, migrating to MDC Web requires a number of changes, from
+            class names to different DOM structures. In addition, there are several choices to be made regarding component
+            initialization, how to depend on MDC Web, and theming/styling mechanisms.</p>
+          <p>This document attempts to summarize and guide you through the work involved. Let’s get started!</p>
+          <blockquote>
+            <p><strong>Note:</strong> If you’re thinking of migrating your application to MDC Web, please bear in mind that it’s still in an alpha
+              state and thus APIs and certain UX features are subject to change.</p>
+          </blockquote>
+          <h2 id="depending-on-mdc-web">Depending on MDC Web</h2>
+          <p>MDL is distributed on npm, Bower, and through its own CDN. It is a singular, universal library consisting of all
+            components and styles in one package.</p>
+          <p>In contrast, MDC Web is available only via npm. It is designed to be modular and is subdivided into individual component
+            packages, in addition to the all-encompassing <code>material-components-web</code> package, allowing you to choose whether to pull
+            in everything, or just the packages you want.</p>
+          <h3 id="npm">npm</h3>
+          <p>MDC Web is available on <a href="https://www.npmjs.com/">npm</a>, with packages living under the <code>@material</code> namespace.</p>
+          <p>In order to install e.g. the button component, you can run:</p>
+          <pre><code>npm install @material/button
+</code></pre>
+          <p>Some packages serve as dependencies for others, so don’t be surprised if you end up with multiple packages in your
+            <code>node_modules</code> folder! There are very few runtime dependencies outside of MDC Web, so the dependency tree should remain
+            small.</p>
+          <p>If you want all of MDC Web, you can pull in the meta package:</p>
+          <pre><code>npm install material-components-web
+</code></pre>
+          <h3 id="content-distribution-network-cdn">Content Distribution Network (CDN)</h3>
+          <p>While MDL is available over a CDN, there’s currently no equivalent in MDC Web.</p>
+          <p>In the meantime, you can take advantage of the <a href="https://unpkg.com/">unpkg CDN</a>, which automatically provides
+            distribution for all npm packages.</p>
+          <p>For easily getting all MDC Web CSS:</p>
+          <pre><code>https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css
+</code></pre>
+          <p>And JS:</p>
+          <pre><code>https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js
+</code></pre>
+          <p>Check the <a href="https://unpkg.com/">unpkg CDN main page</a> for more information on how to request particular version ranges.</p>
+          <p>You can also request individual packages’ JS and CSS, e.g.:</p>
+          <pre><code>https://unpkg.com/@material/textfield@latest/dist/mdc.textfield.min.js
+https://unpkg.com/@material/textfield@latest/dist/mdc.textfield.min.css
+</code></pre>
+          <blockquote>
+            <p><strong>Note:</strong> We heavily recommend installing MDC Web packages locally in order to take full advantage of their
+              customization APIs. See the <a href="/components/web/docs/getting-started/">Getting Started Guide</a> for more information.</p>
+          </blockquote>
+          <h2 id="initializing-components">Initializing components</h2>
+          <p>Both MDL and MDC Web require the user to provide a specific DOM structure for a component, in order for it to function
+            correctly. This DOM has certain requirements, such as requiring the presence of specific CSS classes, a certain
+            hierarchy, and in some cases, specific HTML elements.</p>
+          <p>MDL:</p>
+          <pre><code class="language-html">&lt;div class="mdl-text-field mdl-js-text-field"&gt;
+  &lt;input class="mdl-text-field__input" type="text" id="input"&gt;
+  &lt;label class="mdl-text-field__label" for="input"&gt;Input Label&lt;/label&gt;
+&lt;/div&gt;
+</code></pre>
+          <p>MDC Web:</p>
+          <pre><code class="language-html">&lt;div class="mdc-text-field"&gt;
+  &lt;input class="mdc-text-field__input" type="text" id="input"&gt;
+  &lt;label for="input" class="mdc-floating-label"&gt;Input Label&lt;/label&gt;
+  &lt;div class="mdc-line-ripple"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <p>In MDC Web, the DOM you specify must be complete; unlike MDL, the library will not create any missing elements for you.
+            This is done in order to make behavior more deterministic and give you greater freedom in customizing the non-critical
+            parts of a component’s DOM.</p>
+          <p>Once a DOM is available, MDL manages component lifecycles automatically, by running through the page on load,
+            identifying DOM structures that correspond to MDL components, and automatically upgrading them.</p>
+          <p>In MDC Web, however, you have the choice between managing components’ lifecycles yourself, or having them automatically
+            initialized, similarly to MDL.</p>
+          <h3 id="auto-initialization">Auto-initialization</h3>
+          <p>Auto-initialization is handled by the <code>@material/auto-init</code> package, so start by ensuring that you’re depending on it
+            (check the <a href="#depending-on-mdc-web">Depending on MDC Web section</a>).</p>
+          <p>For every component that you want to automatically initialize, set the <code>data-mdc-auto-init</code> attribute on the root
+            element, with the component’s class name as the value. For example:</p>
+          <pre><code class="language-html">&lt;div class="mdc-text-field" data-mdc-auto-init="MDCTextField"&gt;
+  &lt;input class="mdc-text-field__input" type="text" id="input"&gt;
+  &lt;label for="input" class="mdc-floating-label"&gt;Input Label&lt;/label&gt;
+  &lt;div class="mdc-line-ripple"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+          <p>Auto-initialization needs to be triggered explicitly, but doing so is very straightforward.</p>
+          <p>If you’re using already-transpiled JS:</p>
+          <pre><code class="language-js">mdc.autoInit();
+</code></pre>
+          <p>If you’re using ES Module syntax:</p>
+          <pre><code class="language-js">import autoInit from '@material/auto-init';
+
+autoInit();
+</code></pre>
+          <p>When using <code>autoInit</code>, you can access a component’s JavaScript instance via its root DOM element, on a property with the
+            same name as the value you passed to <code>data-mdc-auto-init</code>. So, for the example above:</p>
+          <pre><code class="language-js">document.querySelector('.mdc-text-field').MDCTextField.disabled = true;
+</code></pre>
+          <p>See the <a href="/components/web/catalog/auto-init/"><code>@material/auto-init</code> README</a> for more details.</p>
+          <h3 id="manual-lifecycle-management">Manual lifecycle management</h3>
+          <p>While auto-initialization works very well for simpler use cases, manual management of components’ lifecycles is a better
+            option for complex applications that dynamically create and destroy parts of their user interface.</p>
+          <p>MDC Web modules include both UMD and ES Module sources. Both are transpiled ES5, so you can choose the best option depending on
+            your build toolchain.</p>
+          <blockquote>
+            <p><strong>Note:</strong> When instantiating manually, be sure to store the returned instance somewhere so that you can access it when
+              you need to; unlike with auto-initialization, there is no way to retrieve it later via the DOM.</p>
+          </blockquote>
+          <h4 id="importing-a-component-from-es-module-sources">Importing a component from ES Module sources</h4>
+          <p>Start by importing the component:</p>
+          <pre><code class="language-js">import {MDCTextField} from '@material/textfield';
+</code></pre>
+          <p>Then instantiate it by calling the constructor on the root node:</p>
+          <pre><code class="language-js">const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
+</code></pre>
+          <blockquote>
+            <p>See the <a href="/components/web/docs/getting-started/">Getting Started Guide</a> for information on setting up a toolchain to consume ES Modules.</p>
+          </blockquote>
+          <h4 id="using-the-component-class-in-an-es5-bundle">Using the component class in an ES5 bundle</h4>
+          <p>Each MDC Web component ships with a transpiled ES5 <a href="https://github.com/umdjs/umd">UMD</a> bundle, with component classes
+            placed into a package-specific property inside of the <code>mdc</code> namespace. These bundles are located under the <code>dist</code>
+            subdirectory in each published package, as opposed to the ES Modules sources under the root directory.</p>
+          <p>Aside from how the module is referenced, its usage otherwise remains the same. Instantiate a component by calling the
+            constructor on the root node:</p>
+          <pre><code class="language-js">var textField = new mdc.textField.MDCTextField(document.querySelector('.mdc-text-field'));
+</code></pre>
+          <h2 id="styling">Styling</h2>
+          <p>Styling in MDL is achieved with a collection of CSS classes that get applied to the DOM. Internally, MDL is built with
+            <a href="http://sass-lang.com/">Sass</a>, but there was no effort in exposing the Sass mixins and functions to developers.</p>
+          <p>MDC Web similarly involves applying CSS classes to the DOM, but it also puts much more emphasis on customization via
+            Sass mixins and functions.</p>
+          <h3 id="using-css-classes">Using CSS classes</h3>
+          <p>Like in MDL, styling components with CSS classes is simply a matter of applying them to the DOM:</p>
+          <pre><code class="language-html">&lt;div class="mdc-button mdc-button--raised"&gt;Button&lt;/div&gt;
+</code></pre>
+          <p>Each component lists the required CSS classes, as well as all of the optional modifiers, as part of its README.</p>
+          <h3 id="using-sass">Using Sass</h3>
+          <p>MDC Web components expose Sass mixins and functions to help customize properties supported by Material Theming.</p>
+          <p>You can access the Sass sources for a component in the similarly named <code>scss</code> file at its package root:</p>
+          <pre><code class="language-scss">@import "@material/button/mdc-button";
+</code></pre>
+          <p>In the case of <code>@material/button</code>, for example, there are several mixins that allow you to customize specific button
+            properties, as well as a convenience mixin to specify a fill color and automatically determine an accessible ink color:</p>
+          <pre><code class="language-scss">.my-button {
+  @include mdc-button-filled-accessible(darkblue);
+}
+</code></pre>
+          <h2 id="theming">Theming</h2>
+          <p>Theming in MDL is primarily handled either by overriding the theme variables in Sass, or by depending on a pre-generated
+            CSS bundle with the colors baked in, via <a href="https://getmdl.io/customize/index.html">the customizer</a>.</p>
+          <p>MDC Web similarly includes several centralized theme variables in the <code>@material/theme</code> package, along with helper
+            mixins and functions. Furthermore, MDC Web supports fine-grained theme customization via Sass mixins in each respective
+            component package. As with MDL, you can override the theme variables in Sass, but there’s no longer a customizer or a
+            CDN with different combinations. There is CSS custom property support, however.</p>
+          <p>In the future, additional tools will be available to assist in theme customization.</p>
+          <p>The process of customizing central theme variables is described in the following sections, but check the
+            <a href="/components/web/catalog/theme/"><code>@material/theme</code> README</a> as well as the Sass APIs in each package for more details.</p>
+          <h3 id="sass-variables">Sass variables</h3>
+          <p>In order to change the theme colors for your entire application, simply define the desired theme color variables before
+            importing <code>@material/theme</code> or any MDC Web components that rely on it:</p>
+          <pre><code class="language-scss">$mdc-theme-primary: #9c27b0;
+$mdc-theme-secondary: #ffab40;
+$mdc-theme-background: #fff;
+
+@import "@material/theme/mdc-theme";
+</code></pre>
+          <p>The correct text colors will automatically be calculated based on the provided theme colors.</p>
+          <h3 id="css-custom-properties">CSS custom properties</h3>
+          <p>If you are only targeting browsers which support CSS custom properties, you can use the custom properties provided by
+            <code>@material/theme</code>:</p>
+          <pre><code class="language-css">:root {
+  --mdc-theme-primary: #9c27b0;
+  --mdc-theme-secondary: #ffab40;
+  --mdc-theme-background: #fff;
+}
+</code></pre>
+          <p>Unfortunately, due to the current limitations of CSS color handling, it’s not currently possible to automatically
+            calculate the correct text colors to use, based on the chosen theme colors. These will all need to be set manually.
+            Please check the <a href="/components/web/catalog/theme/"><code>@material/theme</code> README</a> for more details.</p>
+          <h2 id="browser-support">Browser support</h2>
+          <p>Unlike MDL, in which support goes back to Internet Explorer 9, MDC Web only supports IE 11.</p>
+          <p>For modern browsers, MDC Web supports the 2 most recent stable releases.</p>
+          <h2 id="component-equivalence">Component equivalence</h2>
+          <p>For many components, there is a 1:1 relation between MDL and MDC Web. In other cases there are some differences, with
+            MDL components being split up into multiple MDC Web ones, new ones being added, and some still to be implemented.</p>
+          <p>The following table summarizes the current situation (TBI = to be investigated):</p>
+          <table>
+            <thead>
+              <tr>
+                <th>MDL component</th>
+                <th>MDC Web component</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>mdl-animation</code></td>
+                <td><a href="/components/web/catalog/animation/"><code>@material/animation</code></a></td>
+                <td>Very similar.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-badge</code></td>
+                <td>None</td>
+                <td>Not currently planned for MDC Web.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-button</code></td>
+                <td>Split into <a href="/components/web/catalog/buttons/"><code>@material/button</code></a> and <a href="/components/web/catalog/buttons/floating-action-buttons/"><code>@material/fab</code></a></td>
+                <td>No equivalent to MDL’s Icon Button in MDC Web at the moment, <a href="https://github.com/material-components/material-components-web/issues/12">TBI</a>.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-card</code></td>
+                <td><a href="/components/web/catalog/cards/"><code>@material/card</code></a></td>
+                <td>Very different DOM. More options in MDC Web.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-checkbox</code></td>
+                <td><a href="/components/web/catalog/input-controls/checkboxes/"><code>@material/checkbox</code></a></td>
+                <td>Very different DOM. Recommended use with <a href="/components/web/catalog/input-controls/form-fields/"><code>@material/form-field</code></a>.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-chip</code></td>
+                <td><a href="/components/web/catalog/chips/"><code>@material/chips</code></a></td>
+                <td>Different DOM and variants.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-data-table</code></td>
+                <td>TBI</td>
+                <td><a href="https://github.com/material-components/material-components-web/issues/57">#57</a> - In the interim, consider using MDC List with flexbox.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-dialog</code></td>
+                <td><a href="/components/web/catalog/dialogs/"><code>@material/dialog</code></a></td>
+                <td>Sufficiently different from MDL. MDL uses the <code>dialog</code> element which has limited cross-browser support. <code>mdc-dialog</code> relies on elements with more cross-browser support.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-footer</code></td>
+                <td>None</td>
+                <td>Not currently planned for MDC Web.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-grid</code></td>
+                <td><a href="/components/web/catalog/layout-grid/"><code>@material/layout-grid</code></a></td>
+                <td>Very similar. No offsets in MDC Web.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-icon-toggle</code></td>
+                <td><a href="/components/web/catalog/buttons/icon-buttons/"><code>@material/icon-button</code></a></td>
+                <td>Very different DOM.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-layout</code></td>
+                <td>Split into <a href="/components/web/catalog/drawers/"><code>@material/drawer</code></a>, <a href="/components/web/catalog/top-app-bar/"><code>@material/top-app-bar</code></a>, <a href="/components/web/catalog/layout-grid/"><code>@material/layout-grid</code></a>, and <a href="/components/web/catalog/tabs/tab-bar/"><code>@material/tab-bar</code></a>, <a href="/components/web/catalog/tabs/scroller/"><code>@material/tab-scroller</code></a>, <a href="/components/web/catalog/tabs/tab/"><code>@material/tab</code></a>, <a href="/components/web/catalog/tabs/indicator/"><code>@material/tab-indicator</code></a></td>
+                <td>Different DOM and variants.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-list</code></td>
+                <td><a href="/components/web/catalog/lists/"><code>@material/list</code></a></td>
+                <td>Very different DOM.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-menu</code></td>
+                <td><a href="/components/web/catalog/menus/"><code>@material/menu</code></a></td>
+                <td>Very different DOM.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-palette</code></td>
+                <td><a href="/components/web/catalog/theme/"><code>@material/theme</code></a></td>
+                <td>All theming is handled via <a href="/components/web/catalog/theme/"><code>@material/theme</code></a>.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-progress</code></td>
+                <td><a href="/components/web/catalog/linear-progress/"><code>@material/linear-progress</code></a></td>
+                <td>Very different DOM.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-radio</code></td>
+                <td><a href="/components/web/catalog/input-controls/radio-buttons/"><code>@material/radio</code></a></td>
+                <td>Very different DOM. Recommended use with <a href="/components/web/catalog/input-controls/form-fields/"><code>@material/form-field</code></a>.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-resets</code></td>
+                <td>None.</td>
+                <td>Not currently planned for MDC Web.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-ripple</code></td>
+                <td><a href="/components/web/catalog/ripples/"><code>@material/ripple</code></a></td>
+                <td>Very different usage; much improved in MDC Web.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-shadow</code></td>
+                <td><a href="/components/web/catalog/elevation/"><code>@material/elevation</code></a></td>
+                <td>Similar usage.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-slider</code></td>
+                <td><a href="/components/web/catalog/input-controls/sliders/"><code>@material/slider</code></a></td>
+                <td>Very different DOM.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-snackbar</code></td>
+                <td><a href="/components/web/catalog/snackbars/"><code>@material/snackbar</code></a></td>
+                <td>Very different DOM.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-spinner</code></td>
+                <td>TBI</td>
+                <td><a href="https://github.com/material-components/material-components-web/issues/30">#30</a></td>
+              </tr>
+              <tr>
+                <td><code>mdl-switch</code></td>
+                <td><a href="/components/web/catalog/input-controls/switches/"><code>@material/switch</code></a></td>
+                <td>Very different DOM.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-tabs</code></td>
+                <td>Split into <a href="/components/web/catalog/tabs/tab-bar/"><code>@material/tab-bar</code></a>, <a href="/components/web/catalog/tabs/scroller/"><code>@material/tab-scroller</code></a>, <a href="/components/web/catalog/tabs/tab/"><code>@material/tab</code></a>, <a href="/components/web/catalog/tabs/indicator/"><code>@material/tab-indicator</code></a></td>
+                <td>Very different DOM.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-text-field</code></td>
+                <td><a href="/components/web/catalog/input-controls/text-field/"><code>@material/textfield</code></a></td>
+                <td>Very different DOM and variants.</td>
+              </tr>
+              <tr>
+                <td><code>mdl-tooltip</code></td>
+                <td>TBI</td>
+                <td><a href="https://github.com/material-components/material-components-web/issues/24">#24</a></td>
+              </tr>
+              <tr>
+                <td><code>mdl-typography</code></td>
+                <td><a href="/components/web/catalog/typography/"><code>@material/typography</code></a></td>
+                <td>Somewhat different usage; different/updated typography styles.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>MDC Web also includes several new components/packages which have no MDL equivalents. See the list of
+            <a href="https://material.io/components/web/catalog/">Material Components for the web</a> for more information.</p>
+        </article>
+        <footer class="footer">
+          <section class="footer__content">
+            <div class="footer__row">
+              <a class="footer__logo-link">
+                <div class="footer__logo"></div>
+              </a>
+              <div class="footer__copy">
+                <p class="footer__description">Material design is an adaptable system—backed by open-source code—guiding you in the principles and best practices of contemporary UI. Material helps teams streamline the designer-developer collaboration, reduce complexity, and enable fidelity through reusable components, patterns, and code libraries. All while adapting easily to your brand, platform, and users’ needs.</p>
+                <nav class="footer__navigation">
+                  <ul class="footer__navigation-list">
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.github.com/material-components"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Github
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.twitter.com/materialdesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        Twitter
+                      </a>
+                    </li>
+                    <li class="footer__navigation-list-item">
+                      <a href="https://www.youtube.com/googledesign"
+                  target="_blank"
+                  class="footer-block__social-nav-link">
+                        YouTube
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="footer__row footer-legal">
+              <a class="footer-legal__logo-container" href="https://google.com">
+                <img src="/develop/images/google-logo-gray.svg" alt="Google" />
+              </a>
+              <ul class="footer-legal__nav-list">
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/privacy"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="footer-legal__nav-list-item">
+                  <a href="https://policies.google.com/terms"
+              target="_blank"
+              class="footer-legal__nav-list-link">
+                    Terms and Conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </footer>
+      </section>
+    </div>
+    <template id="language-radio-template">
+      <div class="mdc-form-field">
+        <div class="mdc-radio">
+          <input class="mdc-radio__native-control"
+             type="radio"
+             id="" name="" value="">
+          <div class="mdc-radio__background">
+            <div class="mdc-radio__outer-circle"></div>
+            <div class="mdc-radio__inner-circle"></div>
+          </div>
+        </div>
+        <label class="language-name" for=""></label>
+      </div>
+    </template>
+    <button
+    class="feedback-button"
+    aria-label="Send Feedback"
+    tabindex="0">
+    </button>
+    <script src="/develop/js/index.js" async></script>
+    <script src="https://www.gstatic.com/feedback/api.js" async></script>
+  </body>
+</html>

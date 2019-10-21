@@ -1,0 +1,342 @@
+/**
+* The MIT License (MIT)
+*
+* Copyright (c) 2014 Realm Inc.
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*/
+*, *:before, *:after {
+box-sizing: inherit; }
+body {
+margin: 0;
+background: #fff;
+color: #333;
+font: 16px/1.7 "Roboto", Helvetica, Arial, sans-serif;
+letter-spacing: .2px;
+-webkit-font-smoothing: antialiased;
+box-sizing: border-box; }
+h1 {
+font-size: 2rem;
+font-weight: 500;
+margin: 0 0 0.6em; }
+h2 {
+font-size: 1.75rem;
+font-weight: 500;
+margin: 1.275em 0 0.3em; }
+h3 {
+font-size: 1.5rem;
+font-weight: 500;
+margin: 1em 0 0.3em; }
+h4 {
+font-size: 1.25rem;
+font-weight: 500;
+margin: 1.275em 0 0.85em; }
+h5 {
+font-size: 1rem;
+font-weight: 500;
+margin: 1.275em 0 0.85em; }
+h6 {
+font-size: 1rem;
+font-weight: 500;
+margin: 1.275em 0 0.85em;
+color: #777; }
+p {
+margin: 0 0 1em; }
+ul, ol {
+padding: 0 0 0 2em;
+margin: 0 0 0.85em; }
+blockquote {
+margin: 0 0 0.85em;
+padding: 0 15px;
+color: #858585;
+border-left: 4px solid #e5e5e5; }
+img {
+max-width: 100%; }
+a {
+color: #4183c4;
+text-decoration: none; }
+a:hover, a:focus {
+outline: 0;
+text-decoration: underline; }
+table {
+background: #fff;
+width: 100%;
+border-collapse: collapse;
+border-spacing: 0;
+overflow: auto;
+margin: 0 0 0.85em; }
+tr:nth-child(2n) {
+background-color: #fbfbfb; }
+th, td {
+padding: 6px 13px;
+border: 1px solid #ddd; }
+pre {
+margin: 0 0 1.275em;
+padding: .85em 1em;
+overflow: auto;
+background: rgba(0, 0, 0, 0.05);
+font-size: .85em;
+font-family: "Roboto Mono"; }
+code {
+font-family: "Roboto Mono"; }
+p > code, li > code {
+background: rgba(0, 0, 0, 0.05);
+padding: .2em; }
+p > code:before, p > code:after, li > code:before, li > code:after {
+letter-spacing: -.2em;
+content: "\00a0"; }
+pre code {
+padding: 0;
+white-space: pre; }
+.content-wrapper {
+display: flex;
+flex-direction: column; }
+@media (min-width: 768px) {
+.content-wrapper {
+flex-direction: row; } }
+.header {
+display: flex;
+flex-direction: row;
+align-items: center;
+position: absolute;
+top: 0;
+height: 72px;
+width: 100%;
+background: #212121;
+box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+color: rgba(255, 255, 255, 0.8);
+font-size: 1.25rem;
+letter-spacing: .02em;
+padding: 8px; }
+.header + * {
+margin-top: 72px; }
+.header__coverage {
+font-size: 1em; }
+.header-col {
+display: inline-flex;
+align-items: center;
+margin: 0;
+padding: 0 8px; }
+.header-link {
+display: inline-flex;
+align-items: center;
+margin-right: 14px;
+font-family: 'Roboto Mono';
+font-size: 1.143rem;
+line-height: 1.75rem;
+color: #fff; }
+.header-col__logo {
+width: 32px;
+height: 32px;
+background-image: url("/develop/images/material-logo.svg");
+background-position: 50%;
+background-repeat: no-repeat;
+margin-right: 14px; }
+.header-icon {
+padding-right: 6px;
+vertical-align: -4px;
+height: 16px; }
+.breadcrumbs {
+font-size: 0.875em;
+padding: 8px 16px;
+background: #fbfbfb;
+border-bottom: 1px solid #ddd; }
+.caret {
+position: relative;
+top: 3px;
+fill: #212121;
+height: 18px;
+margin: 0 5px; }
+.navigation {
+order: 2;
+border-right: 1px solid #e5e5e5;
+color: rgba(0, 0, 0, 0.87);
+font-family: 16px/1.7 "Roboto", Helvetica, Arial, sans-serif;
+font-size: .875rem;
+font-weight: 400;
+line-height: 1.25rem; }
+@media (min-width: 768px) {
+.navigation {
+order: 1;
+max-width: 300px;
+overflow: hidden;
+padding-bottom: 64px;
+width: 25%;
+word-wrap: normal; } }
+.nav-groups {
+list-style-type: none;
+padding-left: 0;
+padding: 0; }
+.nav-group-name {
+padding: 0; }
+.nav-group-name-link {
+display: flex;
+align-items: center;
+height: 45px;
+color: #333;
+padding: 0 24px; }
+.nav-group-tasks {
+margin: 8px 0;
+padding: 0; }
+.nav-group-task {
+font-size: 1em;
+list-style-type: none; }
+.nav-group-task-link {
+display: flex;
+align-items: center;
+height: 45px;
+color: #808080;
+padding: 8px 48px; }
+.main-content {
+order: 1;
+min-height: calc(100vh - 72px - 42px);
+padding: 0 32px;
+padding-bottom: 90px; }
+@media (min-width: 768px) {
+.main-content {
+order: 2;
+flex: 1; } }
+.section {
+border-bottom: 1px solid #ddd; }
+.section-content {
+max-width: 834px;
+margin: 0 auto;
+padding: 16px 0;
+color: #5f6368; }
+.section-content h1, .section-content h2, .section-content h3, .section-content h4 {
+color: #202124; }
+.section-name {
+color: #666;
+display: block; }
+.declaration .highlight {
+overflow-x: initial;
+padding: 8px 0;
+margin: 0;
+background-color: transparent;
+border: none; }
+.task-group-section {
+border-top: 1px solid #ddd; }
+.task-group {
+padding-top: 0px; }
+.task-name-container a[name]:before {
+content: "";
+display: block; }
+.item-container {
+padding: 0; }
+.item {
+padding-top: 8px;
+width: 100%;
+list-style-type: none; }
+.item a[name]:before {
+content: "";
+display: block; }
+.item .token {
+padding-left: 3px;
+margin-left: 0px;
+font-size: 1rem; }
+.item .declaration-note {
+font-size: .85em;
+color: #808080;
+font-style: italic; }
+.pointer-container {
+border-bottom: 1px solid #ddd;
+left: -23px;
+padding-bottom: 13px;
+position: relative;
+width: 110%; }
+.pointer {
+left: 21px;
+top: 7px;
+display: block;
+position: absolute;
+width: 12px;
+height: 12px;
+border-left: 1px solid #ddd;
+border-top: 1px solid #ddd;
+background: #fff;
+transform: rotate(45deg); }
+.height-container {
+display: none;
+position: relative;
+width: 100%;
+overflow: hidden; }
+.height-container .section {
+background: #fff;
+border: 1px solid #ddd;
+border-top-width: 0;
+padding-top: 10px;
+padding-bottom: 5px;
+padding: 8px 16px; }
+.aside, .language {
+padding: 6px 12px;
+margin: 12px 0;
+border-left: 5px solid #5f6368;
+overflow-y: hidden; }
+.aside .aside-title, .language .aside-title {
+font-size: 9px;
+letter-spacing: 2px;
+text-transform: uppercase;
+padding-bottom: 0;
+margin: 0;
+color: #5f6368;
+-webkit-user-select: none; }
+.aside .aside-see, .language .aside-see {
+color: #5f6368; }
+.aside p:last-child, .language p:last-child {
+margin-bottom: 0; }
+.language {
+border-left: 1px solid rgba(0, 0, 0, 0.2); }
+.language .aside-title {
+color: #4183c4; }
+.aside-warning {
+border-left: 5px solid #ff6666; }
+.aside-warning .aside-title {
+color: #ff0000; }
+.graybox {
+border-collapse: collapse;
+width: 100%; }
+.graybox p {
+margin: 0;
+word-break: break-word;
+min-width: 50px; }
+.graybox td {
+border: 1px solid #ddd;
+padding: 5px 25px 5px 10px;
+vertical-align: middle; }
+.graybox tr td:first-of-type {
+text-align: right;
+padding: 7px;
+vertical-align: top;
+word-break: normal;
+width: 40px; }
+.slightly-smaller {
+font-size: 0.9em; }
+.footer {
+padding: 8px 16px;
+background: #fafafa;
+color: rgba(0, 0, 0, 0.87);
+font-size: 0.8em; }
+.footer p {
+margin: 8px 0; }
+.footer a {
+color: rgba(0, 0, 0, 0.87); }
+html.dash .header, html.dash .breadcrumbs, html.dash .navigation {
+display: none; }
+html.dash .height-container {
+display: block; }

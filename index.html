@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en" class="preload">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Jay Munjani</title>
+
+
+    <meta itemprop="name"        property="og:title"       name="twitter:title"       content="Homepage" />
+    <meta itemprop="description" property="og:description" name="twitter:description" content="Build beautiful, usable products faster. Material Design is an adaptable system—backed by open-source code—that helps teams build high quality digital experiences." />
+    <meta itemprop="image"       property="og:image"       name="twitter:image"       content="/static/spec/images/share.png" />
+    <meta itemprop="url"         property="og:url"         name="twitter:url"         content="https://material.io/index.html" />
+    <meta property="og:site_name" content="Material Design" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">    <link rel="shortcut icon" href="favicon.ico">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHRPF8');</script> 
+
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.0/lib/darkmode-js.min.js"></script>
+<script>
+  new Darkmode().showWidget();
+</script>
+   <style>
+.animatable {
+        opacity: 0;
+        position: relative;
+        top: 16px;         transition: opacity 235ms cubic-bezier(.4,0,.2,1),
+                    top 500ms cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link href="https://storage.googleapis.com/spec-host/mio-staging/mio-material/1567106676146/static/m2/css/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+    <link rel="preload" href="https://storage.googleapis.com/spec-host/mio-staging/mio-material/1567106676146/static/m2/js/main.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js" as="script">
+
+
+
+  </head>
+
+  <body class="header-show page--homepage_hero"
+        data-comp="Global "
+        data-slug-id="pageStructure"
+        data-spec-alias="mio-material"
+ >
+    <a class="screenreader-only" href="#main_content">Welcome</a>
+  <header class="header js-header" data-comp="Header" position="fixed" >
+
+
+<a href="/Users/jeetmunjani/Desktop/jay/material.io/index.html" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <img src="Project_GIF/jay2.png" height="46px" width="50px" margin-right="16px">
+  <span class="brand-lockup__title">JAY MUNJANI</span>
+</a>
+    <nav class="header__nav" role="navigation">
+      <ul class="header__nav-list header__nav-list--cleared">
+            <!-- <li class="header__nav-item  js-header-item">
+    <a href="/design"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/design"}
+'>
+      Blogs
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li> -->
+            <li class="header__nav-item  js-header-item">
+    <a href="/Users/jeetmunjani/Desktop/jay/material.io/components/index.html"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/components"}
+'>
+      Projects
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/develop"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/develop"}
+'>
+      Photography
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/resources"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/resources"}
+'>
+      About
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+
+    <form id="search-form" class="search-form js-search" data-comp="SearchForm" data-props-searchform='{"basePath": "/", "ajax": false, "showOnLoad": false}'>
+      <button class="search-form__back js-search-back js-analytics-click" type="button" aria-label="Exit search results"
+              data-analytics='  {
+    "event": "trackEvent",
+    "category": "search back",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+        <i class="material-icons notranslate">arrow_back</i>
+      </button>
+
+      <input id="search-query" class="search-form__input js-search-input" name="q" type="text" title="query" placeholder="Search" autocomplete="off" aria-label="Type your search and press enter.">
+    </form>
+
+    <button class="header__search header__button js-toggle-search js-analytics-click"
+            data-analytics='  {
+    "event": "trackEvent",
+    "category": "search",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+      <div class="icons-container mdc-ripple-surface" data-mdc-ripple-is-unbounded>
+        <i class="material-icons notranslate header__spyglass" aria-label="Search Material Design">search</i>
+        <i class="material-icons notranslate header__search-close" aria-label="Close search">close</i>
+      </div>
+    </button>
+  </header>
+
+
+    <main id="main_content" class="main" role="main" aria-labelledby="Main Content">
+
+<section data-comp="YouTubeViewer" class="section section--dark hero hero--centered">
+  <div class="container container--hero">
+    <div class="column">
+      <img src="Project_GIF/jay2.png" height="65px" width="70px" margin-bottom="20px">
+      <h1 aria-label="Build beautiful products, faster.">Simple but significant</h1>
+      <p>Hello, You can see my protfolio, project, blogs and photography - for any help just drop message using green buttton.</p>
+        <a class="button mdc-ripple-surface get-started-button" aria-label="Get a short introduction to Material Design" href="resume.pdf">Resume</a>
+<div class="yt-hero">
+  
+  <div class="yt-modal" style="opacity: 0;" role="dialog" aria-modal="true" aria-labelledby="yt-modal" tabindex="-1">
+    <header class="lightbox__header dark">
+      <div class="lightbox__header-title">
+        <button
+            class="lightbox__button js-lightbox-close yt-modal-close"
+            data-comp="Tooltip"
+            aria-label="Close video"
+            tabindex="-1"
+            data-props-tooltip='{"tip": "Close", "direction": "bottom"}'>
+          <i
+              class="material-icons notranslate material-icons--padded mdc-ripple-surface"
+              data-mdc-ripple-is-unbounded>
+            close
+          </i>
+        </button>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+    </header>
+    <div id="ytplayer" style="transform: scale3d(1.15, 1.15, 1.15);"></div>
+  </div>
+</div>    </div>
+  </div>
+</section>
+      <section class="section"               aria-label="Start using material with these popular resources">
+        <div class="container container--jumbo">
+          <div class="article-controls">
+              
+          </div>
+
+          <div>
+
+            <div class="col-list rich-media"><section class="module-module col-2 h3-spacing"><div class="module"><h3>
+              <a href="" rel="noopener" target="_blank">Introduction</a><br>
+</br></h3><p>These Website describe the projects, Blogs, and photography of my protfolio — including how to apply i make, prototype, blogs, and news about new events. It also show how i work in UI/UX Designing: its usage, types, grid, law, behavior, and customization.</p><p>Apart from this i worked on 2D-3D things, Web devlopment, Android, 3D printing, Arduino, Raspberry Pi, Movie editing etc. Also worked on <a href="https://developer.android.com/" rel="noopener" target="_blank">Android</a>, <a href="https://developer.apple.com" rel="noopener" target="_blank">iOS</a>, the <a href="https://developers.google.com/web/" rel="noopener" target="_blank">web</a>, and <a href="https://flutter.dev/" rel="noopener" target="_blank">Flutter</a>.
+
+
+
+</p>
+</br>
+</br>
+<a class="button mdc-ripple-surface get-started-button" aria-label="Get a short introduction to Material Design" href="">More about me</a> <!-- about page in link -->
+</div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img src="profileimg1.JPG" >
+</img></div>
+</div>
+</figure></div></section></div>
+<hr>
+<hr>
+</br>
+</br>
+<div class="col-list"><section class="module-module col-2 h2-spacing -ratio-2-1"><div class="module"><h2>Projects</h2><p>I Used most popular design and development resources to jumpstart my latest project</p></div><div class="module"></div></section></div>
+<div class="multi-up multi-up--max multi-up--slim">
+<div class="tile">
+<a aria-label="Material Design guidelines" class="tile__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "tile",
+    "action": "link click",
+    "label": "https://material.io/design"}
+' href="#" rel="noopener" target="_blank">
+<figure class="tile__poster">
+<div class="lazy-wrapper ratio--2x1" style="padding-top: 50%;">
+<img alt="Material Design guidelines" class="tile__image tile__image--2x1 animatable lazy-wrapper__image js-lazy-image" data-src="Project_GIF/arduino.gif" role="presentation" src="">
+</img></div>
+<div class="lazy-wrapper ratio--1x1" style="padding-top: 50%;">
+<img alt="Material Design guidelines" class="tile__image tile__image--1x1 animatable lazy-wrapper__image js-lazy-image" data-src="Project_GIF/arduino.gif" role="presentation" src="">
+</img></div>
+</figure>
+<h4 class="tile__header">
+<span class="tile__link">
+      Arduino
+    </span>
+</h4>
+<p class="tile__description">Implemented and customized Projects using arduino & sensors (with code and documentation.) <p>
+</a>
+</div>
+<!-- <div class="tile">
+<a aria-label="Components" class="tile__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "tile",
+    "action": "link click",
+    "label": "https://material.io/components/"}
+' href="https://material.io/components/" rel="noopener" target="_blank">
+<figure class="tile__poster">
+<div class="lazy-wrapper ratio--2x1" style="padding-top: 50%;">
+<img alt="Components" class="tile__image tile__image--2x1 animatable lazy-wrapper__image js-lazy-image" data-src="Project_GIF/Wordpress.gif" role="presentation" src="">
+</img></div>
+<div class="lazy-wrapper ratio--1x1" style="padding-top: 50%;">
+<img alt="Components" class="tile__image tile__image--1x1 animatable lazy-wrapper__image js-lazy-image" data-src="Project_GIF/Wordpress.gif" role="presentation" src="">
+</img></div>
+</figure>
+<h4 class="tile__header">
+<span class="tile__link">
+      Wordpress
+    </span>
+</h4>
+<p class="tile__description">Created different web platform using it and also with the help of different plugins.</p>
+</a>
+</div> -->
+<div class="tile">
+<a aria-label="Icons" class="tile__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "tile",
+    "action": "link click",
+    "label": "https://material.io/resources/icons/"}
+' href="#" rel="noopener" target="_blank">
+<figure class="tile__poster">
+<div class="lazy-wrapper ratio--2x1" style="padding-top: 50%;">
+<img alt="Icons" class="tile__image tile__image--2x1 animatable lazy-wrapper__image js-lazy-image" data-src="Project_GIF/raspberrypi.gif" role="presentation" src="">
+</img></div>
+<div class="lazy-wrapper ratio--1x1" style="padding-top: 50%;">
+<img alt="Icons" class="tile__image tile__image--1x1 animatable lazy-wrapper__image js-lazy-image" data-src="Project_GIF/raspberrypi.gif" role="presentation" src="">
+</img></div>
+</figure>
+<h4 class="tile__header">
+<span class="tile__link">
+      Raspberry PI
+    </span>
+</h4>
+<p class="tile__description">Establish different mini Projects using Pi & other modules (with code and documentation.)</p>
+</a>
+</div>
+<div class="tile">
+<a aria-label="Material Components for the web" class="tile__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "tile",
+    "action": "link click",
+    "label": "https://material.io/develop/web/"}
+' href="#" rel="noopener" target="_blank">
+<figure class="tile__poster">
+<div class="lazy-wrapper ratio--2x1" style="padding-top: 50%;">
+<img alt="Material Components for the web" class="tile__image tile__image--2x1 animatable lazy-wrapper__image js-lazy-image" data-src="Project_GIF/uiuxapp.gif" role="presentation" src="">
+</img></div>
+<div class="lazy-wrapper ratio--1x1" style="padding-top: 50%;">
+<img alt="Material Components for the web" class="tile__image tile__image--1x1 animatable lazy-wrapper__image js-lazy-image" data-src="Project_GIF/uiuxapp.gif" role="presentation" src="">
+</img></div>
+</figure>
+<h4 class="tile__header">
+<span class="tile__link">
+      UI & UX Mobile
+    </span>
+</h4>
+<p class="tile__description">Implemented Diffrent Principle & method of User Interface & User Experince for mobile app design.</p>
+</a>
+</div>
+
+
+
+<!-- <div class="tile">
+<a aria-label="Material dark theme" class="tile__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "tile",
+    "action": "link click",
+    "label": "./mio-design/color/dark-theme.html"}
+' href="./design/color/dark-theme.html">
+<figure class="tile__poster">
+<div class="lazy-wrapper ratio--2x1" style="padding-top: 50%;">
+<img alt="Material dark theme" class="tile__image tile__image--2x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F1VKBitGP7fOOJO21ggWRhMp1QR81nhqff%2Fdarktheme-2x1.png" role="presentation" src="">
+</img></div>
+<div class="lazy-wrapper ratio--1x1" style="padding-top: 50%;">
+<img alt="Material dark theme" class="tile__image tile__image--1x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F1VKBitGP7fOOJO21ggWRhMp1QR81nhqff%2Fdarktheme-2x1.png" role="presentation" src="">
+</img></div>
+</figure>
+<h4 class="tile__header">
+<span class="tile__link">
+      Material dark theme
+    </span>
+</h4>
+<p class="tile__description">Create a dark theme version of your Material UI</p>
+</a>
+</div> -->
+
+
+<!-- <div class="tile">
+<a aria-label="Color Tool" class="tile__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "tile",
+    "action": "link click",
+    "label": "https://material.io/tools/color/"}
+' href="https://material.io/tools/color/" rel="noopener" target="_blank">
+<figure class="tile__poster">
+<div class="lazy-wrapper ratio--2x1" style="padding-top: 50%;">
+<img alt="Color Tool" class="tile__image tile__image--2x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F1DbNRv97sNda_sxlxIM_Htpdxd76rPUR9%2Ftools-color-2x1-small.png" role="presentation" src="">
+</img></div>
+<div class="lazy-wrapper ratio--1x1" style="padding-top: 50%;">
+<img alt="Color Tool" class="tile__image tile__image--1x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F1DbNRv97sNda_sxlxIM_Htpdxd76rPUR9%2Ftools-color-2x1-small.png" role="presentation" src="">
+</img></div>
+</figure>
+
+<h4 class="tile__header">
+<span class="tile__link">
+      Color Tool
+    </span>
+</h4>
+<p class="tile__description">Create and share color palettes for your UI, and measure the accessibility of color combinations</p>
+</a>
+</div> -->
+
+<!-- <div class="tile">
+<a aria-label="Design for machine learning" class="tile__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "tile",
+    "action": "link click",
+    "label": "./mio-collections/machine-learning/patterns-for-machine-learning-powered-features.html"}
+' href="./collections/machine-learning/patterns-for-machine-learning-powered-features.html">
+<figure class="tile__poster">
+<div class="lazy-wrapper ratio--2x1" style="padding-top: 50%;">
+<img alt="Design for machine learning" class="tile__image tile__image--2x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F1bQJJUtTWKBzHOw4fy4Ad27LmefOlSmWc%2Fml-3-ml-intro-2x1-large.png" role="presentation" src="">
+</img></div>
+<div class="lazy-wrapper ratio--1x1" style="padding-top: 50%;">
+<img alt="Design for machine learning" class="tile__image tile__image--1x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F1bQJJUtTWKBzHOw4fy4Ad27LmefOlSmWc%2Fml-3-ml-intro-2x1-large.png" role="presentation" src="">
+</img></div>
+</figure>
+
+<h4 class="tile__header">
+<span class="tile__link">
+      Design for machine learning
+    </span>
+</h4>
+<p class="tile__description">Get new design patterns for ML-powered features</p>
+</a>
+</div> -->
+
+
+<!-- <div class="tile">
+<a aria-label="Responsive layout grid" class="tile__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "tile",
+    "action": "link click",
+    "label": "https://material.io/design/layout/responsive-layout-grid.html"}
+' href="https://material.io/design/layout/responsive-layout-grid.html" rel="noopener" target="_blank">
+<figure class="tile__poster">
+<div class="lazy-wrapper ratio--2x1" style="padding-top: 50%;">
+<img alt="Responsive layout grid" class="tile__image tile__image--2x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F12fQq7bcN4ENiW-uNynEIdcn5r_yh96ev%2Fresponsive-grid-2x1-small.png" role="presentation" src="">
+</img></div>
+<div class="lazy-wrapper ratio--1x1" style="padding-top: 50%;">
+<img alt="Responsive layout grid" class="tile__image tile__image--1x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F12fQq7bcN4ENiW-uNynEIdcn5r_yh96ev%2Fresponsive-grid-2x1-small.png" role="presentation" src="">
+</img></div>
+</figure>
+<h4 class="tile__header">
+<span class="tile__link">
+      Responsive layout grid
+    </span>
+</h4>
+<p class="tile__description">Adapt your UI to screen size and orientation, ensuring consistency across layouts</p>
+</a>
+</div> -->
+
+<!-- <div class="tile">
+<a aria-label="Developer tutorials" class="tile__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "tile",
+    "action": "link click",
+    "label": "https://material.io/collections/developer-tutorials/"}
+' href="https://material.io/collections/developer-tutorials/" rel="noopener" target="_blank">
+<figure class="tile__poster">
+<div class="lazy-wrapper ratio--2x1" style="padding-top: 50%;">
+<img alt="Developer tutorials" class="tile__image tile__image--2x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F1dRjFOkK-_TEuqh7uOi6aBHWkAl8PfKfN%2Fdeveloper-tutorials-2x1-small.png" role="presentation" src="">
+</img></div>
+<div class="lazy-wrapper ratio--1x1" style="padding-top: 50%;">
+<img alt="Developer tutorials" class="tile__image tile__image--1x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F1dRjFOkK-_TEuqh7uOi6aBHWkAl8PfKfN%2Fdeveloper-tutorials-2x1-small.png" role="presentation" src="">
+</img></div>
+</figure>
+<h4 class="tile__header">
+<span class="tile__link">
+      Developer tutorials
+    </span>
+</h4>
+<p class="tile__description">Implement Material with Java, Kotlin, Objective C, Swift, the web, or Flutter</p>
+</a>
+</div> -->
+
+
+<div class="col-list"><section class="module col-1"><div class="module"><a class="button mdc-ripple-surface js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "./mio-material/whats-new/"}
+' href="/Users/jeetmunjani/Desktop/jay/material.io/components/index.html">
+    View all
+</a></div></section></div>
+
+
+
+</div>
+<hr>
+<hr>
+<!-- Blogs  -->
+
+</div>
+        </div>
+      </section>
+
+<!-- Blogs -->
+
+      <section class="section"               aria-label="What&#39;s new">
+        <div class="container container--jumbo">
+          <div class="article-controls">
+              
+          </div>
+
+          <div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2><a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "./mio-material/whats-new/"}
+' href=""> <!-- ./whats-new/ --> 
+  What’s new</a></h2></div></section><section class="module col-1"><div class="module"><p>Get the latest updates on Events, conferances, new tech and comeption across platforms</p></div></section></div>
+
+  <div class="col-list"><section class="module col-1 h4-spacing"><div class="module">
+
+
+    <h4>December, 2019</h4><a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "./mio-design/components/data-tables.html"}
+' href="https://www.feastongood.com">
+<strong>Feastongood</strong></a><p>The Feast gathers a community of creators, activists, leaders and champions of the human spirit who are here to make the make the world better off for each other and society. </p>
+
+<h4>November, 2019</h4><a class="js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "./mio-design/communication/data-visualization.html"}
+' href="https://max.adobe.com">
+<strong>AdobeMAX</strong></a><p>MAX is a creative rocket ship of amazing content, great speakers, fun labs, and workshops.</p>
+
+</div></section></div><div class="col-list"><section class="module col-1"><div class="module"><a class="button mdc-ripple-surface js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "crosslink",
+    "action": "link click",
+    "label": "./mio-material/whats-new/"}
+' href=""> <!-- ./whats-new/ -->
+    View all
+</a></div></section></div></div>
+        </div>
+      </section>
+
+      <section class="section section--footer"               aria-label="Find more about Material around the web">
+        <div class="container container--jumbo">
+          <div class="article-controls">
+              
+          </div>
+
+          <div>
+<div class="col-list"><section class="module-module col-2 h2-spacing -ratio-2-1"><div class="module"><h2>
+Latest Blog</h2></div><div class="module"></div></section><section class="module-module col-2 -ratio-2-1"><div class="module"><p>Material blogs, articles, and tutorials</p></div><div class="module"></div></section></div>
+<div class="multi-up multi-up--3 multi-up--slim">
+<div class="tile">
+<a aria-label="Dark theme case studies" class="tile__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "tile",
+    "action": "link click",
+    "label": "https://goo.gle/2ZPT9MX"}
+' href="https://goo.gle/2ZPT9MX" rel="noopener" target="_blank">
+<figure class="tile__poster">
+<div class="lazy-wrapper ratio--2x1" style="padding-top: 50%;">
+<img alt="Dark theme case studies" class="tile__image tile__image--2x1 animatable lazy-wrapper__image js-lazy-image" data-src="Project_GIF/ux.jpg" role="presentation" src="">
+</img></div>
+<div class="lazy-wrapper ratio--1x1" style="padding-top: 50%;">
+<img alt="Dark theme case studies" class="tile__image tile__image--1x1 animatable lazy-wrapper__image js-lazy-image" data-src="Project_GIF/ux.jpg" role="presentation" src="">
+</img></div>
+</figure>
+<h3 class="eyebrow">User Experience</h3>
+<h4 class="tile__header">
+<span class="tile__link">
+      What is User Experience?
+    </span>
+</h4>
+<p class="tile__description">Explore Principle, Method, Example & How it works. </p>
+</a>
+</div>
+<!-- <div class="tile">
+<a aria-label="Design at Google I/O 2019" class="tile__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "tile",
+    "action": "link click",
+    "label": "https://goo.gle/2XLt0hR"}
+' href="https://goo.gle/2XLt0hR" rel="noopener" target="_blank">
+<figure class="tile__poster">
+<div class="lazy-wrapper ratio--2x1" style="padding-top: 50%;">
+<img alt="Design at Google I/O 2019" class="tile__image tile__image--2x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F1Nqw3M8dOALRgDrZgo6F00DIcjJam6jqR%2Fio2019-playlist-2x1-small.png" role="presentation" src="">
+</img></div>
+<div class="lazy-wrapper ratio--1x1" style="padding-top: 50%;">
+<img alt="Design at Google I/O 2019" class="tile__image tile__image--1x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F1Nqw3M8dOALRgDrZgo6F00DIcjJam6jqR%2Fio2019-playlist-2x1-small.png" role="presentation" src="">
+</img></div>
+</figure>
+<h3 class="eyebrow">YouTube</h3>
+<h4 class="tile__header">
+<span class="tile__link">
+      Design at Google I/O 2019
+    </span>
+</h4>
+<p class="tile__description">Watch the top design videos from Google’s 2019 developer conference</p>
+</a>
+</div> -->
+
+
+
+<!-- <div class="tile">
+<a aria-label="Build a Material Theme on the web" class="tile__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "tile",
+    "action": "link click",
+    "label": "https://glitch.com/~material-theme-builder"}
+' href="https://glitch.com/~material-theme-builder" rel="noopener" target="_blank">
+<figure class="tile__poster">
+<div class="lazy-wrapper ratio--2x1" style="padding-top: 50%;">
+<img alt="Build a Material Theme on the web" class="tile__image tile__image--2x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F155RBaJs1ucAnzebPE7vs1RsuqG4nqIOg%2Fthemebuilder-web-2x1-small.png" role="presentation" src="">
+</img></div>
+<div class="lazy-wrapper ratio--1x1" style="padding-top: 50%;">
+<img alt="Build a Material Theme on the web" class="tile__image tile__image--1x1 animatable lazy-wrapper__image js-lazy-image" data-src="https://storage.googleapis.com/spec-host-backup/mio-material%2Fassets%2F155RBaJs1ucAnzebPE7vs1RsuqG4nqIOg%2Fthemebuilder-web-2x1-small.png" role="presentation" src="">
+</img></div>
+</figure>
+<h3 class="eyebrow">Glitch</h3>
+<h4 class="tile__header">
+<span class="tile__link">
+      Build a Material Theme on the web
+    </span>
+</h4>
+<p class="tile__description">Use this interactive project to customize the color, shape, and typography of Material Components</p>
+</a>
+</div> -->
+
+</div></div>
+        </div>
+      </section>
+    </main>
+
+
+
+<footer class="footer">
+  <div class="container container--jumbo">
+    <div class="footer-block footer-block--about">
+      <a class="footer-block__logo js-analytics-click" href="/"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "/"}
+'>
+        <img src="Project_GIF/jay01.png" height="70px" width="75px" alt="Material Design"/>
+      </a>
+      <div class="footer-block__content">
+        <p class="footer-block__description">These website describe the projects, Blogs, and photography of my protfolio — including how to apply i make, prototype, blogs, and news about new events. It also show how i work in UI/UX Designing: its usage, types, grid, law, behavior, and customization.</p>
+        <ul class="footer-block__social-nav">
+          <li class="footer-block__social-nav-item">  <a href="https://github.com/JMUNJANI" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on GitHub"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.github.com/material-components"}
+'>GitHub</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://twitter.com/little_stupidnj" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on Twitter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.twitter.com/materialdesign"}
+'>Twitter</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.linkedin.com/in/jay-munjani/" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.youtube.com/googledesign"}
+'>Linkdin</a>
+</li>
+
+<li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/channel/UCIH148ORcxtfbV7MfW8Lhlw" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.instagram.com/little_stupidness/"}
+'>Instagram</a>
+</li>
+
+<li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/channel/UCIH148ORcxtfbV7MfW8Lhlw" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.quora.com/profile/Jay-Munjani-1"}
+'>Quora</a>
+</li>
+
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-block footer-block--legal">
+      <a class="footer-block__logo js-analytics-click" href="https://www.kalpayita.in"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.google.com"}
+'>
+        <img class="footer-block__google-logo" src="Project_GIF/logo.jpg" alt="Kalpayita"/>
+      </a>
+      <div class="footer-block__content">
+        <ul class="footer-block__legal-nav">
+          <li class="footer-block__legal-nav-item">  <a href="#" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Privacy Policy"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/privacy"}
+'>Privacy Policy</a>
+</li>
+          <li class="footer-block__legal-nav-item">  <a href="#" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Terms of Service"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/terms"}
+'>Terms of Service</a>
+</li><li class="footer-block__legal-nav-item"><a href="javascript:void(0)" class="footer-block__legal-nav-link" onclick="try{userfeedback.api.startFeedback({'productId': '1027542', 'bucket': 'material_spec', 'locale': 'en', 'allowNonLoggedInFeedback': true});return false;}catch(e){}">Feedback</a></li></ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="ui-mask js-ui-mask"></div>
+<div
+    class="lightbox js-lightbox"
+    data-comp="Lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-labelledby="sr-lightbox-title">
+  <h2 class="screenreader-only sr-lightbox-title" tabindex="0">
+    Explore how Shrine, a retail app, uses Material Design.
+  </h2>
+
+    <header class="lightbox__header">
+      <div class="lightbox__header-title">
+        <span
+            class="lightbox__button js-lightbox-close"
+            data-comp="Tooltip"
+            data-props-tooltip='{"tip": "Close", "direction": "bottom"}'>
+          <i
+              class="material-icons notranslate material-icons--padded mdc-ripple-surface"
+              data-mdc-ripple-is-unbounded tabindex="0">
+            close
+          </i>
+        </span>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+
+      <div class="lightbox__actions">
+        <button type="button" name="button" class="lightbox-redlines-toggle js-redline-sidebar-toggle" data-comp="Tooltip" data-props-tooltip='{"tip": "View Specs", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>flip</i>
+        </button>
+
+        <button type="button" name="button" class="lightbox__button js-share" data-comp="Tooltip" data-props-tooltip='{"tip": "Share", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>share</i>
+        </button>
+
+      </div>
+    </header>
+
+    <div class="lightbox__template js-zoom-wrapper">
+      <div class="lightbox__content js-lightbox-content">
+<img class="ui-loader" src="https://storage.googleapis.com/spec-host/mio-staging/mio-material/1567106676146/static/m2/images/loader.svg" alt="loader" aria-hidden="true" />      </div>
+<div class="redline-sidebar js-lightbox-sidebar-container" data-comp="RedlineSidebar">
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Image only", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-image js-redline-sidebar-item" value="image" >
+        <i class="material-icons notranslate">&#xE3F4;</i>
+        <span class="redline-sidebar__label-text">Image only</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Measurements", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-measurements js-redline-sidebar-item" value="measurements" >
+        <i class="material-icons notranslate">format_shapes</i>
+        <span class="redline-sidebar__label-text">Measurements</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Text", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-text js-redline-sidebar-item" value="text" >
+        <i class="material-icons notranslate">format_size</i>
+        <span class="redline-sidebar__label-text">Text</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Color", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-colors js-redline-sidebar-item" value="colors" >
+        <i class="material-icons notranslate">palette</i>
+        <span class="redline-sidebar__label-text">Color</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Shape and Elevation", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-shapes js-redline-sidebar-item" value="shapes" >
+        <i class="material-icons notranslate">rounded_corner</i>
+        <span class="redline-sidebar__label-text">Shape and Elevation</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Components", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-components js-redline-sidebar-item" value="components" >
+        <i class="material-icons notranslate">category</i>
+        <span class="redline-sidebar__label-text">Components</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Notes", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-notes js-redline-sidebar-item" value="notes" >
+        <i class="material-icons notranslate">notes</i>
+        <span class="redline-sidebar__label-text">Notes</span>
+      </button>
+    </div>
+<div class="redline-sidebar__toggles js-redline-layer-toggles">
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--dimensions">
+        <input type="checkbox" id="dimensions" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="dimensions">Dimensions</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--padding">
+        <input type="checkbox" id="padding" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="padding">Padding</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--typography">
+        <input type="checkbox" id="typography" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="typography">Text baseline</label>
+  </div>
+</div><nav class="carousel__nav">
+  <button
+      class="carousel__button carousel__button--prev mdc-ripple-surface js-carousel-prev"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Previous", "direction": "right"}'>
+    <i class="material-icons notranslate">chevron_left</i>
+  </button>
+
+  <button
+      class="carousel__button carousel__button--next mdc-ripple-surface js-carousel-next"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Next", "direction": "left"}'>
+    <i class="material-icons notranslate">chevron_right</i>
+  </button>
+</nav><div class="zoom-buttons" data-comp="Zoom">
+  <div class="zoom-buttons__wrapper">
+
+    <button class="mdc-button-zoom js-zoom-out" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom out", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">remove</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-reset" data-comp="Tooltip" data-props-tooltip='{"tip": "Reset", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">search</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-in" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom in", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">add</i>
+    </button>
+
+    <div class="zoom-buttons__extras">
+      <button class="mdc-button-zoom js-colorpicker-toggle" data-comp="Tooltip Colorpicker" data-props-tooltip='{"tip": "Color picker", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">colorize</i>
+      </button>
+      <button class="mdc-button-zoom js-ruler-toggle" data-comp="Tooltip Ruler" data-props-tooltip='{"tip": "Ruler", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">straighten</i>
+      </button>
+    </div>
+
+  </div>
+</div>    </div>
+
+
+<aside class="mdc-dialog" role="alertdialog" aria-labelledby="mdc-dialog-label" aria-describedby="mdc-dialog-description" data-comp="Share">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-label" class="mdc-dialog__header__title">Share</h2>
+      <button type="button" class="mdc-dialog-share-close js-dialog-close">
+        <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>close</i>
+      </button>
+    </header>
+    <section id="mdc-dialog-description" class="mdc-dialog__body">
+      <input type="text" readonly class="mdc-dialog-share-url js-share-url" />
+      <button type="button" class="mdc-button mdc-ripple-surface mdc-dialog-copy js-dialog-copy">Copy</button>
+    </section>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside></div><div class="mdc-snackbar snackbar-wrapper" data-comp="Snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+  <div class="mdc-snackbar__text"></div>
+  <div class="mdc-snackbar__action-wrapper">
+    <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
+  </div>
+</div>
+    <script src="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js"></script>
+    <script src="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js"></script>
+    <script src="https://storage.googleapis.com/spec-host/mio-staging/mio-material/1567106676146/static/m2/js/main.min.js"></script><script src="https://support.google.com/inapp/api.js"></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  </body>
+</html>

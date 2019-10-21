@@ -1,0 +1,2415 @@
+<!DOCTYPE html>
+<html lang="en" class="preload">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Navigation drawer - Material Design</title>
+
+
+    <meta itemprop="name"        property="og:title"       name="twitter:title"       content="Navigation drawer" />
+    <meta itemprop="description" property="og:description" name="twitter:description" content="Navigation drawers provide access to the navigation destinations of your app." />
+    <meta itemprop="image"       property="og:image"       name="twitter:image"       content="https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1WAOT-IjNA2ubSgYQERjqbKkwrqxPItCU%2Fnav-drawer-thumbnail-2x1.png" />
+    <meta itemprop="url"         property="og:url"         name="twitter:url"         content="https://material.io/components/navigation-drawer/index.html" />
+    <meta property="og:site_name" content="Material Design" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#ffffff">
+    <meta name="format-detection" content="telephone=no">    <link rel="shortcut icon" href="/favicon.ico">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHRPF8');</script>    <style>
+.animatable {
+        opacity: 0;
+        position: relative;
+        top: 16px;         transition: opacity 235ms cubic-bezier(.4,0,.2,1),
+                    top 500ms cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/css/main.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Roboto+Mono:400,500|Material+Icons" rel="stylesheet">
+    <link rel="preload" href="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/js/main.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js" as="script">
+    <link rel="preload" href="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js" as="script">
+
+
+  </head>
+
+  <body class="header-show page--article left-rail"
+        data-comp="Global "
+        data-slug-id="navigationDrawer"
+        data-spec-alias="mio-components"
+ >
+    <a class="screenreader-only" href="#main_content">Skip to main content</a>
+
+  <header class="header js-header" data-comp="Header">
+      <button class="header__hamburger header__button" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+        <i class="material-icons notranslate header__hamburger-icon" title="Toggle Navigation">menu</i>
+      </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+    <nav class="header__nav" role="navigation">
+      <ul class="header__nav-list header__nav-list--selected">
+            <li class="header__nav-item  js-header-item">
+    <a href="/design"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/design"}
+'>
+      Design
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  header__nav-item--active js-header-item" aria-current="true">
+    <a href="/components"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/components"}
+'>
+      Components
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/develop"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/develop"}
+'>
+      Develop
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+            <li class="header__nav-item  js-header-item">
+    <a href="/resources"
+        class="header__nav-link js-analytics-click"
+        data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "nav click",
+    "label": "/resources"}
+'>
+      Resources
+      <span class="header__nav-indicator"></span>
+    </a>
+  </li>
+      </ul>
+    </nav>
+
+    <form id="search-form" class="search-form js-search" data-comp="SearchForm" data-props-searchform='{"basePath": "/", "ajax": false, "showOnLoad": false}'>
+      <button class="search-form__back js-search-back js-analytics-click" type="button" aria-label="Exit search results"
+              data-analytics='  {
+    "event": "trackEvent",
+    "category": "search back",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+        <i class="material-icons notranslate">arrow_back</i>
+      </button>
+
+      <input id="search-query" class="search-form__input js-search-input" name="q" type="text" title="query" placeholder="Search" autocomplete="off" aria-label="Type your search and press enter.">
+    </form>
+
+    <button class="header__search header__button js-toggle-search js-analytics-click"
+            data-analytics='  {
+    "event": "trackEvent",
+    "category": "search",
+    "action": "click icon",
+    "label": "DEFAULT: ga_label"}
+'>
+      <div class="icons-container mdc-ripple-surface" data-mdc-ripple-is-unbounded>
+        <i class="material-icons notranslate header__spyglass" aria-label="Search Material Design">search</i>
+        <i class="material-icons notranslate header__search-close" aria-label="Close search">close</i>
+      </div>
+    </button>
+  </header>
+
+
+<nav aria-label="Breadcrumbs" class="breadcrumbs" data-comp="Breadcrumbs" aria-hidden="true">
+    <button class="breadcrumbs__hamburger" aria-expanded="false" data-comp="Button" data-props-button='{"eventName": "togglenav"}'>
+      <i class="material-icons notranslate" title="Toggle Navigation">menu</i>
+    </button>
+
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+  <ol class="container container--large breadcrumbs__list">
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click "
+           href="../components"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../components"}
+'>Components</a>
+      </li>
+      <li class="breadcrumbs__crumb">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link"
+           href="../navigation-drawer/navigation-drawer.html"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "../navigation-drawer/navigation-drawer.html"}
+'>Navigation drawer</a>
+      </li>
+      <li class="breadcrumbs__crumb disabled breadcrumbs__chapter">
+        <a class="breadcrumbs__link js-analytics-click js-breadcrumb-link js-breadcrumb-hash"
+           href="#usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "breadcrumb navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>Usage</a>
+      </li>
+  </ol>
+</nav>
+
+
+<nav class="side-nav" data-comp="SideNav" role="navigation">
+
+<a href="/" class="brand-lockup js-analytics-click"
+   data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "global click",
+    "label": "logo"}
+'>
+  <i class="brand-lockup__logo brand-lockup__logo--animate"></i>
+  <span class="brand-lockup__title brand-lockup__title--animate">Material Design</span>
+</a>
+
+
+            <span class="side-nav__section-title">Components</span>
+
+      <ul class="side-nav__menu side-nav__menu--sections">
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-bottom"}
+'>
+            App bars: bottom
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../app-bars-top"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../app-bars-top"}
+'>
+            App bars: top
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../backdrop"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../backdrop"}
+'>
+            Backdrop
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../banners"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../banners"}
+'>
+            Banners
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../bottom-navigation"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../bottom-navigation"}
+'>
+            Bottom navigation
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons"}
+'>
+            Buttons
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../buttons-floating-action-button"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../buttons-floating-action-button"}
+'>
+            Buttons: floating action button
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../cards"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../cards"}
+'>
+            Cards
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../chips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../chips"}
+'>
+            Chips
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../data-tables"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../data-tables"}
+'>
+            Data tables
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dialogs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dialogs"}
+'>
+            Dialogs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../dividers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../dividers"}
+'>
+            Dividers
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../image-lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../image-lists"}
+'>
+            Image lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../lists"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../lists"}
+'>
+            Lists
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../menus"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../menus"}
+'>
+            Menus
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface active js-analytics-click"
+             href="../navigation-drawer"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../navigation-drawer"}
+'>
+            Navigation drawer
+          </a>
+
+              <div class="side-nav__articles">
+    <i class="side-nav__progress-bar">
+      <i class="side-nav__scrub js-submenu-scrub"></i>
+    </i>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-usage js-analytics-click" href="#usage" data-section-id="usage"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#usage"}
+'>
+          <span class="js-anchor-text">Usage</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-anatomy js-analytics-click" href="#anatomy" data-section-id="anatomy"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#anatomy"}
+'>
+          <span class="js-anchor-text">Anatomy</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-standard-drawer js-analytics-click" href="#standard-drawer" data-section-id="standard-drawer"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#standard-drawer"}
+'>
+          <span class="js-anchor-text">Standard drawer</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-modal-drawer js-analytics-click" href="#modal-drawer" data-section-id="modal-drawer"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#modal-drawer"}
+'>
+          <span class="js-anchor-text">Modal drawer</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-bottom-drawer js-analytics-click" href="#bottom-drawer" data-section-id="bottom-drawer"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#bottom-drawer"}
+'>
+          <span class="js-anchor-text">Bottom drawer</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-states js-analytics-click" href="#states" data-section-id="states"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#states"}
+'>
+          <span class="js-anchor-text">States</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-theming js-analytics-click" href="#theming" data-section-id="theming"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#theming"}
+'>
+          <span class="js-anchor-text">Theming</span>
+        </a>
+      </div>
+      <div>
+        <a class="side-nav__article js-anchor-link js-anchor-link-specs js-analytics-click" href="#specs" data-section-id="specs"
+           data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "#specs"}
+'>
+          <span class="js-anchor-text">Specs</span>
+        </a>
+      </div>
+  </div>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../pickers"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../pickers"}
+'>
+            Pickers
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../progress-indicators"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../progress-indicators"}
+'>
+            Progress indicators
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../selection-controls"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../selection-controls"}
+'>
+            Selection controls
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sheets-bottom"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-bottom"}
+'>
+            Sheets: bottom
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sheets-side"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sheets-side"}
+'>
+            Sheets: side
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../sliders"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../sliders"}
+'>
+            Sliders
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../snackbars"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../snackbars"}
+'>
+            Snackbars
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tabs"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tabs"}
+'>
+            Tabs
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../text-fields"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../text-fields"}
+'>
+            Text fields
+          </a>
+
+      </li>
+
+
+      <li class="side-nav__menu-item">
+          <a class="side-nav__link js-submenu-link mdc-ripple-surface js-analytics-click"
+             href="../tooltips"
+             data-analytics='  {
+    "event": "trackEvent",
+    "category": "left rail navigation",
+    "action": "nav click",
+    "label": "../tooltips"}
+'>
+            Tooltips
+          </a>
+
+      </li>
+
+  </ul>
+</nav>
+
+
+    <main id="main_content" class="main" role="main" aria-labelledby="Main Content">
+<article class="article" data-comp="Waypoints">
+  <div class="article__intro container container--large js-waypoints-trigger-initial">
+    <div class="article__intro-text">
+      <h1 class="article__title animatable js-anim-trigger">
+
+        Navigation drawer
+
+            <div class="article-controls">
+              
+            </div>
+      </h1>
+
+
+        <div class="article__intro-text animatable js-anim-trigger">
+        <div>
+<div aria-hidden="true" class="keywords hidden">navigation drawer</div>
+<h2>Navigation drawers provide access to destinations in your app. </h2><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="navigation-drawer-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/1nsuL8VDpBW_LZYXgabK1H0uq6icmmKYt/nav-drawer-intro.png" src="">
+</img></div>
+</div>
+<figcaption id="navigation-drawer-figure-caption-0"><hr class="spacer" role="presentation"/></figcaption>
+</figure><h3>Developer documentation</h3><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Platform</p></td><td colspan="1" rowspan="1"><p>Status</p></td></tr><tr><td colspan="1" rowspan="1"><p>Android</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/android/components/navigation-view/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>iOS</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/ios/components/navigation-drawer/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>Web</p></td><td colspan="1" rowspan="1"><p><a href="https://material.io/develop/web/components/drawers/" rel="noopener" target="_blank">Available</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>Flutter</p></td><td colspan="1" rowspan="1"><p><a href="https://api.flutter.dev/flutter/material/Drawer-class.html" rel="noopener" target="_blank">Available</a></p></td></tr></tbody></table></div></section></div></div>
+        </div>
+    </div>
+
+      <nav class="article__nav animatable js-anim-trigger">
+        <span class="eyebrow">Contents</span>
+        <ul>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#usage" data-section-id="usage"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#usage"}
+'>Usage</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#anatomy" data-section-id="anatomy"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#anatomy"}
+'>Anatomy</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#standard-drawer" data-section-id="standard-drawer"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#standard-drawer"}
+'>Standard drawer</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#modal-drawer" data-section-id="modal-drawer"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#modal-drawer"}
+'>Modal drawer</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#bottom-drawer" data-section-id="bottom-drawer"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#bottom-drawer"}
+'>Bottom drawer</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#states" data-section-id="states"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#states"}
+'>States</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#theming" data-section-id="theming"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#theming"}
+'>Theming</a>
+            </li>
+            <li class="article__nav-item">
+              <a class="article__nav-link js-anchor-link js-analytics-click" href="#specs" data-section-id="specs"
+                 data-analytics='  {
+    "event": "trackEvent",
+    "category": "content",
+    "action": "link click",
+    "label": "#specs"}
+'>Specs</a>
+            </li>
+        </ul>
+      </nav>
+  </div>
+
+  <hr />
+
+  <div class="article__body animatable js-breadcrumb-toggle js-anim-trigger">
+      <section id="usage" class="container container--large js-waypoints-trigger article__section" data-section-title="Usage" aria-label="Usage">
+          <h2 class="article__chapter-title">
+            Usage
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">navigation drawer, navigation</div>
+<p>Navigation drawers provide access to destinations and app functionality, such as switching accounts. They can either be permanently on-screen or controlled by a navigation menu icon.</p><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/navigation/understanding-navigation.html"}
+' href="https://material.io/design/navigation/understanding-navigation.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1h9cgAtSr1PeKxSseCOxLAEmvSCZ2ekwW%2Fnavigation-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1h9cgAtSr1PeKxSseCOxLAEmvSCZ2ekwW%2Fnavigation-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Understanding navigation</h2>
+<p class="object-card__body">Navigation enables users to move through an app.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Navigation drawers are recommended for:</p><ul class="lst-kix_agfca7sli8tw-0 start"><li>Apps with five or more top-level destinations </li><li>Apps with two or more levels of navigation hierarchy</li><li>Quick navigation between unrelated destinations</li></ul><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1JkhpaOoDpFrCKLLoZMmbfiBMofzKS-lY%2Fusage-do.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-0">
+<p class="s-tag-caption do">Do.</p><p>Use a navigation drawer for five or more primary destinations.</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../tabs/tabs.html#tabs"}
+' href="../tabs/tabs.html#tabs" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="../assets/1hXJsK6rlAyT2CSiK5i_uR4sRPzWRYzoV/tabs-thumbnail-1x1-circle.png" style="background-image: url('../assets/1hXJsK6rlAyT2CSiK5i_uR4sRPzWRYzoV/tabs-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Tabs</h2>
+<p class="object-card__body">Tabs organize high level content in an app content, such as switching between views, data sets, or functional aspects of an app.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../bottom-navigation/bottom-navigation.html#bottom-navigation"}
+' href="../bottom-navigation/bottom-navigation.html#bottom-navigation" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="../assets/1KXOLWH_vw8z0UEmp3QLusKl9IwcU3oHD/bottom-nav-bar-thumbnail-1x1-circle.png" style="background-image: url('../assets/1KXOLWH_vw8z0UEmp3QLusKl9IwcU3oHD/bottom-nav-bar-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Bottom navigation</h2>
+<p class="object-card__body">Bottom navigation bars allow movement between primary destinations in an app.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="usage-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1bJV0wyvGnpAyj8_59cYD5ahv7udy2Ykg%2Fusage-caution-alt-3.png" src="">
+</img></div>
+</div>
+<figcaption id="usage-figure-caption-1">
+<p class="s-tag-caption caution">Caution.</p><p>Avoid using a navigation drawer with other primary navigation components, such as a bottom navigation bar.</p></figcaption>
+</figure></div></section></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Principles Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Principles</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The placement and list-style content of navigation drawers clearly identify them as navigation. Navigation drawers order destinations according to user importance, with frequent destinations first...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module-module col-3"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="772px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 99.8704663212%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="99.8704663212%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1K7eLlljok7PU_2BD44L60tLH7pMli7Zu%2Fnavigation-illos-02.png" src="">
+</img></div>
+</div>
+</figure><h2>Identifiable</h2><p>The placement and list-style content of navigation drawers clearly identify them as navigation.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1028px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1S-QFMqpmdkQGEAULvsZBW7JnRn9QtQ5Y/navigation-illos-01.png" src="">
+</img></div>
+</div>
+</figure><h2>Organized</h2><p>Navigation drawers order destinations according to user importance, with frequent destinations first and related ones grouped together.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="772px">
+<div class="frame media-placeholder lazy-wrapper" style="padding-top: 99.8704663212%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="99.8704663212%" data-src="../assets/1O5L5Oqx2xT9hUorTyHEPP4SxUaHakWtb/navigation-illos-03.png" src="">
+</img></div>
+</div>
+</figure><h2>Contextual</h2><p>Navigation drawers can be shown or hidden to accommodate different app layouts.</p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Types Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Types</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Standard navigation drawers allow users to simultaneously access drawer destinations and app content. They are often co-planar with app content and affect the screen’s layout...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1516px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.8786279683%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.8786279683%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F16wwJq_qF5UtX_twrXkC0fUDxGNn1qrlX%2Fusage-types-standard.png" src="">
+</img></div>
+</div>
+</figure><h2>Standard drawer</h2><p>Standard navigation drawers allow users to simultaneously access drawer destinations and app content. They are often co-planar with app content and affect the screen’s layout grid. </p><p>Standard drawers can be permanently visible or opened and closed by tapping a navigation menu icon. They can be used on tablet and desktop only. On mobile, modal drawers are used instead.</p></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1PHwyFNxll6s6bJUZTkmqtpBU2LckXu8V%2Fusage-types-modal.png" src="">
+</img></div>
+</div>
+</figure><h2>Modal drawer</h2><p>Modal navigation drawers use a scrim to block interaction with the rest of an app’s content. They are elevated above most app elements and don’t affect the screen’s layout grid. </p><p>They are primarily for use on mobile, where screen space is limited. They can be replaced by standard drawers on tablet and desktop.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/11vvo5YFOWBVxYchQG46nS-fcQHwhdFny/usage-types-bottom.png" src="">
+</img></div>
+</div>
+</figure><h2>Bottom drawer</h2><p>Bottom navigation drawers are a specialized type of modal drawer for use with a bottom app bar. </p><p>For increased reachability from the bottom app bar’s menu icon, they open from the bottom of the screen rather than the side.</p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="anatomy" class="container container--large js-waypoints-trigger article__section" data-section-title="Anatomy" aria-label="Anatomy">
+          <h2 class="article__chapter-title">
+            Anatomy
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">navigation drawer</div>
+<p>Navigation drawers contain a list embedded within a sheet. They can be enhanced with headers and dividers to organize longer lists.</p><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../lists/lists.html#lists"}
+' href="../lists/lists.html#lists" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1cIfap6uWJWc2t3lZgjkvIF-asVpw7qGd%2Flist-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1cIfap6uWJWc2t3lZgjkvIF-asVpw7qGd%2Flist-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Lists</h2>
+<p class="object-card__body">Lists are continuous, vertical display of text or images.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../sheets-side/sheets-side.html#sheets-side"}
+' href="../sheets-side/sheets-side.html#sheets-side" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="../assets/1_tlP1E-w9t_kd14LU1YAcfpN9AlnObOC/sheets-side-thumbnail-1x1-circle.png" style="background-image: url('../assets/1_tlP1E-w9t_kd14LU1YAcfpN9AlnObOC/sheets-side-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Sheets: Side</h2>
+<p class="object-card__body">Side sheets are surfaces containing supplementary content that are anchored to the left or right edge of the screen.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/10UGo-uwu3HViW96viJ-EVtV2PSBAF99c/anatomy.png" src="">
+</img></div>
+</div>
+</figure><ol class="lst-kix_5a58ityj6e0a-0 start" start="1"><li><h3>Container</h3></li><li><h3>Header (optional)</h3></li><li><h3>Divider (optional)</h3></li><li><h3>Active text overlay</h3></li><li><h3>Active text</h3></li><li><h3>Inactive text</h3></li><li><h3>Subtitle</h3></li><li><h3>Scrim (modal only)</h3></li></ol></div></section></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Sheet Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Sheet</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The contents of a navigation drawer are contained within a side or bottom sheet. Navigation drawers that open from the side are placed on the...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>The contents of a navigation drawer are contained within a side or bottom sheet. Navigation drawers that open from the side are placed on the left of the screen for left-to-right languages, and on the right of the screen for right-to-left languages.</p><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/usability/bidirectionality.html#bidirectionality"}
+' href="https://material.io/design/usability/bidirectionality.html#bidirectionality" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1b-FqZuErioIqwGYW9rZWFSPqkC39twCm%2Fusability-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1b-FqZuErioIqwGYW9rZWFSPqkC39twCm%2Fusability-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Bidirectionality</h2>
+<p class="object-card__body">UIs for languages that are read from right-to-left (RTL), such as Arabic and Hebrew, should be mirrored to ensure content is easy to understand.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1TGc8PB3-e0up15RseuUgFFVOUk5WLii1%2Fanatomy-sheet-do-alt.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-0">
+<p class="s-tag-caption do">Do.</p><p>A navigation drawer sheet can open from the left side of the screen for left-to-right languages (1), or from the bottom of the screen when paired with a bottom app bar (2). Scaled down to 62.5%</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1obcmllKi68Uyi3XMO09pAQF_PCsYR5J0/anatomy-sheet-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-1">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t open a navigation drawer from the right side of the screen unless the app is set to a right-to-left language.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Destinations Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Destinations</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Destinations in a navigation drawer take the form of actionable list items. Each item describes its destination using a text label and optional iconography. Text...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Destinations in a navigation drawer take the form of actionable list items. Each item describes its destination using a text label and optional iconography.</p><h2>Destination labels</h2><p>Text labels should be clear and short enough that they aren’t cut off by the sheet.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1vJWFq71V3b3OuHH5fv88-qreLHscpCWo/anatomy-destinations-labels-no-icons-do.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-2">
+<p class="s-tag-caption do">Do.</p><p>Navigation drawers can use text labels without icons.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1Geve7a-Dazjy_ZqStJ9vJn4JAj7zONS-/anatomy-destinations-labels-short-do.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-3">
+<p class="s-tag-caption do">Do.</p><p>Keep text labels concise, but truncate them if they extend beyond the container width.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1excoRXq3CprgnrrSqNyMp-hg1W-lw0cN%2Fanatomy-destinations-labels-wrap-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-4">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t wrap label text.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1Bnzqt5alX5ZIi4-0DcmYrXu44bVzfQ9m/anatomy-destinations-labels-shrink-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-5">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t shrink text size in order to fit a text label on a single line.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Destination iconography (optional)</h2><p>Icons can supplement labels as indicators of a destination. Whe used, they should always be placed before text. Other app components and content should reference these icons.</p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1OrD-5859QC85pWP6ZPAF2m6Gu9yGRKj3/anatomy-destinations-icons-do.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-6">
+<p class="s-tag-caption do">Do.</p><p>Use recognizable icons when conventions exist.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1dTXibbyG7o272srOo0grtYltAseiO2VV/anatomy-destinations-icons-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-7">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t use the same icon to represent different primary destinations.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-8" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F14HwXQlqdpo7DRbqciNQfgGH9eyaqvCPP%2Fanatomy-destinations-icons-repeat-do.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-8">
+<p class="s-tag-caption caution">Caution.</p><p>Secondary destinations can be represented by the same icon, especially if they are part of a collection (1).</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-9" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1zMCM4ep3aKIodcqkqbFm9XtQTtqIGOPX/anatomy-destinations-icons-some-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-9">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t apply icons to some destinations and not others. Icons should be used for all destinations, or none.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Dividers (optional) Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Dividers (optional)</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Horizontal dividers can be used to separate groups of navigation destinations within the list. They extend across the full width of the drawer. A divider...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>Horizontal dividers can be used to separate groups of navigation destinations within the list. They extend across the full width of the drawer.</p><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../dividers/dividers.html#dividers"}
+' href="../dividers/dividers.html#dividers" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1urgplQvYNODitqTBwPgDPX8GEAbkQIPf%2Fdividers-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1urgplQvYNODitqTBwPgDPX8GEAbkQIPf%2Fdividers-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Dividers</h2>
+<p class="object-card__body">A divider is a thin, lightweight rule that groups content in lists and page layouts.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-10" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1RXP8VTx1QxGIFJzmAUaMLEEmNZPlO9hk%2Fanatomy-dividers-do.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-10">
+<p class="s-tag-caption do">Do.</p><p>Use full-width dividers (1) to separate groups of destinations (2).</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 100.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-11" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="100.0%" data-src="../assets/1Ofkybws17wro2YussaDEcK5eox8FFF-n/anatomy-dividers-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-11">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t use dividers to separate individual destinations.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Header (optional) Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Header (optional)</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>The header area of a navigation drawer is a flexible space that can be used for brand expression (such as an app title or logo),...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>The header area of a navigation drawer is a flexible space that can be used for brand expression (such as an app title or logo), an account switcher, and more. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-12" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1JB00-om1_IJ_tMAyMljIa2llAvmUfEoQ/anatomy-header-account.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-12">
+<p class="s-tag-caption do">Do.</p><p>If access to account switching is a priority, an account switcher can be placed in the header area of a navigation drawer.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-13" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/14MtgioNSfE0htR4TLiruM0aAIE3IYCC7/anatomy-header-brand-do.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-13">
+<p class="s-tag-caption do">Do.</p><p>If a navigation drawer is the full vertical height of the page, you can place a branding element or product name in the header area. </p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-14" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/15SRa4yHlw1Jtas595J7IGWaybWCAmWoT/anatomy-header-brand-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-14">
+<p class="s-tag-caption dont">Don’t.</p><p>If a navigation drawer is clipped by a top app bar, don’t place a branding element or product name in the header. In this case the top app bar is a more suitable place for that content.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Scrim (modal and bottom only) Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Scrim (modal and bottom only)</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Modal navigation drawers use a scrim to block interaction with the rest of the app. The scrim is placed directly below the drawer’s sheet and...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Modal navigation drawers use a scrim to block interaction with the rest of the app. The scrim is placed directly below the drawer’s sheet and can be tapped or clicked to dismiss the drawer.</p></div></section><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="anatomy-figure-caption-15" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/1SwNrGXVgCAcgi4W-HqWIl1h-7ZbZIbdD/anatomy-scrim.png" src="">
+</img></div>
+</div>
+<figcaption id="anatomy-figure-caption-15">
+<p>Scrims applied to a modal side navigation drawer (1) and bottom navigation drawer (2)</p></figcaption>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="standard-drawer" class="container container--large js-waypoints-trigger article__section" data-section-title="Standard drawer" aria-label="Standard drawer">
+          <h2 class="article__chapter-title">
+            Standard drawer
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">navigation drawer</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Usage Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Usage</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Standard navigation drawers allow interaction with both screen content and the drawer at the same time. They can be used on tablet and desktop, but...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Standard navigation drawers allow interaction with both screen content and the drawer at the same time. They can be used on tablet and desktop, but they aren’t suitable for mobile due to limited screen size. </p><h2>Alternatives</h2><ul class="lst-kix_uwtspudxk1mr-0 start"><li><strong>Modal drawer: </strong>In a responsive layout grid, at a defined minimum breakpoint of at least 600dp width, a standard drawer should be replaced with a modal drawer.</li><li><strong>Permanently visible drawer: </strong>When users need to switch destinations frequently (and screen size allows), a permanently visible drawer can be used. </li><li><strong>Dismissible drawer: </strong>A dismissible drawer can be used when users are likely to focus on screen content and require less frequent access to its navigation destinations.</li></ul><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="standard-drawer-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1f9ipKy_-QJZpvcKLsGmTk11EfXZwNXRO/standard-usage.png" src="">
+</img></div>
+</div>
+<figcaption id="standard-drawer-figure-caption-0">
+<p>A dismissible drawer.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Behavior Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Behavior</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Navigation drawers can be vertically scrolled, independent of the rest of the screen’s content and UI. If the list of navigation destinations is longer than...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Scrolling</h2><p>Navigation drawers can be vertically scrolled, independent of the rest of the screen’s content and UI. If the list of navigation destinations is longer than the height of the drawer, the drawer’s contents can be scrolled within the drawer.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/1ZaJemCxLPfaZImDzMItke1G5k95JjBf2/standard-behavior-scrolling-alt.png" src="">
+</img></div>
+</div>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Visibility</h2><p>The visibility of a standard navigation drawer depends on screen size, app layout, and frequency of use. </p><ul class="lst-kix_vuvcsspghiyf-0 start"><li><strong>Dismissible</strong> standard drawers can be used for layouts that prioritize content (such as a photo gallery) or for apps where users are unlikely to switch destinations often. They should use a visible navigation menu icon to open and close the drawer.</li><li><strong>Permanently visible </strong>standard drawers allow quick pivoting between unrelated destinations. They require a menu icon for control because they can’t be dismissed by the user.</li></ul><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="standard-drawer-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/1x2NU6vyNNO9oDBAOabnED4ktz_jum_Z_/standard-behavior-visibility-dismissible.png" src="">
+</img></div>
+</div>
+<figcaption id="standard-drawer-figure-caption-1">
+<p>A standard dismissible navigation drawer is opened and closed by tapping the navigation menu icon in the top app bar (1), and remains open until the menu icon is tapped again (2).</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="standard-drawer-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F11LVr4y0v_YJj1PqOgGxwFx0riUs2irmu%2Fstandard-behavior-visibility-permanent.png" src="">
+</img></div>
+</div>
+<figcaption id="standard-drawer-figure-caption-2">
+<p>A permanent navigation drawer on desktop</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Elevation Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Elevation</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>A standard navigation drawer can use one of these elevation positions: The Material Design responsive layout grid adapts to screen size and orientation. This UI...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><p>A standard navigation drawer can use one of these elevation positions:</p><ul class="lst-kix_xkjmr8sh1o4i-0 start"><li>At the same elevation as a top app bar (full-height)</li><li>At a lower elevation than a top app bar (clipped)</li></ul><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/layout/responsive-layout-grid.html#responsive-layout-grid"}
+' href="https://material.io/design/layout/responsive-layout-grid.html#responsive-layout-grid" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1NtfyhzBm0a-qB49kXC1VoQ_LWScw0Iuk%2Flayout-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1NtfyhzBm0a-qB49kXC1VoQ_LWScw0Iuk%2Flayout-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Understanding navigation</h2>
+<p class="object-card__body">The Material Design responsive layout grid adapts to screen size and orientation. This UI guidance includes a flexible grid that ensures consistency across layouts.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Full-height </h2><p>A full-height navigation drawer is at the same elevation as a top app bar.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1BWYUFsIrTILjcB9tS10JMDjyLakpNtL3/standard-elevation-top-app-bar.png" src="">
+</img></div>
+</div>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Clipped </h2><p>A clipped navigation drawer is at the same elevation as content that scrolls beneath a top app bar.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1CPoEQp4vBj9aRARuqexAbZhqBxJukOiX/standard-elevation-below.png" src="">
+</img></div>
+</div>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="modal-drawer" class="container container--large js-waypoints-trigger article__section" data-section-title="Modal drawer" aria-label="Modal drawer">
+          <h2 class="article__chapter-title">
+            Modal drawer
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">navigation drawer</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Usage Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Usage</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Modal navigation drawers block interaction with the rest of an app’s content with a scrim. They are elevated above most of the app’s UI and...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module-module col-2"><div class="module"><p>Modal navigation drawers block interaction with the rest of an app’s content with a scrim. They are elevated above most of the app’s UI and don’t affect the screen’s layout grid. </p><p>They are primarily for use on mobile where screen space is limited, and can be replaced by standard drawers on tablet and desktop.</p></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="modal-drawer-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1oScf-leMqIUFShm_OJlej_iGlMoY1sh7/modal-usage.png" src="">
+</img></div>
+</div>
+<figcaption id="modal-drawer-figure-caption-0">
+<p>A modal drawer on mobile</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Behavior Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Behavior</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Modal navigation drawers are always opened by an affordance outside of the drawer, such as a navigation menu icon in a top app bar. Modal...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Opening and closing</h2><p>Modal navigation drawers are always opened by an affordance outside of the drawer, such as a navigation menu icon in a top app bar. </p><p>Modal drawers can be dismissed by:</p><ul class="lst-kix_rdbumkpn3x6h-0 start"><li>Selecting a drawer item</li><li>Tapping the scrim</li><li>Swiping toward the drawer’s anchoring edge (e.g. swiping right-to-left for a left-aligned navigation drawer)</li></ul><hr class="spacer" role="presentation"/><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="modal-drawer-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1KW2saB9HeR0oPpmW1KGlthARqnQD-1W4%2Fmodal-behavior-open-alt.png" src="">
+</img></div>
+</div>
+<figcaption id="modal-drawer-figure-caption-1">
+<p class="s-tag-caption do">Do.</p><p>A modal drawer is always opened by a navigation menu icon (1).</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../app-bars-top/app-bars-top.html#top-app-bar"}
+' href="../app-bars-top/app-bars-top.html#top-app-bar" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="../assets/11yhFRMcFLbhsf3ISBLZndZm4T3zsG6LP/app-bar-top-thumbnail-1x1-circle.png" style="background-image: url('../assets/11yhFRMcFLbhsf3ISBLZndZm4T3zsG6LP/app-bar-top-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Top App Bar</h2>
+<p class="object-card__body">The top app bar displays information and actions relating to the current view.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="modal-drawer-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1C9VFN5vG8DdzWk5TygWek9V-fmizl5rN%2Fmodal-behavior-close.png" src="">
+</img></div>
+</div>
+<figcaption id="modal-drawer-figure-caption-2">
+<p>Modal drawers can be dismissed by tapping its scrim (1) or swiping the drawer toward its anchoring screen edge (2).</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Scrolling</h2><p>If the list of navigation destinations is longer than the height of the drawer, the list can vertically scroll in the drawer.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/1hzXs1b-UkwQkMU23wwuzxeqxqfVzeMZK/modal-behavior-scrolling-do.png" src="">
+</img></div>
+</div>
+</figure></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="bottom-drawer" class="container container--large js-waypoints-trigger article__section" data-section-title="Bottom drawer" aria-label="Bottom drawer">
+          <h2 class="article__chapter-title">
+            Bottom drawer
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">navigation drawer</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Usage Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Usage</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Bottom navigation drawers are modal drawers that are anchored to the bottom of the screen instead of the left or right edge. They are only...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>Bottom navigation drawers are modal drawers that are anchored to the bottom of the screen instead of the left or right edge. They are only used with bottom app bars. </p><p>These drawers open upon tapping the navigation menu icon in the bottom app bar. They are only for use on mobile.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="bottom-drawer-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1742Wr3B-ti0gPi6z_6z0fgepVs9ZR_xI%2Fbottom-usage.png" src="">
+</img></div>
+</div>
+<figcaption id="bottom-drawer-figure-caption-0">
+<p>Bottom navigation drawer</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "../app-bars-bottom/app-bars-bottom.html#app-bars-bottom"}
+' href="../app-bars-bottom/app-bars-bottom.html#app-bars-bottom" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="../assets/1zMBz8xbNEinLKuYpa53nJ0tA5mVSV6dL/app-bar-bottom-thumbnail-1x1-circle.png" style="background-image: url('../assets/1zMBz8xbNEinLKuYpa53nJ0tA5mVSV6dL/app-bar-bottom-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">App bars: bottom</h2>
+<p class="object-card__body">A bottom app bar provides reachable access to a bottom navigation drawer and actions on mobile devices.</p>
+</div>
+<p class="object-card__label">
+      Related Article
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Behavior Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Behavior</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>As with other modal bottom sheets, the initial vertical position of a bottom navigation drawer is based on its content and screen height. They initially...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Opening on mobile (portrait orientation)</h2><p>As with other modal bottom sheets, the initial vertical position of a bottom navigation drawer is based on its content and screen height. They initially cannot open above 50% of the screen’s height.</p><ul class="lst-kix_1qnnnl9lg2lz-0 start"><li>If drawer contents are under 50% of screen height, open the drawer to full height at all times</li><li>If drawer contents are greater than 50% of screen height, open them to 50% initially, then allow a user to drag the drawer upward to its full height or screen height (whichever comes first)</li></ul><hr class="spacer" role="presentation"/></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="bottom-drawer-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1B0Wjng4N8bGBdQaAjXqod1BXRuGxyUVQ/bottom-behavior-open-portrait-do.png" src="">
+</img></div>
+</div>
+<figcaption id="bottom-drawer-figure-caption-1">
+<p class="s-tag-caption do">Do.</p><p>Open bottom navigation drawers that contain only a few items to their full height (A).</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="bottom-drawer-figure-caption-2" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1yhHWBWJzItjMRmguf_IMx0S2j69TWZ1k/bottom-behavior-open-portrait-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="bottom-drawer-figure-caption-2">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t extend the height of a drawer beyond its contents.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 33.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="bottom-drawer-figure-caption-3" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="33.6842105263%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1hIU6kk6ZY36RAa9yYXKVVSFfh16wQxZX%2Fbottom-behavior-open-portrait-clip.png" src="">
+</img></div>
+</div>
+<figcaption id="bottom-drawer-figure-caption-3">
+<p class="s-tag-caption do">Do.</p><p>Adjust the opening position of your bottom navigation drawer so the last list item in view is clipped by the bottom of the screen. This can inform users that there are more items to view. </p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Opening on mobile (landscape orientation)</h2><p>In landscape orientation on mobile, taller bottom navigation drawers automatically open to full-screen mode.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="bottom-drawer-figure-caption-4" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/1JgpygkaPBAjpddopyVQ_wXQ1iA0QMZvH/bottom-behavior-landscape-open-do.png" src="">
+</img></div>
+</div>
+<figcaption id="bottom-drawer-figure-caption-4">
+<p>A bottom drawer opens to full-screen mode on mobile in a landscape orientation.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 73.6842105263%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="bottom-drawer-figure-caption-5" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="73.6842105263%" data-src="../assets/1GrwqC0XuhOzyXIQDnDuCbQVb0mjDlG_2/bottom-behavior-landscape-open-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="bottom-drawer-figure-caption-5">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t open a bottom drawer to half the screen height in landscape mode.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Scrolling</h2><p>Bottom navigation drawers can be internally scrolled once they have been opened to full screen height. </p><p>When initially opened to 50% of the screen height, the drawer must be dragged to screen height before additional items are revealed. Upon scroll, the drawer's header becomes an elevated top app bar with a close affordance.</p></div></section><section class="module-module col-2"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="bottom-drawer-figure-caption-6" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1z2zqEjg32DpsTSXMFgm86To7b0IZ3qDo/bottom-behavior-scrolling-do.png" src="">
+</img></div>
+</div>
+<figcaption id="bottom-drawer-figure-caption-6">
+<p class="s-tag-caption do">Do.</p><p>Allow a bottom drawer’s contents to be scrolled when at full height.</p></figcaption>
+</figure></div><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="720px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 177.777777778%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="bottom-drawer-figure-caption-7" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="177.777777778%" data-src="../assets/1_3bflMdVFtiBbCLgGxf2ePB-3DVCzJRM/bottom-behavior-scrolling-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="bottom-drawer-figure-caption-7">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t scroll a bottom drawer’s contents when it’s not at full-screen height.</p></figcaption>
+</figure></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Content hierarchy  Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Content hierarchy </h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>Because the number of bottom navigation drawer content items aren’t all visible at first, the content of the drawer should be ordered as follows:</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list"><section class="module col-1"><div class="module"><p>Because the number of bottom navigation drawer content items aren’t all visible at first, the content of the drawer should be ordered as follows:</p><ol class="lst-kix_mcg5ivpumco4-0 start" start="1"><li>List items first that are most likely to be frequently accessed by users</li><li>If an account switcher is used, place it at the top of the drawer</li></ol></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="states" class="container container--large js-waypoints-trigger article__section" data-section-title="States" aria-label="States">
+          <h2 class="article__chapter-title">
+            States
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">navigation drawer</div>
+<div class="col-list rich-media"><section class="module col-1"><div class="module"><p>The destinations within a navigation drawer take the form of list items. Each item can be activated, inactive, hovered, focused, and pressed.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1kpavOX8FbiQDAmJEMb862PrCn61g9oQv/states-hero.png" src="">
+</img></div>
+</div>
+</figure><h2>1. Activated</h2><p>The current screen, or its parent, is represented with an activated state. Only one item in a navigation drawer can be activated at a time. This state should have strong visual contrast from unactivated items.</p><h2>2. Inactive</h2><p>Inactive is the default state for items in a navigation drawer.</p><h2>3. Focus</h2><h2>4. Pressed</h2><h2>5. Hover</h2></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 47.3684210526%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="states-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="47.3684210526%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1IdhQtsni6j0nYktp9_p4Ctb2XW5gECoF%2Fstates-do.png" src="">
+</img></div>
+</div>
+<figcaption id="states-figure-caption-0">
+<p class="s-tag-caption do">Do.</p><p>Only one drawer item can be activated at a time.</p></figcaption>
+</figure></div></section></div><div class="col-list rich-media"><section class="module col-1"><div class="module"><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 47.3684210526%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="states-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="47.3684210526%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F18q2AjwxBv5PWXZOsCdHsVH1z599fAmYL%2Fstates-dont.png" src="">
+</img></div>
+</div>
+<figcaption id="states-figure-caption-1">
+<p class="s-tag-caption dont">Don’t.</p><p>Don’t activate more than one drawer item at a time.</p></figcaption>
+</figure></div></section></div></div>
+        </div>
+      </section>
+<hr />      <section id="theming" class="container container--large js-waypoints-trigger article__section" data-section-title="Theming" aria-label="Theming">
+          <h2 class="article__chapter-title">
+            Theming
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">navigation drawer</div>
+<div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Fortnightly Material Theme Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Fortnightly Material Theme</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This news app’s modal navigation drawer has been customized using Material Theming. Areas of customization include color and typography. Fortnightly is a news app that...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>This news app’s modal navigation drawer has been customized using Material Theming. Areas of customization include color and typography.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="theming-figure-caption-0" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1VKU097cFR_GbrnJo4iDL8y6Sq1fnvDaX%2Fnavdrawer-fortnightly-ahero.png" src="">
+</img></div>
+</div>
+<figcaption id="theming-figure-caption-0">
+<p>Fortnightly’s customized modal navigation drawer</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/material-studies/fortnightly.html"}
+' href="https://material.io/design/material-studies/fortnightly.html" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1bdCYVTXcZUu95VVoTOThUD9qYfSeromI%2Ffortnightly-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1bdCYVTXcZUu95VVoTOThUD9qYfSeromI%2Ffortnightly-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Fortnightly</h2>
+<p class="object-card__body">Fortnightly is a news app that uses Material Design components and Material Theming to create an on-brand, content-focused experience.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/the-color-system.html#the-color-system"}
+' href="https://material.io/design/color/the-color-system.html#the-color-system" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F14uiNhZYpY2NGKl8KWjl2knU4gGUAbMem%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F14uiNhZYpY2NGKl8KWjl2knU4gGUAbMem%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">The Color System</h2>
+<p class="object-card__body">The Material Design color system helps you choose colors for your user interface.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/applying-color-to-ui.html#applying-color-to-ui"}
+' href="https://material.io/design/color/applying-color-to-ui.html#applying-color-to-ui" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F14uiNhZYpY2NGKl8KWjl2knU4gGUAbMem%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F14uiNhZYpY2NGKl8KWjl2knU4gGUAbMem%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Applying color to UI</h2>
+<p class="object-card__body">In a UI, color has a variety of roles: from containing meaning, to expressing a look and feel.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Color</h2><p>Fortnightly’s modal navigation drawer uses custom color on six elements: sheet, activated icon, activated text, activated overlay, navigation item, and scrim. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1UcQoWbNbU2as9qE6NJoQiGXxNpdRcQuk%2Fnavdrawer-fortnightly-color.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Container</p></td><td colspan="1" rowspan="1"><p>Surface</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#FFFFFF</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Activated icon, Activated text</p></td><td colspan="1" rowspan="1"><p>Primary</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#661FFF</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Activated overlay</p></td><td colspan="1" rowspan="1"><p>Primary</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#661FFF</p><p>12%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Inactive item</p></td><td colspan="1" rowspan="1"><p>On Surface</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#000000</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Scrim</p></td><td colspan="1" rowspan="1"><p>On Surface</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#000000</p><p>32%</p></td></tr></tbody></table></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/typography/understanding-typography.html#understanding-typography"}
+' href="https://material.io/design/typography/understanding-typography.html#understanding-typography" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1lM4aT4JdOM-KM82bGukMXpvKMG6r8VAQ%2Ftypography-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1lM4aT4JdOM-KM82bGukMXpvKMG6r8VAQ%2Ftypography-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Understanding typography</h2>
+<p class="object-card__body">Typography is critical in establishing hierarchy and expressing brand presence that supports an effective digital experience.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Typography</h2><p>Fortnightly’s modal navigation drawer text uses custom typography.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1nmVGJl0OYsy42E9m969BJZcCwC_dY3FV%2Fnavdrawer-fortnightly-type.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Text</p></td><td colspan="1" rowspan="1"><p>Body 2</p></td><td colspan="1" rowspan="1"><p>Typeface</p><p>Font</p><p>Size</p><p>Case</p></td><td colspan="1" rowspan="1"><p>Libre Franklin</p><p>Regular</p><p>14</p><p>Title case</p></td></tr></tbody></table></div></section></div><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Shape</h2><p>Fortnightly’s side navigation drawer container has custom corners, with cut corner shapes.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1oh882zP-BQqdE36gXdNJ5wwNzZupsqaX%2Fnavdrawer-fortnightly-shape.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Container</p></td><td colspan="1" rowspan="1"><p>Large component</p></td><td colspan="1" rowspan="1"><p>Family</p><p>Size</p></td><td colspan="1" rowspan="1"><p>Cut </p><p>n/a; 0;0; n/a dp*</p></td></tr></tbody></table><p>*Side navigation drawers can only be shaped on the top-right and bottom-right corners.</p></div></section></div></div></div></div><div class="collapsible" data-comp="Collapsible" data-props-collapsible='{"collapsed": false}'><div class="collapsible__brief js-collapsible-brief"><button aria-label="Collapse Posivibes Material Theme Section" class="collapsible__toggle-button toggle-button js-collabsible-arrow" role="button"></button><h1 class="collapsible__heading">Posivibes Material Theme</h1></div><div class="collapsible__wrap js-collapsible-wrap"><div class="collapsible__peek js-collapsible-peek"><p>This social media app’s bottom navigation drawer has been customized using Material Theming. Areas of customization include color and typography. The Material Design color system...</p><span class="button button--underline">Read More</span></div><div class="collapsible__content js-collapsible-content"><div class="col-list rich-media"><section class="module col-1"><div class="module"><p>This social media app’s bottom navigation drawer has been customized using Material Theming. Areas of customization include color and typography.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" aria-describedby="theming-figure-caption-1" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1gGzgKCq0XHiy7FXVUKfcnbJ79Sd4QCN_%2Fnavdrawer-posivibes-ahero.png" src="">
+</img></div>
+</div>
+<figcaption id="theming-figure-caption-1">
+<p>Posivibes’ customized navigation drawer</p></figcaption>
+</figure></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/the-color-system.html#the-color-system"}
+' href="https://material.io/design/color/the-color-system.html#the-color-system" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F14uiNhZYpY2NGKl8KWjl2knU4gGUAbMem%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F14uiNhZYpY2NGKl8KWjl2knU4gGUAbMem%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">The Color System</h2>
+<p class="object-card__body">The Material Design color system helps you choose colors for your user interface.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/color/applying-color-to-ui.html#applying-color-to-ui"}
+' href="https://material.io/design/color/applying-color-to-ui.html#applying-color-to-ui" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F14uiNhZYpY2NGKl8KWjl2knU4gGUAbMem%2Fcolor-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F14uiNhZYpY2NGKl8KWjl2knU4gGUAbMem%2Fcolor-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Applying color to UI</h2>
+<p class="object-card__body">In a UI, color has a variety of roles: from containing meaning, to expressing a look and feel.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Color</h2><p>Posivibes’ bottom navigation drawer uses custom color on six elements: sheet, activated icon, activated text, activated overlay, navigation item, and scrim. </p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1Daqlw-8h7SRRLkj_8NWAzTkzvnj5Q7iT%2Fnavdrawer-posivibes-color.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Container</p></td><td colspan="1" rowspan="1"><p>Surface</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#FFFFFF</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Activated icon, Activated text</p></td><td colspan="1" rowspan="1"><p>Primary</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#000000</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Activated overlay</p></td><td colspan="1" rowspan="1"><p>Primary</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#000000</p><p>12%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Inactive item</p></td><td colspan="1" rowspan="1"><p>On Surface</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#000000</p><p>100%</p></td></tr><tr><td colspan="1" rowspan="1"><p>Scrim</p></td><td colspan="1" rowspan="1"><p>Surface</p></td><td colspan="1" rowspan="1"><p>Color</p><p>Opacity</p></td><td colspan="1" rowspan="1"><p>#FFFFFF</p><p>60%</p></td></tr></tbody></table></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/typography/understanding-typography.html#understanding-typography"}
+' href="https://material.io/design/typography/understanding-typography.html#understanding-typography" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1lM4aT4JdOM-KM82bGukMXpvKMG6r8VAQ%2Ftypography-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1lM4aT4JdOM-KM82bGukMXpvKMG6r8VAQ%2Ftypography-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">Understanding typography</h2>
+<p class="object-card__body">Typography is critical in establishing hierarchy and expressing brand presence that supports an effective digital experience.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Typography</h2><p>Posivibes’ bottom navigation drawer text uses custom typography.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/1cIIZJP8_g5Yk6rt752SMHbhQrLcF4wC9/navdrawer-posivibes-type.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Text</p></td><td colspan="1" rowspan="1"><p>Body 2</p></td><td colspan="1" rowspan="1"><p>Typeface</p><p>Font</p><p>Size</p><p>Case</p></td><td colspan="1" rowspan="1"><p>Roboto Condensed</p><p>Regular</p><p>14</p><p>Title case</p></td></tr></tbody></table></div></section></div><aside class="object-card object-card--inline mdc-ripple-surface search-skip js-object-card" data-comp="Reference">
+<a class="object-card__link js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "object card",
+    "action": "link click",
+    "label": "https://material.io/design/shape/about-shape.html#about-shape"}
+' href="https://material.io/design/shape/about-shape.html#about-shape" rel="noopener" target="_blank">
+<div class="object-card__image" data-image-path="https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F135N3dyzAJqND29V1WUzyH6NEFH20LZMb%2Fshapes-thumbnail-1x1-circle.png" style="background-image: url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F135N3dyzAJqND29V1WUzyH6NEFH20LZMb%2Fshapes-thumbnail-1x1-circle.png');"></div>
+<div class="object-card__copy">
+<h2 class="object-card__title">About Shape</h2>
+<p class="object-card__body">Material surfaces can be displayed in different shapes. Shapes direct attention, identify components, communicate state, and express brand.</p>
+</div>
+<p class="object-card__label">
+      Related Link
+      <i class="object-card__icon object-card__icon--open material-icons notranslate">arrow_downward</i>
+</p>
+</a>
+</aside><p></p><div class="col-list rich-media"><section class="module col-1 h2-spacing"><div class="module"><h2>Shape</h2><p>Posivibes’ bottom navigation drawer container has custom corners, with cut corner shapes.</p><figure class="inline-media inline-media--image" data-maxwidth="1520px">
+<div class="bordered frame media-placeholder lazy-wrapper" style="padding-top: 50.0%;">
+<div class="js-lightbox-el" data-template="inline"> <img alt="" class="lightbox__image zoom-target js-zoom-target js-lightbox-image inline-image animatable lazy-wrapper__image js-lazy-image" data-aspect-ratio="50.0%" data-src="../assets/19JbOA2DB49tLwC1Ksv65vfEBZS11rwpG/navdrawer-posivibes-shape.png" src="">
+</img></div>
+</div>
+</figure><table class="s-tag-table"><tbody><tr><td colspan="1" rowspan="1"><p>Element</p></td><td colspan="1" rowspan="1"><p>Category</p></td><td colspan="1" rowspan="1"><p>Attribute</p></td><td colspan="1" rowspan="1"><p>Value</p></td></tr><tr><td colspan="1" rowspan="1"><p>Container</p></td><td colspan="1" rowspan="1"><p>Large component</p></td><td colspan="1" rowspan="1"><p>Family</p><p>Size</p></td><td colspan="1" rowspan="1"><p>Cut </p><p>0;0; n/a; n/a dp*</p></td></tr></tbody></table><p>*Bottom navigation drawer can only be shaped on the top-left and top-right corners.</p></div></section></div></div></div></div></div>
+        </div>
+      </section>
+<hr />      <section id="specs" class="container container--large js-waypoints-trigger article__section" data-section-title="Specs" aria-label="Specs">
+          <h2 class="article__chapter-title">
+            Specs
+            <span class="article-controls">
+              
+              
+            </span>
+          </h2>
+
+        <div class="article__copy">
+          <div>
+<div aria-hidden="true" class="keywords hidden">navigation drawer</div>
+<div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Standard navigation drawer</h2><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "../assets/1IhJa3simqglRnwMEYXqJkZsKnRcTlraS/specs-navdrawer-side-standard.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:134px;width:760px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:73px;width:380px;">
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-left js-measurement-typography" style="top:92px;width:42px;left:322px;">
+<span aria-hidden="true" class="measurement__value">
+            42
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            42
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:60px;width:13px;top:380px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+          16
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+          16
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:92px;width:64px;left:55px;">
+<span aria-hidden="true" class="measurement__value">
+            64
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            64
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-top js-measurement-dimensions" style="left:60px;width:264px;top:27px;">
+<span aria-hidden="true" class="measurement__value">
+          256
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+          256
+      </span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:41px; height:26px; left:73px; top:113px"></span>
+<span class="annotation__vector" style="left:106px; top:126px; width:166px; transform:rotate(-97.594643deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:106px; top:126px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:4px; top:-81px;" style="left:4px; top:-81px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">20dp</p><p class="annotation__value annotation__value--second">#000000de</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:264px; height:832px; left:60px; top:60px"></span>
+<span class="annotation__vector" style="left:246px; top:198px; width:248px; transform:rotate(-74.117949deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:246px; top:198px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:234px; top:-83px;" style="left:234px; top:-83px;">
+<span class="annotation__swatch" style="background-color:#ffffff"></span>
+<p class="annotation__value annotation__value--first">#ffffff</p><p class="annotation__value annotation__value--second">R255 G255 B255</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:264px; height:832px; left:60px; top:60px"></span>
+<span class="annotation__vector" style="left:319px; top:164px; width:339px; transform:rotate(-91.351862deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:319px; top:164px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:231px; top:-217px;" style="left:231px; top:-217px;">
+<a class="annotation__note-link" href="../components/sheets-side.html" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Sheets: Side</p>
+</div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 380px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="../assets/1IhJa3simqglRnwMEYXqJkZsKnRcTlraS/specs-navdrawer-side-standard.png" src="" style="width: 760px; height: 380px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Modal navigation drawer</h2><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "../assets/10pCcfoY_eryH65cqKY3xqr5la8877U0L/specs-navdrawer-side-modal.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:120px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:140px;width:760px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:216px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:484px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--padding js-measurement-padding" style="top:454px;width:760px;">
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:200px;width:16px;top:704px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            16
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            16
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:60px;width:640px;left:190px;">
+<span aria-hidden="true" class="measurement__value">
+            640
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            640
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:140px;width:18px;left:584px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            18
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            18
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:120px;width:20px;left:584px;">
+<span aria-hidden="true" class="measurement__value">
+            20
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            20
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:84px;width:36px;left:584px;">
+<span aria-hidden="true" class="measurement__value">
+            36
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            36
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-right js-measurement-dimensions" style="top:158px;width:48px;left:584px;">
+<span aria-hidden="true" class="measurement__value">
+            48
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            48
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:150px;width:8px;left:516px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-top js-measurement-dimensions" style="left:504px;width:56px;top:31px;">
+<span aria-hidden="true" class="measurement__value">
+            56
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            56
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:446px;width:8px;left:525px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            8
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            8
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:455px;width:28px;left:586px;">
+<span aria-hidden="true" class="measurement__value">
+            28
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            28
+      </span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:158px; left:200px; width:304px; height:48px">
+<span class="">
+</span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:398px; left:200px; width:304px; height:48px">
+<span class="">
+</span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:41px; height:24px; left:216px; top:99px"></span>
+<span class="annotation__vector" style="left:242px; top:113px; width:207px; transform:rotate(-118.544247deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:242px; top:113px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:63px; top:-111px;" style="left:63px; top:-111px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">20dp</p><p class="annotation__value annotation__value--second">#000000de</p> </div>
+</li>
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:46px; height:20px; left:216px; top:125px"></span>
+<span class="annotation__vector" style="left:234px; top:138px; width:394px; transform:rotate(177.674546deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:234px; top:138px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:-240px; top:112px;" style="left:-240px; top:112px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">13dp</p><p class="annotation__value annotation__value--second">#0000008a</p> </div>
+</li>
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:272px; height:20px; left:216px; top:469px"></span>
+<span class="annotation__vector" style="left:242px; top:476px; width:394px; transform:rotate(175.935053deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:242px; top:476px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:-232px; top:462px;" style="left:-232px; top:462px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">13dp</p><p class="annotation__value annotation__value--second">#0000008a</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:304px; height:74px; left:200px; top:84px"></span>
+<span class="annotation__vector" style="left:457px; top:117px; width:187px; transform:rotate(-94.281536deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:457px; top:117px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:363px; top:-112px;" style="left:363px; top:-112px;">
+<span class="annotation__swatch" style="background-color:#ffffff"></span>
+<p class="annotation__value annotation__value--first">#ffffff</p><p class="annotation__value annotation__value--second">R255 G255 B255</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:304px; height:74px; left:200px; top:84px"></span>
+<span class="annotation__vector" style="left:496px; top:149px; width:426px; transform:rotate(-29.028513deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:496px; top:149px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:789px; top:-100px;" style="left:789px; top:-100px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">16dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:304px; height:48px; left:200px; top:158px"></span>
+<span class="annotation__vector" style="left:409px; top:188px; width:511px; transform:rotate(24.962790deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:409px; top:188px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:793px; top:362px;" style="left:793px; top:362px;">
+<a class="annotation__note-link" href="../components/image-lists.html" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Image List</p>
+</div>
+</li>
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:640px; left:200px; top:60px"></span>
+<span class="annotation__vector" style="left:214px; top:451px; width:386px; transform:rotate(173.021943deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:214px; top:451px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:-250px; top:456px;" style="left:-250px; top:456px;">
+<a class="annotation__note-link" href="../components/dividers.html" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Dividers</p>
+</div>
+</li>
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:304px; height:48px; left:200px; top:537px"></span>
+<span class="annotation__vector" style="left:479px; top:584px; width:406px; transform:rotate(6.355757deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:479px; top:584px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:803px; top:587px;" style="left:803px; top:587px;">
+<a class="annotation__note-link" href="../components/sheets-side.html" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Sheets: Side</p>
+</div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+<li class="annotation annotation--notes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:640px; left:200px; top:60px"></span>
+<span class="annotation__vector" style="left:550px; top:175px; width:325px; transform:rotate(0.176294deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:550px; top:175px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:795px; top:134px;" style="left:795px; top:134px;">
+<span class="annotation__note-type">General</span>
+<p class="annotation__note-title">Scrim</p>
+<p class="annotation__value annotation__value--first">#000000 Opacity:32%</p> </div>
+</li>
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 760px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="../assets/10pCcfoY_eryH65cqKY3xqr5la8877U0L/specs-navdrawer-side-modal.png" src="" style="width: 760px; height: 760px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div><div class="col-list"><section class="module col-1 h2-spacing"><div class="module"><h2>Bottom navigation drawer</h2><div aria-label="Open dialog" class="js-lightbox-el" data-template="redline" tabindex="0">
+<div class="redline-viewer redline-viewer--inline media-placeholder zoom-target redline--no-thumb js-redline-viewer js-zoom-target" data-comp="RedlineViewer" data-props-redlineviewer='{"artboardSource": "https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1Agfez_AYp14uPoLVvlhp4eTYd5QUGeVB%2Fspecs-navdrawer-bottom-modal.png", "defaultView": "measurements"}'>
+<div class="redline-wrapper js-redline-wrapper">
+<ul class="redline js-redline-measurements js-redline-layer" data-redline-filter="measurements">
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:396px;width:760px;">
+</li>
+<li class="keyline keyline--vertical measurement--padding js-measurement-padding" style="left:216px;width:760px;">
+</li>
+<li class="keyline keyline--horizontal measurement--typography js-measurement-typography" style="top:416px;width:760px;">
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-left js-measurement-dimensions" style="top:360px;width:340px;left:186px;">
+<span aria-hidden="true" class="measurement__value">
+          1/2 screen height
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+          1/2 screen height
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--dimensions measurement--pos-top js-measurement-dimensions" style="left:200px;width:360px;top:325px;">
+<span aria-hidden="true" class="measurement__value">
+            360
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            360
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:360px;width:36px;left:585px;">
+<span aria-hidden="true" class="measurement__value">
+            36
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            36
+      </span>
+</li>
+<li class="measurement measurement--horizontal measurement--padding measurement--pos-bottom js-measurement-padding" style="left:200px;width:16px;top:707px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            16
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            16
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--typography measurement--pos-right js-measurement-typography" style="top:396px;width:20px;left:585px;">
+<span aria-hidden="true" class="measurement__value">
+            20
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            20
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--dimensions measurement--pos-right js-measurement-dimensions" style="top:434px;width:48px;left:585px;">
+<span aria-hidden="true" class="measurement__value">
+            48
+      </span>
+<span class="measurement__value screenreader-only">
+        Measurement
+            48
+      </span>
+</li>
+<li class="measurement measurement--vertical measurement--padding measurement--pos-right js-measurement-padding" style="top:416px;width:18px;left:585px;">
+<span aria-hidden="true" class="measurement__value measurement__value--offset ">
+            18
+      </span>
+<span class="measurement__value screenreader-only measurement__value--offset ">
+        Measurement
+            18
+      </span>
+</li>
+<li class="dimension measurement--centered measurement--dimensions js-measurement-dimensions" style="top:434px; left:200px; width:360px; height:48px">
+<span class="">
+</span>
+</li>
+</ul>
+<ul aria-hidden="true" class="redline js-redline-text js-redline-layer" data-redline-filter="text">
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:48px; height:26px; left:216px; top:375px"></span>
+<span class="annotation__vector" style="left:244px; top:386px; width:391px; transform:rotate(-172.076741deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:244px; top:386px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:-224px; top:290px;" style="left:-224px; top:290px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">20dp</p><p class="annotation__value annotation__value--second">#000000de</p> </div>
+</li>
+<li class="annotation annotation--text" data-comp="Annotation">
+<span class="annotation__layer" style="width:54px; height:20px; left:216px; top:401px"></span>
+<span class="annotation__vector" style="left:245px; top:414px; width:387px; transform:rotate(-178.371876deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:245px; top:414px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:-222px; top:361px;" style="left:-222px; top:361px;">
+<a class="annotation__text-family" href="https://fonts.google.com/specimen/Roboto" rel="noopener" target="_blank">
+          Roboto
+          <img alt="Google Fonts" class="annotation__icon" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/font-logo.svg"/>
+</a>
+<p class="annotation__value annotation__value--first">13dp</p><p class="annotation__value annotation__value--second">#0000008a</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-colors js-redline-layer" data-redline-filter="colors">
+<li class="annotation annotation--colors" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:340px; left:200px; top:360px"></span>
+<span class="annotation__vector" style="left:521px; top:389px; width:385px; transform:rotate(-20.033923deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:521px; top:389px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:803px; top:215px;" style="left:803px; top:215px;">
+<span class="annotation__swatch" style="background-color:#ffffff"></span>
+<p class="annotation__value annotation__value--first">#ffffff</p><p class="annotation__value annotation__value--second">R255 G255 B255</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-shapes js-redline-layer" data-redline-filter="shapes">
+<li class="annotation annotation--shapes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:340px; left:200px; top:360px"></span>
+<span class="annotation__vector" style="left:277px; top:375px; width:445px; transform:rotate(-167.959101deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:277px; top:375px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:-239px; top:240px;" style="left:-239px; top:240px;">
+<a class="annotation__note-link" href="../environment/elevation.html#default-elevations" rel="noopener" target="_blank"> <span class="annotation__note-type">Elevation</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Elevation</p>
+<p class="annotation__value annotation__value--first">16dp</p> </div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-components js-redline-layer" data-redline-filter="components">
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:48px; left:200px; top:434px"></span>
+<span class="annotation__vector" style="left:302px; top:449px; width:434px; transform:rotate(173.659808deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:302px; top:449px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:-210px; top:455px;" style="left:-210px; top:455px;">
+<a class="annotation__note-link" href="../components/lists.html" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">List</p>
+</div>
+</li>
+<li class="annotation annotation--components annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:340px; left:200px; top:360px"></span>
+<span class="annotation__vector" style="left:521px; top:384px; width:387px; transform:rotate(28.350831deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:521px; top:384px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:782px; top:526px;" style="left:782px; top:526px;">
+<a class="annotation__note-link" href="../components/sheets-bottom.html" rel="noopener" target="_blank"> <span class="annotation__note-type">Components</span>
+<i class="material-icons notranslate annotation__note-icon">open_in_new</i></a>
+<p class="annotation__note-title">Sheets: Bottom</p>
+</div>
+</li>
+</ul><ul aria-hidden="true" class="redline js-redline-notes js-redline-layer" data-redline-filter="notes">
+<li class="annotation annotation--notes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:640px; left:200px; top:60px"></span>
+<span class="annotation__vector" style="left:529px; top:217px; width:369px; transform:rotate(-85.969560deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:529px; top:217px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:475px; top:-194px;" style="left:475px; top:-194px;">
+<span class="annotation__note-type">General</span>
+<p class="annotation__note-title">Scrim</p>
+<p class="annotation__value annotation__value--first">#000000 Opacity:32%</p> </div>
+</li>
+<li class="annotation annotation--notes annotation--note" data-comp="Annotation">
+<span class="annotation__layer" style="width:360px; height:340px; left:200px; top:360px"></span>
+<span class="annotation__vector" style="left:403px; top:363px; width:628px; transform:rotate(-153.149695deg)"></span>
+<span class="annotation__anchor js-annotation-anchor" style="left:403px; top:363px;"></span>
+<div class="annotation__card js-annotation-card" data-coords="left:-238px; top:37px;" style="left:-238px; top:37px;">
+<span class="annotation__note-type">General</span>
+<p class="annotation__note-title">Max initial height</p>
+<p class="annotation__value annotation__value--first">Initial height cannot exceed 1/2 of the screen's height</p> </div>
+</li>
+</ul>
+<div class="lazy-wrapper" style="width: 760px; height: 760px;">
+<img alt="" class="redline-artboard lightbox__image lazy-wrapper__image js-lightbox-image animatable js-redline-image js-lazy-image" data-src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1566425689922%2Fassets%2F1Agfez_AYp14uPoLVvlhp4eTYd5QUGeVB%2Fspecs-navdrawer-bottom-modal.png" src="" style="width: 760px; height: 760px;"/>
+</div>
+<button class="ruler__trigger js-ruler-trigger"></button>
+<div class="ruler__cursor js-ruler-cursor">
+<span class="ruler__point ruler__point--left js-ruler-p1"></span>
+<span class="ruler__range js-ruler-range"></span>
+<span class="ruler__point ruler__point--right js-ruler-p2"></span>
+</div> </div>
+<div aria-hidden="true" class="redline-icon" data-comp="Tooltip" data-props-tooltip='{"tip": "Specs",  "direction": "bottom"}'>
+<i class="material-icons notranslate">flip</i>
+</div>
+<div aria-hidden="true" class="redline-smallres-message">
+<span class="redline-smallres-message__copy"><i class="redline-smallres-message__icon material-icons notranslate">flip</i>Specs only available at larger screen size</span>
+</div>
+</div>
+<p aria-hidden="true" class="redline-unit-message">
+      All measurements are displayed in <a class="redline-unit-message__link" href="../../design/layout/understanding-layout.html#pixel-density" rel="noopener" target="_blank">device-independent pixels (dps)</a>
+</p>
+<div aria-hidden="true" class="colorpicker js-colorpicker">
+<div class="colorpicker__frame">
+<canvas class="colorpicker__magnifier js-colorpicker-magnifier"></canvas>
+<p class="colorpicker__color js-colorpicker-color"></p>
+<input class="colorpicker__val js-colorpicker-val" type="text"/>
+</div>
+</div> </div></div></section></div></div>
+        </div>
+      </section>
+
+  </div>
+
+  <div class="container container--large">
+
+  <h2>Up next
+      <div class="article-controls">
+        
+      </div>
+  </h2>
+
+<div class="suggested-articles"><div>
+<a aria-label="Pickers" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../pickers/pickers.html"}
+' href="../pickers/pickers.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('https://storage.googleapis.com/spec-host-backup/mio-components%2Fassets%2F1mpqoH15B_Um9_MFNsuOYV_B3OwuswJFO%2Fpickers-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Pickers</h4>
+</a>
+<a aria-label="Bottom navigation" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../bottom-navigation/bottom-navigation.html"}
+' href="../bottom-navigation/bottom-navigation.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1JhXfLtOglgkyOmNqYMiylZG2YPZHq0hw/bottom-nav-bar-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Bottom navigation</h4>
+</a><br>
+
+<a aria-label="Lists" class="suggested-articles__item animatable js-anim-scroll js-analytics-click" data-analytics='  {
+    "event": "trackEvent",
+    "category": "suggested articles",
+    "action": "link click",
+    "label": "../lists/lists.html"}
+' href="../lists/lists.html">
+<div class="suggested-articles__item-img mdc-ripple-surface" data-mdc-ripple-image="" style="background-image:url('../assets/1T3Wid_e-v817pM0BTH0z8KqBbzhTTBdn/list-thumbnail-2x1.png');">
+</div>
+<h4 class="suggested-articles__item-subtitle">Lists</h4>
+</a></div></div>  </div>
+</article>
+    </main>
+
+
+
+<footer class="footer">
+  <div class="container container--jumbo">
+    <div class="footer-block footer-block--about">
+      <a class="footer-block__logo js-analytics-click" href="/"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "/"}
+'>
+        <img class="footer-block__material-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/material_logo.svg" alt="Material Design"/>
+      </a>
+      <div class="footer-block__content">
+        <p class="footer-block__description">Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design. Backed by open-source code, Material streamlines collaboration between designers and developers, and helps teams quickly build beautiful products.</p>
+        <ul class="footer-block__social-nav">
+          <li class="footer-block__social-nav-item">  <a href="https://www.github.com/material-components" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on GitHub"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.github.com/material-components"}
+'>GitHub</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.twitter.com/materialdesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on Twitter"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.twitter.com/materialdesign"}
+'>Twitter</a>
+</li>
+          <li class="footer-block__social-nav-item">  <a href="https://www.youtube.com/googledesign" target="_blank" rel="noopener" class="footer-block__social-nav-link js-analytics-click"
+     aria-label="Find us on YouTube"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.youtube.com/googledesign"}
+'>YouTube</a>
+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-block footer-block--legal">
+      <a class="footer-block__logo js-analytics-click" href="https://www.google.com"
+         data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://www.google.com"}
+'>
+        <img class="footer-block__google-logo" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/google_logo.svg" alt="Google"/>
+      </a>
+      <div class="footer-block__content">
+        <ul class="footer-block__legal-nav">
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Privacy Policy"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/privacy"}
+'>Privacy Policy</a>
+</li>
+          <li class="footer-block__legal-nav-item">  <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="footer-block__legal-nav-link js-analytics-click"
+     aria-label="Terms of Service"
+     data-analytics='  {
+    "event": "trackEvent",
+    "category": "navigation",
+    "action": "footer click",
+    "label": "https://policies.google.com/terms"}
+'>Terms of Service</a>
+</li></ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="ui-mask js-ui-mask"></div>
+<div
+    class="lightbox js-lightbox"
+    data-comp="Lightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-labelledby="sr-lightbox-title">
+  <h2 class="screenreader-only sr-lightbox-title" tabindex="0">
+    Explore how Shrine, a retail app, uses Material Design.
+  </h2>
+
+    <header class="lightbox__header">
+      <div class="lightbox__header-title">
+        <span
+            class="lightbox__button js-lightbox-close"
+            data-comp="Tooltip"
+            data-props-tooltip='{"tip": "Close", "direction": "bottom"}'>
+          <i
+              class="material-icons notranslate material-icons--padded mdc-ripple-surface"
+              data-mdc-ripple-is-unbounded tabindex="0">
+            close
+          </i>
+        </span>
+        <h2 class="lightbox__title js-lightbox-title"></h2>
+      </div>
+
+      <div class="lightbox__actions">
+        <button type="button" name="button" class="lightbox-redlines-toggle js-redline-sidebar-toggle" data-comp="Tooltip" data-props-tooltip='{"tip": "View Specs", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>flip</i>
+        </button>
+
+        <button type="button" name="button" class="lightbox__button js-share" data-comp="Tooltip" data-props-tooltip='{"tip": "Share", "direction": "bottom"}'>
+          <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>share</i>
+        </button>
+
+      </div>
+    </header>
+
+    <div class="lightbox__template js-zoom-wrapper">
+      <div class="lightbox__content js-lightbox-content">
+<img class="ui-loader" src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/images/loader.svg" alt="loader" aria-hidden="true" />      </div>
+<div class="redline-sidebar js-lightbox-sidebar-container" data-comp="RedlineSidebar">
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Image only", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-image js-redline-sidebar-item" value="image" >
+        <i class="material-icons notranslate">&#xE3F4;</i>
+        <span class="redline-sidebar__label-text">Image only</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Measurements", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-measurements js-redline-sidebar-item" value="measurements" >
+        <i class="material-icons notranslate">format_shapes</i>
+        <span class="redline-sidebar__label-text">Measurements</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Text", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-text js-redline-sidebar-item" value="text" >
+        <i class="material-icons notranslate">format_size</i>
+        <span class="redline-sidebar__label-text">Text</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Color", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-colors js-redline-sidebar-item" value="colors" >
+        <i class="material-icons notranslate">palette</i>
+        <span class="redline-sidebar__label-text">Color</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Shape and Elevation", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-shapes js-redline-sidebar-item" value="shapes" >
+        <i class="material-icons notranslate">rounded_corner</i>
+        <span class="redline-sidebar__label-text">Shape and Elevation</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Components", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-components js-redline-sidebar-item" value="components" >
+        <i class="material-icons notranslate">category</i>
+        <span class="redline-sidebar__label-text">Components</span>
+      </button>
+    </div>
+<div class="redline-sidebar__button-wrapper" data-comp="Tooltip" data-props-tooltip='{"tip": "Notes", "direction": "left"}'>
+      <button type="button" class="redline-sidebar__item mdc-ripple-surface js-notes js-redline-sidebar-item" value="notes" >
+        <i class="material-icons notranslate">notes</i>
+        <span class="redline-sidebar__label-text">Notes</span>
+      </button>
+    </div>
+<div class="redline-sidebar__toggles js-redline-layer-toggles">
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--dimensions">
+        <input type="checkbox" id="dimensions" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="dimensions">Dimensions</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--padding">
+        <input type="checkbox" id="padding" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="padding">Padding</label>
+<div class="mdc-checkbox redline-sidebar__toggle redline-sidebar__toggle--typography">
+        <input type="checkbox" id="typography" class="mdc-checkbox__native-control js-redline-layer-toggle">
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="typography">Text baseline</label>
+  </div>
+</div><nav class="carousel__nav">
+  <button
+      class="carousel__button carousel__button--prev mdc-ripple-surface js-carousel-prev"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Previous", "direction": "right"}'>
+    <i class="material-icons notranslate">chevron_left</i>
+  </button>
+
+  <button
+      class="carousel__button carousel__button--next mdc-ripple-surface js-carousel-next"
+      data-comp="Tooltip"
+      data-props-tooltip='{"tip": "Next", "direction": "left"}'>
+    <i class="material-icons notranslate">chevron_right</i>
+  </button>
+</nav><div class="zoom-buttons" data-comp="Zoom">
+  <div class="zoom-buttons__wrapper">
+
+    <button class="mdc-button-zoom js-zoom-out" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom out", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">remove</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-reset" data-comp="Tooltip" data-props-tooltip='{"tip": "Reset", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">search</i>
+    </button>
+    <button class="mdc-button-zoom js-zoom-in" data-comp="Tooltip" data-props-tooltip='{"tip": "Zoom in", "direction": "top"}'>
+      <i class="material-icons notranslate mdc-ripple-surface">add</i>
+    </button>
+
+    <div class="zoom-buttons__extras">
+      <button class="mdc-button-zoom js-colorpicker-toggle" data-comp="Tooltip Colorpicker" data-props-tooltip='{"tip": "Color picker", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">colorize</i>
+      </button>
+      <button class="mdc-button-zoom js-ruler-toggle" data-comp="Tooltip Ruler" data-props-tooltip='{"tip": "Ruler", "direction": "top"}'>
+        <i class="material-icons notranslate mdc-ripple-surface">straighten</i>
+      </button>
+    </div>
+
+  </div>
+</div>    </div>
+
+
+<aside class="mdc-dialog" role="alertdialog" aria-labelledby="mdc-dialog-label" aria-describedby="mdc-dialog-description" data-comp="Share">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 id="mdc-dialog-label" class="mdc-dialog__header__title">Share</h2>
+      <button type="button" class="mdc-dialog-share-close js-dialog-close">
+        <i class="material-icons notranslate material-icons--padded mdc-ripple-surface" data-mdc-ripple-is-unbounded>close</i>
+      </button>
+    </header>
+    <section id="mdc-dialog-description" class="mdc-dialog__body">
+      <input type="text" readonly class="mdc-dialog-share-url js-share-url" />
+      <button type="button" class="mdc-button mdc-ripple-surface mdc-dialog-copy js-dialog-copy">Copy</button>
+    </section>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside></div><div class="mdc-snackbar snackbar-wrapper" data-comp="Snackbar" aria-live="assertive" aria-atomic="true" aria-hidden="true">
+  <div class="mdc-snackbar__text"></div>
+  <div class="mdc-snackbar__action-wrapper">
+    <button type="button" class="mdc-button mdc-snackbar__action-button"></button>
+  </div>
+</div>
+    <script src="https://www.gstatic.com/external_hosted/prettify/prettify_compiled.js"></script>
+    <script src="https://www.gstatic.com/external_hosted/waypoints/waypoints.min.js"></script>
+    <script src="https://storage.googleapis.com/spec-host/mio-staging/mio-components/1566425689922/static/m2/js/main.min.js"></script><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHRPF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  </body>
+</html>
