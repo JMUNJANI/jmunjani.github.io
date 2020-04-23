@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="My name is Jay Munjani. I am a UX/UI Designer and maker.I am a creative and ambitious UX Designer with a talent for thinking outside the box and coming up with innovative ideas. I graduated with a Bachelor degree in Computer Engineering from Gujarat technical University and subsequently have worked in the design industry for the past 1 years.">
+      <meta name="keywords" content="HTML, CSS, JavaScript, ux, user_experince, ui, user_interface, maker, design, water_managment, education, computer_engineering, computer, Gujarat, india, protfolio">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+      <style>
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+        .page-top-section {
+    position: inherit;
+    height: 210px;
+    width: all;
+    background: #000;
+}
+
+div {
+    display: block;
+}
+.text-right {
+    text-align: right;
+    padding-top: 45px;
+    padding-right: 25px;
+    
+}
+
+.fab {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+footer {
+  text-align: center;
+
+   left: 0;
+   bottom: 0;
+   width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.gallery {
+  /* https://tobiasahlin.com/blog/masonry-with-css/ */
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-flow: column wrap;
+  align-content: space-between;
+  overflow: hidden;
+  height: 310vw;
+  /* Re-order items into rows */
+  /* Force new columns */
+}
+.gallery .gallery-image {
+  width: 33.3%;
+}
+.gallery .gallery-image[data-flipping] {
+  opacity: 1;
+  z-index: 3;
+}
+.gallery .gallery-image:nth-child(3n+1) {
+  -webkit-box-ordinal-group: 2;
+          order: 1;
+}
+.gallery .gallery-image:nth-child(3n+2) {
+  -webkit-box-ordinal-group: 3;
+          order: 2;
+}
+.gallery .gallery-image:nth-child(3n) {
+  -webkit-box-ordinal-group: 4;
+          order: 3;
+}
+.gallery::before, .gallery::after {
+  content: "";
+  flex-basis: 100%;
+  width: 0;
+  -webkit-box-ordinal-group: 3;
+          order: 2;
+}
+
+.gallery-image {
+  margin: 0;
+  display: block;
+  position: inherit;
+}
+.gallery-image img {
+  display: block;
+  width: 100%;
+}
+.gallery-image figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #FFF;
+  text-shadow: 0 0 1px #000;
+  opacity: 0.8;
+  padding: 1em;
+  text-align: left;
+  -webkit-transition: opacity .4s linear;
+  transition: opacity .4s linear;
+  font-family: monospace;
+}
+.gallery-image:hover figcaption {
+  opacity: 1;
+}
+
+.detail {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(25, 25, 25, 0);
+  box-shadow: 0 0 30px #000;
+  display: -webkit-box;
+  display: flex;
+  pointer-events: none;
+  -webkit-transition: background .3s linear;
+  transition: background .3s linear;
+}
+.detail .gallery-image {
+  padding: 5vmin;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+.detail .gallery-image img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+.detail .gallery-image figcaption {
+  display: none;
+}
+
+[data-state="detail"] .detail {
+  background: rgba(25, 25, 25, 0.85);
+  pointer-events: auto;
+}
+[data-state="detail"] .detail .gallery-image {
+  opacity: 1;
+}
+
+[data-state="gallery"] .detail .gallery-image {
+  opacity: 0;
+  -webkit-transition: none;
+  transition: none;
+}
+
+/* ---------------------------------- */
+body {
+  background: black;
+}
+
+#app {
+  pointer-events: none;
+}
+#app .gallery .gallery-image {
+  pointer-events: auto;
+}
+
+.gallery-image {
+  -webkit-transition: opacity .5s linear;
+  transition: opacity .5s linear;
+}
+
+#app:hover .gallery .gallery-image {
+  opacity: 0.3;
+}
+#app:hover .gallery .gallery-image[data-flipping],
+#app:hover .gallery .gallery-image:hover {
+  opacity: 1;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+
+</style>
+
+      <title>Jaybmunjani</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+
+   <body>
+	  <header>
+	       <div class="navbar">
+               <a href="index.html" >Home  <i class="fa fa-home"></i></a>
+               <a href="projects.html">Projects  <i class="fa fa-folder-open"></i></a>
+               <a href="gallery.html" class="active">Gallery  <i class='fas fa-images'></i></a>
+               <a href="resource.html">Resource  <i class='fas fa-newspaper'></i></a>
+               <a href="about.html">About <i class='fas fa-address-card'></i></a>
+
+           </div>
+       </header>
+
+
+
+<div class="page-top-section">
+<div class="overlay"></div>
+<div class="container text-right">
+<div class="page-info">
+<h2>Gallery</h2>
+<div class="page-links">
+<a href="index.html">Home</a>
+<a> / </a>
+<span>gallery</span>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+ <script src="https://codepen.io/shshaw/pen/QmZYMG.js"></script>
+
+<div id="app" data-state="gallery">
+  <div class="gallery">
+    <!--
+figure.gallery-image*30>img[src="https://source.unsplash.com/collection/2022043/700x900/?=$$"]+figcaption -->
+    <figure class="gallery-image">
+      <img src="img/gallery/ganpati.jpeg" width="800" height="800" />
+      <figcaption>1</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/sea.jpeg"  width="800" height="600" />
+      <figcaption>2</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/varkalibeach.jpeg"  width="800" height="400" />
+      <figcaption>3</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/light.jpeg"  width="800" height="600" />
+      <figcaption>4</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/nw.jpeg" width="800" height="900" />
+      <figcaption>5</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/kachindo.jpeg"  width="800" height="600" />
+      <figcaption>6</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/saputara.jpeg"  width="800" height="700" />
+      <figcaption>7</figcaption>
+    </figure>
+
+    <figure class="gallery-image">
+      <img src="img/gallery/budhaa.jpeg" width="800" height="800" />
+      <figcaption>8</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/duck.jpeg" width="800" height="600" />
+      <figcaption>9</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/seawater.jpeg" />
+      <figcaption>10</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/structure.jpeg"  width="800" height="900" />
+      <figcaption>11</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/booklight.jpeg"  width="800" height="600" />
+      <figcaption>12</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/way.jpeg" width="800" height="600" />
+      <figcaption>13</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/southindiantemple.jpeg" width="800" height="900" />
+      <figcaption>14</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/gilol.jpeg" width="800" height="900" />
+      <figcaption>15</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/cat.jpeg"  width="800" height="400" />
+      <figcaption>16</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/plant.jpeg"  width="800" height="800" />
+      <figcaption>17</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/jaipur.jpeg"  width="800" height="900" />
+      <figcaption>18</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/dangwaterfall.jpeg" width="800" height="900" />
+      <figcaption>19</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/polotemple.jpeg" width="800" height="400" />
+      <figcaption>20</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/naturelight.jpeg" width="800" height="400" />
+      <figcaption>21</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/polohistory.jpeg" width="800" height="900" />
+      <figcaption>22</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/tictechtoe.jpeg" width="800" height="800" />
+      <figcaption>23</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/ruthirani.jpeg" width="800" height="900" />
+      <figcaption>24</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/idartopview.jpeg" width="800" height="800" />
+      <figcaption>25</figcaption>
+    </figure>
+
+    <figure class="gallery-image">
+      <img src="img/gallery/lunch.jpeg" width="800" height="600" />
+      <figcaption>26</figcaption>
+    </figure>
+    <figure class="gallery-image">
+      <img src="img/gallery/poloforest.jpeg" width="800" height="900" />
+      <figcaption>27</figcaption>
+    </figure>
+  </div>
+  <div class="detail">
+    <!--   cloned figure/image goes here!   -->
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  
+console.clear();
+
+const elApp = document.querySelector("#app");
+
+const elImages = Array.from(document.querySelectorAll(".gallery-image"));
+
+const elDetail = document.querySelector(".detail");
+
+function flipImages(firstEl, lastEl, change) {
+  const firstRect = firstEl.getBoundingClientRect();
+
+  const lastRect = lastEl.getBoundingClientRect();
+
+  // INVERT
+  const deltaX = firstRect.left - lastRect.left;
+  const deltaY = firstRect.top - lastRect.top;
+  const deltaW = firstRect.width / lastRect.width;
+  const deltaH = firstRect.height / lastRect.height;
+
+  change();
+  lastEl.parentElement.dataset.flipping = true;
+
+  const animation = lastEl.animate([
+    {
+      transform: `translateX(${deltaX}px) translateY(${deltaY}px) scaleX(${deltaW}) scaleY(${deltaH})`
+    },
+    {
+      transform: 'none'
+    }
+  ], {
+    duration: 600, // milliseconds
+    easing: 'cubic-bezier(.2, 0, .3, 1)'
+  });
+
+  animation.onfinish = () => {
+    delete lastEl.parentElement.dataset.flipping;
+  }
+
+}
+
+elImages.forEach(figure => {
+
+  figure.addEventListener("click", () => {
+    const elImage = figure.querySelector('img');
+
+    elDetail.innerHTML = "";
+
+    const elClone = figure.cloneNode(true);
+    elDetail.appendChild(elClone);
+
+    const elCloneImage = elClone.querySelector('img');
+
+    flipImages(elImage, elCloneImage, ()=>{
+      elApp.dataset.state="detail";
+    });
+
+    function revert(){
+
+      flipImages(elCloneImage, elImage, ()=>{
+        elApp.dataset.state="gallery";
+        elDetail.removeEventListener('click',revert);
+      });
+
+    }
+
+    elDetail.addEventListener('click',revert);
+
+  });
+});
+
+
+
+
+</script>
+
+    
+   
+
+
+   </body>
+   <footer>
+  <div class="container">
+    <section class="grid">
+      <div class="column-xs-12">
+        <a href="https://www.facebook.com/jaybmunjani" class="fab fa-facebook"></a>
+        <a href="https://twitter.com/jaybmunjani" class="fab fa-twitter"></a>
+        <a href="https://www.quora.com/profile/Jay-Munjani-1" class="fab fa-quora"></a>
+        <a href="https://www.instagram.com/jaybmunjani/" class="fab fa-instagram"></a>
+        <a href="https://in.linkedin.com/in/jaybmunjani" class="fab fa-linkedin"></a>
+                <a href="https://github.com/JMUNJANI" class="fab fa-github"></a>
+
+        <p class="copyright">Created by Jay Munjani  &#x2764; </p>
+      </div>
+    </section>
+  </div>
+</footer>
+</html>
