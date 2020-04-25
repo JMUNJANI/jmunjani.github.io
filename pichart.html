@@ -15,7 +15,8 @@
 
 
 
-         .fab {
+
+ .fab {
   padding: 20px;
   font-size: 30px;
   width: 50px;
@@ -35,7 +36,9 @@ footer {
     position: inherit;
     height: 210px;
     background: #000;
+    margin-top: 40px;
 }
+
 
 div {
     display: block;
@@ -56,6 +59,68 @@ div {
 {
   margin: 20px 40px 20px 40px;
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+}
+
+blockquote {
+  font-style: italic;
+  text-align: center;
+  width: 40rem;
+  height: auto;
+  max-width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.intro {
+    padding: 1rem;
+  }
+
+  blockquote {
+    padding-top: 2rem;
+    width: 30rem;
+    padding-bottom: 2rem;
+  }
+}
+
+body {
+  background-color: #eee;
+  color: #555;
+}
+
+pre {
+  font-family: monospace;
+  background-color: #000;
+  /*width: 27.5em;*/
+  margin: 4em auto;
+  padding: 0.5em;
+  border-radius: .25em;
+  box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.45);
+  line-height: 0;
+  counter-reset: line;
+}
+pre span {
+  display: block;
+  line-height: 1.5rem;
+}
+pre span:before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  border-right: 1px solid #ddd;
+  padding: 0 .5em;
+  margin-right: .5em;
+  color: #888;
+}
+
+
       </style>
 
       <title>Jaybmunjani</title>
@@ -80,13 +145,13 @@ div {
 <div class="overlay"></div>
 <div class="container text-right">
 <div class="page-info">
-<h2>Prjects</h2>
+<h2>Projects</h2>
 <div class="page-links">
 <a href="index.html">Home</a>
 <a> / </a>
 <a href="projects.html">Projects</a>
 <a> / </a>
-<span>Wsaver</span>
+<span>Pi chart</span>
 </div>
 </div>
 </div>
@@ -94,19 +159,51 @@ div {
     
 <div class="single-post-wrapper content-1170 center-relative content">
 <article>
-<h1 class="entry-title">Positive anything is better than negative nothing</h1>
+<h1 class="entry-title">Pi chart</h1>
 <div class="post-info center-text">
-<div class="post-date">November 19, 2015</div>
-<div class="cat-links">
-<ul>
-<li>
-<a href="#">Webinar</a>
-</li>
-</ul>
+<div class="post-date">Pi chart : <a href="https://p5js.org">p5js</a></div>
+
 </div>
+&nbsp;
+<center><img src="img/project/pichart.jpeg"></center>
+<div class="container">
+<pre>
+<span>var k = 0;</span>
+
+<span>function setup() {</span>
+  <span>createCanvas(windowWidth, windowHeight);</span>
+ <span> noStroke();</span> 
+
+ <span> //noLoop();  // Run once and stop </span>
+<span>}</span>
+
+<span>function draw() {</span>
+  <span>background(230);</span>
+  <span>fill('#333');</span>
+  <span>ellipse(width/2, height/2, mouseY, mouseY);</span>
+  <span>fill(255);</span>
+  <span>arc(width/2, height/2, mouseY, mouseY, PI + k, TWO_PI + (TWO_PI*(mouseX/windowWidth*3)) + k);</span>
+  <span>k = k+0.01;</span>
+  
+<span>}</span>
+
+<span>function pieChart(diameter, data) {</span>
+  <span>var lastAngle = 0;</span>
+  <span>for (var i = 0; i < data.length; i++) {</span>
+   <span> var gray = map(i, 0, data.length, 0, 255);</span>
+   <span> fill(gray);</span>
+    <span>arc(width/2, height/2, diameter, diameter, lastAngle, lastAngle+radians(angles[i]));</span>
+    <span>lastAngle += radians(angles[i]);</span>
+   <span> println(lastAngle);</span>
+  <span>}</span>
+<span>}</span>
+</pre>
 </div>
-<div class="entry-content">
+<!-- <div class="entry-content">
 <div class="content-wrap">
+  &nbsp;
+  <center><img src="img/project/pichart.jpeg"></center>
+  &nbsp;
 <p>Now when I had mastered the language of this water and had come to know every trifling feature that bordered the great river as familiarly as I knew the letters of the alphabet, I had made a valuable acquisition.</p>
 <p>&nbsp;</p>
 <p>I still keep in mind a certain wonderful sunset which I witnessed when and steamboating was new to me. A broad expanse of the river was turned too blood in the middle distance the red hue brightened into gold, through which a solitary log came floating, black and conspicuous in one place a long calm slanting mark lay sparkling upon the water in another the surface was broken by boiling, tumbling rings, that were as many-tinted as an opal where the ruddy flush was faintest, was a smooth spot that was covered with graceful circles and radiating lines.</p>
@@ -126,7 +223,7 @@ div {
 <p>&nbsp;</p>
 <p>Duis iaculis mattis rutrum. Sed iaculis magna sit amet suscipit ornare. Nulla ornare leo a tortor aliquam, quis interdum ex tempor. Quisque ultricies consequat suscipit. Donec tincidunt tempor ornare. Praesent a enim vel augue suscipit auctor in gravida augue. Suspendisse ut libero sit amet augue molestie fringilla. Fusce molestie, velit a finibus eleifend, nibh odio sagittis est, id aliquet turpis orci quis nibh.</p>
 </div>
-</div>
+</div> -->
 <div class="clear"></div>
 </article>
 <div class="about-author-holder center-relative center-text">
