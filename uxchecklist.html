@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+      <style type="text/css">
+         
+
+
+
+
+
+
+ .fab {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+footer {
+  text-align: center;
+
+   left: 0;
+   bottom: 0;
+   width: 100%;
+
+}
+ .page-top-section {
+    position: inherit;
+    height: 210px;
+    background: #000;
+    margin-top: 40px;
+}
+
+
+div {
+    display: block;
+}
+.text-right {
+    text-align: right;
+    padding-top: 45px;
+    padding-right: 25px;
+    
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.content
+{
+  margin: 20px 40px 20px 40px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+}
+
+
+
+.todo-list {
+    background: #FFF;
+    font-size: 15px;
+    max-width: 25em;
+    margin-left: 5px;
+    padding: 0.5em 1em;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.todo {
+  display: block;
+  position: relative;
+  padding: 1em 1em 1em 16%;
+  margin: 0 auto;
+  cursor: pointer;
+  border-bottom: solid 1px #ddd;
+}
+.todo:last-child {
+  border-bottom: none;
+}
+.todo__state {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.todo__text {
+  color: #135156;
+  -webkit-transition: all 0.4s linear 0.4s;
+  transition: all 0.4s linear 0.4s;
+}
+.todo__icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  fill: none;
+  stroke: #27FDC7;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.todo__line,
+.todo__box,
+.todo__check {
+  -webkit-transition: stroke-dashoffset 0.8s cubic-bezier(0.9, 0, 0.5, 1);
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.9, 0, 0.5, 1);
+}
+.todo__circle {
+  stroke: #27FDC7;
+  stroke-dasharray: 1 6;
+  stroke-width: 0;
+  -webkit-transform-origin: 13.5px 12.5px;
+          transform-origin: 13.5px 12.5px;
+  -webkit-transform: scale(0.4) rotate(0deg);
+          transform: scale(0.4) rotate(0deg);
+  -webkit-animation: none 0.8s linear;
+          animation: none 0.8s linear;
+}
+@-webkit-keyframes explode {
+  30% {
+    stroke-width: 3;
+    stroke-opacity: 1;
+    -webkit-transform: scale(0.8) rotate(40deg);
+            transform: scale(0.8) rotate(40deg);
+  }
+  100% {
+    stroke-width: 0;
+    stroke-opacity: 0;
+    -webkit-transform: scale(1.1) rotate(60deg);
+            transform: scale(1.1) rotate(60deg);
+  }
+}
+@keyframes explode {
+  30% {
+    stroke-width: 3;
+    stroke-opacity: 1;
+    -webkit-transform: scale(0.8) rotate(40deg);
+            transform: scale(0.8) rotate(40deg);
+  }
+  100% {
+    stroke-width: 0;
+    stroke-opacity: 0;
+    -webkit-transform: scale(1.1) rotate(60deg);
+            transform: scale(1.1) rotate(60deg);
+  }
+}
+.todo__box {
+  stroke-dasharray: 56.1053, 56.1053;
+  stroke-dashoffset: 0;
+  -webkit-transition-delay: 0.16s;
+          transition-delay: 0.16s;
+}
+.todo__check {
+  stroke: #27FDC7;
+  stroke-dasharray: 9.8995, 9.8995;
+  stroke-dashoffset: 9.8995;
+  -webkit-transition-duration: 0.32s;
+          transition-duration: 0.32s;
+}
+.todo__line {
+  stroke-dasharray: 168, 1684;
+  stroke-dashoffset: 168;
+}
+.todo__circle {
+  -webkit-animation-delay: 0.56s;
+          animation-delay: 0.56s;
+  -webkit-animation-duration: 0.56s;
+          animation-duration: 0.56s;
+}
+.todo__state:checked ~ .todo__text {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  color: #5EBEC1;
+  opacity: 0.6;
+}
+.todo__state:checked ~ .todo__icon .todo__box {
+  stroke-dashoffset: 56.1053;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.todo__state:checked ~ .todo__icon .todo__line {
+  stroke-dashoffset: -8;
+}
+.todo__state:checked ~ .todo__icon .todo__check {
+  stroke-dashoffset: 0;
+  -webkit-transition-delay: 0.48s;
+          transition-delay: 0.48s;
+}
+.todo__state:checked ~ .todo__icon .todo__circle {
+  -webkit-animation-name: explode;
+          animation-name: explode;
+}
+
+
+
+
+      </style>
+
+      <title>Jaybmunjani</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+
+   <body>
+	  <header>
+	       <div class="navbar">
+               <a href="index.html" >Home  <i class="fa fa-home"></i></a>
+               <a href="projects.html" class="active">Projects  <i class="fa fa-folder-open"></i></a>
+               <a href="gallery.html">Gallery  <i class='fas fa-images'></i></a>
+               <a href="resource.html">Resource  <i class='fas fa-newspaper'></i></a>
+               <a href="about.html">About <i class='fas fa-address-card'></i></a>
+
+           </div>
+       </header>
+
+
+
+<div class="page-top-section">
+<div class="overlay"></div>
+<div class="container text-right">
+<div class="page-info">
+<h2>Projects</h2>
+<div class="page-links">
+<a href="index.html">Home</a>
+<a> / </a>
+<a href="projects.html">Projects</a>
+<a> / </a>
+<span>Pi chart</span>
+</div>
+</div>
+</div>
+</div>
+    
+<div class="single-post-wrapper content-1170 center-relative content">
+<article>
+<h1 class="entry-title">Pi chart</h1>
+<div class="post-info center-text">
+<div class="post-date">Pi chart : <a href="https://p5js.org">p5js</a></div>
+
+</div>
+
+<div class="entry-content">
+<div class="content-wrap">
+  &nbsp;
+  <center><img src="img/project/pichart.jpeg"></center>
+  &nbsp;
+<p>Now when I had mastered the language of this water and had come to know every trifling feature that bordered the great river as familiarly as I knew the letters of the alphabet, I had made a valuable acquisition.</p>
+<p>&nbsp;</p>
+
+<blockquote class="inline-blockquote" style="display: table;">
+<p>There were graceful curves, reflected images, woody on the heights, soft distances and over the whole scene, far and near, the dissolving lights drifted steadily now dissolving lights. There were graceful curves, reflected images. It suddenly struck me that that tiny pea, pretty and blue, was the Earth.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+ 
+
+
+<svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;">
+  <defs>
+    <linearGradient id="boxGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="25" y2="25">
+      <stop offset="0%" stop-color="#27FDC7" />
+      <stop offset="100%" stop-color="#0FC0F5" />
+    </linearGradient>
+
+    <linearGradient id="lineGradient">
+      <stop offset="0%" stop-color="#0FC0F5" />
+      <stop offset="100%" stop-color="#27FDC7" />
+    </linearGradient>
+
+    <path id="todo__line" stroke="url(#lineGradient)" d="M21 12.3h168v0.1z"></path>
+    <path id="todo__box" stroke="url(#boxGradient)" d="M21 12.7v5c0 1.3-1 2.3-2.3 2.3H8.3C7 20 6 19 6 17.7V7.3C6 6 7 5 8.3 5h10.4C20 5 21 6 21 7.3v5.4"></path>
+    <path id="todo__check" stroke="url(#boxGradient)" d="M10 13l2 2 5-5"></path>
+    <circle id="todo__circle" cx="13.5" cy="12.5" r="10"></circle>
+  </defs>
+</svg>
+
+<div class="todo-list">
+  <label class="todo">
+    <input class="todo__state" type="checkbox" />
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
+      <use xlink:href="#todo__line" class="todo__line"></use>
+      <use xlink:href="#todo__box" class="todo__box"></use>
+      <use xlink:href="#todo__check" class="todo__check"></use>
+      <use xlink:href="#todo__circle" class="todo__circle"></use>
+    </svg>
+
+    <div class="todo__text">Do a very important task</div>
+
+  </label>
+
+  <label class="todo">
+
+    <input class="todo__state" type="checkbox" />
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
+      <use xlink:href="#todo__line" class="todo__line"></use>
+      <use xlink:href="#todo__box" class="todo__box"></use>
+      <use xlink:href="#todo__check" class="todo__check"></use>
+      <use xlink:href="#todo__circle" class="todo__circle"></use>
+    </svg>
+
+    <div class="todo__text">Another important task</div>
+
+  </label>
+
+  <label class="todo">
+    <input class="todo__state" type="checkbox" />
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25" class="todo__icon">
+      <use xlink:href="#todo__line" class="todo__line"></use>
+      <use xlink:href="#todo__box" class="todo__box"></use>
+      <use xlink:href="#todo__check" class="todo__check"></use>
+      <use xlink:href="#todo__circle" class="todo__circle"></use>
+    </svg>
+
+    <div class="todo__text">Not so important task</div>
+  </label>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="clear"></div>
+</article>
+<div class="about-author-holder center-relative center-text">
+<div class="author-image block">
+<img alt="" src="images/avatar.png" class="avatar photo"></div>
+<div class="author-nickname block">PUBLISHED BY Robert Davis</div>
+<div class="author-bio block"></div>
+<div class="author-all-posts block">
+<a class="button" href="#">View all posts</a>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+   </body>
+   <footer>
+  <div class="container">
+    <section class="grid">
+      <div class="column-xs-12">
+        <a href="https://www.facebook.com/jaybmunjani" class="fab fa-facebook"></a>
+        <a href="https://twitter.com/jaybmunjani" class="fab fa-twitter"></a>
+        <a href="https://www.quora.com/profile/Jay-Munjani-1" class="fab fa-quora"></a>
+        <a href="https://www.instagram.com/jaybmunjani/" class="fab fa-instagram"></a>
+        <a href="https://in.linkedin.com/in/jaybmunjani" class="fab fa-linkedin"></a>
+        <a href="https://github.com/JMUNJANI" class="fab fa-github"></a>
+        <p class="copyright">Created by Jay Munjani  &#x2764; </p>
+      </div>
+    </section>
+  </div>
+</footer>
+</html>
